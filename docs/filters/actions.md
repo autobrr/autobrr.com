@@ -4,7 +4,7 @@ sidebar_position: 2
 
 # Actions
 
-Actions are set per filter for maximum flexibility. Filters support multiple actions. Very useful if you want to send to multiple clients, or run custom commands as well.
+A configured action is what your autodl does with a successfull push. You can send it any of the supported actions. Each filter supports mulitiple actions just incase you need to send to multiple clients, or run custom commands as well.
 
 Read more about setup of [ download clients ](../configuration/download-clients ) before continuing.
 
@@ -51,7 +51,7 @@ Built in re-announce will make sure it works with initially broken trackers.
 
 ### Radarr, Sonarr and Lidarr
 
-Autobrr have full support to send diretly to the arr suite of services.
+Autobrr supports the ability to push directly to the *arr suite of services.
 
 Could be useful to do some basic filtering before sending.
 
