@@ -6,7 +6,7 @@ sidebar_position: 1
 
 Most fields can take a comma separated list like `value1, value2`.
 
-The comma separated lists supports wildcards, where * means 0 or more characters and ? means exactly one character. Like `*this*,that?movie`.
+The comma separated lists supports wildcards, where `*` means 0 or more characters and ? means exactly one character. Like `*this*,that?movie`.
 
 If nothing but name and an indexer is specifed, it will match against anything for that indexer.
 
