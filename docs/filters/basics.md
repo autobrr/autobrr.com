@@ -10,6 +10,8 @@ The comma separated lists supports wildcards, where * means 0 or more characters
 
 If nothing but name and an indexer is specifed, it will match against anything for that indexer.
 
+All filters are **case-insensitive**, so write them however you desire.
+
 ## General
 
 ### Name
@@ -115,7 +117,7 @@ For TV and movies it's advised to use filters like `resolution`, `source` and `c
 - **Example:** `*Movie*remux*, That Other movie, *that?game*`
 - **Description:** Useful for all types of releases. Supports wildcards like `That?Movie, *the*`. Regex is NOT supported yet.
 
-### Match releases
+### Except releases
 
 - **Type:** Comma separated list
 - **Example:** `*Movie*remux*, That Other movie, *that?game*`
