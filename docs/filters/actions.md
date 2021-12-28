@@ -51,7 +51,7 @@ Built in re-announce will make sure it works with initially broken trackers.
 
 ### Radarr, Sonarr and Lidarr
 
-Autobrr have full support to send diretly to the arr suite of services.
+Autobrr supports the ability to push directly to the `*arr` suite of services.
 
 Could be useful to do some basic filtering before sending.
 
