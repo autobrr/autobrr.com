@@ -4,7 +4,7 @@ In this setup we'll create a Windows service that operates in the background so 
 
 Press your windows key and search for `Task Scheduler` and lets `Create basic task.`
 
-<img max-width=600px src="https://github.com/gl0ryus/autobrr.com/blob/main/static/img/a.%20create%20basic%20task.png?raw=true" >
+<img max-width=100px src="https://github.com/gl0ryus/autobrr.com/blob/main/static/img/a.%20create%20basic%20task.png?raw=true" >
 
 Add a name, this will show up in the Task Scheduler. Feel free to add the autorbrr description if you'd like.
 
