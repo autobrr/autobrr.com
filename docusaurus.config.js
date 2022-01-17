@@ -84,7 +84,7 @@ const config = {
             items: [
               {
                 label: 'Discord',
-                href: 'https://discord.gg/FRfUFanG',
+                href: 'https://discord.gg/WQ2eUycxyT',
               },
             ],
           },
