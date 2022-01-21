@@ -109,6 +109,74 @@ For TV and movies it's advised to use filters like `resolution`, `source` and `c
 - **Example:** `mkv`
 - **Description:** Will only match releases with any of the selected containers. Only a few indexers announce this.
 
+## Music
+
+### Artists
+
+- **Type:** Comma separated list
+- **Example:** `Artist, That Other Artist, Some Other Artist`
+- **Description:** Supports wildcards but generally not needed. Eg. That?Movie, *the*
+
+### Albums
+
+- **Type:** Comma separated list
+- **Example:** `Album, Some Other Album, Yet Another Album`
+- **Description:** Supports wildcards but generally not needed. Eg. That?Movie, *the*
+
+### Years
+
+- **Type:** Comma separated list
+- **Example:** `2018,2020-2021`
+
+### Format
+
+- **Type:** Multiselect
+- **Default:** Matches any
+- **Example:** `FLAC, MP3, OGG, AAC, DTS`
+- **Description:** Will only match releases with any of the selected formats.
+
+### Quality
+
+- **Type:** Multiselect
+- **Default:** Matches any
+- **Example:** `192, 320, v0, Lossless, 24 Bit Lossless`
+- **Description:** Will only match releases with any of the selected qualities.
+
+### Sources
+
+- **Type:** Multiselect
+- **Default:** Matches any
+- **Example:** `CD, WEB, DVD, Vinyl, Soundboard, Cassette, DAT, SACD, Blu-ray`
+- **Description:** Will only match releases with any of the selected sources.
+
+### Type
+
+- **Type:** Multiselect
+- **Default:** Matches any
+- **Example:** `Album, EP, Soundtrack, Anthology, Mixtape`
+- **Description:** Will only match releases with any of the selected types.
+
+### Log Score
+
+- **Type:** Comma separated list
+- **Example:** `50,100`
+- **Description:** Matches log percent for indexers that announce it. Only some use percent.
+
+### Log
+
+- **Type:** Toggle
+- **Description:** Enforces log requirement.
+
+### Cue
+
+- **Type:** Toggle
+- **Description:** Enforces cue requirement.
+
+### Perfect FLAC
+
+- **Type:** Toggle
+- **Description:** Overrides all options about quality, source, format, and cue/log/log score.
+
 ## Advanced
 
 ### Match releases
