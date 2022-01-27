@@ -46,7 +46,7 @@ You can define some basic rules which can improve your performance for racing et
 ## Deluge
 
 - **Host**: Takes an ip or url without `http(s)`, eg `myserver.test`
-- **Port**: This is the WebUI port
+- **Port**: This is the daemon port
 - **SSL**: Use this if the server is on https. It's usually not the case
 - **Username**: username
 - **Password**: password
