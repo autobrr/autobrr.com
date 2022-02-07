@@ -1,8 +1,9 @@
 ---
-sidebar_position: 2
+title: "Docker"
+sidebar_position: 1
 ---
 
-# Docker
+# Docker-setup
 
 This guide expects some previous docker knowledge and an working environment.
 
@@ -23,11 +24,11 @@ services:
     container_name: autobrr
     image: ghcr.io/autobrr/autobrr:latest
     restart: unless-stopped
-    logging:
-      driver: json-file
-      options:
-        max-file: ${DOCKERLOGGING_MAXFILE}
-        max-size: ${DOCKERLOGGING_MAXSIZE}
+    #logging:
+    #  driver: json-file
+    #  options:
+    #    max-file: ${DOCKERLOGGING_MAXFILE}
+    #    max-size: ${DOCKERLOGGING_MAXSIZE}
     environment:
       - PUID=${PUID}
       - PGID=${GUID}

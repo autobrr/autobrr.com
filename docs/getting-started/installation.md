@@ -12,7 +12,7 @@ The easiest way to install it is via [swizzin.ltd/applications/autobrr](https://
 
 But if you don't run Swizzin you can of course still use it, with some setup.
 
-Follow instructions below for recommended setup on a regular linux server. For `docker` check [docker setup](./docker.md).
+Follow instructions below for recommended setup on a regular linux server. For `docker` check [docker setup](./docker/setup.md).
 
 ## Download package
 
