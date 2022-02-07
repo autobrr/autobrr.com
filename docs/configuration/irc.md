@@ -8,12 +8,6 @@ The initial setup of irc networks and channels are done during the setup of inde
 
 If you need to edit something, you can do it here after.
 
-:::caution Caution
-
-There's currently no good way to monitor networks other than the log, looking for `Monitoring #channel`, `JOIN` and `PING`. This is coming in the future.
-
-:::
-
 ## Setup
 
 If you for some reason need to setup a network you can do that in the `settings/irc` tab.
@@ -34,9 +28,5 @@ Quite a few indexers use the same network, specifically `irc.p2p-network.net`.
 * If you have more than one nick on the same network in will create a new connection.
 
 Adding or removing `indexers/networks/channels` can therefore break things.
-
-This is currently a bit buggy, but will be taken care of.
-
-There's currently no good way to monitor networks other than the log, and looking for `Monitoring #channel`, `JOIN` and `PING`. This is coming in the future.
 
 :::
