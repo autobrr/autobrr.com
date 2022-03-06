@@ -58,6 +58,11 @@ For TV and movies it's advised to use filters like `resolution`, `source` and `c
 - **Default:** 0
 - **Description:** Number of seconds to wait before running actions. The integrations with Deluge and qBittorrent have re-announce enabled so there's generally no need to use delay.
 
+#### Prioity
+
+- **Default:** 0
+- **Description:** When making the filter check it will fetch filters and order and run them by priority, highest to lowest. Supports positive and negative numbers. Default priority is set to 0.
+
 ## TV/Movies
 
 ### Movies / shows
