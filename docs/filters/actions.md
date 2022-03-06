@@ -69,16 +69,38 @@ For torrent clients not yet supported this is the next best thing. Useful if you
 
 Takes a path to a writeable folder.
 
-### Custom commands / Exec
+### Available variables
 
-For custom commands you should specify the full path to the binary/program you want to run.
-
-Available arguments:
   - `{{ .TorrentPathName }}`: Path to downloaded .torrent file in `/tmp`.
   - `{{ .TorrentName }}`: Release name as announced
   - `{{ .TorrentUrl }}`: Full url to download torrent
+  - `{{.Indexer}}`
+  - `{{.TorrentHash}}`
+  - `{{.Resolution}}`
+  - `{{.Source}}`
+  - `{{.HDR}}`
+  - `{{.Season}}`
+  - `{{.Episode}}`
+  - `{{.Year}}`
+  - `{{.Month}}`
+  - `{{.Day}}`
+  - `{{.Hour}}`
+  - `{{.Minute}}`
+  - `{{.Second}}`
 
-And you can include your own static variables.
+These variables are available to use in the following fields. Try out in the any of these exec fields.
 
+   - Watch folder
+   - Label
+   - Tags
+   - Category
+   - Save Path
+   - Exec arguments
 
+### Custom commands / Exec
 
+For custom commands you should specify the full path to the binary/program you want to run. And you can include your own static variables. For example:
+
+`race-{{.Indexer}}/{{.Resolution}}` as a tag or Category.
+
+`/Movies/{{.Resolution}}` as a save path.
