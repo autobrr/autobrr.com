@@ -80,5 +80,26 @@ Available arguments:
 
 And you can include your own static variables.
 
+### Variables 
 
+   - `{{.Indexer}}`
+   - `{{.TorrentHash}}`
+   - `{{.Resolution}}`
+   - `{{.Source}}`
+   - `{{.HDR}}`
+   - `{{.Season}}`
+   - `{{.Episode}}`
+   - `{{.Year}}`
+   - `{{.Month}}`
+   - `{{.Day}}`
+   - `{{.Hour}}`
+   - `{{.Minute}}`
+   - `{{.Second}}`
 
+And usable in the action fields for:
+
+   - Watch folder
+   - Label
+   - Tags
+   - Category
+   - Save Path
