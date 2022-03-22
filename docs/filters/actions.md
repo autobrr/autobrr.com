@@ -88,7 +88,7 @@ Takes a path to a writeable folder.
   - `{{.Minute}}`
   - `{{.Second}}`
 
-These variables are available to use in the following fields. Try out in the any of these exec fields.
+Try these variables out in the any of the following fields.
 
    - Watch folder
    - Label
@@ -96,6 +96,13 @@ These variables are available to use in the following fields. Try out in the any
    - Category
    - Save Path
    - Exec arguments
+
+These variables are implemented using the go template engine. This is an extremely powerful scripting platform that can perform operations, evaluations, and manipulate values at the user configuration level. Further information on the functionality of this platform can be found [here](https://pkg.go.dev/text/template).
+
+Simple examples of this extensive functionality can be found below.
+
+   - `{{ .TorrentName | js }}`
+   - `{{.Month | printf "%02d"}}`
 
 ### Custom commands / Exec
 
