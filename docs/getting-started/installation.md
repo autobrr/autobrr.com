@@ -37,7 +37,7 @@ This will extract both `autobrr` and `autobrrctl` to `/usr/local/bin`.
 
 ## Create config
 
-Create a config dir in your users home dir like `~/.config/autobrr`
+Create a config dir in your users home dir like `~/.config/autobrr`. Note! Default port was changed from 8989 to 7474.
 
 ```bash
 mkdir -p ~/.config/autobrr && touch ~/.config/autobrr/config.toml
@@ -56,9 +56,9 @@ host = "127.0.0.1"
 
 # Port
 #
-# Default: 8989
+# Default: 7474
 #
-port = 8989
+port = 7474
 
 # Base url
 # Set custom baseUrl eg /autobrr/ to serve in subdirectory.
@@ -138,7 +138,7 @@ systemctl enable -q --now autobrr
 
 ## Done
 
-Now it's up and running and you should be able to visit it at your `domain.ltd:8989` and login. Check next pages for further setup.
+Now it's up and running and you should be able to visit it at your `domain.ltd:7474` and login. Check next pages for further setup.
 
 ## Reverse proxy
 

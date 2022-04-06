@@ -47,7 +47,7 @@ services:
       - "traefik.http.routers.autobrr-http.entrypoints=http"
       - "traefik.http.routers.autobrr-http.middlewares=redirect-https"
       - "traefik.http.routers.autobrr-http.service=autobrr"
-      - "traefik.http.services.autobrr.loadbalancer.server.port=8989"
+      - "traefik.http.services.autobrr.loadbalancer.server.port=7474"
 ```
 
 ## Swag
@@ -87,7 +87,7 @@ server {
         include /config/nginx/resolver.conf;
         include /config/nginx/allowdeny.conf;
         set $upstream_app autobrr;
-        set $upstream_port 8989;
+        set $upstream_port 7474;
         set $upstream_proto http;
         proxy_pass $upstream_proto://$upstream_app:$upstream_port;
 
