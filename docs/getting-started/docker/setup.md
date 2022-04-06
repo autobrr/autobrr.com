@@ -36,12 +36,12 @@ services:
     volumes:
       - ${BASE_DOCKER_DATA_PATH}/autobrr/config:/config
     ports:
-      - 8989:8989
+      - 7474:7474
 ```
 
 ### Config
 
-You can either let autobrr create the config itself at startup, or create one manually.
+You can either let autobrr create the config itself at startup, or create one manually. Note! Default port was changed from 8989 to 7474.
 
 If done manually, here's a good start. Put this in the directory in the volume map, like `./data`. 
 
@@ -58,9 +58,9 @@ host = "0.0.0.0"
 
 # Port
 #
-# Default: 8989
+# Default: 7474
 #
-port = 8989
+port = 7474
 
 # Base url
 # Set custom baseUrl eg /autobrr/ to serve in subdirectory.
@@ -92,7 +92,7 @@ sessionSecret = "secret-session-key"
 
 ### Config options
 
-* `host`: Default: `0.0.0.0`. If running a reverse-proxy on the host, you could use `127.0.0.1` and have the portmap be `127.0.0.1:8989:8989` and let the RP handle the rest.
+* `host`: Default: `0.0.0.0`. If running a reverse-proxy on the host, you could use `127.0.0.1` and have the portmap be `127.0.0.1:7474:7474` and let the RP handle the rest.
 * `port`: If port already in use then change to a free one.
 * `baseUrl`: **`OPTIONAL`** It supports running on both the root url and in a subpath, as well as subdomain. Uncomment if needed.
 * `logPath`: **`OPTIONAL`** It can be useful to log to file, but probably better to let docker handle this.
