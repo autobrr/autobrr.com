@@ -17,6 +17,7 @@ When adding, updaing or removing actions on a filter, make sure to save.
   * Radarr
   * Sonarr
   * Lidarr
+  * Whisparr
   * Save to watch folder
   * Run custom commands
   * Test (logs result if matched. Does not download torrent files)
@@ -49,7 +50,7 @@ Available options:
 
 Built in re-announce will make sure it works with initially broken trackers.
 
-### Radarr, Sonarr and Lidarr
+### Radarr, Sonarr, Lidarr and Whisparr
 
 Autobrr supports the ability to push directly to the `*arr` suite of services.
 
