@@ -17,6 +17,7 @@ Available download clients are. For more info check [ Supported download clients
 * Radarr
 * Sonarr
 * Lidarr
+* Whisparr
 
 All clients have a test function to try out the connection details before saving.
 
@@ -83,6 +84,14 @@ You can define some basic rules which can improve your performance for racing et
 ## Lidarr
 
 - **Host**: Takes an ip or url with `http(s)`, eg `http://myserver.test/lidarr`
+- **Apikey**: Api key
+- **Basic auth**: Disabled by default. Some setups need it, others don't. Try without first.
+- **Username**: username
+- **Password**: password
+
+## Whisparr
+
+- **Host**: Takes an ip or url with `http(s)`, eg `http://myserver.test/whisparr`
 - **Apikey**: Api key
 - **Basic auth**: Disabled by default. Some setups need it, others don't. Try without first.
 - **Username**: username

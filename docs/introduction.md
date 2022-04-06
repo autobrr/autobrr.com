@@ -17,6 +17,7 @@ Autobrr monitors IRC announce channels to get releases as soon as they are avail
   * Radarr
   * Sonarr
   * Lidarr
+  * Whisparr
   * Save to watch folder
   * Run custom commands
 
