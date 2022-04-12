@@ -43,7 +43,7 @@ Currently supported indexers. Check for more info [ Supported indexers #1 ](http
   * TorrentDB
   * TorrentLeech
   * TorrentSeeds
-  * TorrentSyndicat
+  * TorrentSyndikat
   * TranceTraffic
   * UHDBits
 
