@@ -18,23 +18,32 @@ Currently supported indexers. Check for more info [ Supported indexers #1 ](http
   <summary>Indexers</summary>
 
   * AlphaRatio
+  * AnimeBytes
   * BeyondHD
   * BTN
+  * DanishBytes
+  * DigitalCore
   * EMP
   * FileList
   * GazelleGames
   * HD-Torrents
+  * HDBits
   * IPTorrents
   * MTV
   * Milkie
   * Nebulance
+  * Norbits
   * Orpheus
   * PTP
   * RED
+  * RevolutionTT
   * SuperBits
+  * TorrentBytes
   * TorrentDay
+  * TorrentDB
   * TorrentLeech
   * TorrentSeeds
+  * TorrentSyndicat
   * TranceTraffic
   * UHDBits
 
@@ -42,7 +51,7 @@ Currently supported indexers. Check for more info [ Supported indexers #1 ](http
 
 ## Setup
 
-Indexers usually need some keys to work. 
+Indexers usually need some keys to work.
 
 The common ones are:
 * `passkey`

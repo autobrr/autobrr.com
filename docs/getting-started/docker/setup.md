@@ -5,11 +5,11 @@ sidebar_position: 1
 
 # Docker-setup
 
-This guide expects some previous docker knowledge and an working environment.
+This guide expects some previous docker knowledge and a working environment.
 
 ## docker-compose
 
-`docker-compose` for autobrr. Modify if running with unRAID or settings up with Portainer.
+`docker-compose` for autobrr. Modify if running with unRAID or setting up with Portainer.
 
 * Logging is optional
 * Host port mapping might need to be changed to not collide with other apps
@@ -43,7 +43,7 @@ services:
 
 You can either let autobrr create the config itself at startup, or create one manually. Note! Default port was changed from 8989 to 7474.
 
-If done manually, here's a good start. Put this in the directory in the volume map, like `./data`. 
+If done manually, here's a good start. Put this in the directory in the volume map, like `./data`.
 
 Create data dir and config `mkdir data && touch data/config.toml`.
 
@@ -102,6 +102,6 @@ sessionSecret = "secret-session-key"
 ## Initial start
 
 1. Start the container `docker-compose up -d`
-2. Create a user: First exec into the container with `docker exec -it autobrr sh` 
-3. Then run the create user command: `autobrrctl --config /config create-user <USERNAME>`. Then exit out with `exit`
+2. Exec into the container with `docker exec -it autobrr sh`
+3. Run the create-user command: `autobrrctl --config /config create-user <USERNAME>`. Then exit out with `exit`
 4. Now you should be able to login with the newly created user.
