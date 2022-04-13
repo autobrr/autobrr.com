@@ -16,7 +16,7 @@ To set up notifications for Discord head to the `settings/notifications` tab.
 
 > You can enable all in the same agent or create separate agents for separate events.
 
-1. Add your Webhook URL
+4. Add your Webhook URL
 
 > Webhook URLs are created in Discord. Go to `Server Settings` in your Discord room and click `Integrations` followed by `Webhooks`. Click `New Webhook` and follow the steps.
 
