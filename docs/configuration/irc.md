@@ -6,6 +6,10 @@ sidebar_position: 2
 
 ## Introduction to IRC
 
+*Internet Relay Chat (IRC) is a text-based chat system for instant messaging. IRC is designed for group communication in discussion forums, called channels, but also allows one-on-one communication via private messages as well as chat and data transfer, including file sharing.*
+
+### Grouping nicks
+
 It is recommended to set up autobrr with a grouped irc-nick since you might want to talk in the other channels in a separate irc-client while autobrr monitors the announce-channels.
 
 The best way to do this is to first start up your favourite irc client.
@@ -20,19 +24,19 @@ When you first open the irc client it usually tells you to set up your nickname 
 
 Once that is out of the way and you have connected to the server, you can start talking to NickServ to register your nick.
 
-1. Register your main nick: `/msg NickServ REGISTER "password" "e-mail"` without the quotes.
+1. Register your main nick: `/msg NickServ REGISTER "password" "e-mail"` without the quotes
 
 Once that is done it's time to make your grouped nick that you will use with autobrr.
 
 2. Do `/nick "site-username|autodl"` without the quotes to change to the nick you want to use with autobrr
-3. Tell NickServ to group your nicks: `/msg NickServ GROUP "site-username" "password"` without the quotes.
+3. Tell NickServ to group your nicks: `/msg NickServ GROUP "site-username" "password"` without the quotes
 4. Change back to site-username: `/nick site-username`
 
 You have now successfully grouped your nicks and can safely connect autobrr to the irc network with `site-username|autodl` and still connect your `site-username` to your irc-client of choice if you want.
 
 ## Setup
 
-The initial setup of irc networks and channels are done during the setup of indexers.
+The initial setup of irc networks and channels are done during the setup of [indexers](../configuration/indexers.md).
 If you need to edit something, you can do it here after.
 
 If you for some reason need to setup a network you can do that in the `settings/irc` tab.
