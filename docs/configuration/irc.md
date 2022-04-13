@@ -38,7 +38,7 @@ You have now successfully grouped your nicks and can safely connect autobrr to t
 
 In some rare occurrences your bot might get banned from the IRC network. This can happen if the network suddenly changes how people are allowed to connect for example.
 
-Some networks won't require special authentication, while others do, but they could implement it at any time. If they do, and your bot isn't set up for it, it will just retry to join the channel into infinity on a set . The network owners might ban you in this case.
+Some networks won't require special authentication, while others do, but they could implement it at any time. If they do, and your bot isn't set up for it, it will just retry to join the channel into infinity on a set interval. The network owners might ban you in this case.
 
 Usually these things can often be resolved by contacting their support. Most trackers have a `#support`-channel as well as a ticket system on their site.
 
