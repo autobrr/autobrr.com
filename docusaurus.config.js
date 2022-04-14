@@ -75,7 +75,7 @@ const config = {
               },
               {
                 label: 'Getting started',
-                to: '/docs/getting-started/installation'
+                to: '/docs/getting-started/installation',
               },
               {
                 label: 'Filters',
@@ -105,7 +105,7 @@ const config = {
               },
               {
                 label: 'Donate',
-                href: 'https://github.com/sponsors/ludviglundgren'
+                href: 'https://github.com/sponsors/ludviglundgren',
               },
             ],
           },
