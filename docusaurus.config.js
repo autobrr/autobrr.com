@@ -74,6 +74,10 @@ const config = {
                 to: '/docs/introduction',
               },
               {
+                label: 'Getting started',
+                to: '/docs/getting-started/installation'
+              },
+              {
                 label: 'Filters',
                 to: '/docs/filters/basics',
               },
@@ -98,6 +102,10 @@ const config = {
               {
                 label: 'GitHub',
                 href: 'https://github.com/autobrr/autobrr',
+              },
+              {
+                label: 'Donate'
+                href: 'https://github.com/sponsors/ludviglundgren'
               },
             ],
           },
