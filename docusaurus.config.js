@@ -104,7 +104,7 @@ const config = {
                 href: 'https://github.com/autobrr/autobrr',
               },
               {
-                label: 'Donate'
+                label: 'Donate',
                 href: 'https://github.com/sponsors/ludviglundgren'
               },
             ],
