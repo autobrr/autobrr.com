@@ -26,12 +26,7 @@ const config = {
           // Please change this to your repo.
           editUrl: 'https://github.com/autobrr/autobrr.com/tree/main/',
         },
-        blog: {
-          showReadingTime: true,
-          // Please change this to your repo.
-          editUrl:
-            'https://github.com/autobrr/autobrr.com/tree/main/',
-        },
+        blog: false,
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
         },
