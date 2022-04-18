@@ -36,7 +36,12 @@ It is recommended to set up autobrr with a grouped IRC nick since you might want
 
 NickServ allows you to group two nicks to the same account in a few easy steps:
 
-1. Do `/nick site-username|autodl` to change to the nick you want to use with autobrr. Some trackers require the `|autodl` part.
+1. While connected to the IRC server with `site-username`, do `/nick site-username|autodl` to change to the nick you want autobrr to use.
+
+    :::tip Tip
+    Some trackers require the `|autodl` or `|bot` part to let you join the #announce channel. Others are fine with something like `user-bot` or `user_bot`. Some IRC networks won't even accept the pipe `|`. Your tracker wikis usually tells you what to use.
+    :::
+
 2. Ask NickServ to group your nicks: `/msg NickServ GROUP "site-username" "password"` without the quotes.
 3. Change back to your site-username: `/nick site-username`
 
