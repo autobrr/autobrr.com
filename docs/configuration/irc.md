@@ -18,16 +18,20 @@ Here are some free and open source options:
 * [HexChat](https://hexchat.github.io/) - Windows/Linux
 * [The Lounge](https://thelounge.chat) - A web based, self hosted option.
 
-When you first open the IRC client it usually tells you to set up your nickname and choose what server to connect to. You should preferably choose the username you use on the tracker(s) you want autobrr to monitor for this.
-
 Make sure your indexer is [supported by autobrr](../configuration/indexers.md) before proceeding.
 
-1. Connect to the IRC network using your IRC client of choice.
-2. Register your nick with NickServ: `/msg NickServ REGISTER "password" "e-mail"` without the quotes.
+### Registering with NickServ
 
-:::caution
+When you first open the IRC client it usually tells you to set up your nickname and choose what server to connect to. You should preferably choose the username you use on the tracker(s) you want autobrr to monitor for this.
+
+1. Connect to the IRC network using your IRC client of choice.
+2. Register your nick with NickServ: `/msg nickserv register PASSWORD EMAIL`
+
 The password should **not** match the one you use for logging in to the tracker.
 The e-mail address doesn't have to match either.
+
+:::caution
+If you do not plan to use grouped nicks (read the next section), make sure to disconnect from the IRC server in your IRC client before attempting to set it up in autobrr.
 :::
 
 ### Grouping nicks
@@ -36,16 +40,16 @@ It is recommended to set up autobrr with a grouped IRC nick since you might want
 
 NickServ allows you to group two nicks to the same account in a few easy steps:
 
-1. While connected to the IRC server with `site-username`, do `/nick site-username|autodl` to change to the nick you want autobrr to use.
+1. While connected to the IRC server with `username`, do `/nick USERNAME|AUTODL` to change to the nick you want autobrr to use.
 
     :::tip Tip
     Some trackers require the `|autodl` or `|bot` part to let you join the #announce channel. Others are fine with something like `user-bot` or `user_bot`. Some IRC networks won't even accept the pipe `|`. Your tracker wikis usually tells you what to use.
     :::
 
-2. Ask NickServ to group your nicks: `/msg NickServ GROUP "site-username" "password"` without the quotes.
-3. Change back to your site-username: `/nick site-username`
+2. Ask NickServ to group your nicks: `/msg nickserv group USERNAME PASSWORD`
+3. Change back to your username: `/nick USERNAME`
 
-You have now successfully grouped your nicks and can safely connect autobrr to the IRC network with `site-username|autodl` while using your `site-username` in another IRC client if you want.
+You have now successfully grouped your nicks and can safely connect autobrr to the IRC network with `username|autodl` while using `username` in another IRC client if you want.
 
 ### Getting banned on IRC
 
@@ -65,9 +69,9 @@ If you for some reason need to setup a network manually, or edit an existing one
 
 Before setup, make sure you have generated necessary keys for setup. Some networks have invite commands with extra keys. Some require to be registered with NickServ, while others don't. Trackers have documentation for the extra authentication protocols on their wiki.
 
-* If NickServ Password is marked as `*`, required, then you need to have a registered account on that IRC network.
-* If NickServ Account is marked as required, that's only used as nick, but supports NickServ auth.
-* The invite command field in `settings/irc/edit network` are pre filled and you only need to add your IRC key. The rest should be left as is.
+* If NickServ Password is marked `*` as required, then you need to have a registered account on that IRC network. See [registering with NickServ](#registering-with-nickserv) above.
+* If NickServ Account is marked `*` as required, that's only used as nick, but supports NickServ auth.
+* The invite command field in `settings/irc/edit network` are pre filled, but you need to add your IRC key. The rest should be left as is.
 
 :::caution Caution
 
