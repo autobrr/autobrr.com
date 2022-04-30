@@ -120,7 +120,7 @@ Then fill it with the following service definition
 ```systemd title="/etc/systemd/system/autobrr.service"
 [Unit]
 Description=autobrr service for username
-After=syslog.target network.target
+After=syslog.target network-online.target
 [Service]
 Type=simple
 User=username
