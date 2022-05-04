@@ -58,6 +58,9 @@ const config = {
           },
         ],
       },
+      colorMode: {
+        defaultMode: 'dark',
+      },
       footer: {
         style: 'dark',
         links: [
