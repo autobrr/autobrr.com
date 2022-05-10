@@ -62,7 +62,6 @@ const config = {
         defaultMode: 'dark',
       },
       footer: {
-        style: 'dark',
         links: [
           {
             title: 'Docs',
