@@ -6,6 +6,7 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import styles from './index.module.css';
 import HomepageFeatures from '../components/HomepageFeatures';
 import logo from '../../static/img/logo.png';
+import autobrrfront from '../../static/img/autobrr.png';
 
 function HomepageHeader() {
   const {siteConfig} = useDocusaurusContext();
@@ -19,10 +20,11 @@ function HomepageHeader() {
           <Link
             className="button button--secondary button--lg"
             to="/docs/introduction">
-            Get started
+            Get Started
           </Link>
         </div>
       </div>
+      <img src={autobrrfront} alt="autobrr" className={clsx("shadow-md", styles.image)}/>
     </header>
   );
 }
@@ -34,9 +36,9 @@ export default function Home() {
       title={`${siteConfig.title}`}
       description="autobrr">
       <HomepageHeader />
-      {/* <main>
+      {<main>
         <HomepageFeatures />
-      </main> */}
+      </main>}
     </Layout>
   );
 }

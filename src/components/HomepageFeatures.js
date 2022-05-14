@@ -4,32 +4,30 @@ import styles from './HomepageFeatures.module.css';
 
 const FeatureList = [
   {
-    title: 'Easy to Use',
-    Svg: require('../../static/img/undraw_docusaurus_mountain.svg').default,
+    title: 'Modern webUI',
+    Svg: require('../../static/img/webui.svg').default,
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+      autobrr was built with ease of use in mind.
       </>
     ),
   },
   {
-    title: 'Focus on What Matters',
-    Svg: require('../../static/img/undraw_docusaurus_tree.svg').default,
+    title: 'IRC and RSS monitoring',
+    Svg: require('../../static/img/feed.svg').default,
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        autobrr monitors IRC announce channels to get releases as soon as they are available with good filtering.
+        You can also monitor RSS feeds for indexers not having an annouce channel.
       </>
     ),
   },
   {
-    title: 'Powered by React',
-    Svg: require('../../static/img/undraw_docusaurus_react.svg').default,
+    title: 'Lightweight',
+    Svg: require('../../static/img/feather.svg').default,
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        Built on Go/React to be resource friendly. A modern single binary replacement for autodl-irssi+rutorrent plugin.
       </>
     ),
   },
