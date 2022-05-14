@@ -6,7 +6,7 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import styles from './index.module.css';
 import HomepageFeatures from '../components/HomepageFeatures';
 import logo from '../../static/img/logo.png';
-import autobrrfront from '../../static/img/autobrr.png';
+import autobrrfront from '../../static/img/autobrr-front.png';
 
 function HomepageHeader() {
   const {siteConfig} = useDocusaurusContext();
