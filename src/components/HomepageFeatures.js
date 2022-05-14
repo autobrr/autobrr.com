@@ -4,11 +4,12 @@ import styles from './HomepageFeatures.module.css';
 
 const FeatureList = [
   {
-    title: 'Modern webUI',
+    title: 'Modern interface',
     Svg: require('../../static/img/webui.svg').default,
     description: (
       <>
       autobrr was built with ease of use in mind.
+      Everything is managed via a modern, sleek user interface.
       </>
     ),
   },
