@@ -1,3 +1,7 @@
+---
+sidebar_position: 3
+---
+
 # Windows setup
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
