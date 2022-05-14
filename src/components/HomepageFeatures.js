@@ -4,7 +4,7 @@ import styles from './HomepageFeatures.module.css';
 
 const FeatureList = [
   {
-    title: 'Modern interface',
+    title: 'Modern user interface',
     Svg: require('../../static/img/webui.svg').default,
     description: (
       <>
@@ -24,7 +24,7 @@ const FeatureList = [
     ),
   },
   {
-    title: 'Lightweight',
+    title: 'Lightweight and fast',
     Svg: require('../../static/img/feather.svg').default,
     description: (
       <>
