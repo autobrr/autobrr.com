@@ -105,7 +105,7 @@ sessionSecret = "secret-session-key"
 3. Run the create-user command: `autobrrctl --config /config create-user <USERNAME>`. Then exit out with `exit`
 4. Now you should be able to login with the newly created user.
 
-## Reverse proxy
+## Reverse proxies
 
 ### Traefik
 
