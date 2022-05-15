@@ -28,3 +28,14 @@ Check your logs. Enable trace logging for more details.
 ## My /config is filled with .bk files! What is going on?
 
 You are likely using a third party script that backs up the database on every run. Do some house cleaning.
+
+## My autobrr instance cannot reach Deluge running in Docker
+
+If autobrr isn't reaching Deluge when running Docker you can try this:
+
+* `Host` should be the deluge container you're trying to reach, it will probably just be `deluge`.
+Make sure that your docker containers are on the same network, so they can reach each other. If you're using a single compose file, it should be by default.
+* `Port` should be the daemon port, not the webui port. Find the correct one by logging into Deluge webui, and checking in Preferences or under Connection Manager (default: 58846).
+* `Authentication` is required for deluge daemon, not the webui.
+It can be found at `/docker/appdata/deluge/auth`, the default one looks like `localclient:password:10`.
+You can add your own if you wish. Like `username:password:powerlevel`.
