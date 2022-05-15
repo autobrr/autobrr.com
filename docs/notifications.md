@@ -1,8 +1,8 @@
 ---
 sidebar_position: 5
+sidebar_label: Notifications
+title: Notifications
 ---
-
-# Notifications
 
 ## Discord
 

@@ -1,4 +1,8 @@
-# Windows setup
+---
+title: Windows
+sidebar_label: Windows
+sidebar_position: 3
+---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
@@ -53,7 +57,6 @@ Our final step is to **Run whether user is logged on or not** After you set this
 And we're done, a windows service has been created. Now right click on Autobrr in the list and click **Run.**
 
 <img src={useBaseUrl('/img/g.%20service%20created.png')} />
-
 
 :::tip
 

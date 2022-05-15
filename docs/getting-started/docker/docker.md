@@ -1,9 +1,7 @@
 ---
-title: "Docker"
+title: Docker setup
 sidebar_position: 1
 ---
-
-# Docker-setup
 
 This guide expects some previous docker knowledge and a working environment.
 
@@ -39,7 +37,7 @@ services:
       - 7474:7474
 ```
 
-### Config
+## Config
 
 You can either let autobrr create the config itself at startup, or create one manually. Note! Default port was changed from 8989 to 7474.
 

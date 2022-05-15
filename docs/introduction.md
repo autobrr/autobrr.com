@@ -4,8 +4,6 @@ sidebar_label: Introduction
 title: Introduction
 ---
 
-# Introduction
-
 autobrr monitors IRC announce channels and torznab RSS feeds to get releases as soon as they are available with good filtering. Built on Go/React to be resource friendly.
 
 A modern single binary replacement for autodl-irssi+rutorrent plugin.
@@ -21,7 +19,7 @@ A modern single binary replacement for autodl-irssi+rutorrent plugin.
   * qBittorrent
     * With built in reannounce
   * Deluge
-    * v1 and v2 support
+    * v1+ and v2 support
   * Radarr
   * Sonarr
   * Lidarr

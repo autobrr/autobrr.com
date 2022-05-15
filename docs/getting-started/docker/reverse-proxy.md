@@ -1,13 +1,12 @@
 ---
-title: "Reverse proxy"
+title: Reverse proxy
 sidebar_position: 2
+sidebar_label: Reverse proxy
 ---
-
-# Reverse proxies
 
 ## Traefik
 
-Traefik setup to run on subdomain. 
+Traefik setup to run on subdomain.
 
 * Needs an `.env` file with `DOMAIN` set, like `DOMAIN=something.local`
 * Expects an externally created network called `proxy`
@@ -19,7 +18,8 @@ Your config may be different so change accordingly.
 ```yaml title="docker-compose.yml"
 version: "3.7"
 
-networks:                                                                                                                                                                                                             proxy:
+networks:
+    proxy:
     external: true
 
 services:

@@ -1,8 +1,8 @@
 ---
+sidebar_label: Download clients
 sidebar_position: 3
+title: Download clients
 ---
-
-# Download clients
 
 Go to `settings/clients` to setup clients.
 

@@ -1,8 +1,8 @@
 ---
+sidebar_label: 3rd party scripts
 sidebar_position: 6
+title: 3rd party scripts
 ---
-
-# 3rd party scripts
 
 :::caution Caution
 
@@ -42,7 +42,6 @@ Installation:
 This script will backup the database ON EVERY RUN IT DOES, successful or not. You may need to go do some garbage collection every week in your autobrr directory.
 
 :::
-
 
 ## regbrr
 

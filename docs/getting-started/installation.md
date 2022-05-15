@@ -1,8 +1,8 @@
 ---
+sidebar_label: Installation
 sidebar_position: 1
+title: Installation
 ---
-
-# Installation
 
 :::tip
 
@@ -10,9 +10,8 @@ The easiest way to install it is via [swizzin.ltd/applications/autobrr](https://
 
 :::
 
-But if you don't run Swizzin you can of course still use it, with some setup.
-
-Follow instructions below for recommended setup on a regular linux server. For `docker` check [docker setup](./docker/setup.md).
+If you don't run Swizzin you can of course still use it, with some setup.
+Follow instructions below for recommended setup on a regular linux server. For `docker` and `Windows` check [docker setup](./docker/setup) and [windows setup](./windows).
 
 ## Download package
 
@@ -33,7 +32,6 @@ tar -C /usr/local/bin -xzf autobrr_0.9.0_linux_x86_64.tar.gz
 ```
 
 This will extract both `autobrr` and `autobrrctl` to `/usr/local/bin`.
-
 
 ## Create config
 
