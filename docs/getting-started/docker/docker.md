@@ -1,5 +1,6 @@
 ---
 title: Docker setup
+sidebar_label: Docker setup
 sidebar_position: 1
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: Windows
-sidebar_label: Windows
+sidebar_label: Windows setup
 sidebar_position: 3
 ---
 
