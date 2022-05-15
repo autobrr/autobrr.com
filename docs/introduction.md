@@ -10,28 +10,9 @@ A modern single binary replacement for autodl-irssi+rutorrent plugin.
 
 ## Features
 
-* Single binary + config for easy setup
-* Easy to use UI
-  * Mobile friendly
-* Powerful filtering
-  * Regex support
-* Available torrent actions:
-  * qBittorrent
-    * With built in reannounce
-  * Deluge
-    * v1+ and v2 support
-  * Radarr
-  * Sonarr
-  * Lidarr
-  * Whisparr
-  * Save to watch folder
-  * Run custom commands
-* 30+ supported indexers
-* Torznab RSS feeds
-* Postgres support
-* Notifications
-  * Discord
-  * Notifiarr
+import Features from '/snippets/features.mdx';
+
+<Features/>
 
 :::caution Notice
 
