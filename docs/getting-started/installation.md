@@ -134,10 +134,25 @@ Start the service. Enable will make it startup on reboot.
 systemctl enable -q --now autobrr
 ```
 
-## Done
-
-Now it's up and running and you should be able to visit it at your `domain.ltd:7474` and login. Check next pages for further setup.
-
 ## Reverse proxy
 
 It's recommended to run it behind a reverse proxy like nginx to get TLS and all that good stuff.
+
+This is an nginx example that should work for most:
+
+```nginx
+location /autobrr/ {
+    proxy_pass              http://$remote_user.autobrr;
+    proxy_http_version      1.1;
+    proxy_set_header        X-Forwarded-Host        $http_host;
+
+    auth_basic "What's the password?";
+    auth_basic_user_file /etc/htpasswd;
+
+    rewrite ^/autobrr/(.*) /$1 break;
+}
+```
+
+## Done
+
+Now it's up and running and you should be able to visit it at your `domain.ltd:7474` and login. Check next pages for further setup.
