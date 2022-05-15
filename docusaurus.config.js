@@ -62,6 +62,11 @@ const config = {
         defaultMode: 'dark',
       },
       footer: {
+        logo: {
+          alt: 'autobrr Logo',
+          src: 'img/logo-sm.png',
+          href: 'https://autobrr.com',
+        },
         links: [
           {
             title: 'Docs',
