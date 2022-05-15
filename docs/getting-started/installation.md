@@ -22,13 +22,13 @@ Check [latest releases](https://github.com/autobrr/autobrr/releases/latest) and 
 **Check for latest version!**
 
 ```bash
-wget https://github.com/autobrr/autobrr/releases/download/v0.9.0/autobrr_0.9.0_linux_x86_64.tar.gz
+wget https://github.com/autobrr/autobrr/releases/download/v0.23.1/autobrr_0.23.1_linux_x86_64.tar.gz
 ```
 
 Unpack. Run with `root` or `sudo`. If you don't have root or are on a shared system, place the binaries somewhere in your home dir like `~/.bin`
 
 ```bash
-tar -C /usr/local/bin -xzf autobrr_0.9.0_linux_x86_64.tar.gz
+tar -C /usr/local/bin -xzf autobrr_0.23.1_linux_x86_64.tar.gz
 ```
 
 This will extract both `autobrr` and `autobrrctl` to `/usr/local/bin`.
