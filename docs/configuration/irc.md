@@ -1,8 +1,8 @@
 ---
+sidebar_label: IRC
 sidebar_position: 2
+title: IRC
 ---
-
-# IRC
 
 IRC stands for Internet Relay Chat. It is a simple chat program. Autobrr has its own IRC client built in which let's it monitor the #announce channels without the need for additional software.
 
@@ -18,7 +18,7 @@ Here are some free and open source options:
 * [HexChat](https://hexchat.github.io/) - Windows/Linux
 * [The Lounge](https://thelounge.chat) - A web based, self hosted option.
 
-Make sure your indexer is [supported by autobrr](../configuration/indexers.md) before proceeding.
+Make sure your indexer is [supported by autobrr](../configuration/indexers) before proceeding.
 
 ### Registering with NickServ
 
@@ -41,13 +41,12 @@ It is recommended to set up autobrr with a grouped IRC nick since you might want
 NickServ allows you to group two nicks to the same account in a few easy steps:
 
 1. While connected to the IRC server with `username`, do `/nick USERNAME|AUTODL` to change to the nick you want autobrr to use.
-
-    :::tip Tip
-    Some trackers require the `|autodl` or `|bot` part to let you join the #announce channel. Others are fine with something like `user-bot` or `user_bot`. Some IRC networks won't even accept the pipe `|`. Your tracker wikis usually tells you what to use.
-    :::
-
 2. Ask NickServ to group your nicks: `/msg nickserv group USERNAME PASSWORD`
 3. Change back to your username: `/nick USERNAME`
+
+import Botnaming from '/snippets/botnaming.mdx';
+
+<Botnaming/>
 
 You have now successfully grouped your nicks and can safely connect autobrr to the IRC network with `username|autodl` while using `username` in another IRC client if you want.
 
@@ -63,7 +62,7 @@ You shouldn't need to worry about it, but it's nice now to know what you need to
 
 ## Setup
 
-The initial setup of IRC networks and channels are done during the setup of [indexers](../configuration/indexers.md).
+The initial setup of IRC networks and channels are done during the setup of [indexers](../configuration/indexers).
 
 If you for some reason need to setup a network manually, or edit an existing one, you can do that in the `settings/irc` tab.
 

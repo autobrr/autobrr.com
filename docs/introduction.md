@@ -1,25 +1,18 @@
 ---
 sidebar_position: 1
+sidebar_label: Introduction
+title: Introduction
 ---
 
-# Introduction
+autobrr monitors IRC announce channels and torznab RSS feeds to get releases as soon as they are available with good filtering. Built on Go/React to be resource friendly.
 
-Autobrr monitors IRC announce channels to get releases as soon as they are available with good filtering. Built on Go/React to be resource friendly. A modern single binary replacement for autodl-irssi+rutorrent plugin.
+A modern single binary replacement for autodl-irssi+rutorrent plugin.
 
 ## Features
 
-* Single binary + config for easy setup
-* Easy to use UI
-* Powerful filtering
-* Available torrent actions:
-  * qBittorrent
-  * Deluge
-  * Radarr
-  * Sonarr
-  * Lidarr
-  * Whisparr
-  * Save to watch folder
-  * Run custom commands
+import Features from '/snippets/features.mdx';
+
+<Features/>
 
 :::caution Notice
 

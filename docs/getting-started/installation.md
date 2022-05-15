@@ -1,8 +1,8 @@
 ---
+sidebar_label: Installation
 sidebar_position: 1
+title: Installation
 ---
-
-# Installation
 
 :::tip
 
@@ -10,9 +10,8 @@ The easiest way to install it is via [swizzin.ltd/applications/autobrr](https://
 
 :::
 
-But if you don't run Swizzin you can of course still use it, with some setup.
-
-Follow instructions below for recommended setup on a regular linux server. For `docker` check [docker setup](./docker/setup.md).
+If you don't run Swizzin you can of course still use it, with some setup.
+Follow instructions below for recommended setup on a regular linux server. For `docker` and `Windows` check [docker setup](./docker) and [windows setup](./windows).
 
 ## Download package
 
@@ -33,7 +32,6 @@ tar -C /usr/local/bin -xzf autobrr_0.9.0_linux_x86_64.tar.gz
 ```
 
 This will extract both `autobrr` and `autobrrctl` to `/usr/local/bin`.
-
 
 ## Create config
 
@@ -136,10 +134,25 @@ Start the service. Enable will make it startup on reboot.
 systemctl enable -q --now autobrr
 ```
 
-## Done
-
-Now it's up and running and you should be able to visit it at your `domain.ltd:7474` and login. Check next pages for further setup.
-
 ## Reverse proxy
 
 It's recommended to run it behind a reverse proxy like nginx to get TLS and all that good stuff.
+
+This is an nginx example that should work for most:
+
+```nginx
+location /autobrr/ {
+    proxy_pass              http://$remote_user.autobrr;
+    proxy_http_version      1.1;
+    proxy_set_header        X-Forwarded-Host        $http_host;
+
+    auth_basic "What's the password?";
+    auth_basic_user_file /etc/htpasswd;
+
+    rewrite ^/autobrr/(.*) /$1 break;
+}
+```
+
+## Done
+
+Now it's up and running and you should be able to visit it at your `domain.ltd:7474` and login. Check next pages for further setup.

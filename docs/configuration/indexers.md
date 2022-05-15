@@ -1,49 +1,17 @@
 ---
+title: Indexers
+sidebar_label: Indexers
 sidebar_position: 1
 ---
-
-# Indexers
 
 ## Supported indexers
 
 Check [Supported indexers #1](https://github.com/autobrr/autobrr/issues/1) on Github for more info.
 If you want more indexers added please either create a PR for it, post a comment on that issue or create a new one.
 
-<details>
-  <summary>Indexers</summary>
+import Indexers from '/snippets/indexers.mdx';
 
-  * AlphaRatio
-  * AnimeBytes
-  * BeyondHD
-  * Broadcasthenet
-  * DanishBytes
-  * DigitalCore
-  * Empornium
-  * FileList
-  * GazelleGames
-  * HD-Torrents
-  * HDBits
-  * IPTorrents
-  * Morethantv
-  * MyAnonamouse
-  * Milkie
-  * Nebulance
-  * Norbits
-  * Orpheus
-  * Passthepopcorn
-  * Redacted
-  * RevolutionTT
-  * SuperBits
-  * TorrentBytes
-  * TorrentDay
-  * TorrentDB
-  * TorrentLeech
-  * TorrentSeeds
-  * TorrentSyndikat
-  * TranceTraffic
-  * UHDBits
-
-</details>
+<Indexers/>
 
 ## Setup
 
