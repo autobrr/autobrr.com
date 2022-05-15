@@ -74,7 +74,7 @@ For TV and movies it's advised to use filters like `resolution`, `source` and `c
 ### Years
 
 * **Type:** Comma separated list
-* **Example:** `201,2020-2021`
+* **Example:** `2018,2020-2021`
 
 ### Seasons
 
