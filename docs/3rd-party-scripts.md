@@ -37,12 +37,6 @@ Installation:
 6. Setup the actions for each filter within autobrr.
 7. Run the script and setup a cronjob.
 
-:::caution note
-
-This script will backup the database ON EVERY RUN IT DOES, successful or not. You may need to go do some garbage collection every week in your autobrr directory.
-
-:::
-
 ## regbrr
 
 This is a script that will take input for filters, then match them against a set of pre-defined strings. If it finds a match in the filter name, it will update the respective filter. This was rewritten this way because some users have 4K/4K DV filters and want them to match without introducing additional variables. By using a bash array, as declared on line 3, we are able to specify a number of filters and loop through them.
@@ -59,9 +53,3 @@ Installation:
 4. Setup a cronjob. (Anticipated releases are fully changed every 7 days.)
 
 **There are no warranties or guarantees when running this script. It is your responsibility to ensure that all domains resolve correctly and that your database doesn't get messed up.**
-
-:::caution note
-
-This script will backup the database ON EVERY RUN IT DOES, successful or not. You may need to go do some garbage collection every week in your autobrr directory.
-
-:::

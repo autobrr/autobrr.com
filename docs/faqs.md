@@ -33,7 +33,3 @@ Make sure that your docker containers are on the same network, so they can reach
 * `Authentication` is required for deluge daemon, not the webui.
 It can be found at `/docker/appdata/deluge/auth`, the default one looks like `localclient:password:10`.
 You can add your own if you wish. Like `username:password:powerlevel`.
-
-## My config-directory is filled with .bk files! What is going on?
-
-You are likely using a third party script that backs up the database on every run. Do some house cleaning.
