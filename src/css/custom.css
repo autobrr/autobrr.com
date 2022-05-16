@@ -26,3 +26,15 @@
 html[data-theme='dark'] .docusaurus-highlight-code-line {
   background-color: rgba(0, 0, 0, 0.3);
 }
+
+html[data-theme='dark'] {
+  --ifm-background-color: rgb(24, 24, 27);
+  --ifm-background-surface-color: rgb(24, 24, 27);
+  --ifm-footer-background-color: rgb(27, 27, 32);
+}
+
+html[data-theme='light'] {
+  --ifm-background-color: rgb(255, 255, 255);
+  --ifm-background-surface-color: rgb(244, 244, 245);
+  --ifm-footer-background-color: rgb(244, 244, 245);
+}
