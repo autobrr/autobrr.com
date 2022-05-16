@@ -76,11 +76,11 @@ const config = {
             items: [
               {
                 label: 'Introduction',
-                to: '/docs/introduction',
+                to: '/introduction',
               },
               {
                 label: 'Filters',
-                to: '/docs/filters/basics',
+                to: '/filters',
               },
             ],
           },
