@@ -1,7 +1,8 @@
 ---
-sidebar_label: Installation
-sidebar_position: 1
+id: installation
 title: Installation
+sidebar_label: Installation
+slug: /getting-started
 ---
 
 :::tip
@@ -11,7 +12,7 @@ The easiest way to install it is via [swizzin.ltd/applications/autobrr](https://
 :::
 
 If you don't run Swizzin you can of course still use it, with some setup.
-Follow instructions below for recommended setup on a regular linux server. For `docker` and `Windows` check [docker setup](./docker) and [windows setup](./windows).
+Follow instructions below for recommended setup on a regular linux server. For `docker` and `Windows` check [docker setup](/getting-started/docker) and [windows setup](/getting-started/windows).
 
 ## Download package
 

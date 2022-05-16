@@ -1,7 +1,6 @@
 ---
 title: Docker
 sidebar_label: Docker setup
-sidebar_position: 2
 ---
 
 This guide expects some previous docker knowledge and a working environment.

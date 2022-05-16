@@ -6,7 +6,7 @@ title: Notifications
 
 ## Discord
 
-To set up notifications for Discord, head to the `settings/notifications` tab.
+To set up notifications for Discord, head to `Settings > Notifications`.
 
 1. Click **Add new**.
 2. Pick Discord in the list and give it a name.

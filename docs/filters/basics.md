@@ -1,7 +1,8 @@
 ---
+id: basics
+title: Filters
 sidebar_label: Basics
-sidebar_position: 1
-title: Basics
+slug: /filters/
 ---
 
 Most fields can take a comma separated list like `value1, value2`.

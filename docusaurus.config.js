@@ -25,8 +25,11 @@ const config = {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
           editUrl: 'https://github.com/autobrr/autobrr.com/tree/main/',
+          sidebarCollapsible: false,
+          routeBasePath: "/",
         },
         blog: false,
+
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
         },
@@ -46,7 +49,7 @@ const config = {
         items: [
           {
             type: 'doc',
-            docId: 'introduction',
+            docId: 'getting-started/installation',
             position: 'left',
             label: 'Docs',
           },

@@ -18,7 +18,11 @@ Here are some free and open source options:
 * [HexChat](https://hexchat.github.io/) - Windows/Linux
 * [The Lounge](https://thelounge.chat) - A web based, self hosted option.
 
-Make sure your indexer is [supported by autobrr](../configuration/indexers) before proceeding.
+Make sure your indexer is supported before proceeding.
+
+import Indexers from '/snippets/indexers.mdx';
+
+<Indexers/>
 
 ### Registering with NickServ
 

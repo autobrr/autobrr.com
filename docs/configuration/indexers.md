@@ -1,7 +1,8 @@
 ---
+id: indexers
 title: Indexers
 sidebar_label: Indexers
-sidebar_position: 1
+slug: /configuration/indexers
 ---
 
 ## Supported indexers
