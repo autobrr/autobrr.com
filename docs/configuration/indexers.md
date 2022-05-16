@@ -15,13 +15,12 @@ import Indexers from '/snippets/indexers.mdx';
 
 ## Setup
 
-Go to `settings/indexers` to add indexers.
+Go to `Settings > Indexers` to add indexers.
 
-When adding a new indexer, it sets up the IRC network and channels in the background.
-Please check the [IRC]( ./irc ) section for more details regarding NickServ, keys, and grouping of nicks.
+When adding a new indexer, it will set up the IRC network and channels in the background.
+Please check the [IRC]( ./irc ) section for more details regarding NickServ, IRC keys, and grouping of nicks.
 
-Indexers usually need some extra keys to work.
-
+Indexers usually need some extra keys to work.  
 The common ones are:
 
 * `passkey`
@@ -58,4 +57,4 @@ This should work if you have `/config` mapped to a volume which you hopefully ha
 
 1. Put the definition file to disk and place it in the folder you just entered in the config.
 2. Restart autobrr.
-3. Set up the indexer in `settings/indexers` as usual.
+3. Set up the indexer in `Settings > Indexers` as usual.
