@@ -3,6 +3,8 @@ id: installation
 title: Installation
 sidebar_label: Installation
 slug: /getting-started
+pagination_label: Getting Started
+pagination_next: configuration/indexers
 ---
 
 :::tip
@@ -11,10 +13,10 @@ The easiest way to install it is via [swizzin.ltd/applications/autobrr](https://
 
 :::
 
-If you don't run Swizzin you can of course still use it, with some setup.
-Follow instructions below for recommended setup on a regular linux server. For `docker` and `Windows` check [docker setup](/getting-started/docker) and [windows setup](/getting-started/windows).
+Follow instructions below for recommended setup on a regular linux server.  
+For docker and Windows, see our [docker setup](/getting-started/docker) and [windows setup](/getting-started/windows).
 
-## Download package
+### Download package
 
 Download the latest release, or download source and build yourself.
 

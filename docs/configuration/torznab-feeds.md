@@ -2,6 +2,7 @@
 sidebar_label: Torznab feeds
 sidebar_position: 4
 title: Torznab feeds
+pagination_label: Configuration - Torznab feeds
 ---
 
 Some indexers does not have an IRC announce channel.

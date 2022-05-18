@@ -3,6 +3,9 @@ id: indexers
 title: Indexers
 sidebar_label: Indexers
 slug: /configuration/indexers
+pagination_next: configuration/irc
+pagination_prev: getting-started/installation
+pagination_label: Configuration - Indexers
 ---
 
 ## Supported indexers

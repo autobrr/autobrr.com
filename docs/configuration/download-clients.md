@@ -2,6 +2,7 @@
 sidebar_label: Download clients
 sidebar_position: 3
 title: Download clients
+pagination_label: Configuration - Download clients
 ---
 
 Go to `Settings > Clients` to setup clients.  

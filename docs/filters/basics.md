@@ -1,8 +1,10 @@
 ---
 id: basics
-title: Filters
 sidebar_label: Basics
-slug: /filters/
+pagination_label: Filters - Basics
+slug: /filters
+pagination_next: filters/actions
+title: Filters
 ---
 
 Most fields can take a comma separated list like `value1, value2`.

@@ -2,6 +2,7 @@
 sidebar_label: IRC
 sidebar_position: 2
 title: IRC
+pagination_label: Configuration - IRC
 ---
 
 IRC stands for Internet Relay Chat. autobrr has its own IRC client built in which lets it monitor the #announce channels without the need for additional software.

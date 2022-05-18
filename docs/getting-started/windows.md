@@ -1,7 +1,8 @@
 ---
 title: Windows
 sidebar_label: Windows setup
-sidebar_position: 3
+pagination_prev: getting-started/installation
+pagination_next: configuration/indexers
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

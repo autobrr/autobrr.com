@@ -1,10 +1,12 @@
 ---
 title: Postgres
-sidebar_label: Postgres support
-sidebar_position: 4
+sidebar_label: Postgres (optional)
+id: postgres
+pagination_label: Postgres (Optional)
+pagination_prev: getting-started/installation
 ---
 
-To use autobrr with postgres, add this to your config.toml and restart:
+Using postgres is optional. If you want to use postgres with autobrr, add this to your config.toml and restart:
 
 ```toml
 # Database config

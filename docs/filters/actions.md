@@ -1,6 +1,6 @@
 ---
 sidebar_label: Actions
-sidebar_position: 2
+pagination_label: Filters - Actions
 title: Actions
 ---
 

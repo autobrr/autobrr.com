@@ -1,6 +1,7 @@
 ---
 title: Docker
 sidebar_label: Docker setup
+pagination_next: configuration/indexers
 ---
 
 This guide expects some previous docker knowledge and a working environment.
