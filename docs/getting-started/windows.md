@@ -5,6 +5,10 @@ pagination_prev: getting-started/installation
 pagination_next: configuration/indexers
 ---
 
+import { FaWindows } from 'react-icons/fa';
+
+# Windows <FaWindows />
+
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 In this setup we will create an autobrr user and a Windows service that operates in the background. This way we won't need to have a command prompt window open 24/7.
@@ -125,6 +129,10 @@ And we're done, a windows service has been created. Now right click on Autobrr i
 
 :::tip
 
-If you need to ever restart the service, within Task Scheduler you can click on End and Run on the right side bar.
+If you ever need to restart the service, within Task Scheduler you can click on End and Run on the right side bar.
 
 :::
+
+## Done
+
+Now it's up and running, and you should be able to visit it at your `domain.ltd:7474` and login. Check out the next pages for further setup.

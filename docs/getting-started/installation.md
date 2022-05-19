@@ -2,33 +2,46 @@
 id: installation
 title: Installation
 sidebar_label: Installation
-slug: /getting-started
-pagination_label: Getting Started
+pagination_label: Installation
 pagination_next: configuration/indexers
 ---
 
-:::tip
+import { FaDocker } from 'react-icons/fa';
+import { FaWindows } from 'react-icons/fa';
+import { SiPostgresql } from 'react-icons/si';
+import { FaLinux } from 'react-icons/fa';
 
-The easiest way to install it is via [swizzin.ltd/applications/autobrr](https://swizzin.ltd/applications/autobrr).
+# Installation <FaLinux />
 
-:::
+Welcome to the autobrr installation walkthrough!
+Follow these steps and we will have you up and running in no time.
 
 Follow instructions below for recommended setup on a regular linux server.  
-For docker and Windows, see our [docker setup](/getting-started/docker) and [windows setup](/getting-started/windows).
+For docker and Windows, see our [docker <FaDocker />](/getting-started/docker) and [windows <FaWindows />](/getting-started/windows) installation instructions.
+
+## Swizzin
+
+For swizzin users, simply run:
+
+```
+sudo box install autobrr
+```
+
+Remember to head over to our [Configuration Guide](/configuration/indexers) and set up your indexers, IRC, and download clients when you're ready.
+
+## Regular installation
 
 ### Download package
 
-Download the latest release, or download source and build yourself.
-
-Check [latest releases](https://github.com/autobrr/autobrr/releases/latest) and download the one for your system.
-
-**Check for latest version!**
+Download the latest release, or download [source](https://github.com/autobrr/autobrr/releases/latest) and build yourself.
 
 ```bash
-wget https://github.com/autobrr/autobrr/releases/download/v0.23.1/autobrr_0.23.1_linux_x86_64.tar.gz
+wget $(curl -s https://api.github.com/repos/autobrr/autobrr/releases/latest | grep download | grep linux_x86_64 | cut -d\" -f4)
 ```
 
-Unpack. Run with `root` or `sudo`. If you don't have root or are on a shared system, place the binaries somewhere in your home dir like `~/.bin`
+### Unpack
+
+Run with `root` or `sudo`. If you do not have root, or are on a shared system, place the binaries somewhere in your home directory like `~/.bin`.
 
 ```bash
 tar -C /usr/local/bin -xzf autobrr_0.23.1_linux_x86_64.tar.gz
@@ -36,15 +49,15 @@ tar -C /usr/local/bin -xzf autobrr_0.23.1_linux_x86_64.tar.gz
 
 This will extract both `autobrr` and `autobrrctl` to `/usr/local/bin`.
 
-## Create config
+### Create config
 
-Create a config dir in your users home dir like `~/.config/autobrr`. Note! Default port was changed from 8989 to 7474.
+Create a config directory in your users home directory like `~/.config/autobrr`.
 
 ```bash
 mkdir -p ~/.config/autobrr && touch ~/.config/autobrr/config.toml
 ```
 
-Add config
+#### Add config
 
 ```toml
 # config.toml
@@ -89,7 +102,7 @@ logLevel = "TRACE"
 sessionSecret = "secret-session-key"
 ```
 
-### Config options
+#### Config options
 
 * `host`: If not using a reverse proxy, change to `0.0.0.0`.
 * `port`: If port already in use then change to a free one.
@@ -106,7 +119,7 @@ To create the initial database and a user, you need to use `autobrrctl`. Point `
 autobrrctl --config ~/.config/autobrr create-user USERNAME
 ```
 
-## Systemd
+### Systemd
 
 This is the recommended way to run autobrr on linux based systems.
 
@@ -158,4 +171,4 @@ location /autobrr/ {
 
 ## Done
 
-Now it's up and running and you should be able to visit it at your `domain.ltd:7474` and login. Check next pages for further setup.
+Now it's up and running, and you should be able to visit it at your `domain.ltd:7474` and login. Check out the next pages for further setup.

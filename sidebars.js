@@ -8,7 +8,7 @@ module.exports = {
     {
       type: "category",
       label: "Getting Started",
-      link: {type: 'doc', id: 'getting-started/installation'},
+      link: {type: 'doc', id: 'getting-started/getting-started'},
       collapsed: false,
       items: [
           "getting-started/installation",
@@ -20,8 +20,8 @@ module.exports = {
     {
       type: "category",
       label: "Configuration",
-      link: {type: 'doc', id: 'configuration/indexers'},
       collapsed: false,
+      link: {type: 'doc', id: 'configuration/configuration'},
       items: [
           "configuration/indexers",
           "configuration/irc",

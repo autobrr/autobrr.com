@@ -5,8 +5,13 @@ title: Torznab feeds
 pagination_label: Configuration - Torznab feeds
 ---
 
+import { MdRssFeed } from 'react-icons/md';
+
+# Torznab feeds <MdRssFeed />
+
 Some indexers does not have an IRC announce channel.
-Luckily, most have RSS support. You will treat torznab feeds as regular indexers when setting up your filters.
+Luckily, most of them have RSS support.  
+You will treat torznab feeds as regular indexers when setting up your filters.
 
 ## Setup
 

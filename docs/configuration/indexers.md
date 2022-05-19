@@ -8,10 +8,16 @@ pagination_prev: getting-started/installation
 pagination_label: Configuration - Indexers
 ---
 
+import { CgWebsite } from 'react-icons/cg';
+
+# Indexers <CgWebsite />
+
 ## Supported indexers
 
+:::info
 Check [Supported indexers #1](https://github.com/autobrr/autobrr/issues/1) on Github for more info.
 If you want more indexers added please either create a PR for it, post a comment on that issue or create a new one.
+:::
 
 import Indexers from '/snippets/indexers.mdx';
 

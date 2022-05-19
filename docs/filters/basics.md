@@ -7,6 +7,10 @@ pagination_next: filters/actions
 title: Filters
 ---
 
+import { HiOutlineFilter } from 'react-icons/hi';
+
+# Filters <HiOutlineFilter />
+
 Most fields can take a comma separated list like `value1, value2`.
 
 The comma separated lists supports wildcards, where `*` means 0 or more characters and `?` means exactly one character. Like `*this*,that?movie`.
