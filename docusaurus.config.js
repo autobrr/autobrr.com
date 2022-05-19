@@ -80,6 +80,10 @@ const config = {
                 label: 'Filters',
                 to: '/filters',
               },
+              {
+                label: 'FAQs',
+                to: '/faqs',
+              },
             ],
           },
           {
@@ -105,7 +109,7 @@ const config = {
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} autobrr`,
+        copyright: `Copyright © ${new Date().getFullYear()} autobrr. All rights reserved.`,
       },
       prism: {
         theme: lightCodeTheme,

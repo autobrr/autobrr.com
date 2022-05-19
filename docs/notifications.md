@@ -4,9 +4,9 @@ sidebar_label: Notifications
 title: Notifications
 ---
 
-import { IoIosNotifications } from 'react-icons/io';
+import { IoMdNotificationsOutline } from 'react-icons/io';
 
-# Notifications <IoIosNotifications />
+# Notifications <IoMdNotificationsOutline />
 
 ## Discord
 

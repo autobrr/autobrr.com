@@ -200,3 +200,7 @@ server {
     }
 }
 ```
+
+## Done
+
+Now it's up and running, and you should be able to visit it at your `domain.ltd:7474` and login. Check out the next pages for further setup.

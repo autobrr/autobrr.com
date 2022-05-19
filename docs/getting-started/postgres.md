@@ -4,6 +4,7 @@ sidebar_label: Postgres (optional)
 id: postgres
 pagination_label: Postgres (Optional)
 pagination_prev: getting-started/installation
+pagination_next: configuration/indexers
 ---
 
 import { SiPostgresql } from 'react-icons/si';
@@ -12,7 +13,7 @@ import { SiPostgresql } from 'react-icons/si';
 
 Using postgres is optional. If you want to use postgres with autobrr, add this to your config.toml and restart:
 
-```toml
+```toml title="config.toml"
 # Database config
 #
 databaseType = "postgres"

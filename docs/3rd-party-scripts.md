@@ -21,13 +21,17 @@ Essentially, you setup the variables and run it on a crontab. It will then check
 
 Please read the code being run, do not put this directly into a terminal without understanding what it does.
 
-* `arrbrr_swizzin.sh` is meant for installs with a baseurl.
-* `arrbrr_docker.sh` is meant for installs with no baseurl.
+### Download the script
 
-`arrbrr_swizzin.sh` and `arrbrr_docker.sh` can be found [here](https://gist.github.com/brettpetch/9475c9117e0d58791c02587529786ad9).
-For Synology and others not having iconv please use [this](https://gist.github.com/quorn23/222a62c7c6141eabde18f8a1f626b0de) instead.
+`arrbrr_swizzin.sh` and `arrbrr_docker.sh` can be found [here <AiFillGithub />](https://gist.github.com/brettpetch/9475c9117e0d58791c02587529786ad9)  
+For Synology and others not having iconv please use [this <AiFillGithub />](https://gist.github.com/quorn23/222a62c7c6141eabde18f8a1f626b0de)
 
-Installation:
+:::info
+`arrbrr_swizzin.sh` is meant for installs with a baseurl.  
+`arrbrr_docker.sh` is meant for installs with no baseurl.
+:::
+
+### Installation
 
 1. Create filters in autobrr with names that `arrbrr.sh` can match.
 2. Set the path for the autobrr database in `arrbrr.sh`.
@@ -43,9 +47,13 @@ This is a script that will take input for filters, then match them against a set
 
 The script basically pulls anticipated and popular titles from a source, and then feeds them into your assigned filters.
 
-`regbrr.sh` can be found [here](https://gist.github.com/brettpetch/2f3147eaff75294003261df9dfd0208a).
+### Download the script
 
-Installation:
+import { AiFillGithub } from 'react-icons/ai';
+
+`regbrr.sh` can be found [here <AiFillGithub />](https://gist.github.com/brettpetch/2f3147eaff75294003261df9dfd0208a)
+
+### Installation
 
 1. Create the filters in autobrr. (here we use the examples of race-TV, race-TV4K, race-TVDV, race-Movies, race-Movies4K, race-MoviesDV, race-BluRay, race-BluRay4K, race-BluRayDV)
 2. Run the script.
