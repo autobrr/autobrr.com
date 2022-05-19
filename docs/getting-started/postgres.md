@@ -6,6 +6,10 @@ pagination_label: Postgres (Optional)
 pagination_prev: getting-started/installation
 ---
 
+import { SiPostgresql } from 'react-icons/si';
+
+# Postgres <SiPostgresql />
+
 Using postgres is optional. If you want to use postgres with autobrr, add this to your config.toml and restart:
 
 ```toml

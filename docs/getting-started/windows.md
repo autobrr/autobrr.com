@@ -5,6 +5,10 @@ pagination_prev: getting-started/installation
 pagination_next: configuration/indexers
 ---
 
+import { FaWindows } from 'react-icons/fa';
+
+# Windows <FaWindows />
+
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 In this setup we will create an autobrr user and a Windows service that operates in the background. This way we won't need to have a command prompt window open 24/7.

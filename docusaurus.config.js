@@ -1,10 +1,5 @@
-// @ts-check
-// Note: type annotations allow type checking and IDEs autocompletion
-
 const lightCodeTheme = require('prism-react-renderer/themes/github');
 const darkCodeTheme = require('prism-react-renderer/themes/dracula');
-
-/** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'autobrr',
   tagline: 'the modern autodl-irssi replacement',
@@ -19,7 +14,6 @@ const config = {
   presets: [
     [
       'classic',
-      /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
@@ -38,7 +32,6 @@ const config = {
   ],
 
   themeConfig:
-    /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       navbar: {
         title: 'autobrr',
@@ -56,8 +49,9 @@ const config = {
           // {to: '/blog', label: 'Blog', position: 'left'},
           {
             href: 'https://github.com/autobrr/autobrr',
-            label: 'GitHub',
             position: 'right',
+            className: 'header-github-link',
+            'aria-label': 'GitHub repository',
           },
         ],
       },
@@ -77,6 +71,10 @@ const config = {
               {
                 label: 'Introduction',
                 to: '/introduction',
+              },
+              {
+                label: 'Getting Started',
+                to: '/getting-started',
               },
               {
                 label: 'Filters',
@@ -107,7 +105,7 @@ const config = {
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} autobrr Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} autobrr`,
       },
       prism: {
         theme: lightCodeTheme,

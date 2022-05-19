@@ -7,6 +7,10 @@ pagination_label: Getting Started
 pagination_next: configuration/indexers
 ---
 
+import { FaLinux } from 'react-icons/fa';
+
+# Installation <FaLinux />
+
 :::tip
 
 The easiest way to install it is via [swizzin.ltd/applications/autobrr](https://swizzin.ltd/applications/autobrr).

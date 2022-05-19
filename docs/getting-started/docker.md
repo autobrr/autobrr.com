@@ -3,6 +3,9 @@ title: Docker
 sidebar_label: Docker setup
 pagination_next: configuration/indexers
 ---
+import { FaDocker } from 'react-icons/fa';
+
+# Docker <FaDocker />
 
 This guide expects some previous docker knowledge and a working environment.
 

@@ -4,6 +4,10 @@ sidebar_label: Notifications
 title: Notifications
 ---
 
+import { IoIosNotifications } from 'react-icons/io';
+
+# Notifications <IoIosNotifications />
+
 ## Discord
 
 To set up notifications for Discord, head to `Settings > Notifications`.

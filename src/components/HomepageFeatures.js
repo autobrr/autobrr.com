@@ -19,7 +19,7 @@ const FeatureList = [
     description: (
       <>
         autobrr monitors IRC announce channels to get releases as soon as they are available with good filtering.
-        You can also monitor RSS feeds for indexers not having an annouce channel.
+        You can also monitor RSS feeds for indexers not having an announce channel.
       </>
     ),
   },
@@ -28,7 +28,7 @@ const FeatureList = [
     Svg: require('../../static/img/feather.svg').default,
     description: (
       <>
-        Built on Go/React to be resource friendly. A modern single binary replacement for autodl-irssi+rutorrent plugin.
+        Built on Go/React to be resource friendly. A modern, single binary replacement for autodl-irssi+rutorrent plugin.
       </>
     ),
   },
