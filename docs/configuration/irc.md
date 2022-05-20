@@ -2,15 +2,20 @@
 sidebar_label: IRC
 sidebar_position: 2
 title: IRC
+pagination_label: Configuration - IRC
 ---
 
-IRC stands for Internet Relay Chat. It is a simple chat program. Autobrr has its own IRC client built in which let's it monitor the #announce channels without the need for additional software.
+import { BsChatDotsFill } from 'react-icons/bs';
+
+# IRC <BsChatDotsFill />
+
+IRC stands for Internet Relay Chat. autobrr has its own IRC client built in which lets it monitor the #announce channels without the need for additional software.
 
 ## Prerequisites
 
 You need a registered nick on most IRC servers to be able to join channels. We will set up a registered user in a few easy steps.
-You need a separate IRC client to do this.
 
+You need a separate IRC client to do this.
 Here are some free and open source options:
 
 * [Konversation](https://konversation.kde.org/) - Linux
@@ -18,7 +23,11 @@ Here are some free and open source options:
 * [HexChat](https://hexchat.github.io/) - Windows/Linux
 * [The Lounge](https://thelounge.chat) - A web based, self hosted option.
 
-Make sure your indexer is [supported by autobrr](../configuration/indexers) before proceeding.
+Make sure your indexer is supported before proceeding.
+
+import Indexers from '/snippets/indexers.mdx';
+
+<Indexers/>
 
 ### Registering with NickServ
 
@@ -38,15 +47,15 @@ If you do not plan to use grouped nicks (read the next section), make sure to di
 
 It is recommended to set up autobrr with a grouped IRC nick since you might want to talk in the other channels in a separate IRC client while autobrr monitors the #announce channel.
 
+import Botnaming from '/snippets/botnaming.mdx';
+
+<Botnaming/>
+
 NickServ allows you to group two nicks to the same account in a few easy steps:
 
 1. While connected to the IRC server with `username`, do `/nick USERNAME|AUTODL` to change to the nick you want autobrr to use.
 2. Ask NickServ to group your nicks: `/msg nickserv group USERNAME PASSWORD`
 3. Change back to your username: `/nick USERNAME`
-
-import Botnaming from '/snippets/botnaming.mdx';
-
-<Botnaming/>
 
 You have now successfully grouped your nicks and can safely connect autobrr to the IRC network with `username|autodl` while using `username` in another IRC client if you want.
 
@@ -64,20 +73,20 @@ You shouldn't need to worry about it, but it's nice now to know what you need to
 
 The initial setup of IRC networks and channels are done during the setup of [indexers](../configuration/indexers).
 
-If you for some reason need to setup a network manually, or edit an existing one, you can do that in the `settings/irc` tab.
+If you for some reason need to setup a network manually, or edit an existing one, you can do that in `Settings > IRC`.
 
-Before setup, make sure you have generated necessary keys for setup. Some networks have invite commands with extra keys. Some require to be registered with NickServ, while others don't. Trackers have documentation for the extra authentication protocols on their wiki.
+Before setup, make sure you have generated the necessary keys. Some networks have invite commands with extra keys. Some require you to be registered with NickServ (see [registering with NickServ](#registering-with-nickserv)). Trackers have documentation for the extra authentication protocols in their wiki pages.
 
 * If NickServ Password is marked `*` as required, then you need to have a registered account on that IRC network. See [registering with NickServ](#registering-with-nickserv) above.
 * If NickServ Account is marked `*` as required, that's only used as nick, but supports NickServ auth.
-* The invite command field in `settings/irc/edit network` are pre filled, but you need to add your IRC key. The rest should be left as is.
+* The invite command field in `Settings > IRC > Edit network` are pre filled, but you need to add your IRC key. The rest should be left as is.
 
 :::caution Caution
 
 Quite a few indexers use the same network, specifically `irc.p2p-network.net`.
 
-* If you have the same nick on multiple of them, it will reuse the same connection.
-* If you have more than one nick on the same network in will create a new connection.
+* If you use the same nick with multiple indexers, it will reuse the same connection for them.
+* If you have more than one nick on the same network in will create a new connection for each.
 
 Adding or removing `indexers/networks/channels` can therefore break things.
 

@@ -1,13 +1,23 @@
 ---
+id: indexers
 title: Indexers
 sidebar_label: Indexers
-sidebar_position: 1
+slug: /configuration/indexers
+pagination_next: configuration/irc
+pagination_prev: getting-started/installation
+pagination_label: Configuration - Indexers
 ---
+
+import { CgWebsite } from 'react-icons/cg';
+
+# Indexers <CgWebsite />
 
 ## Supported indexers
 
+:::info
 Check [Supported indexers #1](https://github.com/autobrr/autobrr/issues/1) on Github for more info.
 If you want more indexers added please either create a PR for it, post a comment on that issue or create a new one.
+:::
 
 import Indexers from '/snippets/indexers.mdx';
 
@@ -15,13 +25,12 @@ import Indexers from '/snippets/indexers.mdx';
 
 ## Setup
 
-Go to `settings/indexers` to add indexers.
+Go to `Settings > Indexers` to add indexers.
 
-When adding a new indexer, it sets up the IRC network and channels in the background.
-Please check the [IRC]( ./irc ) section for more details regarding NickServ, keys, and grouping of nicks.
+When adding a new indexer, it will set up the IRC network and channels in the background.
+Please check the [IRC]( ./irc ) section for more details regarding NickServ, IRC keys, and grouping of nicks.
 
-Indexers usually need some extra keys to work.
-
+Indexers usually need some extra keys to work.  
 The common ones are:
 
 * `passkey`
@@ -58,4 +67,4 @@ This should work if you have `/config` mapped to a volume which you hopefully ha
 
 1. Put the definition file to disk and place it in the folder you just entered in the config.
 2. Restart autobrr.
-3. Set up the indexer in `settings/indexers` as usual.
+3. Set up the indexer in `Settings > Indexers` as usual.

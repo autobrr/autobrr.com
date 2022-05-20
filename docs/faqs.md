@@ -6,7 +6,7 @@ title: FAQs
 
 ## I have set up an indexer, but it does not connect to the #announce channel. What do I do?
 
-Make sure you have entered the necessary keys in the invite command and that your IRC user has privileges to access to the #announce channel. See [IRC setup](/docs/configuration/irc).
+Make sure you have entered the necessary keys in the invite command and that your IRC user has privileges to access to the #announce channel. See [IRC setup](/configuration/irc).
 
 import Botnaming from '/snippets/botnaming.mdx';
 
@@ -33,7 +33,3 @@ Make sure that your docker containers are on the same network, so they can reach
 * `Authentication` is required for deluge daemon, not the webui.
 It can be found at `/docker/appdata/deluge/auth`, the default one looks like `localclient:password:10`.
 You can add your own if you wish. Like `username:password:powerlevel`.
-
-## My config-directory is filled with .bk files! What is going on?
-
-You are likely using a third party script that backs up the database on every run. Do some house cleaning.

@@ -1,8 +1,11 @@
 ---
 title: Docker
 sidebar_label: Docker setup
-sidebar_position: 2
+pagination_next: configuration/indexers
 ---
+import { FaDocker } from 'react-icons/fa';
+
+# Docker <FaDocker />
 
 This guide expects some previous docker knowledge and a working environment.
 
@@ -197,3 +200,7 @@ server {
     }
 }
 ```
+
+## Done
+
+Now it's up and running, and you should be able to visit it at your `domain.ltd:7474` and login. Check out the next pages for further setup.

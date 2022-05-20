@@ -1,8 +1,15 @@
 ---
+id: basics
 sidebar_label: Basics
-sidebar_position: 1
-title: Basics
+pagination_label: Filters - Basics
+slug: /filters
+pagination_next: filters/actions
+title: Filters
 ---
+
+import { HiOutlineFilter } from 'react-icons/hi';
+
+# Filters <HiOutlineFilter />
 
 Most fields can take a comma separated list like `value1, value2`.
 
