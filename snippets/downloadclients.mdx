@@ -1,33 +1,43 @@
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-import CodeBlock from "@theme/CodeBlock";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
 
-<Tabs
-  defaultValue="qbittorrent"
-  values={[
-    {label: 'qBittorrent', value: 'qbittorrent'},
-    {label: 'Deluge', value: 'deluge'},
-    {label: '\*arr suite', value: 'radarr'},
-  ]}>
-  
-  <TabItem value="qbittorrent"><CodeBlock children="Host: Takes an IP or URL without http(s), eg. myserver.test.
+<Tabs>
+<TabItem value="qbittorrent" label="qBittorrent">
+
+```
+Host: Takes an IP or URL without http(s), eg. myserver.test.
 Port: <WebUI port>
 SSL: Use this if the server is on https. It's usually not the case.
 Username: <username>
-Password: <password>" lang="plaintext"></CodeBlock></TabItem>
-  
-  <TabItem value="deluge"><CodeBlock children="Host: Takes an IP or URL without http(s), eg. myserver.test.
+Password: <password>
+```
+
+</TabItem>
+
+<TabItem value="deluge" label="Deluge">
+
+```
+Host: Takes an IP or URL without http(s), eg. myserver.test.
 Port: <daemon port>
 SSL: Use this if the server is on https. It's usually not the case.
 Username: <username>
-Password: <password>" lang="plaintext"></CodeBlock></TabItem>
-  
-  <TabItem value="radarr"><CodeBlock children="Host: Takes an IP or URL with http(s), eg http://server.test/radarr
+Password: <password>
+```
+
+</TabItem>
+
+<TabItem value="arr suite" label="*arr suite">
+
+```
+Host: Takes an IP or URL with http(s), eg http://server.test/radarr
 API key: <API key>
 Basic auth: Disabled by default.
 Username: <username>
-Password: <password>" lang="plaintext"></CodeBlock></TabItem>
-   
-   <TabItem value="radarr"><CodeBlock children="Some setups need basic auth, others don't. Try without first." lang="plaintext"></CodeBlock></TabItem>
+Password: <password>
+
+Some setups need basic auth, others don't. Try without first.
+```
+
+</TabItem>
 
 </Tabs>

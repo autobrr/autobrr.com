@@ -2,7 +2,7 @@
 sidebar_position: 1
 sidebar_label: Introduction
 title: Introduction
-pagination_next: getting-started/installation
+pagination_next: getting-started/getting-started
 ---
 
 autobrr is a modern single binary replacement for the autodl-irssi+rutorrent plugin.  

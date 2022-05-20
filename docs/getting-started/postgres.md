@@ -2,9 +2,9 @@
 title: Postgres
 sidebar_label: Postgres (optional)
 id: postgres
-pagination_label: Postgres (Optional)
-pagination_prev: getting-started/installation
-pagination_next: configuration/indexers
+pagination_label: Postgres (optional)
+pagination_prev: getting-started/getting-started
+pagination_next: configuration/configuration
 ---
 
 import { SiPostgresql } from 'react-icons/si';
