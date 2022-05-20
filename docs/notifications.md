@@ -2,6 +2,7 @@
 sidebar_position: 5
 sidebar_label: Notifications
 title: Notifications
+pagination_prev: filters/basics
 ---
 
 import { IoMdNotificationsOutline } from 'react-icons/io';

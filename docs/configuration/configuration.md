@@ -2,8 +2,8 @@
 id: configuration
 title: Configuration
 sidebar_label: Configuration
-pagination_next: null
-pagination_prev: null
+pagination_prev: getting-started/getting-started
+custom_edit_url: null
 ---
 
 import { FaDownload } from 'react-icons/fa';
@@ -20,10 +20,10 @@ Make sure to read through all of the articles as all of them have some important
 
 ## Configurable options
 
-* [Indexers <CgWebsite />](./indexers)
-* [IRC <BsChatDotsFill />](./irc)
-* [Download Clients <FaDownload />](./download-clients)
-* [Torznab Feeds <MdRssFeed />](./torznab-feeds)
+- [Indexers <CgWebsite />](./indexers)
+- [IRC <BsChatDotsFill />](./irc)
+- [Download Clients <FaDownload />](./download-clients)
+- [Torznab Feeds <MdRssFeed />](./torznab-feeds)
 
 ## Additional Help
 

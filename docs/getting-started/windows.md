@@ -1,8 +1,8 @@
 ---
 title: Windows
 sidebar_label: Windows setup
-pagination_prev: getting-started/installation
-pagination_next: configuration/indexers
+pagination_prev: getting-started/getting-started
+pagination_next: configuration/configuration
 ---
 
 import { FaWindows } from 'react-icons/fa';
@@ -72,16 +72,16 @@ sessionSecret = "secret-session-key"
 
 ### Config options
 
-* `host`: If not using a reverse proxy, change to `0.0.0.0`.
-* `port`: If port already in use then change to a free one.
-* `baseUrl`: **`OPTIONAL`** It supports running on both the root url and in a subpath, as well as subdomain. Uncomment if needed.
-* `logPath`: **`OPTIONAL`** It can be useful to log to file. If running with systemd you can use `journalctl` to check logs. It has built in logrotation to not fill up disk.
-* `logLevel`: Choose how much log output you want to see. Needs a restart to take effect.
-* `sessionSecret`: Used for session cookies. Change to something more random like a `UUID`.
+- `host`: If not using a reverse proxy, change to `0.0.0.0`.
+- `port`: If port already in use then change to a free one.
+- `baseUrl`: **`OPTIONAL`** It supports running on both the root url and in a subpath, as well as subdomain. Uncomment if needed.
+- `logPath`: **`OPTIONAL`** It can be useful to log to file. If running with systemd you can use `journalctl` to check logs. It has built in log rotation to not fill up disk.
+- `logLevel`: Choose how much log output you want to see. Needs a restart to take effect.
+- `sessionSecret`: Used for session cookies. Change to something more random like a `UUID`.
 
 ## Create autobrr user
 
-If you skip this step you won't be able to login to Autobrr, so lets quickly get a user made.
+If you skip this step you won't be able to login to autobrr, so lets quickly get a user made.
 
 Inside the autobrr folder, **hold shift and right click** on an empty area. You can then see **Open PowerShell window here**. Yours might say Command Prompt.
 
@@ -103,9 +103,9 @@ Press your windows key and search for **Task Scheduler** and lets **Create basic
 
 <img src={useBaseUrl('/img/a.%20create%20basic%20task.png')} />
 
-Add a name, this will show up in the Task Scheduler. Feel free to add the Autorbrr description if you'd like.
+Add a name, this will show up in the Task Scheduler. Feel free to add the autobrr description if you'd like.
 
-> Autobrr monitors IRC announce channels to get releases as soon as they are available with good filtering.
+> autobrr monitors IRC announce channels to get releases as soon as they are available with good filtering.
 
 <img src={useBaseUrl('/img/b.%20name%20task.png')} />
 
@@ -123,7 +123,7 @@ Our final step is to **Run whether user is logged on or not** After you set this
 
 <img src={useBaseUrl('/img/f.%20properties.png')} />
 
-And we're done, a windows service has been created. Now right click on Autobrr in the list and click **Run.**
+And we're done, a windows service has been created. Now right click on autobrr in the list and click **Run.**
 
 <img src={useBaseUrl('/img/g.%20service%20created.png')} />
 

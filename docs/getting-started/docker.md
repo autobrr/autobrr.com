@@ -1,8 +1,10 @@
 ---
 title: Docker
 sidebar_label: Docker setup
-pagination_next: configuration/indexers
+pagination_prev: getting-started/getting-started
+pagination_next: configuration/configuration
 ---
+
 import { FaDocker } from 'react-icons/fa';
 
 # Docker <FaDocker />
@@ -13,10 +15,10 @@ This guide expects some previous docker knowledge and a working environment.
 
 `docker-compose` for autobrr. Modify if running with unRAID or setting up with Portainer.
 
-* Logging is optional
-* Host port mapping might need to be changed to not collide with other apps
-* Change `BASE_DOCKER_DATA_PATH` to match your setup. Can be simply `./data`
-* Set custom network if needed
+- Logging is optional
+- Host port mapping might need to be changed to not collide with other apps
+- Change `BASE_DOCKER_DATA_PATH` to match your setup. Can be simply `./data`
+- Set custom network if needed
 
 ```yaml title="docker-compose.yml"
 version: "3.7"
@@ -34,7 +36,7 @@ services:
     environment:
       - PUID=${PUID}
       - PGID=${GUID}
-      - TZ=${TZ}        
+      - TZ=${TZ}
     volumes:
       - ${BASE_DOCKER_DATA_PATH}/autobrr/config:/config
     ports:
@@ -94,12 +96,12 @@ sessionSecret = "secret-session-key"
 
 ### Config options
 
-* `host`: Default: `0.0.0.0`. If running a reverse-proxy on the host, you could use `127.0.0.1` and have the portmap be `127.0.0.1:7474:7474` and let the RP handle the rest.
-* `port`: If port already in use then change to a free one.
-* `baseUrl`: **`OPTIONAL`** It supports running on both the root url and in a subpath, as well as subdomain. Uncomment if needed.
-* `logPath`: **`OPTIONAL`** It can be useful to log to file, but probably better to let docker handle this.
-* `logLevel`: Choose how much log output you want to see. Needs a restart to take effect.
-* `sessionSecret`: Used for session cookies. Change to something more random like a `UUID`.
+- `host`: Default: `0.0.0.0`. If running a reverse-proxy on the host, you could use `127.0.0.1` and have the portmap be `127.0.0.1:7474:7474` and let the RP handle the rest.
+- `port`: If port already in use then change to a free one.
+- `baseUrl`: **`OPTIONAL`** It supports running on both the root url and in a subpath, as well as subdomain. Uncomment if needed.
+- `logPath`: **`OPTIONAL`** It can be useful to log to file, but probably better to let docker handle this.
+- `logLevel`: Choose how much log output you want to see. Needs a restart to take effect.
+- `sessionSecret`: Used for session cookies. Change to something more random like a `UUID`.
 
 ## Initial start
 
@@ -114,10 +116,10 @@ sessionSecret = "secret-session-key"
 
 Traefik setup to run on subdomain.
 
-* Needs an `.env` file with `DOMAIN` set, like `DOMAIN=something.local`
-* Expects an externally created network called `proxy`
-* Expects two `entryPoints`: `http` going to `:80` and `https` going to `:443`
-* Expects a `certificateResolver` called `letsencrypt`
+- Needs an `.env` file with `DOMAIN` set, like `DOMAIN=something.local`
+- Expects an externally created network called `proxy`
+- Expects two `entryPoints`: `http` going to `:80` and `https` going to `:443`
+- Expects a `certificateResolver` called `letsencrypt`
 
 Your config may be different so change accordingly.
 
@@ -125,8 +127,8 @@ Your config may be different so change accordingly.
 version: "3.7"
 
 networks:
-    proxy:
-    external: true
+  proxy:
+  external: true
 
 services:
   autobrr:

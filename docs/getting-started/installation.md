@@ -3,7 +3,7 @@ id: installation
 title: Installation
 sidebar_label: Installation
 pagination_label: Installation
-pagination_next: configuration/indexers
+pagination_next: configuration/configuration
 ---
 
 import { FaDocker } from 'react-icons/fa';
@@ -19,11 +19,11 @@ Follow these steps and we will have you up and running in no time.
 Follow instructions below for recommended setup on a regular linux server.  
 For docker and Windows, see our [docker <FaDocker />](/getting-started/docker) and [windows <FaWindows />](/getting-started/windows) installation instructions.
 
-## Swizzin
+## swizzin
 
 For swizzin users, simply run:
 
-```
+```bash
 sudo box install autobrr
 ```
 
@@ -104,12 +104,12 @@ sessionSecret = "secret-session-key"
 
 #### Config options
 
-* `host`: If not using a reverse proxy, change to `0.0.0.0`.
-* `port`: If port already in use then change to a free one.
-* `baseUrl`: **`OPTIONAL`** It supports running on both the root url and in a subpath, as well as subdomain. Uncomment if needed.
-* `logPath`: **`OPTIONAL`** It can be useful to log to file. If running with systemd you can use `journalctl` to check logs. It has built in logrotation to not fill up disk.
-* `logLevel`: Choose how much log output you want to see. Needs a restart to take effect.
-* `sessionSecret`: Used for session cookies. Change to something more random like a `UUID`.
+- `host`: If not using a reverse proxy, change to `0.0.0.0`.
+- `port`: If port already in use then change to a free one.
+- `baseUrl`: **`OPTIONAL`** It supports running on both the root url and in a subpath, as well as subdomain. Uncomment if needed.
+- `logPath`: **`OPTIONAL`** It can be useful to log to file. If running with systemd you can use `journalctl` to check logs. It has built in log rotation to not fill up disk.
+- `logLevel`: Choose how much log output you want to see. Needs a restart to take effect.
+- `sessionSecret`: Used for session cookies. Change to something more random like a `UUID`.
 
 ## Create user
 

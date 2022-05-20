@@ -14,7 +14,7 @@ Please do not contact the creator of these scripts for support, but feel free to
 
 ## arrbrr
 
-*Arrbrr is a way of mutilating your \*arrs and getting them to tell you their secrets.*  
+_arrbrr is a way of mutilating your \*arrs and getting them to tell you their secrets._  
 In other words, it imports your monitored movies and shows from your \*arrs to assigned filters in autobrr.
 
 Essentially, you setup the variables and run it on a crontab. It will then check to see if each item is monitored in the \*arrs, and if it is, it will be added to the filter for autobrr in a somewhat compliant way.
