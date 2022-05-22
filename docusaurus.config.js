@@ -80,19 +80,19 @@ const config = {
             items: [
               {
                 label: 'Introduction',
-                to: '/introduction',
+                to: '/introduction/',
               },
               {
                 label: 'Getting Started',
-                to: '/getting-started',
+                to: '/getting-started/',
               },
               {
                 label: 'Filters',
-                to: '/filters',
+                to: '/filters/',
               },
               {
                 label: 'FAQs',
-                to: '/faqs',
+                to: '/faqs/',
               },
             ],
           },

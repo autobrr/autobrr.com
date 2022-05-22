@@ -28,7 +28,7 @@ import Indexers from '/snippets/indexers.mdx';
 Go to `Settings > Indexers` to add indexers.
 
 When adding a new indexer, it will set up the IRC network and channels in the background.
-Please check the [IRC](./irc) section for more details regarding NickServ, IRC keys, and grouping of nicks.
+Please check the [IRC](/configuration/irc) section for more details regarding NickServ, IRC keys, and grouping of nicks.
 
 Indexers usually need some extra keys to work.  
 The common ones are:
