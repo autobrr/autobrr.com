@@ -21,9 +21,9 @@ import { FaLinux } from 'react-icons/fa';
 import { FaDocker } from 'react-icons/fa';
 import { FaWindows } from 'react-icons/fa';
 
-- [Linux <FaLinux />](./installation)
-- [Docker <FaDocker />](./docker)
-- [Windows <FaWindows />](./windows)
+- [Linux <FaLinux />](/getting-started/installation)
+- [Docker <FaDocker />](/getting-started/docker)
+- [Windows <FaWindows />](/getting-started/windows)
 
 ## Additional Help
 
