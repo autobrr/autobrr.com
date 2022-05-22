@@ -33,6 +33,7 @@ const config = {
 
   themeConfig:
     ({
+      image: "img/logo.png",
       navbar: {
         title: 'autobrr',
         logo: {
@@ -41,10 +42,19 @@ const config = {
         },
         items: [
           {
-            type: 'doc',
-            docId: 'getting-started/installation',
+            to: 'getting-started',
             position: 'left',
             label: 'Docs',
+          },
+          {
+            to: 'faqs',
+            position: 'left',
+            label: 'FAQs',
+          },
+          {
+            to: 'community/contributors',
+            position: 'left',
+            label: 'Community',
           },
           // {to: '/blog', label: 'Blog', position: 'left'},
           {

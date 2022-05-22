@@ -3,56 +3,63 @@ module.exports = {
     {
       type: "doc",
       label: "Introduction",
-      id: "introduction"
+      id: "introduction",
     },
     {
       type: "category",
       label: "Getting Started",
-      link: {type: 'doc', id: 'getting-started/getting-started'},
+      link: { type: "doc", id: "getting-started/getting-started" },
       collapsed: false,
       items: [
-          "getting-started/installation",
-          "getting-started/docker",
-          "getting-started/windows",
-          "getting-started/postgres"
-        ],
+        "getting-started/installation",
+        "getting-started/docker",
+        "getting-started/windows",
+        "getting-started/postgres",
+      ],
     },
     {
       type: "category",
       label: "Configuration",
       collapsed: false,
-      link: {type: 'doc', id: 'configuration/configuration'},
+      link: { type: "doc", id: "configuration/configuration" },
       items: [
-          "configuration/indexers",
-          "configuration/irc",
-          "configuration/download-clients",
-          "configuration/torznab-feeds"
-        ],
+        "configuration/indexers",
+        "configuration/irc",
+        "configuration/download-clients",
+        "configuration/torznab-feeds",
+      ],
     },
     {
       type: "category",
       label: "Filters",
-      link: {type: 'doc', id: 'filters/basics'},
+      link: { type: "doc", id: "filters/basics" },
       collapsed: false,
-      items: [
-          "filters/basics",
-          "filters/actions"
-        ],
+      items: ["filters/basics", "filters/actions"],
     },
     {
       type: "doc",
       label: "Notifications",
-      id: "notifications"
+      id: "notifications",
     },
     {
       type: "doc",
       label: "3rd party scripts",
-      id: "3rd-party-scripts"
+      id: "3rd-party-scripts",
     },
     {
       type: "doc",
       label: "faqs",
-      id: "faqs"
+      id: "faqs",
+    },
+  ],
+
+  communitySidebar: [
+    "community/contributors",
+    "community/resources",
+    {
+      type: "link",
+      label: "Chat with us on Discord", // The link label
+      href: "https://discord.gg/WQ2eUycxyT", // The external URL
     },
   ],
 };
