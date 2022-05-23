@@ -20,10 +20,10 @@ Make sure to read through all of the articles as all of them have some important
 
 ## Configurable options
 
-- [Indexers <CgWebsite />](./indexers)
-- [IRC <BsChatDotsFill />](./irc)
-- [Download Clients <FaDownload />](./download-clients)
-- [Torznab Feeds <MdRssFeed />](./torznab-feeds)
+- [Indexers <CgWebsite />](/configuration/indexers)
+- [IRC <BsChatDotsFill />](/configuration/irc)
+- [Download Clients <FaDownload />](/configuration/download-clients)
+- [Torznab Feeds <MdRssFeed />](/configuration/torznab-feeds)
 
 ## Additional Help
 
