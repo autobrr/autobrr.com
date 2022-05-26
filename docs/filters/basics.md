@@ -76,7 +76,7 @@ For TV and movies it's advised to use filters like `resolution`, `source` and `c
 
 - **Type:** Comma separated list
 - **Example:** `Movie, That Other movie`
-- **Description:** Supports wildcards but generally not needed. Eg. That?Movie, _the_
+- **Description:** Supports wildcards but generally not needed. Eg. `That?Movie, *the*`
 
 ### Years
 
