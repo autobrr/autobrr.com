@@ -127,13 +127,13 @@ For TV and movies it's advised to use filters like `resolution`, `source` and `c
 
 - **Type:** Comma separated list
 - **Example:** `Artist, That Other Artist, Some Other Artist`
-- **Description:** Supports wildcards but generally not needed. Eg. That?Movie, _the_
+- **Description:** Supports wildcards but generally not needed. Eg. `That?Movie, *the*`
 
 ### Albums
 
 - **Type:** Comma separated list
 - **Example:** `Album, Some Other Album, Yet Another Album`
-- **Description:** Supports wildcards but generally not needed. Eg. That?Movie, _the_
+- **Description:** Supports wildcards but generally not needed. Eg. `That?Movie, *the*`
 
 ### Years
 
@@ -195,13 +195,13 @@ For TV and movies it's advised to use filters like `resolution`, `source` and `c
 
 - **Type:** Comma separated list
 - **Example:** `*Movie*remux*, That Other movie, *that?game*`
-- **Description:** Useful for all types of releases. Supports wildcards like `That?Movie, *the*`. Regex is NOT supported yet.
+- **Description:** Useful for all types of releases. Supports wildcards like `That?Movie, *the*`.
 
 ### Except releases
 
 - **Type:** Comma separated list
 - **Example:** `*Movie*remux*, That Other movie, *that?game*`
-- **Description:** If this matches, then filter will not go further. Useful for all types of releases. Supports wildcards like `That?Movie, *the*`. Regex is NOT supported yet.
+- **Description:** If this matches, then filter will not go further. Useful for all types of releases. Supports wildcards like `That?Movie, *the*`.
 
 ### Match release groups
 
