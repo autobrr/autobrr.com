@@ -11,21 +11,21 @@ import autobrrfront from '../../static/img/autobrr-front.png';
 function HomepageHeader() {
   const {siteConfig} = useDocusaurusContext();
   return (
-    <header className={clsx('hero hero--secondary', styles.heroBanner)}>
+    <header className={clsx('hero hero--secondary pattern', styles.heroBanner)}>
       <div className="container">
       <img src={logo} alt="Logo" />
         <h1 className="hero__title">{siteConfig.title}</h1>
         <p className="hero__subtitle">{siteConfig.tagline}</p>
         <div className={styles.buttons}>
-        <Link
-            className={clsx("button button--info button--lg", styles.button)}
+          <Link
+            className={clsx("button button--secondary button--lg", styles.button)}
             to="/introduction"
           >
             Introduction
           </Link>
           <Link
             className={clsx("button button--primary button--lg", styles.button)}
-            to="/getting-started/installation"
+            to="/installation/linux"
           >
             Get Started
           </Link>
@@ -41,11 +41,17 @@ export default function Home() {
   return (
     <Layout
       title={`${siteConfig.title}`}
-      description="autobrr">
+      description="autobrr"
+    >
       <HomepageHeader />
-      {<main>
+      <main
+        style={{
+          borderTop: "1px solid var(--colors-mauve5)",
+          borderBottom: "1px solid var(--colors-mauve5)",
+        }}
+      >
         <HomepageFeatures />
-      </main>}
+      </main>
     </Layout>
   );
 }

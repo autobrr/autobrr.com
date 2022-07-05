@@ -1,5 +1,6 @@
 const lightCodeTheme = require('prism-react-renderer/themes/github');
 const darkCodeTheme = require('prism-react-renderer/themes/dracula');
+const FontPreloadPlugin = require('webpack-font-preload-plugin');
 const config = {
   title: 'autobrr',
   tagline: 'the modern autodl-irssi replacement',
@@ -19,7 +20,7 @@ const config = {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
           editUrl: 'https://github.com/autobrr/autobrr.com/tree/main/',
-          sidebarCollapsible: false,
+          //sidebarCollapsible: false,
           routeBasePath: "/",
         },
         blog: false,
@@ -42,7 +43,7 @@ const config = {
         items: [
           {
             type: 'doc',
-            docId: 'getting-started/installation',
+            docId: 'installation/linux',
             position: 'left',
             label: 'Docs',
           },
@@ -73,8 +74,8 @@ const config = {
                 to: '/introduction',
               },
               {
-                label: 'Getting Started',
-                to: '/getting-started',
+                label: 'Installation',
+                to: '/installation/linux',
               },
               {
                 label: 'Filters',
@@ -116,6 +117,18 @@ const config = {
         darkTheme: darkCodeTheme,
       },
     }),
+  
+  plugins: [
+    function preloadFontPlugin(_context, _options) {
+      return {
+        name: 'preload-font-plugin',
+        configureWebpack(_config, _isServer) {
+          return { plugins: [new FontPreloadPlugin()] };
+        },
+      };
+    },
+    // ...
+  ],
 };
 
 module.exports = config;

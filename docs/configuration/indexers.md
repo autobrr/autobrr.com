@@ -4,7 +4,7 @@ title: Indexers
 sidebar_label: Indexers
 slug: /configuration/indexers
 pagination_next: configuration/irc
-pagination_prev: getting-started/installation
+pagination_prev: installation/linux
 pagination_label: Configuration - Indexers
 ---
 

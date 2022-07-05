@@ -4,7 +4,7 @@ import styles from './HomepageFeatures.module.css';
 
 const FeatureList = [
   {
-    title: 'Modern user interface',
+    title: 'Modern UI',
     Svg: require('../../static/img/webui.svg').default,
     description: (
       <>
@@ -14,17 +14,22 @@ const FeatureList = [
     ),
   },
   {
-    title: 'IRC and RSS monitoring',
+    title: (
+      <>
+        <span style={{ textDecoration: "line-through" }}>Blazing fast</span>
+        <br />
+        <span>go brr</span>
+      </>
+    ),
     Svg: require('../../static/img/feed.svg').default,
     description: (
       <>
-        autobrr monitors IRC announce channels to get releases as soon as they are available with good filtering.
-        You can also monitor RSS feeds for indexers not having an announce channel.
+        autobrr monitors IRC announce channels to filter releases as soon as they are available and executes a user-defined action upon match.
       </>
     ),
   },
   {
-    title: 'Lightweight and fast',
+    title: 'Lightweight and safe',
     Svg: require('../../static/img/feather.svg').default,
     description: (
       <>
