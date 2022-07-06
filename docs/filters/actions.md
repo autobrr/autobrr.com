@@ -78,16 +78,20 @@ Takes a path to a writeable folder.
 
 ### Available variables
 
-* `{{ .TorrentPathName }}`: Path to downloaded .torrent file in `/tmp`.
 * `{{ .TorrentName }}`: Release name as announced
 * `{{ .TorrentUrl }}`: Full url to download torrent
-* `{{.Indexer}}`
+* `{{ .TorrentPathName }}`: Path to downloaded .torrent file in `/tmp`.
 * `{{.TorrentHash}}`
+* `{{.Indexer}}`
+* `{{.Title}}`
 * `{{.Resolution}}`
 * `{{.Source}}`
 * `{{.HDR}}`
 * `{{.Season}}`
 * `{{.Episode}}`
+* `{{.ParsedYear}}`
+* `{{.ParsedMonth}}`
+* `{{.ParsedDay}}`
 * `{{.Year}}`
 * `{{.Month}}`
 * `{{.Day}}`
