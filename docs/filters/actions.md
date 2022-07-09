@@ -14,15 +14,15 @@ When adding, updating or removing actions on a filter, make sure to save.
 
 ## Supported actions
 
-* qBittorrent
-* Deluge (v1+ and v2)
-* Radarr
-* Sonarr
-* Lidarr
-* Whisparr
-* Save to watch folder
-* Run custom commands
-* Test (logs result if matched. Does not download torrent files)
+- qBittorrent
+- Deluge (v1+ and v2)
+- Radarr
+- Sonarr
+- Lidarr
+- Whisparr
+- Save to watch folder
+- Run custom commands
+- Test (logs result if matched. Does not download torrent files)
 
 ### qBittorrent
 
@@ -30,10 +30,10 @@ Send to one or multiple local or remote instances of qBittorrent.
 
 Available options:
 
-* Save path: optional
-* Category: optional
-* Limit download and upload speed: optional
-* Add as paused: default false
+- Save path: optional
+- Category: optional
+- Limit download and upload speed: optional
+- Add as paused: default false
 
 If category is set, then qBittorrent will control the save path. Override save location by setting `save path`.
 
@@ -47,10 +47,10 @@ Send to one or multiple local or remote instances of Deluge.
 
 Available options:
 
-* Save path: optional
-* Label: optional
-* Limit download and upload speed: optional
-* Add as paused: default false
+- Save path: optional
+- Label: optional
+- Limit download and upload speed: optional
+- Add as paused: default false
 
 Built in re-announce will make sure it works with initially broken trackers.
 
@@ -76,42 +76,42 @@ Takes a path to a writeable folder.
 
 ### Available variables
 
-* `{{.TorrentName}}`: Release name as announced
-* `{{.TorrentUrl}}`: Full url to download torrent
-* `{{.TorrentPathName}}`: Path to downloaded .torrent file in `/tmp`.
-* `{{.TorrentHash}}`
-* `{{.Indexer}}`
-* `{{.Title}}`
-* `{{.Resolution}}`
-* `{{.Source}}`
-* `{{.HDR}}`
-* `{{.Season}}`
-* `{{.Episode}}`
-* `{{.ParsedYear}}`
-* `{{.ParsedMonth}}`
-* `{{.ParsedDay}}`
-* `{{.Year}}`
-* `{{.Month}}`
-* `{{.Day}}`
-* `{{.Hour}}`
-* `{{.Minute}}`
-* `{{.Second}}`
+- `{{.TorrentName}}`: Release name as announced
+- `{{.TorrentUrl}}`: Full url to download torrent
+- `{{.TorrentPathName}}`: Path to downloaded .torrent file in `/tmp`.
+- `{{.TorrentHash}}`
+- `{{.Indexer}}`
+- `{{.Title}}`
+- `{{.Resolution}}`
+- `{{.Source}}`
+- `{{.HDR}}`
+- `{{.Season}}`
+- `{{.Episode}}`
+- `{{.ParsedYear}}`
+- `{{.ParsedMonth}}`
+- `{{.ParsedDay}}`
+- `{{.Year}}`
+- `{{.Month}}`
+- `{{.Day}}`
+- `{{.Hour}}`
+- `{{.Minute}}`
+- `{{.Second}}`
 
 Try these variables out in the any of the following fields.
 
-* Watch folder
-* Label
-* Tags
-* Category
-* Save Path
-* Exec arguments
+- Watch folder
+- Label
+- Tags
+- Category
+- Save Path
+- Exec arguments
 
 These variables are implemented using the go template engine. This is an extremely powerful scripting platform that can perform operations, evaluations, and manipulate values at the user configuration level. Further information on the functionality of this platform can be found [here](https://pkg.go.dev/text/template).
 
 Simple examples of this extensive functionality can be found below.
 
-* `{{.TorrentName | js}}`
-* `{{.Month | printf "%02d"}}`
+- `{{.TorrentName | js}}`
+- `{{.Month | printf "%02d"}}`
 
 ### Custom commands / Exec
 

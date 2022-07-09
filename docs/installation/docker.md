@@ -13,10 +13,10 @@ This guide expects some previous docker knowledge and an already working environ
 
 `docker-compose` for autobrr. Modify if running with unRAID or setting up with Portainer.
 
-* Logging is optional
-* Host port mapping might need to be changed to not collide with other apps
-* Change `BASE_DOCKER_DATA_PATH` to match your setup. Can be simply `./data`
-* Set custom network if needed
+- Logging is optional
+- Host port mapping might need to be changed to not collide with other apps
+- Change `BASE_DOCKER_DATA_PATH` to match your setup. Can be simply `./data`
+- Set custom network if needed
 
 ```yaml title="docker-compose.yml"
 version: "3.7"
@@ -34,7 +34,7 @@ services:
     environment:
       - PUID=${PUID}
       - PGID=${GUID}
-      - TZ=${TZ}        
+      - TZ=${TZ}
     volumes:
       - ${BASE_DOCKER_DATA_PATH}/autobrr/config:/config
     ports:
@@ -58,10 +58,10 @@ You can either let autobrr create the config itself at startup, or create one ma
 
 Traefik setup to run on subdomain.
 
-* Needs an `.env` file with `DOMAIN` set, like `DOMAIN=something.local`
-* Expects an externally created network called `proxy`
-* Expects two `entryPoints`: `http` going to `:80` and `https` going to `:443`
-* Expects a `certificateResolver` called `letsencrypt`
+- Needs an `.env` file with `DOMAIN` set, like `DOMAIN=something.local`
+- Expects an externally created network called `proxy`
+- Expects two `entryPoints`: `http` going to `:80` and `https` going to `:443`
+- Expects a `certificateResolver` called `letsencrypt`
 
 Your config may be different so change accordingly.
 
@@ -69,8 +69,8 @@ Your config may be different so change accordingly.
 version: "3.7"
 
 networks:
-    proxy:
-    external: true
+  proxy:
+  external: true
 
 services:
   autobrr:

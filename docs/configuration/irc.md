@@ -16,10 +16,10 @@ You need a registered nick on most IRC servers to be able to join channels. We w
 You need a separate IRC client to do this.
 Here are some free and open source options:
 
-* [Konversation](https://konversation.kde.org/) - Linux
-* [LimeChat](http://limechat.net/mac/) - MacOS
-* [HexChat](https://hexchat.github.io/) - Windows/Linux
-* [The Lounge](https://thelounge.chat) - A web based, self hosted option.
+- [Konversation](https://konversation.kde.org/) - Linux
+- [LimeChat](http://limechat.net/mac/) - MacOS
+- [HexChat](https://hexchat.github.io/) - Windows/Linux
+- [The Lounge](https://thelounge.chat) - A web based, self hosted option.
 
 Make sure your indexer is supported before proceeding.
 
@@ -75,16 +75,16 @@ If you for some reason need to setup a network manually, or edit an existing one
 
 Before setup, make sure you have generated the necessary keys. Some networks have invite commands with extra keys. Some require you to be registered with NickServ (see [registering with NickServ](#registering-with-nickserv)). Trackers have documentation for the extra authentication protocols in their wiki pages.
 
-* If NickServ Password is marked `*` as required, then you need to have a registered account on that IRC network. See [registering with NickServ](#registering-with-nickserv) above.
-* If NickServ Account is marked `*` as required, that's only used as nick, but supports NickServ auth.
-* The invite command field in `Settings > IRC > Edit network` are pre filled, but you need to add your IRC key. The rest should be left as is.
+- If NickServ Password is marked `*` as required, then you need to have a registered account on that IRC network. See [registering with NickServ](#registering-with-nickserv) above.
+- If NickServ Account is marked `*` as required, that's only used as nick, but supports NickServ auth.
+- The invite command field in `Settings > IRC > Edit network` are pre filled, but you need to add your IRC key. The rest should be left as is.
 
 :::caution Caution
 
 Quite a few indexers use the same network, specifically `irc.p2p-network.net`.
 
-* If you use the same nick with multiple indexers, it will reuse the same connection for them.
-* If you have more than one nick on the same network in will create a new connection for each.
+- If you use the same nick with multiple indexers, it will reuse the same connection for them.
+- If you have more than one nick on the same network in will create a new connection for each.
 
 Adding or removing `indexers/networks/channels` can therefore break things.
 

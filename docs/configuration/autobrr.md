@@ -62,12 +62,12 @@ sessionSecret = "secret-session-key"
 
 #### Config options
 
-* `host`: If not using a reverse proxy or in a container, change to `0.0.0.0`.
-* `port`: If port already in use, then change to a free one.
-* `logLevel`: Choose how much log output you want to see. The autobrr process will need to be restarted in order for this change to take effect.
-* `sessionSecret`: Used for session cookies. Change to something more random like a `UUID`.
-* (**Optional**) `baseUrl`: Supports running on both the root url and in a subpath, as well as subdomain. Uncomment if needed.
-* (**Optional**) `logPath`:Considering autobrr is rather new software, it might be beneficial for logging to be enabled. If running with systemd you can use `journalctl` to check logs. The log file is rotated as soon as it reaches 50MB, up to 3 times. In other words, the maximum space which the log files can occupy is 150MB, which takes a long time to fill.
+- `host`: If not using a reverse proxy or in a container, change to `0.0.0.0`.
+- `port`: If port already in use, then change to a free one.
+- `logLevel`: Choose how much log output you want to see. The autobrr process will need to be restarted in order for this change to take effect.
+- `sessionSecret`: Used for session cookies. Change to something more random like a `UUID`.
+- (**Optional**) `baseUrl`: Supports running on both the root url and in a subpath, as well as subdomain. Uncomment if needed.
+- (**Optional**) `logPath`:Considering autobrr is rather new software, it might be beneficial for logging to be enabled. If running with systemd you can use `journalctl` to check logs. The log file is rotated as soon as it reaches 50MB, up to 3 times. In other words, the maximum space which the log files can occupy is 150MB, which takes a long time to fill.
 
 ### Create user via command line (Optional)
 
@@ -84,10 +84,10 @@ autobrrctl --config ~/.config/autobrr create-user USERNAME
 
 Make sure to read through all of the articles as all of them have some important information on how to get autobrr up and running.
 
-* [Indexers <CgWebsite />](./indexers)
-* [IRC <BsChatDotsFill />](./irc)
-* [Download Clients <FaDownload />](./download-clients)
-* [Torznab Feeds <MdRssFeed />](./torznab-feeds)
+- [Indexers <CgWebsite />](./indexers)
+- [IRC <BsChatDotsFill />](./irc)
+- [Download Clients <FaDownload />](./download-clients)
+- [Torznab Feeds <MdRssFeed />](./torznab-feeds)
 
 ## Additional Help
 

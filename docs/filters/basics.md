@@ -76,7 +76,7 @@ For TV and movies it's advised to use filters like `resolution`, `source` and `c
 
 :::info
 
-The Movies/Shows field operates on the *parsed* media title. This means it is guaranteed not contain dots and underscores, often found in release strings. However, it's still better to err on the safer side and use the `?` wildcard character instead.
+The Movies/Shows field operates on the _parsed_ media title. This means it is guaranteed not contain dots and underscores, often found in release strings. However, it's still better to err on the safer side and use the `?` wildcard character instead.
 
 :::
 
@@ -99,9 +99,9 @@ The Movies/Shows field operates on the *parsed* media title. This means it is gu
 
 | Field | Description | Examples |
 |-------|-------------|----------|
-| **Artists** | Comma separated list of media names to match. | e.g. That?Movie, \*the\* |
-| **Albums** | Comma separated list of acceptable year ranges in the string. | e.g. 2019,2020-2022 |
-| **Years** | Comma separated list of acceptable TV show seasons in the string. | e.g. 1,3-6 |
+| **Artists** | Comma separated list of media names to match. | e.g. That?Artist |
+| **Albums** | Comma separated list of acceptable year ranges in the string. | e.g. That?Album, \*the?album\* |
+| **Years** | Comma separated list of acceptable years in the string. | e.g. 2019,2020-2022 |
 
 ### Quality
 
@@ -115,6 +115,24 @@ The Movies/Shows field operates on the *parsed* media title. This means it is gu
 | **Log Score** | Matches Log percent for indexers that announce it. Check your indexer, the announced Log Score might not be in percent. |
 | **Cue** | Enforces Cue requirement. |
 | **Perfect FLAC** | Overrides all options about quality, source, format, and Cue/Log/Log score. |
+
+---
+
+## E-Books and Audiobooks
+
+| Field | Description | Examples |
+|-------|-------------|----------|
+| **Books** | Comma separated list of book titles to match. | e.g. That?Book, \*the\* |
+| **Authors** | Comma separated list of acceptable authors in the string. | e.g. Author One |
+| **Years** | Comma separated list of acceptable years in the string. | e.g. 2019,2020-2022 |
+
+### Options
+
+| Field | Description |
+|-------|-------------|
+| **E-Book format** | Will only match e-books with any of the selected formats. |
+| **Audiobook format** | Will only match audiobooks with any of the selected formats. |
+| **Language** | Will only match releases with any of the selected languages. |
 
 ---
 
