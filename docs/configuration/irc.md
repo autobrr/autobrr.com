@@ -5,9 +5,7 @@ title: IRC
 pagination_label: Configuration - IRC
 ---
 
-import { BsChatDotsFill } from 'react-icons/bs';
-
-# IRC <BsChatDotsFill />
+# IRC
 
 IRC stands for Internet Relay Chat. autobrr has its own IRC client built in which lets it monitor the #announce channels without the need for additional software.
 

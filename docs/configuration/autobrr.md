@@ -10,11 +10,10 @@ import { FaDownload } from 'react-icons/fa';
 import { CgWebsite } from 'react-icons/cg';
 import { BsChatDotsFill } from 'react-icons/bs';
 import { MdRssFeed } from 'react-icons/md';
-import { FaCogs } from 'react-icons/fa';
 import { FaDiscord } from 'react-icons/fa';
 import { AiFillGithub } from 'react-icons/ai';
 
-# Configuration <FaCogs />
+# Configuration
 
 The primary configuration entry point for autobrr is `config.toml`, which should be located in the `--config` directory you specified to the autobrr process or in the `config/` directory relative from which autobrr is running. Do note that you do not need to create it yourself, as the autobrr daemon will do it automatically for you in case it does not exist upon first start.
 
@@ -65,10 +64,10 @@ sessionSecret = "secret-session-key"
 
 * `host`: If not using a reverse proxy or in a container, change to `0.0.0.0`.
 * `port`: If port already in use, then change to a free one.
-* `baseUrl`: **`OPTIONAL`** Supports running on both the root url and in a subpath, as well as subdomain. Uncomment if needed.
-* `logPath`: **`OPTIONAL`** Considering autobrr is rather new software, it might be beneficial for logging to be enabled. If running with systemd you can use `journalctl` to check logs. The log file is rotated as soon as it reaches 50MB, up to 3 times. In other words, the maximum space which the log files can occupy is 150MB, which takes a long time to fill.
 * `logLevel`: Choose how much log output you want to see. The autobrr process will need to be restarted in order for this change to take effect.
 * `sessionSecret`: Used for session cookies. Change to something more random like a `UUID`.
+* (**Optional**) `baseUrl`: Supports running on both the root url and in a subpath, as well as subdomain. Uncomment if needed.
+* (**Optional**) `logPath`:Considering autobrr is rather new software, it might be beneficial for logging to be enabled. If running with systemd you can use `journalctl` to check logs. The log file is rotated as soon as it reaches 50MB, up to 3 times. In other words, the maximum space which the log files can occupy is 150MB, which takes a long time to fill.
 
 ### Create user via command line (Optional)
 

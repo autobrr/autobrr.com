@@ -14,21 +14,20 @@ Please do not contact the creator of these scripts for support, but feel free to
 
 ## arrbrr
 
-*Arrbrr is a way of mutilating your \*arrs and getting them to tell you their secrets.*  
-In other words, it imports your monitored movies and shows from your \*arrs to assigned filters in autobrr.
+Arrbrr imports your monitored movies and shows from your \*arrs to assigned filters in autobrr.
 
-Essentially, you setup the variables and run it on a crontab. It will then check to see if each item is monitored in the \*arrs, and if it is, it will be added to the filter for autobrr in a somewhat compliant way.
+Essentially, you setup the variables and run it via a crontab job. It will then check to see if each item is monitored in the \*arrs, and if it is, it will be added to the filter for autobrr in a somewhat compliant way.
 
-Please read the code being run, do not put this directly into a terminal without understanding what it does.
+Please read the code before running the script, do not put this directly into a terminal without understanding what it does.
 
 ### Download the script
 
 `arrbrr_swizzin.sh` and `arrbrr_docker.sh` can be found [here <AiFillGithub />](https://gist.github.com/brettpetch/9475c9117e0d58791c02587529786ad9)  
-For Synology and others not having iconv please use [this <AiFillGithub />](https://gist.github.com/quorn23/222a62c7c6141eabde18f8a1f626b0de)
+For Synology and other distributions which do not having iconv, please use [this <AiFillGithub />](https://gist.github.com/quorn23/222a62c7c6141eabde18f8a1f626b0de)
 
 :::info
-`arrbrr_swizzin.sh` is meant for installs with a baseurl.  
-`arrbrr_docker.sh` is meant for installs with no baseurl.
+`arrbrr_swizzin.sh` is meant for installs which utilize a base path in the reverse proxy.  
+`arrbrr_docker.sh` is meant for installs which do **not** utilize a base path in the reverse proxy.
 :::
 
 ### Installation

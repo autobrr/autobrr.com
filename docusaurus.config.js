@@ -1,5 +1,5 @@
-const lightCodeTheme = require('prism-react-renderer/themes/github');
-const darkCodeTheme = require('prism-react-renderer/themes/dracula');
+const lightCodeTheme = require('prism-react-renderer/themes/vsLight');
+const darkCodeTheme = require('prism-react-renderer/themes/oceanicNext');
 const FontPreloadPlugin = require('webpack-font-preload-plugin');
 const config = {
   title: 'autobrr',
@@ -24,7 +24,6 @@ const config = {
           routeBasePath: "/",
         },
         blog: false,
-
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
         },
@@ -58,59 +57,6 @@ const config = {
       },
       colorMode: {
         defaultMode: 'dark',
-      },
-      footer: {
-        logo: {
-          alt: 'autobrr Logo',
-          src: 'img/logo-sm.png',
-          href: 'https://autobrr.com',
-        },
-        links: [
-          {
-            title: 'Docs',
-            items: [
-              {
-                label: 'Introduction',
-                to: '/introduction',
-              },
-              {
-                label: 'Installation',
-                to: '/installation/linux',
-              },
-              {
-                label: 'Filters',
-                to: '/filters',
-              },
-              {
-                label: 'FAQs',
-                to: '/faqs',
-              },
-            ],
-          },
-          {
-            title: 'Community',
-            items: [
-              {
-                label: 'Discord',
-                href: 'https://discord.gg/WQ2eUycxyT',
-              },
-            ],
-          },
-          {
-            title: 'More',
-            items: [
-              // {
-              //   label: 'Blog',
-              //   to: '/blog',
-              // },
-              {
-                label: 'GitHub',
-                href: 'https://github.com/autobrr/autobrr',
-              },
-            ],
-          },
-        ],
-        copyright: `Copyright © ${new Date().getFullYear()} autobrr. All rights reserved.`,
       },
       prism: {
         theme: lightCodeTheme,

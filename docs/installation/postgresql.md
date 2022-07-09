@@ -21,7 +21,7 @@ postgresUser = "autobrr"
 postgresPass = "s0meth!ng-l0ng-4nd-s3cure"
 ```
 
-:::note
+:::info
 It is recommended to create a new user and database for autobrr.
 You might be able to migrate your SQLite database to PostgreSQL, but the authors haven't taken a deep look into it.
 

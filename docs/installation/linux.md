@@ -105,7 +105,11 @@ location /autobrr/ {
 }
 ```
 
-*NOTE*: The `rewrite` statement in this example is crucial for correctly setting things up when using a reverse proxy with a base path.
+:::info
+
+The `rewrite` statement in this example is crucial for correctly setting things up when using a reverse proxy with a base path.
+
+:::
 
 ## Done
 

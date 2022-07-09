@@ -5,9 +5,7 @@ title: Download clients
 pagination_label: Configuration - Download clients
 ---
 
-import { FaDownload } from 'react-icons/fa';
-
-# Download Clients <FaDownload />
+# Download Clients
 
 Go to `Settings > Clients` to setup clients.  
 Clients can be local or remote, as long as ports are open and auth available.

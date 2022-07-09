@@ -8,9 +8,7 @@ pagination_prev: installation/linux
 pagination_label: Configuration - Indexers
 ---
 
-import { CgWebsite } from 'react-icons/cg';
-
-# Indexers <CgWebsite />
+# Indexers
 
 ## Supported indexers
 

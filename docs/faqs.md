@@ -19,9 +19,7 @@ You can use the label-plugin in Deluge and set a custom save path in that as a w
 
 ## Why did a release not match when it clearly should have?
 
-Check your logs. Enable trace logging for more details.
-
-`logLevel = "TRACE"` can be set in `config.toml`. Remember to restart autobrr after.
+Check your logs. Additionally, enable trace logging by setting `logLevel = "TRACE"` in your `config.toml` (which can usually be found in `~/.config/autobrr/`). Remember to restart autobrr after doing so.
 
 ## My autobrr instance cannot reach Deluge running in Docker
 

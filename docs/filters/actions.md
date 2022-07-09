@@ -4,9 +4,7 @@ pagination_label: Filters - Actions
 title: Actions
 ---
 
-import { SiGithubactions } from 'react-icons/si';
-
-# Actions <SiGithubactions />
+# Actions 
 
 A configured action is what your autodl does with a successful push. You can send it any of the supported actions. Each filter supports multiple actions just incase you need to send to multiple clients, or run custom commands as well.
 
@@ -78,9 +76,9 @@ Takes a path to a writeable folder.
 
 ### Available variables
 
-* `{{ .TorrentName }}`: Release name as announced
-* `{{ .TorrentUrl }}`: Full url to download torrent
-* `{{ .TorrentPathName }}`: Path to downloaded .torrent file in `/tmp`.
+* `{{.TorrentName}}`: Release name as announced
+* `{{.TorrentUrl}}`: Full url to download torrent
+* `{{.TorrentPathName}}`: Path to downloaded .torrent file in `/tmp`.
 * `{{.TorrentHash}}`
 * `{{.Indexer}}`
 * `{{.Title}}`
@@ -112,13 +110,12 @@ These variables are implemented using the go template engine. This is an extreme
 
 Simple examples of this extensive functionality can be found below.
 
-* `{{ .TorrentName | js }}`
+* `{{.TorrentName | js}}`
 * `{{.Month | printf "%02d"}}`
 
 ### Custom commands / Exec
 
 For custom commands you should specify the full path to the binary/program you want to run. And you can include your own static variables. For example:
 
-`race-{{.Indexer}}/{{.Resolution}}` as a tag or Category.
-
-`/Movies/{{.Resolution}}` as a save path.
+- `race-{{.Indexer}}/{{.Resolution}}` as a tag or Category.
+- `/Movies/{{.Resolution}}` as a save path.
