@@ -5,15 +5,15 @@ title: Introduction
 pagination_next: installation/linux
 ---
 
-autobrr is the modern download automation tool for torrents and a replacement for the old and unmaintained autodl-irssi.
+autobrr is the modern download automation tool for torrents.
 
-But autobrr isn't only a replacement, it's even more than that. In fact, autobrr can replace the functionality of autodl-irssi, flexget and trackarr all in one.
+With inspiration and ideas from tools like trackarr, autodl-irssi and flexget we built one tool that can do it all, and then some.
 
 As of right now, autobrr includes:
 
 - Support for 37+ trackers with IRC announces
-- RSS and Torznab (via Prowlarr) to support the rest
-- Powerful filtering with RegEx support (like in autodl-irssi)
+- Torznab/RSS support via Prowlarr to easily get access to hundreds of trackers
+- Powerful but simple filtering with RegEx support (like in autodl-irssi)
 - Easy to use and mobile friendly web UI (with dark mode!) to manage everything
 - Built on Go and React which makes it resource friendly and perfect to support multi-platform (Linux, Windows, macOS) systems on different architectures (e.g. x86, ARM)
 - Great container support (Docker, k8s/Kubernetes)
@@ -32,10 +32,13 @@ Available download clients and actions
 - Exec custom scripts
 - Webhook
 
+## Planned features
+
+- RSS support
+- Automatic cross-seeding of existing releases
+
 ## About
 
-It's been in development for about 2 years and been widely used since late summer 2021 with a growing userbase and community around it.
+The development of what would become autobrr started early 2020 and became usable late summer 2021. It has since then kept gaining in popularity, with a growing userbase and community surrounding it.
 
-One of the goals was to build a program that would put less strain on trackers compared to autodl-irssi, and autobrr has achived that by using API for trackers like BTN, RED, PTP and GGN, downloading the actual .torrent files only if they're actually needed.
-
-This is in comparison to autodl-irssi which would download all files all the time in order to parse different values with no way to change that behavior.
+One of the goals was to build a program that would not put unnecessary strain on trackers, and autobrr has achieved that by using API for additional metadata not available in the announce for trackers like BTN, RED, PTP and GGN. And for others it will download the actual .torrent files only if they're actually needed.
