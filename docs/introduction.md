@@ -9,17 +9,17 @@ autobrr is the modern download automation tool for torrents.
 
 With inspiration and ideas from tools like trackarr, autodl-irssi and flexget we built one tool that can do it all, and then some.
 
-As of right now, autobrr includes:
+As of right now, autobrr features:
 
 - Support for 37+ trackers with IRC announces
 - Torznab/RSS support via Prowlarr to easily get access to hundreds of trackers
 - Powerful but simple filtering with RegEx support (like in autodl-irssi)
 - Easy to use and mobile friendly web UI (with dark mode!) to manage everything
-- Built on Go and React which makes it resource friendly and perfect to support multi-platform (Linux, Windows, macOS) systems on different architectures (e.g. x86, ARM)
+- Built on Go and React making autobrr lightweight and perfect for supporting multiple platforms (Linux, Windows, macOS) on different architectures (e.g. x86, ARM)
 - Great container support (Docker, k8s/Kubernetes)
 - Proper database with either SQLite or Postgres
 - Notifications (Discord, Telegram, Notifiarr)
-- One autobrr instance can communicate with multiple (torrent, \*arr) clients on remote servers
+- One autobrr instance can communicate with multiple clients (both torrent and \*arr) on remote servers
 - Base path / Subfolder (and subdomain) support for convenient reverse-proxy support
 
 Available download clients and actions
@@ -39,6 +39,6 @@ Available download clients and actions
 
 ## About
 
-The development of what would become autobrr started early 2020 and became usable late summer 2021. It has since then kept gaining in popularity, with a growing userbase and community surrounding it.
+The development of autobrr started in Early 2020, entering rapid development in Summer 2021 due to dissatisfaction with needing 3+ tools to do one job. Autobrr has since gained quite a bit of traction and has a growing community supporting the project.
 
-One of the goals was to build a program that would not put unnecessary strain on trackers, and autobrr has achieved that by using API for additional metadata not available in the announce for trackers like BTN, RED, PTP and GGN. And for others it will download the actual .torrent files only if they're actually needed.
+Autobrr was developed with resource consumption in mind. The software uses API calls to reduce unnecessary downloads of .torrent files from sites like BTN, RED, PTP, and GGn. On other sites, it will download the .torrent only if the information is not present in the announce message.
