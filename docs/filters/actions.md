@@ -4,7 +4,7 @@ pagination_label: Filters - Actions
 title: Actions
 ---
 
-# Actions 
+# Actions
 
 A configured action is what your autodl does with a successful push. You can send it any of the supported actions. Each filter supports multiple actions just incase you need to send to multiple clients, or run custom commands as well.
 
@@ -16,6 +16,7 @@ When adding, updating or removing actions on a filter, make sure to save.
 
 - qBittorrent
 - Deluge (v1+ and v2)
+- Transmission
 - Radarr
 - Sonarr
 - Lidarr
@@ -52,11 +53,18 @@ Available options:
 - Limit download and upload speed: optional
 - Add as paused: default false
 
-Built in re-announce will make sure it works with initially broken trackers.
+### Transmission
+
+Send to one or multiple local or remote instances of Transmission.
+
+Available options:
+
+- Save path: optional
+- Add as paused: default false
 
 ### Radarr, Sonarr, Lidarr and Whisparr
 
-Autobrr supports the ability to push directly to the *arr suite of services.
+Autobrr supports the ability to push directly to the \*arr suite of services.
 
 Could be useful to do some basic filtering before sending.
 
@@ -70,7 +78,7 @@ Simple action which only logs OK.
 
 ### Watch dir
 
-For torrent clients not yet supported this is the next best thing. Useful if you want to use rTorrent, Transmission etc
+For torrent clients not yet supported this is the next best thing. Useful if you want to use some other client like rTorrent etc
 
 Takes a path to a writeable folder.
 

@@ -5,8 +5,7 @@ import TabItem from "@theme/TabItem";
 <TabItem value="qbittorrent" label="qBittorrent">
 
 ```
-Host: Takes an IP or URL without http(s), eg. myserver.test.
-Port: <WebUI port>
+Host: Takes IP:PORT or URL with http(s), eg. http://myserver.test.
 SSL: Use this if the server is on https. It's usually not the case.
 Username: <username>
 Password: <password>
@@ -19,6 +18,18 @@ Password: <password>
 ```
 Host: Takes an IP or URL without http(s), eg. myserver.test.
 Port: <daemon port>
+SSL: Use this if the server is on https. It's usually not the case.
+Username: <username>
+Password: <password>
+```
+
+</TabItem>
+
+<TabItem value="transmission" label="Transmission">
+
+```
+Host: Takes an IP or URL without http(s), eg. myserver.test.
+Port: <daemon port> Default 9091, or 443 for HTTPS
 SSL: Use this if the server is on https. It's usually not the case.
 Username: <username>
 Password: <password>

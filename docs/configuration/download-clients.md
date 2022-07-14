@@ -15,6 +15,7 @@ Check [Supported download clients and actions #2](https://github.com/autobrr/aut
 
 - qBittorrent
 - Deluge (v1+ and v2+)
+- Transmission
 - Radarr
 - Sonarr
 - Lidarr
