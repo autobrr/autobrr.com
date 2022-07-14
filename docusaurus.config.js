@@ -1,5 +1,6 @@
-const lightCodeTheme = require('prism-react-renderer/themes/github');
-const darkCodeTheme = require('prism-react-renderer/themes/dracula');
+const lightCodeTheme = require('prism-react-renderer/themes/vsLight');
+const darkCodeTheme = require('prism-react-renderer/themes/oceanicNext');
+const FontPreloadPlugin = require('webpack-font-preload-plugin');
 const config = {
   title: 'autobrr',
   tagline: 'the modern autodl-irssi replacement',
@@ -19,11 +20,10 @@ const config = {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
           editUrl: 'https://github.com/autobrr/autobrr.com/tree/main/',
-          sidebarCollapsible: false,
+          //sidebarCollapsible: false,
           routeBasePath: "/",
         },
         blog: false,
-
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
         },
@@ -42,7 +42,7 @@ const config = {
         items: [
           {
             type: 'doc',
-            docId: 'getting-started/installation',
+            docId: 'installation/linux',
             position: 'left',
             label: 'Docs',
           },
@@ -58,64 +58,23 @@ const config = {
       colorMode: {
         defaultMode: 'dark',
       },
-      footer: {
-        logo: {
-          alt: 'autobrr Logo',
-          src: 'img/logo-sm.png',
-          href: 'https://autobrr.com',
-        },
-        links: [
-          {
-            title: 'Docs',
-            items: [
-              {
-                label: 'Introduction',
-                to: '/introduction',
-              },
-              {
-                label: 'Getting Started',
-                to: '/getting-started',
-              },
-              {
-                label: 'Filters',
-                to: '/filters',
-              },
-              {
-                label: 'FAQs',
-                to: '/faqs',
-              },
-            ],
-          },
-          {
-            title: 'Community',
-            items: [
-              {
-                label: 'Discord',
-                href: 'https://discord.gg/WQ2eUycxyT',
-              },
-            ],
-          },
-          {
-            title: 'More',
-            items: [
-              // {
-              //   label: 'Blog',
-              //   to: '/blog',
-              // },
-              {
-                label: 'GitHub',
-                href: 'https://github.com/autobrr/autobrr',
-              },
-            ],
-          },
-        ],
-        copyright: `Copyright © ${new Date().getFullYear()} autobrr. All rights reserved.`,
-      },
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
       },
     }),
+  
+  plugins: [
+    function preloadFontPlugin(_context, _options) {
+      return {
+        name: 'preload-font-plugin',
+        configureWebpack(_config, _isServer) {
+          return { plugins: [new FontPreloadPlugin()] };
+        },
+      };
+    },
+    // ...
+  ],
 };
 
 module.exports = config;

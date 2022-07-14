@@ -7,35 +7,38 @@ pagination_next: filters/actions
 title: Filters
 ---
 
-import { HiOutlineFilter } from 'react-icons/hi';
-
-# Filters <HiOutlineFilter />
+# Filters
 
 Most fields can take a comma separated list like `value1, value2`.
 
-The comma separated lists supports wildcards, where `*` means 0 or more characters and `?` means exactly one character. Like `*this*,that?movie`.
+The comma separated lists supports wildcards, where `*` means 0 or more characters and `?` means exactly one character. An example would be: `*this*,that?movie`. In this case we would match any title containing `this` (or `tHiS`) or in the second case, any title which matches exactly like `That Movie` or `tHaT MoViE` or even `THAT.MOVIE`.
 
-If nothing but name and an indexer is specified, it will match against anything for that indexer.
+If no value is specified in a field, then that field will match any/all possible values. That means if nothing but `Filter Name` and `Indexers` is given, then the filter it will match all/any releases for the specified indexers.
 
-All filters are **case-insensitive**, so write them however you desire.
+Please note that all filters are **case-insensitive**, so write them however you desire. Another thing to note is that it is not possible to escape wildcard fields.
+
+:::info
+
+If you want to match a string partially, then don't forget to use the `*` around the before/after/around what you're looking for.
+If you want to match a string exactly, then try to avoid the use of the `*` wildcard character.
+
+:::
+
+---
 
 ## General
 
-### Name
+| Field | Description | Default value |
+|-------|-------------|---------------|
+| **Filter name** | The name of this filter. | | 
+| **Enabled** | Is this filter active? | false |
+| **Indexers** | Which indexers should this filter work for? | |
 
-* **Required:** Yes
-* **Description:** Filter name.
+:::info
 
-### Enabled
+Note that all filters by default are **DISABLED** and you will have to enable them manually.
 
-* **Default:** false
-* **Description:** Use it to enable or disable a filter. All filters are disabled by default.
-
-### Indexers
-
-* **Default:** none
-* **Type:** Multiselect
-* **Description:** Select which (active) indexers this filters should match with. Make sure to check the definitions how they handle things like `tags,freeleech,uploader` etc.
+:::
 
 ### Rules
 
@@ -50,214 +53,90 @@ For TV and movies it's advised to use filters like `resolution`, `source` and `c
 
 :::
 
-#### Max size
 
-* **Default:** Any size allowed
-* **Description:** Max size allowed for torrents. Takes any size and converts internally to bytes. M,MB,MiB etc. 10G, 10GB
+| Field | Description | Default value |
+|-------|-------------|---------------|
+| **Max. size** | Maximum torrent size allowed. Supports units such as MB, MiB, GB, etc. | +Inf | 
+| **Min. size** | Minimum torrent size allowed. Supports units such as MB, MiB, GB, etc. | 0 |
+| **Delay** | Number of seconds to wait before running actions. | 0 |
+| **Priority** | Filters are checked in order of priority. Positive and negative numbers allowed. | 0 |
+| **Max downloads** | Number of max downloads as specified by the respective unit. | 0 (which means +Inf) |
+| **Max downloads per** | The unit of time for counting the maximum downloads per filter. | |
 
-#### Min size
-
-* **Default:** 0, any size allowed
-* **Description:** Min size allowed for torrents. Takes any size and converts internally to bytes. M,MB,MiB etc. 10G, 10GB
-
-#### Delay
-
-* **Default:** 0
-* **Description:** Number of seconds to wait before running actions. The integrations with Deluge and qBittorrent have re-announce enabled so there's generally no need to use delay.
-
-#### Prioity
-
-* **Default:** 0
-* **Description:** When making the filter check it will fetch filters and order and run them by priority, highest to lowest. Supports positive and negative numbers. Default priority is set to 0.
+---
 
 ## TV/Movies
 
-### Movies / shows
+| Field | Description | Examples |
+|-------|-------------|----------|
+| **Movies/Shows** | Comma separated list of media names to match. | e.g. That?Movie, \*the\* |
+| **Years** | Comma separated list of acceptable year ranges in the string. | e.g. 2019,2020-2022 |
+| **Seasons** | Comma separated list of acceptable TV show seasons in the string. | e.g. 1,3-6 |
+| **Episodes** | Comma separated list of acceptable TV show episodes in the string. | e.g. 1,2,10-20 |
 
-* **Type:** Comma separated list
-* **Example:** `Movie, That Other movie`
-* **Description:** Supports wildcards but generally not needed. Eg. That?Movie, *the*
+:::info
 
-### Years
+The Movies/Shows field operates on the _parsed_ media title. This means it is guaranteed not contain dots and underscores, often found in release strings. However, it's still better to err on the safer side and use the `?` wildcard character instead.
 
-* **Type:** Comma separated list
-* **Example:** `2018,2020-2021`
-
-### Seasons
-
-* **Type:** Comma separated list
-* **Example:** `1,3-6`
-
-### Episodes
-
-* **Type:** Comma separated list
-* **Example:** `1,2,10-20`
-
-### Resolutions
-
-* **Type:** Multiselect
-* **Default:** Matches any
-* **Example:** `1080p, 2160p`
-* **Description:** Will only match releases with any of the selected resolutions
-
-### Sources
-
-* **Type:** Multiselect
-* **Default:** Matches any
-* **Example:** `Bluray, WEB-DL`
-* **Description:** Will only match releases with any of the selected sources
-
-### Codecs
-
-* **Type:** Multiselect
-* **Default:** Matches any
-* **Example:** `h264,x264,h265,x265,HEVC`
-* **Description:** Will only match releases with any of the selected codecs
-
-### Containers
-
-* **Type:** Multiselect
-* **Default:** Matches any
-* **Example:** `mkv`
-* **Description:** Will only match releases with any of the selected containers. Only a few indexers announce this.
-
-## Music
-
-### Artists
-
-* **Type:** Comma separated list
-* **Example:** `Artist, That Other Artist, Some Other Artist`
-* **Description:** Supports wildcards but generally not needed. Eg. That?Movie, *the*
-
-### Albums
-
-* **Type:** Comma separated list
-* **Example:** `Album, Some Other Album, Yet Another Album`
-* **Description:** Supports wildcards but generally not needed. Eg. That?Movie, *the*
-
-### Years
-
-* **Type:** Comma separated list
-* **Example:** `2018,2020-2021`
-
-### Format
-
-* **Type:** Multiselect
-* **Default:** Matches any
-* **Example:** `FLAC, MP3, OGG, AAC, DTS`
-* **Description:** Will only match releases with any of the selected formats.
+:::
 
 ### Quality
 
-* **Type:** Multiselect
-* **Default:** Matches any
-* **Example:** `192, 320, v0, Lossless, 24 Bit Lossless`
-* **Description:** Will only match releases with any of the selected qualities.
+| Field | Description |
+|-------|-------------|
+| **Resolutions** | Will match releases which contain any of the selected resolutions. |
+| **Sources** | Will match releases which contain any of the selected sources. |
+| **Codecs** | Will match releases which contain any of the selected codecs. |
+| **Containers** | Will match releases which contain any of the selected containers. |
+| **Match HDR** | Will match releases which contain any of the selected HDR designations. |
+| **Except HDR** | Won't match releases which contain any of the selected HDR designations (takes priority over Match HDR). |
+| **Match Other** | Will match releases which contain any of the selected HDR designations. |
+| **Except Other** | Won't match releases which contain any of the selected Other designations (takes priority over Match HDR). |
 
-### Sources
+---
 
-* **Type:** Multiselect
-* **Default:** Matches any
-* **Example:** `CD, WEB, DVD, Vinyl, Soundboard, Cassette, DAT, SACD, Blu-ray`
-* **Description:** Will only match releases with any of the selected sources.
+## Music
 
-### Type
+| Field | Description | Examples |
+|-------|-------------|----------|
+| **Artists** | Comma separated list of media names to match. | e.g. That?Artist |
+| **Albums** | Comma separated list of acceptable year ranges in the string. | e.g. That?Album, \*the?album\* |
+| **Years** | Comma separated list of acceptable years in the string. | e.g. 2019,2020-2022 |
 
-* **Type:** Multiselect
-* **Default:** Matches any
-* **Example:** `Album, EP, Soundtrack, Anthology, Mixtape`
-* **Description:** Will only match releases with any of the selected types.
+### Quality
 
-### Log Score
+| Field | Description |
+|-------|-------------|
+| **Format** | Will only match releases with any of the selected formats. |
+| **Quality** | Will only match releases with any of the selected qualities. |
+| **Sources** | Will only match releases with any of the selected sources. |
+| **Type** | Will only match releases with any of the selected types. |
+| **Log** | Whether Log **must** be included. |
+| **Log Score** | Matches Log percent for indexers that announce it. Check your indexer, the announced Log Score might not be in percent. |
+| **Cue** | Enforces Cue requirement. |
+| **Perfect FLAC** | Overrides all options about quality, source, format, and Cue/Log/Log score. |
 
-* **Type:** Comma separated list
-* **Example:** `50,100`
-* **Description:** Matches log percent for indexers that announce it. Only some use percent.
-
-### Log
-
-* **Type:** Toggle
-* **Description:** Enforces log requirement.
-
-### Cue
-
-* **Type:** Toggle
-* **Description:** Enforces cue requirement.
-
-### Perfect FLAC
-
-* **Type:** Toggle
-* **Description:** Overrides all options about quality, source, format, and cue/log/log score.
+---
 
 ## Advanced
 
-### Match releases
+| Field | Description | Examples | Availability |
+|-------|-------------|----------|--------------|
+| **Match releases** | Comma separated list of release names to match. | e.g. \*Movie\*remux\*, That Other movie, \*that?game\* | Always |
+| **Except releases** | Comma separated list of release names to ignore (takes priority over Match releases). | e.g. Bad?Movie, \*bad\* | Always |
+| **Match release groups** | Comma separated list of release names to match. | e.g. GROUP1, OTHERGROUP | Always |
+| **Except release groups** | Comma separated list of release names to ignore (takes priority over Match releases). | e.g. BADGROUP1, OTHERBADGROUP | Always |
+| **Match categories** | Comma separated list of release names to match. | e.g. tv,tv/1080p | Depends on Indexer |
+| **Except categories** | Comma separated list of release names to ignore (takes priority over Match releases). | e.g. tv/anime,tv/sports | Depends on Indexer |
+| **Match tags** | Comma separated list of release names to match. | e.g. action,romance | Depends on Indexer |
+| **Except tags** | Comma separated list of release names to ignore (takes priority over Match releases). | e.g. foreign | Depends on Indexer |
+| **Match uploaders** | Comma separated list of release names to match. | e.g. uploader1,otheruploader | Depends on Indexer |
+| **Except uploaders** | Comma separated list of release names to ignore (takes priority over Match releases). | e.g. anonymous,slow_uploader | Depends on Indexer |
+| **Freeleech** | Should this filter match only Freeleech releases? | | Depends on Indexer |
+| **Freeleech Percent** | Allowed Freeleech Percentage for this filter to match. | e.g. 50%,75-100% | Depends on Indexer, might not use percent. |
 
-* **Type:** Comma separated list
-* **Example:** `*Movie*remux*, That Other movie, *that?game*`
-* **Description:** Useful for all types of releases. Supports wildcards like `That?Movie, *the*`. Regex is NOT supported yet.
+:::caution
 
-### Except releases
+Don't combine Freeleech with Freeleech Percent! Freeleech is equal to setting Freeleech Percent to 100.
 
-* **Type:** Comma separated list
-* **Example:** `*Movie*remux*, That Other movie, *that?game*`
-* **Description:** If this matches, then filter will not go further. Useful for all types of releases. Supports wildcards like `That?Movie, *the*`. Regex is NOT supported yet.
-
-### Match release groups
-
-* **Type:** Comma separated list
-* **Example:** `GROUP1, OTHERGROUP`
-* **Description:** Matches release group. Supports wildcards like `*group*`.
-
-### Except release groups
-
-* **Type:** Comma separated list
-* **Example:** `BADGROUP1, OTHERBADGROUP`
-* **Description:** If this matches, then filter will not go further. Supports wildcards like `*group*`.
-
-### Match categories
-
-* **Type:** Comma separated list
-* **Example:** `tv,tv/1080p`
-* **Description:** Matches announced category. Supports wildcards like `*tv*`.
-
-### Except categories
-
-* **Type:** Comma separated list
-* **Example:** `tv,tv/1080p`
-* **Description:** If this matches, then filter will not go further. Supports wildcards like `*tv*`.
-
-### Match tags
-
-* **Type:** Comma separated list
-* **Example:** `action,romance`
-* **Description:** Matches announced tags. Not all indexers announce tags. Supports wildcards like `*action*`.
-
-### Except tags
-
-* **Type:** Comma separated list
-* **Example:** `foreign`
-* **Description:** If this matches, then filter will not go further. Supports wildcards like `*foreign*`.
-
-### Match uploaders
-
-* **Type:** Comma separated list
-* **Example:** `uploader1,otheruploader`
-* **Description:** Matches announced uploader. Not all indexers announce uploader. Supports wildcards like `*uploader*`.
-
-### Except uploaders
-
-* **Type:** Comma separated list
-* **Example:** `anonymous,slow_uploader`
-* **Description:** If this matches, then filter will not go further. Supports wildcards like `*uploader*`.
-
-### Freeleech
-
-* **Type:** Toggle
-* **Description:** Matches freeleech for indexers that announces it.
-
-### Freeleech Percent
-
-* **Type:** Comma separated list
-* **Example:** `50%,100%`
-* **Description:** Matches freeleech percent for indexers that announces it. Only some use percent. Don not combine freeleech and freeleech percent.
+:::

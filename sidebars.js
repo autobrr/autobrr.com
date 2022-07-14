@@ -7,22 +7,21 @@ module.exports = {
     },
     {
       type: "category",
-      label: "Getting Started",
-      link: {type: 'doc', id: 'getting-started/getting-started'},
+      label: "Installation",
       collapsed: false,
       items: [
-          "getting-started/installation",
-          "getting-started/docker",
-          "getting-started/windows",
-          "getting-started/postgres"
+          "installation/linux",
+          "installation/docker",
+          "installation/windows",
+          "installation/postgresql",
         ],
     },
     {
       type: "category",
       label: "Configuration",
       collapsed: false,
-      link: {type: 'doc', id: 'configuration/configuration'},
       items: [
+          "configuration/autobrr",
           "configuration/indexers",
           "configuration/irc",
           "configuration/download-clients",
@@ -32,7 +31,6 @@ module.exports = {
     {
       type: "category",
       label: "Filters",
-      link: {type: 'doc', id: 'filters/basics'},
       collapsed: false,
       items: [
           "filters/basics",

@@ -1,17 +1,14 @@
 ---
-title: Postgres
-sidebar_label: Postgres (optional)
-id: postgres
-pagination_label: Postgres (Optional)
-pagination_prev: getting-started/installation
+id: postgresql
+title: PostgreSQL
+sidebar_label: PostgreSQL (Optional)
+pagination_prev: introduction
 pagination_next: configuration/indexers
 ---
 
-import { SiPostgresql } from 'react-icons/si';
+# PostgreSQL (Optional)
 
-# Postgres <SiPostgresql />
-
-Using postgres is optional. If you want to use postgres with autobrr, add this to your config.toml and restart:
+Using PostgreSQL is optional. If you want to use PostgreSQL with autobrr, then add this to your config.toml and restart:
 
 ```toml title="config.toml"
 # Database config
@@ -24,9 +21,11 @@ postgresUser = "autobrr"
 postgresPass = "s0meth!ng-l0ng-4nd-s3cure"
 ```
 
-:::note
+:::info
 It is recommended to create a new user and database for autobrr.
-You might be able to migrate your sqlite database to postgres, but I haven't looked into it.
+You might be able to migrate your SQLite database to PostgreSQL, but the authors haven't taken a deep look into it.
+
+SQLite still remains the primary option which is actively being tested against.
 :::
 
 :::warning Warning
