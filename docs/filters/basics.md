@@ -118,24 +118,6 @@ The Movies/Shows field operates on the _parsed_ media title. This means it is gu
 
 ---
 
-## E-Books and Audiobooks
-
-| Field | Description | Examples |
-|-------|-------------|----------|
-| **Books** | Comma separated list of book titles to match. | e.g. That?Book, \*the\* |
-| **Authors** | Comma separated list of acceptable authors in the string. | e.g. Author One |
-| **Years** | Comma separated list of acceptable years in the string. | e.g. 2019,2020-2022 |
-
-### Options
-
-| Field | Description |
-|-------|-------------|
-| **E-Book format** | Will only match e-books with any of the selected formats. |
-| **Audiobook format** | Will only match audiobooks with any of the selected formats. |
-| **Language** | Will only match releases with any of the selected languages. |
-
----
-
 ## Advanced
 
 | Field | Description | Examples | Availability |
