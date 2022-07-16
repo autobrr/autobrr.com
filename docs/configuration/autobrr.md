@@ -51,7 +51,7 @@ port = 7474
 #
 # Default: "DEBUG"
 #
-# Options: "ERROR", "DEBUG", "INFO", "WARN"
+# Options: "ERROR", "DEBUG", "INFO", "WARN", "TRACE"
 #
 logLevel = "TRACE"
 
@@ -71,11 +71,12 @@ sessionSecret = "secret-session-key"
 
 ### Create user via command line (Optional)
 
-This step is not needed, unless you wish to create a user *via the command line*. Instead the process of creating an user can be done via the web UI instead, which is the recommended way to do it.
+This step is not needed, unless you wish to create a user _via the command line_. Instead the process of creating an user can be done via the web UI instead, which is the recommended way to do it.
 
 To create a user alongside the initial database, you need to use `autobrrctl`. Specify your config directory via the `--config` argument, followed by `create-user` and then your wanted username. After executing the command, you will prompted to enter a password.
 
 Example:
+
 ```bash
 autobrrctl --config ~/.config/autobrr create-user USERNAME
 ```
