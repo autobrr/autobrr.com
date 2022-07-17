@@ -108,6 +108,7 @@
   text-decoration: underline;
   text-decoration-color: var(--colors-mauve5);
   text-underline-offset: 3px;
+  padding-bottom: 0;
 }
 
 .navbar__link:hover {
