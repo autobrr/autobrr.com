@@ -45,9 +45,14 @@ services:
 
 You can either let autobrr create the config itself at startup, or create one manually. For more information, please visit [configuring autobrr](../configuration/autobrr) which covers creating a user manually, configuring the default port, setting the desired log level, etc.
 
-## Initial start
+## Start
 
 1. Start the container `docker-compose up -d`
+
+### Create user manually (deprecated)
+
+Previously you needed to create the user with the cli `autobrrctl` but that initial setup can now be done in the ui on first launch.
+
 2. Exec into the container with `docker exec -it autobrr sh`
 3. Run the create-user command: `autobrrctl --config /config create-user <USERNAME>`. Then exit out with `exit`
 4. Now you should be able to login with the newly created user.
