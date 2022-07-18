@@ -28,6 +28,26 @@ sudo box install autobrr
 
 Note: Remember to head over to our [Configuration Guide](/configuration/indexers) to learn how to set up your indexers, IRC, and download clients after you're done installing.
 
+## Saltbox
+
+[Saltbox](https://saltbox.dev/) users can simply run:
+
+```
+sb install sandbox-autobrr
+```
+
+For more [docs](https://docs.saltbox.dev/sandbox/apps/autobrr/)
+
+## QuickBox (v3)
+
+[QuickBox](https://quickbox.io/) users can simply run:
+
+```
+qb install autobrr -u ${username}
+```
+
+For more [docs](https://quickbox.io/knowledge-base/v3/applications-v3/autobrr-applications-v3/autobrr-quick-reference/)
+
 ## Regular installation
 
 ### Downloading autobrr
