@@ -98,8 +98,8 @@ location /autobrr/ {
     proxy_http_version      1.1;
     proxy_set_header        X-Forwarded-Host        $http_host;
 
-    auth_basic "What's the password?";
-    auth_basic_user_file /etc/htpasswd;
+    #auth_basic "What's the password?";
+    #auth_basic_user_file /etc/htpasswd;
 
     rewrite ^/autobrr/(.*) /$1 break;
 }
