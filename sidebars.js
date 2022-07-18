@@ -33,7 +33,7 @@ module.exports = {
       type: "category",
       label: "Filters",
       collapsed: false,
-      items: ["filters/basics", "filters/actions"],
+      items: ["filters/basics", "filters/actions", "filters/examples"],
     },
     {
       type: "doc",
