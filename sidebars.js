@@ -27,6 +27,7 @@ module.exports = {
         "configuration/irc",
         "configuration/download-clients",
         "configuration/torznab-feeds",
+        "configuration/notifications",
       ],
     },
     {
@@ -34,11 +35,6 @@ module.exports = {
       label: "Filters",
       collapsed: false,
       items: ["filters/basics", "filters/actions", "filters/examples"],
-    },
-    {
-      type: "doc",
-      label: "Notifications",
-      id: "notifications",
     },
     {
       type: "doc",

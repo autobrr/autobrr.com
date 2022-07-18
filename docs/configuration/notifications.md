@@ -1,7 +1,8 @@
 ---
-sidebar_position: 5
+sidebar_position: 6
 sidebar_label: Notifications
 title: Notifications
+pagination_label: Configuration - Notifications
 ---
 
 # Notifications
