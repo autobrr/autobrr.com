@@ -12,6 +12,8 @@ Read more about setup of [download clients](/configuration/download-clients) bef
 
 When adding, updating or removing actions on a filter, make sure to save.
 
+Many of the action fields have support for macros to build dynamic values. [Macros](#macros)
+
 ## Supported actions
 
 - qBittorrent
@@ -22,7 +24,8 @@ When adding, updating or removing actions on a filter, make sure to save.
 - Lidarr
 - Whisparr
 - Save to watch folder
-- Run custom commands
+- Exec - Run custom commands
+- Webhook - Post a payload to some http url
 - Test (logs result if matched. Does not download torrent files)
 
 ### qBittorrent
@@ -74,7 +77,7 @@ Supports both local and remote instances.
 
 ### Test
 
-Simple action which only logs OK.
+Simple action which will not download anything but useful for filter testing.
 
 ### Watch dir
 
@@ -82,28 +85,16 @@ For torrent clients not yet supported this is the next best thing. Useful if you
 
 Takes a path to a writeable folder.
 
-### Available variables
+### Custom commands / Exec
 
-- `{{.TorrentName}}`: Release name as announced
-- `{{.TorrentUrl}}`: Full url to download torrent
-- `{{.TorrentPathName}}`: Path to downloaded .torrent file in `/tmp`.
-- `{{.TorrentHash}}`
-- `{{.Indexer}}`
-- `{{.Title}}`
-- `{{.Resolution}}`
-- `{{.Source}}`
-- `{{.HDR}}`
-- `{{.Season}}`
-- `{{.Episode}}`
-- `{{.ParsedYear}}`
-- `{{.ParsedMonth}}`
-- `{{.ParsedDay}}`
-- `{{.Year}}`
-- `{{.Month}}`
-- `{{.Day}}`
-- `{{.Hour}}`
-- `{{.Minute}}`
-- `{{.Second}}`
+For custom commands you should specify the full path to the binary/program you want to run. And you can include your own static variables. For example:
+
+- `race-{{.Indexer}}/{{.Resolution}}` as a tag or Category.
+- `/Movies/{{.Resolution}}` as a save path.
+
+## Macros
+
+The following fields can use macros to transform/add values from metadata.
 
 Try these variables out in the any of the following fields.
 
@@ -114,16 +105,58 @@ Try these variables out in the any of the following fields.
 - Save Path
 - Exec arguments
 
-These variables are implemented using the go template engine. This is an extremely powerful scripting platform that can perform operations, evaluations, and manipulate values at the user configuration level. Further information on the functionality of this platform can be found [here](https://pkg.go.dev/text/template).
+These variables are implemented using the Go template engine. This is an extremely powerful scripting platform that can perform operations, evaluations, and manipulate values at the user configuration level. Further information on the functionality of this platform can be found [here](https://pkg.go.dev/text/template).
+
+### Available variables
+
+| Variable               |  Description                               |
+| ---------------------- | ------------------------------------------ |
+| `{{.TorrentName}}`     | Release name as announced                  |
+| `{{.TorrentUrl}}`      | Full url to download torrent               |
+| `{{.TorrentPathName}}` | Path to downloaded .torrent file in `/tmp` |
+| `{{.TorrentHash}}`     | Torrent hash                               |
+| `{{.Indexer}}`         | Indexer                                    |
+| `{{.FilterName}}`      | Filter name                                |
+| `{{.Title}}`           | Parsed title (That Movie)                  |
+| `{{.Resolution}}`      | Parsed resolution (1080p)                  |
+| `{{.Source}}`          | Parsed source (BluRay, WEB-DL)             |
+| `{{.HDR}}`             | Parsed HDR (DV, HDR, HDR10)                |
+| `{{.Season}}`          | Parsed season                              |
+| `{{.Episode}}`         | Parsed episode                             |
+| `{{.Year}}`            | Parsed year                                |
+| `{{.CurrentYear}}`     | Current Year                               |
+| `{{.CurrentMonth}}`    | Current Month                              |
+| `{{.CurrentDay}}`      | Current Day                                |
+| `{{.CurrentHour}}`     | Current Hour                               |
+| `{{.CurrentMinute}}`   | Current Minute                             |
+| `{{.CurrentSecond}}`   | Current Second                             |
+
+### Examples
 
 Simple examples of this extensive functionality can be found below.
 
-- `{{.TorrentName | js}}`
-- `{{.Month | printf "%02d"}}`
+- Escape torrent name - `{{ .TorrentName | js }}`
 
-### Custom commands / Exec
+#### Dynamic categories in qBittorrent
 
-For custom commands you should specify the full path to the binary/program you want to run. And you can include your own static variables. For example:
+Dynamic resolution for eg movies or tv. Very useful to keep things separated and easy to mange. With well named releases this works great as a Plex library.
 
-- `race-{{.Indexer}}/{{.Resolution}}` as a tag or Category.
-- `/Movies/{{.Resolution}}` as a save path.
+Category: `movies-{{ .Resolution }}` = `movies-1080p`, `movies-2160p`
+
+#### Tags
+
+Dynamic tags based on indexer, resolution or other
+
+- Tags: `{{ .Indexer }}` = `mockindexer`
+- Tags: `{{ .Resolution }}` = `2160p`
+
+#### Dynamic date and time
+
+Could be used to build dynamic save paths etc.
+
+- `{{ .CurrentYear }}`
+- `{{ .CurrentMonth | printf "%02d"}}`
+
+#### Dynamic movie filter with hdr/dv
+
+Category: `movies-{{ .Resolution }}{{ if .HDR }}-{{ .HDR }}{{ end }}`
