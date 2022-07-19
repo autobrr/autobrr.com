@@ -1,6 +1,24 @@
 ---
 id: shared-seedbox
-title: Shared seedbox
+sidebar_label: Shared Seedbox
+title: Install autobrr on Shared seedbox
+description: A guide on how to setup autobrr on shared seedbox
+keywords:
+  [
+    autobrr,
+    installation,
+    setup,
+    seedbox,
+    shared seedbox,
+    swizzin,
+    swizzin.net,
+    sbio,
+    seedbox.io,
+    ultra,
+    ultra.cc,
+    whatbox,
+    whatbox.ca,
+  ]
 pagination_prev: introduction
 pagination_next: configuration/indexers
 ---

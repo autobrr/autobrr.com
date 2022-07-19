@@ -1,7 +1,25 @@
 ---
+title: Filter Actions
+description: How to setup and use filter actions
+keywords:
+  [
+    autobrr,
+    filters,
+    actions,
+    qBittorrent,
+    qbit,
+    Deluge,
+    Transmission,
+    Radarr,
+    Sonarr,
+    Lidarr,
+    Whisparr,
+    Webhook,
+    watch dir,
+    watch folder,
+  ]
 sidebar_label: Actions
 pagination_label: Filters - Actions
-title: Actions
 ---
 
 # Actions

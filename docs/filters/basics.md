@@ -1,10 +1,12 @@
 ---
 id: basics
-sidebar_label: Basics
-pagination_label: Filters - Basics
 slug: /filters
+sidebar_label: Basics
+title: Filter explanation
+description: Explanation of filter options, fields and values
+keywords: [autobrr, filters, tv, movies, music]
+pagination_label: Filters - Basics
 pagination_next: filters/actions
-title: Filters
 ---
 
 # Filters

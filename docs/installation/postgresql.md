@@ -1,6 +1,8 @@
 ---
 id: postgresql
-title: PostgreSQL
+title: Setup autobrr with PostgreSQL
+description: A guide on how to use PostgreSQL with autobrr
+keywords: [autobrr, installation, postgres, postgre, postgressql]
 sidebar_label: PostgreSQL (Optional)
 pagination_prev: introduction
 pagination_next: configuration/indexers

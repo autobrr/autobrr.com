@@ -1,6 +1,20 @@
 ---
 id: docker
-title: Docker
+sidebar_label: Docker
+title: Setup autobrr with Docker
+description: A guide how to run autobrr on docker
+keywords:
+  [
+    autobrr,
+    docker,
+    docker-compose,
+    installation,
+    traefik,
+    containers,
+    kubernetes,
+    k8s,
+    k3s,
+  ]
 pagination_prev: introduction
 pagination_next: configuration/indexers
 ---

@@ -2,6 +2,24 @@
 sidebar_label: Download Clients
 sidebar_position: 3
 title: Download clients
+description: The download clients available in autobrr
+keywords:
+  [
+    autobrr,
+    config,
+    setup,
+    download client,
+    client,
+    bittorrent,
+    torrents,
+    qbittorrent,
+    deluge,
+    transmission,
+    radarr,
+    sonarr,
+    lidarr,
+    whisparr,
+  ]
 pagination_label: Configuration - Download clients
 ---
 

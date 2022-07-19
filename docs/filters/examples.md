@@ -1,7 +1,25 @@
 ---
+title: Filter Examples
+description: Filter examples for TV Sonarr, Movies Radarr, Buffer, Ratio
+keywords:
+  [
+    autobrr,
+    filters,
+    tv,
+    movies,
+    music,
+    hdr,
+    resolution,
+    dv,
+    dolby vision,
+    2160p,
+    1080p,
+    4k,
+    radarr,
+    sonarr,
+  ]
 sidebar_label: Examples
 pagination_label: Filters - Examples
-title: Examples
 ---
 
 # Examples

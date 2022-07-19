@@ -1,7 +1,24 @@
 ---
 sidebar_position: 6
 sidebar_label: Notifications
-title: Notifications
+title: Notifications for autobrr with Discord Telegram and Notifiarr
+description: Setup notifications for autobrr
+keywords:
+  [
+    autobrr,
+    setup,
+    notifications,
+    discord,
+    telegram,
+    notifiarr,
+    push,
+    rejected,
+    approved,
+    error,
+    update,
+    disconnect,
+    reconnect,
+  ]
 pagination_label: Configuration - Notifications
 ---
 

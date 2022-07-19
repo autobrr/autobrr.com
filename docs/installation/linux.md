@@ -1,6 +1,9 @@
 ---
 id: linux
-title: Linux
+sidebar_label: Linux
+title: Install autobrr on Linux
+description: A guide on how to setup autobrr for linux servers
+keywords: [autobrr, linux, installation, swizzin, saltbox, quickbox, systemd]
 pagination_prev: introduction
 pagination_next: configuration/indexers
 ---

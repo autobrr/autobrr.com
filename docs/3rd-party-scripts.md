@@ -2,6 +2,8 @@
 sidebar_label: 3rd party scripts
 sidebar_position: 6
 title: 3rd party scripts
+description: 3rd part scripts for autobrr
+keywords: [arrbrr, regbrr]
 ---
 
 :::warning Caution

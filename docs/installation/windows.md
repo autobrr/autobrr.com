@@ -1,5 +1,8 @@
 ---
-title: Windows
+sidebar_label: Windows
+title: Install autobrr on Windows
+description: A guide on how to setup autobrr on Windows
+keywords: [autobrr, installation, setup, seedbox, windows]
 pagination_prev: introduction
 pagination_next: configuration/indexers
 ---

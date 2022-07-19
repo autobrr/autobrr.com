@@ -1,8 +1,10 @@
 ---
 sidebar_label: Torznab feeds
 sidebar_position: 4
-title: Torznab feeds
 pagination_label: Configuration - Torznab feeds
+title: Indexers Torznab and RSS feeds
+description: Setup torznab feeds for autobrr
+keywords: [autobrr, setup, indexers, torznab, torrents, rss, feeds]
 ---
 
 # Torznab feeds
@@ -17,9 +19,9 @@ Prowlarr and Jackett are supported. We recommend that you use Prowlarr.
 
 Go to `Settings > Indexers` and add `Generic Torznab` from the list.
 
-* **Name**: `<name of indexer>`
-* **Torznab URL**: `http://localhost:port/ID/api`
-* **API Key**: `<API key>`
+- **Name**: `<name of indexer>`
+- **Torznab URL**: `http://localhost:port/ID/api`
+- **API Key**: `<API key>`
 
 Once saved, head over to `Settings > Feeds` to enable it.
 

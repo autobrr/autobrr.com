@@ -1,8 +1,24 @@
 ---
 sidebar_label: IRC
 sidebar_position: 2
-title: IRC
 pagination_label: Configuration - IRC
+title: IRC setup for autobrr
+description: Setup IRC networks and announce channels with autobrr
+keywords:
+  [
+    autobrr,
+    setup,
+    irc,
+    announce,
+    announce channel,
+    pre,
+    bittorrent,
+    torrents,
+    nickserv,
+    group,
+    invite command,
+    connect command,
+  ]
 ---
 
 # IRC

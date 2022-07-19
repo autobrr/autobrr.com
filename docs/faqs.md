@@ -1,7 +1,9 @@
 ---
 sidebar_position: 7
-sidebar_label: FAQs
-title: FAQs
+sidebar_label: FAQ
+title: FAQ
+description: FAQ - Frequently Asked Questions
+keywords: [autobrr, question, faq, error, no filter, no releases]
 ---
 
 ## I have set up an indexer, but it does not connect to the #announce channel. What do I do?
@@ -26,8 +28,8 @@ Check your logs. Additionally, enable trace logging by setting `logLevel = "TRAC
 If autobrr isn't reaching Deluge when running Docker you can try this:
 
 - `Host` should be the deluge container you're trying to reach, it will probably just be `deluge`.
-Make sure that your docker containers are on the same network, so they can reach each other. If you're using a single compose file, it should be by default.
+  Make sure that your docker containers are on the same network, so they can reach each other. If you're using a single compose file, it should be by default.
 - `Port` should be the daemon port, not the webui port. Find the correct one by logging into Deluge webui, and checking in Preferences or under Connection Manager (default: 58846).
 - `Authentication` is required for deluge daemon, not the webui.
-It can be found at `/docker/appdata/deluge/auth`, the default one looks like `localclient:password:10`.
-You can add your own if you wish. Like `username:password:powerlevel`.
+  It can be found at `/docker/appdata/deluge/auth`, the default one looks like `localclient:password:10`.
+  You can add your own if you wish. Like `username:password:powerlevel`.

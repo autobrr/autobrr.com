@@ -1,8 +1,51 @@
 ---
 sidebar_position: 1
 sidebar_label: Introduction
-title: Introduction
 pagination_next: installation/linux
+title: Introduction and features
+description: Introduction, features and history of autobrr
+keywords:
+  [
+    autobrr,
+    indexers,
+    trackers,
+    torrents,
+    bittorrent,
+    racing,
+    p2p,
+    autodl-irssi,
+    replacement,
+    autodl replacement,
+    autodl-irssi replacement,
+    irssi,
+    trackarr,
+    flexget,
+    irc,
+    announce,
+    torznab,
+    prowlarr,
+    rss,
+    Golang,
+    regex,
+    docker,
+    discord,
+    telegram,
+    notifiarr,
+    qbittorrent,
+    deluge,
+    transmission,
+    sonarr,
+    radarr,
+    lidarr,
+    whisparr,
+    webhook,
+    cross-seed,
+    seeding,
+    x-seed,
+    xseed,
+    cabal,
+    api,
+  ]
 ---
 
 autobrr is the modern download automation tool for torrents.
