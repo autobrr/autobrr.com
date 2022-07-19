@@ -74,7 +74,7 @@ Don't forget to add a [Radarr action](/filters/actions#radarr-sonarr-lidarr-and-
 
 ### HD (720p, 1080p)
 
-Set this to match your quality settings in Sonarr
+Set this to match your quality settings in Radarr
 
 | Field            |  Values                                                              |
 | ---------------- | -------------------------------------------------------------------- |
@@ -84,7 +84,7 @@ Set this to match your quality settings in Sonarr
 
 ### 4k (2160p)
 
-Set this to match your quality settings in Sonarr
+Set this to match your quality settings in Radarr
 
 | Field            |  Values                                                              |
 | ---------------- | -------------------------------------------------------------------- |
