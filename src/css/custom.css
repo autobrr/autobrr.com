@@ -164,15 +164,22 @@ header.hero {
 }
 
 .hero-grid-container {
+  display: flex;
+  justify-content: center;
   margin: 0 auto;
-  max-width: 640px;
 }
 
 .hero-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: 1rem 0.5rem;
-  margin: 2.5rem 0 2rem;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  margin: 2.5rem 0 0;
+}
+
+@media only screen and (max-width: 640px) {
+  .hero-grid {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
 .hero-icon-container {
