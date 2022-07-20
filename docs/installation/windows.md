@@ -15,7 +15,7 @@ In this setup we will create an autobrr user and a Windows service that operates
 
 ## Download package
 
-Download the latest Windows release and unpack. Place everything in `C:\.autobrr` or some other directory.
+Download the latest Windows release and unpack. Place everything in `C:\autobrr` or some other directory.
 
 Latest release can always be found at:
 
@@ -47,7 +47,7 @@ Our Action will be to **Start a Program** and we'll set our path to the autobrr.
 
 <img src={useBaseUrl('/img/d.%20action.png')} />
 
-<img src={useBaseUrl('/img/e.%20path%20to%20autobrr.png')} />
+<img src={useBaseUrl('/img/task_action.png')} />
 
 Our final step is to **Run whether user is logged on or not** After you set this it'll prompt you for the Windows Administrator password. Enter it and you should be ready to run.
 
