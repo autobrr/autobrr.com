@@ -6,7 +6,7 @@ title: Indexers and trackers in autobrr
 description: The indexers and trackers available in autobrr
 keywords: [autobrr, setup, bittorrent, torrents, torznab]
 pagination_next: configuration/irc
-pagination_prev: installation/linux
+pagination_prev: configuration/autobrr
 pagination_label: Configuration - Indexers
 ---
 
