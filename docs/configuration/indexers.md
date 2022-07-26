@@ -21,6 +21,8 @@ If you want more indexers added please either create a PR for it, post a comment
 
 import Indexers from '/snippets/indexers.mdx';
 
+import ipapproval from '/snippets/ipapproval.mdx';
+
 <Indexers/>
 
 ## Setup
