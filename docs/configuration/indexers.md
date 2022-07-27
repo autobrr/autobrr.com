@@ -21,7 +21,7 @@ If you want more indexers added please either create a PR for it, post a comment
 
 import Indexers from '/snippets/indexers.mdx';
 
-import ipapproval from '/snippets/ipapproval.mdx';
+import IpApproval from '/snippets/ipapproval.mdx';
 
 <Indexers/>
 
@@ -42,6 +42,8 @@ The common ones are:
 - `apikey`
 
 When adding a new indexer you'll see which ones are needed. Check your indexers wiki/forum etc. to find where they are located.
+
+<IpApproval/>
 
 ## Custom indexer definitions
 
