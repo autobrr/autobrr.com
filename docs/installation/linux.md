@@ -74,7 +74,7 @@ Note: If the command fails, prefix it with `sudo ` and re-run again.
 
 ### Manually configure autobrr (Optional)
 
-You can either let autobrr create the config itself at startup, or create one manually. For more information, please visit [configuring autobrr](../configuration/autobrr) which covers creating a user manually, configuring the default port, setting the desired log level, etc.
+You can either let autobrr create the config itself at startup, or create one manually. For more information, please visit [configuring autobrr](/configuration/autobrr) which covers creating a user manually, configuring the default port, setting the desired log level, etc.
 
 ### Systemd (Recommended)
 

@@ -85,7 +85,7 @@ You shouldn't need to worry about it, but it's nice now to know what you need to
 
 ## Setup
 
-The initial setup of IRC networks and channels are done during the setup of [indexers](../configuration/indexers).
+The initial setup of IRC networks and channels are done during the setup of [indexers](/configuration/indexers).
 
 If you for some reason need to setup a network manually, or edit an existing one, you can do that in `Settings > IRC`.
 
