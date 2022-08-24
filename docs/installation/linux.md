@@ -72,15 +72,23 @@ tar -C /usr/local/bin -xzf autobrr*.tar.gz
 This will extract both `autobrr` and `autobrrctl` to `/usr/local/bin`.
 Note: If the command fails, prefix it with `sudo ` and re-run again.
 
-### Manually configure autobrr (Optional)
+### Configuration
+
+Create the config dir
+
+```bash
+mkdir -p ~/.config/autobrr
+```
+
+#### Manually configure autobrr (Optional)
 
 You can either let autobrr create the config itself at startup, or create one manually. For more information, please visit [configuring autobrr](/configuration/autobrr) which covers creating a user manually, configuring the default port, setting the desired log level, etc.
 
 ### Systemd (Recommended)
 
-On Linux-based systems, it is recommended to run autobrr as sort of a service with auto-restarting capabilities, in order to account for potential downtime. The most common way is to do it via systemd.
+On Linux-based systems, it is recommended to run autobrr as a service with auto-restarting capabilities, in order to account for potential downtime. The most common way is to do it via systemd.
 
-You will need to create a service file in `/etc/systemd/system/` called `autobrr.service`.
+You will need to create a service file in `/etc/systemd/system/` called `autobrr@.service`. The `@` is important.
 
 ```bash
 touch /etc/systemd/system/autobrr@.service
@@ -97,27 +105,35 @@ After=syslog.target network-online.target
 Type=simple
 User=%i
 Group=%i
-ExecStart=/usr/bin/autobrr --config=/home/%i/.config/autobrr/
+ExecStart=/usr/local/bin/autobrr --config=/home/%i/.config/autobrr/
 
 [Install]
 WantedBy=multi-user.target
 ```
 
-Start the service. Enable will make it startup on reboot.
+The `%i` will automatically be replaced with your user when you call `systemctl enable` with `@USERNAME` like below.
+
+Start the service. Enable will make it startup on reboot. Replace `USERNAME` with your username.
 
 ```bash
-systemctl enable -q --now autobrr
+sudo systemctl enable --now autobrr@USERNAME.service
+```
+
+Make sure it's running and `active`
+
+```bash
+sudo systemctl status autobrr@USERNAME.service
 ```
 
 ## Reverse proxy (Recommended)
 
-It's recommended to run it behind a reverse proxy like nginx in order to get TLS, more robust authentification mechanisms and other similar benefits.
+It's recommended to run it behind a reverse proxy like nginx in order to get TLS, more robust authentication mechanisms and other similar benefits.
 
 This is an nginx example that should work for most:
 
 ```nginx
 location /autobrr/ {
-    proxy_pass              http://$remote_user.autobrr;
+    proxy_pass              http://127.0.0.1:7474;
     proxy_http_version      1.1;
     proxy_set_header        X-Forwarded-Host        $http_host;
 
@@ -136,4 +152,12 @@ The `rewrite` statement in this example is crucial for correctly setting things 
 
 ## Done
 
-Now that autobrr is up and running, you should be able to visit the your web UI at `domain.ltd:7474` and proceed with your registration/login.
+:::info
+
+By default autobrr listens on `127.0.0.1` which is the recommended way when running a reverse proxy, but if you want to expose it to the internet/network then you must change the `host` in the `~/.config/autobrr/config.toml` from `127.0.0.1` to `0.0.0.0`.
+
+Save the changes and restart autobrr with `sudo systemctl restart autobrr@USERNAME.service`.
+
+:::
+
+Now that autobrr is up and running, you should be able to visit the your web UI at `http://YOUR_IP:7474` or `http://domain.ltd:7474` and proceed with your registration/login.
