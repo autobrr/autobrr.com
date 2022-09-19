@@ -31,6 +31,7 @@ This guide expects some previous docker knowledge and an already working environ
 - Host port mapping might need to be changed to not collide with other apps
 - Change `BASE_DOCKER_DATA_PATH` to match your setup. Can be simply `./data`
 - Set custom network if needed
+- Set the `user: 1000:1000` to correct ID of your user.
 
 ```yaml title="docker-compose.yml"
 version: "3.7"
@@ -45,9 +46,8 @@ services:
     #  options:
     #    max-file: ${DOCKERLOGGING_MAXFILE}
     #    max-size: ${DOCKERLOGGING_MAXSIZE}
+    user: 1000:1000
     environment:
-      - PUID=${PUID}
-      - PGID=${GUID}
       - TZ=${TZ}
     volumes:
       - ${BASE_DOCKER_DATA_PATH}/autobrr/config:/config
