@@ -14,7 +14,11 @@ Please do not contact the creator of these scripts for support, but feel free to
 
 :::
 
-## arrbrr
+## arrbrr (deprecated)
+
+:::caution
+arrbrr has been depcreated in favor for [autobrr/omegabrr](https://github.com/autobrr/omegabrr) which does the same thing and more.
+:::
 
 Arrbrr imports your monitored movies and shows from your \*arrs to assigned filters in autobrr.
 
