@@ -26,7 +26,7 @@ module.exports = {
         "configuration/indexers",
         "configuration/irc",
         "configuration/download-clients",
-        "configuration/torznab-feeds",
+        "configuration/feeds",
         "configuration/notifications",
       ],
     },

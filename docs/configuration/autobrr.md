@@ -90,7 +90,7 @@ Make sure to read through all of the articles as all of them have some important
 - [Indexers <CgWebsite />](./indexers)
 - [IRC <BsChatDotsFill />](./irc)
 - [Download Clients <FaDownload />](./download-clients)
-- [Torznab Feeds <MdRssFeed />](./torznab-feeds)
+- [Torznab Feeds <MdRssFeed />](./feeds)
 
 ## Additional Help
 
