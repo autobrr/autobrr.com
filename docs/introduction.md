@@ -54,11 +54,11 @@ With inspiration and ideas from tools like trackarr, autodl-irssi and flexget we
 
 As of right now, autobrr features:
 
-- Support for 37+ trackers with IRC announces
-- Torznab/RSS support via Prowlarr to easily get access to hundreds of trackers
+- Support for 50+ trackers with IRC announces
+- RSS and Torznab support via Prowlarr to easily get access to hundreds of trackers
 - Powerful but simple filtering with RegEx support (like in autodl-irssi)
 - Easy to use and mobile friendly web UI (with dark mode!) to manage everything
-- Built on Go and React making autobrr lightweight and perfect for supporting multiple platforms (Linux, Windows, macOS) on different architectures (e.g. x86, ARM)
+- Built on Go and React making autobrr lightweight and perfect for supporting multiple platforms (Linux, FreeBSD, Windows, macOS) on different architectures (e.g. x86, ARM)
 - Great container support (Docker, k8s/Kubernetes)
 - Database engine supporting both PostgreSQL and SQLite
 - Notifications (Discord, Telegram, Notifiarr)
@@ -69,6 +69,7 @@ Available download clients and actions
 
 - qBittorrent (with built in re-announce, categories, rules, max active downloads, etc)
 - Deluge v1+ and v2+
+- rTorrent / ruTorrent
 - Transmission
 - Sonarr, Radarr, Lidarr and Whisparr (pushes releases directly to them and gets in the early swarm, instead of getting them via RSS when it's already over)
 - Watch folder
@@ -77,7 +78,6 @@ Available download clients and actions
 
 ## Planned features
 
-- RSS support
 - Automatic cross-seeding of existing releases
 
 ## About

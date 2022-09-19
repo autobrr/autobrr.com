@@ -51,10 +51,10 @@ function HomepageHeader() {
               text="Mobile-friendly"
             />
             <Center icon={<AiOutlineFilter size="24" />} text="Filters" />
-            <Center icon={<BiRss size="24" />} text="RSS via Torznab" />
+            <Center icon={<BiRss size="24" />} text="RSS and Torznab" />
             <Center
               icon={<AiOutlineDownload size="24" />}
-              text="37+ Indexers"
+              text="50+ Indexers"
             />
             <Center icon={<CgPlug size="24" />} text="*arr Integration" />
             <Center
