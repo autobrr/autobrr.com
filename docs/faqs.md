@@ -6,6 +6,32 @@ description: FAQ - Frequently Asked Questions
 keywords: [autobrr, question, faq, error, no filter, no releases]
 ---
 
+## Nothing happens - I'm not seeing any releases
+
+First of all, that's a pretty bad questions to start with.
+
+Please clarify what you actually mean.
+
+1. What doesn't happen? Is it filter related? Client related?
+2. What did you expect to happen?
+
+There could be multiple reasons. Only filtered releases that gets to the action stage will show up in **Releases**. That means:
+
+* \*arr actions that gets Approved or Rejected.
+* Releases sent to a torrent client
+* Releases that sent a webhook or ran custom scripts and so on.
+
+:::tip
+
+Go over your setup again and make sure that:
+
+1. You have added some indexer and enabled it.
+2. Check `Settings -> IRC` and make sure the network is GREEN. If it's gray it's not enabled.
+3. Did you add **a filter**, which is **enabled**, **have at least 1 indexer selected** and any **action** to run on match.
+4. Your filter might be too narrow/specific. A common issue is selecting everything in Quality. Deselect everything except resolution.
+
+:::
+
 ## I have set up an indexer, but it does not connect to the #announce channel. What do I do?
 
 Make sure you have entered the necessary keys in the invite command and that your IRC user has privileges to access to the #announce channel. See [IRC setup](/configuration/irc).
