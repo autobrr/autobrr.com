@@ -123,7 +123,7 @@ The Movies/Shows field operates on the _parsed_ media title. This means it is gu
 
 With external filters you can run `scripts` and `webhooks` to do your own custom filtering. If **Expected exit status** matches it will continue. If not it stops there.
 
-All the [variales and macros](/filters/actions#macros) from actions are usable in these fields to inject dynamic variables.
+All the [variables and macros](/filters/actions#macros) from actions are usable in these fields to inject dynamic variables.
 
 ### Script
 
