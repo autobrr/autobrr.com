@@ -40,6 +40,7 @@ Check [Supported download clients and actions #2](https://github.com/autobrr/aut
 - Radarr
 - Sonarr
 - Lidarr
+- Readarr
 - Whisparr
 
 All clients have a test function to try out the connection details before saving.
