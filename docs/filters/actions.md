@@ -40,6 +40,7 @@ Many of the action fields have support for macros to build dynamic values. [Macr
 - Radarr
 - Sonarr
 - Lidarr
+- Readarr
 - Whisparr
 - Save to watch folder
 - Exec - Run custom commands
@@ -83,7 +84,7 @@ Available options:
 - Save path: optional
 - Add as paused: default false
 
-### Radarr, Sonarr, Lidarr and Whisparr
+### Radarr, Sonarr, Lidarr, Readarr and Whisparr
 
 Autobrr supports the ability to push directly to the \*arr suite of services.
 

@@ -71,7 +71,7 @@ Available download clients and actions
 - Deluge v1+ and v2+
 - rTorrent / ruTorrent
 - Transmission
-- Sonarr, Radarr, Lidarr and Whisparr (pushes releases directly to them and gets in the early swarm, instead of getting them via RSS when it's already over)
+- Sonarr, Radarr, Lidarr, Readarr and Whisparr (pushes releases directly to them and gets in the early swarm, instead of getting them via RSS when it's already over)
 - Watch folder
 - Exec custom scripts
 - Webhook
