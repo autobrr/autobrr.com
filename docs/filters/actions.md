@@ -11,7 +11,7 @@ keywords:
     Deluge,
     Transmission,
     Radarr,
-    Sonarr,
+    Sonarr,wt
     Lidarr,
     Whisparr,
     Webhook,
@@ -102,7 +102,17 @@ Simple action which will not download anything but useful for filter testing.
 
 For torrent clients not yet supported this is the next best thing. Useful if you want to use some other client like rTorrent etc
 
-Takes a path to a writeable folder.
+## Examples
+1.
+
+path:/home/user/torrent/
+result: Generates random torrent name
+
+2.
+path:/home/user/torrent/torrentgm/{{.Indexer}}-{{.TorrentName}}.torrent
+result: {{.Indexer}}-{{.TorrentName}}.torrent generates torrent name based on attributes from indexer
+
+
 
 ### Custom commands / Exec
 
