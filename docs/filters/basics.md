@@ -60,7 +60,7 @@ For TV and movies it's advised to use filters like `resolution`, `source` and `c
 | **Max. size**         | Maximum torrent size allowed. Supports units such as MB, MiB, GB, etc.           |                      |
 | **Min. size**         | Minimum torrent size allowed. Supports units such as MB, MiB, GB, etc.           |                      |
 | **Delay**             | Number of seconds to wait before running actions.                                | 0                    |
-| **Priority**          | Filters are checked in order of priority. Positive and negative numbers allowed. | 0                    |
+| **Priority**          | Filters are checked in order of priority. Positive and negative numbers allowed. Higher number = higher priority. | 0                    |
 | **Max downloads**     | Number of max downloads as specified by the respective unit.                     | 0 (which means +Inf) |
 | **Max downloads per** | The unit of time for counting the maximum downloads per filter.                  |                      |
 
