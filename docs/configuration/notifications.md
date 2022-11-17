@@ -35,6 +35,11 @@ autobrr can send notifications on the following events:
 
 ## Discord
 
+:::warning
+There is currently a bug when using the `Push Error` event.
+It may leak your Download Client API/passkeys to the Discord channel. Keep that in mind if your Discord channel is accessible by others.
+:::
+
 To set up notifications for Discord, head to `Settings > Notifications`.
 
 1. Click **Add new**.
