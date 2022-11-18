@@ -1,6 +1,6 @@
 ---
 title: Category Examples
-description: Filter examples for TV Sonarr, Movies Radarr, Buffer, Ratio
+description: Filter categories for TV Sonarr, Movies Radarr, Buffer, Ratio
 keywords:
   [
     autobrr,
