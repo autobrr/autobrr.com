@@ -39,12 +39,6 @@ module.exports = {
       items: ["filters/basics", "filters/actions", "filters/examples", "filters/categories",],
     },
     {
-      type: "category",
-      label: "Troubleshooting",
-      collapsed: false,
-      items: ["troubleshooting/irc"],
-    },
-    {
       type: "doc",
       label: "3rd party scripts",
       id: "3rd-party-scripts",
