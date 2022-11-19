@@ -11,7 +11,7 @@ keywords:
     Deluge,
     Transmission,
     Radarr,
-    Sonarr,
+    Sonarr,wt
     Lidarr,
     Whisparr,
     Webhook,
@@ -100,9 +100,19 @@ Simple action which will not download anything but useful for filter testing.
 
 ### Watch dir
 
-For torrent clients not yet supported this is the next best thing. Useful if you want to use some other client like rTorrent etc
+For torrent clients not yet supported this is the next best thing.
 
-Takes a path to a writeable folder.
+By default if you only put the folder like `/home/USER/watch/` it will use the tmp file format like `autobrr-000.torrent`.
+
+#### Dynamic name
+
+Watch dir can take additional variables to dynamically build the name. If you want to change this and for example get the release name, you can do the following:
+
+    /home/user/torrent/torrent-backup/{{.Indexer}}-{{.TorrentName}}.torrent
+
+If the indexer is called `MockIndexer` and the release `Some.Release.2022.1080p.BluRay.x264.DTS-GROUP`
+
+It will generate the file like `MockIndexer-Some.Release.2022.1080p.BluRay.x264.DTS-GROUP.torrent`.
 
 ### Custom commands / Exec
 
