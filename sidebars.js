@@ -1,3 +1,5 @@
+
+
 module.exports = {
   docs: [
     {
@@ -34,7 +36,13 @@ module.exports = {
       type: "category",
       label: "Filters",
       collapsed: false,
-      items: ["filters/basics", "filters/actions", "filters/examples"],
+      items: ["filters/basics", "filters/actions", "filters/examples", "filters/categories",],
+    },
+    {
+      type: "category",
+      label: "Troubleshooting",
+      collapsed: false,
+      items: ["troubleshooting/irc"],
     },
     {
       type: "doc",
@@ -48,3 +56,4 @@ module.exports = {
     },
   ],
 };
+
