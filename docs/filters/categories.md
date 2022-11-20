@@ -17,6 +17,42 @@ This list was created with help from users like you. If you have others, please 
 
 As a rule of thumb, simple regex rules such as `*TV*,*Episode*` or `*Movie*` will sufice for most users needs
 
+<details><summary>AcidLounge</summary>
+
+ * Anime
+ * Appz/0-Day
+ * Appz/Misc
+ * Movies/HD
+ * Movies/SD
+ * TV
+ * TV-HD/X264
+ * TV-SD/X264
+ * TV/Boxsets HD
+ * TV/Boxsets SD
+ * XXX
+ * XXX/0-Day
+
+</details>
+
+<details><summary>AlphaRatio</summary>
+
+ * 0dayXXX
+ * Bluray
+ * MovieHD
+ * MoviePackHD
+ * MovieSD
+ * MovieUHD
+ * MovieXXX
+ * TvDVDRip
+ * TvHD
+ * TvPackHD
+ * TvPackSD
+ * TvPackUHD
+ * TvSD
+ * TvUHD
+
+</details>
+
 <details><summary>BeyondHD</summary>
 
 * Movies
@@ -24,10 +60,45 @@ As a rule of thumb, simple regex rules such as `*TV*,*Episode*` or `*Movie*` wil
 
 </details>
 
+<details><summary>BitHDTV</summary>
+
+ * Movies
+ * TV
+ * TV/Season
+ * XXX
+
+</details>
+
 <details><summary>Broadcasthenet</summary>
 
 * Episode
 * Season
+
+</details>
+
+<details><summary>DigitalCore</summary>
+
+ * Movies/1080p
+ * Movies/2160p
+ * Movies/720p
+ * Movies/BluRay
+ * Movies/Bluray/UHD
+ * Movies/DVDR
+ * Movies/PACKS
+ * Movies/SD
+ * Tv/1080p
+ * Tv/2160p
+ * Tv/720p
+ * Tv/BluRay
+ * Tv/DVDR
+ * Tv/PACKS
+ * Tv/SD
+ * XXX/4K
+ * XXX/HD
+ * XXX/Movies/4K
+ * XXX/Movies/HD
+ * XXX/Movies/SD
+ * XXX/PACKS
 
 </details>
 
@@ -53,6 +124,14 @@ As a rule of thumb, simple regex rules such as `*TV*,*Episode*` or `*Movie*` wil
 * Sport
 * Videoclip
 * XXX
+
+</details>
+
+<details><summary>HD-Space</summary>
+
+ * Blu-Ray
+ * HDTV 1080
+ * Movies 1080
 
 </details>
 
@@ -104,11 +183,22 @@ As a rule of thumb, simple regex rules such as `*TV*,*Episode*` or `*Movie*` wil
 
 </details>
 
+<details><summary>Milkie</summary>
+
+ * adult
+ * game
+ * movie
+ * tv
+
+</details>
+
 <details><summary>Morethantv</summary>
 
 * hd.episode
 * hd.movie
 * hd.season
+* sd.episode
+* sd.movie
 * sd.season
 
 </details>
@@ -120,12 +210,63 @@ As a rule of thumb, simple regex rules such as `*TV*,*Episode*` or `*Movie*` wil
 
 </details>
 
+<details><summary>Pretome</summary>
+
+ * Applications|Windows
+ * Movies|720p
+ * Movies|BluRay
+ * Movies|XviD
+ * Movies|x264
+ * Movies|x265
+ * TV|1080p
+ * TV|2160p
+ * TV|720p
+ * TV|BluRay
+ * TV|GAMES
+ * TV|MP3
+ * TV|MultiLanguage
+ * TV|TV-SD
+ * TV|U
+ * TV|XviD
+ * TV|x264
+ * TV|x265
+ * XXX|HiDef
+ * XXX|XXX
+
+</details>
+
 <details><summary>Redacted</summary>
 
 * Album
 * Anthology
 * Compilation
 * Single
+
+</details>
+
+<details><summary>Superbits</summary>
+
+ * archive DVD-R TV
+ * archive Film 1080
+ * archive Film 4K
+ * archive Film 720
+ * archive Film Bluray
+ * archive Svensk TV
+ * archive TV
+ * archive TV DK
+ * archive TV NO
+ * archive XXX
+ * new Film 1080
+ * new Film 4K
+ * new Film 720
+ * new Film Bluray
+ * new Svensk TV
+ * new TV
+ * new TV DK
+ * new TV FI
+ * new TV NO
+ * new XVID
+ * new XXX
 
 </details>
 
@@ -171,6 +312,24 @@ As a rule of thumb, simple regex rules such as `*TV*,*Episode*` or `*Movie*` wil
 
 </details>
 
+<details><summary>TorrentDB</summary>
+
+ * Movies : Encode
+ * Movies : Full Disk
+ * Movies : Remux
+ * Movies : Web-DL
+ * TV : Anime
+ * TV : Encode
+ * TV : Full Disk
+ * TV : HDTV
+ * TV : Remux
+ * TV : SDTV/PDTV
+ * TV : Sports
+ * TV : WEBRip
+ * TV : Web-DL
+
+</details>
+
 <details><summary>Torrentleech</summary>
 
 * Animation :: Anime
@@ -199,3 +358,12 @@ As a rule of thumb, simple regex rules such as `*TV*,*Episode*` or `*Movie*` wil
 
 </details>
 
+<details><summary>TorrentSeeds</summary>
+
+ * Movies
+ * Movies/Foreign
+ * Porn
+ * Sport
+ * TV
+
+</details>
