@@ -11,7 +11,7 @@ keywords:
     Deluge,
     Transmission,
     Radarr,
-    Sonarr,wt
+    Sonarr,
     Lidarr,
     Whisparr,
     Webhook,
