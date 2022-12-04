@@ -129,6 +129,8 @@ sudo systemctl status autobrr@USERNAME.service
 
 It's recommended to run it behind a reverse proxy like nginx in order to get TLS, more robust authentication mechanisms and other similar benefits.
 
+This is an nginx example that should work for most:
+
 ```nginx
 location /autobrr/ {
     proxy_pass              http://127.0.0.1:7474;
