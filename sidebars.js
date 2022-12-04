@@ -1,3 +1,5 @@
+
+
 module.exports = {
   docs: [
     {
@@ -34,7 +36,7 @@ module.exports = {
       type: "category",
       label: "Filters",
       collapsed: false,
-      items: ["filters/basics", "filters/actions", "filters/examples"],
+      items: ["filters/basics", "filters/actions", "filters/examples", "filters/categories",],
     },
     {
       type: "doc",
@@ -48,3 +50,4 @@ module.exports = {
     },
   ],
 };
+
