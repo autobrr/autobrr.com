@@ -24,8 +24,6 @@ import IpApproval from '/snippets/ipapproval.mdx';
 
 <Indexers/>
 
-<IpApproval/>
-
 ## Setup
 
 Go to `Settings > Indexers` to add indexers.
