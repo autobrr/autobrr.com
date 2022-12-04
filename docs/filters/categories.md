@@ -17,49 +17,9 @@ This list was created with help from users like you. If you have others, please 
 
 As a rule of thumb, simple regex rules such as `*TV*,*Episode*` or `*Movie*` will sufice for most users needs
 
-import AcidLounge from '/snippets/categories/acidlounge.mdx';
-import AlphaRatio from '/snippets/categories/ar.mdx';
-import BeyondHD from '/snippets/categories/bhd.mdx';
-import BitHDTV from '/snippets/categories/bithdtv.mdx';
-import Broadcasthenet from '/snippets/categories/btn.mdx';
-import DigitalCore from '/snippets/categories/digitalcore.mdx';
-import Filelist from '/snippets/categories/fl.mdx';
-import HDSpace from '/snippets/categories/hdspace.mdx';
-import IPTorrents from '/snippets/categories/ipt.mdx';
-import Milkie from '/snippets/categories/milkie.mdx';
-import MorethanTV from '/snippets/categories/mtv.mdx';
-import Nebulance from '/snippets/categories/nebulance.mdx';
-import Norbits from '/snippets/categories/norbits.mdx';
-import Pretome from '/snippets/categories/pretome.mdx';
-import RED from '/snippets/categories/red.mdx';
-import Superbits from '/snippets/categories/sbs.mdx';
-import TorrentDay from '/snippets/categories/torrentday.mdx';
-import TorrentDB from '/snippets/categories/torrentdb.mdx';
-import Torrentleech from '/snippets/categories/tl.mdx';
-import TorrentSeeds from '/snippets/categories/torrentseeds.mdx';
-import TorrentSyndikat from '/snippets/categories/torrentsyndikat.mdx';
+import Categories from '/snippets/category-snippets.mdx';
 
-<AcidLounge/>
-<AlphaRatio/>
-<BeyondHD/>
-<BitHDTV/>
-<Broadcasthenet/>
-<DigitalCore/>
-<Filelist/>
-<HDSpace/>
-<IPTorrents/>
-<Milkie/>
-<MorethanTV/>
-<Nebulance/>
-<Norbits/>
-<Pretome/>
-<RED/>
-<Superbits/>
-<TorrentDay/>
-<TorrentDB/>
-<Torrentleech/>
-<TorrentSeeds/>
-<TorrentSyndikat/>
+<Categories />
 
 ## How to export categories from autobrr.db
 
