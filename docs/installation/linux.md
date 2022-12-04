@@ -129,7 +129,7 @@ sudo systemctl status autobrr@USERNAME.service
 
 It's recommended to run it behind a reverse proxy like nginx in order to get TLS, more robust authentication mechanisms and other similar benefits.
 
-This is an nginx example that should work for most:
+### Nginx
 
 ```nginx
 location /autobrr/ {
@@ -150,7 +150,16 @@ The `rewrite` statement in this example is crucial for correctly setting things 
 
 :::
 
-Don't forget to set the `baseUrl` option in the `config.toml`.
+### Caddy
+
+```nginx
+example.com/autobrr/* {
+    uri strip_prefix /autobrr
+    reverse_proxy :7474
+}
+```
+
+Don't forget to set the `baseUrl` option in the `config.toml`:
 
 ```toml
 # Base url
