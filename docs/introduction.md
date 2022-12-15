@@ -140,12 +140,11 @@ other use cases may require more RTFM'ing in [the configuration docs](./configur
 
 10. Enable the IRC network.
 
-	If the network displays as `unhealthy` then disable it and use the logs to debug and
-	resolve any issues.
-
-	**NOTE**: SASL authentication fails silently.  You may be able to get more debugging
-	information out of NickServ authentication, resolve the issue and return to SASL
-	authentication.
+	**NOTE**: The network will display as `unhealthy` and `network unhealthy` messages
+	appear in the logs until authentication has succeeded and autobrr has successfully
+	joined the announcements channel.  So you may safely ignore these messages until the
+	logs show further information about connecting, authenticating and joining the
+	channel.
 
 Now you can monitor the logs for announcements from IRC, pushes to the Servarr instance,
 and details for what, if anything, Servarr did with the release:
