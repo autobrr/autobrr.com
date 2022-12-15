@@ -91,9 +91,9 @@ Autobrr was developed with resource consumption in mind. The software uses API c
 The following considers a common use case, feeding IRC announcements for a private
 tracker to a Servarr instance, as a way to illustrate how the components of autobrr fit
 together and what is required to get up and running.  It's not the only use case and
-other use cases may require more RTFM'ing in [the configuration docs](./configuration).
+other use cases may require more RTFM'ing in [the configuration docs](configuration).
 
-1. [Install autobrr](./installation/linux).
+1. [Install autobrr](installation/linux).
 
 	Proceed once the web UI is accessible.
 
@@ -105,16 +105,16 @@ other use cases may require more RTFM'ing in [the configuration docs](./configur
 3. [Register a nick on your indexer's IRC
    network](https://autobrr.com/configuration/irc#registering-with-nickserv).
 
-4. [Group a "bot" nick with your real nick](./configuration/irc#grouping-nicks)
+4. [Group a "bot" nick with your real nick](configuration/irc#grouping-nicks)
 
-5. Add an [indexer](./configuration/indexers).
+5. Add an [indexer](configuration/indexers).
 
-6. Add a [Servarr instance](./configuration/download-clients#sonarr)
+6. Add a [Servarr instance](configuration/download-clients#sonarr)
 
 	**NOTE**: In the context of autobrr, Servarr instances are considered download
 	clients.
 
-7. Add a [filter](./filters).
+7. Add a [filter](filters).
 
 	To feed all IRC announcements to a Servarr instance to let it decide what, if
 	anything, to do with the release, just add a filter with the indexer from #5
@@ -123,7 +123,7 @@ other use cases may require more RTFM'ing in [the configuration docs](./configur
 	**NOTE**: Autobrr does nothing with received IRC announcements without at least one
 	filter applied to at least one indexer.
 
-8. Add a [filter action](./filters/actions).
+8. Add a [filter action](filters/actions).
 
 	Add an action of the matching Servarr type (e.g. Sonarr type action for a Sonarr
 	instance), select the "download client" that corresponds to that type from #6, give
