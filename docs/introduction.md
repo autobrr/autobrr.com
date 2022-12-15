@@ -153,7 +153,9 @@ docs](./configuration/autobrr).
 Now you can monitor the logs for announcements from IRC, pushes to the Servarr instance,
 and details for what, if anything, Servarr did with the release:
 
-	INFO Matched 'Foo Series S01E01 1080p WEB h264-BarGrp' (All) for foo-indexer
-	DEBUG release.store: &{ID:12 FilterStatus:FILTER_APPROVED Rejections:[] Indexer:foo-indexer FilterName:All Protocol:torrent Implementation:IRC Timestamp:1970-01-01 00:00:00.000000000 -0000 UTC m=+0000.000000000 GroupID: TorrentID:######### TorrentURL:https://www.example.com/Foo+Series+S01E01+1080p+WEB+h264-BarGrp.torrent TorrentTmpFile: TorrentDataRawBytes:[] TorrentHash: TorrentName:Foo Series S01E01 1080p WEB h264-BarGrp Size:0 Title:Foo Series Category:TV :: Episodes HD Categories:[] Season:1 Episode:1 Year:0 Resolution:1080p Source:WEB Codec:[H.264] Container: HDR:[] Audio:[] AudioChannels: Group:BarGrp Region: Language: Proper:false Repack:false Website: Artists: Type: LogScore:0 IsScene:false Origin: Tags:[] ReleaseTags: Freeleech:false FreeleechPercent:0 Bonus:[] Uploader:Anonymous PreTime: Other:[] RawCookie: AdditionalSizeCheckRequired:false FilterID:1 Filter:0x########## ActionStatus:[]}
-	DEBUG sonarr: release push rejected: Foo Series S01E01 1080p WEB h264-BarGrp, indexer foo-indexer to http://localhost:8989 reasons: '[Unknown Series]'
-	DEBUG release rejected: Unknown Series
+```
+INFO Matched 'Foo Series S01E01 1080p WEB h264-BarGrp' (All) for foo-indexer
+DEBUG release.store: &{ID:12 FilterStatus:FILTER_APPROVED Rejections:[] Indexer:foo-indexer FilterName:All Protocol:torrent Implementation:IRC Timestamp:1970-01-01 00:00:00.000000000 -0000 UTC m=+0000.000000000 GroupID: TorrentID:######### TorrentURL:https://www.example.com/Foo+Series+S01E01+1080p+WEB+h264-BarGrp.torrent TorrentTmpFile: TorrentDataRawBytes:[] TorrentHash: TorrentName:Foo Series S01E01 1080p WEB h264-BarGrp Size:0 Title:Foo Series Category:TV :: Episodes HD Categories:[] Season:1 Episode:1 Year:0 Resolution:1080p Source:WEB Codec:[H.264] Container: HDR:[] Audio:[] AudioChannels: Group:BarGrp Region: Language: Proper:false Repack:false Website: Artists: Type: LogScore:0 IsScene:false Origin: Tags:[] ReleaseTags: Freeleech:false FreeleechPercent:0 Bonus:[] Uploader:Anonymous PreTime: Other:[] RawCookie: AdditionalSizeCheckRequired:false FilterID:1 Filter:0x########## ActionStatus:[]}
+DEBUG sonarr: release push rejected: Foo Series S01E01 1080p WEB h264-BarGrp, indexer foo-indexer to http://localhost:8989 reasons: '[Unknown Series]'
+DEBUG release rejected: Unknown Series
+```
