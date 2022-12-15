@@ -113,7 +113,7 @@ docs](./configuration/autobrr).
 
 5. Add an [indexer](./configuration/indexers).
 
-6. Add a [Servarr instance](./configuration/download-clients#sonarr)
+6. Add a [download client](./configuration/download-clients#sonarr)
 
 	**NOTE**: In the context of autobrr, Servarr instances are considered download
 	clients.
