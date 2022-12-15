@@ -103,7 +103,7 @@ other use cases may require more RTFM'ing in [the configuration docs](configurat
 	started.
 
 3. [Register a nick on your indexer's IRC
-   network](https://autobrr.com/configuration/irc#registering-with-nickserv).
+   network](configuration/irc#registering-with-nickserv).
 
 4. [Group a "bot" nick with your real nick](configuration/irc#grouping-nicks)
 
