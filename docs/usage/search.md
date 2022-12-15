@@ -2,7 +2,7 @@
 id: search
 sidebar_label: Search
 title: Search
-description: Explanation of filter options, fields and values
+description: Explanation of keyword searches, supported keywords and values
 keywords: [autobrr, releases, search, tv, movies, music]
 pagination_label: Usage - Search
 pagination_next: 3rd-party-scripts
