@@ -106,6 +106,9 @@ docs](./configuration/autobrr).
 3. [Register a nick on your indexer's IRC
    network](configuration/irc#registering-with-nickserv).
 
+   This is the common case, but check your tracker's IRC documentation and adjust as
+   appropriate.
+
 4. [Group a "bot" nick with your real nick](./configuration/irc#grouping-nicks)
 
 5. Add an [indexer](./configuration/indexers).
