@@ -26,21 +26,28 @@ import IpApproval from '/snippets/ipapproval.mdx';
 
 ## Setup
 
-Go to `Settings > Indexers` to add indexers.
+1. Go to `Settings > Indexers` to add indexers.
 
-When adding a new indexer, it will set up the IRC network and channels in the background.
-Please check the [IRC](./irc) section for more details regarding NickServ, IRC keys, and grouping of nicks.
+    When adding a new indexer, it will set up the IRC network and channels in the background.
+    Indexers usually need some extra keys to work. The common ones are:
 
-Indexers usually need some extra keys to work.  
-The common ones are:
+    - `passkey`
+    - `rsskey`
+    - `torrent_pass`
+    - `auth_key`
+    - `apikey`
 
-- `passkey`
-- `rsskey`
-- `torrent_pass`
-- `auth_key`
-- `apikey`
+    You'll see which ones are needed when setting up an indexer. Check your indexers wiki/forum etc. to find where they are located.
 
-When adding a new indexer you'll see which ones are needed. Check your indexers wiki/forum etc. to find where they are located.
+    - If NickServ Password is marked `*` as required, then you need to have a registered account on that IRC network. See [registering with NickServ](/configuration/irc#registering-with-nickserv).
+    - If NickServ Account is marked `*` as required, that's only used as nick, but supports NickServ auth.
+    - The invite command field in `Settings > IRC > Edit network` are pre filled, but you need to add your IRC key. The rest should be left as is.
+
+2. After the indexer is set up, head to `Settings > IRC` and click the 3 dots for the newly created network, hit `Edit`, and then enable the network. This is a good time to look over everything. The invite command etc.
+
+:::important Important
+Please check the [IRC](/configuration/irc) section for more details regarding NickServ, IRC keys, and grouping of nicks.
+:::
 
 <IpApproval/>
 

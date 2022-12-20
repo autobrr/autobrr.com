@@ -15,8 +15,6 @@ import { MdRssFeed } from 'react-icons/md';
 import { FaDiscord } from 'react-icons/fa';
 import { AiFillGithub } from 'react-icons/ai';
 
-# Configuration
-
 The primary configuration entry point for autobrr is `config.toml`, which should be located in the `--config` directory you specified to the autobrr process or in the `config/` directory relative from which autobrr is running. Do note that you do not need to create it yourself, as the autobrr daemon will do it automatically for you in case it does not exist upon first start.
 
 ```toml title="config.toml"
@@ -83,14 +81,14 @@ Example:
 autobrrctl --config ~/.config/autobrr create-user USERNAME
 ```
 
-# Other options
+## Other options
 
 Make sure to read through all of the articles as all of them have some important information on how to get autobrr up and running.
 
-- [Indexers <CgWebsite />](./indexers)
-- [IRC <BsChatDotsFill />](./irc)
-- [Download Clients <FaDownload />](./download-clients)
-- [Torznab Feeds <MdRssFeed />](./feeds)
+- [Indexers <CgWebsite />](/configuration/indexers)
+- [IRC <BsChatDotsFill />](/configuration/irc)
+- [Download Clients <FaDownload />](/configuration/download-clients)
+- [Feeds (RSS / Torznab) <MdRssFeed />](/configuration/feeds)
 
 ## Additional Help
 

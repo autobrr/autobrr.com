@@ -73,6 +73,30 @@ Previously you needed to create the user with the cli `autobrrctl` but that init
 
 ## Reverse proxies
 
+### Nginx
+
+Basic example with subfolder that should work in most cases.
+This is the config used by swizzin setups.
+
+```nginx
+location /autobrr/ {
+    proxy_pass              http://127.0.0.1:7474;
+    proxy_http_version      1.1;
+    proxy_set_header        X-Forwarded-Host        $http_host;
+
+    #auth_basic "What's the password?";
+    #auth_basic_user_file /etc/htpasswd;
+
+    rewrite ^/autobrr/(.*) /$1 break;
+}
+```
+
+:::info
+
+The `rewrite` statement in this example is crucial for correctly setting things up when using a reverse proxy with a base path.
+
+:::
+
 ### Traefik
 
 Traefik setup to run on subdomain.

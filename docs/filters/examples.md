@@ -32,7 +32,7 @@ When using autobrr with Sonarr these are some good recommendation filters to sta
 
 It's advisable to setup your Sonarr properly with the help of [Trash-guides](https://trash-guides.info) and then just do some light filtering of releases to not push unwanted releases to Sonarr.
 
-Don't forget to add a [Sonarr action](/filters/actions#radarr-sonarr-lidarr-and-whisparr)!
+Don't forget to add a [Sonarr action](/filters/actions#radarr-sonarr-lidarr-readarr-and-whisparr)!
 
 ### HD WEB (720p, 1080p)
 

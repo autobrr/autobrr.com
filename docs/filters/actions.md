@@ -140,25 +140,26 @@ These variables are implemented using the Go template engine. This is an extreme
 
 | Variable               |  Description                               |
 | ---------------------- | ------------------------------------------ |
-| `{{.TorrentName}}`     | Release name as announced                  |
-| `{{.TorrentUrl}}`      | Full url to download torrent               |
-| `{{.TorrentPathName}}` | Path to downloaded .torrent file in `/tmp` |
-| `{{.TorrentHash}}`     | Torrent hash                               |
-| `{{.Indexer}}`         | Indexer                                    |
-| `{{.FilterName}}`      | Filter name                                |
-| `{{.Title}}`           | Parsed title (That Movie)                  |
-| `{{.Resolution}}`      | Parsed resolution (1080p)                  |
-| `{{.Source}}`          | Parsed source (BluRay, WEB-DL)             |
-| `{{.HDR}}`             | Parsed HDR (DV, HDR, HDR10)                |
-| `{{.Season}}`          | Parsed season                              |
-| `{{.Episode}}`         | Parsed episode                             |
-| `{{.Year}}`            | Parsed year                                |
-| `{{.CurrentYear}}`     | Current Year                               |
-| `{{.CurrentMonth}}`    | Current Month                              |
 | `{{.CurrentDay}}`      | Current Day                                |
 | `{{.CurrentHour}}`     | Current Hour                               |
 | `{{.CurrentMinute}}`   | Current Minute                             |
+| `{{.CurrentMonth}}`    | Current Month                              |
 | `{{.CurrentSecond}}`   | Current Second                             |
+| `{{.CurrentYear}}`     | Current Year                               |
+| `{{.Episode}}`         | Parsed episode                             |
+| `{{.FilterName}}`      | Filter name                                |
+| `{{.HDR}}`             | Parsed HDR (DV, HDR, HDR10)                |
+| `{{.Indexer}}`         | Indexer                                    |
+| `{{.Resolution}}`      | Parsed resolution (1080p)                  |
+| `{{.Season}}`          | Parsed season                              |
+| `{{.Size}}`            | Size                                       |
+| `{{.Source}}`          | Parsed source (BluRay, WEB-DL)             |
+| `{{.Title}}`           | Parsed title (That Movie)                  |
+| `{{.TorrentHash}}`     | Torrent hash                               |
+| `{{.TorrentName}}`     | Release name as announced                  |
+| `{{.TorrentPathName}}` | Path to downloaded .torrent file in `/tmp` |
+| `{{.TorrentUrl}}`      | Full url to download torrent               |
+| `{{.Year}}`            | Parsed year                                |
 
 ### Examples
 
