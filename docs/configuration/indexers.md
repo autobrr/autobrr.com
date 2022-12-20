@@ -42,7 +42,7 @@ import IpApproval from '/snippets/ipapproval.mdx';
 2. After the indexer is set up, head to `Settings > IRC` and click the 3 dots for the newly created network, hit `Edit`, and then enable the network. This is a good time to look over everything. The invite command etc.
 
 :::important Important
-Please check the [IRC](./irc) section for more details regarding NickServ, IRC keys, and grouping of nicks.
+Please check the [IRC](/configuration/irc) section for more details regarding NickServ, IRC keys, and grouping of nicks.
 :::
 
 <IpApproval/>
