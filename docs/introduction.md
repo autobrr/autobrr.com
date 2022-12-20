@@ -2,8 +2,8 @@
 sidebar_position: 1
 sidebar_label: Introduction
 pagination_next: installation/linux
-title: Introduction and features
-description: Introduction, features and history of autobrr
+title: Introduction
+description: Introduction to autobrr, it's use case and features, and the history of it.
 keywords:
   [
     autobrr,
@@ -48,9 +48,26 @@ keywords:
   ]
 ---
 
+With inspiration and ideas from tools like trackarr, autodl-irssi and flexget we built one tool that can do it all, and then some.
+
 autobrr is the modern download automation tool for torrents.
 
-With inspiration and ideas from tools like trackarr, autodl-irssi and flexget we built one tool that can do it all, and then some.
+## What is autobrr and how does it fit into the ecosystem?
+
+We can start by talking about torrent trackers (hereby referred to as indexers) and maintaining ratio.
+You are required to maintain a ratio with most indexers. Ratio is built by seeding your torrents.
+The earlier you're seeding a torrent, the more peers you make yourself available to on that torrent.
+
+Software like Radarr and Sonarr utilizes RSS to look for new torrents. RSS feeds are updated regularly, but too slow to let you be a part of what we call the initial swarm of a torrent. This is were autobrr comes into play.
+
+Many indexers announce new torrents on their [IRC](/configuration/irc) channels the second it is uploaded to the site. autobrr monitors such channels in real time and grabs the torrent file as soon as it's uploaded based on certain conditions (hereby referred to as [filters](/filters/basics)) that you set up within autobrr. It then sends that torrent file to a download client of your choice via an [action]((/filters/actions)) set within the filter. A download client can be anything from qBittorrent and Deluge, to Radarr and Sonarr, or a watch folder.
+
+### RSS support for indexers without an IRC announcer
+
+A lot of indexers does not announce new torrents in an IRC channel. You can still make use of these indexers with autobrr since it has built in support for feeds as well. Both torznab and regular RSS is supported.
+RSS indexers are treated the same way as regular indexers within autobrr.
+
+## Features
 
 As of right now, autobrr features:
 
