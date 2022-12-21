@@ -62,10 +62,33 @@ Software like Radarr and Sonarr utilizes RSS to look for new torrents. RSS feeds
 
 Many indexers announce new torrents on their [IRC](/configuration/irc) channels the second it is uploaded to the site. autobrr monitors such channels in real time and grabs the torrent file as soon as it's uploaded based on certain conditions (hereby referred to as [filters](/filters/basics)) that you set up within autobrr. It then sends that torrent file to a download client of your choice via an [action]((/filters/actions)) set within the filter. A download client can be anything from qBittorrent and Deluge, to Radarr and Sonarr, or a watch folder.
 
+When your autobrr filter is set to send the torrent files to Radarr and Sonarr, they will decide if it's something they want, and then forward it to the torrent client they are set up with.
+
+autobrr can also send matches (torrent files that meets your filter's critera) directly to torrent clients like qBittorrent, Deluge, r(u)Torrent and Transmission. You don't need to use the \*arr suite to make use of autobrr.
+
+### The typical workflow
+
+1. autobrr monitors IRC channels and/or RSS feeds for new torrents that fits your critera set within your autobrr [filters](/filters/basics).
+2. A succesful match is forwarded to your [download client](/configuration/download-clients) via an [action](/filters/actions) set inside your filters.
+3. If the download client is a torrent client, then the torrent client accepts the torrent file and starts downloading it.
+4. If the download client is Radarr (or any other kind of \*arr), then Radarr will check that torrent file and see if it meets Radarr's criteras.
+
+    Criterias like:
+
+    - Is the movie monitored?
+    - Is the torrent autobrr sent considered an upgrade of your existing version of that movie?
+
+    Radarr will reject it if it doesn't meet its criterias.
+    If Radarr accepts it, then it will forward it to its download client and handle the rest from here.
+
+5. You are now among the very first people seeding this torrent which means you will have more peers connecting to you than if you'd be grabbing that file after the initial swarm. This results in a higher ratio on your indexers.
+
 ### RSS support for indexers without an IRC announcer
 
 A lot of indexers does not announce new torrents in an IRC channel. You can still make use of these indexers with autobrr since it has built in support for feeds as well. Both torznab and regular RSS is supported.
 RSS indexers are treated the same way as regular indexers within autobrr.
+
+This isn't needed if your usecase is feeding the \*arrs only. Since they have RSS support already.
 
 ## Features
 
