@@ -54,13 +54,13 @@ autobrr is the modern download automation tool for torrents.
 
 ## What is autobrr and how does it fit into the ecosystem?
 
-We can start by talking about torrent trackers (hereby referred to as indexers) and maintaining ratio.
+We can start by talking about torrent trackers - hereby referred to as indexers, and maintaining ratio.
 You are required to maintain a ratio with most indexers. Ratio is built by seeding your torrents.
 The earlier you're seeding a torrent, the more peers you make yourself available to on that torrent.
 
 Software like Radarr and Sonarr utilizes RSS to look for new torrents. RSS feeds are updated regularly, but too slow to let you be a part of what we call the initial swarm of a torrent. This is were autobrr comes into play.
 
-Many indexers announce new torrents on their [IRC](/configuration/irc) channels the second it is uploaded to the site. autobrr monitors such channels in real time and grabs the torrent file as soon as it's uploaded based on certain conditions (hereby referred to as [filters](/filters/basics)) that you set up within autobrr. It then sends that torrent file to a download client of your choice via an [action](/filters/actions) set within the filter. A download client can be anything from qBittorrent and Deluge, to Radarr and Sonarr, or a watch folder.
+Many indexers announce new torrents on their [IRC](/configuration/irc) channels the second it is uploaded to the site. autobrr monitors such channels in real time and grabs the torrent file as soon as it's uploaded based on certain conditions hereby referred to as [filters](/filters/basics) that you set up within autobrr. It then sends that torrent file to a download client of your choice via an [action](/filters/actions) set within the filter. A download client can be anything from qBittorrent and Deluge, to Radarr and Sonarr, or a watch folder.
 
 When your autobrr filter is set to send the torrent files to Radarr and Sonarr, they will decide if it's something they want, and then forward it to the torrent client they are set up with.
 
