@@ -64,14 +64,14 @@ Many indexers announce new torrents on their [IRC](/configuration/irc) channels 
 
 When your autobrr filter is set to send the torrent files to Radarr and Sonarr, they will decide if it's something they want, and then forward it to the torrent client they are set up with.
 
-autobrr can also send matches (torrent files that meets your filter's critera) directly to torrent clients like qBittorrent, Deluge, r(u)Torrent and Transmission. You don't need to use the \*arr suite to make use of autobrr.
+autobrr can also send matches (torrent files that meets your filter's criteria) directly to torrent clients like qBittorrent, Deluge, r(u)Torrent and Transmission. You don't need to use the \*arr suite to make use of autobrr.
 
 ### The typical workflow
 
-1. autobrr monitors IRC channels and/or RSS feeds for new torrents that fits your critera set within your autobrr [filters](/filters).
+1. autobrr monitors IRC channels and/or RSS feeds for new torrents that fits your criteria set within your autobrr [filters](/filters).
 2. A succesful match is forwarded to your [download client](/configuration/download-clients) via an [action](/filters/actions) set inside your filters.
 3. If the download client is a torrent client, then the torrent client accepts the torrent file and starts downloading it.
-4. If the download client is Radarr (or any other kind of \*arr), then Radarr will check that torrent file and see if it meets Radarr's criteras.
+4. If the download client is Radarr (or any other kind of \*arr), then Radarr will check that torrent file and see if it meets Radarr's criterias.
 
     Criterias like:
 
