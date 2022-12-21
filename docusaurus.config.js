@@ -53,7 +53,7 @@ const config = {
       items: [
         {
           type: "doc",
-          docId: "installation/linux",
+          docId: "introduction",
           position: "left",
           label: "Docs",
         },
