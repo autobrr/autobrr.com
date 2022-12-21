@@ -16,6 +16,7 @@ module.exports = {
         "installation/docker",
         "installation/shared-seedbox",
         "installation/windows",
+        "installation/transfer-installation",
         "installation/postgresql",
       ],
     },
