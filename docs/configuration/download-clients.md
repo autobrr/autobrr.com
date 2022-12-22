@@ -182,14 +182,14 @@ If you are on a shared seedbox you might need your username in the url like:
 
 #### Remote
 
-For a remote client, meaning autobrr and Deluge are **not on the same server** then things might be a bit different.
+For a remote client, meaning autobrr and rTorrent are **not on the same server** then things might be a bit different.
 
 - Host: `http://user:password@EXTERNAL_IP/rutorrent/plugins/httprpc/action.php`
 - Host: `http://user:password@mydomain.com/rutorrent/plugins/httprpc/action.php`
 
 #### Docker
 
-With **Docker** / containers make sure autobrr and Deluge share the same network to be able to use the `container_name` as address.
+With **Docker** / containers make sure autobrr and rTorrent share the same network to be able to use the `container_name` as address.
 
 - Host: `http://user:password@rtorrent/rutorrent/plugins/httprpc/action.php`
 
