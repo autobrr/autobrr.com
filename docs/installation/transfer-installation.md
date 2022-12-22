@@ -29,7 +29,9 @@ pagination_next: configuration/indexers
 
 This guide will walk you through the steps needed to transfer your settings such as filters, indexers, IRC networks, feeds, clients, notifications and API keys of your current autobrr installation from one host to another.
 
+:::info
 Settings like hostname / IP, port, baseUrl, logPath or logLevel are not transferred and have to be adjusted again in `config.toml` after the transfer in case you made any changes to this file.
+:::
 
 ## Backing up your current installation
 
