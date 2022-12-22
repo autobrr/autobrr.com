@@ -168,9 +168,9 @@ You can run autobrr and rTorrent / ruTorrent on the following setups.
 
 #### Local
 
-For a local client, meaning autobrr and rTorrent **on the same server** try these.
+For a local client, meaning autobrr and ruTorrent **on the same server** try these.
 
-Here are a couple of common ways for how to access rTorrent. Username and password needs to be set in the url as basic auth.
+Here are a couple of common ways for how to access ruTorrent. Username and password needs to be set in the url as basic auth.
 
 - Host: `http://user:password@127.0.0.1/rutorrent/plugins/httprpc/action.php`
 - Host: `http://user:password@localhost/rutorrent/plugins/httprpc/action.php`
@@ -182,14 +182,14 @@ If you are on a shared seedbox you might need your username in the url like:
 
 #### Remote
 
-For a remote client, meaning autobrr and Deluge are **not on the same server** then things might be a bit different.
+For a remote client, meaning autobrr and ruTorrent are **not on the same server** then things might be a bit different.
 
 - Host: `http://user:password@EXTERNAL_IP/rutorrent/plugins/httprpc/action.php`
 - Host: `http://user:password@mydomain.com/rutorrent/plugins/httprpc/action.php`
 
 #### Docker
 
-With **Docker** / containers make sure autobrr and Deluge share the same network to be able to use the `container_name` as address.
+With **Docker** / containers make sure autobrr and ruTorrent share the same network to be able to use the `container_name` as address.
 
 - Host: `http://user:password@rtorrent/rutorrent/plugins/httprpc/action.php`
 
