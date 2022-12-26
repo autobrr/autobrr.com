@@ -71,9 +71,18 @@ Send to one or multiple local or remote instances of Deluge.
 Available options:
 
 - Save path: optional
-- Label: optional
+- Label: optional (must exist in Deluge in order to work)
 - Limit download and upload speed: optional
 - Add as paused: default false
+
+### rTorrent
+
+Send to one or multiple local or remote instances of rTorrent.
+
+Available options:
+
+- Save path: optional
+- Label: optional
 
 ### Transmission
 
