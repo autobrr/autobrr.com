@@ -17,9 +17,9 @@ Please clarify what you actually mean.
 
 There could be multiple reasons. Only filtered releases that gets to the action stage will show up in **Releases**. That means:
 
-* \*arr actions that gets Approved or Rejected.
-* Releases sent to a torrent client
-* Releases that sent a webhook or ran custom scripts and so on.
+- \*arr actions that gets Approved or Rejected.
+- Releases sent to a torrent client
+- Releases that sent a webhook or ran custom scripts and so on.
 
 :::tip
 
@@ -59,3 +59,4 @@ If autobrr isn't reaching Deluge when running Docker you can try this:
 - `Authentication` is required for deluge daemon, not the webui.
   It can be found at `/docker/appdata/deluge/auth`, the default one looks like `localclient:password:10`.
   You can add your own if you wish. Like `username:password:powerlevel`.
+- Enabling `Allow Remote Connections` in Deluge might be needed depending on your setup.
