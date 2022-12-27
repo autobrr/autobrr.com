@@ -106,14 +106,14 @@ docs](/configuration/autobrr).
 3. [Register a nick on your indexer's IRC
    network](configuration/irc#registering-with-nickserv).
 
-4. [Group a "bot" nick with your real nick](/configuration/irc#grouping-nicks)
+4. [Group a "bot" nick with your real nick](/configuration/irc#grouping-nicks).
 
    This is the common case, but check your tracker's IRC documentation and adjust as
    appropriate.
 
 5. Add an [indexer](/configuration/indexers).
 
-6. Add a [download client](/configuration/download-clients#sonarr)
+6. Add a [download client](/configuration/download-clients#sonarr).
 
 	**NOTE**: In the context of autobrr, Servarr instances are considered download
 	clients.
