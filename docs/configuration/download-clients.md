@@ -91,6 +91,12 @@ With **Docker** / containers make sure autobrr and qBittorrent share the same ne
 - Username: `<username>`
 - Password: `<password>`
 
+### Shared Seedboxes
+
+import SharedqBittorrent from '/snippets/shared-download-clients/qbittorrent.mdx';
+
+<SharedqBittorrent />
+
 ### qBittorrent rules
 
 You can define some basic rules which can improve your performance for racing etc.
@@ -151,6 +157,12 @@ With **Docker** / containers make sure autobrr and Deluge share the same network
 - Username: `<username>`
 - Password: `<password>`
 
+### Shared Seedboxes
+
+import SharedDeluge from '/snippets/shared-download-clients/deluge.mdx';
+
+<SharedDeluge />
+
 ### Deluge rules
 
 You can define some basic rules which can improve your performance for racing etc.
@@ -196,6 +208,11 @@ With **Docker** / containers make sure autobrr and rTorrent share the same netwo
 
 - Host: `http://user:password@rtorrent/rutorrent/plugins/httprpc/action.php`
 
+### Shared Seedboxes
+
+import SharedrTorrent from '/snippets/shared-download-clients/rtorrent.mdx';
+
+<SharedrTorrent />
 
 ## Transmission
 
@@ -245,6 +262,12 @@ With **Docker** / containers make sure autobrr and Transmission share the same n
 - Username: `<username>`
 - Password: `<password>`
 
+### Shared Seedboxes
+
+import SharedTransmission from '/snippets/shared-download-clients/transmission.mdx';
+
+<SharedTransmission />
+
 ## Sonarr
 
 You can run autobrr and Sonarr apps on the following setups.
@@ -281,6 +304,12 @@ With **Docker** / containers make sure autobrr and Sonarr share the same network
 
 - Host: `http://sonarr:8989`
 - API Key: `API KEY`
+
+### Shared Seedboxes
+
+import SharedSonarr from '/snippets/shared-download-clients/sonarr.mdx';
+
+<SharedSonarr />
 
 ## Radarr
 
@@ -319,9 +348,21 @@ With **Docker** / containers make sure autobrr and Radarr share the same network
 - Host: `http://radarr:7878`
 - API Key: `API KEY`
 
+### Shared Seedboxes
+
+import SharedRadarr from '/snippets/shared-download-clients/radarr.mdx';
+
+<SharedRadarr />
+
 ## Lidarr
 
 See Radarr and Sonarr but port `8686`.
+
+### Shared Seedboxes
+
+import SharedLidarr from '/snippets/shared-download-clients/lidarr.mdx';
+
+<SharedLidarr />
 
 ## Whisparr
 
