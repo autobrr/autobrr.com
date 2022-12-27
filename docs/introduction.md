@@ -104,7 +104,7 @@ docs](/configuration/autobrr).
 	started.
 
 3. [Register a nick on your indexer's IRC
-   network](configuration/irc#registering-with-nickserv).
+   network](/configuration/irc#registering-with-nickserv).
 
 4. [Group a "bot" nick with your real nick](/configuration/irc#grouping-nicks).
 
