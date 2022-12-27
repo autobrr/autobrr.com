@@ -47,8 +47,8 @@ module.exports = {
     },
     {
       type: "doc",
-      label: "3rd party scripts",
-      id: "3rd-party-scripts",
+      label: "3rd party tools",
+      id: "3rd-party-tools",
     },
     {
       type: "doc",

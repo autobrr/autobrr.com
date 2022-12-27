@@ -1,10 +1,70 @@
 ---
-sidebar_label: 3rd party scripts
+sidebar_label: 3rd party tools
 sidebar_position: 6
-title: 3rd party scripts
-description: 3rd part scripts for autobrr
-keywords: [arrbrr, regbrr]
+title: 3rd party tools
+description: 3rd party tools for autobrr
+keywords: [cross-seed, omegabrr, regbrr]
 ---
+
+## Cross-Seed implementation
+
+You can utilize autobrr with [cross-seed](https://github.com/cross-seed/cross-seed) to automatically cross-seed torrents previously matched by autobrr from indexer A with identical releases announced from indexer B and C.
+
+If you're not familiar with cross-seed already, we suggest you read their [documentation](https://cross-seed.org) before you continue.
+
+You can install cross-seed in several ways. Docker is recommended, but installing via npm or yarn (requires node 14 or greater) is also fine.
+
+To make autobrr communicate with cross-seed, you need to run cross-seed in [daemon mode](https://www.cross-seed.org/docs/basics/daemon).
+
+In this guide we will do this in a [tmux](https://github.com/tmux/tmux/wiki) screen, but you can also set it up with [regular screen](https://www.cross-seed.org/docs/basics/daemon#screen), [systemd](https://www.cross-seed.org/docs/basics/daemon#systemd-linux) or [docker](https://www.cross-seed.org/docs/basics/daemon#docker).
+
+### Install cross-seed and its dependencies
+
+Since cross-seed doesn't have API auth, we need to make sure it's port isn't open to the web. You can use iptables or UFW to solve this. Cross-seed daemon uses port 2468 by default.
+
+    ```bash
+    #install node as root
+    curl -fsSL https://deb.nodesource.com/setup_lts.x | sudo -E bash - &&\
+    sudo apt-get install -y nodejs
+
+    #install cross-seed
+    npm install -g cross-seed
+    ```
+
+### Generate config and make sure the port isn't open to the web
+
+     ```bash
+        # generate a cross-seed config file
+        cross-seed gen-config
+
+        # open the file
+        nano /home/$USER/.cross-seed/config.js
+
+        # Make sure these parameters are set
+        # outputDir needs to exist, but will not be used
+        torrentDir: "/home/$USER/.local/share/qBittorrent/BT_backup"
+        outputDir: "/home/$USER/torrentfiles"
+        action: "inject"
+        qbittorrentUrl: "http://127.0.0.1:10963"
+
+        # Make sure the port is not exposed to the internet
+        iptables -A INPUT -p tcp --dport 2468 -s 127.0.0.1 -j ACCEPT
+        iptables -A INPUT -p tcp --dport 2468 -j DROP
+
+        ```
+
+1. Create a new tmux screen and enter it
+
+        ```bash
+        tmux new -s cross-seed
+        tmux a -t cross-seed
+        ```
+
+2. Start the daemon
+
+        ```bash
+        cross-seed daemon
+        ```
 
 :::warning Caution
 
