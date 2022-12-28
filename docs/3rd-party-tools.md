@@ -20,11 +20,11 @@ In this guide we will install it with npm. This method requires node 14 or great
 <https://github.com/nodesource/distributions/blob/master/README.md#using-debian-as-root-3>
 
 ```bash
-#install Node.js LTS (v18.x)
+# Elevate to root and install Node.js LTS (v18.x)
 curl -fsSL https://deb.nodesource.com/setup_lts.x | bash - &&\
 apt-get install -y nodejs
 
-#install cross-seed
+# Install cross-seed
 npm install -g cross-seed
 ```
 
@@ -38,11 +38,16 @@ cross-seed gen-config
 nano /home/$USER/.cross-seed/config.js
 
 # Make sure these parameters are set within the config
+# You need to add at least one torznab URL to the config for it to be valid, but they won't be used by autobrr
 # outputDir needs to exist, but will not be used
-torrentDir: "/home/$USER/.local/share/qBittorrent/BT_backup"
-outputDir: "/home/$USER/torrentfiles"
-action: "inject"
-qbittorrentUrl: "http://127.0.0.1:10963"
+torznab: [
+    "http://127.0.0.1:9696/1/api?apikey=APIKEY&tracker=Tracker1",
+    "http://127.0.0.1:9696/2/api?apikey=APIKEY&tracker=Tracker2"
+],
+torrentDir: "/home/$USER/.local/share/qBittorrent/BT_backup",
+outputDir: "/home/$USER/torrentfiles",
+action: "inject",
+qbittorrentUrl: "http://user:pass@localhost:port",
 ```
 
 :::danger Make sure the port is not exposed to the internet
