@@ -6,11 +6,15 @@ description: 3rd party tools for autobrr
 keywords: [cross-seed, omegabrr, regbrr]
 ---
 
-## Cross-Seed with autobrr
+## Cross-seed with autobrr
 
-You can utilize autobrr with [cross-seed](https://github.com/cross-seed/cross-seed) to automatically cross-seed torrents previously matched by autobrr from indexer A with identical releases announced by indexer B and C.
+:::info Heads up
 
-If you're not familiar with cross-seed already, we suggest you read their [documentation](https://cross-seed.org) before you continue.
+This is meant for advanced users. If you're not familiar with cross-seed already, we suggest you read their [documentation](https://cross-seed.org) before you continue.
+
+:::
+
+With this setup you can utilize autobrr with [cross-seed](https://github.com/cross-seed/cross-seed) to automatically cross-seed newly announced torrents from indexer Y that matches existing torrents in your torrent client from indexer X.
 
 ### Install cross-seed and its dependencies
 
@@ -21,6 +25,7 @@ In this guide we will install it with npm. This method requires node 14 or great
 
 ```bash
 # Elevate to root and install Node.js LTS (v18.x)
+sudo su -
 curl -fsSL https://deb.nodesource.com/setup_lts.x | bash - &&\
 apt-get install -y nodejs
 
@@ -37,9 +42,13 @@ cross-seed gen-config
 # Open the file
 nano /home/$USER/.cross-seed/config.js
 
-# Make sure these parameters are set within the config
-# You need to add at least one torznab URL to the config for it to be valid, but they won't be used by autobrr
+# Make sure the following parameters are set within the config
+
+# You need to add at least one torznab URL from Prowlarr to the config for it to be valid
+# They will not be used by autobrr
+
 # outputDir needs to exist, but will not be used
+
 torznab: [
     "http://127.0.0.1:9696/1/api?apikey=APIKEY&tracker=Tracker1",
     "http://127.0.0.1:9696/2/api?apikey=APIKEY&tracker=Tracker2"
@@ -55,6 +64,8 @@ qbittorrentUrl: "http://user:pass@localhost:port",
 Since cross-seed doesn't have API auth, we need to make sure its port isn't open to the internet. You can use iptables or UFW to solve this. Cross-seed daemon uses port 2468 by default.
 
 ```text
+sudo apt-get install iptables
+
 iptables -A INPUT -p tcp --dport 2468 -s 127.0.0.1 -j ACCEPT
 iptables -A INPUT -p tcp --dport 2468 -j DROP
 ```
@@ -132,45 +143,22 @@ You can set up a Discord webhook for cross-seed notifications within the cross-s
 
 ## arrbrr (deprecated)
 
-:::warning Caution
-
-These scripts are not officially supported, nor do we guarantee that we can help you make them work. You should understand how these work if you choose to use them.
-
-Please do not contact the creator of these scripts for support, but feel free to ask in our [Discord](https://discord.gg/WQ2eUycxyT) for community support.
-
-:::
-
-:::caution
-arrbrr has been depcreated in favor for [autobrr/omegabrr](https://github.com/autobrr/omegabrr) which does the same thing and more.
-:::
-
-Arrbrr imports your monitored movies and shows from your \*arrs to assigned filters in autobrr.
-
-Essentially, you setup the variables and run it via a crontab job. It will then check to see if each item is monitored in the \*arrs, and if it is, it will be added to the filter for autobrr in a somewhat compliant way.
-
-Please read the code before running the script, do not put this directly into a terminal without understanding what it does.
-
-### Download the script
-
-`arrbrr_swizzin.sh` and `arrbrr_docker.sh` can be found [here <AiFillGithub />](https://gist.github.com/brettpetch/9475c9117e0d58791c02587529786ad9)  
-For Synology and other distributions which do not having iconv, please use [this <AiFillGithub />](https://gist.github.com/quorn23/222a62c7c6141eabde18f8a1f626b0de)
+Transform monitored shows and movies from the arrs into autobrr filters.
 
 :::info
-`arrbrr_swizzin.sh` is meant for installs which utilize a base path in the reverse proxy.  
-`arrbrr_docker.sh` is meant for installs which do **not** utilize a base path in the reverse proxy.
+arrbrr has been depcreated in favor for [autobrr/omegabrr](https://github.com/autobrr/omegabrr) which does the same thing and more.
+
 :::
 
-### Installation
-
-1. Create filters in autobrr with names that `arrbrr.sh` can match.
-2. Set the path for the autobrr database in `arrbrr.sh`.
-3. Input the names of the filters you created in step 1 at the appropriate variables in `arrbrr.sh`.
-4. Collect the API info from your \*arrs.
-5. Input the necessary info for your \*arrs into the provided blocks in `arrbrr.sh`.
-6. Setup the actions for each filter within autobrr.
-7. Run the script and setup a cronjob.
-
 ## regbrr
+
+:::warning Caution
+
+This script is not officially supported, nor do we guarantee that we can help you make it work. You should understand how it works if you choose to use it.
+
+Please do not contact the creator of this script for support, but feel free to ask in our [Discord](https://discord.gg/WQ2eUycxyT) for community support.
+
+:::
 
 This is a script that will take input for filters, then match them against a set of pre-defined strings. If it finds a match in the filter name, it will update the respective filter. This was rewritten this way because some users have 4K/4K DV filters and want them to match without introducing additional variables. By using a bash array, as declared on line 3, we are able to specify a number of filters and loop through them.
 
