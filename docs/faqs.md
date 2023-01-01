@@ -60,3 +60,11 @@ If autobrr isn't reaching Deluge when running Docker you can try this:
   It can be found at `/docker/appdata/deluge/auth`, the default one looks like `localclient:password:10`.
   You can add your own if you wish. Like `username:password:powerlevel`.
 - Enabling `Allow Remote Connections` in Deluge might be needed depending on your setup.
+
+## I forgot my password {#forgot-password}
+
+If you forget your password, you can change it via the command line.
+
+```shell
+autobrrctl --config /home/username/.config/autobrr change-password <USERNAME>
+```
