@@ -8,7 +8,7 @@ keywords: [autobrr, question, faq, error, no filter, no releases]
 
 ## Nothing happens - I'm not seeing any releases
 
-First of all, that's a pretty bad questions to start with.
+First of all, that's a pretty bad question to start with.
 
 Please clarify what you actually mean.
 
