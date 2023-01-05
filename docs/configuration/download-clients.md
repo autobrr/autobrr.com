@@ -57,7 +57,7 @@ You can run autobrr and qBittorrent on the following setups.
 - Remote server
 - Docker / container
 
-#### Local
+### Local
 
 For a local client, meaning autobrr and qBittorrent **on the same server** then this should work. Check qBittorrent settings to get the `WEBUI_PORT`.
 
@@ -66,7 +66,7 @@ For a local client, meaning autobrr and qBittorrent **on the same server** then 
 - Username: `<username>`
 - Password: `<password>`
 
-#### Remote
+### Remote
 
 For a remote client, meaning autobrr and qBittorrent are **not on the same server** then things might be a bit different.
 
@@ -82,7 +82,7 @@ Some setups like **Swizzin** requires to also use **Basic Auth** when connecting
 - Username: `<username>`
 - Password: `<password>`
 
-#### Docker
+### Docker
 
 With **Docker** / containers make sure autobrr and qBittorrent share the same network to be able to use the `container_name` as address.
 
@@ -97,7 +97,7 @@ import SharedqBittorrent from '/snippets/shared-download-clients/qbittorrent.mdx
 
 <SharedqBittorrent />
 
-### qBittorrent rules
+## qBittorrent rules
 
 You can define some basic rules which can improve your performance for racing etc.
 
@@ -121,7 +121,7 @@ Deluge is split into two versions:
 
 Select `TYPE` then set these.
 
-#### Local
+### Local
 
 For a local client, meaning autobrr and Deluge **on the same server** then this should work. Check Deluge settings to get the `DAEMON_PORT`.
 
@@ -131,7 +131,7 @@ For a local client, meaning autobrr and Deluge **on the same server** then this 
 - Username: `<username>`
 - Password: `<password>`
 
-#### Remote
+### Remote
 
 For a remote client, meaning autobrr and Deluge are **not on the same server** then things might be a bit different.
 
@@ -147,7 +147,7 @@ Some setups like **Swizzin** requires to also use **Basic Auth** when connecting
 - Username: `<username>`
 - Password: `<password>`
 
-#### Docker
+### Docker
 
 With **Docker** / containers make sure autobrr and Deluge share the same network to be able to use the `container_name` as address.
 
@@ -163,7 +163,7 @@ import SharedDeluge from '/snippets/shared-download-clients/deluge.mdx';
 
 <SharedDeluge />
 
-### Deluge rules
+## Deluge rules
 
 You can define some basic rules which can improve your performance for racing etc.
 
@@ -178,7 +178,7 @@ You can run autobrr and rTorrent / ruTorrent on the following setups.
 - Remote server
 - Docker / container
 
-#### Local
+### Local
 
 For a local client, meaning autobrr and ruTorrent **on the same server** try these.
 
@@ -192,17 +192,14 @@ If you are on a shared seedbox you might need your username in the url like:
 
 - Host: `http://user:password@localhost/USERNAME/rutorrent/plugins/httprpc/action.php`
 
-#### Remote
-
+### Remote
 
 For a remote client, meaning autobrr and rTorrent are **not on the same server** then things might be a bit different.
-
 
 - Host: `http://user:password@EXTERNAL_IP/rutorrent/plugins/httprpc/action.php`
 - Host: `http://user:password@mydomain.com/rutorrent/plugins/httprpc/action.php`
 
-#### Docker
-
+### Docker
 
 With **Docker** / containers make sure autobrr and rTorrent share the same network to be able to use the `container_name` as address.
 
@@ -222,7 +219,7 @@ You can run autobrr and Transmission on the following setups.
 - Remote server
 - Docker / container
 
-#### Local
+### Local
 
 For a local client, meaning autobrr and Transmission **on the same server** then this should work. Check Transmission settings to get the `WEBUI_PORT`. Default is 9091.
 
@@ -232,7 +229,7 @@ For a local client, meaning autobrr and Transmission **on the same server** then
 - Username: `<username>`
 - Password: `<password>`
 
-#### Remote
+### Remote
 
 For a remote client, meaning autobrr and Transmission are **not on the same server** then things might be a bit different.
 
@@ -252,7 +249,7 @@ HTTPS / TLS
 - Username: `<username>`
 - Password: `<password>`
 
-#### Docker
+### Docker
 
 With **Docker** / containers make sure autobrr and Transmission share the same network to be able to use the `container_name` as address.
 
@@ -276,9 +273,9 @@ You can run autobrr and Sonarr apps on the following setups.
 - Remote server
 - Docker / container
 
-#### Local
+### Local
 
-For a local client, meaning autobrr and Sonarr **on the same server** then this should work. 
+For a local client, meaning autobrr and Sonarr **on the same server** then this should work.
 
 - Host: `http://127.0.0.1:8989`
 - API Key: `API KEY`
@@ -287,7 +284,7 @@ On **Swizzin** or if you are running Sonarr with a baseUrl set that in the url a
 
 - Host: `http://127.0.0.1:8989/sonarr`
 
-#### Remote
+### Remote
 
 For a remote client, meaning autobrr and Sonarr are **not on the same server** then things might be a bit different.
 
@@ -298,7 +295,7 @@ On **Swizzin** or if you are running Sonarr with a baseUrl set that in the url a
 
 - Host: `https://mydomain.com/sonarr`
 
-#### Docker
+### Docker
 
 With **Docker** / containers make sure autobrr and Sonarr share the same network to be able to use the `container_name` as address.
 
@@ -319,9 +316,9 @@ You can run autobrr and Radarr apps on the following setups.
 - Remote server
 - Docker / container
 
-#### Local
+### Local
 
-For a local client, meaning autobrr and Radarr **on the same server** then this should work. 
+For a local client, meaning autobrr and Radarr **on the same server** then this should work.
 
 - Host: `http://127.0.0.1:7878`
 - API Key: `API KEY`
@@ -330,7 +327,7 @@ On **Swizzin** or if you are running Radarr with a baseUrl set that in the url a
 
 - Host: `http://127.0.0.1:7878/radarr`
 
-#### Remote
+### Remote
 
 For a remote client, meaning autobrr and Radarr are **not on the same server** then things might be a bit different.
 
@@ -341,7 +338,7 @@ On **Swizzin** or if you are running Radarr with a baseUrl set that in the url a
 
 - Host: `https://mydomain.com/radarr`
 
-#### Docker
+### Docker
 
 With **Docker** / containers make sure autobrr and Radarr share the same network to be able to use the `container_name` as address.
 
