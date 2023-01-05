@@ -32,6 +32,28 @@ Go over your setup again and make sure that:
 
 :::
 
+## Common action rejections
+
+export const Highlight = ({children, color}) => (
+  <span
+    style={{
+      backgroundColor: color,
+      borderRadius: '2px',
+      color: '#fff',
+      padding: '0.2rem',
+    }}>
+    {children}
+  </span>
+);
+
+> Rejected: error downloading torrent file for release: Some Release name: All attempts fail: #1: metainfo could not load file contents: /tmp/autobrr-3310314409: bencode: syntax error (offset: 0): unknown value type '<'
+
+This is highly likely caused by you adding an entire URL instead of just the RSS-key. This field only works with an alphanumeric string.
+
+With TorrentLeech as an example, only add the red part when setting up your indexer:
+
+`https://rss.tl.org/`<Highlight color="#ff2754">1812u12urr1203j12jeq</Highlight>
+
 ## I have set up an indexer, but it does not connect to the #announce channel. What do I do?
 
 Make sure you have entered the necessary keys in the invite command and that your IRC user has privileges to access to the #announce channel. See [IRC setup](/configuration/irc).
