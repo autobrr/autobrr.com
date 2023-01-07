@@ -15,7 +15,7 @@ This list was created with help from users like you. If you have others, please 
 
 ## Categories
 
-As a rule of thumb, simple regex rules such as `*TV*,*Episode*` or `*Movie*` will sufice for most users needs
+As a rule of thumb, simple filtering rules such as `*TV*,*Episode*` or `*Movie*` will sufice for most users needs
 
 import Categories from '/snippets/category-snippets.mdx';
 
