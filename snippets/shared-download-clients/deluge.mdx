@@ -23,6 +23,22 @@ import TabItem from "@theme/TabItem";
 
 </TabItem>
 
+<TabItem value="ferealhosting-deluge" label="Feralhosting">
+
+
+```shell
+# Grab credentials via SSH
+printf "10.0.0.1\n$(hostname -f)\n$(whoami)\n$(sed -rn 's/(.*)"daemon_port": (.*),/\2/p' ~/.config/deluge/core.conf)\n$(sed -rn "s/$(whoami):(.*):(.*)/\1/p" ~/.config/deluge/auth)\n"
+```
+
+- Host: `<hostname>.feralhosting.com`
+- Port: `DAEMON_PORT`
+- TLS: Enabled
+- Username: `<username>`
+- Password: `<password>`
+
+</TabItem>
+
 <TabItem value="hbd-deluge" label="Hostingby.design">
 
 ```shell
