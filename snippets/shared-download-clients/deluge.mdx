@@ -13,4 +13,21 @@ import TabItem from "@theme/TabItem";
 
 </TabItem>
 
+<TabItem value="hbd-deluge" label="Hostingby.design">
+
+```shell
+# Bind to 0.0.0.0 to enable remote connections
+box stop deluge-web
+sed -i 's/127.0.0.1/0.0.0.0/g' ~/.config/deluge/web.conf
+box start deluge-web
+```
+
+- Host: `<hostname>.itsby.design`
+- Port: `DAEMON_PORT`
+- TLS: Enabled
+- Username: `<username>`
+- Password: `<password>`
+
+</TabItem>
+
 </Tabs>
