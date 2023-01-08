@@ -1,0 +1,59 @@
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<Tabs>
+
+<TabItem value="ultra-deluge" label="Ultra.cc">
+
+- Host: `<hostname>.usbx.me`
+- Port: `DAEMON_PORT`
+- TLS: Enabled
+- Username: `<username>`
+- Password: `<password>`
+
+</TabItem>
+
+<TabItem value="seedhost-deluge" label="Seedhost.eu">
+
+- Host: `<hostname>.seedhost.eu`
+- Port: `DAEMON_PORT`
+- TLS: Enabled
+- Username: `<username>`
+- Password: `<password>`
+
+</TabItem>
+
+<TabItem value="ferealhosting-deluge" label="Feralhosting">
+
+
+```shell
+# Grab credentials via SSH
+printf "10.0.0.1\n$(hostname -f)\n$(whoami)\n$(sed -rn 's/(.*)"daemon_port": (.*),/\2/p' ~/.config/deluge/core.conf)\n$(sed -rn "s/$(whoami):(.*):(.*)/\1/p" ~/.config/deluge/auth)\n"
+```
+
+- Host: `<hostname>.feralhosting.com`
+- Port: `DAEMON_PORT`
+- TLS: Enabled
+- Username: `<username>`
+- Password: `<password>`
+
+</TabItem>
+
+<TabItem value="hbd-deluge" label="Hostingby.design">
+
+```shell
+# Bind to 0.0.0.0 to enable remote connections
+box stop deluge-web
+sed -i 's/127.0.0.1/0.0.0.0/g' ~/.config/deluge/web.conf
+box start deluge-web
+```
+
+- Host: `<hostname>.itsby.design`
+- Port: `DAEMON_PORT`
+- TLS: Enabled
+- Username: `<username>`
+- Password: `<password>`
+
+</TabItem>
+
+</Tabs>
