@@ -134,8 +134,8 @@ For custom commands you should specify the full path to the binary/program you w
 
 There is no built in native FTP upload action but you can get around this with a Exec action and `scp` or other tool.
 
-Cmd: `scp`
-Args: `{{ .TorrentPathName }} <username>@<hostname>:<destination path`
+- Cmd: `scp`
+- Args: `{{ .TorrentPathName }} <username>@<hostname>:<destination path`
 
 ## Macros
 
