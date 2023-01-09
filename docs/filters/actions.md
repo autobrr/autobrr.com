@@ -130,6 +130,13 @@ For custom commands you should specify the full path to the binary/program you w
 - `race-{{.Indexer}}/{{.Resolution}}` as a tag or Category.
 - `/Movies/{{.Resolution}}` as a save path.
 
+#### ftp
+
+There is no native ftp upload action but you can get around this with a Exec action and `scp` or other tool.
+
+Cmd: `scp`
+Args: `{{ .TorrentPathName }} <username>@<hostname>:<destination path`
+
 ## Macros
 
 The following fields can use macros to transform/add values from metadata.
