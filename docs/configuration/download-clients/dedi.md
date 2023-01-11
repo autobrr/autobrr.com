@@ -1,7 +1,7 @@
 ---
-sidebar_label: Download Clients
-sidebar_position: 3
-title: Download clients
+sidebar_label: Dedicated server
+slug: /configuration/download-clients/dedicated
+title: Download Clients
 description: The download clients available in autobrr
 keywords:
   [
@@ -24,8 +24,6 @@ keywords:
   ]
 pagination_label: Configuration - Download clients
 ---
-
-# Download Clients
 
 Go to `Settings > Clients` to setup clients.  
 Clients can be local or remote, as long as ports are open and auth available.

@@ -35,20 +35,19 @@ module.exports = {
         "configuration/indexers",
         "configuration/irc",
         {
-          // placeholder for possible change
-          //type: "category",
-          type: "doc",
+          type: "category",
+          //type: "doc",
           label: "Download clients",
-          id: "configuration/download-clients",
-          //collapsed: false,
-          //link: {
-          //  type: "doc",
-          //  id: "configuration/download-clients",
-          //},
-          //items: [
-          //  "configuration/download-clients",
-          //  "configuration/shared-seedboxes",
-          //],
+          //id: "configuration/download-clients",
+          collapsed: false,
+          link: {
+            type: "doc",
+            id: "configuration/download-clients/dedi",
+          },
+          items: [
+            "configuration/download-clients/dedi",
+            "configuration/download-clients/shared",
+          ],
         },
         "configuration/feeds",
         "configuration/notifications",
