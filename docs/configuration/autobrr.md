@@ -87,7 +87,7 @@ Make sure to read through all of the articles as all of them have some important
 
 - [Indexers <CgWebsite />](/configuration/indexers)
 - [IRC <BsChatDotsFill />](/configuration/irc)
-- [Download Clients <FaDownload />](/configuration/download-clients)
+- [Download Clients <FaDownload />](/configuration/download-clients/dedicated)
 - [Feeds (RSS / Torznab) <MdRssFeed />](/configuration/feeds)
 
 ## Additional Help

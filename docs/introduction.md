@@ -69,17 +69,17 @@ autobrr can also send matches (torrent files that meets your filter's criteria) 
 ### The typical workflow
 
 1. autobrr monitors IRC channels and/or RSS feeds for new torrents that fits your criteria set within your autobrr [filters](/filters).
-2. A succesful match is forwarded to your [download client](/configuration/download-clients) via an [action](/filters/actions) set inside your filters.
+2. A succesful match is forwarded to your [download client](/configuration/download-clients/dedicated) via an [action](/filters/actions) set inside your filters.
 3. If the download client is a torrent client, then the torrent client accepts the torrent file and starts downloading it.
 4. If the download client is Radarr (or any other kind of \*arr), then Radarr will check that torrent file and see if it meets Radarr's criterias.
 
-    Criterias like:
+   Criterias like:
 
-    - Is the movie monitored?
-    - Is the torrent autobrr sent considered an upgrade of your existing version of that movie?
+   - Is the movie monitored?
+   - Is the torrent autobrr sent considered an upgrade of your existing version of that movie?
 
-    Radarr will reject it if it doesn't meet its criterias.
-    If Radarr accepts it, then it will forward it to its download client and handle the rest from here.
+   Radarr will reject it if it doesn't meet its criterias.
+   If Radarr accepts it, then it will forward it to its download client and handle the rest from here.
 
 5. You are now among the very first people seeding this torrent which means you will have more peers connecting to you than if you'd be grabbing that file after the initial swarm. This results in a higher ratio on your indexers.
 
@@ -130,18 +130,18 @@ Autobrr was developed with resource consumption in mind. The software uses API c
 
 The following considers a common use case, feeding IRC announcements for a private
 tracker to a Servarr instance, as a way to illustrate how the components of autobrr fit
-together and what is required to get up and running.  It's not the only use case and
+together and what is required to get up and running. It's not the only use case and
 other use cases may require more RTFM'ing in [the configuration
 docs](/configuration/autobrr).
 
 1. [Install autobrr](/installation/linux).
 
-	Proceed once the web UI is accessible.
+   Proceed once the web UI is accessible.
 
 2. Create a user for yourself.
 
-	Most easily done through the initial "wizard" in the web UI when autobrr is first
-	started.
+   Most easily done through the initial "wizard" in the web UI when autobrr is first
+   started.
 
 3. [Register a nick on your indexer's IRC
    network](/configuration/irc#registering-with-nickserv).
@@ -153,42 +153,42 @@ docs](/configuration/autobrr).
 
 5. Add an [indexer](/configuration/indexers).
 
-6. Add a [download client](/configuration/download-clients#sonarr).
+6. Add a [download client](/configuration/download-clients/dedicated#sonarr).
 
-	**NOTE**: In the context of autobrr, Servarr instances are considered download
-	clients.
+   **NOTE**: In the context of autobrr, Servarr instances are considered download
+   clients.
 
 7. Add a [filter](/filters).
 
-	To feed all IRC announcements to a Servarr instance to let it decide what, if
-	anything, to do with the release, just add a filter with the indexer from #5
-	selected and leave the rest blank.  Don't forget to enable the filter.
+   To feed all IRC announcements to a Servarr instance to let it decide what, if
+   anything, to do with the release, just add a filter with the indexer from #5
+   selected and leave the rest blank. Don't forget to enable the filter.
 
-	**NOTE**: Autobrr does nothing with received IRC announcements without at least one
-	filter applied to at least one indexer.
+   **NOTE**: Autobrr does nothing with received IRC announcements without at least one
+   filter applied to at least one indexer.
 
 8. Add a [filter action](/filters/actions).
 
-	Add an action of the matching Servarr type (e.g. Sonarr type action for a Sonarr
-	instance), select the "download client" that corresponds to that type from #6, give
-	it a name and save.
+   Add an action of the matching Servarr type (e.g. Sonarr type action for a Sonarr
+   instance), select the "download client" that corresponds to that type from #6, give
+   it a name and save.
 
-	**NOTE**: Autobrr does nothing with received IRC announcements without at least one
-	action enabled in at least one filter.
+   **NOTE**: Autobrr does nothing with received IRC announcements without at least one
+   action enabled in at least one filter.
 
 9. Double check the resulting settings so far.
 
-	Review all the indexer, download client, and IRC network settings in the autobrr web
-	UI and correct any errors and omissions.  Ensure that everything but the IRC network
-	is enabled.
+   Review all the indexer, download client, and IRC network settings in the autobrr web
+   UI and correct any errors and omissions. Ensure that everything but the IRC network
+   is enabled.
 
 10. Enable the IRC network.
 
-	**NOTE**: The network will display as `unhealthy` and `network unhealthy` messages
-	appear in the logs until authentication has succeeded and autobrr has successfully
-	joined the announcements channel.  So you may safely ignore these messages until the
-	logs show further information about connecting, authenticating and joining the
-	channel.
+    **NOTE**: The network will display as `unhealthy` and `network unhealthy` messages
+    appear in the logs until authentication has succeeded and autobrr has successfully
+    joined the announcements channel. So you may safely ignore these messages until the
+    logs show further information about connecting, authenticating and joining the
+    channel.
 
 Now you can monitor the logs for announcements from IRC, pushes to the Servarr instance,
 and details for what, if anything, Servarr did with the release:

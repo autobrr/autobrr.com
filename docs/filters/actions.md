@@ -1,5 +1,5 @@
 ---
-title: Filter Actions
+title: Actions
 description: How to setup and use filter actions
 keywords:
   [
@@ -22,11 +22,9 @@ sidebar_label: Actions
 pagination_label: Filters - Actions
 ---
 
-# Actions
-
 A configured action is what your autodl does with a successful push. You can send it any of the supported actions. Each filter supports multiple actions just incase you need to send to multiple clients, or run custom commands as well.
 
-Read more about setup of [download clients](/configuration/download-clients) before continuing.
+Read more about setup of [download clients](/configuration/download-clients/dedicated) before continuing.
 
 When adding, updating or removing actions on a filter, make sure to save.
 
