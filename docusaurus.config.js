@@ -44,6 +44,12 @@ const config = {
     //     content: "autobrr, autodl-irssi, torrents, automation",
     //   },
     // ],
+    docs: {
+      sidebar: {
+        //hideable: true,
+        autoCollapseCategories: true,
+      },
+    },
     navbar: {
       title: "autobrr",
       logo: {
@@ -52,12 +58,15 @@ const config = {
       },
       items: [
         {
-          type: "doc",
-          docId: "introduction",
+          to: "introduction",
           position: "left",
           label: "Docs",
         },
-        // {to: '/blog', label: 'Blog', position: 'left'},
+        {
+          to: "faqs",
+          label: "FAQs",
+          position: "left",
+        },
         {
           href: "https://discord.gg/WQ2eUycxyT",
           position: "right",

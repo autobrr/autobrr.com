@@ -9,6 +9,10 @@ module.exports = {
       type: "category",
       label: "Installation",
       collapsed: false,
+      link: {
+        type: "doc",
+        id: "installation/linux",
+      },
       items: [
         "installation/linux",
         "installation/docker",
@@ -21,43 +25,60 @@ module.exports = {
     {
       type: "category",
       label: "Configuration",
-      collapsed: false,
+      collapsed: true,
+      link: {
+        type: "doc",
+        id: "configuration/autobrr",
+      },
       items: [
         "configuration/autobrr",
         "configuration/indexers",
         "configuration/irc",
-        "configuration/download-clients",
+        {
+          // placeholder for possible change
+          //type: "category",
+          type: "doc",
+          label: "Download clients",
+          id: "configuration/download-clients",
+          //collapsed: false,
+          //link: {
+          //  type: "doc",
+          //  id: "configuration/download-clients",
+          //},
+          //items: [
+          //  "configuration/download-clients",
+          //  "configuration/shared-seedboxes",
+          //],
+        },
         "configuration/feeds",
         "configuration/notifications",
       ],
     },
+
     {
       type: "category",
       label: "Filters",
-      collapsed: false,
-      items: ["filters/basics", "filters/actions", "filters/examples", "filters/categories",],
-    },
-//    {
-//      type: "category",
-//      label: "Usage",
-//      collapsed: false,
-//      items: ["usage/search", "usage/tips/freespace"],
-//    },
-    {
-      type: 'category',
-      label: 'Usage',
-      collapsed: false,
+      collapsed: true,
+      link: {
+        type: "doc",
+        id: "filters/basics",
+      },
       items: [
-        'usage/search',
-        {
-          type: 'category',
-          label: 'Tips',
-          collapsed: false,
-          items: [
-            'usage/tips/freespace',
-          ],
-        },  
+        "filters/basics",
+        "filters/actions",
+        "filters/examples",
+        "filters/categories",
       ],
+    },
+    {
+      type: "category",
+      label: "Usage",
+      collapsed: true,
+      link: {
+        type: "doc",
+        id: "usage/search",
+      },
+      items: ["usage/search", "usage/tips"],
     },
     {
       type: "doc",
@@ -68,6 +89,6 @@ module.exports = {
       type: "doc",
       label: "faqs",
       id: "faqs",
-      },
+    },
   ],
 };
