@@ -68,6 +68,6 @@ module.exports = {
       type: "doc",
       label: "faqs",
       id: "faqs",
-      },  
+      },
   ],
 };
