@@ -1,5 +1,3 @@
-
-
 module.exports = {
   docs: [
     {
@@ -39,11 +37,27 @@ module.exports = {
       collapsed: false,
       items: ["filters/basics", "filters/actions", "filters/examples", "filters/categories",],
     },
+//    {
+//      type: "category",
+//      label: "Usage",
+//      collapsed: false,
+//      items: ["usage/search", "usage/tips/freespace"],
+//    },
     {
-      type: "category",
-      label: "Usage",
+      type: 'category',
+      label: 'Usage',
       collapsed: false,
-      items: ["usage/search"],
+      items: [
+        'usage/search',
+        {
+          type: 'category',
+          label: 'Tips',
+          collapsed: false,
+          items: [
+            'usage/tips/freespace',
+          ],
+        },  
+      ],
     },
     {
       type: "doc",
@@ -54,7 +68,6 @@ module.exports = {
       type: "doc",
       label: "faqs",
       id: "faqs",
-    },
+      },  
   ],
 };
-
