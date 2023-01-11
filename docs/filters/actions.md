@@ -97,7 +97,7 @@ Autobrr supports the ability to push directly to the \*arr suite of services.
 
 Could be useful to do some basic filtering before sending.
 
-Select the type, and then the client. Read more about setup in [download clients setup](/configuration/download-clients).
+Select the type, and then the client. Read more about setup in [download clients setup](/configuration/download-clients/dedicated).
 
 Supports both local and remote instances.
 
