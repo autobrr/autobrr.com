@@ -103,7 +103,7 @@ Make sure it's running and `active`
 sudo systemctl status autobrr@USERNAME.service
 ```
 
-## Reverse proxy (Recommended)
+## Reverse proxy (recommended)
 
 It's recommended to run it behind a reverse proxy like nginx in order to get TLS, more robust authentication mechanisms and other similar benefits.
 
