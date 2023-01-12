@@ -3,39 +3,39 @@
  * bundles Infima by default. Infima is a CSS framework designed to
  * work well for content-centric websites.
  */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
- 
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap");
+
 /* You can override the default Infima variables here. */
 :root {
-  --ifm-font-family-base: 'Inter';
+  --ifm-font-family-base: "Inter";
   --ifm-font-size-base: 110%;
   --ifm-line-height-base: 1.5;
 
   --colors-blue1: hsl(206 100% 99.2%);
-  --colors-blue2: hsl(210 100% 98.0%);
+  --colors-blue2: hsl(210 100% 98%);
   --colors-blue3: hsl(209 100% 96.5%);
-  --colors-blue4: hsl(210 98.8% 94.0%);
-  --colors-blue5: hsl(209 95.0% 90.1%);
+  --colors-blue4: hsl(210 98.8% 94%);
+  --colors-blue5: hsl(209 95% 90.1%);
   --colors-blue6: hsl(209 81.2% 84.5%);
   --colors-blue7: hsl(208 77.5% 76.9%);
   --colors-blue8: hsl(206 81.9% 65.3%);
-  --colors-blue9: hsl(206 100% 50.0%);
+  --colors-blue9: hsl(206 100% 50%);
   --colors-blue10: hsl(208 100% 47.3%);
   --colors-blue11: hsl(211 100% 43.2%);
-  --colors-blue12: hsl(211 100% 15.0%);
+  --colors-blue12: hsl(211 100% 15%);
 
   --colors-sky1: hsl(193 100% 98.8%);
   --colors-sky2: hsl(193 100% 97.3%);
-  --colors-sky3: hsl(193 99.0% 94.7%);
+  --colors-sky3: hsl(193 99% 94.7%);
   --colors-sky4: hsl(193 91.4% 91.4%);
-  --colors-sky5: hsl(194 82.0% 86.6%);
+  --colors-sky5: hsl(194 82% 86.6%);
   --colors-sky6: hsl(194 74.1% 79.5%);
   --colors-sky7: hsl(194 72.3% 69.6%);
   --colors-sky8: hsl(193 77.9% 53.9%);
-  --colors-sky9: hsl(193 98.0% 70.0%);
-  --colors-sky10: hsl(193 87.0% 66.5%);
+  --colors-sky9: hsl(193 98% 70%);
+  --colors-sky10: hsl(193 87% 66.5%);
   --colors-sky11: hsl(195 100% 31.5%);
-  --colors-sky12: hsl(195 100% 13.0%);
+  --colors-sky12: hsl(195 100% 13%);
 
   --colors-mauve1: rgb(252, 251, 252);
   --colors-mauve1-trans: rgba(253, 252, 253);
@@ -63,21 +63,21 @@
   --ifm-navbar-background-color: var(--colors-mauve1);
 }
 
-:root[data-theme='dark'] {
-  --colors-blue1: hsl(212 35.0% 9.2%);
-  --colors-blue2: hsl(216 50.0% 11.8%);
+:root[data-theme="dark"] {
+  --colors-blue1: hsl(212 35% 9.2%);
+  --colors-blue2: hsl(216 50% 11.8%);
   --colors-blue3: hsl(214 59.4% 15.3%);
   --colors-blue4: hsl(214 65.8% 17.9%);
   --colors-blue5: hsl(213 71.2% 20.2%);
   --colors-blue6: hsl(212 77.4% 23.1%);
   --colors-blue7: hsl(211 85.1% 27.4%);
   --colors-blue8: hsl(211 89.7% 34.1%);
-  --colors-blue9: hsl(206 100% 50.0%);
+  --colors-blue9: hsl(206 100% 50%);
   --colors-blue10: hsl(209 100% 60.6%);
   --colors-blue11: hsl(210 100% 66.1%);
-  --colors-blue12: hsl(206 98.0% 95.8%);
+  --colors-blue12: hsl(206 98% 95.8%);
 
-  --colors-sky1: hsl(205 45.0% 8.6%);
+  --colors-sky1: hsl(205 45% 8.6%);
   --colors-sky2: hsl(202 71.4% 9.6%);
   --colors-sky3: hsl(201 74.6% 12.2%);
   --colors-sky4: hsl(201 77.4% 14.4%);
@@ -85,10 +85,10 @@
   --colors-sky6: hsl(200 84.1% 18.9%);
   --colors-sky7: hsl(199 90.2% 22.1%);
   --colors-sky8: hsl(198 100% 26.1%);
-  --colors-sky9: hsl(193 98.0% 70.0%);
-  --colors-sky10: hsl(192 100% 77.0%);
-  --colors-sky11: hsl(192 85.0% 55.8%);
-  --colors-sky12: hsl(198 98.0% 95.8%);
+  --colors-sky9: hsl(193 98% 70%);
+  --colors-sky10: hsl(192 100% 77%);
+  --colors-sky11: hsl(192 85% 55.8%);
+  --colors-sky12: hsl(198 98% 95.8%);
 
   --colors-mauve1: rgb(24, 24, 27);
   --colors-mauve1-trans: rgba(24, 24, 27, 0.45);
@@ -104,8 +104,9 @@
   --ifm-navbar-background-color: var(--colors-mauve1);
 }
 
-.navbar__link, .navbar__link:hover {
-  text-decoration: underline;
+.navbar__link,
+.navbar__link:hover {
+  /*  text-decoration: underline; */
   text-decoration-color: var(--colors-mauve5);
   text-underline-offset: 3px;
   padding-bottom: 0;
@@ -115,7 +116,8 @@
   text-decoration-thickness: 2px;
 }
 
-.navbar__link--active, .navbar__link--active:hover {
+.navbar__link--active,
+.navbar__link--active:hover {
   text-decoration-color: var(--colors-blue10);
   text-decoration-thickness: 2px;
 }
@@ -143,15 +145,17 @@
 }
 
 .header-github-link::before {
-  content: '';
+  content: "";
   width: 24px;
   height: 24px;
   display: flex;
-  background: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12'/%3E%3C/svg%3E") no-repeat;
+  background: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12'/%3E%3C/svg%3E")
+    no-repeat;
 }
 
-[data-theme='dark'] .header-github-link::before {
-  background: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='white' d='M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12'/%3E%3C/svg%3E") no-repeat;
+[data-theme="dark"] .header-github-link::before {
+  background: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='white' d='M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12'/%3E%3C/svg%3E")
+    no-repeat;
 }
 
 header.hero {
@@ -195,7 +199,7 @@ header.hero {
 }
 
 .button {
-  box-shadow: 0px 1px 0px 0px rgba(9,30,66,.25);
+  box-shadow: 0px 1px 0px 0px rgba(9, 30, 66, 0.25);
 }
 
 .footer {

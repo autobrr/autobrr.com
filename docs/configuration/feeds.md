@@ -11,7 +11,7 @@ Some indexers does not have an IRC announce channel.
 Luckily, most of them have RSS support.  
 You will treat Torznab and RSS feeds as regular indexers when setting up your filters.
 
-## Torznab Setup
+## Torznab
 
 Torznab is essentially like browsing the torrents page, but automated and unified.
 
@@ -25,6 +25,8 @@ Go to `Settings > Indexers` and add `Generic Torznab` from the list.
 
 Once saved, head over to `Settings > Feeds` to enable it.
 
+autobrr will get the latest 25 items from the RSS feed. On first run it will check all and cache the entries, on the second run it will check for any new entries and run them through the assigned filters.
+
 :::tip
 The `ID` part of the URL is the number given to the indexer by Prowlarr.
 You can see which number it is by clicking the `i` on the right side of it within Prowlarr.
@@ -32,15 +34,9 @@ You can see which number it is by clicking the `i` on the right side of it withi
 The `/api` part of the URL is not to be confused with `<API key>` in the field below it.
 :::
 
-autobrr will get the latest 25 items from the RSS feed. On first run it will check all and cache the entries, on the second run it will check for any new entries and run them through the assigned filters.
-
 ## RSS
 
 Find the RSS feature of your indexer and grab the RSS link.
-
-:::info
-We don't currently support MAGNET links, so using public RSS feeds might not work.
-:::
 
 Go to `Settings > Indexers` and add `Generic RSS` from the list.
 
@@ -50,3 +46,7 @@ Go to `Settings > Indexers` and add `Generic RSS` from the list.
 Once saved, head over to `Settings > Feeds` to enable it.
 
 autobrr will get the latest items from the RSS feed. On first run it will check all and cache the entries, on the second run it will check for any new entries and run them through the assigned filters.
+
+:::info
+We don't currently support MAGNET links, so using public RSS feeds might not work.
+:::

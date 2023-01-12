@@ -47,10 +47,11 @@ const config = {
     docs: {
       sidebar: {
         //hideable: true,
-        autoCollapseCategories: true,
+        autoCollapseCategories: false,
       },
     },
     navbar: {
+      hideOnScroll: true,
       title: "autobrr",
       logo: {
         alt: "autobrr Logo",
@@ -61,6 +62,8 @@ const config = {
           to: "introduction",
           position: "left",
           label: "Docs",
+          activeBaseRegex:
+            "/(introduction|installation|configuration|filters|usage)",
         },
         {
           to: "faqs",
@@ -86,6 +89,7 @@ const config = {
     prism: {
       theme: lightCodeTheme,
       darkTheme: darkCodeTheme,
+      additionalLanguages: ["systemd", "nginx", "toml", "docker"],
     },
   },
 

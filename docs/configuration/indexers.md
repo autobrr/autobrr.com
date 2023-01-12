@@ -10,17 +10,17 @@ pagination_prev: configuration/autobrr
 pagination_label: Configuration - Indexers
 ---
 
-# Indexers
-
-## Supported indexers
-
-:::info
-Check [Supported indexers #1](https://github.com/autobrr/autobrr/issues/1) on Github for more info.
-If you want more indexers added please either create a PR for it, post a comment on that issue or create a new one.
-:::
-
+import { AiFillGithub } from 'react-icons/ai';
 import Indexers from '/snippets/indexers.mdx';
 import IpApproval from '/snippets/ipapproval.mdx';
+
+# Indexers
+
+:::info
+If you want more indexers added please create an [Indexer Request](https://github.com/autobrr/autobrr/issues/new/choose) <AiFillGithub />
+:::
+
+## Supported indexers
 
 <Indexers/>
 
@@ -28,24 +28,24 @@ import IpApproval from '/snippets/ipapproval.mdx';
 
 1. Go to `Settings > Indexers` to add indexers.
 
-    When adding a new indexer, it will set up the IRC network and channels in the background.
-    Indexers usually need some extra keys to work. The common ones are:
+   When adding a new indexer, it will set up the IRC network and channels in the background.
+   Indexers usually need some extra keys to work. The common ones are:
 
-    - `passkey`
-    - `rsskey`
-    - `torrent_pass`
-    - `auth_key`
-    - `apikey`
+   - `passkey`
+   - `rsskey`
+   - `torrent_pass`
+   - `auth_key`
+   - `apikey`
 
-    You'll see which ones are needed when setting up an indexer. Check your indexers wiki/forum etc. to find where they are located.
+   You'll see which ones are needed when setting up an indexer. Check your indexers wiki/forum etc. to find where they are located.
 
-    - If NickServ Password is marked `*` as required, then you need to have a registered account on that IRC network. See [registering with NickServ](/configuration/irc#registering-with-nickserv).
-    - If NickServ Account is marked `*` as required, that's only used as nick, but supports NickServ auth.
-    - The invite command field in `Settings > IRC > Edit network` are pre filled, but you need to add your IRC key. The rest should be left as is.
+   - If NickServ Password is marked `*` as required, then you need to have a registered account on that IRC network. See [registering with NickServ](/configuration/irc#registering-with-nickserv).
+   - If NickServ Account is marked `*` as required, that's only used as nick, but supports NickServ auth.
+   - The invite command field in `Settings > IRC > Edit network` are pre filled, but you need to add your IRC key. The rest should be left as is.
 
 2. After the indexer is set up, head to `Settings > IRC` and click the 3 dots for the newly created network, hit `Edit`, and then enable the network. This is a good time to look over everything. The invite command etc.
 
-:::important Important
+:::caution Important
 Please check the [IRC](/configuration/irc) section for more details regarding NickServ, IRC keys, and grouping of nicks.
 :::
 

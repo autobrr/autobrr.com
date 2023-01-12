@@ -9,10 +9,6 @@ module.exports = {
       type: "category",
       label: "Installation",
       collapsed: false,
-      link: {
-        type: "doc",
-        id: "installation/linux",
-      },
       items: [
         "installation/linux",
         "installation/docker",
@@ -25,25 +21,15 @@ module.exports = {
     {
       type: "category",
       label: "Configuration",
-      collapsed: true,
-      link: {
-        type: "doc",
-        id: "configuration/autobrr",
-      },
+      collapsed: false,
       items: [
         "configuration/autobrr",
         "configuration/indexers",
         "configuration/irc",
         {
           type: "category",
-          //type: "doc",
           label: "Download clients",
-          //id: "configuration/download-clients",
           collapsed: false,
-          link: {
-            type: "doc",
-            id: "configuration/download-clients/dedi",
-          },
           items: [
             "configuration/download-clients/dedi",
             "configuration/download-clients/shared",
@@ -58,13 +44,10 @@ module.exports = {
       type: "category",
       label: "Filters",
       collapsed: true,
-      link: {
-        type: "doc",
-        id: "filters/basics",
-      },
       items: [
         "filters/basics",
         "filters/actions",
+        "filters/omegabrr",
         "filters/examples",
         "filters/categories",
       ],

@@ -28,7 +28,7 @@ Read more about setup of [download clients](/configuration/download-clients/dedi
 
 When adding, updating or removing actions on a filter, make sure to save.
 
-Many of the action fields have support for macros to build dynamic values. [Macros](#macros)
+Many of the action fields have support for [macros](#macros) to build dynamic values.
 
 ## Supported actions
 
@@ -132,8 +132,10 @@ For custom commands you should specify the full path to the binary/program you w
 
 There is no built in native FTP upload action but you can get around this with a Exec action and `scp` or other tool.
 
-- Cmd: `scp`
-- Args: `{{ .TorrentPathName }} <username>@<hostname>:<destination path`
+- Command: `scp`
+- Args: `{{ .TorrentPathName }} <username>@<hostname>:<destination path>`
+
+![FTP/SFTP](../../static/img/SCP.png "Exec action")
 
 ## Macros
 

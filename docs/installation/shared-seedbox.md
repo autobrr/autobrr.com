@@ -1,8 +1,8 @@
 ---
 id: shared-seedbox
 sidebar_label: Shared Seedbox
-title: Install autobrr on Shared seedbox
-description: A guide on how to setup autobrr on shared seedbox
+title: Install autobrr on shared seedbox
+description: A guide on how to setup autobrr on a shared seedbox.
 keywords:
   [
     autobrr,
@@ -26,10 +26,11 @@ pagination_next: configuration/indexers
 import { FaDocker, FaLinux } from 'react-icons/fa';
 import { FaWindows } from 'react-icons/fa';
 import { SiPostgresql } from 'react-icons/si';
+import { FaDiscord } from 'react-icons/fa';
 
-# Shared seedbox
+# Shared Seedbox
 
-These are instructions and installation scripts for shared seedboxes. We have support for a couple of providers out of the box and if yours are missing then please write on Discord so we add support.
+These are instructions and installation scripts for shared seedboxes. We have support for a couple of providers out of the box and if yours are missing then please reach out on [Discord <FaDiscord />](https://discord.gg/WQ2eUycxyT) so we can add support for it.
 
 The scripts requires some input but does most of the work.
 

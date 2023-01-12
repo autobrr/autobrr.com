@@ -86,11 +86,11 @@ touch /etc/systemd/system/cross-seed.service
 You'll want to customize the following variables:
 
 - `{user}`: your user, or another user if you want to create a separate user
-    for `cross-seed`
+  for `cross-seed`
 - `{group}`: your group, or another group if you want to create a separate
-    group for `cross-seed`
+  group for `cross-seed`
 - `/path/to/node`: run the command `which node` in your terminal, then paste
-    the output here.
+  the output here.
 
 ```systemd title="/etc/systemd/system/cross-seed.service"
 [Unit]
@@ -121,33 +121,24 @@ The way this works is you create a filter with a higher priority set than any ot
 3. Set a really high `priority` to make sure it's always higher than your other filters.
 4. Go to the `External` tab, enable the `Webhook` switch, and add the following below it:
 
-    Host: `http://localhost:2468/api/announce`  
-    Expected http status: `200`  
-    Data (JSON):  
+   Host: `http://localhost:2468/api/announce`  
+   Expected http status: `200`  
+   Data (JSON):
 
-    ```json
-    {
-    "name": "{{ .TorrentName }}",
-    "guid": "{{ .TorrentUrl }}",
-    "link": "{{ .TorrentUrl }}",
-    "tracker": "{{ .Indexer | js}}"
-    }
-    ```
+   ```json
+   {
+     "name": "{{ .TorrentName }}",
+     "guid": "{{ .TorrentUrl }}",
+     "link": "{{ .TorrentUrl }}",
+     "tracker": "{{ .Indexer | js}}"
+   }
+   ```
 
 5. Go to the `Actions` tab and create a Test action. This is required for the webhook to work.
 6. Finally, make sure the filter is enabled and you're all set.
 
 :::tip Cross-seed notifications
 You can set up a Discord webhook for cross-seed notifications within the cross-seed config.
-:::
-
-## arrbrr (deprecated)
-
-Transform monitored shows and movies from the arrs into autobrr filters.
-
-:::info
-arrbrr has been depcreated in favor for [autobrr/omegabrr](https://github.com/autobrr/omegabrr) which does the same thing and more.
-
 :::
 
 ## regbrr

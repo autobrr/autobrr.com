@@ -23,9 +23,9 @@ pagination_next: configuration/indexers
 
 This guide expects some previous docker knowledge and an already working environment.
 
-## docker-compose
+## docker compose
 
-`docker-compose` for autobrr. Modify if running with unRAID or setting up with Portainer.
+`docker compose` for autobrr. Modify if running with unRAID or setting up with Portainer.
 
 - Logging is optional
 - Host port mapping might need to be changed to not collide with other apps
@@ -55,21 +55,15 @@ services:
       - 7474:7474
 ```
 
-### Manually configure autobrr (Optional)
+### Manually configure autobrr (optional) {#manually-configure-autobrr}
 
 You can either let autobrr create the config itself at startup, or create one manually. For more information, please visit [configuring autobrr](/configuration/autobrr) which covers creating a user manually, configuring the default port, setting the desired log level, etc.
 
-## Start
+### Start the container
 
-1. Start the container `docker-compose up -d`
-
-### Create user manually (deprecated)
-
-Previously you needed to create the user with the cli `autobrrctl` but that initial setup can now be done in the ui on first launch.
-
-2. Exec into the container with `docker exec -it autobrr sh`
-3. Run the create-user command: `autobrrctl --config /config create-user <USERNAME>`. Then exit out with `exit`
-4. Now you should be able to login with the newly created user.
+```shell
+docker compose up -d
+```
 
 ## Reverse proxies
 
@@ -147,7 +141,7 @@ services:
 
 A basic `swag` config for running on subdomain.
 
-```conf
+```yaml
 server {
     listen 443 ssl;
     listen [::]:443 ssl;
@@ -183,11 +177,10 @@ server {
         set $upstream_port 7474;
         set $upstream_proto http;
         proxy_pass $upstream_proto://$upstream_app:$upstream_port;
-
-    }
+        }
 }
 ```
 
 ## Done
 
-Now it's up and running, and you should be able to visit it at your `domain.ltd:7474` and login. Check out the next pages for further setup.
+Now it's up and running, and you should be able to visit it at `autobrr.domain.ltd` or `domain.ltd:7474` and login. Check out the next pages for further setup.

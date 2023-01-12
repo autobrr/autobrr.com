@@ -3,12 +3,12 @@ id: postgresql
 title: Setup autobrr with PostgreSQL
 description: A guide on how to use PostgreSQL with autobrr
 keywords: [autobrr, installation, postgres, postgre, postgressql]
-sidebar_label: PostgreSQL (Optional)
+sidebar_label: PostgreSQL (optional)
 pagination_prev: introduction
 pagination_next: configuration/indexers
 ---
 
-# PostgreSQL (Optional)
+# PostgreSQL (optional)
 
 Using PostgreSQL is optional. If you want to use PostgreSQL with autobrr, then add this to your config.toml and restart:
 

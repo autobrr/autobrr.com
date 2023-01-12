@@ -1,10 +1,11 @@
 ---
 id: shared
 slug: /configuration/download-clients/shared-seedboxes
-sidebar_label: Shared Seedbox
+sidebar_label: Shared seedboxes
 #sidebar_position: 3
 title: Download Clients
 description: The download clients available in autobrr
+pagination_label: Configuration - Download clients (shared seedboxes)
 keywords:
   [
     autobrr,
@@ -24,10 +25,9 @@ keywords:
     lidarr,
     whisparr,
   ]
-pagination_label: Configuration - Download Clients (Shared Seedboxes)
 ---
 
-Go to Settings > Clients to setup clients.
+Go to `Settings > Clients` to setup clients.
 All clients have a test function to try out the connection details before saving. Don't forget to give the client a name!
 
 ## Shared seedbox providers

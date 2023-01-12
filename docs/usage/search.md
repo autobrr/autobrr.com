@@ -4,7 +4,7 @@ sidebar_label: Search
 title: Search
 description: Explanation of keyword searches, supported keywords and values
 keywords: [autobrr, releases, search, tv, movies, music]
-pagination_label: Usage - Search
+pagination_next: usage/tips
 ---
 
 The Releases tab will show you every matched and rejected release.
