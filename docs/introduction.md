@@ -140,7 +140,7 @@ docs](/configuration/autobrr).
 
 2. Create a user for yourself.
 
-   Most easily done through the initial "wizard" in the web UI when autobrr is first
+   Most easily done through the initial "GUI" in the web UI when autobrr is first
    started.
 
 3. [Register a nick on your indexer's IRC
