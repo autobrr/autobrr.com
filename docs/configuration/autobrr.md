@@ -1,7 +1,7 @@
 ---
 id: autobrr
 sidebar_label: autobrr
-title: autobrr configuration
+title: Configure autobrr
 description: Configure autobrr
 keywords: [autobrr, config, setup, configuration, toml]
 pagination_next: configuration/indexers
@@ -66,10 +66,10 @@ sessionSecret = "secret-session-key"
 - `port`: If port already in use, then change to a free one.
 - `logLevel`: Choose how much log output you want to see. The autobrr process will need to be restarted in order for this change to take effect.
 - `sessionSecret`: Used for session cookies. Change to something more random like a `UUID`.
-- (**Optional**) `baseUrl`: Supports running on both the root url and in a subpath, as well as subdomain. Uncomment if needed.
-- (**Optional**) `logPath`:Considering autobrr is rather new software, it might be beneficial for logging to be enabled. If running with systemd you can use `journalctl` to check logs. The log file is rotated as soon as it reaches 50MB, up to 3 times. In other words, the maximum space which the log files can occupy is 150MB, which takes a long time to fill.
+- (**optional**) `baseUrl`: Supports running on both the root url and in a subpath, as well as subdomain. Uncomment if needed.
+- (**optional**) `logPath`:Considering autobrr is rather new software, it might be beneficial for logging to be enabled. If running with systemd you can use `journalctl` to check logs. The log file is rotated as soon as it reaches 50MB, up to 3 times. In other words, the maximum space which the log files can occupy is 150MB, which takes a long time to fill.
 
-### Create user via command line (Optional)
+### Create user via command line (optional) {#create-user-via-cli}
 
 This step is not needed, unless you wish to create a user _via the command line_. Instead the process of creating an user can be done via the web UI instead, which is the recommended way to do it.
 
@@ -77,7 +77,7 @@ To create a user alongside the initial database, you need to use `autobrrctl`. S
 
 Example:
 
-```bash
+```shell
 autobrrctl --config ~/.config/autobrr create-user USERNAME
 ```
 
@@ -87,10 +87,10 @@ Make sure to read through all of the articles as all of them have some important
 
 - [Indexers <CgWebsite />](/configuration/indexers)
 - [IRC <BsChatDotsFill />](/configuration/irc)
-- [Download Clients <FaDownload />](/configuration/download-clients)
+- [Download Clients <FaDownload />](/configuration/download-clients/dedicated)
 - [Feeds (RSS / Torznab) <MdRssFeed />](/configuration/feeds)
 
-## Additional Help
+## Additional help
 
 If you're having any trouble with the documentation, join us at [Discord <FaDiscord />](https://discord.gg/WQ2eUycxyT) and we will do our best to help.
 

@@ -44,7 +44,14 @@ const config = {
     //     content: "autobrr, autodl-irssi, torrents, automation",
     //   },
     // ],
+    docs: {
+      sidebar: {
+        //hideable: true,
+        autoCollapseCategories: false,
+      },
+    },
     navbar: {
+      hideOnScroll: true,
       title: "autobrr",
       logo: {
         alt: "autobrr Logo",
@@ -52,12 +59,17 @@ const config = {
       },
       items: [
         {
-          type: "doc",
-          docId: "introduction",
+          to: "introduction",
           position: "left",
           label: "Docs",
+          activeBaseRegex:
+            "/(introduction|installation|configuration|filters|usage)",
         },
-        // {to: '/blog', label: 'Blog', position: 'left'},
+        {
+          to: "faqs",
+          label: "FAQs",
+          position: "left",
+        },
         {
           href: "https://discord.gg/WQ2eUycxyT",
           position: "right",
@@ -77,6 +89,7 @@ const config = {
     prism: {
       theme: lightCodeTheme,
       darkTheme: darkCodeTheme,
+      additionalLanguages: ["systemd", "nginx", "toml", "docker"],
     },
   },
 

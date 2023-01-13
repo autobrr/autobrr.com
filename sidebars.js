@@ -1,5 +1,3 @@
-
-
 module.exports = {
   docs: [
     {
@@ -28,22 +26,37 @@ module.exports = {
         "configuration/autobrr",
         "configuration/indexers",
         "configuration/irc",
-        "configuration/download-clients",
+        {
+          type: "category",
+          label: "Download clients",
+          collapsed: false,
+          items: [
+            "configuration/download-clients/dedi",
+            "configuration/download-clients/shared",
+          ],
+        },
         "configuration/feeds",
         "configuration/notifications",
       ],
     },
+
     {
       type: "category",
       label: "Filters",
-      collapsed: false,
-      items: ["filters/basics", "filters/actions", "filters/examples", "filters/categories",],
+      collapsed: true,
+      items: [
+        "filters/basics",
+        "filters/actions",
+        "filters/omegabrr",
+        "filters/examples",
+        "filters/categories",
+      ],
     },
     {
       type: "category",
       label: "Usage",
-      collapsed: false,
-      items: ["usage/search"],
+      collapsed: true,
+      items: ["usage/search", "usage/tips"],
     },
     {
       type: "doc",
@@ -57,4 +70,3 @@ module.exports = {
     },
   ],
 };
-

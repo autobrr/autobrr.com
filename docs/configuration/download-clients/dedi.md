@@ -1,7 +1,7 @@
 ---
-sidebar_label: Download Clients
-sidebar_position: 3
-title: Download clients
+sidebar_label: Dedicated servers
+slug: /configuration/download-clients/dedicated
+title: Download Clients
 description: The download clients available in autobrr
 keywords:
   [
@@ -25,13 +25,10 @@ keywords:
 pagination_label: Configuration - Download clients
 ---
 
-# Download Clients
-
 Go to `Settings > Clients` to setup clients.  
 Clients can be local or remote, as long as ports are open and auth available.
 
-These are the available download clients.  
-Check [Supported download clients and actions #2](https://github.com/autobrr/autobrr/issues/2) for more info.
+These are the available download clients.
 
 - qBittorrent
 - Deluge (v1+ and v2+)
@@ -90,12 +87,6 @@ With **Docker** / containers make sure autobrr and qBittorrent share the same ne
 - TLS: disabled
 - Username: `<username>`
 - Password: `<password>`
-
-### Shared Seedboxes {#qbittorrent-shared-seedboxes}
-
-import SharedqBittorrent from '/snippets/shared-download-clients/qbittorrent.mdx';
-
-<SharedqBittorrent />
 
 ## qBittorrent rules
 
@@ -157,12 +148,6 @@ With **Docker** / containers make sure autobrr and Deluge share the same network
 - Username: `<username>`
 - Password: `<password>`
 
-### Shared Seedboxes {#deluge-shared-seedboxes}
-
-import SharedDeluge from '/snippets/shared-download-clients/deluge.mdx';
-
-<SharedDeluge />
-
 ## Deluge rules
 
 You can define some basic rules which can improve your performance for racing etc.
@@ -204,12 +189,6 @@ For a remote client, meaning autobrr and rTorrent are **not on the same server**
 With **Docker** / containers make sure autobrr and rTorrent share the same network to be able to use the `container_name` as address.
 
 - Host: `http://user:password@rtorrent/rutorrent/plugins/httprpc/action.php`
-
-### Shared Seedboxes {#rtorrent-shared-seedboxes}
-
-import SharedrTorrent from '/snippets/shared-download-clients/rtorrent.mdx';
-
-<SharedrTorrent />
 
 ## Transmission
 
@@ -259,12 +238,6 @@ With **Docker** / containers make sure autobrr and Transmission share the same n
 - Username: `<username>`
 - Password: `<password>`
 
-### Shared Seedboxes {#transmission-shared-seedboxes}
-
-import SharedTransmission from '/snippets/shared-download-clients/transmission.mdx';
-
-<SharedTransmission />
-
 ## Sonarr
 
 You can run autobrr and Sonarr apps on the following setups.
@@ -301,12 +274,6 @@ With **Docker** / containers make sure autobrr and Sonarr share the same network
 
 - Host: `http://sonarr:8989`
 - API Key: `API KEY`
-
-### Shared Seedboxes {#sonarr-shared-seedboxes}
-
-import SharedSonarr from '/snippets/shared-download-clients/sonarr.mdx';
-
-<SharedSonarr />
 
 ## Radarr
 
@@ -345,21 +312,9 @@ With **Docker** / containers make sure autobrr and Radarr share the same network
 - Host: `http://radarr:7878`
 - API Key: `API KEY`
 
-### Shared Seedboxes {#radarr-shared-seedboxes}
-
-import SharedRadarr from '/snippets/shared-download-clients/radarr.mdx';
-
-<SharedRadarr />
-
 ## Lidarr
 
 See Radarr and Sonarr but port `8686`.
-
-### Shared Seedboxes {#lidarr-shared-seedboxes}
-
-import SharedLidarr from '/snippets/shared-download-clients/lidarr.mdx';
-
-<SharedLidarr />
 
 ## Whisparr
 
