@@ -56,10 +56,6 @@ module.exports = {
       type: "category",
       label: "Usage",
       collapsed: true,
-      link: {
-        type: "doc",
-        id: "usage/search",
-      },
       items: ["usage/search", "usage/tips"],
     },
     {
