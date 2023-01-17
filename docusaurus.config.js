@@ -44,6 +44,7 @@ const config = {
     //     content: "autobrr, autodl-irssi, torrents, automation",
     //   },
     // ],
+    image: 'img/autobrr.png',
     docs: {
       sidebar: {
         //hideable: true,
@@ -91,7 +92,6 @@ const config = {
       darkTheme: darkCodeTheme,
       additionalLanguages: ["systemd", "nginx", "toml", "docker"],
     },
-    image: "img/autobrr.png"
   },
 
   plugins: [
