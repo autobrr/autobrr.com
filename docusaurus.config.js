@@ -4,7 +4,7 @@ const FontPreloadPlugin = require("webpack-font-preload-plugin");
 const config = {
   title: "autobrr",
   tagline: "the modern autodl-irssi replacement",
-  url: "https://autobrr.com",
+  url: "https://deploy-preview-76--autobrr.netlify.app",
   baseUrl: "/",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
@@ -45,7 +45,6 @@ const config = {
     //   },
     // ],
     image: 'img/autobrr.png',
-    metadata: [{name: 'twitter:card', content: 'summary'}],
     docs: {
       sidebar: {
         //hideable: true,
