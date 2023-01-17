@@ -45,6 +45,7 @@ const config = {
     //   },
     // ],
     image: 'img/autobrr.png',
+    metadata: [{name: 'twitter:card', content: 'summary'}],
     docs: {
       sidebar: {
         //hideable: true,
