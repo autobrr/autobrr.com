@@ -3,8 +3,8 @@ const darkCodeTheme = require("prism-react-renderer/themes/oceanicNext");
 const FontPreloadPlugin = require("webpack-font-preload-plugin");
 const config = {
   title: "autobrr",
-  tagline: "the modern autodl-irssi replacement",
-  url: "https://deploy-preview-76--autobrr.netlify.app",
+  tagline: "The modern autodl-irssi replacement.",
+  url: "https://autobrr.com",
   baseUrl: "/",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
@@ -44,8 +44,8 @@ const config = {
     //     content: "autobrr, autodl-irssi, torrents, automation",
     //   },
     // ],
-    image: 'img/autobrr.png',
-    metadata: [{name: 'twitter:card', content: 'summary'}],
+    image: "img/autobrr.png",
+    metadata: [{ name: "twitter:card", content: "summary" }],
     docs: {
       sidebar: {
         //hideable: true,

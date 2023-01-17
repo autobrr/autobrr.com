@@ -3,8 +3,19 @@ id: indexers
 slug: /configuration/indexers
 sidebar_label: Indexers
 title: Indexers and trackers in autobrr
-description: The indexers and trackers available in autobrr
-keywords: [autobrr, setup, bittorrent, torrents, torznab]
+description: A guide on how to set up indexers and trackers in autobrr.
+keywords:
+  [
+    autobrr,
+    setup,
+    bittorrent,
+    torrents,
+    torznab,
+    indexer,
+    indexers,
+    tracker,
+    trackers,
+  ]
 pagination_next: configuration/irc
 pagination_prev: configuration/autobrr
 pagination_label: Configuration - Indexers

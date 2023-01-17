@@ -1,8 +1,8 @@
 ---
 id: autobrr
 sidebar_label: autobrr
-title: Configure autobrr
-description: Configure autobrr
+title: Configuring autobrr
+description: A guide on how to configure autobrr.
 keywords: [autobrr, config, setup, configuration, toml]
 pagination_next: configuration/indexers
 pagination_prev: installation/linux

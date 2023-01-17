@@ -1,10 +1,24 @@
 ---
 sidebar_position: 7
 sidebar_label: FAQ
-title: FAQ
-description: FAQ - Frequently Asked Questions
-keywords: [autobrr, question, faq, error, no filter, no releases]
+title: Frequently Asked Questions
+description: Here you'll find a list of frequently asked questions.
+keywords:
+  [
+    autobrr,
+    question,
+    faq,
+    error,
+    filter,
+    releases,
+    forgot,
+    password,
+    not,
+    working,
+  ]
 ---
+
+# FAQ
 
 ## Nothing happens - I'm not seeing any releases
 
@@ -35,15 +49,15 @@ Go over your setup again and make sure that:
 ## Common action rejections
 
 export const Highlight = ({children, color}) => (
-  <span
-    style={{
+<span
+style={{
       backgroundColor: color,
       borderRadius: '2px',
       color: '#fff',
       padding: '0.2rem',
     }}>
-    {children}
-  </span>
+{children}
+</span>
 );
 
 > Rejected: error downloading torrent file for release: Some Release name: All attempts fail: #1: metainfo could not load file contents: /tmp/autobrr-3310314409: bencode: syntax error (offset: 0): unknown value type '<'

@@ -1,8 +1,8 @@
 ---
 sidebar_position: 6
 sidebar_label: Notifications
-title: Notifications for autobrr with Discord Telegram and Notifiarr
-description: Setup notifications for autobrr
+title: Notifications
+description: A guide on how to set up notifications in autobrr.
 keywords:
   [
     autobrr,
@@ -21,8 +21,6 @@ keywords:
   ]
 pagination_label: Configuration - Notifications
 ---
-
-# Notifications
 
 autobrr can send notifications on the following events:
 
