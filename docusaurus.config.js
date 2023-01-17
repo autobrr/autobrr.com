@@ -91,6 +91,7 @@ const config = {
       darkTheme: darkCodeTheme,
       additionalLanguages: ["systemd", "nginx", "toml", "docker"],
     },
+    image: "img/autobrr.png"
   },
 
   plugins: [
