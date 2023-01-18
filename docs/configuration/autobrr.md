@@ -2,7 +2,7 @@
 id: autobrr
 sidebar_label: autobrr
 title: Configuring autobrr
-description: A guide on how to configure autobrr.
+description: The primary configuration entry point for autobrr is config.toml, which should be located in the config directory you specified to the autobrr process or in the config directory relative from which autobrr is running.
 keywords: [autobrr, config, setup, configuration, toml]
 pagination_next: configuration/indexers
 pagination_prev: installation/linux

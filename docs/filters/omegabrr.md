@@ -1,13 +1,28 @@
 ---
 title: Omegabrr
-description: Transform monitored shows and movies from Radarr and Sonarr into autobrr filters.
+description: Omegabrr transforms monitored shows, movies, books and music from Radarr, Sonarr, Lidarr and Readarr into autobrr filters.
 keywords:
-  [autobrr, filters, tv, movies, 2160p, 1080p, 4k, radarr, sonarr, omegabrr]
+  [
+    autobrr,
+    filters,
+    tv,
+    movies,
+    books,
+    music,
+    2160p,
+    1080p,
+    4k,
+    radarr,
+    sonarr,
+    readarr,
+    lidarr,
+    omegabrr,
+  ]
 sidebar_label: Omegabrr
 pagination_label: Filters - Omegabrr
 ---
 
-Omegabrr is the successur to arrbrr. Omegabrr transforms monitored shows and movies from Radarr and Sonarr into autobrr filters.
+Omegabrr is the successur to arrbrr. Omegabrr transforms monitored shows, movies, books and music from Radarr, Sonarr, Lidarr and Readarr into autobrr filters.
 
 ## Installation
 

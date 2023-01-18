@@ -2,7 +2,7 @@
 id: linux
 sidebar_label: Linux
 title: Installation instructions for linux servers
-description: A guide on how to install autobrr on linux servers.
+description: A guide on how to install autobrr on linux servers either manually or via seedbox solutions like swizzin, saltbox and quickbox.
 keywords:
   [
     autobrr,

@@ -1,7 +1,7 @@
 ---
 sidebar_label: Windows
 title: Installation instructions for Windows
-description: A guide on how to install autobrr on Windows.
+description: A guide on how to install autobrr on Windows. In this setup we will create an autobrr user and a Windows service that operates in the background.
 keywords: [autobrr, installation, setup, seedbox, windows]
 pagination_prev: introduction
 pagination_next: configuration/indexers

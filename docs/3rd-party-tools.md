@@ -3,7 +3,7 @@ sidebar_label: 3rd party tools
 sidebar_position: 6
 title: 3rd party tools
 description: 3rd party tools that can be used with autobrr.
-keywords: [cross-seed, omegabrr, regbrr]
+keywords: [cross-seed, regbrr]
 ---
 
 ## Cross-seed with autobrr

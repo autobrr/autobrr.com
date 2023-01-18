@@ -2,7 +2,7 @@
 id: docker
 sidebar_label: Docker
 title: Installation instructions for docker
-description: A guide on how to run autobrr with docker.
+description: This guide expects some previous docker knowledge and an already working environment.
 keywords:
   [
     autobrr,

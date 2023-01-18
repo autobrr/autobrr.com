@@ -2,7 +2,7 @@
 sidebar_position: 6
 sidebar_label: Notifications
 title: Notifications
-description: A guide on how to set up notifications in autobrr.
+description: autobrr supports Discord, Notifiarr and Telegram for notifications. This is a guide on how to set them up in autobrr.
 keywords:
   [
     autobrr,

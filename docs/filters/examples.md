@@ -1,6 +1,6 @@
 ---
 title: Filter Examples
-description: Filter examples for Sonarr, Radarr, building buffer, and ratio.
+description: Filter examples for Sonarr, Radarr, building buffer and ratio.
 keywords:
   [
     autobrr,

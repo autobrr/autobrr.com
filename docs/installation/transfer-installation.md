@@ -2,7 +2,7 @@
 id: transfer-installation
 sidebar_label: Transfer your installation
 title: Transfer your installation
-description: A guide on how to transfer your autobrr installation to another server.
+description: This guide will walk you through the steps needed to transfer your settings such as filters, indexers, IRC networks, feeds, clients, notifications and API keys of your current autobrr installation from one host to another.
 keywords: [autobrr, installation, setup, seedbox, transfer, database, migration]
 pagination_prev: introduction
 pagination_next: configuration/indexers
