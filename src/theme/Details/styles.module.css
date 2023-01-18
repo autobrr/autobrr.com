@@ -1,0 +1,18 @@
+.details {
+  --docusaurus-details-decoration-color: var(--ifm-alert-border-color);
+  --docusaurus-details-transition: transform var(--ifm-transition-fast) ease;
+  margin: 0 0 var(--ifm-spacing-vertical);
+  border: 1px solid var(--ifm-alert-border-color);
+}
+
+[data-theme="light"] .details {
+  background-color: rgb(246, 247, 248);
+  border-color: rgb(129, 129, 129); 
+  --docusaurus-details-decoration-color: rgb(104, 167, 248);
+}
+
+[data-theme="dark"] .details {
+  background-color: rgb(30, 31, 32);
+  border-color: rgb(0, 0, 0); 
+  --docusaurus-details-decoration-color: rgb(104, 167, 248);
+}

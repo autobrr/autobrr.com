@@ -1,9 +1,4 @@
-import Tabs from "@theme/Tabs";
-import TabItem from "@theme/TabItem";
-
-<Tabs>
-
-<TabItem value="ultra-deluge" label="Ultra.cc">
+<details><summary>Ultra.CC</summary>
 
 - Host: `<hostname>.usbx.me`
 - Port: `DAEMON_PORT`
@@ -11,19 +6,19 @@ import TabItem from "@theme/TabItem";
 - Username: `<username>`
 - Password: `<password>`
 
-</TabItem>
+</details>
 
-<TabItem value="seedhost-deluge" label="Seedhost.eu">
+<details><summary>Seedhost</summary>
 
 - Host: `<hostname>.seedhost.eu`
 - Port: `DAEMON_PORT`
-- TLS: Enabled
+- TLS: `Enabled`
 - Username: `<username>`
 - Password: `<password>`
 
-</TabItem>
+</details>
 
-<TabItem value="ferealhosting-deluge" label="Feralhosting">
+<details><summary>Feralhosting</summary>
 
 
 ```shell
@@ -37,9 +32,9 @@ printf "10.0.0.1\n$(hostname -f)\n$(whoami)\n$(sed -rn 's/(.*)"daemon_port": (.*
 - Username: `<username>`
 - Password: `<password>`
 
-</TabItem>
+</details>
 
-<TabItem value="hbd-deluge" label="Hostingby.design">
+<details><summary>Hostingby.design</summary>
 
 ```shell
 # Bind to 0.0.0.0 to enable remote connections
@@ -54,9 +49,9 @@ box start deluge-web
 - Username: `<username>`
 - Password: `<password>`
 
-</TabItem>
+</details>
 
-<TabItem value="bytesized-deluge" label="Bytesized Hosting">
+<details><summary>Bytesized Hosting</summary>
 
 - Host: `<username><hostname>.bysh.me`
 - Port: `DAEMON_PORT`
@@ -64,6 +59,14 @@ box start deluge-web
 - Username: `<username>`
 - Password: `<password>`
 
-</TabItem>
+</details>
 
-</Tabs>
+<details><summary>Seedit4.me</summary>
+
+- Host: localhost
+- Port: `DAEMON_PORT`
+- TLS: disabled
+- Username: `seedit4me`
+- Password: `<your slot password>`
+
+</details>

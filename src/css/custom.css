@@ -209,3 +209,7 @@ header.hero {
 .pagination-nav__link {
   background-color: var(--colors-mauve1);
 }
+
+ul {
+  list-style-type: square;
+}

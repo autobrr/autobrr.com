@@ -43,7 +43,7 @@ These are instructions and installation scripts for shared seedboxes. We have su
 
 The scripts requires some input but does most of the work.
 
-Additionally see our installation instructions for [Linux <FaLinux />](/installation/linux), [Docker <FaDocker />](/installation/docker) and [windows <FaWindows />](/installation/windows).
+Additionally see our installation instructions for [Linux <FaLinux />](/installation/linux), [Docker <FaDocker />](/installation/docker) and [Windows <FaWindows />](/installation/windows).
 
 import SeedboxInstallers from '/snippets/seedbox-installers.mdx';
 

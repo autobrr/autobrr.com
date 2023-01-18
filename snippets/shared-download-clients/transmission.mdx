@@ -1,9 +1,4 @@
-import Tabs from "@theme/Tabs";
-import TabItem from "@theme/TabItem";
-
-<Tabs>
-
-<TabItem value="ultra-transmission" label="Ultra.cc">
+<details><summary>Ultra.cc</summary>
 
 - Host: `<username>.<hostname>.usbx.me`
 - Port: Transmissions' RPC Port as given in your Control Panel
@@ -11,18 +6,9 @@ import TabItem from "@theme/TabItem";
 - Username: `<username>`
 - Password: `<password>`
 
-</TabItem>
+</details>
 
-<TabItem value="feralhosting-transmission" label="Feralhosting">
-
-- Host: `<hostname>.feralhosting.com/<username>/transmission/rpc`
-- Port: 9091
-- TLS: Enabled
-- Password: `<password>`
-
-</TabItem>
-
-<TabItem value="seedhost-transmission" label="Seedhost.eu">
+<details><summary>Seedhost.eu</summary>
 
 ```shell
 # Grab RPC Port
@@ -35,6 +21,13 @@ echo -e "Your Transmission port: \e[31m$(grep '"rpc-port": [0-9]*' ~/.config/tra
 - Username: `<username>`
 - Password: `<password>`
 
-</TabItem>
+</details>
 
-</Tabs>
+<details><summary>Feralhosting</summary>
+
+- Host: `<hostname>.feralhosting.com/<username>/transmission/rpc`
+- Port: 9091
+- TLS: Enabled
+- Password: `<password>`
+
+</details>
