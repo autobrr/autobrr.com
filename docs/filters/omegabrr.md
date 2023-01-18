@@ -22,7 +22,7 @@ sidebar_label: Omegabrr
 pagination_label: Filters - Omegabrr
 ---
 
-Omegabrr is the successur to arrbrr. Omegabrr transforms monitored shows, movies, books and music from Radarr, Sonarr, Lidarr and Readarr into autobrr filters.
+Omegabrr is the successor to arrbrr. Omegabrr transforms monitored shows, movies, books and music from Radarr, Sonarr, Lidarr and Readarr into autobrr filters.
 
 ## Installation
 
