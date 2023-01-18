@@ -76,8 +76,8 @@ Override the save location by setting a save path.
 - Add paused: default false
 - Content layout: optional  
   &ensp;&ensp;&ensp;Tells qBittorrent if it should keep the original torrent content layout,  
-  &ensp;&ensp;&ensp;if should create a subfolder for the downloaded torrent,  
-  &ensp;&ensp;&ensp;or if should refrain from creating a subfolder.
+  &ensp;&ensp;&ensp;if it should create a subfolder for the downloaded torrent,  
+  &ensp;&ensp;&ensp;or if it should refrain from creating a subfolder.
 - Ignore client rules: default false  
   &ensp;&ensp;&ensp;Download the torrent even though the maximum active downloads  
   &ensp;&ensp;&ensp;configured in the client settings have been reached.
