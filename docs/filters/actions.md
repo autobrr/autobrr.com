@@ -55,10 +55,32 @@ Available options:
 
 - Save path: optional
 - Category: optional
-- Limit download and upload speed: optional
-- Add as paused: default false
+- Tags: optional
 
-If category is set, then qBittorrent will control the save path. Override save location by setting `save path`.
+:::note
+
+If a category is set, then qBittorrent will control the save path.  
+Override the save location by setting a save path.
+
+:::
+
+#### Rules:
+- Limit download and upload speed: optional  
+  &ensp;&ensp;&ensp;Takes any integer as a number. Given in `KiB/s`.
+- Ratio limit: optional  
+  &ensp;&ensp;&ensp;Takes any integer or floating point number with `,` as decimal separator.  
+  &ensp;&ensp;&ensp;The downloaded torrent will be stopped when the Ratio Limit is reached.
+- Seed time limit: optional  
+  &ensp;&ensp;&ensp;Takes any integer as a number. Given in minutes.
+- Add paused: default false
+- Content layout: optional  
+  &ensp;&ensp;&ensp;Tells qBittorrent if it should keep the original torrent content layout,  
+  &ensp;&ensp;&ensp;if should create a subfolder for the downloaded torrent,  
+  &ensp;&ensp;&ensp;or if should refrain from creating a subfolder.
+- Ignore client rules: default false  
+  &ensp;&ensp;&ensp;Download the torrent even though the maximum active downloads  
+  &ensp;&ensp;&ensp;configured in the client settings have been reached.
+- Skip hash check: default false
 
 Built in re-announce will make sure it works with initially broken trackers.
 
