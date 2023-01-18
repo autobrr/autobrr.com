@@ -11,10 +11,6 @@ pagination_label: Tips
 
 You can make autobrr stop adding torrents to your download client whenever you're running low on space.
 
-:::info
-To make this work without any extra steps, autobrr needs to run on the same server as the download client.
-:::
-
 ### Create the script
 
 ```bash
@@ -41,6 +37,18 @@ exit 0
 If the script sees that there is enough space available, it will return exit code 0 and autobrr will push the torrent to the download client.
 
 If free space falls below your limit, the script will return exit code 1 and autobrr will skip it.
+
+:::tip
+
+If you want autobrr to check the disk space of a remote server, then place the script above at the remote server and this one at the server autobrr runs on and call it from the autobrr filter like explained below:
+
+```bash
+#!/bin/bash
+retcode=$(ssh user@domain "bash -s < ~/freespace.sh ; echo \$? " 2>/dev/null)
+echo $retcode
+```
+
+:::
 
 ### Add it to your existing filter
 
