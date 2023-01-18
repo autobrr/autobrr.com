@@ -2,25 +2,8 @@
 id: transfer-installation
 sidebar_label: Transfer your installation
 title: Transfer your installation
-description: A guide on how to transfer your autobrr installation to another server
-keywords:
-  [
-    autobrr,
-    installation,
-    setup,
-    seedbox,
-    shared seedbox,
-    swizzin,
-    swizzin.net,
-    sbio,
-    seedbox.io,
-    ultra,
-    ultra.cc,
-    seedhost.eu,
-    seedhost,
-    saltbox, 
-    quickbox,
-  ]
+description: This guide will walk you through the steps needed to transfer your settings such as filters, indexers, IRC networks, feeds, clients, notifications and API keys of your current autobrr installation from one host to another.
+keywords: [autobrr, installation, setup, seedbox, transfer, database, migration]
 pagination_prev: introduction
 pagination_next: configuration/indexers
 ---
@@ -36,14 +19,14 @@ Settings like hostname / IP, port, baseUrl, logPath or logLevel are not transfer
 ## Backing up your current installation
 
 First you need to stop the autobrr service on your old host so that we can safely pull the `autobrr.db`  
-and to prevent any conflicts after restoring your installation on your new host.  
+and to prevent any conflicts after restoring your installation on your new host.
 
 All filters, indexers, IRC networks, feeds, clients, notifications and API keys are stored in this file.  
 Stopping autobrr can be done in multiple ways depending on your setup or the hosting provider you use.  
 Please refer to the documentation of your hosting provider for how to stop autobrr in case you don't know how to stop autobrr.
 
 After you stopped your autobrr service, use the FTP program of your choice to connect to your old host and  
-download the `autobrr.db` from `~/.config/autobrr`.  
+download the `autobrr.db` from `~/.config/autobrr`.
 
 :::info
 You may need to enable the option to show hidden files and folders in your FTP program (if not already enabled) since the `.config` folder will not be shown otherwise.
@@ -51,14 +34,14 @@ You may need to enable the option to show hidden files and folders in your FTP p
 
 ## Installing autobrr
 
-Now that you have successfully backed up your `autobrr.db` from your old host, you need to install a new instance of autobrr on your new host.  
+Now that you have successfully backed up your `autobrr.db` from your old host, you need to install a new instance of autobrr on your new host.
 
 Please refer to our guides or to the guides of your hosting provider on how to install autobrr on you new host:
 
-- [Linux](/installation/linux)  
-- [Docker](/installation/docker)  
-- [Shared Seedbox](/installation/shared-seedbox)  
-- [Windows](/installation/windows)  
+- [Linux](/installation/linux)
+- [Docker](/installation/docker)
+- [Shared Seedbox](/installation/shared-seedbox)
+- [Windows](/installation/windows)
 
 ## Restoring your database
 

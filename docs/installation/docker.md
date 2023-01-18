@@ -1,8 +1,8 @@
 ---
 id: docker
 sidebar_label: Docker
-title: Setup autobrr with Docker
-description: A guide how to run autobrr on docker
+title: Installation instructions for docker
+description: This guide expects some previous docker knowledge and an already working environment.
 keywords:
   [
     autobrr,

@@ -2,7 +2,7 @@
 id: tips
 sidebar_label: Tips
 title: Tips
-description: Useful tips for autobrr.
+description: Useful tips for using autobrr.
 keywords: [autobrr, disk, space, torrents, full, external, script]
 pagination_label: Tips
 ---

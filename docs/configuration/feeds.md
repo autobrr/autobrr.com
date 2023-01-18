@@ -1,10 +1,9 @@
 ---
 sidebar_label: Feeds (RSS / Torznab)
-sidebar_position: 4
 pagination_label: Configuration - Feeds
 title: Feeds
-description: Setup torznab and rss feeds for autobrr
-keywords: [autobrr, setup, indexers, torznab, torrents, rss, feeds]
+description: Some indexers does not have an IRC announce channel. Luckily, most of them have RSS support. This guide explains how to set it up.
+keywords: [autobrr, setup, indexers, torznab, torrents, rss, feed, feeds]
 ---
 
 Some indexers does not have an IRC announce channel.

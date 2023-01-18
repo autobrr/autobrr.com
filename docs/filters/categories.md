@@ -1,12 +1,7 @@
 ---
 title: Category Examples
-description: Filter categories for TV Sonarr, Movies Radarr, Buffer, Ratio
-keywords:
-  [
-    autobrr,
-    category,
-    categories
-  ]
+description: Categories for autobrr filters. This list was created with help from users like you. If you have others, please add them yourself or reach out on discord and we can add more.
+keywords: [autobrr, category, categories]
 sidebar_label: Categories
 pagination_label: Filters - Categories
 ---

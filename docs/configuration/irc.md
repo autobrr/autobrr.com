@@ -2,8 +2,8 @@
 sidebar_label: IRC
 sidebar_position: 2
 pagination_label: Configuration - IRC
-title: IRC setup for autobrr
-description: Setup IRC networks and announce channels with autobrr
+title: IRC
+description: A guide on how to set up IRC networks and announce channels in autobrr.
 keywords:
   [
     autobrr,
@@ -20,8 +20,6 @@ keywords:
     connect command,
   ]
 ---
-
-# IRC
 
 IRC stands for Internet Relay Chat. autobrr has its own IRC client built in which lets it monitor the #announce channels without the need for additional software.
 

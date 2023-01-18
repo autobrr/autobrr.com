@@ -1,8 +1,7 @@
 ---
 id: shared-seedbox
 sidebar_label: Shared Seedbox
-title: Install autobrr on shared seedbox
-description: A guide on how to setup autobrr on a shared seedbox.
+title: autobrr installation instructions for shared (non-root) seedbox solutions like hostingby.design, swizzin.net, ultra.cc, whatbox, seedhost, feralhosting and bytesized-hosting.
 keywords:
   [
     autobrr,
@@ -18,6 +17,16 @@ keywords:
     ultra.cc,
     whatbox,
     whatbox.ca,
+    seedhost,
+    seedhost.eu,
+    hostingby.design,
+    hostingbydesign,
+    hbd,
+    feral,
+    feralhosting,
+    feralhosting.com,
+    bytesized,
+    bytesized-hosting.com,
   ]
 pagination_prev: introduction
 pagination_next: configuration/indexers

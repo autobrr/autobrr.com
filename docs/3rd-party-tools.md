@@ -2,8 +2,8 @@
 sidebar_label: 3rd party tools
 sidebar_position: 6
 title: 3rd party tools
-description: 3rd party tools for autobrr
-keywords: [cross-seed, omegabrr, regbrr]
+description: 3rd party tools that can be used with autobrr.
+keywords: [cross-seed, regbrr]
 ---
 
 ## Cross-seed with autobrr
@@ -11,6 +11,8 @@ keywords: [cross-seed, omegabrr, regbrr]
 :::info Heads up
 
 This is meant for advanced users. If you're not familiar with cross-seed already, we suggest you read their [documentation](https://cross-seed.org) before you continue.
+
+Don't expect any support for setting this up. If you need help setting up cross-seed, you need to reach out to them directly.
 
 :::
 

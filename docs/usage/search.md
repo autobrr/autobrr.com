@@ -1,8 +1,8 @@
 ---
 id: search
 sidebar_label: Search
-title: Search
-description: Explanation of keyword searches, supported keywords and values
+title: Search function
+description: The Releases tab will show you every matched and rejected release. You can search through this list by typing your query and/or with selected keywords.
 keywords: [autobrr, releases, search, tv, movies, music]
 pagination_next: usage/tips
 ---

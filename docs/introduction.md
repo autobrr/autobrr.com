@@ -3,7 +3,7 @@ sidebar_position: 1
 sidebar_label: Introduction
 pagination_next: installation/linux
 title: Introduction
-description: Introduction to autobrr, it's use case and features, and the history of it.
+description: With inspiration and ideas from tools like trackarr, autodl-irssi and flexget we built one tool that can do it all, and then some. autobrr is the modern download automation tool for torrents.
 keywords:
   [
     autobrr,
