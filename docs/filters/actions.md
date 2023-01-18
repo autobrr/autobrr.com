@@ -64,7 +64,8 @@ Override the save location by setting a save path.
 
 :::
 
-#### Rules:
+#### Rules
+
 - Limit download and upload speed: optional  
   &ensp;&ensp;&ensp;Takes any integer as a number. Given in `KiB/s`.
 - Ratio limit: optional  
