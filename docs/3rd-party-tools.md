@@ -140,7 +140,7 @@ The way this works is you create a filter with a higher priority set than any ot
 6. Finally, make sure the filter is enabled and you're all set.
 
 :::tip Cross-seed notifications
-You can set up a Discord webhook for cross-seed notifications within the cross-seed config.
+You can set up a Notifiarr or Apprise webhook for cross-seed notifications within the cross-seed config.
 :::
 
 ## regbrr
