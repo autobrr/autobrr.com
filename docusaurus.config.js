@@ -95,6 +95,7 @@ const config = {
   },
 
   plugins: [
+    require.resolve('docusaurus-lunr-search'),
     function preloadFontPlugin(_context, _options) {
       return {
         name: "preload-font-plugin",
