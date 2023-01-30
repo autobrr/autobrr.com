@@ -12,6 +12,27 @@ const config = {
   organizationName: "autobrr", // Usually your GitHub org/user name.
   projectName: "autobrr", // Usually your repo name.
 
+  themes: [
+    // ... Your other themes.
+    [
+      require.resolve("@easyops-cn/docusaurus-search-local"),
+      /** @type {import("@easyops-cn/docusaurus-search-local").PluginOptions} */
+      ({
+        // ... Your options.
+        // `hashed` is recommended as long-term-cache of index file is possible.
+        hashed: true,
+        docsRouteBasePath: "/",
+        language: "en",
+        docsDir: "docs",
+        
+        // For Docs using Chinese, The `language` is recommended to set to:
+        // ```
+        // language: ["en", "zh"],
+        // ```
+      }),
+    ],
+  ],
+
   presets: [
     [
       "classic",
@@ -102,7 +123,7 @@ const config = {
           return { plugins: [new FontPreloadPlugin()] };
         },
       };
-    },
+    }
     // ...
   ],
 };
