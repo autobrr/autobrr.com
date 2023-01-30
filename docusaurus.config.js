@@ -24,7 +24,6 @@ const config = {
         docsRouteBasePath: "/",
         language: "en",
         docsDir: "docs",
-        
         // For Docs using Chinese, The `language` is recommended to set to:
         // ```
         // language: ["en", "zh"],
@@ -123,7 +122,7 @@ const config = {
           return { plugins: [new FontPreloadPlugin()] };
         },
       };
-    }
+    },
     // ...
   ],
 };
