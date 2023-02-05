@@ -24,6 +24,7 @@ const config = {
         docsRouteBasePath: "/",
         language: "en",
         docsDir: "docs",
+        searchBarShortcutHint: false,
         // For Docs using Chinese, The `language` is recommended to set to:
         // ```
         // language: ["en", "zh"],
@@ -94,13 +95,18 @@ const config = {
         {
           href: "https://discord.gg/WQ2eUycxyT",
           position: "right",
-          label: "Discord",
+          className: 'header-discord-link',
+          'aria-label': 'Discord',
           target: "_blank",
+          title: "Discord"
         },
         {
           href: "https://github.com/autobrr/autobrr",
           position: "right",
-          label: "GitHub",
+          className: 'header-github-link',
+          'aria-label': 'GitHub repository',
+          target: "_blank",
+          title: "Github repository"
         },
       ],
     },
