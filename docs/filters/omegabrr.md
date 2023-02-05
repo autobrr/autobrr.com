@@ -22,7 +22,7 @@ sidebar_label: Omegabrr
 pagination_label: Filters - Omegabrr
 ---
 
-Omegabrr is the successor to arrbrr. Omegabrr transforms monitored shows, movies, books and music from Radarr, Sonarr, Lidarr and Readarr into autobrr filters.
+Omegabrr is the successor to arrbrr. Omegabrr transforms monitored shows, movies, books and music from Radarr, Sonarr, Lidarr, Readarr and Whisparr into autobrr filters.
 
 ## Installation
 
@@ -79,28 +79,55 @@ server:
 schedule: "0 */6 * * *"
 clients:
   autobrr:
-    host: http://localhost:7474
-    apikey: YOUR_API_KEY
+  #  host: http://localhost:7474
+  #  apikey: AUTOBRR_API_KEY
+  #    basicAuth:
+  #    user: username
+  #    pass: password
   arr:
-    - name: radarr
-      type: radarr
-      host: https://yourdomain.com/radarr
-      apikey: YOUR_API_KEY
-      filters:
-        - 15
+  #  - name: radarr
+  #    type: radarr
+  #    host: http://localhost:7878
+  #    apikey: API_KEY
+  #    filters:
+  #      - 15 # Change me
 
-    - name: sonarr
-      type: sonarr
-      # host: http://localhost:PORT
-      # host: http://sonarr
-      host: https://yourdomain.com/sonarr
-      apikey: YOUR_API_KEY
-      basicAuth:
-        user: username
-        pass: password
-      filters:
-        - 14
-```
+  #  - name: radarr4k
+  #    type: radarr
+  #    host: http://localhost:7878
+  #    apikey: API_KEY
+  #    filters:
+  #      - 16 # Change me
+
+  #  - name: sonarr
+  #    type: sonarr
+  #    host: http://localhost:8989
+  #    apikey: API_KEY
+  #    filters:
+  #      - 14 # Change me
+  #    #excludeAlternateTitles: true # defaults to false
+	
+  #  - name: readarr
+  #    type: readarr
+  #    host: http://localhost:8787
+  #    apikey: API_KEY
+  #    filters:
+  #      - 18 # Change me
+		
+  # - name: lidarr
+  #   type: lidarr
+  #   host: http://localhost:8686
+  #   apikey: API_KEY
+  #   filters:
+  #     - 32 # Change me
+
+  # - name: whisparr
+  #   type: whisparr
+  #   host: http://localhost:6969
+  #   apikey: API_KEY
+  #   filters:
+  #     - 69 # Change me
+  ```
 
 If you're trying to reach Radarr or Sonarr hosted on swizzin from some other location, you need to do it like this with basic auth:
 
@@ -127,6 +154,16 @@ autobrr:
     user: username
     pass: password
 ```
+
+### Optionally use Match Releases field in your autobrr filter
+
+By setting `matchRelease: true` in your config, it will use the Match releases field in your autobrr filter instead of fields like Movies / Shows and Albums.
+
+Readarr will only use the Match releases field for now, so setting matchRelease: false for Readarr will be ignored.
+
+### Exclude alternative titles from Sonarr
+
+You can drop alternate show titles from being added by setting `excludeAlternateTitles: true` for Sonarr in your config.
 
 ### Tags
 
