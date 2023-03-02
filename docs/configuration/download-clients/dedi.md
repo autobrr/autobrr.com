@@ -186,6 +186,11 @@ For a remote client, meaning autobrr and rTorrent are **not on the same server**
 - Host: `http://user:password@EXTERNAL_IP/rutorrent/plugins/httprpc/action.php`
 - Host: `http://user:password@mydomain.com/rutorrent/plugins/httprpc/action.php`
 
+:::caution
+Some ambiguous characters (such as @ : # % and more) may escape out of the URL.  
+In this case you will have to change your password for ruTorrent to be able to add the client to autobrr.
+:::
+
 ### Docker {#rtorrent-docker}
 
 With **Docker** / containers make sure autobrr and rTorrent share the same network to be able to use the `container_name` as address.
