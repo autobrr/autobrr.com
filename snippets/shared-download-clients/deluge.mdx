@@ -36,13 +36,6 @@ printf "10.0.0.1\n$(hostname -f)\n$(whoami)\n$(sed -rn 's/(.*)"daemon_port": (.*
 
 <details><summary>Hostingby.design</summary>
 
-```shell
-# Bind to 0.0.0.0 to enable remote connections
-box stop deluge-web
-sed -i 's/127.0.0.1/0.0.0.0/g' ~/.config/deluge/web.conf
-box start deluge-web
-```
-
 - Host: `<hostname>.itsby.design`
 - Port: `DAEMON_PORT`
 - TLS: Enabled
