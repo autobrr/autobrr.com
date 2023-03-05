@@ -23,6 +23,7 @@ keywords:
     irc,
     announce,
     torznab,
+    newznab,
     prowlarr,
     rss,
     Golang,
@@ -85,7 +86,7 @@ autobrr can also send matches (torrent files that meets your filter's criteria) 
 
 ### RSS support for indexers without an IRC announcer
 
-A lot of indexers do not announce new torrents in an IRC channel. You can still make use of these indexers with autobrr since it has built in support for feeds as well. Both torznab and regular RSS is supported.
+A lot of indexers do not announce new torrents in an IRC channel. You can still make use of these indexers with autobrr since it has built in support for feeds as well. We support both Torznab and Newznab, as well as regular RSS feeds.
 RSS indexers are treated the same way as regular indexers within autobrr.
 
 This isn't needed if your usecase is feeding the \*arrs only. Since they have RSS support already.
@@ -95,7 +96,7 @@ This isn't needed if your usecase is feeding the \*arrs only. Since they have RS
 As of right now, autobrr features:
 
 - Support for 50+ trackers with IRC announces
-- RSS and Torznab support via Prowlarr to easily get access to hundreds of trackers
+- RSS and Torznab/Newznab support via Prowlarr to easily get access to hundreds of indexers
 - Powerful but simple filtering with RegEx support (like in autodl-irssi)
 - Easy to use and mobile friendly web UI (with dark mode!) to manage everything
 - Built on Go and React making autobrr lightweight and perfect for supporting multiple platforms (Linux, FreeBSD, Windows, macOS) on different architectures (e.g. x86, ARM)

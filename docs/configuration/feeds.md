@@ -1,25 +1,25 @@
 ---
-sidebar_label: Feeds (RSS / Torznab)
+sidebar_label: Feeds (RSS / Torznab / Newznab)
 pagination_label: Configuration - Feeds
 title: Feeds
 description: Some indexers does not have an IRC announce channel. Luckily, most of them have RSS support. This guide explains how to set it up.
-keywords: [autobrr, setup, indexers, torznab, torrents, rss, feed, feeds]
+keywords: [autobrr, setup, indexers, torznab, newznab, torrents, rss, feed, feeds]
 ---
 
 Some indexers does not have an IRC announce channel.
 Luckily, most of them have RSS support.  
-You will treat Torznab and RSS feeds as regular indexers when setting up your filters.
+You will treat Torznab/Newznab and RSS feeds as regular indexers when setting up your filters.
 
-## Torznab
+## Torznab / Newznab
 
-Torznab is essentially like browsing the torrents page, but automated and unified.
+Torznab and Newznab is essentially like browsing the torrents page, but automated and unified.
 
 Prowlarr and Jackett are supported. We recommend that you use Prowlarr.
 
-Go to `Settings > Indexers` and add `Generic Torznab` from the list.
+Go to `Settings > Indexers` and add `Generic Torznab` or `Generic Newznab` from the list.
 
 - **Name**: `<name of indexer>`
-- **Torznab URL**: `http://localhost:port/ID/api`
+- **Torznab/Newznab URL**: `http://localhost:port/ID/api`
 - **API Key**: `<API key>`
 
 Once saved, head over to `Settings > Feeds` to enable it.

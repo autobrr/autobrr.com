@@ -11,6 +11,7 @@ keywords:
     bittorrent,
     torrents,
     torznab,
+    newznab,
     indexer,
     indexers,
     tracker,
