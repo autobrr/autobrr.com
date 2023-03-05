@@ -21,6 +21,7 @@ Go to `Settings > Indexers` and add `Generic Torznab` or `Generic Newznab` from 
 - **Name**: `<name of indexer>`
 - **Torznab/Newznab URL**: `http://localhost:port/ID/api`
 - **API Key**: `<API key>`
+- **Download type**: `Torrent` or `Magnet`
 
 Once saved, head over to `Settings > Feeds` to enable it.
 
@@ -41,6 +42,7 @@ Go to `Settings > Indexers` and add `Generic RSS` from the list.
 
 - **Name**: `<name of indexer>`
 - **RSS URL**: `http://myindexer.com/rss`
+- **Download type**: `Torrent` or `Magnet`
 
 Once saved, head over to `Settings > Feeds` to enable it.
 
