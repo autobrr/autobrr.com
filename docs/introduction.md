@@ -86,7 +86,7 @@ autobrr can also send matches (torrent files that meets your filter's criteria) 
 
 ### RSS support for indexers without an IRC announcer
 
-A lot of indexers do not announce new torrents in an IRC channel. You can still make use of these indexers with autobrr since it has built in support for feeds as well. We support both Torznab and Newznab, as well as regular RSS feeds.
+A lot of indexers do not announce new torrents in an IRC channel. You can still make use of these indexers with autobrr since it has built in support for feeds as well. We support both Torznab, Newznab, as well as regular RSS feeds.
 RSS indexers are treated the same way as regular indexers within autobrr.
 
 This isn't needed if your usecase is feeding the \*arrs only. Since they have RSS support already.
