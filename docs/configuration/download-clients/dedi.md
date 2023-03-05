@@ -17,6 +17,7 @@ keywords:
     rtorrent,
     rutorrent,
     transmission,
+    sabnzbd,
     radarr,
     sonarr,
     lidarr,
@@ -36,6 +37,8 @@ These are the available download clients.
 - Deluge (v1+ and v2+)
 - rTorrent / ruTorrent
 - Transmission
+- Porla
+- Sabnzbd (Usenet)
 - Radarr
 - Sonarr
 - Lidarr
@@ -245,6 +248,33 @@ With **Docker** / containers make sure autobrr and Transmission share the same n
 - Username: `<username>`
 - Password: `<password>`
 
+## Sabnzbd
+
+You can run autobrr and Sabnzbd on the following setups.
+
+- Local server
+- Remote server
+
+### Local {#sabnzbd-local}
+
+For a local client, meaning autobrr and Sabnzbd **on the same server** then this should work. Check Sabnzbd settings to get the `SABNZBD_PORT`.
+
+- Host: `http://127.0.0.1:SABNZBD_PORT`
+- TLS: disabled
+- API key
+### Remote {#sabnzbd-remote}
+
+For a remote client, meaning autobrr and qBittorrent are **not on the same server** then things might be a bit different.
+
+- Host: `https://myserver.brr/sabnzbd`
+- TLS: enabled
+- API key
+
+Some setups like **Swizzin** requires to also use **Basic Auth** when connecting to it from a remote server.
+
+- Basic Auth: enabled
+- Username: `<username>`
+- Password: `<password>`
 ## Sonarr
 
 You can run autobrr and Sonarr apps on the following setups.
