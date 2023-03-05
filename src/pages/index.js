@@ -43,24 +43,24 @@ function HomepageHeader() {
         <h1 className="hero__title">{siteConfig.title}</h1>
         <p className="hero__subtitle">{siteConfig.tagline}</p>
         <div className="hero-grid-container">
-          <div className="hero-grid">
+          <div className="hero-grid" style={{maxWidth: "900px"}}>
             <Center icon={<FiFeather size="24" />} text="Single-binary" />
             <Center icon={<MdDynamicFeed size="24" />} text="Client-agnostic" />
             <Center
               icon={<AiOutlineMobile size="24" />}
               text="Mobile-friendly"
             />
-            <Center icon={<AiOutlineFilter size="24" />} text="Filters" />
-            <Center icon={<BiRss size="24" />} text="RSS and Torznab" />
             <Center
               icon={<AiOutlineDownload size="24" />}
               text="50+ Indexers"
             />
+            <Center icon={<AiOutlineFilter size="24" />} text="Filters" />
             <Center icon={<CgPlug size="24" />} text="*arr Integration" />
             <Center
               icon={<MdOutlineNotificationsActive size="24" />}
               text="Notifications"
             />
+            <Center icon={<BiRss size="24" />} text="RSS and Torznab/Newznab" />
           </div>
         </div>
         <div className={styles.buttons}>
