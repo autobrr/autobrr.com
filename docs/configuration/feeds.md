@@ -47,7 +47,3 @@ Go to `Settings > Indexers` and add `Generic RSS` from the list.
 Once saved, head over to `Settings > Feeds` to enable it.
 
 autobrr will get the latest items from the RSS feed. On first run it will check all and cache the entries, on the second run it will check for any new entries and run them through the assigned filters.
-
-:::info
-We don't currently support MAGNET links, so using public RSS feeds might not work.
-:::
