@@ -189,9 +189,8 @@ On any filter, you may utilize the external tab as a pre-filter. Using this with
 Coupling this with the extensive filtering built-in to autobrr allows you to specify qualities to stop accepting upgrades at, should you wish. This allows you to replace applications such as the "infamous" Sonarr / Radarr.
 
 On the external Webhook action, utilize the following payload, replacing the host(s), user and password with your configuration. The expected return code is 200.
-
-Host: http://upgraderr.upgraderr:6940/api/upgrade
-Payload:
+* Host: http://upgraderr.upgraderr:6940/api/upgrade
+( Payload:
 ```
 { "host":"http://qbittorrent.cat:8080",
   "user":"zees",
@@ -204,8 +203,8 @@ Payload:
 At the time of this writing, Upgraderr has excellent cross-seed functionality that runs in milliseconds. Presently there's a partial matcher implemented, where if 80% of the data matches the existing torrent, the new torrent will have the conflicting files (should they exist) renamed, to not corrupt the existing torrent.
 
 On the external Webhook action, utilize the following payload, replacing the host(s), user and password with your configuration. The expected return code is 250.
-Host: http://upgraderr.upgraderr:6940/api/upgrade
-Payload:
+* Host: http://upgraderr.upgraderr:6940/api/upgrade
+* Payload:
 ```
 { "host":"http://qbittorrent.cat:8080",
   "user":"zees",
@@ -214,8 +213,8 @@ Payload:
 ```
 
 Once the pre-hook succeeds, create a Webhook action, replacing the same variables as before.
-Host: http://upgraderr.upgraderr:6940/api/cross
-Payload:
+* Host: http://upgraderr.upgraderr:6940/api/cross
+* Payload:
 ```
 {  "host":"http://qbittorrent.cat:8080",
    "user":"zees",
