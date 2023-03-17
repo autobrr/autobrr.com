@@ -228,3 +228,5 @@ Payload:
 ### Finally
 
 This is a toolchest, other functionality can be achieved by using other return codes, and attaching other tools to actions taken by the application.
+
+More Information: https://github.com/kylesanderson/upgraderr
