@@ -190,7 +190,7 @@ Coupling this with the extensive filtering built-in to autobrr allows you to spe
 
 On the external Webhook action, utilize the following payload, replacing the host(s), user and password with your configuration. The expected return code is 200.
 * Host: http://upgraderr.upgraderr:6940/api/upgrade
-( Payload:
+* Payload:
 ```
 { "host":"http://qbittorrent.cat:8080",
   "user":"zees",
