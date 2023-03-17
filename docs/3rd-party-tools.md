@@ -175,8 +175,8 @@ import { AiFillGithub } from 'react-icons/ai';
 ## Arr, deduplication, and cross-seed functionality with Upgraderr
 
 :::info Heads up
-
 This is meant for any kind of user. There is no configuration, and it's nearly impossible to make a mistake so long as the guide is followed with the modest amount of care.
+:::
 
 ## What is this
 
