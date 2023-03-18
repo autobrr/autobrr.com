@@ -178,7 +178,7 @@ import { AiFillGithub } from 'react-icons/ai';
 This is meant for any kind of user. There is no configuration, and it's nearly impossible to make a mistake so long as the guide is followed with the modest amount of care.
 :::
 
-## What is this
+### What is this
 
 Upgraderr is a title parser that matches existing titles present in your qBittorrent client with the title submitted and returns a HTTP return code. The return codes indicate an action to perform next, if applicable.
 
