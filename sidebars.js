@@ -50,6 +50,7 @@ module.exports = {
         "filters/omegabrr",
         "filters/examples",
         "filters/categories",
+        "filters/freeleech",
       ],
     },
     {
