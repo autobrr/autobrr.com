@@ -15,12 +15,6 @@ Indexers under the Freeleech category only support the freeleech switch in autob
 Whereas indexers under the freeleech percent category support values in the freeleech percent field  
 and the freeleech switch - in case the release is 100% freeleech.
 
-:::caution
-
-Don't combine Freeleech with Freeleech Percent! Freeleech is equal to setting Freeleech Percent to 100.
-
-:::
-
 ## Freeleech
 - AlphaRatio
 - AnimeBytes
