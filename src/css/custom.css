@@ -195,21 +195,36 @@ header.hero {
 }
 
 .hero-grid-container {
+  max-width: 1000px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 1rem;
   display: flex;
   justify-content: center;
-  margin: 0 auto;
 }
 
 .hero-grid {
   display: grid;
-  gap: 1rem 0.5rem;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  margin: 2.5rem 0 0;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  grid-gap: 1rem;
+  align-items: center;
+  width: 100%;
+  max-width: 900px;
 }
 
-@media only screen and (max-width: 640px) {
+.center {
+  text-align: center;
+}
+
+@media (max-width: 380px) {
   .hero-grid {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }
+}
+
+@media (min-width: 500px) {
+  .hero-grid {
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
   }
 }
 
