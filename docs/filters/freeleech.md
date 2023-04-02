@@ -39,3 +39,4 @@ and the freeleech switch - in case the release is 100% freeleech.
 - LST
 - SkipTheCommericals
 - SkipTheTrailers
+- TheDarkCommunity
