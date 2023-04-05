@@ -169,9 +169,3 @@ Only supports `POST` requests for now.
 | **Except uploaders**      | Comma separated list of uploaders to ignore (takes priority over Match releases). | e.g. `anonymous,slow_uploader`                      | Depends on Indexer                                               |
 | **Freeleech**             | Should this filter match only Freeleech releases?                                     |                                                     | [Depends on Indexer](/filters/freeleech)                         |
 | **Freeleech Percent**     | Allowed Freeleech Percentage for this filter to match.                                | e.g. `50%,75-100%`                                  | [Depends on Indexer, might not use percent.](/filters/freeleech) |
-
-:::caution
-
-Don't combine Freeleech with Freeleech Percent! Freeleech is equal to setting Freeleech Percent to 100.
-
-:::

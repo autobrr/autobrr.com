@@ -44,23 +44,14 @@ function HomepageHeader() {
         <p className="hero__subtitle">{siteConfig.tagline}</p>
         <div className="hero-grid-container">
           <div className="hero-grid">
-            <Center icon={<FiFeather size="24" />} text="Single-binary" />
-            <Center icon={<MdDynamicFeed size="24" />} text="Client-agnostic" />
-            <Center
-              icon={<AiOutlineMobile size="24" />}
-              text="Mobile-friendly"
-            />
-            <Center icon={<AiOutlineFilter size="24" />} text="Filters" />
-            <Center icon={<BiRss size="24" />} text="RSS and Torznab" />
-            <Center
-              icon={<AiOutlineDownload size="24" />}
-              text="50+ Indexers"
-            />
-            <Center icon={<CgPlug size="24" />} text="*arr Integration" />
-            <Center
-              icon={<MdOutlineNotificationsActive size="24" />}
-              text="Notifications"
-            />
+            <Center icon={<FiFeather size="24" />} text={<div style={{width: '100px'}}>Single-binary</div>} />
+            <Center icon={<MdDynamicFeed size="24" />} text={<div style={{width: '100px'}}>Client-agnostic</div>} />
+            <Center icon={<AiOutlineMobile size="24" />} text={<div style={{width: '100px'}}>Mobile-friendly</div>} />
+            <Center icon={<AiOutlineFilter size="24" />} text={<div style={{width: '50px'}}>Filters</div>} />
+            <Center icon={<AiOutlineDownload size="24" />} text={<div style={{width: '100px'}}>50+ Indexers</div>} />
+            <Center icon={<BiRss size="24" />} text={<div style={{width: '120px'}}>RSS and Torznab</div>} />
+            <Center icon={<CgPlug size="24" />} text={<div style={{width: '100px'}}>*arr Integration</div>} />
+            <Center icon={<MdOutlineNotificationsActive size="24" />} text={<div style={{width: '100px'}}>Notifications</div>} />
           </div>
         </div>
         <div className={styles.buttons}>
