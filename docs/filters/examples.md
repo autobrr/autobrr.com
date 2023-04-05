@@ -128,7 +128,7 @@ If you DON'T WANT ANY HDR formats
 
 If you are in need of buffer this is an example that will work will on general indexers with freeleech/bonus systems.
 
-Check your indexer or our [list of indexers supporting freeleech](freeleech) filtering for specifics.
+Check your indexer or our [list of indexers supporting freeleech](/filters/freeleech) filtering for specifics.
 
 | Field     |  Values       |
 | --------- | ------------- |
