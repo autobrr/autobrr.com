@@ -29,7 +29,7 @@ autobrr will get the latest 25 items from the RSS feed. On first run it will che
 
 :::tip
 The `ID` part of the URL is the number given to the indexer by Prowlarr.
-You can see which number it is from the Prowlarr Indexer index by clicking the Indexer Name and viewing it in tbe info box or by copying the RSS Feed Icon the right side of it within Prowlarr.
+You can see which number it is in Prowlarr by clicking the Indexer Name and viewing it in the info box.
 
 The `/api` part of the URL is not to be confused with `<API key>` in the field below it.
 :::
