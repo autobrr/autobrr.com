@@ -42,7 +42,7 @@ wget $(curl -s https://api.github.com/repos/autobrr/omegabrr/releases/latest | g
 sudo tar -C /usr/local/bin -xzf omegabrr*.tar.gz
 ```
 
-## Docker compose
+## Docker compose {#docker-compose}
 
 1. Set `user: 1000:1000` with your user ID, or remove to run as **root**. You can your user ID with the `id` command.
 2. Set the `volume` so it matches your system. To run from the same path as the `docker compose` first create a config dir like `mkdir config`, and place `./config:/config` in the compose file. This will create a default config on the first run.
@@ -157,17 +157,17 @@ autobrr:
     pass: password
 ```
 
-#### Optionally use Match Releases field in your autobrr filter
+#### Optionally use Match Releases field in your autobrr filter {#arr-match-releases}
 
 By setting `matchRelease: true` in your config, it will use the Match releases field in your autobrr filter instead of fields like Movies / Shows and Albums.
 
 Readarr will only use the Match releases field for now, so setting matchRelease: false for Readarr will be ignored.
 
-#### Exclude alternative titles from Sonarr
+#### Exclude alternative titles from Sonarr {#arr-exclude-alternate-titles}
 
 You can drop alternate show titles from being added by setting `excludeAlternateTitles: true` for Sonarr in your config.
 
-#### Tags
+#### Tags {#arr-tags}
 
 This works for both Sonarr and Radarr.
 
@@ -201,7 +201,7 @@ If you want to exclude certain tags, you can use the `tagsExclude`.
 
 Formerly known as regbrr and maintained by community members is now integrated into omegabrr.
 
-####  Supported list types {#supported-list-types}
+####  Supported list types {#lists-supported-types}
 
 #### `trakt` - Trakt.tv lists {#lists-trakt}
 
@@ -374,7 +374,7 @@ lists:
 
 Available commands.
 
-### `run`
+### `run` {#commands-run}
 
 ```shell
 omegabrr run --config config.yaml
@@ -382,7 +382,7 @@ omegabrr run --config config.yaml
 
 Run as a service and process on cron schedule. Defaults to every 6 hour `0 */6 * * *`.
 
-### `arr`
+### `arr` {#commands-arr}
 
 ```shell
 omegabrr arr --config config.yaml
@@ -390,7 +390,7 @@ omegabrr arr --config config.yaml
 
 Supports to run with `--dry-run` to only fetch shows and skip filter update.
 
-### `lists`
+### `lists` {#commands-lists}
 
 ```shell
 omegabrr lists --config config.yaml
@@ -398,7 +398,7 @@ omegabrr lists --config config.yaml
 
 Supports to run with --dry-run to only fetch shows and skip filter update.
 
-### `generate-token`
+### `generate-token` {#commands-generate-token}
 
 Generate an API Token to use when triggering via webhook.
 
@@ -419,7 +419,7 @@ server:
   apiToken: MY_NEW_LONG_SECURE_TOKEN
 ```
 
-## Service
+## Service {#service}
 
 When run as a service it exposes an HTTP server as well. Generate an **API Token** (see instructions above) and add to your config.
 
