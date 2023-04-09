@@ -22,7 +22,7 @@ sidebar_label: Omegabrr
 pagination_label: Filters - Omegabrr
 ---
 
-Omegabrr is the successor to arrbrr. Omegabrr transforms monitored shows, movies, books and music from Radarr, Sonarr, Lidarr, Readarr and Whisparr into autobrr filters.
+Omegabrr transforms monitored shows, movies, books and music from [arrs](#arr) into autobrr filters. It also supports adding titles from custom [lists](#lists) to autobrr filters.
 
 ## Installation
 
@@ -42,7 +42,7 @@ wget $(curl -s https://api.github.com/repos/autobrr/omegabrr/releases/latest | g
 sudo tar -C /usr/local/bin -xzf omegabrr*.tar.gz
 ```
 
-## Docker compose
+## Docker compose {#docker-compose}
 
 1. Set `user: 1000:1000` with your user ID, or remove to run as **root**. You can your user ID with the `id` command.
 2. Set the `volume` so it matches your system. To run from the same path as the `docker compose` first create a config dir like `mkdir config`, and place `./config:/config` in the compose file. This will create a default config on the first run.
@@ -63,7 +63,9 @@ services:
       - "./config:/config"
 ```
 
-## Config
+## Configuration
+
+### Arr
 
 You can set multiple filters per arr. Find the filter ID by going into the autobrr webui and get the ID from the url like `http://localhost:7474/filters/10` where `10` is the filter ID.
 
@@ -155,17 +157,17 @@ autobrr:
     pass: password
 ```
 
-### Optionally use Match Releases field in your autobrr filter
+#### Optionally use Match Releases field in your autobrr filter {#arr-match-releases}
 
 By setting `matchRelease: true` in your config, it will use the Match releases field in your autobrr filter instead of fields like Movies / Shows and Albums.
 
 Readarr will only use the Match releases field for now, so setting matchRelease: false for Readarr will be ignored.
 
-### Exclude alternative titles from Sonarr
+#### Exclude alternative titles from Sonarr {#arr-exclude-alternate-titles}
 
 You can drop alternate show titles from being added by setting `excludeAlternateTitles: true` for Sonarr in your config.
 
-### Tags
+#### Tags {#arr-tags}
 
 This works for both Sonarr and Radarr.
 
@@ -195,40 +197,184 @@ If you want to exclude certain tags, you can use the `tagsExclude`.
     - myothertag
 ```
 
+### Lists configuration {#lists}
+
+Formerly known as regbrr and maintained by community members is now integrated into omegabrr.
+
+####  Supported list types {#lists-supported-types}
+
+#### `trakt` - Trakt.tv lists {#lists-trakt}
+
+:::info
+Please check the [Trakt info section](#trakt-info) if you plan to use offical trakt.tv endpoints.  
+
+This does not apply to lists hosted by autobrr.
+:::
+
+Trakt lists hosted by autobrr:
+```yaml
+https://api.autobrr.com/lists/trakt/popular-tv
+https://api.autobrr.com/lists/trakt/anticipated-tv
+https://api.autobrr.com/lists/trakt/upcoming-movies
+https://api.autobrr.com/lists/trakt/upcoming-bluray
+https://api.autobrr.com/lists/stevenlu # needs to be specified as a trakt list
+```
+
+#### `mdblists` - MDBLists {#lists-mdblists}
+
+Takes any mdblist url with `/json` appended to the end of the URL.
+
+```yaml
+https://mdblist.com/lists/linaspurinis/new-movies/json
+```
+
+#### `metacritic` - Music lists curated by Metacritic {#lists-metacritic}
+
+Only these lists are supported:
+
+```yaml
+https://api.autobrr.com/lists/metacritic/upcoming-albums
+https://api.autobrr.com/lists/metacritic/new-albums
+```
+
+#### `plaintext` - Plaintext lists {#lists-plaintext}
+
+Takes any plaintext list with one item per line.
+
+#### Trakt info {#trakt-info}
+
+If you are using the Trakt api directly you need to have an API key which you can set via the headers object along with any other header needed for the request.
+
+```yaml
+lists:
+  - name: Some custom Trakt endpoint
+    type: trakt
+    url: https://api.trakt.tv/calendars/all
+    headers:
+      trakt-api-key: your_key_goes_here
+    filters:
+      - 22 # Change me
+```
+
+### Sample configuration {#configuration-sample}
+
+```yaml title="~/.config/omegabrr/config.yaml"
+server:
+  host: 0.0.0.0
+  port: 7441
+  apiToken: GENERATED_TOKEN
+schedule: "0 */6 * * *"
+clients:
+  autobrr:
+    host: http://localhost:7474
+    apikey: YOUR_API_KEY
+  arr:
+    - name: Radarr
+      type: radarr
+      host: https://yourdomain.com/radarr
+      apikey: YOUR_API_KEY
+      filters:
+        - 15 # Change me
+      #matchRelease: false / true
+
+    - name: Radarr-4K
+      type: radarr
+      host: https://yourdomain.com/radarr4k
+      apikey: YOUR_API_KEY
+      filters:
+        - 16 # Change me
+      #matchRelease: false / true
+
+    - name: Sonarr
+      type: sonarr
+      host: https://yourdomain.com/sonarr
+      apikey: YOUR_API_KEY
+      basicAuth:
+        user: username
+        pass: password
+      filters:
+        - 14 # Change me
+      #matchRelease: false / true
+      #excludeAlternateTitles: false / true
+
+    - name: lidarr
+      type: lidarr
+      host: https://yourdomain.com/lidarr
+      apikey: YOUR_API_KEY
+      filters:
+        - 13 # Change me
+      #matchRelease: false / true
+
+    - name: readarr
+      type: readarr
+      host: https://yourdomain.com/readarr
+      apikey: YOUR_API_KEY
+      filters:
+        - 12 # Change me
+
+    - name: whisparr
+      type: whisparr
+      host: https://yourdomain.com/whisparr
+      apikey: YOUR_API_KEY
+      filters:
+        - 69 # Change me
+      #matchRelease: false / true
+
+lists:
+  - name: Latest TV Shows
+    type: mdblist
+    url: https://mdblist.com/lists/garycrawfordgc/latest-tv-shows/json
+    filters:
+      - 1 # Change me
+
+  - name: Anticipated TV
+    type: trakt
+    url: https://api.autobrr.com/lists/trakt/anticipated-tv
+    filters:
+      - 22 # Change me
+
+  - name: Upcoming Movies
+    type: trakt
+    url: https://api.autobrr.com/lists/trakt/upcoming-movies
+    filters:
+      - 21 # Change me
+
+  - name: Upcoming Bluray
+    type: trakt
+    url: https://api.autobrr.com/lists/trakt/upcoming-bluray
+    filters:
+      - 24 # Change me
+
+  - name: Popular TV
+    type: trakt
+    url: https://api.autobrr.com/lists/trakt/popular-tv
+    filters:
+      - 25 # Change me
+  
+  - name: StevenLu
+    type: trakt
+    url: https://api.autobrr.com/lists/stevenlu
+    filters:
+      - 23 # Change me
+
+  - name: New Albums
+    type: metacritic
+    url: https://api.autobrr.com/lists/metacritic/new-albums
+    filters:
+      - 9 # Change me
+
+  - name: Upcoming Albums
+    type: metacritic
+    url: https://api.autobrr.com/lists/metacritic/upcoming-albums
+    filters:
+      - 20 # Change me
+```
+
 ## Commands
 
 Available commands.
 
-### `generate-token`
-
-Generate an API Token to use when triggering via webhook. Copy the output and put in your config like
-
-```shell
-omegabrr generate-token
-```
-
-If you are using docker:
-
-```docker
-docker exec omegabrr omegabrr generate-token
-```
-
-```yaml
-server:
-  host: 0.0.0.0
-  port: 7441
-  apiToken: MY_NEW_LONG_SECURE_TOKEN
-```
-
-### `arr`
-
-```shell
-omegabrr arr --config config.yaml
-```
-
-Supports to run with `--dry-run` to only fetch shows and skip filter update.
-
-### `run`
+### `run` {#commands-run}
 
 ```shell
 omegabrr run --config config.yaml
@@ -236,7 +382,44 @@ omegabrr run --config config.yaml
 
 Run as a service and process on cron schedule. Defaults to every 6 hour `0 */6 * * *`.
 
-## Service
+### `arr` {#commands-arr}
+
+```shell
+omegabrr arr --config config.yaml
+```
+
+Supports to run with `--dry-run` to only fetch shows and skip filter update.
+
+### `lists` {#commands-lists}
+
+```shell
+omegabrr lists --config config.yaml
+```
+
+Supports to run with --dry-run to only fetch shows and skip filter update.
+
+### `generate-token` {#commands-generate-token}
+
+Generate an API Token to use when triggering via webhook.
+
+```shell
+omegabrr generate-token
+```
+```shell
+docker exec omegabrr omegabrr generate-token
+```
+
+Optionally call with `--length <number>` for a custom length.
+
+Copy the output and put it in your config:
+```yaml
+server:
+  host: 0.0.0.0
+  port: 7441
+  apiToken: MY_NEW_LONG_SECURE_TOKEN
+```
+
+## Service {#service}
 
 When run as a service it exposes an HTTP server as well. Generate an **API Token** (see instructions above) and add to your config.
 

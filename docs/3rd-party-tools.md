@@ -6,7 +6,7 @@ description: 3rd party tools that can be used with autobrr.
 keywords: [cross-seed, regbrr]
 ---
 
-## Cross-seed with autobrr
+## Cross-seed with autobrr {#cross-seed}
 
 :::info Heads up
 
@@ -18,7 +18,7 @@ Don't expect any support for setting this up. If you need help setting up cross-
 
 With this setup you can utilize autobrr with [cross-seed](https://github.com/cross-seed/cross-seed) to automatically cross-seed newly announced torrents from indexer Y that matches existing torrents in your torrent client from indexer X.
 
-### Install cross-seed and its dependencies
+### Install cross-seed and its dependencies {#cross-seed-install}
 
 You can install cross-seed in several ways. Docker is recommended, but installing via npm or yarn (requires node 14 or greater) is also fine.
 
@@ -35,7 +35,7 @@ apt-get install -y nodejs
 npm install -g cross-seed
 ```
 
-### Generate config and make sure the port isn't exposed to the internet
+### Generate config and make sure the port isn't exposed to the internet {#cross-seed-config}
 
 ```bash
 # Generate a cross-seed config file
@@ -74,12 +74,12 @@ iptables -A INPUT -p tcp --dport 2468 -j DROP
 
 :::
 
-### Start the cross-seed daemon
+### Start the cross-seed daemon {#cross-seed-daemon}
 
 To make autobrr communicate with cross-seed, you need to run cross-seed in [daemon mode](https://www.cross-seed.org/docs/basics/daemon).
 In this guide we will set up a [systemd service](https://www.cross-seed.org/docs/basics/daemon#systemd-linux). You can also set it up with [screen](https://www.cross-seed.org/docs/basics/daemon#screen) or [docker](https://www.cross-seed.org/docs/basics/daemon#docker).
 
-#### Systemd
+#### Systemd {#cross-seed-systemd}
 
 ```shell
 touch /etc/systemd/system/cross-seed.service
@@ -114,7 +114,7 @@ sudo systemctl start cross-seed # start the service
 sudo journalctl -u cross-seed # view the logs
 ```
 
-### Create the cross-seed filter in autobrr
+### Create the cross-seed filter in autobrr {#cross-seed-filter}
 
 The way this works is you create a filter with a higher priority set than any other filter to make sure every cross-seed match is forwarded to the cross-seed daemon instead of being run through other filters.
 
@@ -143,46 +143,17 @@ The way this works is you create a filter with a higher priority set than any ot
 You can set up a Notifiarr or Apprise webhook for cross-seed notifications within the cross-seed config.
 :::
 
-## regbrr
-
-:::warning Caution
-
-This script is not officially supported, nor do we guarantee that we can help you make it work. You should understand how it works if you choose to use it.
-
-Please do not contact the creator of this script for support, but feel free to ask in our [Discord](https://discord.gg/WQ2eUycxyT) for community support.
-
-:::
-
-This is a script that will take input for filters, then match them against a set of pre-defined strings. If it finds a match in the filter name, it will update the respective filter. This was rewritten this way because some users have 4K/4K DV filters and want them to match without introducing additional variables. By using a bash array, as declared on line 3, we are able to specify a number of filters and loop through them.
-
-The script basically pulls anticipated and popular titles from a source, and then feeds them into your assigned filters.
-
-### Download the script
-
-import { AiFillGithub } from 'react-icons/ai';
-
-`regbrr.sh` can be found [here <AiFillGithub />](https://gist.github.com/brettpetch/2f3147eaff75294003261df9dfd0208a)
-
-### Installation
-
-1. Create the filters in autobrr. (here we use the examples of race-TV, race-TV4K, race-TVDV, race-Movies, race-Movies4K, race-MoviesDV, race-BluRay, race-BluRay4K, race-BluRayDV)
-2. Run the script.
-3. Setup the actions for each filter within autobrr.
-4. Setup a cronjob. (Anticipated releases are fully changed every 7 days.)
-
-**There are no warranties or guarantees when running this script. It is your responsibility to ensure that all domains resolve correctly and that your database doesn't get messed up.**
-
-## Arr, deduplication, and cross-seed functionality with Upgraderr
+## Arr, deduplication, and cross-seed functionality with Upgraderr {#upgraderr}
 
 :::info Heads up
 This is meant for any kind of user. There is no configuration, and it's nearly impossible to make a mistake so long as the guide is followed with the modest amount of care.
 :::
 
-### What is this
+### What is this {#what-is-upgraderr}
 
 Upgraderr is a title parser that matches existing titles present in your qBittorrent client with the title submitted and returns a HTTP return code. The return codes indicate an action to perform next, if applicable.
 
-### Arr functionality
+### Arr functionality {#upgraderr-arr-functionality}
 
 On any filter, you may utilize the external tab as a pre-filter. Using this with a return code of 200 permits any unique titles to be added, or if they're a quality upgrade. This also acts as a deduplicator should you wish.
 
@@ -198,7 +169,7 @@ On the external Webhook action, utilize the following payload, replacing the hos
   "name":"{{ .TorrentName | js }}" }
 ```
 
-### Cross-Seed functionality
+### Cross-Seed functionality {#upgraderr-cross-seed-functionality}
 
 At the time of this writing, Upgraderr has excellent cross-seed functionality that runs in milliseconds. Presently there's a partial matcher implemented, where if 80% of the data matches the existing torrent, the new torrent will have the conflicting files (should they exist) renamed, to not corrupt the existing torrent.
 
@@ -224,7 +195,7 @@ Once the pre-hook succeeds, create a Webhook action, replacing the same variable
    "torrent":"{{ .TorrentDataRawBytes | js }}" }
 ```
 
-### Finally
+### Finally {#upgraderr-final-words}
 
 This is a toolchest, other functionality can be achieved by using other return codes, and attaching other tools to actions taken by the application.
 
