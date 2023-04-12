@@ -33,6 +33,7 @@ Whereas indexers under the freeleech percent category support values in the free
 
 
 ## Freeleech Percent
+- All Torznab indexers
 - Aither
 - Locadora
 - LST
