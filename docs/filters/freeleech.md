@@ -12,8 +12,7 @@ This is due to the indexer simply not announcing freeleech.
 
 To check if you can filter for freeleech, we have put together a list for you to see if you can filter for freeleech.
 Indexers under the Freeleech category only support the freeleech switch in autobrr.  
-Whereas indexers under the freeleech percent category support values in the freeleech percent field  
-and the freeleech switch - in case the release is 100% freeleech.
+Whereas indexers under the freeleech percent category support values in the freeleech percent field.
 
 ## Freeleech
 - AlphaRatio
@@ -34,6 +33,7 @@ and the freeleech switch - in case the release is 100% freeleech.
 
 
 ## Freeleech Percent
+- All Torznab indexers
 - Aither
 - Locadora
 - LST
