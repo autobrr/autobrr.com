@@ -189,6 +189,7 @@ These variables are implemented using the Go template engine. This is an extreme
 | `{{.CurrentYear}}`     | Current Year                               |
 | `{{.Episode}}`         | Parsed episode                             |
 | `{{.FilterName}}`      | Filter name                                |
+| `{{.GroupID}}`         | GroupID                                    |
 | `{{.HDR}}`             | Parsed HDR (DV, HDR, HDR10)                |
 | `{{.Indexer}}`         | Indexer                                    |
 | `{{.Resolution}}`      | Parsed resolution (1080p)                  |
@@ -197,6 +198,7 @@ These variables are implemented using the Go template engine. This is an extreme
 | `{{.Source}}`          | Parsed source (BluRay, WEB-DL)             |
 | `{{.Title}}`           | Parsed title (That Movie)                  |
 | `{{.TorrentHash}}`     | Torrent hash                               |
+| `{{.TorrentID}}`       | TorrentID                                  |
 | `{{.TorrentName}}`     | Release name as announced                  |
 | `{{.TorrentPathName}}` | Path to downloaded .torrent file in `/tmp` |
 | `{{.TorrentUrl}}`      | Full url to download torrent               |
