@@ -39,3 +39,4 @@ Whereas indexers under the freeleech percent category support values in the free
 - LST
 - SkipTheCommericals
 - SkipTheTrailers
+- TheDarkCommunity
