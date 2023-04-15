@@ -15,6 +15,8 @@ keywords:
     password,
     not,
     working,
+    freeleech,
+    tokens,
   ]
 ---
 
@@ -104,3 +106,16 @@ If you forget your password, you can change it via the command line.
 ```shell
 autobrrctl --config /home/username/.config/autobrr change-password <USERNAME>
 ```
+
+## How can I use my freeleech tokens from RED? {#redacted-freeleech-tokens}
+
+This is something a lot of users are asking for. 
+
+Golden Rule 5.3 on RED:
+
+> Do not autosnatch freeleech torrents.
+> The automatic snatching of freeleech torrents using any method involving little or no user-input (e.g., API-based scripts, log or site scraping, etc.) is prohibited.
+
+We have asked RED staff, and they have confirmed that automating the use of freeleech tokens falls under this rule.
+
+While the possibility to do it exists, its not something we will encourage users to do. Always make sure you respect the rules of any tracker that you are a part of.
