@@ -34,6 +34,24 @@ fi
 exit 0
 ```
 
+For Docker:
+```shell
+#!/bin/sh
+set -e
+
+reqSpace=250000000 # 250GB
+SPACE=$(df "/torrents" | awk 'END{print $4}')
+if [ "$SPACE" -le $reqSpace ]
+then
+  echo "not enough space"
+  echo "free $SPACE"
+  exit 1
+fi
+echo "got space"
+echo "free $SPACE"
+exit 0
+```
+
 If the script sees that there is enough space available, it will return exit code 0 and autobrr will push the torrent to the download client.
 
 If free space falls below your limit, the script will return exit code 1 and autobrr will skip it.
