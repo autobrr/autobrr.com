@@ -22,7 +22,7 @@ sidebar_label: Omegabrr
 pagination_label: Filters - Omegabrr
 ---
 
-Omegabrr transforms monitored shows, movies, books and music from [arrs](#arr) into autobrr filters. It also supports adding titles from custom [lists](#lists) to autobrr filters.
+Omegabrr transforms items monitored by [arrs](#arr) or [lists](#lists) into autobrr filters. Useful for automating your filters for monitored media or racing criteria.
 
 ## Installation
 
