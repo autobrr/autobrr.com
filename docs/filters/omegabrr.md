@@ -1,6 +1,6 @@
 ---
 title: Omegabrr
-description: Omegabrr transforms monitored shows, movies, books and music from Radarr, Sonarr, Lidarr and Readarr into autobrr filters.
+description: Omegabrr transforms monitored shows, movies, books and music from arrs into autobrr filters. It also supports adding titles from custom lists to autobrr filters.
 keywords:
   [
     autobrr,
