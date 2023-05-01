@@ -181,6 +181,8 @@ These variables are implemented using the Go template engine. This is an extreme
 
 | Variable               |  Description                               |
 | ---------------------- | ------------------------------------------ |
+| `{{.Categories}}`      | Categories                                 |
+| `{{.Category}}`        | Category                                   |
 | `{{.CurrentDay}}`      | Current Day                                |
 | `{{.CurrentHour}}`     | Current Hour                               |
 | `{{.CurrentMinute}}`   | Current Minute                             |
