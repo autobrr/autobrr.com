@@ -239,7 +239,17 @@ https://api.autobrr.com/lists/metacritic/new-albums
 
 #### `plaintext` - Plaintext lists {#lists-plaintext}
 
-Takes any plaintext list with one item per line.
+Plaintext lists can be anything, therefore you can optionally set `matchRelease: true` or `album: true` to use these fields in your autobrr filter. If not set, it will use the Movies / Shows field.
+
+```yaml
+lists:
+  - name: Personal list
+    type: plaintext
+    url: https://gist.githubusercontent.com/autobrr/somegist/raw
+    filters:
+      - 27 # change me
+    album: true # optional
+```
 
 #### Trakt info {#trakt-info}
 
@@ -368,6 +378,13 @@ lists:
     url: https://api.autobrr.com/lists/metacritic/upcoming-albums
     filters:
       - 20 # Change me
+
+  - name: Personal list
+  type: plaintext
+  url: https://gist.githubusercontent.com/autobrr/somegist/raw
+  filters:
+    - 27 # change me
+  album: true # album or matchRelease can be optionally set to use these fields in your autobrr filter. If not set, it will use the Movies / Shows field.
 ```
 
 ## Commands
