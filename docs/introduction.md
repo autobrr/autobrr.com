@@ -54,7 +54,7 @@ With inspiration and ideas from tools like trackarr, autodl-irssi and flexget we
 
 autobrr is the modern download automation tool for torrents.
 
-## What is autobrr? {#what-is-autobrr}
+## What is autobrr and how does it fit into the ecosystem? {#what-is-autobrr}
 
 We can start by talking about torrent trackers (hereby referred to as indexers) and maintaining ratio.
 You are required to maintain a ratio with most indexers. Ratio is built by seeding your torrents.
