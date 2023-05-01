@@ -11,6 +11,10 @@ pagination_next: filters/actions
 
 # Filters
 
+:::tip
+You can easily convert your autodl-irssi filters into autobrr filters using our conversion tool. Visit https://convert.autobrr.com and follow the simple steps to convert each filter individually.
+:::
+
 Most fields can take a comma separated list like `value1, value2`.
 
 The comma separated lists supports wildcards, where `*` means 0 or more characters and `?` means exactly one character. An example would be: `*this*,that?movie`. In this case we would match any title containing `this` (or `tHiS`) or in the second case, any title which matches exactly like `That Movie` or `tHaT MoViE` or even `THAT.MOVIE`.
