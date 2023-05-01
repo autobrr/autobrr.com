@@ -46,6 +46,7 @@ keywords:
     xseed,
     cabal,
     api,
+    license,
   ]
 ---
 
@@ -53,7 +54,7 @@ With inspiration and ideas from tools like trackarr, autodl-irssi and flexget we
 
 autobrr is the modern download automation tool for torrents.
 
-## What is autobrr and how does it fit into the ecosystem?
+## What is autobrr? {#what-is-autobrr}
 
 We can start by talking about torrent trackers (hereby referred to as indexers) and maintaining ratio.
 You are required to maintain a ratio with most indexers. Ratio is built by seeding your torrents.
@@ -95,7 +96,7 @@ This isn't needed if your usecase is feeding the \*arrs only. Since they have RS
 
 As of right now, autobrr features:
 
-- Support for 50+ trackers with IRC announces
+- Support for 70+ trackers with IRC announces
 - RSS and Torznab/Newznab support via Prowlarr to easily get access to hundreds of indexers
 - Powerful but simple filtering with RegEx support (like in autodl-irssi)
 - Easy to use and mobile friendly web UI (with dark mode!) to manage everything
@@ -120,12 +121,6 @@ Available download clients and actions
 ## Planned features
 
 - Automatic cross-seeding of existing releases
-
-## About
-
-The development of autobrr started in Early 2020, entering rapid development in Summer 2021 due to dissatisfaction with needing 3+ tools to do one job. Autobrr has since gained quite a bit of traction and has a growing community supporting the project.
-
-Autobrr was developed with resource consumption in mind. The software uses API calls to reduce unnecessary downloads of .torrent files from sites like BTN, RED, PTP, and GGn. On other sites, it will download the .torrent only if the information is not present in the announce message.
 
 ## Quick Start
 
@@ -200,3 +195,15 @@ DEBUG release.store: &{ID:12 FilterStatus:FILTER_APPROVED Rejections:[] Indexer:
 DEBUG sonarr: release push rejected: Foo Series S01E01 1080p WEB h264-BarGrp, indexer foo-indexer to http://localhost:8989 reasons: '[Unknown Series]'
 DEBUG release rejected: Unknown Series
 ```
+
+## About
+
+The development of autobrr started in Early 2020, entering rapid development in Summer 2021 due to dissatisfaction with needing 3+ tools to do one job. Autobrr has since gained quite a bit of traction and has a growing community supporting the project.
+
+Autobrr was developed with resource consumption in mind. The software uses API calls to reduce unnecessary downloads of .torrent files from sites like BTN, RED, PTP, and GGn. On other sites, it will download the .torrent only if the information is not present in the announce message.
+
+### License
+
+autobrr is licensed under the GNU General Public License v2.0.
+
+The GNU GPL is the most widely used free software license and has a strong copyleft requirement. When distributing derived works, the source code of the work must be made available under the same license. There are multiple variants of the GNU GPL, each with different requirements.
