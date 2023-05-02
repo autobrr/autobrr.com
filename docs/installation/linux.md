@@ -142,6 +142,18 @@ The `rewrite` statement in this example is crucial for correctly setting things 
 
 :::
 
+Don't forget to set the `baseUrl` option in the `config.toml`:
+
+```toml
+# Base url
+# Set custom baseUrl eg /autobrr/ to serve in subdirectory.
+# Not needed for subdomain, or by accessing with the :port directly.
+#
+# Optional
+#
+baseUrl = "/autobrr/"
+```
+
 #### Subdomain
 
 ```nginx
