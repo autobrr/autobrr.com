@@ -22,6 +22,7 @@ Whereas indexers under the freeleech percent category support values in the free
 - FunFile
 - GazelleGames
 - HUNO
+- iAnon
 - iPlay
 - IPTorrents
 - MyAnonamouse

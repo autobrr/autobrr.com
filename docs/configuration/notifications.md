@@ -2,7 +2,7 @@
 sidebar_position: 6
 sidebar_label: Notifications
 title: Notifications
-description: autobrr supports Discord, Notifiarr and Telegram for notifications. This is a guide on how to set them up in autobrr.
+description: autobrr supports Discord, Notifiarr, Pushover and Telegram for notifications. This is a guide on how to set them up in autobrr.
 keywords:
   [
     autobrr,
@@ -11,6 +11,7 @@ keywords:
     discord,
     telegram,
     notifiarr,
+    pushover,
     push,
     rejected,
     approved,
@@ -68,5 +69,17 @@ Telegram is a bit more tricky to setup.
 3. Choose what events it should trigger on. You can enable all in the same agent or create separate agents for separate events.
 4. [Create a bot](https://core.telegram.org/bots#6-botfather) with `BotFather`.
 5. Start a chat with your bot, add [@get_id_bot](https://telegram.me/get_id_bot), and issue the /my_id command.
+6. Click the `Test` button to try and send a test notification.
+7. Save.
+
+## Pushover
+
+To set up notifications for Pushover, head to `Settings > Notifications`.
+
+1. Click **Add new**.
+2. Pick Pushover in the list and give it a name.
+3. Choose what events it should trigger on. You can enable all in the same agent or create separate agents for separate events.
+4. [Create an app](https://pushover.net/apps/build) with Pushover.
+5. Fill in the app token and user key.
 6. Click the `Test` button to try and send a test notification.
 7. Save.
