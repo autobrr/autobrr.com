@@ -60,7 +60,7 @@ We can start by talking about torrent trackers (hereby referred to as indexers) 
 You are required to maintain a ratio with most indexers. Ratio is built by seeding your torrents.
 The earlier you're seeding a torrent, the more peers you make yourself available to on that torrent.
 
-Software like Radarr and Sonarr utilizes RSS to look for new torrents. RSS feeds are updated regularly, but too slow to let you be a part of what we call the initial swarm of a torrent. This is were autobrr comes into play.
+Software like Radarr and Sonarr utilizes RSS to look for new torrents. RSS feeds are updated regularly, but too slow to let you be a part of what we call the initial swarm of a torrent. This is where autobrr comes into play.
 
 Many indexers announce new torrents on their [IRC](/configuration/irc) channels the second it is uploaded to the site. autobrr monitors such channels in real time and grabs the torrent file as soon as it's uploaded based on certain conditions (hereby referred to as [filters](/filters)) that you set up within autobrr. It then sends that torrent file to a download client of your choice via an [action](/filters/actions) set within the filter. A download client can be anything from qBittorrent and Deluge, to Radarr and Sonarr, or a watch folder.
 
@@ -71,26 +71,26 @@ autobrr can also send matches (torrent files that meets your filter's criteria) 
 ### The typical workflow
 
 1. autobrr monitors IRC channels and/or RSS feeds for new torrents that fits your criteria set within your autobrr [filters](/filters).
-2. A succesful match is forwarded to your [download client](/configuration/download-clients/dedicated) via an [action](/filters/actions) set inside your filters.
+2. A successful match is forwarded to your [download client](/configuration/download-clients/dedicated) via an [action](/filters/actions) set inside your filters.
 3. If the download client is a torrent client, then the torrent client accepts the torrent file and starts downloading it.
-4. If the download client is Radarr (or any other kind of \*arr), then Radarr will check that torrent file and see if it meets Radarr's criterias.
+4. If the download client is Radarr (or any other kind of \*arr), then Radarr will check that torrent file and see if it meets Radarr's criteria.
 
-   Criterias like:
+   Criteria like:
 
    - Is the movie monitored?
    - Is the torrent autobrr sent considered an upgrade of your existing version of that movie?
 
-   Radarr will reject it if it doesn't meet its criterias.
+   Radarr will reject it if it doesn't meet its criteria.
    If Radarr accepts it, then it will forward it to its download client and handle the rest from here.
 
 5. You are now among the very first people seeding this torrent which means you will have more peers connecting to you than if you'd be grabbing that file after the initial swarm. This results in a higher ratio on your indexers.
 
 ### RSS support for indexers without an IRC announcer
 
-A lot of indexers do not announce new torrents in an IRC channel. You can still make use of these indexers with autobrr since it has built in support for feeds as well. We support both Torznab, Newznab, as well as regular RSS feeds.
+A lot of indexers do not announce new torrents in an IRC channel. You can still make use of these indexers with autobrr since it has built in support for feeds as well. We support Torznab, Newznab, as well as regular RSS feeds.
 RSS indexers are treated the same way as regular indexers within autobrr.
 
-This isn't needed if your usecase is feeding the \*arrs only. Since they have RSS support already.
+This isn't needed if your use case is feeding the \*arrs only. Since they have RSS support already.
 
 ## Features
 
@@ -109,7 +109,7 @@ As of right now, autobrr features:
 
 Available download clients and actions
 
-- qBittorrent (with built in re-announce, categories, rules, max active downloads, etc)
+- qBittorrent (with built-in re-announce, categories, rules, max active downloads, etc.)
 - Deluge v1+ and v2+
 - rTorrent / ruTorrent
 - Transmission
@@ -173,7 +173,7 @@ docs](/configuration/autobrr).
    **NOTE**: Autobrr does nothing with received IRC announcements without at least one
    action enabled in at least one filter.
 
-9. Double check the resulting settings so far.
+9. Double-check the resulting settings so far.
 
    Review all the indexer, download client, and IRC network settings in the autobrr web
    UI and correct any errors and omissions. Ensure that everything but the IRC network
