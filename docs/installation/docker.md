@@ -55,6 +55,16 @@ services:
       - 7474:7474
 ```
 
+#### Environment variables
+
+We support the following environment variables to override the config file:
+
+```yaml
+environment:
+  - AUTOBRR__PORT=7474
+  - AUTOBRR__HOST=0.0.0.0
+```
+
 ### Manually configure autobrr (optional) {#manually-configure-autobrr}
 
 You can either let autobrr create the config itself at startup, or create one manually. For more information, please visit [configuring autobrr](/configuration/autobrr) which covers creating a user manually, configuring the default port, setting the desired log level, etc.
