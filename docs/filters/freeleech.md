@@ -30,7 +30,7 @@ Whereas indexers under the freeleech percent category support values in the free
 - SuperBits
 - TorrentDay
 - TorrentLeech
-
+- TorrentSeeds
 
 ## Freeleech Percent
 - All Torznab indexers
