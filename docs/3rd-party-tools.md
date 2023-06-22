@@ -116,6 +116,10 @@ sudo journalctl -u cross-seed # view the logs
 
 ### Create the cross-seed filter in autobrr {#cross-seed-filter}
 
+:::info Heads up
+You likely do not want to use this with an existing Starr filter as only crossseedable torrents will be sent to Starr.
+:::
+
 The way this works is you create a filter with a higher priority set than any other filter to make sure every cross-seed match is forwarded to the cross-seed daemon instead of being run through other filters.
 
 1. Create a filter and name it eg. `cross-seed`.
