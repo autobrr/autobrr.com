@@ -124,7 +124,7 @@ The way this works is you create a filter with a higher priority set than any ot
 4. Go to the `External` tab, enable the `Webhook` switch, and add the following below it:
 
    Host: `http://localhost:2468/api/announce`  
-   Expected http status: `200`  
+   Expected http status: `204`  
    Data (JSON):
 
    ```json
