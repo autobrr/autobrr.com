@@ -86,7 +86,7 @@ If you DON'T WANT ANY HDR formats
 
 When using autobrr with Radarr these are some good recommendation filters to start off.
 
-It's advisable to setup your Radarr properly with the help of [Trash-guides](https://trash-guides.info) and then just do some light filtering of releases to not push unwanted releases to Sonarr.
+It's advisable to setup your Radarr properly with the help of [Trash-guides](https://trash-guides.info) and then just do some light filtering of releases to not push unwanted releases to Radarr.
 
 Don't forget to add a [Radarr action](/filters/actions#radarr-sonarr-lidarr-and-whisparr)!
 
