@@ -70,6 +70,11 @@ With TorrentLeech as an example, only add the red part when setting up your inde
 
 `https://rss.tl.org/`<Highlight color="#ff2754">1812u12urr1203j12jeq</Highlight>
 
+In case you are still having troubles with setting up the TorrentLeech indexer,   
+you can find detailed instructions for the setup process on their wiki:
+
+https://wiki.torrentleech.org/doku.php/autobrr
+
 ## I have set up an indexer, but it does not connect to the #announce channel. What do I do?
 
 Make sure you have entered the necessary keys in the invite command and that your IRC user has privileges to access to the #announce channel. See [IRC setup](/configuration/irc).
