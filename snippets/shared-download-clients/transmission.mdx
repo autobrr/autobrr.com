@@ -1,8 +1,20 @@
-<details><summary>Ultra.cc</summary>
+<details><summary>Feralhosting</summary>
 
-- Host: `<username>.<hostname>.usbx.me`
-- Port: Transmissions' RPC Port as given in your Control Panel
+- Host: `<hostname>.feralhosting.com/<username>/transmission/rpc`
+- Port: 9091
 - TLS: Enabled
+- Password: `<password>`
+
+</details>
+
+<details><summary>RapidSeedbox - Lean</summary>
+
+Grab your unique Transmission url from the from your `Services` page.
+
+- Host `<username>-tr.<hostname>.seedbox.vip/rpc`
+- Port `443`
+- TLS: Enabled
+- Basic Auth: Enabled
 - Username: `<username>`
 - Password: `<password>`
 
@@ -23,11 +35,12 @@ echo -e "Your Transmission port: \e[31m$(grep '"rpc-port": [0-9]*' ~/.config/tra
 
 </details>
 
-<details><summary>Feralhosting</summary>
+<details><summary>Ultra.cc</summary>
 
-- Host: `<hostname>.feralhosting.com/<username>/transmission/rpc`
-- Port: 9091
+- Host: `<username>.<hostname>.usbx.me`
+- Port: Transmissions' RPC Port as given in your Control Panel
 - TLS: Enabled
+- Username: `<username>`
 - Password: `<password>`
 
 </details>

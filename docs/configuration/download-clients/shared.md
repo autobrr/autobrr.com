@@ -62,7 +62,7 @@ Some ambiguous characters (such as @ : # % and more) may escape out of the URL.
 In this case you will have to change your password for ruTorrent to be able to add the client to autobrr.
 :::
 
-### Transmisison
+### Transmission
 
 import SharedTransmission from '/snippets/shared-download-clients/transmission.mdx';
 
