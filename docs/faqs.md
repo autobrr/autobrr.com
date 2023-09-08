@@ -117,6 +117,26 @@ autobrrctl --config /home/username/.config/autobrr change-password <USERNAME>
 If you want to change your username, you need to change it directly in the database.
 Use the command line or an sqlite editor.
 
+### CLI
+
+You need the `sqlite3` package for this. 
+
+* If you are using our docker container then you can exec in and run `apk add sqlite3`.
+* Ubuntu: `sudo apt install sqlite3`
+* On other linux based systems use the package manager to install the package
+
+`sqlite3 autobrr.db "UPDATE users SET username = 'newuser';"`
+
+### GUI
+
+SQLitebrowser is a simple cross-platform SQLite gui/browser. Download from [official site](https://sqlitebrowser.org/dl/).
+
+Open the db file `autobrr.db` and run the following command:
+
+`UPDATE users SET username = 'newuser';`
+
+Or use the gui to click edit on the `username` column of the `users` table.
+
 ## How can I use my freeleech tokens from RED? {#redacted-freeleech-tokens}
 
 This is something a lot of users are asking for. 
