@@ -112,6 +112,11 @@ If you forget your password, you can change it via the command line.
 autobrrctl --config /home/username/.config/autobrr change-password <USERNAME>
 ```
 
+## I want to change my username {#change-username}
+
+If you want to change your username, you need to change it directly in the database.
+Use the command line or an sqlite editor.
+
 ## How can I use my freeleech tokens from RED? {#redacted-freeleech-tokens}
 
 This is something a lot of users are asking for. 
