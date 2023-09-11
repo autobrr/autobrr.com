@@ -22,9 +22,19 @@ keywords:
 
 # FAQ
 
+If the docs did not answer your questions then the best place to ask is in our [Discord community](https://discord.gg/WQ2eUycxyT).
+
+## I think I found a bug
+
+If you think you have found a bug then please report it either on [Github Issues](https://github.com/autobrr/autobrr/issues/new?assignees=&labels=bug&projects=&template=bug_report.md&title=) or in our Discord and use the `#bugs` channel.
+
+## I have a feature request
+
+If you have a feature request then report it on [Github Feature Request](https://github.com/autobrr/autobrr/issues/new?assignees=&labels=Feature+request&projects=&template=feature_request.md&title=%5BFEATURE+REQ%5D) or in our Discord and use the `#suggestions` channel.
+
 ## Nothing happens - I'm not seeing any releases
 
-First of all, that's a pretty bad question to start with.
+Before you ask for help in Discord or other place, then try to forumlate your question so it's easier to help you.
 
 Please clarify what you actually mean.
 
