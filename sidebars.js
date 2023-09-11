@@ -6,6 +6,11 @@ module.exports = {
       id: "introduction",
     },
     {
+      type: "doc",
+      label: "Quick Start",
+      id: "quick-start",
+    },
+    {
       type: "category",
       label: "Installation",
       collapsed: false,
@@ -46,6 +51,10 @@ module.exports = {
       collapsed: true,
       items: [
         "filters/basics",
+        "filters/tv-movies",
+        "filters/music",
+        "filters/advanced",
+        "filters/external",
         "filters/actions",
         "filters/omegabrr",
         "filters/examples",

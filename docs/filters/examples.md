@@ -34,53 +34,64 @@ It's advisable to setup your Sonarr properly with the help of [Trash-guides](htt
 
 Don't forget to add a [Sonarr action](/filters/actions#radarr-sonarr-lidarr-readarr-and-whisparr)!
 
+:::caution Important
+Not all indexers announce video **container** like `mkv` or `mp4`. It's best to leave this off. 
+:::
+
 ### HD WEB (720p, 1080p)
 
 Set this to match your quality settings in Sonarr
 
-| Field            |  Values                                                                                |
-| ---------------- | -------------------------------------------------------------------------------------- |
-| Resolution       | [720p, 1080p]                                                                          |
-| Sources          | [WEB, WEB-DL, WEBRip]                                                                  |
-| Match Categories | These are different across indexers but `*tv*, *episode*, *season*` is quite universal |
+| Field            | Values                                |
+| ---------------- | ------------------------------------- |
+| Resolution       | [720p, 1080p]                         |
+| Sources          | [WEB, WEB-DL, WEBRip]                 |
+| Match Categories | [Depends on Indexer](./categories.md) |
+
 
 ### 4k (2160p)
 
 Set this to match your quality settings in Sonarr
 
-| Field            |  Values                                                                                |
-| ---------------- | -------------------------------------------------------------------------------------- |
-| Resolution       | [2160p]                                                                                |
-| Sources          | [WEB, WEB-DL, WEBRip]                                                                  |
-| Match Categories | These are different across indexers but `*tv*, *episode*, *season*` is quite universal |
+| Field            | Values                                |
+| ---------------- | ------------------------------------- |
+| Resolution       | [2160p]                               |
+| Sources          | [WEB, WEB-DL, WEBRip]                 |
+| Match Categories | [Depends on Indexer](./categories.md) |
 
 ### HDR and DV
 
-If you WANT ONLY HDR formats
+Leave blank to match either and let your arr decide, or do the following to include or exclude HDR formats:
 
-| Field     |  Values                 |
+If you **WANT ONLY HDR** formats
+
+| Field     | Values                  |
 | --------- | ----------------------- |
 | Match HDR | [HDR, DV] or Select all |
 
-If you DON'T WANT ANY HDR formats
+If you **DON'T WANT ANY HDR** formats
 
-| Field      |  Values                 |
+| Field      | Values                  |
 | ---------- | ----------------------- |
 | Except HDR | [HDR, DV] or Select all |
 
 ### Only season packs
 
-| Field    |  Values |
-| -------- | ------- |
-| Seasons  | 1-99    |
-| Episodes | 0       |
+If you only want to match season packs:
 
-### Skip season packs
+| Field    | Values |
+| -------- | ------ |
+| Seasons  | 1-99   |
+| Episodes | 0      |
 
-| Field    |  Values |
-| -------- | ------- |
-| Seasons  | 1-99    |
-| Episodes | 1-99    |
+### Only episodes, skip season packs
+
+If you only want to match episodes and no season packs:
+
+| Field    | Values |
+| -------- | ------ |
+| Seasons  | 1-99   |
+| Episodes | 1-99   |
 
 ## Movies - Radarr
 
@@ -90,37 +101,43 @@ It's advisable to setup your Radarr properly with the help of [Trash-guides](htt
 
 Don't forget to add a [Radarr action](/filters/actions#radarr-sonarr-lidarr-and-whisparr)!
 
+:::caution Important
+Not all indexers announce video **container** like `mkv` or `mp4`. It's best to leave this off. 
+:::
+
 ### HD (720p, 1080p)
 
 Set this to match your quality settings in Radarr
 
-| Field            |  Values                                                              |
-| ---------------- | -------------------------------------------------------------------- |
-| Resolution       | [720p, 1080p]                                                        |
-| Sources          | [WEB, WEB-DL, WEBRip, BluRay]                                        |
-| Match Categories | These are different across indexers but `*movie*` is quite universal |
+| Field            | Values                                |
+| ---------------- | ------------------------------------- |
+| Resolution       | [720p, 1080p]                         |
+| Sources          | [WEB, WEB-DL, WEBRip, BluRay]         |
+| Match Categories | [Depends on Indexer](./categories.md) |
 
 ### 4k (2160p)
 
 Set this to match your quality settings in Radarr
 
-| Field            |  Values                                                              |
-| ---------------- | -------------------------------------------------------------------- |
-| Resolution       | [2160p]                                                              |
-| Sources          | [WEB, WEB-DL, WEBRip, BluRay, UHD.Bluray]                            |
-| Match Categories | These are different across indexers but `*movie*` is quite universal |
+| Field            | Values                                    |
+| ---------------- | ----------------------------------------- |
+| Resolution       | [2160p]                                   |
+| Sources          | [WEB, WEB-DL, WEBRip, BluRay, UHD.Bluray] |
+| Match Categories | [Depends on Indexer](./categories.md)     |
 
 ### HDR and DV
 
-If you WANT ONLY HDR formats
+Leave blank to match either and let your arr decide, or do the following to include or exclude HDR formats:
 
-| Field     |  Values                 |
+If you **WANT ONLY** HDR formats
+
+| Field     | Values                  |
 | --------- | ----------------------- |
 | Match HDR | [HDR, DV] or Select all |
 
-If you DON'T WANT ANY HDR formats
+If you **DON'T WANT ANY HDR** formats
 
-| Field      |  Values                 |
+| Field      | Values                  |
 | ---------- | ----------------------- |
 | Except HDR | [HDR, DV] or Select all |
 
@@ -130,7 +147,7 @@ If you are in need of buffer this is an example that will work will on general i
 
 Check your indexer or our [list of indexers supporting freeleech](/filters/freeleech) filtering for specifics.
 
-| Field     |  Values       |
+| Field     | Values        |
 | --------- | ------------- |
 | Freeleech | True / active |
 
@@ -148,16 +165,16 @@ This should not be confused with qBittorrent's BUILT IN setting with the same na
 
 Here's a small chart of recommended `Max active downloads` depending on server type, connection and disks. Try them out and increase the number until you hit negative ratios.
 
-| Type      | Connection | Disks    |  Value |
-| --------- | ---------- | -------- | ------ |
-| Dedicated | 1Gbit      | HDD      | 2      |
-| Dedicated | 1Gbit      | SSD/NVME | 2-3    |
-| Dedicated | 2Gbit      | HDD      | 2-3    |
-| Dedicated | 10Gbit     | HDD      | 2-3    |
-| Dedicated | 10Gbit     | SSD/NVME | 4-5+   |
-| Shared    | 1Gbit      | HDD      | 1      |
-| Shared    | "20Gbit+"  | HDD      | 2-3    |
-| Shared    | "20Gbit+"  | SSD/NVME | 2-3    |
+| Type      | Connection | Disks    | Value |
+| --------- | ---------- | -------- | ----- |
+| Dedicated | 1Gbit      | HDD      | 2     |
+| Dedicated | 1Gbit      | SSD/NVME | 2-3   |
+| Dedicated | 2Gbit      | HDD      | 2-3   |
+| Dedicated | 10Gbit     | HDD      | 2-3   |
+| Dedicated | 10Gbit     | SSD/NVME | 4-5+  |
+| Shared    | 1Gbit      | HDD      | 1     |
+| Shared    | "20Gbit+"  | HDD      | 2-3   |
+| Shared    | "20Gbit+"  | SSD/NVME | 2-3   |
 
 And if you have traffic limits, then `max downloads per` is there to help you limit it.
 

@@ -179,7 +179,7 @@ These variables are implemented using the Go template engine. This is an extreme
 
 ### Available variables
 
-| Variable               |  Description                               |
+| Variable               | Description                                |
 | ---------------------- | ------------------------------------------ |
 | `{{.Categories}}`      | Categories                                 |
 | `{{.Category}}`        | Category                                   |

@@ -143,7 +143,7 @@ The way this works is you create a filter with a higher priority set than any ot
 You can set up a Notifiarr or Apprise webhook for cross-seed notifications within the cross-seed config.
 :::
 
-## Arr, deduplication, and cross-seed functionality with Upgraderr {#upgraderr}
+## Upgraderr - Arr, deduplication, and cross-seed functionality {#upgraderr}
 
 :::info Heads up
 This is meant for any kind of user. There is no configuration, and it's nearly impossible to make a mistake so long as the guide is followed with the modest amount of care.
@@ -160,13 +160,21 @@ On any filter, you may utilize the external tab as a pre-filter. Using this with
 Coupling this with the extensive filtering built-in to autobrr allows you to specify qualities to stop accepting upgrades at, should you wish. This allows you to replace applications such as Sonarr / Radarr.
 
 On the external Webhook action, utilize the following payload, replacing the host(s), user and password with your configuration. The expected return code is 200.
-* Host: http://upgraderr.upgraderr:6940/api/upgrade
-* Payload:
+* Host:
+
 ```
-{ "host":"http://qbittorrent.cat:8080",
-  "user":"zees",
-  "password":"bsmom",
-  "name":"{{ .TorrentName | js }}" }
+http://upgraderr:6940/api/upgrade
+```
+
+* Payload:
+
+```json
+{
+    "host": "http://qbittorrent:8080",
+    "user": "username",
+    "password": "password",
+    "name": "{{ .TorrentName | js }}"
+}
 ```
 
 ### Cross-Seed functionality {#upgraderr-cross-seed-functionality}
@@ -174,29 +182,45 @@ On the external Webhook action, utilize the following payload, replacing the hos
 At the time of this writing, Upgraderr has excellent cross-seed functionality that runs in milliseconds. Presently there's a partial matcher implemented, where if 80% of the data matches the existing torrent, the new torrent will have the conflicting files (should they exist) renamed, to not corrupt the existing torrent.
 
 On the external Webhook action, utilize the following payload, replacing the host(s), user and password with your configuration. The expected return code is 250.
-* Host: http://upgraderr.upgraderr:6940/api/upgrade
-* Payload:
+* Host:
+
 ```
-{ "host":"http://qbittorrent.cat:8080",
-  "user":"zees",
-  "password":"bsmom",
-  "name":"{{ .TorrentName | js }}" }
+http://upgraderr:6940/api/upgrade
+```
+
+* Payload:
+
+```json
+{
+    "host": "http://qbittorrent:8080",
+    "user": "username",
+    "password": "password",
+    "name": "{{ .TorrentName | js }}"
+}
 ```
 
 Once the pre-hook succeeds, create a Webhook action, replacing the same variables as before.
-* Host: http://upgraderr.upgraderr:6940/api/cross
-* Payload:
+* Host:
+
 ```
-{  "host":"http://qbittorrent.cat:8080",
-   "user":"zees",
-   "password":"bsmom",
-   "name":"{{ .TorrentName | js }}",
-   "hash":"{{ .TorrentHash }}",
-   "torrent":"{{ .TorrentDataRawBytes | js }}" }
+http://upgraderr:6940/api/upgrade
+```
+
+* Payload:
+
+```json
+{
+    "host": "http://qbittorrent:8080",
+    "user": "username",
+    "password": "password",
+    "name": "{{ .TorrentName | js }}",
+    "hash": "{{ .TorrentHash }}",
+    "torrent": "{{ .TorrentDataRawBytes | js }}"
+}
 ```
 
 ### Finally {#upgraderr-final-words}
 
 This is a toolchest, other functionality can be achieved by using other return codes, and attaching other tools to actions taken by the application.
 
-More Information: https://github.com/kylesanderson/upgraderr
+More Information: [github.com/kylesanderson/upgraderr](https://github.com/kylesanderson/upgraderr)
