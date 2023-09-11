@@ -103,3 +103,17 @@ Quite a few indexers use the same network, specifically `irc.p2p-network.net`.
 Adding or removing `indexers/networks/channels` can therefore break things.
 
 :::
+
+## Troubleshoot
+
+If you have any issues with IRC not connecting or staying red then do the following:
+
+1. Go into `Settings -> Logs` and set Level to `TRACE`
+2. Go into `Settings -> IRC` and either hit the enabled toggle or click the thre dots button press the `Restart` option
+3. Go to the `Logs` page and look what it is doing
+
+There will be a lot of info with Trace logs so you'll have to read carefully. `NickServ` and `SASL` errors are related to auth and could mean you have not registered when it's required, or put in the wrong info.
+
+autobrr uses the **Auth Mechanism** `SASL` by default. Some networks does not support it and a change of **Auth Mechanism** to `NickServ` will generally fix it. Some does not require NickServ registration at all and then you can set it to `None`-
+
+If you need some assistance then the best way to get help is [Discord](https://discord.gg/WQ2eUycxyT).
