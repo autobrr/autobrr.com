@@ -3,7 +3,8 @@ sidebar_label: Feeds (RSS / Torznab / Newznab)
 pagination_label: Configuration - Feeds
 title: Feeds
 description: Some indexers does not have an IRC announce channel. Luckily, most of them have RSS support. This guide explains how to set it up.
-keywords: [autobrr, setup, indexers, torznab, newznab, torrents, rss, feed, feeds]
+keywords:
+  [autobrr, setup, indexers, torznab, newznab, torrents, rss, feed, feeds]
 ---
 
 Some indexers does not have an IRC announce channel.
@@ -47,3 +48,14 @@ Go to `Settings > Indexers` and add `Generic RSS` from the list.
 Once saved, head over to `Settings > Feeds` to enable it.
 
 autobrr will get the latest items from the RSS feed. On first run it will check all and cache the entries, on the second run it will check for any new entries and run them through the assigned filters.
+
+## Clearing the feed cache
+
+Since version `1.29` it is possible to clear the feed cache.
+Head to **Settings** -> **Feeds** and click the three dots for the feed you want to clear.
+
+![Clear feed cache](../../static/img/feed_cache.png)
+
+:::tip
+The cache is cleaned automatically every 30 days.
+:::
