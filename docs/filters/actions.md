@@ -189,14 +189,17 @@ These variables are implemented using the Go template engine. This is an extreme
 | `{{.CurrentMonth}}`    | Current Month                              |
 | `{{.CurrentSecond}}`   | Current Second                             |
 | `{{.CurrentYear}}`     | Current Year                               |
+| `{{.DownloadURL}}`     | Download URL                               |
 | `{{.Episode}}`         | Parsed episode                             |
 | `{{.FilterName}}`      | Filter name                                |
 | `{{.GroupID}}`         | GroupID                                    |
 | `{{.HDR}}`             | Parsed HDR (DV, HDR, HDR10)                |
 | `{{.Indexer}}`         | Indexer                                    |
+| `{{.InfoURL}}`         | Info URL                                   |
 | `{{.Resolution}}`      | Parsed resolution (1080p)                  |
 | `{{.Season}}`          | Parsed season                              |
 | `{{.Size}}`            | Size                                       |
+| `{{.SizeString}}`      | SizeString                                 |
 | `{{.Source}}`          | Parsed source (BluRay, WEB-DL)             |
 | `{{.Title}}`           | Parsed title (That Movie)                  |
 | `{{.TorrentHash}}`     | Torrent hash                               |
