@@ -20,9 +20,6 @@ dependencies:
   '@mdx-js/react':
     specifier: 1.6.22
     version: 1.6.22(react@17.0.2)
-  '@radix-ui/colors':
-    specifier: 3.0.0-rc.4
-    version: 3.0.0-rc.4
   clsx:
     specifier: ^2.0.0
     version: 2.0.0
@@ -2824,10 +2821,6 @@ packages:
 
   /@polka/url@1.0.0-next.23:
     resolution: {integrity: sha512-C16M+IYz0rgRhWZdCmK+h58JMv8vijAA61gmz2rspCSwKwzBebpdcsiUmwrtJRdphuY30i6BSLEOP8ppbNLyLg==}
-    dev: false
-
-  /@radix-ui/colors@3.0.0-rc.4:
-    resolution: {integrity: sha512-dUG9WQCdjKPiiqbQsahUGmOuC+9kCltckQtej7hkVIQp56xirLaMsNrOs9xMYXnIbNqK/vZCmoEk+q1Nda+2AA==}
     dev: false
 
   /@sideway/address@4.1.4:
