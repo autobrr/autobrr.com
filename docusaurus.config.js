@@ -1,5 +1,5 @@
-const lightCodeTheme = require("prism-react-renderer/themes/vsLight");
-const darkCodeTheme = require("prism-react-renderer/themes/oceanicNext");
+const prism = require("prism-react-renderer");
+
 const FontPreloadPlugin = require("webpack-font-preload-plugin");
 const config = {
   title: "autobrr",
@@ -73,7 +73,6 @@ const config = {
       },
     },
     navbar: {
-      hideOnScroll: true,
       title: "autobrr",
       logo: {
         alt: "autobrr Logo",
@@ -114,8 +113,8 @@ const config = {
       defaultMode: "dark",
     },
     prism: {
-      theme: lightCodeTheme,
-      darkTheme: darkCodeTheme,
+      theme: prism.themes.vsLight,
+      darkTheme: prism.themes.vsDark,
       additionalLanguages: ["systemd", "nginx", "toml", "docker"],
     },
   },

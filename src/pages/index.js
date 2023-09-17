@@ -3,9 +3,12 @@ import clsx from "clsx";
 import Layout from "@theme/Layout";
 import Link from "@docusaurus/Link";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
+import { useColorMode } from "@docusaurus/theme-common";
+
 import styles from "./index.module.css";
 import logo from "../../static/img/logo.png";
-import autobrrfront from "../../static/img/autobrr-front.png";
+import FrontPicDark from "../../static/img/front-dark.png";
+import FrontPicLight from "../../static/img/front-light.png";
 
 import { FiFeather } from "react-icons/fi";
 import {
@@ -27,6 +30,8 @@ const Center = ({ icon, text }) => (
 
 function HomepageHeader() {
   const { siteConfig } = useDocusaurusContext();
+  const { colorMode } = useColorMode();
+
   return (
     <header
       className={clsx(
@@ -76,9 +81,9 @@ function HomepageHeader() {
         </div>
       </div>
       <img
-        src={autobrrfront}
+        src={colorMode === "dark" ? FrontPicDark : FrontPicLight}
         alt="autobrr"
-        className={clsx("shadow-md", styles.image)}
+        className={clsx(styles.image, "front-page-pic")}
       />
     </header>
   );
