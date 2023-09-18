@@ -120,6 +120,25 @@
   --front-pic-shadow-color: rgb(39 42 45 / 50%);
 }
 
+.theme-doc-sidebar-item-link-level-2 > a.menu__link:not(.menu__link--active) {
+  color: var(--slate-11);
+}
+
+.theme-doc-sidebar-item-category-level-1 > div > a,
+.theme-doc-sidebar-item-category-level-2 > div > a,
+.theme-doc-sidebar-item-category-level-3 > div > a {
+  border-bottom: 1px solid var(--slate-4);
+}
+
+.theme-doc-sidebar-item-category-level-2 > div > a {
+  color: var(--slate-11);
+}
+
+
+.theme-doc-sidebar-item-link-level-3 > a.menu__link:not(.menu__link--active) {
+  color: var(--slate-10);
+}
+
 .markdown > h1 {
   --ifm-h1-font-size: 2rem !important;
 }
