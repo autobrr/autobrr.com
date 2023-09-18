@@ -63,6 +63,12 @@ If you ever need to restart the service, within Task Scheduler you can click on 
 
 :::
 
-## Done
+## Reverse proxy (recommended)
 
-Now it's up and running, and you should be able to visit it at your `domain.ltd:7474` and login. Check out the next pages for further setup.
+It's recommended to run it behind a reverse proxy like Caddy (very simple) or nginx (moderately simple) in order to get TLS, more robust authentication mechanisms and other similar benefits.
+
+Please see the **Reverse proxy** section for reverse proxy configuration examples.
+
+## Finishing up
+
+Now that autobrr is up and running, you should be able to visit the your web UI at `http://YOUR_IP:7474` or `http://domain.ltd:7474` and proceed with your registration/login.

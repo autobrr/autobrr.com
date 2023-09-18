@@ -19,14 +19,29 @@ module.exports = {
         "installation/docker",
         "installation/shared-seedbox",
         "installation/windows",
-        "installation/transfer-installation",
-        "installation/postgresql",
+        {
+          type: "category",
+          label: "Reverse proxy",
+          items: [
+            "installation/reverse-proxy/caddy",
+            "installation/reverse-proxy/nginx",
+            "installation/reverse-proxy/swag",
+            "installation/reverse-proxy/traefik"
+          ],
+        },
+        {
+          type: "category",
+          label: "Supplementary",
+          items: [
+            "installation/supplementary/transfer-installation",
+            "installation/supplementary/postgresql",
+          ],
+        },
       ],
     },
     {
       type: "category",
       label: "Configuration",
-      collapsed: false,
       items: [
         "configuration/autobrr",
         "configuration/indexers",
@@ -34,7 +49,6 @@ module.exports = {
         {
           type: "category",
           label: "Download clients",
-          collapsed: false,
           items: [
             "configuration/download-clients/dedi",
             "configuration/download-clients/shared",

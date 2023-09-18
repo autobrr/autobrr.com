@@ -8,9 +8,11 @@ pagination_prev: introduction
 pagination_next: configuration/indexers
 ---
 
-# PostgreSQL (optional)
+# PostgreSQL
 
-Using PostgreSQL is optional. If you want to use PostgreSQL with autobrr, then add this to your config.toml and restart:
+Using PostgreSQL is entirely optional and is geared towards more advanced users (the 0.1%). The reason you might want to use PostgreSQL is because it handles huge databases much better than SQLite, which comes bundled with the main autobrr application.
+
+Nevertheless, if you want to use PostgreSQL with autobrr, then add this to your autobrr configuration file and restart your autobrr instance:
 
 ```toml title="config.toml"
 # Database config

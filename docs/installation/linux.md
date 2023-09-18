@@ -115,144 +115,7 @@ Make sure it's running and `active`
 sudo systemctl status autobrr@USERNAME.service
 ```
 
-## Reverse proxy (recommended)
-
-It's recommended to run it behind a reverse proxy like nginx in order to get TLS, more robust authentication mechanisms and other similar benefits.
-
-### Nginx
-
-#### Subfolder
-
-```nginx
-location /autobrr/ {
-    proxy_pass              http://127.0.0.1:7474;
-    proxy_http_version      1.1;
-    proxy_set_header        X-Forwarded-Host        $http_host;
-
-    #auth_basic "What's the password?";
-    #auth_basic_user_file /etc/htpasswd;
-
-    rewrite ^/autobrr/(.*) /$1 break;
-}
-```
-
-:::info
-
-The `rewrite` statement in this example is crucial for correctly setting things up when using a reverse proxy with a base path.
-
-:::
-
-Don't forget to set the `baseUrl` option in the `config.toml`:
-
-```toml
-# Base url
-# Set custom baseUrl eg /autobrr/ to serve in subdirectory.
-# Not needed for subdomain, or by accessing with the :port directly.
-#
-# Optional
-#
-baseUrl = "/autobrr/"
-```
-
-#### Subdomain
-
-```nginx
-server {
-    listen 80;
-    server_name autobrr.domain.com;
-    return 301 https://$server_name$request_uri;
-}
-
-server {
-    listen 443 ssl http2;
-    server_name autobrr.domain.com;
-
-    include snippets/ssl-params.conf;
-
-    ssl_certificate /etc/nginx/ssl/autobrr.domain.com/fullchain.pem;
-    ssl_certificate_key /etc/nginx/ssl/autobrr.domain.com/key.pem;
-
-    proxy_set_header Host $host;
-    proxy_set_header X-Real-IP $remote_addr;
-    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-    proxy_http_version 1.1;
-    proxy_set_header Upgrade $http_upgrade;
-    proxy_set_header Connection $http_connection;
-
-    #auth_basic "What's the password?";
-    #auth_basic_user_file /etc/htpasswd;
-
-    location / {
-        proxy_pass http://127.0.0.1:7474;
-    }
-}
-```
-
-### Caddy
-
-#### Subfolder {#caddy#subfolder}
-
-```nginx
-example.com/autobrr/* {
-    uri strip_prefix /autobrr
-    reverse_proxy :7474
-}
-```
-
-Don't forget to set the `baseUrl` option in the `config.toml`:
-
-```toml
-# Base url
-# Set custom baseUrl eg /autobrr/ to serve in subdirectory.
-# Not needed for subdomain, or by accessing with the :port directly.
-#
-# Optional
-#
-baseUrl = "/autobrr/"
-```
-
-#### Subdomain {#caddy#subdomain}
-
-```nginx
-# Defaults
-{
-    admin off
-    email YOUREMAIL@YOURDOMAIN.COM
-    key_type p256
-}
-
-(tls) {
-    tls {
-        protocols tls1.2 tls1.3
-        ciphers TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256 TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256 TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384 TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256 TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305_SHA256
-    }
-}
-
-(headers) {
-    header {
-        -Server
-        Strict-Transport-Security "max-age=63072000"
-
-        # Opt-out search engines
-        X-Robots-Tag "noindex, nofollow, nosnippet, noarchive"
-    }
-}
-
-(encoding) {
-    encode zstd gzip
-}
-
-# Services
-autobrr.yourdomain.com {
-    reverse_proxy http://autobrr:7474
-
-    import tls
-    import headers
-    import encoding
-}
-```
-
-## Done
+## Listen address
 
 :::info
 
@@ -261,5 +124,13 @@ By default autobrr listens on `127.0.0.1` which is the recommended way when runn
 Save the changes and restart autobrr with `sudo systemctl restart autobrr@USERNAME.service`.
 
 :::
+
+## Reverse proxy (recommended)
+
+It's recommended to run it behind a reverse proxy like Caddy (very simple) or nginx (moderately simple) in order to get TLS, more robust authentication mechanisms and other similar benefits.
+
+Please see the **Reverse proxy** section for reverse proxy configuration examples.
+
+## Finishing up
 
 Now that autobrr is up and running, you should be able to visit the your web UI at `http://YOUR_IP:7474` or `http://domain.ltd:7474` and proceed with your registration/login.
