@@ -58,7 +58,6 @@ module.exports = {
         "configuration/notifications",
       ],
     },
-
     {
       type: "category",
       label: "Filters",
@@ -70,6 +69,7 @@ module.exports = {
         "filters/advanced",
         "filters/external",
         "filters/actions",
+        "filters/macros",
         "filters/omegabrr",
         "filters/examples",
         "filters/categories",

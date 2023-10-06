@@ -30,7 +30,7 @@ Welcome to the autobrr installation walkthrough!
 Follow these steps and we will have you up and running in no time.
 
 Follow instructions below for recommended setup on a regular Linux server.
-Additionally see our installation instructions for [Docker <FaDocker />](/installation/docker) and [windows <FaWindows />](/installation/windows).
+Additionally see our installation instructions for [Docker <FaDocker />](/installation/docker) and [Windows <FaWindows />](/installation/windows).
 
 import SeedboxSolutionInstallers from '/snippets/seedbox-solution-installers.mdx';
 
