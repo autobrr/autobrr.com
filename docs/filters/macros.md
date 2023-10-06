@@ -96,4 +96,4 @@ Category: `movies-{{ .Resolution }}{{ if .HDR }}-{{ .HDR }}{{ end }}`
 One user in our Discord wanted to have a custom watch folder for TV shows but without the episode in the name.
 The best solution we could find was to use... a bit of regex. It's not great, but it's not terrible either.
 
-The relevant query is: `{{regexReplaceAll "([\\.\\s\\-])([Ss]\\d+)([\\.\\s\\-])?([Ee]\\d+)?([\\.\\s\\-])" .Title "${1}${2}${1}"}}`
+The relevant query is: `{{regexReplaceAll "([\\.\\s\\-])([Ss]\\d+)[\\.\\s\\-]?([Ee]\\d+)?([\\.\\s\\-])" .TorrentName "${1}${2}${4}"}}`
