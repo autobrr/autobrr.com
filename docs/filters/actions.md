@@ -26,11 +26,14 @@ pagination_label: Filters - Actions
 
 A configured action is what your autodl does with a successful push. You can send it any of the supported actions. Each filter supports multiple actions just incase you need to send to multiple clients, or run custom commands as well.
 
-Read more about setup of [download clients](/configuration/download-clients/dedicated) before continuing.
+Make sure you've set up a [download client](/configuration/download-clients/dedicated) before continuing further.
 
-When adding, updating or removing actions on a filter, make sure to save.
+Whether you're adding, updating or removing actions on a filter, make sure to <strong>save</strong> the filter afterwards.
 
-Many of the action fields have support for [macros](#macros) to build dynamic values.
+### Macros
+Many of the action fields have support for [macros](/filters/macros), which allow you to enhance your workflow significantly by providing custom logic/data processing to the input data provided by autobrr.
+
+This [section](/filters/macros) has been moved to its own page.
 
 ## Supported actions
 
@@ -161,80 +164,3 @@ There is no built in native FTP upload action but you can get around this with a
 - Args: `{{ .TorrentPathName }} <username>@<hostname>:<destination path>`
 
 ![FTP/SFTP](../../static/img/SCP.png "Exec action")
-
-## Macros
-
-The following fields can use macros to transform/add values from metadata.
-
-Try these variables out in the any of the following fields.
-
-- Watch folder
-- Label
-- Tags
-- Category
-- Save Path
-- Exec arguments
-
-These variables are implemented using the Go template engine. This is an extremely powerful scripting platform that can perform operations, evaluations, and manipulate values at the user configuration level. Further information on the functionality of this platform can be found [here](https://pkg.go.dev/text/template).
-
-### Available variables
-
-| Variable               | Description                                |
-| ---------------------- | ------------------------------------------ |
-| `{{.Categories}}`      | Categories                                 |
-| `{{.Category}}`        | Category                                   |
-| `{{.CurrentDay}}`      | Current Day                                |
-| `{{.CurrentHour}}`     | Current Hour                               |
-| `{{.CurrentMinute}}`   | Current Minute                             |
-| `{{.CurrentMonth}}`    | Current Month                              |
-| `{{.CurrentSecond}}`   | Current Second                             |
-| `{{.CurrentYear}}`     | Current Year                               |
-| `{{.DownloadURL}}`     | Download URL                               |
-| `{{.Episode}}`         | Parsed episode                             |
-| `{{.FilterName}}`      | Filter name                                |
-| `{{.GroupID}}`         | GroupID                                    |
-| `{{.HDR}}`             | Parsed HDR (DV, HDR, HDR10)                |
-| `{{.Indexer}}`         | Indexer                                    |
-| `{{.InfoURL}}`         | Info URL                                   |
-| `{{.Resolution}}`      | Parsed resolution (1080p)                  |
-| `{{.Season}}`          | Parsed season                              |
-| `{{.Size}}`            | Size (In bytes)                            |
-| `{{.SizeString}}`      | SizeString                                 |
-| `{{.Source}}`          | Parsed source (BluRay, WEB-DL)             |
-| `{{.Title}}`           | Parsed title (That Movie)                  |
-| `{{.TorrentHash}}`     | Torrent hash                               |
-| `{{.TorrentID}}`       | TorrentID                                  |
-| `{{.TorrentName}}`     | Release name as announced                  |
-| `{{.TorrentPathName}}` | Path to downloaded .torrent file in `/tmp` |
-| `{{.TorrentUrl}}`      | Full url to download torrent               |
-| `{{.Year}}`            | Parsed year                                |
-
-### Examples
-
-Simple examples of this extensive functionality can be found below.
-
-- Escape torrent name - `{{ .TorrentName | js }}`
-
-#### Dynamic categories in qBittorrent
-
-Dynamic resolution for eg movies or tv. Very useful to keep things separated and easy to mange. With well named releases this works great as a Plex library.
-
-Category: `movies-{{ .Resolution }}` = `movies-1080p`, `movies-2160p`
-
-#### Tags
-
-Dynamic tags based on indexer, resolution or other
-
-- Tags: `{{ .Indexer }}` = `mockindexer`
-- Tags: `{{ .Resolution }}` = `2160p`
-
-#### Dynamic date and time
-
-Could be used to build dynamic save paths etc.
-
-- `{{ .CurrentYear }}`
-- `{{ .CurrentMonth | printf "%02d"}}`
-
-#### Dynamic movie filter with hdr/dv
-
-Category: `movies-{{ .Resolution }}{{ if .HDR }}-{{ .HDR }}{{ end }}`

@@ -6,7 +6,6 @@ title: External
 description: Explanation of external filter options, fields and values.
 keywords: [autobrr, filters, webhook, script, external]
 pagination_label: Filters - External
-pagination_previous: filters/music
 pagination_next: filters/actions
 ---
 
@@ -14,7 +13,7 @@ pagination_next: filters/actions
 
 With external filters you can run `scripts` and `webhooks` to do your own custom filtering. If **Expected exit status** matches it will continue. If not it stops there.
 
-All the [variables and macros](/filters/actions#macros) from actions are usable in these fields to inject dynamic variables.
+Many of the fields have support for [macros](/filters/macros), which allow you to enhance your workflow significantly by providing custom logic/data processing to the input data provided by autobrr.
 
 ### Script
 
