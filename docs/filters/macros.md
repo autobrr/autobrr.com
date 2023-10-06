@@ -96,4 +96,18 @@ Category: `movies-{{ .Resolution }}{{ if .HDR }}-{{ .HDR }}{{ end }}`
 One user in our Discord wanted to have a custom watch folder for TV shows but without the episode in the name.
 The best solution we could find was to use... a bit of regex. It's not great, but it's not terrible either.
 
-The relevant query is: `{{regexReplaceAll "([\\.\\s\\-])([Ss]\\d+)[\\.\\s\\-]?([Ee]\\d+)?([\\.\\s\\-])" .TorrentName "${1}${2}${4}"}}`
+The relevant query is:
+```
+{{- $filename := (regexReplaceAll "(?i)(.*).torrent$" (osBase .TorrentPathName) "${1}") -}}
+{{- $pattern := "([\\.\\s\\-\\(])([Ss]\\d+)[\\.\\s\\-]?([Ee]\\d+)?([\\.\\s\\-\\)])" -}}
+{{- $repl := "${1}${2}${4}" -}}
+{{- if ge (len .TorrentName) (len $filename) -}}
+  {{- regexReplaceAll $pattern .TorrentName $repl -}}
+{{- else -}}
+	{{- regexReplaceAll $pattern $filename $repl -}}
+{{- end -}}
+```
+
+:::info Heads up
+Do note that the minus (-) signs here denote that the template bars are not allowed to emit/allow any whitespace before/after them (as would've been the case without the minus signs).
+:::
