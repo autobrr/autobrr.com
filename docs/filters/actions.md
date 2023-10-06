@@ -198,7 +198,7 @@ These variables are implemented using the Go template engine. This is an extreme
 | `{{.InfoURL}}`         | Info URL                                   |
 | `{{.Resolution}}`      | Parsed resolution (1080p)                  |
 | `{{.Season}}`          | Parsed season                              |
-| `{{.Size}}`            | Size                                       |
+| `{{.Size}}`            | Size (In bytes)                            |
 | `{{.SizeString}}`      | SizeString                                 |
 | `{{.Source}}`          | Parsed source (BluRay, WEB-DL)             |
 | `{{.Title}}`           | Parsed title (That Movie)                  |
