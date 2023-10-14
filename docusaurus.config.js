@@ -92,20 +92,36 @@ const config = {
           position: "left",
         },
         {
+          type: "dropdown",
+          label: "Versions",
+          position: "right",
+          items: [
+            {
+              label: "v1.3.1",
+              to: "/introduction",
+            },
+            {
+              label: "v1.3.0",
+              to: "1.3.0/introduction",
+            },
+            // Add more items for each version
+          ],
+        },
+        {
           href: "https://discord.gg/WQ2eUycxyT",
           position: "right",
-          className: 'header-discord-link',
-          'aria-label': 'Discord',
+          className: "header-discord-link",
+          "aria-label": "Discord",
           target: "_blank",
-          title: "Discord"
+          title: "Discord",
         },
         {
           href: "https://github.com/autobrr/autobrr",
           position: "right",
-          className: 'header-github-link',
-          'aria-label': 'GitHub repository',
+          className: "header-github-link",
+          "aria-label": "GitHub repository",
           target: "_blank",
-          title: "Github repository"
+          title: "Github repository",
         },
       ],
     },
