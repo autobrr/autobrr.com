@@ -25,8 +25,8 @@ You can search through this list by typing your query and/or with selected keywo
 `year`
 
 :::tip
-There are a lot of different categories. A crowd sourced list can be found [here](/filters/categories).
-This is not a complete list by any means, so if you want to add missing categories to our docs, read [this](/filters/categories#how-to-export-categories-from-autobrrdb).
+There are a lot of different categories. A crowd sourced list can be found [here](./filters/categories).
+This is not a complete list by any means, so if you want to add missing categories to our docs, read [this](./filters/categories#how-to-export-categories-from-autobrrdb).
 :::
 
 ## Usage

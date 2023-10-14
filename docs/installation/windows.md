@@ -25,7 +25,7 @@ https://github.com/autobrr/autobrr/releases/latest
 
 ### Manually configure autobrr (optional) {#manually-configure-autobrr}
 
-You can either let autobrr create the config itself at startup, or create one manually. For more information, please visit [configuring autobrr](/configuration/autobrr) which covers creating a user manually, configuring the default port, setting the desired log level, etc.
+You can either let autobrr create the config itself at startup, or create one manually. For more information, please visit [configuring autobrr](./configuration/autobrr) which covers creating a user manually, configuring the default port, setting the desired log level, etc.
 
 ## Create Windows task
 

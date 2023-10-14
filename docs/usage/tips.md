@@ -35,6 +35,7 @@ exit 0
 ```
 
 For Docker:
+
 ```shell
 #!/bin/sh
 set -e
@@ -70,7 +71,7 @@ echo $retcode
 
 ### Add it to your existing filter
 
-![External script](../../static/img/free-space.png "External script explanation")
+![External script](/img/free-space.png "External script explanation")
 
 ## Troubleshooting filters utilizing the autobrr.log file {#autobrr.log}
 

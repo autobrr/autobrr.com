@@ -38,10 +38,10 @@ Now that you have successfully backed up your `autobrr.db` from your old host, y
 
 Please refer to our guides or to the guides of your hosting provider on how to install autobrr on you new host:
 
-- [Linux](/installation/linux)
-- [Docker](/installation/docker)
-- [Shared Seedbox](/installation/shared-seedbox)
-- [Windows](/installation/windows)
+- [Linux](postgresql.md/installation/linux)
+- [Docker](./installation/docker)
+- [Shared Seedbox](./installation/shared-seedbox)
+- [Windows](./installation/windows)
 
 ## Restoring your database
 

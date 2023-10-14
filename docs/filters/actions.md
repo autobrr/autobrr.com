@@ -26,14 +26,15 @@ pagination_label: Filters - Actions
 
 A configured action is what your autodl does with a successful push. You can send it any of the supported actions. Each filter supports multiple actions just incase you need to send to multiple clients, or run custom commands as well.
 
-Make sure you've set up a [download client](/configuration/download-clients/dedicated) before continuing further.
+Make sure you've set up a [download client](./configuration/download-clients/dedicated) before continuing further.
 
 Whether you're adding, updating or removing actions on a filter, make sure to <strong>save</strong> the filter afterwards.
 
 ### Macros
-Many of the action fields have support for [macros](/filters/macros), which allow you to enhance your workflow significantly by providing custom logic/data processing to the input data provided by autobrr.
 
-This [section](/filters/macros) has been moved to its own page.
+Many of the action fields have support for [macros](./filters/macros), which allow you to enhance your workflow significantly by providing custom logic/data processing to the input data provided by autobrr.
+
+This [section](./filters/macros) has been moved to its own page.
 
 ## Supported actions
 
@@ -125,7 +126,7 @@ Autobrr supports the ability to push directly to the \*arr suite of services.
 
 Could be useful to do some basic filtering before sending.
 
-Select the type, and then the client. Read more about setup in [download clients setup](/configuration/download-clients/dedicated).
+Select the type, and then the client. Read more about setup in [download clients setup](./configuration/download-clients/dedicated).
 
 Supports both local and remote instances.
 
@@ -163,4 +164,4 @@ There is no built in native FTP upload action but you can get around this with a
 - Command: `scp`
 - Args: `{{ .TorrentPathName }} <username>@<hostname>:<destination path>`
 
-![FTP/SFTP](../../static/img/SCP.png "Exec action")
+![FTP/SFTP](/img/SCP.png "Exec action")
