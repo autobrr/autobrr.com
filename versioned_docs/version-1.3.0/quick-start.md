@@ -38,7 +38,7 @@ other use cases may require more RTFM'ing in [the configuration docs](./configur
    **NOTE**: In the context of autobrr, Servarr instances are considered download
    clients.
 
-7. Add a [filter](./filters/basics).
+7. Add a [filter](./filters).
 
    To feed all IRC announcements to a Servarr instance to let it decide what, if
    anything, to do with the release, just add a filter with the indexer from #5
