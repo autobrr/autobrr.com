@@ -94,18 +94,18 @@ const config = {
         {
           href: "https://discord.gg/WQ2eUycxyT",
           position: "right",
-          className: 'header-discord-link',
-          'aria-label': 'Discord',
+          className: "header-discord-link",
+          "aria-label": "Discord",
           target: "_blank",
-          title: "Discord"
+          title: "Discord",
         },
         {
           href: "https://github.com/autobrr/autobrr",
           position: "right",
-          className: 'header-github-link',
-          'aria-label': 'GitHub repository',
+          className: "header-github-link",
+          "aria-label": "GitHub repository",
           target: "_blank",
-          title: "Github repository"
+          title: "Github repository",
         },
       ],
     },
@@ -114,7 +114,7 @@ const config = {
     },
     prism: {
       theme: prism.themes.vsLight,
-      darkTheme: prism.themes.vsDark,
+      darkTheme: prism.themes.oceanicNext,
       additionalLanguages: ["systemd", "nginx", "toml", "docker"],
     },
   },
