@@ -53,7 +53,7 @@ function HomepageHeader() {
             <Center icon={<FiFeather size="24" />} text="Single-binary" />
             <Center icon={<MdDynamicFeed size="24" />} text="Client-agnostic" />
             <Center icon={<AiOutlineMobile size="24" />} text="Mobile-friendly"/>
-            <Center icon={<AiOutlineDownload size="24" />} text="60+ Indexers" />
+            <Center icon={<AiOutlineDownload size="24" />} text="75+ Indexers" />
             <Center icon={<AiOutlineFilter size="24" />} text="Filters" />
             <Center icon={<CgPlug size="24" />} text="*arr Integration" />
             <Center icon={<MdOutlineNotificationsActive size="24" />} text="Notifications"/>
