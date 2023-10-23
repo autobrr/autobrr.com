@@ -221,7 +221,6 @@ To tell the module about your password, you use almost the same command as with 
 
 ```text
 /query *nickserv set <password>
-
 ```
 
 At this point you can disable/unload the module for the authentication method you are not using.

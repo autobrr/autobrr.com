@@ -4,3 +4,7 @@
   border: 1px solid var(--slate-6);
   background-color: var(--slate-3);
 }
+
+pre {
+  background-color: var(--slate-3);
+}
