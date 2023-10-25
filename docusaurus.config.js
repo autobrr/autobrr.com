@@ -43,6 +43,22 @@ const config = {
           editUrl: "https://github.com/autobrr/autobrr.com/tree/main/",
           //sidebarCollapsible: false,
           routeBasePath: "/",
+          showLastUpdateTime: false,
+          includeCurrentVersion: true,
+          lastVersion: "current",
+          versions: {
+            current: {
+              label: "Latest", // latest will always be the content of /docs
+              path: "",
+              banner: "none",
+            },
+            // list older archived versiones here after running `yarn docusaurus docs:version <version_number>`
+            //"1.3.0": {
+            //  label: "1.3.0",
+            //  path: "1.3.0",
+            //  banner: "unmaintained",
+            //},
+          },
         },
         blog: false,
         theme: {
@@ -92,20 +108,9 @@ const config = {
           position: "left",
         },
         {
-          type: "dropdown",
-          label: "Versions",
+          type: "docsVersionDropdown",
           position: "right",
-          items: [
-            {
-              label: "v1.3.1",
-              to: "/introduction",
-            },
-            {
-              label: "v1.3.0",
-              to: "1.3.0/introduction",
-            },
-            // Add more items for each version
-          ],
+          dropdownActiveClassDisabled: false,
         },
         {
           href: "https://discord.gg/WQ2eUycxyT",
