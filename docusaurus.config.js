@@ -65,24 +65,6 @@ const config = {
     //     content: "autobrr, autodl-irssi, torrents, automation",
     //   },
     // ],
-    head: [
-      {
-        tagName: "link",
-        attributes: {
-          rel: "preload",
-          as: "image",
-          href: "img/front-dark.png",
-        },
-      },
-      {
-        tagName: "link",
-        attributes: {
-          rel: "preload",
-          as: "image",
-          href: "img/front-light.png",
-        },
-      },
-    ],
     image: "img/autobrr.png",
     docs: {
       sidebar: {
