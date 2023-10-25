@@ -4,7 +4,7 @@ import Layout from "@theme/Layout";
 import Link from "@docusaurus/Link";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import { useColorMode } from "@docusaurus/theme-common";
-import { Helmet } from "react-helmet-async";
+import { useEffect } from "react";
 
 import styles from "./index.module.css";
 import logo from "../../static/img/logo.png";
@@ -90,14 +90,6 @@ function HomepageHeader() {
           </Link>
         </div>
       </div>
-      <Helmet>
-        <link rel="preload" as="image" href="../../static/img/front-dark.png" />
-        <link
-          rel="preload"
-          as="image"
-          href="../../static/img/front-light.png"
-        />
-      </Helmet>
       <img
         src={colorMode === "dark" ? FrontPicDark : FrontPicLight}
         alt="autobrr"
@@ -109,6 +101,16 @@ function HomepageHeader() {
 
 export default function Home() {
   const { siteConfig } = useDocusaurusContext();
+
+  // Preloading the images here
+  useEffect(() => {
+    const darkImage = new Image();
+    darkImage.src = FrontPicDark;
+
+    const lightImage = new Image();
+    lightImage.src = FrontPicLight;
+  }, []);
+
   return (
     <Layout
       title={`${siteConfig.title}`}
