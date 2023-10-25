@@ -1,6 +1,10 @@
 .details {
   --docusaurus-details-transition: transform var(--ifm-transition-fast) ease;
   margin: 0 0 var(--ifm-spacing-vertical);
-  border: 1px solid var(--gold-8);
-  background-color: var(--gold-4);
+  border: 1px solid var(--slate-6);
+  background-color: var(--slate-3);
+}
+
+pre {
+  background-color: var(--slate-3);
 }

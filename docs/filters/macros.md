@@ -53,7 +53,7 @@ Available Sprig function, along with the relevant examples can be found [at Pydi
 | `{{.GroupID}}`         | GroupID                                    |
 | `{{.HDR}}`             | Parsed HDR (DV, HDR, HDR10)                |
 | `{{.Indexer}}`         | Indexer                                    |
-| `{{.InfoURL}}`         | Info URL                                   |
+| `{{.InfoUrl}}`         | Info URL                                   |
 | `{{.Resolution}}`      | Parsed resolution (1080p)                  |
 | `{{.Season}}`          | Parsed season                              |
 | `{{.Size}}`            | Size (in bytes)                            |
