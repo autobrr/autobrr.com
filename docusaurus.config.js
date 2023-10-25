@@ -71,7 +71,7 @@ const config = {
         attributes: {
           rel: "preload",
           as: "image",
-          href: "../../static/img/front-dark.png",
+          href: "img/front-dark.png",
         },
       },
       {
@@ -79,7 +79,7 @@ const config = {
         attributes: {
           rel: "preload",
           as: "image",
-          href: "../../static/img/front-light.png",
+          href: "img/front-light.png",
         },
       },
     ],
