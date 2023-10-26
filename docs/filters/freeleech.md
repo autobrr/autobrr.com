@@ -41,6 +41,7 @@ Whereas indexers under the freeleech percent category support values in the free
 - Aither
 - Locadora
 - LST
+- OnlyEncodes
 - SkipTheCommericals
 - SkipTheTrailers
 - TheDarkCommunity
