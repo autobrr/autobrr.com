@@ -39,6 +39,7 @@ Whereas indexers under the freeleech percent category support values in the free
 
 - All Torznab indexers
 - Aither
+- BeyondHD
 - Locadora
 - LST
 - OnlyEncodes
