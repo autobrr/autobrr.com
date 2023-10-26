@@ -46,7 +46,7 @@ import TorrentDay from "/snippets/categories/torrentday.mdx";
 import Torrentleech from "/snippets/categories/tl.mdx";
 import TorrentSeeds from "/snippets/categories/torrentseeds.mdx";
 import TorrentSyndikat from "/snippets/categories/torrentsyndikat.mdx";
-import xSpeeds from "/snippets/categories/xspeeds.mdx";
+import XSpeeds from "/snippets/categories/xspeeds.mdx";
 
 ### AcidLounge
 
@@ -186,7 +186,7 @@ import xSpeeds from "/snippets/categories/xspeeds.mdx";
 
 ### xSpeeds
 
-<xSpeeds />
+<XSpeeds />
 
 ## How to export categories from autobrr.db
 
