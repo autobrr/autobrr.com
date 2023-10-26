@@ -32,7 +32,7 @@ When using autobrr with Sonarr these are some good recommendation filters to sta
 
 It's advisable to setup your Sonarr properly with the help of [Trash-guides](https://trash-guides.info) and then just do some light filtering of releases to not push unwanted releases to Sonarr.
 
-Don't forget to add a [Sonarr action](./filters/actions.md#radarr-sonarr-lidarr-readarr-and-whisparr)!
+Don't forget to add a [Sonarr action](../filters/actions.md#radarr-sonarr-lidarr-readarr-and-whisparr)!
 
 :::caution Important
 Not all indexers announce video **container** like `mkv` or `mp4`. It's best to leave this off.
