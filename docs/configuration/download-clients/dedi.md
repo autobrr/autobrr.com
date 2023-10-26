@@ -1,6 +1,6 @@
 ---
+id: dedi
 sidebar_label: Dedicated servers
-slug: /configuration/download-clients/dedicated
 title: Download Clients
 description: A guide on how to set up download clients in autobrr.
 keywords:
@@ -262,6 +262,7 @@ For a local client, meaning autobrr and Sabnzbd **on the same server** then this
 - Host: `http://127.0.0.1:SABNZBD_PORT`
 - TLS: disabled
 - API key
+
 ### Remote {#sabnzbd-remote}
 
 For a remote client, meaning autobrr and qBittorrent are **not on the same server** then things might be a bit different.
@@ -275,6 +276,7 @@ Some setups like **Swizzin** requires to also use **Basic Auth** when connecting
 - Basic Auth: enabled
 - Username: `<username>`
 - Password: `<password>`
+
 ## Sonarr
 
 You can run autobrr and Sonarr apps on the following setups.

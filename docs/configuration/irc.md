@@ -86,7 +86,7 @@ You shouldn't need to worry about it, but it's nice now to know what you need to
 
 ## Setup
 
-The initial setup of IRC networks and channels are done during the setup of [indexers](/configuration/indexers).
+The initial setup of IRC networks and channels are done during the setup of [indexers](../configuration/indexers.md).
 
 If you for some reason need to setup a network manually, or edit an existing one, you can do that in `Settings > IRC`.
 
@@ -165,7 +165,7 @@ You may need to enable some modules for the network based on the networks setup.
 
 #### Enabling SSL
 
-While this is not required, it might be easier to get going than you think. This section is based on already having Linuxserver´s SWAG  generating a certificate for `znc.mydomain.com`, while keeping all traffic between containers inside the same docker network.
+While this is not required, it might be easier to get going than you think. This section is based on already having Linuxserver´s SWAG generating a certificate for `znc.mydomain.com`, while keeping all traffic between containers inside the same docker network.
 
 There is two changes that need to be done to the compose example to allow this to work.
 

@@ -43,10 +43,10 @@ These are instructions and installation scripts for shared seedboxes. We have su
 
 The scripts requires some input but does most of the work.
 
-Additionally see our installation instructions for [Linux <FaLinux />](/installation/linux), [Docker <FaDocker />](/installation/docker) and [Windows <FaWindows />](/installation/windows).
+Additionally see our installation instructions for [Linux <FaLinux />](../installation/linux.md), [Docker <FaDocker />](../installation/docker.md) and [Windows <FaWindows />](../installation/windows.md).
 
 import SeedboxInstallers from '/snippets/seedbox-installers.mdx';
 
 <SeedboxInstallers />
 
-Note: Remember to head over to our [Configuration Guide](/configuration/indexers) to learn how to set up your indexers, IRC, and download clients after you're done installing.
+Note: Remember to head over to our [Configuration Guide](../configuration/indexers.md) to learn how to set up your indexers, IRC, and download clients after you're done installing.

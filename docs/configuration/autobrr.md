@@ -109,10 +109,10 @@ autobrrctl --config ~/.config/autobrr create-user USERNAME
 
 Make sure to read through all of the articles as all of them have some important information on how to get autobrr up and running.
 
-- [Indexers <CgWebsite />](/configuration/indexers)
-- [IRC <BsChatDotsFill />](/configuration/irc)
-- [Download Clients <FaDownload />](/configuration/download-clients/dedicated)
-- [Feeds (RSS / Torznab / Newznab) <MdRssFeed />](/configuration/feeds)
+- [Indexers <CgWebsite />](./indexers.md)
+- [IRC <BsChatDotsFill />](./irc.md)
+- [Download Clients <FaDownload />](./download-clients/dedi.md)
+- [Feeds (RSS / Torznab / Newznab) <MdRssFeed />](./feeds.md)
 
 ## Additional help
 

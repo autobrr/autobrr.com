@@ -35,6 +35,7 @@ exit 0
 ```
 
 For Docker:
+
 ```shell
 #!/bin/sh
 set -e

@@ -30,7 +30,7 @@ Welcome to the autobrr installation walkthrough!
 Follow these steps and we will have you up and running in no time.
 
 Follow instructions below for recommended setup on a regular Linux server.
-Additionally see our installation instructions for [Docker <FaDocker />](/installation/docker) and [Windows <FaWindows />](/installation/windows).
+Additionally see our installation instructions for [Docker <FaDocker />](./docker.md) and [Windows <FaWindows />](./windows.md).
 
 import SeedboxSolutionInstallers from '/snippets/seedbox-solution-installers.mdx';
 
@@ -59,7 +59,7 @@ sudo tar -C /usr/local/bin -xzf autobrr*.tar.gz
 This will extract both `autobrr` and `autobrrctl` to `/usr/local/bin`.
 
 :::info
-If you do not have root, or are on a shared system, place the binaries somewhere in your home directory like `~/.bin` or use our installers for [shared seedboxes](/installation/shared-seedbox).
+If you do not have root, or are on a shared system, place the binaries somewhere in your home directory like `~/.bin` or use our installers for [shared seedboxes](../installation/shared-seedbox.md).
 :::
 
 ### Configuration
@@ -72,7 +72,7 @@ mkdir -p ~/.config/autobrr
 
 #### Manually configure autobrr (optional)
 
-You can either let autobrr create the config itself at startup, or create one manually. For more information, please visit [configuring autobrr](/configuration/autobrr) which covers creating a user manually, configuring the default port, setting the desired log level, etc.
+You can either let autobrr create the config itself at startup, or create one manually. For more information, please visit [configuring autobrr](../configuration/autobrr) which covers creating a user manually, configuring the default port, setting the desired log level, etc.
 
 ### Systemd (recommended)
 

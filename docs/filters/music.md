@@ -9,7 +9,7 @@ pagination_label: Filters - Music
 pagination_next: filters/advanced
 ---
 
-# Filters
+# Music
 
 :::tip
 You can easily convert your autodl-irssi filters into autobrr filters using our conversion tool. Visit https://convert.autobrr.com and follow the simple steps to convert each filter individually.

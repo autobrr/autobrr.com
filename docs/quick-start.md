@@ -4,14 +4,7 @@ sidebar_label: Quick Start
 pagination_next: installation/linux
 title: Quick Start
 description: Autobrr quick start
-keywords:
-  [
-    autobrr,
-    quick-start,
-    start,
-    intro,
-    introduction
-  ]
+keywords: [autobrr, quick-start, start, intro, introduction]
 ---
 
 # Quick Start
@@ -19,10 +12,9 @@ keywords:
 The following considers a common use case, feeding IRC announcements for a private
 tracker to a Servarr instance, as a way to illustrate how the components of autobrr fit
 together and what is required to get up and running. It's not the only use case and
-other use cases may require more RTFM'ing in [the configuration
-docs](/configuration/autobrr).
+other use cases may require more RTFM'ing in [the configuration docs](./configuration/autobrr.md).
 
-1. [Install autobrr](/installation/linux).
+1. [Install autobrr](./installation/linux.md).
 
    Proceed once the web UI is accessible.
 
@@ -34,19 +26,19 @@ docs](/configuration/autobrr).
 3. [Register a nick on your indexer's IRC
    network](/configuration/irc#registering-with-nickserv).
 
-4. [Group a "bot" nick with your real nick](/configuration/irc#grouping-nicks).
+4. [Group a "bot" nick with your real nick](./configuration/irc.md#grouping-nicks).
 
    This is the common case, but check your tracker's IRC documentation and adjust as
    appropriate.
 
-5. Add an [indexer](/configuration/indexers).
+5. Add an [indexer](./configuration/indexers.md).
 
-6. Add a [download client](/configuration/download-clients/dedicated#sonarr).
+6. Add a [download client](./configuration/download-clients/dedi.md).
 
    **NOTE**: In the context of autobrr, Servarr instances are considered download
    clients.
 
-7. Add a [filter](/filters).
+7. Add a [filter](./filters/basics.md).
 
    To feed all IRC announcements to a Servarr instance to let it decide what, if
    anything, to do with the release, just add a filter with the indexer from #5
@@ -55,7 +47,7 @@ docs](/configuration/autobrr).
    **NOTE**: Autobrr does nothing with received IRC announcements without at least one
    filter applied to at least one indexer.
 
-8. Add a [filter action](/filters/actions).
+8. Add a [filter action](./filters/actions.md).
 
    Add an action of the matching Servarr type (e.g. Sonarr type action for a Sonarr
    instance), select the "download client" that corresponds to that type from #6, give

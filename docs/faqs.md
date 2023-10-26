@@ -80,14 +80,14 @@ With TorrentLeech as an example, only add the red part when setting up your inde
 
 `https://rss.tl.org/`<Highlight color="#ff2754">1812u12urr1203j12jeq</Highlight>
 
-In case you are still having troubles with setting up the TorrentLeech indexer,   
+In case you are still having troubles with setting up the TorrentLeech indexer,  
 you can find detailed instructions for the setup process on their wiki:
 
 https://wiki.torrentleech.org/doku.php/autobrr
 
 ## I have set up an indexer, but it does not connect to the #announce channel. What do I do?
 
-Make sure you have entered the necessary keys in the invite command and that your IRC user has privileges to access to the #announce channel. See [IRC setup](/configuration/irc).
+Make sure you have entered the necessary keys in the invite command and that your IRC user has privileges to access to the #announce channel. See [IRC setup](./configuration/irc.md).
 
 import Botnaming from '/snippets/botnaming.mdx';
 
@@ -129,11 +129,11 @@ Use the command line or an sqlite editor.
 
 ### CLI
 
-You need the `sqlite3` package for this. 
+You need the `sqlite3` package for this.
 
-* If you are using our docker container then you can exec in and run `apk add sqlite3`.
-* Ubuntu: `sudo apt install sqlite3`
-* On other linux based systems use the package manager to install the package
+- If you are using our docker container then you can exec in and run `apk add sqlite3`.
+- Ubuntu: `sudo apt install sqlite3`
+- On other linux based systems use the package manager to install the package
 
 `sqlite3 autobrr.db "UPDATE users SET username = 'newuser';"`
 
@@ -149,7 +149,7 @@ Or use the gui to click edit on the `username` column of the `users` table.
 
 ## How can I use my freeleech tokens from RED? {#redacted-freeleech-tokens}
 
-This is something a lot of users are asking for. 
+This is something a lot of users are asking for.
 
 Golden Rule 5.3 on RED:
 

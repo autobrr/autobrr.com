@@ -54,7 +54,7 @@ Not all announces category, check [this list](./categories.md) for indexer speci
 
 Not supported by all indexers. Check [this list](./freeleech.md) for indexer specifics.
 
-| Field                 | Description                                            | Examples           | Availability                                                     |
-| --------------------- | ------------------------------------------------------ | ------------------ | ---------------------------------------------------------------- |
-| **Freeleech**         | Should this filter match only Freeleech releases?      |                    | [Depends on Indexer](/filters/freeleech)                         |
-| **Freeleech Percent** | Allowed Freeleech Percentage for this filter to match. | e.g. `50%,75-100%` | [Depends on Indexer, might not use percent.](/filters/freeleech) |
+| Field                 | Description                                            | Examples           | Availability                                                 |
+| --------------------- | ------------------------------------------------------ | ------------------ | ------------------------------------------------------------ |
+| **Freeleech**         | Should this filter match only Freeleech releases?      |                    | [Depends on Indexer](./freeleech.md)                         |
+| **Freeleech Percent** | Allowed Freeleech Percentage for this filter to match. | e.g. `50%,75-100%` | [Depends on Indexer, might not use percent.](./freeleech.md) |

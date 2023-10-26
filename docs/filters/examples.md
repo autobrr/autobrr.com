@@ -32,10 +32,10 @@ When using autobrr with Sonarr these are some good recommendation filters to sta
 
 It's advisable to setup your Sonarr properly with the help of [Trash-guides](https://trash-guides.info) and then just do some light filtering of releases to not push unwanted releases to Sonarr.
 
-Don't forget to add a [Sonarr action](/filters/actions#radarr-sonarr-lidarr-readarr-and-whisparr)!
+Don't forget to add a [Sonarr action](../filters/actions.md#radarr-sonarr-lidarr-readarr-and-whisparr)!
 
 :::caution Important
-Not all indexers announce video **container** like `mkv` or `mp4`. It's best to leave this off. 
+Not all indexers announce video **container** like `mkv` or `mp4`. It's best to leave this off.
 :::
 
 ### HD WEB (720p, 1080p)
@@ -47,7 +47,6 @@ Set this to match your quality settings in Sonarr
 | Resolution       | [720p, 1080p]                         |
 | Sources          | [WEB, WEB-DL, WEBRip]                 |
 | Match Categories | [Depends on Indexer](./categories.md) |
-
 
 ### 4k (2160p)
 
@@ -99,10 +98,10 @@ When using autobrr with Radarr these are some good recommendation filters to sta
 
 It's advisable to setup your Radarr properly with the help of [Trash-guides](https://trash-guides.info) and then just do some light filtering of releases to not push unwanted releases to Radarr.
 
-Don't forget to add a [Radarr action](/filters/actions#radarr-sonarr-lidarr-and-whisparr)!
+Don't forget to add a [Radarr action](./actions.md#radarr-sonarr-lidarr-readarr-and-whisparr)!
 
 :::caution Important
-Not all indexers announce video **container** like `mkv` or `mp4`. It's best to leave this off. 
+Not all indexers announce video **container** like `mkv` or `mp4`. It's best to leave this off.
 :::
 
 ### HD (720p, 1080p)
@@ -145,7 +144,7 @@ If you **DON'T WANT ANY HDR** formats
 
 If you are in need of buffer this is an example that will work will on general indexers with freeleech/bonus systems.
 
-Check your indexer or our [list of indexers supporting freeleech](/filters/freeleech) filtering for specifics.
+Check your indexer or our [list of indexers supporting freeleech](./freeleech.md) filtering for specifics.
 
 | Field     | Values        |
 | --------- | ------------- |
