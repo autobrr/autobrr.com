@@ -36,7 +36,6 @@ import MorethanTV from "/snippets/categories/mtv.mdx";
 import MyAnonamouse from "/snippets/categories/mam.mdx";
 import Nebulance from "/snippets/categories/nebulance.mdx";
 import Norbits from "/snippets/categories/norbits.mdx";
-import Piratethenet from "/snippets/categories/ptn.mdx";
 import Pretome from "/snippets/categories/pretome.mdx";
 import RED from "/snippets/categories/red.mdx";
 import RevolutionTT from "/snippets/categories/revolutiontt.mdx";
@@ -143,10 +142,6 @@ import XSpeeds from "/snippets/categories/xspeeds.mdx";
 ### Norbits
 
 <Norbits />
-
-### PirateTheNet
-
-<Piratethenet />
 
 ### PreToMe
 
