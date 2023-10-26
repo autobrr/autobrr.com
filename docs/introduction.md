@@ -71,7 +71,7 @@ autobrr can also send matches (torrent files that meets your filter's criteria) 
 ### The typical workflow
 
 1. autobrr monitors IRC channels and/or RSS feeds for new torrents that fits your criteria set within your autobrr [filters](./filters/basics.md).
-2. A successful match is forwarded to your [download client](./configuration/download-clients/dedi.md) via an [action](./filters/actions.md) set inside your filters.
+2. A successful match is forwarded to your [download client](./configuration/download-clients/dedi.md) of choice via an [action](./filters/actions.md) set inside your filters.
 3. If the download client is a torrent client, then the torrent client accepts the torrent file and starts downloading it.
 4. If the download client is Radarr (or any other kind of \*arr), then Radarr will check that torrent file and see if it meets Radarr's criteria.
 
