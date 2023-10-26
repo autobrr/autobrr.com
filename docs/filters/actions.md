@@ -164,4 +164,4 @@ There is no built in native FTP upload action but you can get around this with a
 - Command: `scp`
 - Args: `{{ .TorrentPathName }} <username>@<hostname>:<destination path>`
 
-![FTP/SFTP](../../static//img/SCP.png "Exec action")
+![FTP/SFTP](/img/SCP.png "Exec action")
