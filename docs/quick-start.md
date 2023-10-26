@@ -33,7 +33,7 @@ other use cases may require more RTFM'ing in [the configuration docs](./configur
 
 5. Add an [indexer](./configuration/indexers.md).
 
-6. Add a [download client](./configuration/download-clients/dedi.md#sonarr).
+6. Add a [download client](./configuration/download-clients/dedi.md).
 
    **NOTE**: In the context of autobrr, Servarr instances are considered download
    clients.
