@@ -31,6 +31,7 @@ keywords:
     docker,
     discord,
     telegram,
+    gotify,
     notifiarr,
     qbittorrent,
     deluge,
