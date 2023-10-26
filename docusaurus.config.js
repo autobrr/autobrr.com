@@ -104,15 +104,11 @@ const config = {
             "/(introduction|installation|configuration|filters|usage)",
         },
         //{
-        //  to: "faqs",
-        //  label: "FAQs",
+        //{
+        //  type: "docsVersionDropdown", // disabling until its of use
         //  position: "left",
+        //  dropdownActiveClassDisabled: false,
         //},
-        {
-          type: "docsVersionDropdown",
-          position: "right",
-          dropdownActiveClassDisabled: false,
-        },
         {
           href: "https://discord.gg/WQ2eUycxyT",
           position: "right",

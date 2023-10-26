@@ -223,7 +223,7 @@ div.theme-code-block > div:first-child:nth-last-child(n + 2) {
   /*  text-decoration: underline; */
   text-decoration-color: var(--slate-5);
   text-underline-offset: 3px;
-  padding-bottom: 0;
+  /*padding-bottom: 0;*/
 }
 
 .navbar__link:hover {
@@ -243,23 +243,9 @@ div.theme-code-block > div:first-child:nth-last-child(n + 2) {
   padding: 0 var(--ifm-pre-padding);
 }
 
-.header-github-link{
-  margin-bottom: 5px;
-}
-
+.header-github-link
 .header-github-link:hover {
   opacity: 0.6;
-}
-
-.navbar__logo {
-  height: 2.5rem;
-  margin-left: 8px;
-}
-
-.navbar__title {
-  font-size: 16px;
-  font-weight: 700;
-  margin-left: 4px;
 }
 
 .header-github-link::before {
@@ -276,12 +262,14 @@ div.theme-code-block > div:first-child:nth-last-child(n + 2) {
     no-repeat;
 }
 
+.header-discord-link
 .header-discord-link:hover {
   opacity: 0.6;
 }
 
 .header-discord-link::before {
   content: "";
+  margin-top: 6px;
   margin-right: -6px;
   width: 24px;
   height: 24px;
@@ -297,6 +285,17 @@ div.theme-code-block > div:first-child:nth-last-child(n + 2) {
   display: flex;
   background: url("/static/logos/discord-white.svg")
     no-repeat;
+}
+
+.navbar__logo {
+  height: 2.5rem;
+  margin-left: 8px;
+}
+
+.navbar__title {
+  font-size: 16px;
+  font-weight: 700;
+  margin-left: 4px;
 }
 
 header.hero {
