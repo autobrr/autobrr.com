@@ -51,6 +51,7 @@ const config = {
               label: "Latest", // latest will always be the content of /docs
               path: "",
               banner: "none",
+              badge: true,
             },
             // list older archived versiones here after running `yarn docusaurus docs:version <version_number>`
             //"1.3.0": {
@@ -102,11 +103,11 @@ const config = {
           activeBaseRegex:
             "/(introduction|installation|configuration|filters|usage)",
         },
-        {
-          to: "faqs",
-          label: "FAQs",
-          position: "left",
-        },
+        //{
+        //  to: "faqs",
+        //  label: "FAQs",
+        //  position: "left",
+        //},
         {
           type: "docsVersionDropdown",
           position: "right",
