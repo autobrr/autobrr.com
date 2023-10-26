@@ -54,7 +54,7 @@ autobrr will get the latest items from the RSS feed. On first run it will check 
 Since version `1.29` it is possible to clear the feed cache.
 Head to **Settings** -> **Feeds** and click the three dots for the feed you want to clear.
 
-![Clear feed cache](/img/feed_cache.png)
+![Clear feed cache](../../static/img/feed_cache.png)
 
 :::tip
 The cache is cleaned automatically every 30 days.

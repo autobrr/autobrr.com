@@ -126,7 +126,7 @@ Autobrr supports the ability to push directly to the \*arr suite of services.
 
 Could be useful to do some basic filtering before sending.
 
-Select the type, and then the client. Read more about setup in [download clients setup](./configuration/download-clients/dedicated).
+Select the type, and then the client. Read more about setup in [download clients setup](../configuration/download-clients/dedi.md).
 
 Supports both local and remote instances.
 
@@ -164,4 +164,4 @@ There is no built in native FTP upload action but you can get around this with a
 - Command: `scp`
 - Args: `{{ .TorrentPathName }} <username>@<hostname>:<destination path>`
 
-![FTP/SFTP](/img/SCP.png "Exec action")
+![FTP/SFTP](../../static//img/SCP.png "Exec action")

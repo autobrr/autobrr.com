@@ -29,12 +29,12 @@ pagination_next: filters/external
 
 ## Categories
 
-Not all announces category, check [this list](./categories) for indexer specifics.
+Not all announces category, check [this list](./categories.md) for indexer specifics.
 
-| Field                 | Description                                                                        | Examples                  | Availability                       |
-| --------------------- | ---------------------------------------------------------------------------------- | ------------------------- | ---------------------------------- |
-| **Match categories**  | Comma separated list of categories to match.                                       | e.g. `tv,tv/1080p`        | [Depends on Indexer](./categories) |
-| **Except categories** | Comma separated list of categories to ignore (takes priority over Match releases). | e.g. `tv/anime,tv/sports` | [Depends on Indexer](./categories) |
+| Field                 | Description                                                                        | Examples                  | Availability                          |
+| --------------------- | ---------------------------------------------------------------------------------- | ------------------------- | ------------------------------------- |
+| **Match categories**  | Comma separated list of categories to match.                                       | e.g. `tv,tv/1080p`        | [Depends on Indexer](./categories.md) |
+| **Except categories** | Comma separated list of categories to ignore (takes priority over Match releases). | e.g. `tv/anime,tv/sports` | [Depends on Indexer](./categories.md) |
 
 ## Tags
 
@@ -52,9 +52,9 @@ Not all announces category, check [this list](./categories) for indexer specific
 
 ## Freeleech
 
-Not supported by all indexers. Check [this list](./freeleech) for indexer specifics.
+Not supported by all indexers. Check [this list](./freeleech.md) for indexer specifics.
 
-| Field                 | Description                                            | Examples           | Availability                                              |
-| --------------------- | ------------------------------------------------------ | ------------------ | --------------------------------------------------------- |
-| **Freeleech**         | Should this filter match only Freeleech releases?      |                    | [Depends on Indexer](./freeleech)                         |
-| **Freeleech Percent** | Allowed Freeleech Percentage for this filter to match. | e.g. `50%,75-100%` | [Depends on Indexer, might not use percent.](./freeleech) |
+| Field                 | Description                                            | Examples           | Availability                                                 |
+| --------------------- | ------------------------------------------------------ | ------------------ | ------------------------------------------------------------ |
+| **Freeleech**         | Should this filter match only Freeleech releases?      |                    | [Depends on Indexer](./freeleech.md)                         |
+| **Freeleech Percent** | Allowed Freeleech Percentage for this filter to match. | e.g. `50%,75-100%` | [Depends on Indexer, might not use percent.](./freeleech.md) |

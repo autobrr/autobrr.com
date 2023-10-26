@@ -87,7 +87,7 @@ https://wiki.torrentleech.org/doku.php/autobrr
 
 ## I have set up an indexer, but it does not connect to the #announce channel. What do I do?
 
-Make sure you have entered the necessary keys in the invite command and that your IRC user has privileges to access to the #announce channel. See [IRC setup](./configuration/irc).
+Make sure you have entered the necessary keys in the invite command and that your IRC user has privileges to access to the #announce channel. See [IRC setup](./configuration/irc.md).
 
 import Botnaming from '/snippets/botnaming.mdx';
 

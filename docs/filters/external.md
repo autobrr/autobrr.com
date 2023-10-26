@@ -13,13 +13,13 @@ pagination_next: filters/actions
 
 With external filters you can run `scripts` and `webhooks` to do your own custom filtering. If **Expected exit status** matches it will continue. If not it stops there.
 
-Many of the fields have support for [macros](./filters/macros), which allow you to enhance your workflow significantly by providing custom logic/data processing to the input data provided by autobrr.
+Many of the fields have support for [macros](./macros.md), which allow you to enhance your workflow significantly by providing custom logic/data processing to the input data provided by autobrr.
 
 ### Script
 
 Run external script that does something. Use `exit codes` correctly, like `exit 0` for no issues. In Linux, non-zero exit codes are considered not-ok/error etc.
 
-See [stop if disk is full](./usage/tips#stop-if-disk-is-full) for a good example of what it can do.
+See [stop if disk is full](../usage/tips.md#stop-if-disk-is-full) for a good example of what it can do.
 
 | Field                    | Description           | Examples                                                       |
 | ------------------------ | --------------------- | -------------------------------------------------------------- |
