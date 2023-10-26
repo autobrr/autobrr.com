@@ -4,6 +4,7 @@ import Layout from "@theme/Layout";
 import Link from "@docusaurus/Link";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import { useColorMode } from "@docusaurus/theme-common";
+import { useEffect } from "react";
 
 import styles from "./index.module.css";
 import logo from "../../static/img/logo.png";
@@ -49,17 +50,26 @@ function HomepageHeader() {
         <h1 className="hero__title">{siteConfig.title}</h1>
         <p className="hero__subtitle">{siteConfig.tagline}</p>
         <div className="hero-grid-container">
-        <div className="hero-grid" style={{maxWidth: "900px"}}>
+          <div className="hero-grid" style={{ maxWidth: "900px" }}>
             <Center icon={<FiFeather size="24" />} text="Single-binary" />
             <Center icon={<MdDynamicFeed size="24" />} text="Client-agnostic" />
-            <Center icon={<AiOutlineMobile size="24" />} text="Mobile-friendly"/>
-            <Center icon={<AiOutlineDownload size="24" />} text="75+ Indexers" />
+            <Center
+              icon={<AiOutlineMobile size="24" />}
+              text="Mobile-friendly"
+            />
+            <Center
+              icon={<AiOutlineDownload size="24" />}
+              text="75+ Indexers"
+            />
             <Center icon={<AiOutlineFilter size="24" />} text="Filters" />
             <Center icon={<CgPlug size="24" />} text="*arr Integration" />
-            <Center icon={<MdOutlineNotificationsActive size="24" />} text="Notifications"/>
+            <Center
+              icon={<MdOutlineNotificationsActive size="24" />}
+              text="Notifications"
+            />
             <Center icon={<BiRss size="24" />} text="RSS and *znab" />
-            <Center icon={<BiNews size="24" />} text="Usenet"/>
-            <Center icon={<IoMagnetSharp size="24" />} text="Magnet links"/>
+            <Center icon={<BiNews size="24" />} text="Usenet" />
+            <Center icon={<IoMagnetSharp size="24" />} text="Magnet links" />
           </div>
         </div>
         <div className={styles.buttons}>
@@ -91,6 +101,16 @@ function HomepageHeader() {
 
 export default function Home() {
   const { siteConfig } = useDocusaurusContext();
+
+  // Preloading the images here
+  useEffect(() => {
+    const darkImage = new Image();
+    darkImage.src = FrontPicDark;
+
+    const lightImage = new Image();
+    lightImage.src = FrontPicLight;
+  }, []);
+
   return (
     <Layout
       title={`${siteConfig.title}`}
