@@ -108,11 +108,11 @@ Not all indexers announce video **container** like `mkv` or `mp4`. It's best to 
 
 Set this to match your quality settings in Radarr
 
-| Field            | Values                                |
-| ---------------- | ------------------------------------- |
-| Resolution       | [720p, 1080p]                         |
-| Sources          | [WEB, WEB-DL, WEBRip, BluRay]         |
-| Match Categories | [Depends on Indexer](./categories.md) |
+| Field            | Values                             |
+| ---------------- | ---------------------------------- |
+| Resolution       | [720p, 1080p]                      |
+| Sources          | [WEB, WEB-DL, WEBRip, BluRay]      |
+| Match Categories | [Depends on Indexer](./categories) |
 
 ### 4k (2160p)
 
@@ -122,7 +122,7 @@ Set this to match your quality settings in Radarr
 | ---------------- | ----------------------------------------- |
 | Resolution       | [2160p]                                   |
 | Sources          | [WEB, WEB-DL, WEBRip, BluRay, UHD.Bluray] |
-| Match Categories | [Depends on Indexer](./categories.md)     |
+| Match Categories | [Depends on Indexer](./categories)        |
 
 ### HDR and DV
 
