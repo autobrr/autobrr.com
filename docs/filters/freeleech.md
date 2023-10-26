@@ -44,3 +44,4 @@ Whereas indexers under the freeleech percent category support values in the free
 - SkipTheCommericals
 - SkipTheTrailers
 - TheDarkCommunity
+- TheOldSchool
