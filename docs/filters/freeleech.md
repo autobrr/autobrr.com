@@ -43,6 +43,7 @@ Whereas indexers under the freeleech percent category support values in the free
 - Locadora
 - LST
 - OnlyEncodes
+- ReelFliX
 - SkipTheCommericals
 - SkipTheTrailers
 - TheDarkCommunity
