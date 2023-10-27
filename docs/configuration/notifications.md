@@ -70,7 +70,7 @@ Telegram is a bit more tricky to set up.
 1. Click **Add new**.
 2. Pick Telegram in the list and give it a name.
 3. Choose what events it should trigger on. You can enable all in the same agent or create separate agents for separate events.
-4. [Create a bot](https://core.telegram.org/bots#6-botfather) with `BotFather`. This bot will be used to send notifications to your Telegram.
+4. [Create a bot](https://core.telegram.org/bots#6-botfather) with `BotFather`.
 5. Start a chat with your bot, add [@get_id_bot](https://telegram.me/get_id_bot), and issue the /my_id command to retrieve your chat ID.
 6. Click the `Test` button to try and send a test notification.
 7. Save.
