@@ -150,7 +150,7 @@ Retrieve a list of all feeds available on your autobrr instance.
 curl -X GET "http://127.0.0.1:11456/api/feeds?apikey=API_KEY" | jq '.[] | {id, name}'
 ```
 
-## Enable or Disable a Feed
+### Enable or Disable a Feed
 
 Toggle the status of a specific feed.
 
