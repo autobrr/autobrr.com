@@ -38,6 +38,69 @@ Remove a specific filter from your autobrr instance.
 curl -X DELETE "http://127.0.0.1:11456/api/filters/84?apikey=API_KEY"
 ```
 
+## Create A Filter
+
+Create a new filter.
+
+```bash
+curl -X POST 'http://127.0.0.1:11456/api/filters?apikey=API_KEY' \
+-d '{
+    "name": "filter name",
+    "enabled": false,
+    "resolutions": [],
+    "codecs": [],
+    "sources": [],
+    "containers": [],
+    "origins": []
+}'
+```
+
+## Update An Existing Filter
+
+```bash
+curl -X PUT 'http://127.0.0.1:11456/api/filters/84?apikey=API_KEY' \
+-H 'Content-Type: application/json' \
+-d '{
+    "id": 84,
+    "name": "test filter",
+    "enabled": false,
+    "priority": 0,
+    "use_regex": false,
+    "years": "2020",
+    "resolutions": ["1080p", "720p"],
+    "sources": ["WEB-DL", "WEB"],
+    "codecs": [],
+    "containers": [],
+    "match_hdr": [],
+    "except_hdr": [],
+    "match_other": [],
+    "except_other": [],
+    "smart_episode": false,
+    "match_releases": "*AMZN*",
+    "match_release_groups": "flux",
+    "match_language": [],
+    "except_language": [],
+    "formats": [],
+    "quality": [],
+    "media": [],
+    "match_release_types": [],
+    "origins": [],
+    "except_origins": [],
+    "indexers": [
+        {
+            "id": 24,
+            "name": "Aither"
+        },
+        {
+            "id": 21,
+            "name": "Redacted"
+        }
+    ],
+    "actions": [],
+    "external": []
+}'
+```
+
 ## Indexers
 
 ### Fetch All Indexers
