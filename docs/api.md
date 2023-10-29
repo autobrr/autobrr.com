@@ -8,7 +8,7 @@ keywords: [autobrr, api]
 
 # autobrr API
 
-autobrr is a powerful automation tool. With the help of our API, developers can integrate and extend the functionalities of autobrr into their own applications, tools, or systems.
+autobrr is a powerful automation tool. With the help of our API, users and developers can integrate and extend the functionalities of autobrr into their own applications, tools, or systems.
 
 ## API Endpoint Reference
 
@@ -18,20 +18,23 @@ The **API Endpoint Reference** provides a comprehensive list of available endpoi
 
 ### Available Endpoints
 
-| #   | Endpoint Description    | Endpoint Path                   |
-| --- | ----------------------- | ------------------------------- |
-| 1   | Download Clients        | `/download_clients`             |
-| 2   | Feeds                   | `/feeds`                        |
-| 3   | Specific Feed Status    | `/feeds/<FEED_ID>/enabled`      |
-| 4   | Filters                 | `/filters/`                     |
-| 5   | Specific Filter Status  | `/filters/<FILTER_ID>/enabled`  |
-| 6   | Indexer                 | `/indexer`                      |
-| 7   | Specific Indexer Status | `/indexer/<INDEXER_ID>/enabled` |
-| 8   | API Keys                | `/keys`                         |
-| 9   | Notifications           | `/notification`                 |
-| 10  | Release History         | `/release?olderThan=<HOURS>`    |
-| 11  | Liveness Check          | `/healthz/liveness`             |
-| 12  | Readiness Check         | `/healthz/readiness`            |
+| #   | Endpoint Description         | Endpoint Path                       |
+| --- | ---------------------------- | ----------------------------------- |
+| 1   | Liveness Check               | `/healthz/liveness`                 |
+| 2   | Readiness Check              | `/healthz/readiness`                |
+| 3   | Download Clients             | `/download_clients`                 |
+| 4   | Feeds                        | `/feeds`                            |
+| 5   | Specific Feed Status         | `/feeds/<FEED_ID>/enabled`          |
+| 6   | Filters                      | `/filters/`                         |
+| 7   | Specific Filter Status       | `/filters/<FILTER_ID>/enabled`      |
+| 8   | Indexer                      | `/indexer`                          |
+| 9   | Specific Indexer Status      | `/indexer/<INDEXER_ID>/enabled`     |
+| 10  | IRC Networks                 | `/irc`                              |
+| 11  | Restart Specific IRC Network | `/irc/network/<NETWORK_ID>/restart` |
+| 12  | API Keys                     | `/keys`                             |
+| 13  | Notifications                | `/notification`                     |
+| 14  | Release History              | `/release`                          |
+| 15  | Config                       | `/config`                           |
 
 ### Authentication
 
@@ -230,6 +233,20 @@ This behavior is observed in the web UI as well.
 ```bash
 curl -X PATCH 'http://127.0.0.1:7474/api/indexer/31/enabled' -H 'X-API-Token: AUTOBRR_API_KEY' \
      -d '{"enabled": true}'
+```
+
+## IRC Networks
+
+### List all networks
+
+```bash
+curl -X GET 'http://127.0.0.1:7474/api/irc' -H 'X-API-Token: AUTOBRR_API_KEY' | jq '.[] | {id, name, healthy}'
+```
+
+### Restart a network
+
+```bash
+curl -X GET 'http://127.0.0.1:7474/api/irc/network/5/restart' -H 'X-API-Token: AUTOBRR_API_KEY'
 ```
 
 ## Feeds
@@ -509,4 +526,28 @@ Remove release history entries that are older than a specified number of hours.
 
 ```bash
 curl -X DELETE 'http://127.0.0.1:7474/api/release?olderThan=8760' -H 'X-API-Token: AUTOBRR_API_KEY'
+```
+
+## Config
+
+### Read the config
+
+```bash
+curl -X GET 'http://127.0.0.1:7474/api/config' -H 'X-API-Token: AUTOBRR_API_TOKEN' | jq
+```
+
+### Change log level
+
+```bash
+curl -X PATCH 'http://127.0.0.1:7474/api/config' -H 'X-API-Token: AUTOBRR_API_TOKEN' -d '{
+    "log_level": "TRACE"
+}'
+```
+
+### Enable or disable update check
+
+```bash
+curl -X PATCH 'http://127.0.0.1:7474/api/config' -H 'X-API-Token: AUTOBRR_API_TOKEN' -d '{
+    "check_for_updates": true,
+}'
 ```
