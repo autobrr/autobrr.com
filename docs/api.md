@@ -3,7 +3,7 @@ sidebar_position: 1
 sidebar_label: API docs
 pagination_next: api
 title: autobrr API
-description: Here are the API documentation of autobrr.
+description: autobrr is a powerful automation tool. With the help of our API, developers can integrate and extend the functionalities of autobrr into their own applications, tools, or systems.
 keywords: [autobrr, api]
 ---
 
