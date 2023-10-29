@@ -277,7 +277,7 @@ curl -X POST 'http://127.0.0.1:7474/api/download_clients' -H 'X-API-Token: AUTOB
   "enabled": true,
   "host": "http://sonarr:9989/sonarr",
   "settings": {
-    "apikey": "${AUTOBRR_API_KEY}",
+    "apikey": "ARR_API_KEY",
     "basic": {
       "auth": true,
       "username": "USERNAME",
@@ -356,7 +356,7 @@ curl -X PUT 'http://127.0.0.1:7474/api/download_clients' -H 'X-API-Token: AUTOBR
   "enabled": true,
   "host": "http://sonarr4k:9990/sonarr4k",
   "settings": {
-    "apikey": "${AUTOBRR_API_KEY}",
+    "apikey": "ARR_API_KEY",
     "basic": {
       "auth": true,
       "username": "USERNAME",
