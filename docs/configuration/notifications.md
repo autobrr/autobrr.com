@@ -59,9 +59,12 @@ Webhook URLs are created in Discord. Go to **Server Settings** in your Discord s
 
 To set up notifications for Notifiarr, head to `Settings > Notifications`.
 
-You can send to Notifiarr by using the Discord integration. This will change to it's own sender in the future.
-
-Follow the steps of Discord.
+1. Click **Add new**.
+2. Pick Notifiarr in the list and give it a name.
+3. Choose what events it should trigger on. You can enable all in the same agent or create separate agents for separate events.
+4. Add your Notifiarr API key.
+5. Click the `Test` button to try and send a test notification.
+6. Save.
 
 ### Telegram
 
