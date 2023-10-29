@@ -9,7 +9,7 @@ keywords: [autobrr, api]
 
 # autobrr API
 
-autobrr is a powerful tool designed to automate various tasks. With the help of our API, developers can integrate and extend the functionalities of autobrr into their own applications, tools, or systems.
+autobrr is a powerful automation tool. With the help of our API, developers can integrate and extend the functionalities of autobrr into their own applications, tools, or systems.
 
 ## Authentication
 
