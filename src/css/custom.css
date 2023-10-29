@@ -373,3 +373,7 @@ header.hero {
 ul {
   list-style-type: square;
 }
+
+.badge {
+  margin-bottom: 8px;
+}
