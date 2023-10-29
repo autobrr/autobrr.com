@@ -41,16 +41,18 @@ All API requests require an API key for authentication. This key can be generate
 
 #### Sending the API Key
 
-- **URL Parameter:** Directly append the API key to the endpoint URL as a query parameter. This method is straightforward but might expose the key in logs or browser history.
-- **Header:** A more secure way is to include the API key in the request header using X-API-Token. This method is recommended as it avoids exposing the key in the URL.
+When making requests to the autobrr API, you can provide your API key in two ways:
 
-Using the API key in the header:
+- **Header (Recommended)**: Include the API key in the request header using `X-API-Token`. This method is more secure as it avoids exposing the key in the URL.
+- **URL Parameter:** Directly append the API key to the endpoint URL as a query parameter. This method is straightforward but might expose the key in logs or browser history.
+
+**Using the API key in the header:**
 
 ```bash
 curl -X GET 'http://127.0.0.1:7474/api/download_clients' -H 'X-API-Token: AUTOBRR_API_KEY' | jq
 ```
 
-Or, using the API key as an URL parameter:
+**Using the API key as an URL parameter:**
 
 ```bash
 curl -X GET 'http://127.0.0.1:7474/api/download_clients?apikey=${AUTOBRR_API_KEY}' | jq
