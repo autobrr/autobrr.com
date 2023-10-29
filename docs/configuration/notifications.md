@@ -75,8 +75,9 @@ Telegram is a bit more tricky to set up.
 3. Choose what events it should trigger on. You can enable all in the same agent or create separate agents for separate events.
 4. [Create a bot](https://core.telegram.org/bots#6-botfather) with `BotFather`.
 5. Start a chat with your bot, add [@get_id_bot](https://telegram.me/get_id_bot), and issue the /my_id command to retrieve your chat ID.
-6. Click the `Test` button to try and send a test notification.
-7. Save.
+6. Add your Chat ID, Bot Token, and the Message Thread ID.
+7. Click the `Test` button to try and send a test notification.
+8. Save.
 
 ### Pushover
 
