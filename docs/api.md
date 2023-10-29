@@ -95,7 +95,7 @@ curl -X GET 'http://127.0.0.1:7474/api/healthz/readiness' -H 'X-API-Token: AUTOB
 Retrieve a list of all filters available on your autobrr instance.
 
 ```bash
-curl -X GET "http://127.0.0.1:7474/api/filters" -H "X-API-Token: AUTOBRR_API_KEY" | jq '.[] | {id, name}'
+curl -X GET 'http://127.0.0.1:7474/api/filters' -H 'X-API-Token: AUTOBRR_API_KEY' | jq '.[] | {id, name}'
 ```
 
 ### Enable or disable a filter
@@ -103,7 +103,7 @@ curl -X GET "http://127.0.0.1:7474/api/filters" -H "X-API-Token: AUTOBRR_API_KEY
 Toggle the status of a specific filter.
 
 ```bash
-curl -X PUT "http://127.0.0.1:7474/api/filters/65/enabled" -H "X-API-Token: AUTOBRR_API_KEY" \
+curl -X PUT 'http://127.0.0.1:7474/api/filters/65/enabled' -H 'X-API-Token: AUTOBRR_API_KEY' \
      -d '{"enabled":true}'
 ```
 
@@ -112,7 +112,7 @@ curl -X PUT "http://127.0.0.1:7474/api/filters/65/enabled" -H "X-API-Token: AUTO
 Remove a specific filter from your autobrr instance.
 
 ```bash
-curl -X DELETE "http://127.0.0.1:7474/api/filters/84" -H "X-API-Token: AUTOBRR_API_KEY"
+curl -X DELETE 'http://127.0.0.1:7474/api/filters/84' -H 'X-API-Token: AUTOBRR_API_KEY'
 ```
 
 ### Create a filter
@@ -120,7 +120,7 @@ curl -X DELETE "http://127.0.0.1:7474/api/filters/84" -H "X-API-Token: AUTOBRR_A
 Create a new filter.
 
 ```bash
-curl -X POST 'http://127.0.0.1:7474/api/filters' -H "X-API-Token: AUTOBRR_API_KEY" \
+curl -X POST 'http://127.0.0.1:7474/api/filters' -H 'X-API-Token: AUTOBRR_API_KEY' \
 -d '{
     "name": "filter name",
     "enabled": false,
@@ -135,17 +135,17 @@ curl -X POST 'http://127.0.0.1:7474/api/filters' -H "X-API-Token: AUTOBRR_API_KE
 ### Update an existing filter
 
 ```bash
-curl -X PUT 'http://127.0.0.1:7474/api/filters/84' -H "X-API-Token: AUTOBRR_API_KEY" \
+curl -X PUT 'http://127.0.0.1:7474/api/filters/80' -H 'X-API-Token: AUTOBRR_API_KEY' \
 -H 'Content-Type: application/json' \
 -d '{
-    "id": 84,
-    "name": "test filter",
-    "enabled": false,
-    "priority": 0,
+    "id": 80,
+    "name": "New name",
+    "enabled": true,
+    "priority": 1,
     "use_regex": false,
-    "years": "2020",
-    "resolutions": ["1080p", "720p"],
-    "sources": ["WEB-DL", "WEB"],
+    "years": "2023-2030",
+    "resolutions": [],
+    "sources": [],
     "codecs": [],
     "containers": [],
     "match_hdr": [],
@@ -153,28 +153,56 @@ curl -X PUT 'http://127.0.0.1:7474/api/filters/84' -H "X-API-Token: AUTOBRR_API_
     "match_other": [],
     "except_other": [],
     "smart_episode": false,
-    "match_releases": "*AMZN*",
-    "match_release_groups": "flux",
+    "except_releases": "*24bit?Lossless*",
+    "tags": "electronic,deep.house,progressive.house,house,techno,melodic.house,trance,breakbeat,mainstage,dance,progressive.trance,vocal.trance",
+    "except_tags": "japanese",
     "match_language": [],
     "except_language": [],
-    "formats": [],
-    "quality": [],
+    "formats": [
+        "FLAC"
+    ],
+    "quality": [
+        "Lossless"
+    ],
     "media": [],
     "match_release_types": [],
     "origins": [],
     "except_origins": [],
     "indexers": [
         {
-            "id": 24,
-            "name": "Aither"
-        },
-        {
             "id": 21,
-            "name": "Redacted"
+            "name": "Redacted",
+            "identifier": "redacted",
+            "enabled": true
         }
     ],
-    "actions": [],
-    "external": []
+    "actions": [
+        {
+            "name": "Anjunabeats/Anjunadeep",
+            "type": "QBITTORRENT",
+            "enabled": true,
+            "category": "red_labels",
+            "tags": "Anjuna",
+            "reannounce_interval": 7,
+            "reannounce_max_attempts": 25,
+            "client_id": 16,
+            "webhook_method": "",
+            "webhook_type": ""
+        }
+    ],
+    "external": [
+        {
+            "id": 4,
+            "name": "webhook",
+            "index": 0,
+            "type": "WEBHOOK",
+            "enabled": true,
+            "webhook_host": "http://service:42135/hook",
+            "webhook_method": "POST",
+            "webhook_data": "{\n    \"torrent_id\": {{.TorrentID}},\n    \"apikey\": \"redacted.apikey\",\n    \"maxsize\": 2147483648,\n    \"record_labels\": \"Label1,Label2\"\n}",
+            "webhook_expect_status": 200
+        }
+    ]
 }'
 ```
 
@@ -185,7 +213,7 @@ curl -X PUT 'http://127.0.0.1:7474/api/filters/84' -H "X-API-Token: AUTOBRR_API_
 Retrieve a list of all indexers configured in your autobrr instance.
 
 ```bash
-curl -X GET "http://127.0.0.1:7474/api/indexer" -H "X-API-Token: AUTOBRR_API_KEY" | jq '.[] | {id, name, enabled}'
+curl -X GET 'http://127.0.0.1:7474/api/indexer' -H 'X-API-Token: AUTOBRR_API_KEY' | jq '.[] | {id, name, enabled}'
 ```
 
 ### Enable or disable an indexer
@@ -200,7 +228,7 @@ This behavior is observed in the web UI as well.
 :::
 
 ```bash
-curl -X PATCH "http://127.0.0.1:7474/api/indexer/31/enabled" -H "X-API-Token: AUTOBRR_API_KEY" \
+curl -X PATCH 'http://127.0.0.1:7474/api/indexer/31/enabled' -H 'X-API-Token: AUTOBRR_API_KEY' \
      -d '{"enabled": true}'
 ```
 
@@ -211,7 +239,7 @@ curl -X PATCH "http://127.0.0.1:7474/api/indexer/31/enabled" -H "X-API-Token: AU
 Retrieve a list of all feeds available on your autobrr instance.
 
 ```bash
-curl -X GET "http://127.0.0.1:7474/api/feeds" -H "X-API-Token: AUTOBRR_API_KEY" | jq '.[] | {id, name, enabled}'
+curl -X GET 'http://127.0.0.1:7474/api/feeds' -H 'X-API-Token: AUTOBRR_API_KEY' | jq '.[] | {id, name, enabled}'
 ```
 
 ### Enable or disable a feed
@@ -219,7 +247,7 @@ curl -X GET "http://127.0.0.1:7474/api/feeds" -H "X-API-Token: AUTOBRR_API_KEY" 
 Toggle the status of a specific feed.
 
 ```bash
-curl -X PATCH "http://127.0.0.1:7474/api/feeds/8/enabled" -H "X-API-Token: AUTOBRR_API_KEY" \
+curl -X PATCH 'http://127.0.0.1:7474/api/feeds/8/enabled' -H 'X-API-Token: AUTOBRR_API_KEY' \
      -d '{"enabled": true}'
 ```
 
@@ -480,5 +508,5 @@ curl -X POST 'http://127.0.0.1:7474/api/keys' -H 'X-API-Token: AUTOBRR_API_KEY' 
 Remove release history entries that are older than a specified number of hours.
 
 ```bash
-curl -X DELETE "http://127.0.0.1:7474/api/release?olderThan=8760" -H 'X-API-Token: AUTOBRR_API_KEY'
+curl -X DELETE 'http://127.0.0.1:7474/api/release?olderThan=8760' -H 'X-API-Token: AUTOBRR_API_KEY'
 ```
