@@ -138,11 +138,9 @@ curl -X POST 'http://127.0.0.1:7474/api/filters' -H 'X-API-Token: AUTOBRR_API_KE
 ### Update an existing filter
 
 ```bash
-curl -X PUT 'http://127.0.0.1:7474/api/filters/80' -H 'X-API-Token: AUTOBRR_API_KEY' \
+curl -X PATCH 'http://127.0.0.1:7474/api/filters/80' -H 'X-API-Token: AUTOBRR_API_KEY' \
 -H 'Content-Type: application/json' \
 -d '{
-    "id": 80,
-    "name": "New name",
     "enabled": true,
     "priority": 1,
     "use_regex": false,
@@ -175,8 +173,7 @@ curl -X PUT 'http://127.0.0.1:7474/api/filters/80' -H 'X-API-Token: AUTOBRR_API_
         {
             "id": 21,
             "name": "Redacted",
-            "identifier": "redacted",
-            "enabled": true
+            "identifier": "redacted"
         }
     ],
     "actions": [
