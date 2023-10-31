@@ -6,5 +6,5 @@
 }
 
 pre {
-  background-color: var(--slate-3);
+  background-color: var(--slate-3) !important;
 }

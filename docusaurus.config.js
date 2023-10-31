@@ -1,5 +1,10 @@
 const prism = require("prism-react-renderer");
 
+const { themes } = require("prism-react-renderer");
+
+const lightTheme = themes.github;
+const darkTheme = themes.github;
+
 const FontPreloadPlugin = require("webpack-font-preload-plugin");
 const config = {
   title: "autobrr",
@@ -82,6 +87,21 @@ const config = {
     //     content: "autobrr, autodl-irssi, torrents, automation",
     //   },
     // ],
+    prism: {
+      lightTheme: lightTheme,
+      darkTheme: darkTheme,
+      additionalLanguages: [
+        "bash",
+        "systemd",
+        "nginx",
+        "toml",
+        "docker",
+        "diff",
+        "json",
+        "compose",
+        "nginx",
+      ],
+    },
     image: "img/autobrr.png",
     docs: {
       sidebar: {
