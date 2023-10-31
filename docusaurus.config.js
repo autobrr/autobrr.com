@@ -37,6 +37,11 @@ const config = {
     [
       "classic",
       {
+        blog: {
+          blogTitle: "Release Notes",
+          routeBasePath: "/release-notes",
+          blogSidebarTitle: "Release Notes",
+        },
         docs: {
           sidebarPath: require.resolve("./sidebars.js"),
           // Please change this to your repo.
@@ -61,7 +66,6 @@ const config = {
             //},
           },
         },
-        blog: false,
         theme: {
           customCss: require.resolve("./src/css/custom.css"),
         },
@@ -102,6 +106,11 @@ const config = {
           label: "Docs",
           activeBaseRegex:
             "/(introduction|installation|configuration|filters|usage)",
+        },
+        {
+          to: "/release-notes",
+          label: "Changelog",
+          position: "left",
         },
         //{
         //{

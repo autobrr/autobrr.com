@@ -97,7 +97,7 @@ This isn't needed if your use case is feeding the \*arrs only. Since they have R
 
 As of right now, autobrr features:
 
-- Support for 75+ trackers with IRC announces
+- Support for 70+ trackers with IRC announces
 - RSS and Torznab/Newznab support via Prowlarr to easily get access to hundreds of indexers
 - Powerful but simple filtering with RegEx support (like in autodl-irssi)
 - Easy to use and mobile friendly web UI (with dark mode!) to manage everything
