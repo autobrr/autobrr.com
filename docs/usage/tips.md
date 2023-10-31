@@ -129,7 +129,9 @@ style={{
 </span>
 );
 
-> {"level":"debug","module":"filter","time":"2023-01-11T17:05:44Z","message":"filter.Service.CheckFilter: (Race - groups) for release: Teppen.Laughing.til.You.Cry.S01.720p.CR.WEB-DL.REPACK.AAC2.0.H.264-SubsPlease <Highlight color="#ff2754">rejections: (episodes not matching. got: 0 want: 1-99, release groups not matching. got: SubsPlease want: ggez,glhf,DiRT,cinefeel,casstudio,cmrg,flux,smurf,ntb,kings,plzproper,gossip,playweb,cakes,bae,ggwp,rapidcows,trollhd,playhd,playtv,truffle)</Highlight>"}
+```
+{"level":"debug","module":"filter","time":"2023-01-11T17:05:44Z","message":"filter.Service.CheckFilter: (Race - groups) for release: Teppen.Laughing.til.You.Cry.S01.720p.CR.WEB-DL.REPACK.AAC2.0.H.264-SubsPlease <Highlight color="#ff2754">rejections: (episodes not matching. got: 0 want: 1-99, release groups not matching. got: SubsPlease want: ggez,glhf,DiRT,cinefeel,casstudio,cmrg,flux,smurf,ntb,kings,plzproper,gossip,playweb,cakes,bae,ggwp,rapidcows,trollhd,playhd,playtv,truffle)</Highlight>"}
+```
 
 Based on the output here, the announce was rejected because you've blocked season packs by asking for episodes 1 to 99.
 It was also rejected because the release group did not match your criteria.
