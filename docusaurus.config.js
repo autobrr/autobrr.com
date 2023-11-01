@@ -108,8 +108,8 @@ const config = {
             "/(introduction|installation|configuration|filters|usage)",
         },
         {
-          to: "/release-notes",
-          label: "Changelog",
+          to: "release-notes",
+          label: "Release Notes",
           position: "left",
         },
         //{
