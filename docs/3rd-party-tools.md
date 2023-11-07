@@ -68,7 +68,6 @@ Even with API auth enabled, cross-seed still recommends that you do not expose i
 You can use iptables or UFW to solve this.  
 The cross-seed daemon uses port 2468 by default.
 If you want to expose cross-seed to another server on the internet substitute `127.0.0.1` with the IP of the corresponding server.
-<br />  
 
 ```text
 sudo apt-get install iptables
@@ -124,11 +123,12 @@ sudo journalctl -u cross-seed # view the logs
 The way this works is you create a filter with a higher priority set than any other filter to make sure every cross-seed match is forwarded to the cross-seed daemon instead of being run through other filters.
 
 1. Get your API key with the following command:  
-```
-cross-seed api-key
-```
-&nbsp&nbsp&nbsp&nbsp&nbsp Keep this key at hand since we will need it at step 5 later on.  
-&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp In the rest of this tutorial, we will refer to this as `YOUR_API_KEY`.
+  
+    ```
+    cross-seed api-key
+    ```
+    Keep this key at hand since we will need it at step 5 later on.  
+    In the rest of this tutorial, we will refer to this as `YOUR_API_KEY`.
 
 
 2. Create a filter and name it eg. `cross-seed`.
