@@ -134,15 +134,13 @@ The way this works is you create a filter with a higher priority set than any ot
 2. Create a filter and name it eg. `cross-seed`.
 3. Select all the indexers you want to use, preferably all of them.
 4. Set a really high `priority` to make sure it's always higher than your other filters.
-5. Go to the `External` tab, enable the `Webhook` switch, and add the following below it:
+5. Go to the `External` tab, and add a new External filter.
 
-
+   - Type: `Webhook`
    - Host: `http://localhost:2468/api/announce`
    - Headers: `x-api-key=YOUR_API_KEY`
-   - Select HTTP Method: `POST`
+   - HTTP Method: `POST`
    - Expected http status: `200`  
-
-
    - Data (JSON):
 
    ```json
