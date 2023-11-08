@@ -311,6 +311,28 @@ curl -X POST 'http://127.0.0.1:7474/api/download_clients' -H 'X-API-Token: AUTOB
 }'
 ```
 
+```bash title="Deluge"
+curl -X POST 'http://127.0.0.1:7474/api/download_clients' -H 'X-API-Token: AUTOBRR_API_KEY' \
+-d '{
+  "name": "Deluge",
+  "type": "DELUGE_V2",
+  "enabled": true,
+  "host": "127.0.0.1",
+  "port": 12064,
+  "tls": false,
+  "tls_skip_verify": false,
+  "username": "USERNAME",
+  "password": "PASSWORD",
+  "settings": {
+    "basic": {},
+    "rules": {
+      "enabled": true,
+      "max_active_downloads": 2,
+    }
+  }
+}'
+```
+
 ```bash title="*arr"
 curl -X POST 'http://127.0.0.1:7474/api/download_clients' -H 'X-API-Token: AUTOBRR_API_KEY' \
 -d '{
