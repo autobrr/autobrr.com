@@ -38,7 +38,7 @@ The **API Endpoint Reference** provides a comprehensive list of available endpoi
 
 ### Authentication
 
-All API requests require an API key for authentication. This key can be generated from your autobrr dashboard. Remember to always keep your API key confidential.
+All API requests require an API key for authentication. This key can be generated from your autobrr dashboard by going to `Settings` -> `API keys`. Remember to always keep your API key confidential.
 
 ![API dashboard](/img/api-dashboard.png)
 
