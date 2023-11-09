@@ -1,6 +1,7 @@
 ---
 id: shared
 sidebar_label: Shared seedboxes
+slug: /configuration/download-clients/shared-seedboxes
 #sidebar_position: 3
 title: Connecting to download clients on a shared seedbox
 description: These are confirmed working ways to connect to download clients on various shared seedbox providers.
