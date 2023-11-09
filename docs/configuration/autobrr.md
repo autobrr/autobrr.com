@@ -111,7 +111,7 @@ Make sure to read through all of the articles as all of them have some important
 
 - [Indexers <CgWebsite />](./indexers.md)
 - [IRC <BsChatDotsFill />](./irc.md)
-- [Download Clients <FaDownload />](./download-clients/dedi.md)
+- [Download Clients <FaDownload />](./download-clients/dedicated)
 - [Feeds (RSS / Torznab / Newznab) <MdRssFeed />](./feeds.md)
 
 ## Additional help

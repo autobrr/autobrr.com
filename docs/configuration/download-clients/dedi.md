@@ -2,6 +2,7 @@
 id: dedi
 sidebar_label: Dedicated servers
 title: Download Clients
+slug: /configuration/download-clients/dedicated
 description: A guide on how to set up download clients in autobrr.
 keywords:
   [
