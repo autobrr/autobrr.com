@@ -220,7 +220,7 @@ Once the pre-hook succeeds, create a Webhook action, replacing the same variable
 * Host:
 
 ```
-http://upgraderr:6940/api/upgrade
+http://upgraderr:6940/api/cross
 ```
 
 * Payload:
