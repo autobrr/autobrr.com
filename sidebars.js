@@ -26,7 +26,7 @@ module.exports = {
             "installation/reverse-proxy/caddy",
             "installation/reverse-proxy/nginx",
             "installation/reverse-proxy/swag",
-            "installation/reverse-proxy/traefik"
+            "installation/reverse-proxy/traefik",
           ],
         },
         {
@@ -86,6 +86,11 @@ module.exports = {
       type: "doc",
       label: "3rd party tools",
       id: "3rd-party-tools",
+    },
+    {
+      type: "doc",
+      label: "api",
+      id: "api",
     },
     {
       type: "doc",
