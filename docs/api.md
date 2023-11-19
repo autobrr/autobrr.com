@@ -220,13 +220,6 @@ curl -X GET 'http://127.0.0.1:7474/api/indexer' -H 'X-API-Token: AUTOBRR_API_KEY
 
 Toggle the status of a specific indexer.
 
-:::caution Note
-
-There is a known issue with this endpoint. It may require sending a request twice to ensure a successful change.
-This behavior is observed in the web UI as well.
-
-:::
-
 ```bash
 curl -X PATCH 'http://127.0.0.1:7474/api/indexer/31/enabled' -H 'X-API-Token: AUTOBRR_API_KEY' \
      -d '{"enabled": true}'
