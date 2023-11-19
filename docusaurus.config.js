@@ -11,6 +11,7 @@ const config = {
   tagline: "The modern autodl-irssi replacement.",
   url: "https://autobrr.com",
   baseUrl: "/",
+  trailingSlash: false,
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
   favicon: "img/favicon.ico",

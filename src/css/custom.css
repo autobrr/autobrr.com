@@ -200,6 +200,10 @@ li[class*="theme-doc-sidebar-item-category-level"] a.menu__link:hover:not(.menu_
   font-size: 0.9rem;
 }
 
+pre {
+  background-color: var(--slate-3);
+}
+
 pre > code {
   border: 1px solid var(--slate-9);
 }
@@ -210,6 +214,7 @@ div.theme-code-block pre > code {
 
 div.theme-code-block {
   border: 1px solid var(--slate-9);
+  margin-top: 22px;
 }
 
 /* select only divs which have len(elems) == 2 */

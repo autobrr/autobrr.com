@@ -26,7 +26,7 @@ pagination_label: Filters - Actions
 
 A configured action is what your autodl does with a successful push. You can send it any of the supported actions. Each filter supports multiple actions just incase you need to send to multiple clients, or run custom commands as well.
 
-Make sure you've set up a [download client](../configuration/download-clients/dedi.md) before continuing further.
+Make sure you've set up a [download client](../configuration/download-clients/dedicated) before continuing further.
 
 Whether you're adding, updating or removing actions on a filter, make sure to <strong>save</strong> the filter afterwards.
 
@@ -126,7 +126,7 @@ Autobrr supports the ability to push directly to the \*arr suite of services.
 
 Could be useful to do some basic filtering before sending.
 
-Select the type, and then the client. Read more about setup in [download clients setup](../configuration/download-clients/dedi.md).
+Select the type, and then the client. Read more about setup in [download clients setup](../configuration/download-clients/dedicated).
 
 Supports both local and remote instances.
 
