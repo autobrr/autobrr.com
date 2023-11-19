@@ -23,7 +23,7 @@ With this setup you can utilize autobrr with [cross-seed](https://github.com/cro
 You can install cross-seed in several ways. Docker is recommended, but installing via npm or yarn (requires node 16 or greater) is also fine.
 
 In this guide we will install it with npm. This method requires node 16 or greater.
-<https://github.com/nodesource/distributions/blob/master/README.md#using-debian-as-root-3>
+[https://github.com/nodesource/distributions/blob/master/README.md#using-debian-as-root-3](https://github.com/nodesource/distributions/blob/master/README.md#using-debian-as-root-3)
 
 ```bash
 # Elevate to root and install Node.js LTS (v18.x)
