@@ -135,3 +135,35 @@ style={{
 
 Based on the output here, the announce was rejected because you've blocked season packs by asking for episodes 1 to 99.
 It was also rejected because the release group did not match your criteria.
+
+
+## Creating automatic updating lists for omegabrr
+
+Mdblist provides users the ability to create lists of movies and/or tv shows. We can use this site to create a omegabrr compatible lists. First create an account with [trakt.tv](https://trakt.tv/) and then sign in using that account over at [mdblist](https://mdblist.com).
+
+Although daunting at first its best to start off with the following
+
+Expand `Lists, Streaming Services, Cast and more.` Choose `Anticipated movies`. from the `Popular lists` menu directly beneath it and click search. This shows us lots of movies that have been announced but are no where close to release. At the top of the page we can filter this down even better by using the "Upcoming" and "Released" fields. Try entering a number between 3-5 in both of those fields. This should narrow your results to movies that are coming up real soon. Lets use these two options to create a omegabrr compatible list.
+
+When you're happy with the search results that you get, expand `Create list` and give your list a name then click on `Create MDBlist list` to the right. As a free user the list will first update after 30 minutes, but for now lets click on Lists > [My Lists](https://mdblist.com/mylists/). There you'll find any lists you create. Copy the link to your list and add /json to the end of it. 
+
+For example
+
+https[]()://mdblist.com/lists/username/username-list
+
+into
+
+https[]()://mdblist.com/lists/username/username-list/json
+
+With our json list in hand open your omegabrr config and add a new entry like so.
+
+```
+lists:
+  - name: Latest TV Shows
+    type: mdblist
+    url: https://mdblist.com/lists/username/username-list/json
+    filters:
+      - 1 # Change me
+```
+
+Run `omegabrr lists --config config.yaml` and viola! An automatic updating list!
