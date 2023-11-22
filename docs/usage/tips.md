@@ -117,47 +117,30 @@ tail -f ~/.config/autobrr/logs/autobrr.log | grep 'CheckFilter: (NAME OF YOUR FI
 
 #### Expected output
 
-export const Highlight = ({children, color}) => (
-<span
-style={{
-      backgroundColor: color,
-      borderRadius: '2px',
-      color: '#fff',
-      padding: '0.1rem',
-    }}>
-{children}
-</span>
-);
-
-```
-{"level":"debug","module":"filter","time":"2023-01-11T17:05:44Z","message":"filter.Service.CheckFilter: (Race - groups) for release: Teppen.Laughing.til.You.Cry.S01.720p.CR.WEB-DL.REPACK.AAC2.0.H.264-SubsPlease <Highlight color="#ff2754">rejections: (episodes not matching. got: 0 want: 1-99, release groups not matching. got: SubsPlease want: ggez,glhf,DiRT,cinefeel,casstudio,cmrg,flux,smurf,ntb,kings,plzproper,gossip,playweb,cakes,bae,ggwp,rapidcows,trollhd,playhd,playtv,truffle)</Highlight>"}
+```js
+{"level":"debug","module":"filter","time":"2023-01-11T17:05:44Z","message":"filter.Service.CheckFilter: (Race - groups) for release: Teppen.Laughing.til.You.Cry.S01.720p.CR.WEB-DL.REPACK.AAC2.0.H.264-SubsPlease <Highlight color="#ff2754">rejections: (episodes not matching. got: 0 want: 1-99, release groups not matching. got: SubsPlease want: ggez,glhf,DiRT,cinefeel,casstudio,cmrg,flux,smurf,ntb,kings,plzproper,gossip,playweb,cakes,bae,ggwp,rapidcows,trollhd,playhd,playtv,truffle)"}
 ```
 
 Based on the output here, the announce was rejected because you've blocked season packs by asking for episodes 1 to 99.
 It was also rejected because the release group did not match your criteria.
 
-
 ## Creating automatic updating lists for omegabrr
 
-Mdblist provides users the ability to create lists of movies and/or tv shows. We can use this site to create a omegabrr compatible lists. First create an account with [trakt.tv](https://trakt.tv/) and then sign in using that account over at [mdblist](https://mdblist.com).
+Mdblist provides users the ability to create lists of movies and/or tv shows. We can use this site to create omegabrr compatible lists. First create an account with [trakt.tv](https://trakt.tv/) and then sign in using that account over at [mdblist](https://mdblist.com).
 
-Although daunting at first its best to start off with the following
+Although daunting at first its best to start off with the following:
 
-Expand `Lists, Streaming Services, Cast and more.` Choose `Anticipated movies`. from the `Popular lists` menu directly beneath it and click search. This shows us lots of movies that have been announced but are no where close to release. At the top of the page we can filter this down even better by using the "Upcoming" and "Released" fields. Try entering a number between 3-5 in both of those fields. This should narrow your results to movies that are coming up real soon. Lets use these two options to create a omegabrr compatible list.
+Expand `Lists, Streaming Services, Cast and more.` Choose `Anticipated movies` from the `Popular lists` menu directly beneath it and click search. This shows us lots of movies that have been announced but are nowhere close to release. At the top of the page we can filter this down even better by using the "Upcoming" and "Released" fields. Try entering a number between 3-5 in both of those fields. This should narrow your results to movies that are coming up real soon. Lets use these two options to create an omegabrr compatible list.
 
-When you're happy with the search results that you get, expand `Create list` and give your list a name then click on `Create MDBlist list` to the right. As a free user the list will first update after 30 minutes, but for now lets click on Lists > [My Lists](https://mdblist.com/mylists/). There you'll find any lists you create. Copy the link to your list and add /json to the end of it. 
+When you're happy with the search results that you get, expand `Create list` and give your list a name, then click on `Create MDBlist list` to the right. As a free user the list will first update after 30 minutes, but for now lets click on Lists > [My Lists](https://mdblist.com/mylists/). There you'll find any lists you've created. Copy the link to your list and add /json to the end of it.
 
-For example
+For example: [https://mdblist.com/lists/username/username-list](https://mdblist.com/lists/username/username-list)
 
-https[]()://mdblist.com/lists/username/username-list
-
-into
-
-https[]()://mdblist.com/lists/username/username-list/json
+into: [https://mdblist.com/lists/username/username-list/json](https://mdblist.com/lists/username/username-list/json)
 
 With our json list in hand open your omegabrr config and add a new entry like so.
 
-```
+```yml
 lists:
   - name: Latest TV Shows
     type: mdblist
@@ -166,4 +149,4 @@ lists:
       - 1 # Change me
 ```
 
-Run `omegabrr lists --config config.yaml` and viola! An automatic updating list!
+Run `omegabrr lists --config config.yaml` and voilà! An automatic updating list!
