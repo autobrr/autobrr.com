@@ -72,7 +72,7 @@ style={{
 </span>
 );
 
-> Rejected: error downloading torrent file for release: Some Release name: All attempts fail: #1: metainfo could not load file contents: /tmp/autobrr-3310314409: bencode: syntax error (offset: 0): unknown value type '<'
+    Rejected: error downloading torrent file for release: Some Release name: All attempts fail: #1: metainfo could not load file contents: /tmp/autobrr-3310314409: bencode: syntax error (offset: 0): unknown value type
 
 This is highly likely caused by you adding an entire URL instead of just the RSS-key. This field only works with an alphanumeric string.
 

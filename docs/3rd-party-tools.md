@@ -20,10 +20,10 @@ With this setup you can utilize autobrr with [cross-seed](https://github.com/cro
 
 ### Install cross-seed and its dependencies {#cross-seed-install}
 
-You can install cross-seed in several ways. Docker is recommended, but installing via npm or yarn (requires node 14 or greater) is also fine.
+You can install cross-seed in several ways. Docker is recommended, but installing via npm or yarn (requires node 16 or greater) is also fine.
 
-In this guide we will install it with npm. This method requires node 14 or greater.
-<https://github.com/nodesource/distributions/blob/master/README.md#using-debian-as-root-3>
+In this guide we will install it with npm. This method requires node 16 or greater.
+[https://github.com/nodesource/distributions/blob/master/README.md#using-debian-as-root-3](https://github.com/nodesource/distributions/blob/master/README.md#using-debian-as-root-3)
 
 ```bash
 # Elevate to root and install Node.js LTS (v18.x)
@@ -59,11 +59,15 @@ torrentDir: "/home/$USER/.local/share/qBittorrent/BT_backup",
 outputDir: "/home/$USER/torrentfiles",
 action: "inject",
 qbittorrentUrl: "http://user:pass@localhost:port",
+apiAuth: true,
 ```
 
-:::danger Make sure the port is not exposed to the internet
+:::info Make sure the port is not exposed to the internet
 
-Since cross-seed doesn't have API auth, we need to make sure its port isn't open to the internet. You can use iptables or UFW to solve this. Cross-seed daemon uses port 2468 by default.
+Even with API auth enabled, cross-seed still recommends that you do not expose its port to untrusted networks (such as the Internet).
+You can use iptables or UFW to solve this.  
+The cross-seed daemon uses port 2468 by default.
+If you want to expose cross-seed to another server on the internet substitute `127.0.0.1` with the IP of the corresponding server.
 
 ```text
 sudo apt-get install iptables
@@ -118,14 +122,26 @@ sudo journalctl -u cross-seed # view the logs
 
 The way this works is you create a filter with a higher priority set than any other filter to make sure every cross-seed match is forwarded to the cross-seed daemon instead of being run through other filters.
 
-1. Create a filter and name it eg. `cross-seed`.
-2. Select all the indexers you want to use, preferably all of them.
-3. Set a really high `priority` to make sure it's always higher than your other filters.
-4. Go to the `External` tab, enable the `Webhook` switch, and add the following below it:
+1. Get your API key with the following command:  
+  
+    ```
+    cross-seed api-key
+    ```
+    Keep this key at hand since we will need it at step 5 later on.  
+    In the rest of this tutorial, we will refer to this as `YOUR_API_KEY`.
 
-   Host: `http://localhost:2468/api/announce`  
-   Expected http status: `200`  
-   Data (JSON):
+
+2. Create a filter and name it eg. `cross-seed`.
+3. Select all the indexers you want to use, preferably all of them.
+4. Set a really high `priority` to make sure it's always higher than your other filters.
+5. Go to the `External` tab, and add a new External filter.
+
+   - Type: `Webhook`
+   - Host: `http://localhost:2468/api/announce`
+   - Headers: `x-api-key=YOUR_API_KEY`
+   - HTTP Method: `POST`
+   - Expected http status: `200`  
+   - Data (JSON):
 
    ```json
    {
@@ -136,8 +152,9 @@ The way this works is you create a filter with a higher priority set than any ot
    }
    ```
 
-5. Go to the `Actions` tab and create a Test action. This is required for the webhook to work.
-6. Finally, make sure the filter is enabled and you're all set.
+
+6. Go to the `Actions` tab and create a Test action. This is required for the webhook to work.
+7. Finally, make sure the filter is enabled and you're all set.
 
 :::tip Cross-seed notifications
 You can set up a Notifiarr or Apprise webhook for cross-seed notifications within the cross-seed config.
@@ -160,20 +177,21 @@ On any filter, you may utilize the external tab as a pre-filter. Using this with
 Coupling this with the extensive filtering built-in to autobrr allows you to specify qualities to stop accepting upgrades at, should you wish. This allows you to replace applications such as Sonarr / Radarr.
 
 On the external Webhook action, utilize the following payload, replacing the host(s), user and password with your configuration. The expected return code is 200.
-* Host:
+
+- Host:
 
 ```
 http://upgraderr:6940/api/upgrade
 ```
 
-* Payload:
+- Payload:
 
 ```json
 {
-    "host": "http://qbittorrent:8080",
-    "user": "username",
-    "password": "password",
-    "name": "{{ .TorrentName | js }}"
+  "host": "http://qbittorrent:8080",
+  "user": "username",
+  "password": "password",
+  "name": "{{ .TorrentName | js }}"
 }
 ```
 
@@ -182,40 +200,42 @@ http://upgraderr:6940/api/upgrade
 At the time of this writing, Upgraderr has excellent cross-seed functionality that runs in milliseconds. Presently there's a partial matcher implemented, where if 80% of the data matches the existing torrent, the new torrent will have the conflicting files (should they exist) renamed, to not corrupt the existing torrent.
 
 On the external Webhook action, utilize the following payload, replacing the host(s), user and password with your configuration. The expected return code is 250.
-* Host:
+
+- Host:
 
 ```
 http://upgraderr:6940/api/upgrade
 ```
 
-* Payload:
+- Payload:
 
 ```json
 {
-    "host": "http://qbittorrent:8080",
-    "user": "username",
-    "password": "password",
-    "name": "{{ .TorrentName | js }}"
+  "host": "http://qbittorrent:8080",
+  "user": "username",
+  "password": "password",
+  "name": "{{ .TorrentName | js }}"
 }
 ```
 
 Once the pre-hook succeeds, create a Webhook action, replacing the same variables as before.
-* Host:
+
+- Host:
 
 ```
 http://upgraderr:6940/api/upgrade
 ```
 
-* Payload:
+- Payload:
 
 ```json
 {
-    "host": "http://qbittorrent:8080",
-    "user": "username",
-    "password": "password",
-    "name": "{{ .TorrentName | js }}",
-    "hash": "{{ .TorrentHash }}",
-    "torrent": "{{ .TorrentDataRawBytes | js }}"
+  "host": "http://qbittorrent:8080",
+  "user": "username",
+  "password": "password",
+  "name": "{{ .TorrentName | js }}",
+  "hash": "{{ .TorrentHash }}",
+  "torrent": "{{ .TorrentDataRawBytes | js }}"
 }
 ```
 

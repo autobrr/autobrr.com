@@ -17,11 +17,7 @@ In this setup we will create an autobrr user and a Windows service that operates
 
 Download the latest Windows release and unpack. Place everything in `C:\autobrr` or some other directory.
 
-Latest release can always be found at:
-
-```bash
-https://github.com/autobrr/autobrr/releases/latest
-```
+Latest release can always be found at [Github](https://github.com/autobrr/autobrr/releases/latest).
 
 ### Manually configure autobrr (optional) {#manually-configure-autobrr}
 
@@ -33,7 +29,7 @@ Press your Windows key and search for **Task Scheduler** and lets **Create basic
 
 <img src={useBaseUrl('/img/a.%20create%20basic%20task.png')} />
 
-Add a name, this will show up in the Task Scheduler. Feel free to add the autobrr description if you'd like.
+Add a name, this will show up in the Task Scheduler. Feel free to add the autobrr description if you'd like:
 
 > autobrr monitors IRC announce channels to get releases as soon as they are available with good filtering.
 
