@@ -65,8 +65,9 @@ For TV and movies it's advised to use filters like `resolution`, `source` and `c
 | **Min. size**         | Minimum torrent size allowed. Supports units such as MB, MiB, GB, etc.                                            |                      |
 | **Delay**             | Number of seconds to wait before running actions.                                                                 | 0                    |
 | **Priority**          | Filters are checked in order of priority. Positive and negative numbers allowed. Higher number = higher priority. | 0                    |
-| **Max downloads**     | Number of max downloads as specified by the respective unit.                                                      | 0 (which means +Inf) |
-| **Max downloads per** | The unit of time for counting the maximum downloads per filter.                                                   |                      |
+| **Max downloads**     | Number of max downloads as specified by the respective unit.†                                                     | 0 (which means +Inf) |
+| **Max downloads per** | The unit of time for counting the maximum downloads per filter.†                                                  |                      |
 
+† If "Max downloads" is set, the filter will only match if you have downloaded fewer than "max downloads" items since the beginning of the "max downloads per" period. For instance, if you set "max downlods" to 3 and "max downloads per" to "day" the filter won't match unless you have downloaded fewer than 3 items since the beginning of the current day, in local time.
 
 ---
