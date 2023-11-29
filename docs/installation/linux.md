@@ -137,18 +137,19 @@ Now that autobrr is up and running, you should be able to visit the your web UI 
 
 ## Version Updates
 
-To upgrade Autobrr to the latest version first stop the service (if you have configured it)
+To upgrade Autobrr to the latest version first stop the service (if you have configured it):
 
 ```bash
 sudo systemctl stop autobrr@USERNAME.service
-```  
-Download the latest release
+```
+
+Download the latest release:
 
 ```bash
 wget $(curl -s https://api.github.com/repos/autobrr/autobrr/releases/latest | grep download | grep linux_x86_64 | cut -d\" -f4)
 ```
 
-And finally unpack the release
+And finally unpack the release:
 
 ```bash
 sudo tar -C /usr/local/bin -xzf autobrr*.tar.gz
