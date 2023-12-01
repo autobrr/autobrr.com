@@ -8,7 +8,7 @@ keywords:
 ---
 
 Some indexers does not have an IRC announce channel.
-Luckily, most of them have RSS support.  
+Luckily, most of them have RSS support.
 You will treat Torznab/Newznab and RSS feeds as regular indexers when setting up your filters.
 
 ## Torznab / Newznab
@@ -58,4 +58,14 @@ Head to **Settings** -> **Feeds** and click the three dots for the feed you want
 
 :::tip
 The cache is cleaned automatically every 30 days.
+:::
+
+## Force Run feed
+
+The Force Run feed option allows you to manually trigger a feed refresh, providing you with the most up-to-date data
+
+![Force run feed](/img/force_run_feed.png)
+
+:::caution
+Be careful when using this feature and ensure that you adhere to the refresh interval rules defined by the indexers.
 :::
