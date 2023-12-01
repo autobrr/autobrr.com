@@ -60,9 +60,9 @@ Head to **Settings** -> **Feeds** and click the three dots for the feed you want
 The cache is cleaned automatically every 30 days.
 :::
 
-## Force Run feed
+## Force run feed
 
-The Force Run feed option allows you to manually trigger a feed refresh, providing you with the most up-to-date data
+The Force run feed option allows you to manually trigger a feed refresh, providing you with the most up-to-date data outside the regular feed schedule.
 
 ![Force run feed](/img/force_run_feed.png)
 
