@@ -23,6 +23,8 @@ postgresPort = 5432
 postgresDatabase = "autobrr"
 postgresUser = "autobrr"
 postgresPass = "s0meth!ng-l0ng-4nd-s3cure"
+postgresSSLMode = "disable"
+postgresExtraParams = ""
 ```
 
 :::info

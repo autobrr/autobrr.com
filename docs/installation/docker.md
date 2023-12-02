@@ -55,14 +55,34 @@ services:
       - 7474:7474
 ```
 
-#### Environment variables
+### Environment variables
 
 We support the following environment variables to override the config file:
 
-```yaml
-environment:
-  - AUTOBRR__PORT=7474
-  - AUTOBRR__HOST=0.0.0.0
+```yaml title="docker-compose.yml"
+version: "3.7"
+
+services:
+  autobrr:
+    environment:
+      - AUTOBRR__HOST=string
+      - AUTOBRR__PORT=string
+      - AUTOBRR__BASE_URL=string
+      - AUTOBRR__LOG_LEVEL=string
+      - AUTOBRR__LOG_PATH=string
+      - AUTOBRR__LOG_MAX_SIZE=string/int without MB
+      - AUTOBRR__LOG_MAX_BACKUPS=string/int
+      - AUTOBRR__SESSION_SECRET=string
+      - AUTOBRR__CUSTOM_DEFINITIONS=string
+      - AUTOBRR__CHECK_FOR_UPDATES=bool
+      - AUTOBRR__DATABASE_TYPE=sqlite/postgres
+      - AUTOBRR__POSTGRES_HOST=string
+      - AUTOBRR__POSTGRES_PORT=string
+      - AUTOBRR__POSTGRES_DATABASE=string
+      - AUTOBRR__POSTGRES_USER=string
+      - AUTOBRR__POSTGRES_PASS=string
+      - AUTOBRR__POSTGRES_SSLMODE=string
+      - AUTOBRR__POSTGRES_EXTRA_PARAMS=string
 ```
 
 ### Manually configure autobrr (optional) {#manually-configure-autobrr}

@@ -24,7 +24,6 @@ pagination_next: configuration/indexers
 
 import { FaDocker } from 'react-icons/fa';
 import { FaWindows } from 'react-icons/fa';
-import { SiPostgresql } from 'react-icons/si';
 
 Welcome to the autobrr installation walkthrough!
 Follow these steps and we will have you up and running in no time.
