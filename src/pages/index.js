@@ -22,6 +22,11 @@ import { CgPlug } from "react-icons/cg";
 import { BiRss, BiNews } from "react-icons/bi";
 import { IoMagnetSharp } from "react-icons/io5";
 
+import Applications from "@theme/Applications";
+import Introduction from "@theme/Introduction";
+import About from "@theme/About";
+import Resources from "@theme/Resources";
+
 const Center = ({ icon, text }) => (
   <div className="hero-icon-container">
     {icon}
@@ -34,13 +39,7 @@ function HomepageHeader() {
   const { colorMode } = useColorMode();
 
   return (
-    <header
-      className={clsx(
-        "hero hero--secondary",
-        styles.heroBanner,
-        styles.pattern
-      )}
-    >
+    <header className={clsx("hero hero--secondary", styles.heroBanner)}>
       <div className="container">
         <img
           src={logo}
@@ -117,6 +116,12 @@ export default function Home() {
       description="the modern autodl-irssi replacement"
     >
       <HomepageHeader />
+      <main className={styles.main}>
+        <Introduction />
+        <Applications />
+        <About />
+        <Resources />
+      </main>
     </Layout>
   );
 }

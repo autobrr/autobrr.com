@@ -1,0 +1,32 @@
+.resources {
+    background-color: var(--ifm-background-color);
+  }
+
+  .resource {
+    display: flex !important;
+    flex-direction: column;
+    color: var(--ifm-resources-title-color);
+
+    a {
+      color: unset;
+      text-decoration: none;
+    }
+  }
+
+  .card {
+    flex-grow: 1;
+    justify-content: center;
+    background-color: var(--ifm-background-color);
+    border: 1px solid var(--ifm-question-border-color);
+    border-radius: var(--ifm-pagination-nav-border-radius);
+    transition: all 0.3s ease;
+    margin-bottom: 2rem;
+
+    &:hover {
+      border: 1px solid var(--ifm-question-border-hover-color);
+    }
+  }
+
+  .descriptionText {
+    color: var(--ifm-resources-desc-color);
+  }

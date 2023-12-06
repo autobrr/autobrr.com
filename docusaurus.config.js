@@ -88,6 +88,16 @@ const config = {
     //     content: "autobrr, autodl-irssi, torrents, automation",
     //   },
     // ],
+    webpack: {
+      configure: (webpackConfig, { env, paths }) => {
+        webpackConfig.module.rules.push({
+          test: /\.svg$/,
+          use: ["@svgr/webpack"],
+        });
+
+        return webpackConfig;
+      },
+    },
     prism: {
       lightTheme: lightTheme,
       darkTheme: darkTheme,
@@ -124,7 +134,6 @@ const config = {
           activeBaseRegex:
             "/(introduction|installation|configuration|filters|usage)",
         },
-        //{
         //{
         //  type: "docsVersionDropdown", // disabling until its of use
         //  position: "left",

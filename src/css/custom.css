@@ -7,7 +7,7 @@
 
 :root {
   transition: color 0.3s ease, background-color 0.3s ease;
-  
+
   --ifm-font-family-base: "Inter";
   --ifm-line-height-base: 1.5;
   --ifm-font-size-base: 110%;
@@ -76,6 +76,14 @@
   --ifm-navbar-search-input-placeholder-color: var(--slate-11);
 
   --front-pic-shadow-color: rgb(0 0 0 / 50%);
+
+  --ifm-question-border-color: var(--slate-7);
+  --ifm-question-border-hover-color: var(--slate-9);
+  --ifm-question-title-color: var(--black);
+  --ifm-resources-title-color: var(--black);
+  --ifm-resources-desk-color: var(--black);
+  --title-gradient: linear-gradient(to bottom, #4d4d4d, rgb(0, 0, 0));
+  --ifm-description-color: #4d4d4d;
 }
 
 :root[data-theme="dark"] {
@@ -125,6 +133,14 @@
   --ifm-color-primary: var(--blue-10);
 
   --front-pic-shadow-color: rgb(39 42 45 / 50%);
+
+  --ifm-question-border-color: var(--slate-6);
+  --ifm-question-border-hover-color: var(--blue-6);
+  --ifm-question-title-color: var(--blue-10);
+  --ifm-resources-title-color: var(--blue-10);
+  --ifm-resources-desc-color: var(--slate-12);
+  --title-gradient: linear-gradient(to bottom, white, #e8e2d9);
+  --ifm-description-color: #e8e2d9;
 }
 
 li[class*="theme-doc-sidebar-item-category-level"] > div > a {
