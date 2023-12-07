@@ -4,7 +4,7 @@
   color: var(--ifm-question-title-color);
 
   a {
-    color: unset;
+    color: var(--gold-11);
     text-decoration: none;
   }
 }
@@ -12,14 +12,15 @@
 .card {
   flex-grow: 1;
   justify-content: center;
-  background-color: var(--ifm-background-color);
-  border: 1px solid var(--ifm-question-border-color);
+  background-color: inherit;
+  border: 1px solid var(--gold-8);
   border-radius: var(--ifm-pagination-nav-border-radius);
   transition: all 0.3s ease;
   margin-bottom: 2rem;
 
   &:hover {
-    border: 1px solid var(--ifm-question-border-hover-color);
+    background-color: var(--slate-2);
+    border: 1px solid var(--gold-9);
   }
 }
 

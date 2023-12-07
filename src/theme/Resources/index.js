@@ -28,8 +28,11 @@ const data = [
     title: <>Community</>,
     description: (
       <>
-        Connect, Collaborate, and Create: Join our vibrant Discord community to
-        exchange ideas, get insights, and be part of our dynamic discussion!
+        Join our friendly and welcoming community on Discord! Connect with
+        fellow autobrr users, get advice, and share your experiences. Whether
+        you're seeking help, wanting to contribute, or just looking to discuss
+        your ideas, our community is a hub of discussion and support. We're all
+        here to help each other out, so don't hesitate to jump in!
       </>
     ),
   },
@@ -50,8 +53,8 @@ const data = [
     title: <>Contribute</>,
     description: (
       <>
-        Contribute to our growth by reporting bugs and suggesting features on
-        GitHub. Your insights makes autobrr better!
+        Whether you're fixing a bug, adding a feature, or improving
+        documentation, your help is appreciated.
       </>
     ),
   },

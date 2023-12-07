@@ -74,7 +74,7 @@ function Applications() {
       {clients && clients.length > 0 && (
         <section id="clients" className={clsx(styles.features)}>
           <div className="container">
-            <Headline title="clients" icon={FaDownload} offset={0} />
+            <Headline title="...clients" icon={FaDownload} offset={0} />
             <div className={styles.description}>
               <p>
                 autobrr supports a diverse array of torrent clients, including
@@ -101,7 +101,7 @@ function Applications() {
           <div className="container">
             <Headline
               category=""
-              title="and notification agents"
+              title="...and notification agents"
               icon={AiOutlineNotification}
               offset={0}
             />
