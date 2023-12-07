@@ -3,8 +3,9 @@ import clsx from "clsx";
 import Link from "@docusaurus/Link";
 import Headline from "@theme/Headline";
 import styles from "./styles.module.css";
+import mainstyles from "../../pages/index.module.css";
 import { FaDownload } from "react-icons/fa6";
-import { AiFillNotification } from "react-icons/ai";
+import { AiOutlineNotification } from "react-icons/ai";
 import { MdOutlineInstallDesktop } from "react-icons/md";
 
 import { GrIntegration } from "react-icons/gr";
@@ -36,7 +37,10 @@ function Applications() {
   return (
     <>
       {platforms && platforms.length > 0 && (
-        <section id="applications" className={styles.features}>
+        <section
+          id="platforms"
+          className={clsx(styles.features, mainstyles.pattern)}
+        >
           <div className="container">
             <Headline
               category={
@@ -59,7 +63,7 @@ function Applications() {
               </p>
               <p>
                 Experience hassle-free setup and operation on your platform of
-                choice.
+                choice:
               </p>
             </div>
             <div className="row">
@@ -72,7 +76,10 @@ function Applications() {
       )}
 
       {clients && clients.length > 0 && (
-        <section id="applications" className={styles.features}>
+        <section
+          id="clients"
+          className={clsx(styles.features, mainstyles.pattern)}
+        >
           <div className="container">
             <Headline title="clients" icon={FaDownload} offset={0} />
             <div className={styles.description}>
@@ -97,12 +104,15 @@ function Applications() {
       )}
 
       {notificationAgents && notificationAgents.length > 0 && (
-        <section id="notification-agents" className={styles.features}>
+        <section
+          id="notification-agents"
+          className={clsx(styles.features, mainstyles.pattern)}
+        >
           <div className="container">
             <Headline
               category=""
               title="and notification agents"
-              icon={AiFillNotification}
+              icon={AiOutlineNotification}
               offset={0}
             />
             <div className={styles.description}>

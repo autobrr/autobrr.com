@@ -64,6 +64,7 @@
   --ifm-color-primary-lightest: var(--sky-9);
 
   --ifm-background-color: var(--slate-2);
+  --ifm-background-color-alternate: var(--slate-2);
   --ifm-background-surface-color: var(--slate-3);
 
   --ifm-menu-color: black;
@@ -326,6 +327,7 @@ header.hero {
 
 .hero__title {
   margin: 0;
+  color: var(--title-gradient);
 }
 
 .hero-grid-container {

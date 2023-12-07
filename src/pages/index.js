@@ -1,10 +1,10 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import SmoothScroll from "smooth-scroll";
 import clsx from "clsx";
 import Layout from "@theme/Layout";
 import Link from "@docusaurus/Link";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import { useColorMode } from "@docusaurus/theme-common";
-import { useEffect } from "react";
 
 import styles from "./index.module.css";
 import logo from "../../static/img/logo.png";
@@ -34,12 +34,42 @@ const Center = ({ icon, text }) => (
   </div>
 );
 
+let scroll = new SmoothScroll('a[href*="#"]');
+const smoothScrollTo = (sectionId, offset = 0) => {
+  const target = document.getElementById(sectionId);
+  if (target) {
+    const targetOffsetTop = target.offsetTop + offset;
+    scroll.animateScroll(targetOffsetTop);
+  }
+};
+
+const ScrollToTopButton = () => {
+  return (
+    <button
+      className={styles.scrollToTopButton}
+      onClick={() => smoothScrollToTop()}
+    >
+      ↑ Top
+    </button>
+  );
+};
+
+const smoothScrollToTop = () => {
+  scroll.animateScroll(0);
+};
+
 function HomepageHeader() {
   const { siteConfig } = useDocusaurusContext();
   const { colorMode } = useColorMode();
 
   return (
-    <header className={clsx("hero hero--secondary", styles.heroBanner)}>
+    <header
+      className={clsx(
+        "hero hero--secondary",
+        styles.heroBanner,
+        styles.pattern
+      )}
+    >
       <div className="container">
         <img
           src={logo}
@@ -77,10 +107,11 @@ function HomepageHeader() {
               "button button--secondary button--lg",
               styles.button
             )}
-            to="/introduction"
+            onClick={() => smoothScrollTo("introduction", -30)}
           >
-            Introduction
+            Tell me more
           </Link>
+
           <Link
             className={clsx("button button--primary button--lg", styles.button)}
             to="/installation/linux"
@@ -117,11 +148,12 @@ export default function Home() {
     >
       <HomepageHeader />
       <main className={styles.main}>
-        <Introduction />
+        <Introduction id="introduction" />
         <Applications />
         <About />
         <Resources />
       </main>
+      <ScrollToTopButton />
     </Layout>
   );
 }

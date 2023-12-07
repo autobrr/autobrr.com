@@ -6,7 +6,7 @@
  */
 
  .features {
-  background-color: var(--ifm-background-color);
+  background-color: var(--ifm-background-color-alternate);
   }
   .applications {
       @media (max-width: 996px) {
@@ -43,11 +43,13 @@
     height: 48px;
     display: flex;
     margin-right:8px;
+    opacity: 0.9;
     transition: all 0.2s ease-in-out;
   }
 
   .applicationLinkContent:hover svg {
-    filter: saturate(1.5);
+    filter: saturate(1.2);
+    opacity: 1;
     transition: all 0.2s ease-in-out;
   }
 
@@ -58,6 +60,7 @@
   }
 
   .description {
+    max-width: 996px;
     font-size: 18px;
     font-weight: 450;
     padding-right: 40px;

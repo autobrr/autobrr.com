@@ -9,24 +9,12 @@ import {
   FaReact,
 } from "react-icons/fa";
 import { FiCoffee, FiMap, FiUserPlus } from "react-icons/fi";
-import { MdOutlineLightMode, MdOutlineIrc } from "react-icons/md";
+import clsx from "clsx";
 import styles from "./styles.module.css";
+import mainstyles from "../../pages/index.module.css";
 import Link from "@docusaurus/Link";
 
 const data = [
-  {
-    title: "What is autobrr",
-    icon: <FaRegQuestionCircle className="question-icon" />,
-    link: "/introduction#what-is-autobrr",
-    isExternal: false,
-    description: (
-      <>
-        autobrr redefines download automation for torrents and Usenet,
-        integrating the best features of trackarr, autodl-irssi, and flexget
-        into a single, versatile tool.
-      </>
-    ),
-  },
   {
     title: "Key Features",
     icon: <FiMap className="question-icon" />,
@@ -61,18 +49,6 @@ const data = [
       <>
         The autobrr interface is designed for ease of use, offering both dark
         and light themes for a comfortable user experience.
-      </>
-    ),
-  },
-  {
-    title: "Comprehensive Documentation",
-    icon: <FaBookReader className="question-icon" />,
-    link: "/introduction",
-    isExternal: false,
-    description: (
-      <>
-        Extensive documentation is available, providing users with all the
-        necessary information for making the most out of autobrr's capabilities.
       </>
     ),
   },
@@ -127,7 +103,7 @@ const Question = ({ title, description, icon, link, isExternal }) => {
 
 function About() {
   return (
-    <section id="faq" className={styles.faq}>
+    <section id="faq" className={clsx(styles.faq, mainstyles.pattern)}>
       <div className="container">
         <div className="row">
           <div className="col col--6">

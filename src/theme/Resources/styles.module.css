@@ -1,11 +1,11 @@
 .resources {
-    background-color: var(--ifm-background-color);
+    background-color: var(--ifm-background-color-alternate);
   }
 
   .resource {
     display: flex !important;
     flex-direction: column;
-    color: var(--ifm-resources-title-color);
+    color: var(--ifm-question-title-color);
 
     a {
       color: unset;
