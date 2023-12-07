@@ -34,33 +34,33 @@ const Center = ({ icon, text }) => (
   </div>
 );
 
-let scroll = new SmoothScroll('a[href*="#"]');
-const smoothScrollTo = (sectionId, offset = 0) => {
-  const target = document.getElementById(sectionId);
-  if (target) {
-    const targetOffsetTop = target.offsetTop + offset;
-    scroll.animateScroll(targetOffsetTop);
-  }
-};
-
-const ScrollToTopButton = () => {
-  return (
-    <button
-      className={styles.scrollToTopButton}
-      onClick={() => smoothScrollToTop()}
-    >
-      ↑ Top
-    </button>
-  );
-};
-
-const smoothScrollToTop = () => {
-  scroll.animateScroll(0);
-};
-
 function HomepageHeader() {
   const { siteConfig } = useDocusaurusContext();
   const { colorMode } = useColorMode();
+
+  let scroll = new SmoothScroll('a[href*="#"]');
+  const smoothScrollTo = (sectionId, offset = 0) => {
+    const target = document.getElementById(sectionId);
+    if (target) {
+      const targetOffsetTop = target.offsetTop + offset;
+      scroll.animateScroll(targetOffsetTop);
+    }
+  };
+
+  const ScrollToTopButton = () => {
+    return (
+      <button
+        className={styles.scrollToTopButton}
+        onClick={() => smoothScrollToTop()}
+      >
+        ↑ Top
+      </button>
+    );
+  };
+
+  const smoothScrollToTop = () => {
+    scroll.animateScroll(0);
+  };
 
   return (
     <header
