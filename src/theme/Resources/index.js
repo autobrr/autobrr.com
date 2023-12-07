@@ -5,8 +5,8 @@ import { FaQuestion, FaDiscord } from "react-icons/fa";
 import { FiBook, FiGithub } from "react-icons/fi";
 
 import Headline from "@theme/Headline";
-import styles from "./styles.module.css";
-import mainstyles from "../../pages/index.module.css"
+import styles from "./styles.module.scss";
+import mainstyles from "../../pages/index.module.css";
 
 const size = 48;
 const data = [
@@ -78,7 +78,10 @@ function Resources() {
   return (
     <>
       {data && data.length > 0 && (
-        <section id="resouces" className={clsx(styles.resources, mainstyles.pattern)}>
+        <section
+          id="resouces"
+          className={clsx(styles.resources, mainstyles.pattern)}
+        >
           <div className="container">
             <Headline
               category="Resources"

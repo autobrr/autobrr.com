@@ -98,21 +98,6 @@ const config = {
         return webpackConfig;
       },
     },
-    prism: {
-      lightTheme: lightTheme,
-      darkTheme: darkTheme,
-      additionalLanguages: [
-        "bash",
-        "systemd",
-        "nginx",
-        "toml",
-        "docker",
-        "diff",
-        "json",
-        "compose",
-        "nginx",
-      ],
-    },
     image: "img/autobrr.png",
     docs: {
       sidebar: {
@@ -168,6 +153,7 @@ const config = {
   },
 
   plugins: [
+    "docusaurus-plugin-sass",
     function preloadFontPlugin(_context, _options) {
       return {
         name: "preload-font-plugin",
@@ -176,7 +162,6 @@ const config = {
         },
       };
     },
-    // ...
   ],
 };
 

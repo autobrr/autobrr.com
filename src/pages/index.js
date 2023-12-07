@@ -5,7 +5,7 @@ import Link from "@docusaurus/Link";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import { useColorMode } from "@docusaurus/theme-common";
 
-import styles from "./index.module.css";
+import styles from "./index.module.scss";
 import logo from "../../static/img/logo.png";
 import FrontPicDark from "../../static/img/front-dark.png";
 import FrontPicLight from "../../static/img/front-light.png";
@@ -137,8 +137,8 @@ export default function Home() {
       title={`${siteConfig.title}`}
       description="the modern autodl-irssi replacement"
     >
-      <HomepageHeader />
       <main className={styles.main}>
+        <HomepageHeader />
         <Introduction id="introduction" />
         <Applications />
         <About />

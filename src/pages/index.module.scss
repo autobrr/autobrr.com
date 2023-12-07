@@ -19,11 +19,23 @@
 }
 
 .main {
-  section {
-    padding: 3rem 0;
+  padding: 2rem;
 
-    @media screen and (max-width: 996px) {
-      padding: 2.5rem 0;
+  section {
+    background-color: blue;
+    padding: 1rem;
+
+    &:hover {
+      background-color: lightblue;
+    }
+  }
+
+  .button {
+    background-color: green;
+    color: white;
+
+    &:hover {
+      background-color: darkgreen;
     }
   }
 }
@@ -46,22 +58,6 @@
   width: 95%;
   height: auto;
   max-width: 1440px;
-}
-
-.scrollToTopButton {
-  background-color: var(--ifm-background-color-alternate);
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  padding: 10px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  z-index: 1000; /* Ensure it's above other elements */
-}
-
-.scrollToTopButton:hover {
-  background-color: var(--ifm-background-color);
 }
 
 .pattern {

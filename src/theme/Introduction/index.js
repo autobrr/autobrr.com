@@ -3,7 +3,7 @@ import clsx from "clsx";
 import Link from "@docusaurus/Link";
 import { FaBookReader } from "react-icons/fa";
 import Headline from "@theme/Headline";
-import styles from "./styles.module.css";
+import styles from "./styles.module.scss";
 import mainstyles from "../../pages/index.module.css";
 import { GiDeadWood } from "react-icons/gi";
 

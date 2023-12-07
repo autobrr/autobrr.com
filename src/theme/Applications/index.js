@@ -2,7 +2,7 @@ import React from "react";
 import clsx from "clsx";
 import Link from "@docusaurus/Link";
 import Headline from "@theme/Headline";
-import styles from "./styles.module.css";
+import styles from "./styles.module.scss";
 import mainstyles from "../../pages/index.module.css";
 import { FaDownload } from "react-icons/fa6";
 import { AiOutlineNotification } from "react-icons/ai";
