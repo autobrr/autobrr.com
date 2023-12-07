@@ -6,6 +6,7 @@ import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import { useColorMode } from "@docusaurus/theme-common";
 
 import styles from "./index.module.scss";
+import stylepattern from "./pattern.module.css";
 import logo from "../../static/img/logo.png";
 import FrontPicDark from "../../static/img/front-dark.png";
 import FrontPicLight from "../../static/img/front-light.png";
@@ -39,7 +40,6 @@ function HomepageHeader() {
   const [scroll, setScroll] = useState(null);
 
   useEffect(() => {
-    // Dynamically import the SmoothScroll library to ensure it's only used client-side
     import("smooth-scroll").then((SmoothScroll) => {
       setScroll(new SmoothScroll.default('a[href*="#"]'));
     });
@@ -54,14 +54,8 @@ function HomepageHeader() {
   };
 
   return (
-    <header
-      className={clsx(
-        "hero hero--secondary",
-        styles.heroBanner,
-        styles.pattern
-      )}
-    >
-      <div className="container">
+    <header className={clsx("hero hero--secondary", styles.heroBanner)}>
+      <div>
         <img
           src={logo}
           alt="Logo"
@@ -98,7 +92,7 @@ function HomepageHeader() {
               "button button--secondary button--lg",
               styles.button
             )}
-            onClick={() => smoothScrollTo("introduction", -30)}
+            onClick={() => smoothScrollTo("introduction", -70)}
           >
             Tell me more
           </Link>
@@ -137,7 +131,9 @@ export default function Home() {
       title={`${siteConfig.title}`}
       description="the modern autodl-irssi replacement"
     >
-      <main className={styles.main}>
+      <main
+        className={clsx(styles.container, styles.main, stylepattern.pattern)}
+      >
         <HomepageHeader />
         <Introduction id="introduction" />
         <Applications />

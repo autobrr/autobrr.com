@@ -5,9 +5,6 @@
  * and scoped locally.
  */
 
-.features {
-  background-color: var(--ifm-background-color-alternate);
-}
 .applications {
   @media (max-width: 996px) {
     --ifm-col-width: 50% !important;

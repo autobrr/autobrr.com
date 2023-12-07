@@ -3,7 +3,6 @@ import clsx from "clsx";
 import Link from "@docusaurus/Link";
 import Headline from "@theme/Headline";
 import styles from "./styles.module.scss";
-import mainstyles from "../../pages/index.module.css";
 import { FaDownload } from "react-icons/fa6";
 import { AiOutlineNotification } from "react-icons/ai";
 import { MdOutlineInstallDesktop } from "react-icons/md";
@@ -37,10 +36,7 @@ function Applications() {
   return (
     <>
       {platforms && platforms.length > 0 && (
-        <section
-          id="platforms"
-          className={clsx(styles.features, mainstyles.pattern)}
-        >
+        <section id="platforms" className={clsx(styles.features)}>
           <div className="container">
             <Headline
               category={
@@ -76,10 +72,7 @@ function Applications() {
       )}
 
       {clients && clients.length > 0 && (
-        <section
-          id="clients"
-          className={clsx(styles.features, mainstyles.pattern)}
-        >
+        <section id="clients" className={clsx(styles.features)}>
           <div className="container">
             <Headline title="clients" icon={FaDownload} offset={0} />
             <div className={styles.description}>
@@ -104,10 +97,7 @@ function Applications() {
       )}
 
       {notificationAgents && notificationAgents.length > 0 && (
-        <section
-          id="notification-agents"
-          className={clsx(styles.features, mainstyles.pattern)}
-        >
+        <section id="notification-agents" className={clsx(styles.features)}>
           <div className="container">
             <Headline
               category=""

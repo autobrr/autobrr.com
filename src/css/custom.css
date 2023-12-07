@@ -397,3 +397,7 @@ ul {
 .badge {
   margin-bottom: 8px;
 }
+
+.alternate-background {
+  background-color: var(--ifm-background-color-alternate);
+}

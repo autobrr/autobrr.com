@@ -4,7 +4,8 @@ import Link from "@docusaurus/Link";
 import { FaBookReader } from "react-icons/fa";
 import Headline from "@theme/Headline";
 import styles from "./styles.module.scss";
-import mainstyles from "../../pages/index.module.css";
+import mainstyles from "../../pages/index.module.scss";
+import stylepattern from "../../pages/pattern.module.css";
 import { GiDeadWood } from "react-icons/gi";
 
 function Introduction() {
@@ -12,7 +13,11 @@ function Introduction() {
     <>
       <section
         id="introduction"
-        className={clsx(styles.features, mainstyles.pattern)}
+        className={clsx(
+          stylepattern.pattern,
+          styles.features,
+          mainstyles.pattern
+        )}
       >
         <div className="container">
           <Headline

@@ -94,7 +94,7 @@ export const clients = [
 export const notificationAgents = [
   {
     title: "LunaSea",
-    url: "configuration/download-clients/dedicated#qbittorrent",
+    url: "configuration/notifications#lunasea",
     icon: LunaSeaIcon,
   },
   {
@@ -137,22 +137,22 @@ export const platforms = [
   },
   {
     title: "Docker",
-    url: "configuration/download-clients/dedicated#qbittorrent",
+    url: "installation/docker",
     icon: DockerIcon,
   },
   {
     title: "Linux",
-    url: "configuration/download-clients/dedicated#qbittorrent",
+    url: "installation/linux",
     icon: LinuxIcon,
   },
   {
     title: "Windows",
-    url: "configuration/download-clients/dedicated#qbittorrent",
+    url: "installation/windows",
     icon: WindowsIcon,
   },
   {
     title: "MacOS",
-    url: "configuration/download-clients/dedicated#qbittorrent",
+    url: "installation/linux",
     icon: MacOSIcon,
   },
 ];

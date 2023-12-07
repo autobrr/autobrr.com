@@ -1,18 +1,11 @@
 import React from "react";
-import {
-  FaDownload,
-  FaQuestion,
-  FaCoffee,
-  FaTools,
-  FaRegQuestionCircle,
-  FaBookReader,
-  FaReact,
-} from "react-icons/fa";
+import { FaReact } from "react-icons/fa";
 import { FiCoffee, FiMap, FiUserPlus } from "react-icons/fi";
 import clsx from "clsx";
-import styles from "./styles.module.css";
-import mainstyles from "../../pages/index.module.css";
+import styles from "./styles.module.scss";
 import Link from "@docusaurus/Link";
+import Headline from "@theme/Headline";
+import { FaQuoteLeft } from "react-icons/fa";
 
 const data = [
   {
@@ -103,8 +96,9 @@ const Question = ({ title, description, icon, link, isExternal }) => {
 
 function About() {
   return (
-    <section id="faq" className={clsx(styles.faq, mainstyles.pattern)}>
+    <section id="faq" className={clsx(styles.faq)}>
       <div className="container">
+        <Headline title="about" icon={FaQuoteLeft} offset={0} />
         <div className="row">
           <div className="col col--6">
             {data[0] && <Question {...data[0]} />}

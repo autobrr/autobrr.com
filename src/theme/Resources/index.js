@@ -3,10 +3,11 @@ import clsx from "clsx";
 import Link from "@docusaurus/Link";
 import { FaQuestion, FaDiscord } from "react-icons/fa";
 import { FiBook, FiGithub } from "react-icons/fi";
+import { GrResources } from "react-icons/gr";
 
 import Headline from "@theme/Headline";
 import styles from "./styles.module.scss";
-import mainstyles from "../../pages/index.module.css";
+import mainstyles from "../../pages/index.module.scss";
 
 const size = 48;
 const data = [
@@ -84,8 +85,16 @@ function Resources() {
         >
           <div className="container">
             <Headline
-              category="Resources"
-              title="Browse our resources"
+              category={
+                <>
+                  <GrResources
+                    style={{ fontSize: "24px", paddingRight: "10px" }}
+                  />
+                  Resources
+                </>
+              }
+              title="check out our community and resources"
+              icon={GrResources}
               offset={0}
             />
 
