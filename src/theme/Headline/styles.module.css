@@ -11,13 +11,13 @@
   color: var(--ifm-resources-title-color);
 }
 
-
 .title {
   max-width: 900px;
   font-size: 2rem;
   line-height: initial;
   word-spacing: -0.25rem;
   background: var(--title-gradient);
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 
@@ -28,10 +28,10 @@
   @media screen and (min-width: 576px) {
     font-size: 2.8rem;
   }
- }
+}
 
- .icon {
+.icon {
   font-size: 2rem; /* Adjust the size as needed */
   margin-left: 0.5rem; /* Add some space between the title and the icon */
   color: var(--ifm-resources-title-color); /* Match the color with the title */
- }
+}

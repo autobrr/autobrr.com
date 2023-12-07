@@ -5,33 +5,33 @@
  * and scoped locally.
  */
 
-  .introduction {
-      @media (max-width: 996px) {
-          --ifm-col-width: 50% !important;
-          flex-basis: var(--ifm-col-width);
-          margin-left: 0;
-          margin-top: 10px;
-          max-width: var(--ifm-col-width);
-      }
+.introduction {
+  @media (max-width: 996px) {
+    --ifm-col-width: 50% !important;
+    flex-basis: var(--ifm-col-width);
+    margin-left: 0;
+    margin-top: 10px;
+    max-width: var(--ifm-col-width);
   }
+}
 
-  .button {
-    display: inline-flex;
-    align-items: center;
-    margin: 3rem 0 3rem;
-  }
+.button {
+  display: inline-flex;
+  align-items: center;
+  margin: 3rem 0 3rem;
+}
 
-  .features {
-    background-color: var(--ifm-background-color-alternate);
-  }
+.features {
+  background-color: var(--ifm-background-color-alternate);
+}
 
-  .description {
-    font-size: 18px;
-    font-weight: 450;
-    padding-right: 40px;
-    padding-bottom: 20px;
- }
+.description {
+  font-size: 18px;
+  font-weight: 450;
+  padding-right: 40px;
+  padding-bottom: 20px;
+}
 
- .description p {
+.description p {
   margin-bottom: 0.5rem;
 }

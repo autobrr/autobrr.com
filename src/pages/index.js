@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import SmoothScroll from "smooth-scroll";
 import clsx from "clsx";
 import Layout from "@theme/Layout";
 import Link from "@docusaurus/Link";
@@ -37,29 +36,21 @@ const Center = ({ icon, text }) => (
 function HomepageHeader() {
   const { siteConfig } = useDocusaurusContext();
   const { colorMode } = useColorMode();
+  const [scroll, setScroll] = useState(null);
 
-  let scroll = new SmoothScroll('a[href*="#"]');
+  useEffect(() => {
+    // Dynamically import the SmoothScroll library to ensure it's only used client-side
+    import("smooth-scroll").then((SmoothScroll) => {
+      setScroll(new SmoothScroll.default('a[href*="#"]'));
+    });
+  }, []);
+
   const smoothScrollTo = (sectionId, offset = 0) => {
     const target = document.getElementById(sectionId);
-    if (target) {
+    if (target && scroll) {
       const targetOffsetTop = target.offsetTop + offset;
       scroll.animateScroll(targetOffsetTop);
     }
-  };
-
-  const ScrollToTopButton = () => {
-    return (
-      <button
-        className={styles.scrollToTopButton}
-        onClick={() => smoothScrollToTop()}
-      >
-        ↑ Top
-      </button>
-    );
-  };
-
-  const smoothScrollToTop = () => {
-    scroll.animateScroll(0);
   };
 
   return (
@@ -132,8 +123,8 @@ function HomepageHeader() {
 export default function Home() {
   const { siteConfig } = useDocusaurusContext();
 
-  // Preloading the images here
   useEffect(() => {
+    // Preloading the images here
     const darkImage = new Image();
     darkImage.src = FrontPicDark;
 
@@ -153,7 +144,6 @@ export default function Home() {
         <About />
         <Resources />
       </main>
-      <ScrollToTopButton />
     </Layout>
   );
 }

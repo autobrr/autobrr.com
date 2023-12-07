@@ -5,68 +5,68 @@
  * and scoped locally.
  */
 
- .features {
+.features {
   background-color: var(--ifm-background-color-alternate);
+}
+.applications {
+  @media (max-width: 996px) {
+    --ifm-col-width: 50% !important;
+    flex-basis: var(--ifm-col-width);
+    margin-left: 0;
+    max-width: var(--ifm-col-width);
   }
-  .applications {
-      @media (max-width: 996px) {
-          --ifm-col-width: 50% !important;
-          flex-basis: var(--ifm-col-width);
-          margin-left: 0;
-          max-width: var(--ifm-col-width);
-      }
-  }
+}
 
-  .applicationLinkContent {
-    padding-top: 8px;
-    padding-bottom: 8px;
-  }
+.applicationLinkContent {
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
 
-  .applicationLink {
-    display: flex;
-    align-items: center;
-    justify-content: left;
-  }
+.applicationLink {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+}
 
-  .applicationLink {
-    text-decoration: none;
-  }
+.applicationLink {
+  text-decoration: none;
+}
 
-  .applicationLink:hover {
-    text-decoration: none;
-  }
+.applicationLink:hover {
+  text-decoration: none;
+}
 
-  .applicationLinkContent svg {
-    width: 48px;
-    display: flex;
-    align-items: center;
-    height: 48px;
-    display: flex;
-    margin-right:8px;
-    opacity: 0.9;
-    transition: all 0.2s ease-in-out;
-  }
+.applicationLinkContent svg {
+  width: 48px;
+  display: flex;
+  align-items: center;
+  height: 48px;
+  display: flex;
+  margin-right: 8px;
+  opacity: 0.9;
+  transition: all 0.2s ease-in-out;
+}
 
-  .applicationLinkContent:hover svg {
-    filter: saturate(1.2);
-    opacity: 1;
-    transition: all 0.2s ease-in-out;
-  }
+.applicationLinkContent:hover svg {
+  filter: saturate(1.2);
+  opacity: 1;
+  transition: all 0.2s ease-in-out;
+}
 
-  .button {
-    display: inline-flex;
-    align-items: center;
-    margin: 3rem 0 3rem;
-  }
+.button {
+  display: inline-flex;
+  align-items: center;
+  margin: 3rem 0 3rem;
+}
 
-  .description {
-    max-width: 996px;
-    font-size: 18px;
-    font-weight: 450;
-    padding-right: 40px;
-    padding-bottom: 20px;
- }
+.description {
+  max-width: 996px;
+  font-size: 18px;
+  font-weight: 450;
+  padding-right: 40px;
+  padding-bottom: 20px;
+}
 
- .description p {
+.description p {
   margin-bottom: 0.5rem;
 }
