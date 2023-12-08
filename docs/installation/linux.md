@@ -24,7 +24,6 @@ pagination_next: configuration/indexers
 
 import { FaDocker } from 'react-icons/fa';
 import { FaWindows } from 'react-icons/fa';
-import { SiPostgresql } from 'react-icons/si';
 
 Welcome to the autobrr installation walkthrough!
 Follow these steps and we will have you up and running in no time.
@@ -134,3 +133,25 @@ Please see the **Reverse proxy** section for reverse proxy configuration example
 ## Finishing up
 
 Now that autobrr is up and running, you should be able to visit the your web UI at `http://YOUR_IP:7474` or `http://domain.ltd:7474` and proceed with your registration/login.
+
+## Version Updates
+
+To upgrade Autobrr to the latest version first stop the service (if you have configured it):
+
+```bash
+sudo systemctl stop autobrr@USERNAME.service
+```
+
+Download the latest release:
+
+```bash
+wget $(curl -s https://api.github.com/repos/autobrr/autobrr/releases/latest | grep download | grep linux_x86_64 | cut -d\" -f4)
+```
+
+And finally unpack the release:
+
+```bash
+sudo tar -C /usr/local/bin -xzf autobrr*.tar.gz
+```
+
+This will overwrite both `autobrr` and `autobrrctl` in `/usr/local/bin`.

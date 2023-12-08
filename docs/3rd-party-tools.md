@@ -23,7 +23,7 @@ With this setup you can utilize autobrr with [cross-seed](https://github.com/cro
 You can install cross-seed in several ways. Docker is recommended, but installing via npm or yarn (requires node 16 or greater) is also fine.
 
 In this guide we will install it with npm. This method requires node 16 or greater.
-<https://github.com/nodesource/distributions/blob/master/README.md#using-debian-as-root-3>
+[https://github.com/nodesource/distributions/blob/master/README.md#using-debian-as-root-3](https://github.com/nodesource/distributions/blob/master/README.md#using-debian-as-root-3)
 
 ```bash
 # Elevate to root and install Node.js LTS (v18.x)
@@ -177,20 +177,21 @@ On any filter, you may utilize the external tab as a pre-filter. Using this with
 Coupling this with the extensive filtering built-in to autobrr allows you to specify qualities to stop accepting upgrades at, should you wish. This allows you to replace applications such as Sonarr / Radarr.
 
 On the external Webhook action, utilize the following payload, replacing the host(s), user and password with your configuration. The expected return code is 200.
-* Host:
+
+- Host:
 
 ```
 http://upgraderr:6940/api/upgrade
 ```
 
-* Payload:
+- Payload:
 
 ```json
 {
-    "host": "http://qbittorrent:8080",
-    "user": "username",
-    "password": "password",
-    "name": "{{ .TorrentName | js }}"
+  "host": "http://qbittorrent:8080",
+  "user": "username",
+  "password": "password",
+  "name": "{{ .TorrentName | js }}"
 }
 ```
 
@@ -199,40 +200,42 @@ http://upgraderr:6940/api/upgrade
 At the time of this writing, Upgraderr has excellent cross-seed functionality that runs in milliseconds. Presently there's a partial matcher implemented, where if 80% of the data matches the existing torrent, the new torrent will have the conflicting files (should they exist) renamed, to not corrupt the existing torrent.
 
 On the external Webhook action, utilize the following payload, replacing the host(s), user and password with your configuration. The expected return code is 250.
-* Host:
+
+- Host:
 
 ```
 http://upgraderr:6940/api/upgrade
 ```
 
-* Payload:
+- Payload:
 
 ```json
 {
-    "host": "http://qbittorrent:8080",
-    "user": "username",
-    "password": "password",
-    "name": "{{ .TorrentName | js }}"
+  "host": "http://qbittorrent:8080",
+  "user": "username",
+  "password": "password",
+  "name": "{{ .TorrentName | js }}"
 }
 ```
 
 Once the pre-hook succeeds, create a Webhook action, replacing the same variables as before.
-* Host:
+
+- Host:
 
 ```
-http://upgraderr:6940/api/upgrade
+http://upgraderr:6940/api/cross
 ```
 
-* Payload:
+- Payload:
 
 ```json
 {
-    "host": "http://qbittorrent:8080",
-    "user": "username",
-    "password": "password",
-    "name": "{{ .TorrentName | js }}",
-    "hash": "{{ .TorrentHash }}",
-    "torrent": "{{ .TorrentDataRawBytes | js }}"
+  "host": "http://qbittorrent:8080",
+  "user": "username",
+  "password": "password",
+  "name": "{{ .TorrentName | js }}",
+  "hash": "{{ .TorrentHash }}",
+  "torrent": "{{ .TorrentDataRawBytes | js }}"
 }
 ```
 

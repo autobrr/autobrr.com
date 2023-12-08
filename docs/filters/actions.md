@@ -144,7 +144,7 @@ By default if you only put the folder like `/home/USER/watch/` it will use the t
 
 Watch dir can take additional variables to dynamically build the name. If you want to change this and for example get the release name, you can do the following:
 
-    /home/user/torrent/torrent-backup/{{.Indexer}}-{{.TorrentName}}.torrent
+    `/home/user/torrent/torrent-backup/{{.Indexer}}-{{.TorrentName}}.torrent`
 
 If the indexer is called `MockIndexer` and the release `Some.Release.2022.1080p.BluRay.x264.DTS-GROUP`
 
