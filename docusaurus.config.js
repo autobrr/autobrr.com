@@ -1,11 +1,11 @@
-const prism = require("prism-react-renderer");
+import { themes as _themes } from "prism-react-renderer";
 
-const { themes } = require("prism-react-renderer");
+import { themes } from "prism-react-renderer";
 
 const lightTheme = themes.github;
 const darkTheme = themes.github;
 
-const FontPreloadPlugin = require("webpack-font-preload-plugin");
+import FontPreloadPlugin from "webpack-font-preload-plugin";
 const config = {
   title: "autobrr",
   tagline: "The modern autodl-irssi replacement.",
@@ -146,8 +146,8 @@ const config = {
       defaultMode: "dark",
     },
     prism: {
-      theme: prism.themes.vsLight,
-      darkTheme: prism.themes.oceanicNext,
+      theme: _themes.vsLight,
+      darkTheme: _themes.oceanicNext,
       additionalLanguages: ["systemd", "nginx", "toml", "docker", "bash"],
     },
   },
@@ -165,4 +165,4 @@ const config = {
   ],
 };
 
-module.exports = config;
+export default config;
