@@ -118,7 +118,6 @@ export default function Home() {
   const { siteConfig } = useDocusaurusContext();
 
   useEffect(() => {
-    // Preloading the images here
     const darkImage = new Image();
     darkImage.src = FrontPicDark;
 

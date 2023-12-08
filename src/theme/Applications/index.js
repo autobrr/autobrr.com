@@ -18,7 +18,6 @@ function Application({ title, url, icon: Icon }) {
         <Link className={styles.applicationLink} href={url}>
           <div
             style={{
-              width: "170px",
               display: "flex",
               alignItems: "center",
             }}

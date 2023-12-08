@@ -1,11 +1,12 @@
 import React from "react";
-import { FaReact } from "react-icons/fa";
 import { FiCoffee, FiMap, FiUserPlus } from "react-icons/fi";
+
 import clsx from "clsx";
 import styles from "./styles.module.scss";
 import Link from "@docusaurus/Link";
 import Headline from "@theme/Headline";
 import { FaQuoteLeft } from "react-icons/fa";
+import { FaGolang } from "react-icons/fa6";
 
 const data = [
   {
@@ -47,7 +48,7 @@ const data = [
   },
   {
     title: "Built with Go and React",
-    icon: <FaReact className="question-icon" />,
+    icon: <FaGolang className="question-icon" />,
     link: "https://github.com/autobrr/autobrr",
     isExternal: true,
     description: (
@@ -60,11 +61,11 @@ const data = [
   },
 ];
 
-const Question = ({ title, description, icon, link, isExternal }) => {
+const Question = ({ title, description, icon, link, isExternal, code }) => {
   const Content = (
     <div className={styles.question}>
       <h3 className={styles.title}>
-        {icon} {title}
+        {icon && <div className={styles.card__icon}>{icon}</div>} {title}
       </h3>
       <p>{description}</p>
     </div>

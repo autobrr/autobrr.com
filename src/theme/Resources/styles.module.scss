@@ -21,9 +21,17 @@
   &:hover {
     background-color: var(--slate-2);
     border: 1px solid var(--gold-9);
+
+    .card__icon {
+      filter: saturate(2);
+    }
   }
 }
 
+.card__icon {
+  transition: color 0.3s ease;
+}
+
 .descriptionText {
-  color: var(--ifm-resources-desc-color);
+  color: var(--ifm-font-color-base);
 }

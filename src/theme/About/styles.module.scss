@@ -21,6 +21,10 @@
   border: 1px solid var(--gold-9);
   transition: all 0.3s ease-in-out;
   cursor: pointer;
+
+  .card__icon {
+    filter: saturate(2);
+  }
 }
 
 .questionLink {

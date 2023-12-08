@@ -4,6 +4,7 @@
  * work well for content-centric websites.
  */
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap");
+@import url("https://cdn.jsdelivr.net/npm/fira-code@6.0.0/dist/fira_code.css");
 
 :root {
   transition: color 0.3s ease, background-color 0.3s ease;
@@ -64,7 +65,7 @@
   --ifm-color-primary-lightest: var(--sky-9);
 
   --ifm-background-color: var(--slate-2);
-  --ifm-background-color-alternate: var(--slate-2);
+  --ifm-background-color-alternate: var(--slate-3);
   --ifm-background-surface-color: var(--slate-3);
 
   --ifm-menu-color: black;
@@ -201,9 +202,11 @@ li[class*="theme-doc-sidebar-item-category-level"]
 }
 
 .front-page-pic {
-  border: 2px solid var(--slate-6);
-  border-radius: 12px;
-  box-shadow: var(--front-pic-shadow-color) 0px 4px 40px;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.navbar {
+  background-color: var(--ifm-background-color-alternate);
 }
 
 .navbar__search-input {

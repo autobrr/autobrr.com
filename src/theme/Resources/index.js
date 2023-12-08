@@ -1,7 +1,9 @@
 import React from "react";
 import clsx from "clsx";
 import Link from "@docusaurus/Link";
-import { FaQuestion, FaDiscord } from "react-icons/fa";
+import SyntaxHighlighter from "../SyntaxHighligter/SyntaxHighligter";
+import { useColorMode } from "@docusaurus/theme-common";
+import { FaQuestion, FaDiscord, FaUserFriends } from "react-icons/fa";
 import { FiBook, FiGithub } from "react-icons/fi";
 import { GrResources } from "react-icons/gr";
 
@@ -57,21 +59,41 @@ const data = [
         documentation, your help is appreciated.
       </>
     ),
+    code: `package main
+
+import "fmt"
+
+func encourageContributions() {
+    fmt.Println("🚀 Welcome contributions!")
+}
+
+func main() {
+    encourageContributions()
+}`,
+    language: "go",
   },
 ];
 
 export default Resources;
 
-function Resource({ href, icon, title, description }) {
+function Resource({ href, icon, title, description, code, language }) {
+  const { colorMode } = useColorMode();
   return (
     <Link className={clsx("card", styles.card)} to={href}>
       <div className="card__header">
-        {icon && <div className="card__icon">{icon}</div>}
+        {icon && <div className={styles.card__icon}>{icon}</div>}
         {title && <h3>{title}</h3>}
       </div>
       {description && (
         <div className="card__body">
           <p className={styles.descriptionText}>{description}</p>
+          {code && (
+            <SyntaxHighlighter
+              code={code}
+              colorMode={colorMode}
+              language={language}
+            />
+          )}
         </div>
       )}
     </Link>
@@ -96,8 +118,8 @@ function Resources() {
                   Resources
                 </>
               }
-              title="check out our community and resources"
-              icon={GrResources}
+              title="explore & engage"
+              icon={FaUserFriends}
               offset={0}
             />
 
