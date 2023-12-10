@@ -1,32 +1,31 @@
 import React from "react";
+
 import clsx from "clsx";
-import Link from "@docusaurus/Link";
-import Headline from "@theme/Headline";
-import styles from "./styles.module.scss";
-import { FaDownload } from "react-icons/fa6";
 import { AiOutlineNotification } from "react-icons/ai";
+import { FaDownload } from "react-icons/fa6";
+import { GrIntegration } from "react-icons/gr";
 import { MdOutlineInstallDesktop } from "react-icons/md";
 
-import { GrIntegration } from "react-icons/gr";
+import Link from "@docusaurus/Link";
+import Headline from "@theme/Headline";
 
 import { clients, notificationAgents, platforms } from "./consts";
+import styles from "./styles.module.scss";
 
 function Application({ title, url, icon: Icon }) {
   return (
     <div className={clsx("col col--2", styles.feature, styles.applications)}>
-      <div className={styles.applicationLinkContent}>
-        <Link className={styles.applicationLink} href={url}>
-          <div
-            style={{
-              display: "flex",
-              alignItems: "center",
-            }}
-          >
-            {Icon && <Icon />}
-            <span>{title}</span>
-          </div>
-        </Link>
-      </div>
+      <Link className={styles.applicationLink} href={url}>
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+          }}
+        >
+          {Icon && <Icon />}
+          <span>{title}</span>
+        </div>
+      </Link>
     </div>
   );
 }
@@ -62,8 +61,8 @@ function Applications() {
               </p>
             </div>
             <div className="row">
-              {platforms.map((props, idx) => (
-                <Application key={idx} {...props} />
+              {platforms.map((props) => (
+                <Application key={props.id} {...props} />
               ))}
             </div>
           </div>

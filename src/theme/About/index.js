@@ -1,12 +1,14 @@
 import React from "react";
-import { FiCoffee, FiMap, FiUserPlus } from "react-icons/fi";
 
 import clsx from "clsx";
-import styles from "./styles.module.scss";
-import Link from "@docusaurus/Link";
-import Headline from "@theme/Headline";
 import { FaQuoteLeft } from "react-icons/fa";
 import { FaGolang } from "react-icons/fa6";
+import { FiCoffee, FiMap, FiUserPlus } from "react-icons/fi";
+
+import Link from "@docusaurus/Link";
+import Headline from "@theme/Headline";
+
+import styles from "./styles.module.scss";
 
 const data = [
   {
@@ -61,7 +63,7 @@ const data = [
   },
 ];
 
-const Question = ({ title, description, icon, link, isExternal, code }) => {
+const Question = ({ title, description, icon, link, isExternal }) => {
   const Content = (
     <div className={styles.question}>
       <h3 className={styles.title}>

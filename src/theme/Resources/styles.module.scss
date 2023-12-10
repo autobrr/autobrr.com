@@ -18,6 +18,10 @@
   transition: all 0.3s ease;
   margin-bottom: 2rem;
 
+  .card__icon {
+    transition: all 0.3s ease;
+  }
+
   &:hover {
     background-color: var(--slate-2);
     border: 1px solid var(--gold-9);
@@ -26,10 +30,6 @@
       filter: saturate(2);
     }
   }
-}
-
-.card__icon {
-  transition: color 0.3s ease;
 }
 
 .descriptionText {

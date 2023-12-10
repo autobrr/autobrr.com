@@ -1,11 +1,21 @@
 .question {
   margin-bottom: 3rem;
-
   padding: 1rem;
   border: 1px solid var(--gold-8);
   border-radius: var(--ifm-pagination-nav-border-radius);
   transition: all 0.3s ease;
   min-height: 170px;
+
+  &:hover {
+    background-color: var(--slate-2);
+    border: 1px solid var(--gold-9);
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+
+    .card__icon {
+      filter: saturate(2);
+    }
+  }
 
   .title {
     color: var(--gold-11);
@@ -16,31 +26,16 @@
   }
 }
 
-.question:hover {
-  background-color: var(--slate-2);
-  border: 1px solid var(--gold-9);
-  transition: all 0.3s ease-in-out;
-  cursor: pointer;
-
-  .card__icon {
-    filter: saturate(2);
-  }
-}
-
 .questionLink {
   display: block;
   text-decoration: none;
   color: inherit;
   border: none;
-}
 
-.questionLink:hover,
-.questionLink:focus {
-  text-decoration: none;
-  color: inherit;
-  cursor: pointer;
-}
-
-:global(.question-icon) {
-  font-size: 18px;
+  &:hover,
+  &:focus {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+  }
 }

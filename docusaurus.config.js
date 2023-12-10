@@ -1,11 +1,6 @@
-import { themes as _themes } from "prism-react-renderer";
-
 import { themes } from "prism-react-renderer";
-
-const lightTheme = themes.github;
-const darkTheme = themes.github;
-
 import FontPreloadPlugin from "webpack-font-preload-plugin";
+
 const config = {
   title: "autobrr",
   tagline: "The modern autodl-irssi replacement.",
@@ -123,16 +118,16 @@ const config = {
           activeBaseRegex:
             "/(introduction|installation|configuration|filters|usage)",
         },
-        {
-          to: "release-notes",
-          label: "Release Notes",
-          position: "left",
-        },
         //{
         //  type: "docsVersionDropdown", // disabling until its of use
         //  position: "left",
         //  dropdownActiveClassDisabled: false,
         //},
+        {
+          to: "release-notes",
+          label: "Release Notes",
+          position: "left",
+        },
         {
           href: "https://discord.gg/WQ2eUycxyT",
           position: "right",
@@ -155,8 +150,8 @@ const config = {
       defaultMode: "dark",
     },
     prism: {
-      theme: _themes.vsLight,
-      darkTheme: _themes.oceanicNext,
+      theme: themes.vsLight,
+      darkTheme: themes.oceanicNext,
       additionalLanguages: ["systemd", "nginx", "toml", "docker", "bash"],
     },
   },

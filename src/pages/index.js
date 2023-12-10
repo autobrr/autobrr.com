@@ -1,31 +1,31 @@
 import React, { useEffect, useState } from "react";
+
 import clsx from "clsx";
-import Layout from "@theme/Layout";
-import Link from "@docusaurus/Link";
-import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
-import { useColorMode } from "@docusaurus/theme-common";
-
-import styles from "./index.module.scss";
-import stylepattern from "./pattern.module.css";
-import logo from "../../static/img/logo.png";
-import FrontPicDark from "../../static/img/front-dark.png";
-import FrontPicLight from "../../static/img/front-light.png";
-
-import { FiFeather } from "react-icons/fi";
 import {
+  AiOutlineDownload,
   AiOutlineFilter,
   AiOutlineMobile,
-  AiOutlineDownload,
 } from "react-icons/ai";
-import { MdDynamicFeed, MdOutlineNotificationsActive } from "react-icons/md";
+import { BiNews, BiRss } from "react-icons/bi";
 import { CgPlug } from "react-icons/cg";
-import { BiRss, BiNews } from "react-icons/bi";
+import { FiFeather } from "react-icons/fi";
 import { IoMagnetSharp } from "react-icons/io5";
+import { MdDynamicFeed, MdOutlineNotificationsActive } from "react-icons/md";
 
+import Link from "@docusaurus/Link";
+import { useColorMode } from "@docusaurus/theme-common";
+import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
+import About from "@theme/About";
 import Applications from "@theme/Applications";
 import Introduction from "@theme/Introduction";
-import About from "@theme/About";
+import Layout from "@theme/Layout";
 import Resources from "@theme/Resources";
+
+import FrontPicDark from "../../static/img/front-dark.png";
+import FrontPicLight from "../../static/img/front-light.png";
+import logo from "../../static/img/logo.png";
+import styles from "./index.module.scss";
+import stylepattern from "./pattern.module.css";
 
 const Center = ({ icon, text }) => (
   <div className="hero-icon-container">

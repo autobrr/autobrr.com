@@ -1,15 +1,17 @@
 import React from "react";
+
 import clsx from "clsx";
-import Link from "@docusaurus/Link";
-import SyntaxHighlighter from "../SyntaxHighligter/SyntaxHighligter";
-import { useColorMode } from "@docusaurus/theme-common";
-import { FaQuestion, FaDiscord, FaUserFriends } from "react-icons/fa";
+import { FaDiscord, FaQuestion, FaUserFriends } from "react-icons/fa";
 import { FiBook, FiGithub } from "react-icons/fi";
 import { GrResources } from "react-icons/gr";
 
+import Link from "@docusaurus/Link";
+import { useColorMode } from "@docusaurus/theme-common";
 import Headline from "@theme/Headline";
-import styles from "./styles.module.scss";
+
 import mainstyles from "../../pages/index.module.scss";
+import SyntaxHighlighter from "../SyntaxHighligter/SyntaxHighligter";
+import styles from "./styles.module.scss";
 
 const size = 48;
 const data = [
@@ -76,7 +78,7 @@ func main() {
 
 export default Resources;
 
-function Resource({ href, icon, title, description, code, language }) {
+const Resource = ({ href, icon, title, description, code, language }) => {
   const { colorMode } = useColorMode();
   return (
     <Link className={clsx("card", styles.card)} to={href}>
@@ -98,7 +100,7 @@ function Resource({ href, icon, title, description, code, language }) {
       )}
     </Link>
   );
-}
+};
 
 function Resources() {
   return (

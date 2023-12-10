@@ -1,12 +1,14 @@
 import React from "react";
+
 import clsx from "clsx";
-import Link from "@docusaurus/Link";
 import { FaBookReader } from "react-icons/fa";
+import { GiDeadWood } from "react-icons/gi";
+
 import Headline from "@theme/Headline";
-import styles from "./styles.module.scss";
+
 import mainstyles from "../../pages/index.module.scss";
 import stylepattern from "../../pages/pattern.module.css";
-import { GiDeadWood } from "react-icons/gi";
+import styles from "./styles.module.scss";
 
 function Introduction() {
   return (
