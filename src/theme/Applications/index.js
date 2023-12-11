@@ -34,7 +34,7 @@ function Applications() {
   return (
     <>
       {platforms && platforms.length > 0 && (
-        <section id="platforms" className={clsx(styles.features)}>
+        <section id="platforms">
           <div className="container">
             <Headline
               category={
@@ -107,11 +107,13 @@ function Applications() {
               <p>
                 With autobrr, you're never out of the loop. We offer robust
                 support for a range of notification agents including LunaSea,
-                Notifiarr, Discord, Gotify, Pushover, and Telegram. Whether it's
-                about a push being approved, rejected, or encountering an error,
-                or updates related to IRC connectivity and new autobrr updates,
-                our notification system ensures you're always updated in
-                real-time.
+                Notifiarr, Discord, Gotify, Pushover, and Telegram.
+              </p>
+              <p>
+                Whether it's about a push being approved, rejected, or
+                encountering an error, or updates related to IRC connectivity
+                and new autobrr updates, our notification system ensures you're
+                always updated in real-time.
               </p>
               <p>
                 Tailor your notifications to suit your preferences and stay on

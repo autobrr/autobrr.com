@@ -26,6 +26,12 @@
   }
 }
 
+.card__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .questionLink {
   display: block;
   text-decoration: none;

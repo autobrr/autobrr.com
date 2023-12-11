@@ -1,6 +1,5 @@
 import React from "react";
 
-import clsx from "clsx";
 import { FaQuoteLeft } from "react-icons/fa";
 import { FaGolang } from "react-icons/fa6";
 import { FiCoffee, FiMap, FiUserPlus } from "react-icons/fi";
@@ -33,7 +32,7 @@ const data = [
       <>
         autobrr supports multiple platforms, including Swizzin, Saltbox,
         QuickBox, shared seedboxes, Docker Compose, and Windows, ensuring easy
-        setup across different environments.{" "}
+        setup across different environments.
       </>
     ),
   },
@@ -99,7 +98,7 @@ const Question = ({ title, description, icon, link, isExternal }) => {
 
 function About() {
   return (
-    <section id="faq" className={clsx(styles.faq)}>
+    <section id="about">
       <div className="container">
         <Headline title="about" icon={FaQuoteLeft} offset={0} />
         <div className="row">

@@ -38,14 +38,19 @@ function Introduction() {
           <div className={styles.description}>
             <p>
               Autobrr redefines the landscape of download automation for
-              torrents and Usenet, merging the best features of trackarr,
-              autodl-irssi, and flexget into a singular, versatile tool. This
-              significantly benefits you if you're on private trackers. With
-              support for over 75 trackers with IRC announces, autobrr is
+              torrents and Usenet. By merging the best features of trackarr,
+              autodl-irssi, and flexget, it creates a singular, versatile tool.
+            </p>
+            <p>
+              This integration significantly benefits users on private trackers.
+              With support for over 75 trackers with IRC announces, autobrr is
               efficient in maintaining a user's ratio by ensuring early
-              participation in torrent swarms. Moreover, autobrr's compatibility
-              with Sonarr and Radarr streamlines media management, ensuring
-              timely and efficient downloads.
+              participation in torrent swarms.
+            </p>
+            <p>
+              Moreover, autobrr's compatibility with Sonarr and Radarr
+              streamlines media management, ensuring timely and efficient
+              downloads.
             </p>
           </div>
         </div>
