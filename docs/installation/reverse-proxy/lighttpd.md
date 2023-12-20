@@ -7,6 +7,7 @@ sidebar_label: lighttpd
 pagination_prev: introduction
 pagination_next: configuration/indexers
 ---
+
 #### Subfolder {#lighttpd#subfolder}
 
 ```lighttpd
@@ -16,8 +17,6 @@ $HTTP["url"] =^ "/autobrr/" {
     proxy.header = ( "upgrade" => 1, "map-urlpath" => ("/autobrr" => "") )
 }
 ```
-
-:::
 
 :::info Heads up
 Don't forget to set the `baseUrl` option in the `config.toml`:
@@ -31,6 +30,7 @@ Don't forget to set the `baseUrl` option in the `config.toml`:
 #
 baseUrl = "/autobrr/"
 ```
+
 :::
 
 #### Subdomain {#lighttpd#subdomain}
@@ -43,12 +43,9 @@ $HTTP["host"] == "autobrr.domain.com" {
 }
 ```
 
-#### Links {#lighttpd#links}
+#### Resources {#lighttpd#links}
 
-[lighttpd wiki](https://wiki.lighttpd.net)
-
-[lighttpd TLS](https://wiki.lighttpd.net/Docs_SSL)
-
-[lighttpd mod\_proxy](https://wiki.lighttpd.net/mod_proxy)
-
-[lighttpd mod\_auth](https://wiki.lighttpd.net/mod_auth)
+- [lighttpd wiki](https://wiki.lighttpd.net)
+- [lighttpd TLS](https://wiki.lighttpd.net/Docs_SSL)
+- [lighttpd mod_proxy](https://wiki.lighttpd.net/mod_proxy)
+- [lighttpd mod_auth](https://wiki.lighttpd.net/mod_auth)
