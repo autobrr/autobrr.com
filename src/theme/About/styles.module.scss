@@ -1,14 +1,14 @@
 .question {
   margin-bottom: 3rem;
   padding: 1rem;
-  border: 1px solid var(--gold-8);
+  border: 1px solid var(--ifm-question-border-color);
   border-radius: var(--ifm-pagination-nav-border-radius);
   transition: all 0.3s ease;
   min-height: 170px;
 
   &:hover {
     background-color: var(--slate-2);
-    border: 1px solid var(--gold-9);
+    border: 1px solid var(--ifm-question-border-hover-color);
     transition: all 0.3s ease-in-out;
     cursor: pointer;
 
@@ -18,7 +18,7 @@
   }
 
   .title {
-    color: var(--gold-11);
+    color: var(--ifm-question-title-color);
     display: flex;
     align-items: center;
     justify-content: flex-start;

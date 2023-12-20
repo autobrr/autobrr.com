@@ -11,12 +11,12 @@
 }
 
 .title {
-  max-width: 900px;
   font-size: 2rem;
   line-height: initial;
   word-spacing: -0.25rem;
   background: var(--title-gradient);
   background-clip: text;
+  text-transform: capitalize;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 

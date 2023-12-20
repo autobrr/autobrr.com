@@ -137,7 +137,7 @@
   --front-pic-shadow-color: rgb(39 42 45 / 50%);
 
   --ifm-question-border-color: var(--slate-6);
-  --ifm-question-border-hover-color: var(--blue-6);
+  --ifm-question-border-hover-color: var(--blue-10);
   --ifm-question-title-color: var(--blue-10);
   --ifm-resources-title-color: var(--blue-10);
   --ifm-resources-desc-color: var(--slate-12);
@@ -185,7 +185,7 @@ li[class*="theme-doc-sidebar-item-category-level"]
 }
 
 :where(.button--primary):not(.button--outline):hover {
-  --ifm-button-background-color: #49a3e9;
+  --ifm-button-background-color: var(--blue-10);
 }
 
 :where(.button--secondary) {

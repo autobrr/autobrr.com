@@ -4,7 +4,7 @@
   color: var(--ifm-question-title-color);
 
   a {
-    color: var(--gold-11);
+    color: var(--ifm-question-title-color);
     text-decoration: none;
   }
 }
@@ -13,18 +13,18 @@
   flex-grow: 1;
   justify-content: center;
   background-color: inherit;
-  border: 1px solid var(--gold-8);
+  border: 1px solid var(--ifm-question-border-color);
   border-radius: var(--ifm-pagination-nav-border-radius);
-  transition: all 0.3s ease;
+  transition: all 0.3s ease-in-out;
   margin-bottom: 2rem;
 
   .card__icon {
-    transition: all 0.3s ease;
+    transition: all 0.3s ease-in-out;
   }
 
   &:hover {
     background-color: var(--slate-2);
-    border: 1px solid var(--gold-9);
+    border: 1px solid var(--ifm-question-border-hover-color);
 
     .card__icon {
       filter: saturate(2);
