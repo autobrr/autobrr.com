@@ -24,6 +24,7 @@ module.exports = {
           label: "Reverse proxy",
           items: [
             "installation/reverse-proxy/caddy",
+            "installation/reverse-proxy/lighttpd",
             "installation/reverse-proxy/nginx",
             "installation/reverse-proxy/swag",
             "installation/reverse-proxy/traefik",
