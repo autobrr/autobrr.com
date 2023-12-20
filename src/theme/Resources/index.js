@@ -120,7 +120,7 @@ function Resources() {
                   Resources
                 </>
               }
-              title="explore & engage"
+              title="Explore & engage"
               icon={FaUserFriends}
               offset={0}
             />

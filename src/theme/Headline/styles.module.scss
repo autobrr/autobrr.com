@@ -16,7 +16,6 @@
   word-spacing: -0.25rem;
   background: var(--title-gradient);
   background-clip: text;
-  text-transform: capitalize;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 
@@ -31,6 +30,6 @@
 
 .icon {
   font-size: 2rem;
-  margin-left: 0.5rem;
+  margin-left: 1rem;
   color: var(--ifm-resources-title-color);
 }

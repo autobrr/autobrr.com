@@ -31,13 +31,13 @@ function Introduction() {
                 Introduction
               </>
             }
-            title="reap the benefits"
+            title="Reap the benefits."
             icon={GiDeadWood}
             offset={0}
           />
           <div className={styles.description}>
             <p>
-              Autobrr redefines the landscape of download automation for
+              autobrr redefines the landscape of download automation for
               torrents and Usenet. By merging the best features of trackarr,
               autodl-irssi, and flexget, it creates a singular, versatile tool.
             </p>

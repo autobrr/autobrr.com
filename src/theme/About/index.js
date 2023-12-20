@@ -100,8 +100,7 @@ function About() {
   return (
     <section id="about">
       <div className="container">
-        <Headline title="about" icon={FaQuoteLeft} offset={0} />
-        <div className="row">
+        <div className="row margin-top--lg">
           <div className="col col--6">
             {data[0] && <Question {...data[0]} />}
             {data[1] && <Question {...data[1]} />}
