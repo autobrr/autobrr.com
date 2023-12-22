@@ -55,6 +55,18 @@ To set up notifications for Discord, head to `Settings > Notifications`.
 Webhook URLs are created in Discord. Go to **Server Settings** in your Discord server and click **Integrations** followed by **Webhooks**. Click **New Webhook** and follow the steps to copy the webhook URL.
 :::
 
+### LunaSea
+
+To set up notifications for LunaSea, head to `Settings > Notifications`.
+
+1. Click **Add new**.
+2. Pick LunaSea in the list and give it a name.
+3. Select what events to trigger on.
+4. Add your `Webhook URL`
+   - See [https://docs.lunasea.app/lunasea/notifications/custom-notifications](https://docs.lunasea.app/lunasea/notifications/custom-notifications)
+5. Click the `Test` button to try and send a test notification.
+6. Save.
+
 ### Notifiarr
 
 To set up notifications for Notifiarr, head to `Settings > Notifications`.
@@ -65,19 +77,6 @@ To set up notifications for Notifiarr, head to `Settings > Notifications`.
 4. Add your Notifiarr API key.
 5. Click the `Test` button to try and send a test notification.
 6. Save.
-
-### Telegram
-
-Telegram is a bit more tricky to set up.
-
-1. Click **Add new**.
-2. Pick Telegram in the list and give it a name.
-3. Choose what events it should trigger on. You can enable all in the same agent or create separate agents for separate events.
-4. [Create a bot](https://core.telegram.org/bots#6-botfather) with `BotFather`.
-5. Start a chat with your bot, add [@get_id_bot](https://telegram.me/get_id_bot), and issue the /my_id command to retrieve your chat ID.
-6. Add your Chat ID, Bot Token, and the Message Thread ID.
-7. Click the `Test` button to try and send a test notification.
-8. Save.
 
 ### Pushover
 
@@ -101,3 +100,16 @@ To set up notifications for Gotify, head to `Settings > Notifications`.
 4. Add your `Application Token`
 5. Click the `Test` button to try and send a test notification.
 6. Save.
+
+### Telegram
+
+Telegram is a bit more tricky to set up.
+
+1. Click **Add new**.
+2. Pick Telegram in the list and give it a name.
+3. Choose what events it should trigger on. You can enable all in the same agent or create separate agents for separate events.
+4. [Create a bot](https://core.telegram.org/bots#6-botfather) with `BotFather`.
+5. Start a chat with your bot, add [@get_id_bot](https://telegram.me/get_id_bot), and issue the /my_id command to retrieve your chat ID.
+6. Add your Chat ID, Bot Token, and the Message Thread ID.
+7. Click the `Test` button to try and send a test notification.
+8. Save.
