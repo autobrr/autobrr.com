@@ -67,4 +67,4 @@ Please see the **Reverse proxy** section for reverse proxy configuration example
 
 ## Finishing up
 
-Now that autobrr is up and running, you should be able to visit the your web UI at <http://localhost:7474>, `http://YOUR_LOCAL_IP:7474` or `http://domain.ltd:7474` and proceed with your registration/login.
+Now that autobrr is up and running, you should be able to visit the your web UI at [http://localhost:7474](http://localhost:7474), `http://YOUR_LOCAL_IP:7474` or `http://domain.ltd:7474` and proceed with your registration/login.
