@@ -80,7 +80,7 @@ With TorrentLeech as an example, only add the red part when setting up your inde
 
 `https://rss.tl.org/`<Highlight color="#ff2754">1812u12urr1203j12jeq</Highlight>
 
-In case you are still having troubles with setting up the TorrentLeech indexer,  
+In case you are still having troubles with setting up the TorrentLeech indexer,
 you can find detailed instructions for the setup process on their wiki:
 
 https://wiki.torrentleech.org/doku.php/autobrr
@@ -113,39 +113,6 @@ If autobrr isn't reaching Deluge when running Docker you can try this:
   It can be found at `/docker/appdata/deluge/auth`, the default one looks like `localclient:password:10`.
   You can add your own if you wish. Like `username:password:powerlevel`.
 - Enabling `Allow Remote Connections` in Deluge might be needed depending on your setup.
-
-## I forgot my password {#forgot-password}
-
-If you forget your password, you can change it via the command line.
-
-```shell
-autobrrctl --config /home/username/.config/autobrr change-password <USERNAME>
-```
-
-## I want to change my username {#change-username}
-
-If you want to change your username, you need to change it directly in the database.
-Use the command line or an sqlite editor.
-
-### CLI
-
-You need the `sqlite3` package for this.
-
-- If you are using our docker container then you can exec in and run `apk add sqlite3`.
-- Ubuntu: `sudo apt install sqlite3`
-- On other linux based systems use the package manager to install the package
-
-`sqlite3 autobrr.db "UPDATE users SET username = 'newuser';"`
-
-### GUI
-
-SQLitebrowser is a simple cross-platform SQLite gui/browser. Download from [official site](https://sqlitebrowser.org/dl/).
-
-Open the db file `autobrr.db` and run the following command:
-
-`UPDATE users SET username = 'newuser';`
-
-Or use the gui to click edit on the `username` column of the `users` table.
 
 ## How can I use my freeleech tokens from RED? {#redacted-freeleech-tokens}
 
