@@ -81,7 +81,7 @@ module.exports = {
       type: "category",
       label: "Usage",
       collapsed: true,
-      items: ["usage/search", "usage/tips"],
+      items: ["usage/search", "usage/tips", "usage/account"],
     },
     {
       type: "doc",
