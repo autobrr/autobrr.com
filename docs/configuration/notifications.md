@@ -78,6 +78,22 @@ To set up notifications for Notifiarr, head to `Settings > Notifications`.
 5. Click the `Test` button to try and send a test notification.
 6. Save.
 
+
+### Ntfy
+
+Documentation: [Official docs](https://docs.ntfy.sh/).
+
+To set up notifications for Notifiarr, head to `Settings > Notifications`.
+
+1. Click **Add new**.
+2. Pick ntfy in the list and give it a name.
+3. Choose what events it should trigger on. You can enable all in the same agent or create separate agents for separate events.
+4. Add your ntfy topic URL.
+5. Add username and password
+6. Add token
+7. Click the `Test` button to try and send a test notification.
+8. Save.
+
 ### Pushover
 
 To set up notifications for Pushover, head to `Settings > Notifications`.
@@ -103,11 +119,37 @@ To set up notifications for Gotify, head to `Settings > Notifications`.
 
 ### Shoutrrr
 
+Shoutrrr is a library that supports a lot of different notification services all in one. 
+
+Supported services:
+
+ - Bark
+ - Discord
+ - Email
+ - Gotify
+ - Google Chat
+ - IFTTT
+ - Join
+ - Mattermost
+ - Matrix
+ - Ntfy
+ - OpsGenie
+ - Pushbullet
+ - Pushover
+ - Rocketchat
+ - Slack
+ - Teams
+ - Telegram
+ - Zulip Chat
+ - Generic Webhook
+
+Documentation: [Offical docs](https://containrrr.dev/shoutrrr/services/overview/).
+
 To set up notifications for Shoutrrr, head to `Settings > Notifications`.
 
 1. Click **Add new**.
 2. Pick Shoutrrr from the list and give it a name.
-3. Add your Shoutrrr URL
+3. Add your Shoutrrr URL that contains the service and variables, eg: `slack://[botname@]token-a/token-b/token-c`
 4. Click the `Test` button to try and send a test notification.
 5. Save.
 
