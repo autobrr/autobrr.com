@@ -98,5 +98,10 @@ module.exports = {
       label: "faqs",
       id: "faqs",
     },
+    {
+      type: "doc",
+      label: "contributing",
+      id: "contributing",
+    },
   ],
 };
