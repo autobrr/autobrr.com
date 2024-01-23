@@ -52,7 +52,7 @@ const data = [
     ),
   },
   {
-    href: "https://github.com/autobrr/autobrr",
+    href: "https://github.com/autobrr/autobrr/blob/develop/CONTRIBUTING.md",
     icon: <FiGithub size={size} />,
     title: <>Contribute</>,
     description: (
