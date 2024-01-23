@@ -73,7 +73,7 @@ Run the project:
 pnpm dev
 ```
 
-This should make the frontend available at [http://localhost:3000](http://localhost:3000). It's setup to communicate with the API at [http://localhost:7474](http://localhost:7474).
+This should make the frontend available at `http://localhost:3000`. It's setup to communicate with the API at `http://localhost:7474`.
 
 ### Build {#build-frontend}
 
@@ -99,7 +99,7 @@ Run the project:
 go run cmd/autobrr/main.go
 ```
 
-This uses the default `config.toml` and runs the API on [http://localhost:7474](http://localhost:7474).
+This uses the default `config.toml` and runs the API on `http://localhost:7474`.
 
 ### Build {#build-backend}
 
@@ -192,4 +192,4 @@ go run test/mockindexer/main.go
 - Then add it via Settings -> Indexers -> Add, and select Mock Indexer in the list
 - Go to Settings -> IRC and toggle the IRC network `Mock Indexer`
 - Add a new Filter or add the indexer to an existing filter
-- Open a new tab and navigate to [http://localhost:3999](http://localhost:3999) and put the example announce in the input then hit enter
+- Open a new tab and navigate to `http://localhost:3999` and put the example announce in the input then hit enter
