@@ -30,8 +30,8 @@ This guide helps you get started developing autobrr.
 Make sure you have the following dependencies installed before setting up your developer environment:
 
 - [Git](https://git-scm.com/)
-- [Go](https://golang.org/dl/) (see [go.mod](go.mod#L3) for minimum required version)
-- [Node.js](https://nodejs.org) (we usually use the latest Node LTS version - for further information see `@types/node` major version in [package.json](web/package.json))
+- [Go](https://golang.org/dl/) (see [go.mod](https://github.com/autobrr/autobrr/blob/develop/go.mod#L3) for minimum required version)
+- [Node.js](https://nodejs.org) (we usually use the latest Node LTS version - for further information see `@types/node` major version in [package.json](https://github.com/autobrr/autobrr/blob/develop/web/package.json))
 - [pnpm](https://pnpm.io/installation)
 
 ## How to contribute
