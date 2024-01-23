@@ -80,7 +80,7 @@ With TorrentLeech as an example, only add the red part when setting up your inde
 
 `https://rss.tl.org/`<Highlight color="#ff2754">1812u12urr1203j12jeq</Highlight>
 
-In case you are still having troubles with setting up the TorrentLeech indexer,  
+In case you are still having troubles with setting up the TorrentLeech indexer,
 you can find detailed instructions for the setup process on their wiki:
 
 https://wiki.torrentleech.org/doku.php/autobrr
@@ -118,13 +118,14 @@ If autobrr isn't reaching Deluge when running Docker you can try this:
 
 If you forget your password, you can change it via the command line.
 
-```shell
+```bash
 autobrrctl --config /home/username/.config/autobrr change-password <USERNAME>
 ```
 
 ## I want to change my username {#change-username}
 
-If you want to change your username, you need to change it directly in the database.
+If you want to change your username, you can do so via the [web UI](./usage/account.md).
+If you don't have access to the web UI, you need to change it directly in the database.
 Use the command line or an sqlite editor.
 
 ### CLI

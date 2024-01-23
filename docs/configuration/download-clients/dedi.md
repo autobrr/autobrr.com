@@ -27,9 +27,11 @@ keywords:
 pagination_label: Configuration - Download clients
 ---
 
+import ArrOverride from '/snippets/override-arr-dl-client.mdx';
+
 # Download Clients
 
-Go to `Settings > Clients` to setup clients.  
+Go to `Settings > Clients` to setup clients.
 Clients can be local or remote, as long as ports are open and auth available.
 
 These are the available download clients.
@@ -191,7 +193,7 @@ For a remote client, meaning autobrr and rTorrent are **not on the same server**
 - Host: `http://user:password@mydomain.com/rutorrent/plugins/httprpc/action.php`
 
 :::caution
-Some ambiguous characters (such as @ : # % and more) may escape out of the URL.  
+Some ambiguous characters (such as @ : # % and more) may escape out of the URL.
 In this case you will have to change your password for ruTorrent to be able to add the client to autobrr.
 :::
 
@@ -286,6 +288,8 @@ You can run autobrr and Sonarr apps on the following setups.
 - Remote server
 - Docker / container
 
+<ArrOverride/>
+
 ### Local {#sonarr-local}
 
 For a local client, meaning autobrr and Sonarr **on the same server** then this should work.
@@ -322,6 +326,8 @@ You can run autobrr and Radarr apps on the following setups.
 - Local server
 - Remote server
 - Docker / container
+
+<ArrOverride/>
 
 ### Local {#radarr-local}
 

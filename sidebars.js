@@ -24,6 +24,7 @@ module.exports = {
           label: "Reverse proxy",
           items: [
             "installation/reverse-proxy/caddy",
+            "installation/reverse-proxy/lighttpd",
             "installation/reverse-proxy/nginx",
             "installation/reverse-proxy/swag",
             "installation/reverse-proxy/traefik",
@@ -80,7 +81,7 @@ module.exports = {
       type: "category",
       label: "Usage",
       collapsed: true,
-      items: ["usage/search", "usage/tips"],
+      items: ["usage/search", "usage/tips", "usage/account"],
     },
     {
       type: "doc",
@@ -96,6 +97,11 @@ module.exports = {
       type: "doc",
       label: "faqs",
       id: "faqs",
+    },
+    {
+      type: "doc",
+      label: "contributing",
+      id: "contributing",
     },
   ],
 };
