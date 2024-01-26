@@ -50,6 +50,7 @@ Available Sprig function, along with the relevant examples can be found [at Pydi
 | `{{.DownloadURL}}`     | Download URL                               |
 | `{{.Episode}}`         | Parsed episode                             |
 | `{{.FilterName}}`      | Filter name                                |
+| `{{.Group}}`           | Release group                              |
 | `{{.GroupID}}`         | GroupID                                    |
 | `{{.HDR}}`             | Parsed HDR (DV, HDR, HDR10)                |
 | `{{.Indexer}}`         | Indexer                                    |
