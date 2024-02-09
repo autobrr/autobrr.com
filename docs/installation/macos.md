@@ -48,10 +48,9 @@ Or, if you don't want/need a background service you can just run:
 
 :::info
 
-By default autobrr listens on `127.0.0.1` which is the recommended way when running a reverse proxy, but if you want to expose it to the internet/network then you must change the `host` in the `~/.config/autobrr/config.toml` from `127.0.0.1` to `0.0.0.0`.
+By default autobrr listens on `127.0.0.1` which is the recommended way when running a reverse proxy, but if you want to expose it to the internet/network then you must change the `host` in the `config.toml` from `127.0.0.1` to `0.0.0.0`.
 
-Save the changes and restart autobrr with `sudo systemctl restart autobrr@USERNAME.service`.
-
+Restart autobrr after.
 :::
 
 ## Reverse proxy (recommended)
