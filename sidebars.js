@@ -18,6 +18,7 @@ module.exports = {
         "installation/linux",
         "installation/docker",
         "installation/shared-seedbox",
+        "installation/macos",
         "installation/windows",
         {
           type: "category",
