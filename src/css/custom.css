@@ -188,6 +188,7 @@ li[class*="theme-doc-sidebar-item-category-level"] a.menu__link:hover:not(.menu_
 }
 
 .alert {
+  --ifm-alert-foreground-color: var(--ifm-font-color-base);
   --ifm-code-background: rgb(191 187 185 / 15%);
 }
 
