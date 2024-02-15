@@ -8,12 +8,11 @@ keywords: [autobrr, filters, tv, movies, music]
 pagination_label: Filters - TV & Movies
 pagination_next: filters/music
 ---
+import ConvertAutodlFilter from '/snippets/convert-autodl-filter.mdx';
 
 # TV & Movies
 
-:::tip
-You can easily convert your autodl-irssi filters into autobrr filters using our conversion tool. Visit https://convert.autobrr.com and follow the simple steps to convert each filter individually.
-:::
+<ConvertAutodlFilter />
 
 Most fields can take a comma separated list like `value1, value2`.
 

@@ -45,6 +45,6 @@ server {
         set $upstream_port 7474;
         set $upstream_proto http;
         proxy_pass $upstream_proto://$upstream_app:$upstream_port;
-        }
+    }
 }
 ```

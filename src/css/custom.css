@@ -123,8 +123,17 @@
   --ifm-blockquote-color: var(--slate-9);
   --ifm-font-color-base: white;
   --ifm-color-primary: var(--blue-10);
+  --ifm-table-border-color: var(--slate-7);
 
   --front-pic-shadow-color: rgb(39 42 45 / 50%);
+}
+
+hr {
+  background-color: var(--slate-7);
+}
+
+details > div > div[class*="collapsibleContent"] {
+  border-top-color: var(--slate-7)
 }
 
 li[class*="theme-doc-sidebar-item-category-level"] > div > a {
@@ -179,6 +188,7 @@ li[class*="theme-doc-sidebar-item-category-level"] a.menu__link:hover:not(.menu_
 }
 
 .alert {
+  --ifm-alert-foreground-color: var(--ifm-font-color-base);
   --ifm-code-background: rgb(191 187 185 / 15%);
 }
 
