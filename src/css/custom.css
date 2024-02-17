@@ -382,3 +382,7 @@ ul {
 .badge {
   margin-bottom: 8px;
 }
+
+main[itemscope] > article > header > div:has(div.avatar) {
+  display: none;
+}
