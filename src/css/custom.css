@@ -7,7 +7,7 @@
 
 :root {
   transition: color 0.3s ease, background-color 0.3s ease;
-  
+
   --ifm-font-family-base: "Inter";
   --ifm-line-height-base: 1.5;
   --ifm-font-size-base: 110%;
@@ -123,8 +123,17 @@
   --ifm-blockquote-color: var(--slate-9);
   --ifm-font-color-base: white;
   --ifm-color-primary: var(--blue-10);
+  --ifm-table-border-color: var(--slate-7);
 
   --front-pic-shadow-color: rgb(39 42 45 / 50%);
+}
+
+hr {
+  background-color: var(--slate-7);
+}
+
+details > div > div[class*="collapsibleContent"] {
+  border-top-color: var(--slate-7);
 }
 
 li[class*="theme-doc-sidebar-item-category-level"] > div > a {
@@ -139,7 +148,8 @@ li[class*="theme-doc-sidebar-item-category-level"] > div > a {
   color: var(--slate-11);
 }
 
-li[class*="theme-doc-sidebar-item-category-level"] a.menu__link:hover:not(.menu__link--active) {
+li[class*="theme-doc-sidebar-item-category-level"]
+  a.menu__link:hover:not(.menu__link--active) {
   color: var(--slate-12);
 }
 
@@ -179,6 +189,7 @@ li[class*="theme-doc-sidebar-item-category-level"] a.menu__link:hover:not(.menu_
 }
 
 .alert {
+  --ifm-alert-foreground-color: var(--ifm-font-color-base);
   --ifm-code-background: rgb(191 187 185 / 15%);
 }
 
@@ -248,8 +259,7 @@ div.theme-code-block > div:first-child:nth-last-child(n + 2) {
   padding: 0 var(--ifm-pre-padding);
 }
 
-.header-github-link
-.header-github-link:hover {
+.header-github-link .header-github-link:hover {
   opacity: 0.6;
 }
 
@@ -267,8 +277,7 @@ div.theme-code-block > div:first-child:nth-last-child(n + 2) {
     no-repeat;
 }
 
-.header-discord-link
-.header-discord-link:hover {
+.header-discord-link .header-discord-link:hover {
   opacity: 0.6;
 }
 
@@ -279,8 +288,7 @@ div.theme-code-block > div:first-child:nth-last-child(n + 2) {
   width: 24px;
   height: 24px;
   display: flex;
-  background: url("/static/logos/discord.svg")
-    no-repeat;
+  background: url("/static/logos/discord.svg") no-repeat;
 }
 
 [data-theme="dark"] .header-discord-link::before {
@@ -288,8 +296,7 @@ div.theme-code-block > div:first-child:nth-last-child(n + 2) {
   width: 24px;
   height: 24px;
   display: flex;
-  background: url("/static/logos/discord-white.svg")
-    no-repeat;
+  background: url("/static/logos/discord-white.svg") no-repeat;
 }
 
 .navbar__logo {
@@ -319,7 +326,7 @@ header.hero {
   padding: 1rem;
   display: flex;
   justify-content: center;
-  align-items: "center"
+  align-items: "center";
 }
 
 .hero-grid {
