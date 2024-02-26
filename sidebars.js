@@ -12,7 +12,7 @@ module.exports = {
     },
     {
       type: "category",
-      label: "Installation",
+      label: "Installation & Updates",
       collapsed: false,
       items: [
         "installation/linux",
