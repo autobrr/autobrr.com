@@ -48,3 +48,30 @@ server {
     }
 }
 ```
+
+A basic `swag` config for running in a subfolder (don't forget to set the baseurl).
+```yaml
+location ^~ /autobrr/ {
+    # enable the next two lines for http auth
+    #auth_basic "Restricted";
+    #auth_basic_user_file /config/nginx/.htpasswd;
+
+    # enable for ldap auth (requires ldap-server.conf in the server block)
+    #include /config/nginx/ldap-location.conf;
+
+    # enable for Authelia (requires authelia-server.conf in the server block)
+    #include /config/nginx/authelia-location.conf;
+
+    # enable for Authentik (requires authentik-server.conf in the server block)
+    #include /config/nginx/authentik-location.conf;
+
+    include /config/nginx/proxy.conf;
+    include /config/nginx/resolver.conf;
+    set $upstream_app 127.0.0.1;
+    set $upstream_port 7474;
+    set $upstream_proto http;
+    proxy_set_header        X-Forwarded-Host        $http_host;
+    proxy_pass $upstream_proto://$upstream_app:$upstream_port;
+    rewrite ^/autobrr/(.*) /$1 break;
+}
+```
