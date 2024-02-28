@@ -11,7 +11,7 @@ Various minor changes:
 * Updated to Go v1.22
 * Fix for creating custom TMPDIR if it does not exist
 
-<https://github.com/autobrr/autobrr/releases/tag/v1.39.0>
+[https://github.com/autobrr/autobrr/releases/tag/v1.39.0](https://github.com/autobrr/autobrr/releases/tag/v1.39.0)
 ## Changelog
 ### New features and improvements
 * feat(indexers): Locadora add internal and tags var (#1433) (costaht)
@@ -30,7 +30,7 @@ Various minor changes:
 * chore(deps): upgrade to Go v1.22 and deps (#1423) (zze0s)
 * docs: update installers (#1436) (zze0s)
 
-**Full Changelog**: <https://github.com/autobrr/autobrr/compare/v1.38.1...v1.39.0>
+**Full Changelog**: https://github.com/autobrr/autobrr/compare/v1.38.1...v1.39.0
 
 ## Docker images
 
