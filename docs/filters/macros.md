@@ -72,7 +72,7 @@ Simple examples of this extensive functionality can be found below.
 
 ### Dynamic categories in qBittorrent
 
-Dynamic resolution for eg movies or tv. Very useful to keep things separated and easy to mange. With well named releases this works great as a Plex library.
+Dynamic resolution for eg movies or tv. Very useful to keep things separated and easy to manage. With well-named releases this works great as a Plex library.
 
 Category: `movies-{{ .Resolution }}` = `movies-1080p`, `movies-2160p`
 
