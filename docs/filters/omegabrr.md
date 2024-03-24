@@ -33,7 +33,7 @@ import { AiFillGithub } from 'react-icons/ai';
 Download the [latest release <AiFillGithub />](https://github.com/autobrr/omegabrr/releases/latest), or download the [source code <AiFillGithub />](https://github.com/autobrr/omegabrr) and build it yourself using `make build`.
 
 ```shell
-wget $(curl -s https://api.github.com/repos/autobrr/omegabrr/releases/latest | grep download | grep linux_x86_64 | cut -d\" -f4)
+wget $(curl -s https://api.github.com/repos/autobrr/omegabrr/releases/latest | grep download | grep linux_amd64 | cut -d\" -f4)
 ```
 
 ### Extract
