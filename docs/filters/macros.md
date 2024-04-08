@@ -34,6 +34,7 @@ Available Sprig function, along with the relevant examples can be found [at Pydi
 
 | Variable               | Description                                |
 | ---------------------- | ------------------------------------------ |
+| `{{.Artists}}`         | Artists                                    |
 | `{{.Categories}}`      | Categories                                 |
 | `{{.Category}}`        | Category                                   |
 | `{{.CurrentDay}}`      | Current Day                                |
