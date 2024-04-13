@@ -244,3 +244,132 @@ http://upgraderr:6940/api/cross
 This is a toolchest, other functionality can be achieved by using other return codes, and attaching other tools to actions taken by the application.
 
 More Information: [github.com/kylesanderson/upgraderr](https://github.com/kylesanderson/upgraderr)
+
+## Redactedhook
+
+RedactedHook is a webhook companion service for autobrr designed to check the names of uploaders, your ratio, and record labels associated with torrents on Redacted and Orpheus.
+
+[https://github.com/s0up4200/redactedhook](https://github.com/s0up4200/redactedhook)
+
+:::warning
+Remember that autobrr also checks the RED/OPS API if you have min/max sizes set in your filter. This will result in you hitting the API 2x. So for your own good, only set size checks in redactedhook.
+:::
+
+### Installation {#redactedhook-installation}
+
+#### Docker {#redactedhook-installation-docker}
+
+```bash
+docker pull ghcr.io/s0up4200/redactedhook:latest
+```
+
+#### Docker Compose {#redactedhook-installation-docker-compose}
+
+```yaml
+services:
+  redactedhook:
+    container_name: redactedhook
+    image: ghcr.io/s0up4200/redactedhook:latest
+    user: 1000:1000
+    environment:
+      - REDACTEDHOOK__HOST=0.0.0.0 # binds to 127.0.0.1 by default
+      - REDACTEDHOOK__PORT=42135 # defaults to 42135
+      - TZ=UTC
+    ports:
+      - "42135:42135"
+    volumes:
+      - ./:/redactedhook
+    restart: unless-stopped
+```
+
+#### Precompiled binaries {#redactedhook-instsallation-binaries}
+
+Grab the latest version from here: [https://github.com/s0up4200/RedactedHook/releases/latest](https://github.com/s0up4200/RedactedHook/releases/latest)
+
+### Usage {#redactedhook-usage}
+
+To use RedactedHook, send POST requests to the following endpoint:
+
+```shell
+Endpoint: http://127.0.0.1:42135/hook
+Header: X-API-Token: YOUR_API_TOKEN
+Method: POST
+Expected HTTP Status: 200
+```
+
+You can check ratio, uploader (whitelist and blacklist), minsize, maxsize, and record labels in a single request, or separately.
+
+### Config {#redactedhook-usage-config}
+
+Most of `requestData` can be set in `config.toml` to reduce the payload from autobrr.
+
+Config can be created with: `redactedhook create-config`
+
+```toml title="config.toml"
+[authorization]
+api_token = "" # generate with "redactedhook generate-apitoken"
+# the api_token needs to be set as a header for the webhook to work
+# eg. Header=X-API-Token asd987gsd98g7324kjh142kjh
+
+[indexer_keys]
+#red_apikey = "" # generate in user settings, needs torrent and user privileges
+#ops_apikey = "" # generate in user settings, needs torrent and user privileges
+
+[userid]
+#red_user_id = 0 # from /user.php?id=xxx
+#ops_user_id = 0 # from /user.php?id=xxx
+
+[ratio]
+#minratio = 0.6 # reject releases if you are below this ratio
+
+[sizecheck]
+#minsize = "100MB" # minimum size for checking, e.g., "10MB"
+#maxsize = "500MB" # maximum size for checking, e.g., "1GB"
+
+[uploaders]
+#uploaders = "greatest-uploader" # comma separated list of uploaders to allow
+#mode = "whitelist" # whitelist or blacklist
+
+[record_labels]
+#record_labels = "" # comma separated list of record labels to filter for
+
+[logs]
+loglevel = "trace"               # trace, debug, info
+logtofile = false                # Set to true to enable logging to a file
+logfilepath = "redactedhook.log" # Path to the log file
+maxsize = 10                     # Max file size in MB
+maxbackups = 3                   # Max number of old log files to keep
+maxage = 28                      # Max age in days to keep a log file
+compress = false                 # Whether to compress old log files
+```
+
+### Authorization {#redactedhook-usage-auth}
+
+API Token can be generated like this: `redactedhook generate-apitoken`
+
+Set it in the config, and use it as a header like:
+
+![autobrr-external-filter-example](/img/autobrr-external-filters.png)
+
+### Payload {#redactedhook-usage-payload}
+
+**The minimum required data to send with the webhook from autobrr:**
+
+```json
+{
+    "torrent_id": {{.TorrentID}},
+    "indexer": "{{ .Indexer | js }}"
+}
+```
+
+Everything else can be set in the `config.toml`, but you can set them in the webhook as well, if you want to filter by different things in different filters.
+
+`CURL` if you want to test:
+
+```bash
+curl -X POST \
+     -H "X-API-Token: 098qw0e98ass" \
+     -H "Content-Type: application/json" \
+     -d '{"torrent_id": 12345, "indexer": "redacted"}' \
+     http://127.0.0.1:42135/hook
+```
