@@ -244,3 +244,11 @@ http://upgraderr:6940/api/cross
 This is a toolchest, other functionality can be achieved by using other return codes, and attaching other tools to actions taken by the application.
 
 More Information: [github.com/kylesanderson/upgraderr](https://github.com/kylesanderson/upgraderr)
+
+## Redactedhook
+
+RedactedHook is a webhook companion service for autobrr designed to check the names of uploaders, your ratio, and record labels associated with torrents on Redacted and Orpheus.
+
+### Instructions {#redactedhook-instructions}
+
+Rather than duplicating the usage guide found in the Github documentation, please refer to the instructions available at [https://github.com/s0up4200/redactedhook](https://github.com/s0up4200/redactedhook) for setting up the tool.
