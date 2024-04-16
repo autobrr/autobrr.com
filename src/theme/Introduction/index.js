@@ -43,7 +43,7 @@ function Introduction() {
             </p>
             <p>
               This integration significantly benefits users on private trackers.
-              With support for over 75 trackers with IRC announces, autobrr is
+              With support for over 85 trackers with IRC announces, autobrr is
               efficient in maintaining a user's ratio by ensuring early
               participation in torrent swarms.
             </p>

@@ -73,7 +73,7 @@ function HomepageHeader() {
             />
             <Center
               icon={<AiOutlineDownload size="24" />}
-              text="75+ Indexers"
+              text="85+ Indexers"
             />
             <Center icon={<AiOutlineFilter size="24" />} text="Filters" />
             <Center icon={<CgPlug size="24" />} text="*arr Integration" />
