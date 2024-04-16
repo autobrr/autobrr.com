@@ -49,7 +49,8 @@ Available Sprig function, along with the relevant examples can be found [at Pydi
 | `{{.Group}}`           | Release group                              |
 | `{{.GroupID}}`         | GroupID                                    |
 | `{{.HDR}}`             | Parsed HDR (DV, HDR, HDR10)                |
-| `{{.Indexer}}`         | Indexer                                    |
+| `{{.Indexer}}`         | Indexer identifier                         |
+| `{{.IndexerName}}`     | Indexer name                               |
 | `{{.InfoUrl}}`         | Info URL                                   |
 | `{{.Resolution}}`      | Parsed resolution (1080p)                  |
 | `{{.Season}}`          | Parsed season                              |
