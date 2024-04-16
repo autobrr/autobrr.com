@@ -26,7 +26,7 @@ example.com/autobrr/* {
 
 
 :::info Heads up
-Don't forget to configure the `baseUrl` option for autobrr:
+In case you are using the subfolder option, don't forget to configure the `baseUrl` option for autobrr:
 
 ```toml title="config.toml"
 # Base url

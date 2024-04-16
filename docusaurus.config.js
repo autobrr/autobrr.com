@@ -152,7 +152,7 @@ const config = {
     prism: {
       theme: themes.vsLight,
       darkTheme: themes.oceanicNext,
-      additionalLanguages: ["systemd", "nginx", "toml", "docker", "bash"],
+      additionalLanguages: ["systemd", "nginx", "toml", "docker", "bash", "json"],
     },
   },
 

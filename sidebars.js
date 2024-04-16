@@ -12,12 +12,13 @@ module.exports = {
     },
     {
       type: "category",
-      label: "Installation",
+      label: "Installation & Updates",
       collapsed: false,
       items: [
         "installation/linux",
         "installation/docker",
         "installation/shared-seedbox",
+        "installation/macos",
         "installation/windows",
         {
           type: "category",
