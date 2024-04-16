@@ -148,7 +148,7 @@ The way this works is you create a filter with a higher priority set than any ot
      "name": "{{ .TorrentName }}",
      "guid": "{{ .TorrentUrl }}",
      "link": "{{ .TorrentUrl }}",
-     "tracker": "{{ .Indexer | js}}"
+     "tracker": "{{ .IndexerName | js}}"
    }
    ```
 
