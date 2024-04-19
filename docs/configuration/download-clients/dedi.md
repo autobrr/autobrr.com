@@ -175,15 +175,29 @@ You can run autobrr and rTorrent / ruTorrent on the following setups.
 
 For a local client, meaning autobrr and ruTorrent **on the same server** try these.
 
-Here are a couple of common ways for how to access ruTorrent. Username and password needs to be set in the url as basic auth.
+Here are a couple of common ways for how to access ruTorrent.
 
-- Host: `http://user:password@127.0.0.1/rutorrent/plugins/httprpc/action.php`
-- Host: `http://user:password@localhost/rutorrent/plugins/httprpc/action.php`
-- Host: `http://user:password@localhost/RPC2`
+- Host: `http://127.0.0.1/rutorrent/plugins/httprpc/action.php`
+- Host: `http://localhost/rutorrent/plugins/httprpc/action.php`
+- Host: `http://localhost/RPC2`
+
+- TLS: disabled
+- Basic Auth: enabled
+- Username: `<username>`
+- Password: `<password>`
 
 If you are on a shared seedbox you might need your username in the url like:
 
-- Host: `http://user:password@localhost/USERNAME/rutorrent/plugins/httprpc/action.php`
+- Host: `http://localhost/USERNAME/rutorrent/plugins/httprpc/action.php`
+
+#### Swizzin {#rtorrent-local-swizzin}
+
+- Host: `https://127.0.0.1/rutorrent/plugins/httprpc/action.php`
+- TLS: enabled
+- Skip TLS verification: enabled
+- Basic Auth: enabled
+- Username: `<username>`
+- Password: `<password>`
 
 ### Remote {#rtorrent-remote}
 
