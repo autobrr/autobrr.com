@@ -24,6 +24,7 @@ import BTFiles from "/snippets/categories/btfiles.mdx";
 import CathodeRayTube from "/snippets/categories/cathoderaytube.mdx";
 import DigitalCore from "/snippets/categories/digitalcore.mdx";
 import Filelist from "/snippets/categories/fl.mdx";
+import FunSharing from "/snippets/categories/fsc.mdx";
 import GazelleGames from "/snippets/categories/ggn.mdx";
 import HDBits from "/snippets/categories/hdbits.mdx";
 import HDSpace from "/snippets/categories/hdspace.mdx";
@@ -94,6 +95,10 @@ import XSpeeds from "/snippets/categories/xspeeds.mdx";
 ### Filelist
 
 <Filelist />
+
+### FunSharing
+
+<FunSharing />
 
 ### GazelleGames
 
