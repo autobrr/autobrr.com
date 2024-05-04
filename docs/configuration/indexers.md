@@ -29,19 +29,18 @@ import IpApproval from '/snippets/ipapproval.mdx';
 # Indexers
 
 :::info
-If you want more indexers added please create an [Indexer Request](https://github.com/autobrr/autobrr/issues/new/choose) <AiFillGithub />
+For adding more indexers to autobrr, please submit an [Indexer Request](https://github.com/autobrr/autobrr/issues/new/choose) on GitHub <AiFillGithub />
 :::
 
-## Supported indexers
+## Supported Indexers
 
 <Indexers/>
 
 ## Setup
 
-1. Go to `Settings > Indexers` to add indexers.
+1. Navigate to `Settings > Indexers` to add new indexers.
 
-   When adding a new indexer, it will set up the IRC network and channels in the background.
-   Indexers usually need some extra keys to work. The common ones are:
+   When adding a new indexer, autobrr automatically configures the necessary IRC network and channels. Indexers usually need some extra keys to work. The common ones are:
 
    - `passkey`
    - `rsskey`
@@ -49,21 +48,31 @@ If you want more indexers added please create an [Indexer Request](https://githu
    - `auth_key`
    - `apikey`
 
-   Not all of these are required when setting up a new indexer. `Passkeys` and `torrent_pass` are typically found in the download url of a torrent, while `apikey`, `auth_key` and `rsskey`s are on your indexer's profile page. Check your indexers wiki/forum etc. if you're having trouble finding something specific, the question has been likely asked before and the staff probably already have their own guide on how to set up.
+    Not all of these are required when setting up a new indexer. `Passkeys` and `torrent_pass` are typically found in the download url of a torrent, while `apikey`, `auth_key` and `rsskey`s are on your indexer's profile page. Check your indexers wiki/forum etc. if you're having trouble finding something specific, the question has been likely asked before and the staff probably already have their own guide on how to set up.
 
-   For example, torrentleech provides their users with [this](http://wiki.torrentleech.org/doku.php/autobrr) page.
+   For instance, TorrentLeech provides a setup guide [here](http://wiki.torrentleech.org/doku.php/autobrr).
 
-   - If NickServ Password is marked `*` as required, then you need to have a registered account on that IRC network. See [registering with NickServ](irc.md#registering-with-nickserv).
-   - If NickServ Account is marked `*` as required, that's only used as nick, but supports NickServ auth.
-   - The invite command field in `Settings > IRC > Edit network` are pre filled, but you need to add your IRC key. The rest should be left as is.
+   :::info
+   - If NickServ Password is marked with a `*`, a registered IRC account is required. Refer to [registering with NickServ](irc.md#registering-with-nickserv) for more details.
+   - NickServ Account marked with a `*` indicates that it's utilized only for the nick but supports NickServ authentication.  
+   - The `invite command` field under `Settings > IRC > Edit network` will come pre-populated. Input your IRC key here, and ensure the rest of the settings remain unchanged.
+   :::
 
-1. After the indexer is set up, head to `Settings > IRC` and click the 3 dots for the newly created network, hit `Edit`, and then enable the network. This is a good time to look over everything. The invite command etc.
+2. **Activating the Network:** Once your indexer is configured, go to `Settings > IRC` and flip the switch associated with the newly created network. Now is a good time to review all settings, including the invite command.
 
 :::caution Important
-Please check the [IRC](../configuration/irc.md) section for more details regarding NickServ, IRC keys, and grouping of nicks.
+Refer to the [IRC](../configuration/irc.md) section for detailed information about NickServ, IRC keys, and nick grouping.
 :::
 
 <IpApproval/>
+
+### External Identifier (optional) {#external-identifier}
+
+To enable features such as seed limits when pushing releases to \*arrs, an `External identifier` is necessary. This identifier must correspond to the indexer name in your \*arr setup. If you are using Prowlarr, it will typically be listed as "TorrentLeech (Prowlarr)".
+
+:::info
+This option will only appear when you **edit** an existing indexer.
+:::
 
 ## Custom indexer definitions
 
@@ -71,7 +80,7 @@ autobrr supports custom indexer definitions.
 
 In the autobrr config file, add the following to the bottom if it's not already there:
 
-```bash
+```toml
 # Custom definitions
 #
 customDefinitions = "/home/$YOUR_USER/.config/autobrr/definitions"
@@ -81,7 +90,7 @@ Change `$YOUR_USER` to your username.
 
 For Docker:
 
-```bash
+```toml
 # Custom definitions
 #
 customDefinitions = "/config/definitions"
@@ -89,6 +98,6 @@ customDefinitions = "/config/definitions"
 
 This should work if you have `/config` mapped to a volume which you hopefully have.
 
-1. Put the definition file to disk and place it in the folder you just entered in the config.
-2. Restart autobrr.
-3. Set up the indexer in `Settings > Indexers` as usual.
+1. Create your definition file and place it in the directory specified in your config file.
+2. Restart autobrr to apply changes.
+3. Configure the new indexer by navigating to `Settings > Indexers` and setting it up as usual.
