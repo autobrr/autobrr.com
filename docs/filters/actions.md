@@ -68,29 +68,29 @@ If a category is set, then qBittorrent will control the save path. Override the 
 
 #### Rules: {#qbittorrent-rules}
 
-1. **Limit download and upload speed**: *optional*  
-   - Takes any integer as a number. Given in `KiB/s`.
-2. **Ratio limit**: *optional*  
-   - Takes any integer or floating point number with `,` as decimal separator.  
-   - The downloaded torrent will be stopped when the ratio limit is reached.
-3. **Seed time limit**: *optional*  
-   - Takes any integer as a number. Given in minutes.
-   - The downloaded torrent will be stopped when the seed time limit is reached.
-4. **Add paused**: *default false*
-5. **Content layout**: *optional*  
-   - Tells qBittorrent if it should:  
-     - Keep the original torrent content layout,  
-     - Create a subfolder for the downloaded torrent,  
-     - Refrain from creating a subfolder.
-6. **Ignore client rules**: *default false*  
-   - Download the torrent even though the maximum active downloads configured in the client settings have been reached.
-7. **Skip hash check**: *default false*
-8. **Download first and last pieces first**: *default false*
-9. **Priority**: *optional*
-   - Choose between:
-      1. Top of queue
-      2. Bottom of queue
-      3. Disabled
+- **Limit download and upload speed**: *optional*  
+  Takes any integer as a number. Given in `KiB/s`.
+- **Ratio limit**: *optional*  
+  Takes any integer or floating point number with `,` as decimal separator.  
+  The downloaded torrent will be stopped when the ratio limit is reached.
+- **Seed time limit**: *optional*  
+  Takes any integer as a number. Given in minutes.
+  The downloaded torrent will be stopped when the seed time limit is reached.
+- **Add paused**: *default false*
+- **Content layout**: *optional*  
+  Tells qBittorrent if it should:  
+    - Keep the original torrent content layout,  
+    - Create a subfolder for the downloaded torrent,  
+    - Refrain from creating a subfolder.
+- **Ignore client rules**: *default false*  
+  Download the torrent even though the maximum active downloads configured in the client settings have been reached.
+- **Skip hash check**: *default false*
+- **Download first and last pieces first**: *default false*
+- **Priority**: *optional*  
+  Choose between:
+  - Top of queue
+  - Bottom of queue
+  - Disabled
 
 :::warning Heads up!
 When using the Priority feature, Torrent Queueing will be automatically enabled in qBit if it is disabled. Ensure you set your preferred limits for Torrent Queueing.
@@ -115,8 +115,8 @@ Send to one or multiple local or remote instances of Deluge.
 
 #### Rules: {#deluge-rules}
 
-1. **Limit download and upload speed**: *optional*  
-   - Takes any integer as a number. Given in `KiB/s`.
+- **Limit download and upload speed**: *optional*  
+  Takes any integer as a number. Given in `KiB/s`.
 
 ### rTorrent
 
@@ -124,8 +124,8 @@ Send to one or multiple local or remote instances of rTorrent.
 
 #### Available options: {#rtorrent-available-options}
 
-1. **Save path**: *optional*
-2. **Label**: *optional*
+- **Save path**: *optional*
+- **Label**: *optional*
 
 ### Transmission
 
@@ -133,8 +133,8 @@ Send to one or multiple local or remote instances of Transmission.
 
 #### Available options: {#transmission-available-options}
 
-1. **Save Path**: *optional*
-2. **Add as Paused**: *default false*
+- **Save Path**: *optional*
+- **Add as Paused**: *default false*
 
 ### Porla
 
@@ -142,13 +142,13 @@ Send to one or multiple local or remote instances of Porla.
 
 #### Available options: {#porla-available-options}
 
-1. **Save Path**: *optional*
-2. **Preset**: *A case-sensitive preset name as configured in Porla.*
+- **Save Path**: *optional*
+- **Preset**: *A case-sensitive preset name as configured in Porla.*
 
 #### Rules: {#porla-rules}
 
-1. **Limit download and upload speed**: *optional*  
-   - Takes any integer as a number. Given in `KiB/s`.
+- **Limit download and upload speed**: *optional*  
+  Takes any integer as a number. Given in `KiB/s`.
 
 ### Radarr, Sonarr, Lidarr, Readarr and Whisparr
 
