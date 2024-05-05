@@ -42,6 +42,7 @@ const config = {
           blogTitle: "Release Notes",
           routeBasePath: "/release-notes",
           blogSidebarTitle: "Release Notes",
+          blogSidebarCount: 'ALL',
         },
         docs: {
           sidebarPath: require.resolve("./sidebars.js"),
