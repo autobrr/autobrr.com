@@ -38,7 +38,7 @@ For adding more indexers to autobrr, please submit an [Indexer Request](https://
 
 ## Setup
 
-1. Navigate to `Settings > Indexers` to add new indexers.
+Navigate to `Settings > Indexers` to add new indexers.
 
    When adding a new indexer, autobrr automatically configures the necessary IRC network and channels. Indexers usually need some extra keys to work. The common ones are:
 
@@ -50,7 +50,7 @@ For adding more indexers to autobrr, please submit an [Indexer Request](https://
 
     Not all of these are required when setting up a new indexer. `Passkeys` and `torrent_pass` are typically found in the download url of a torrent, while `apikey`, `auth_key` and `rsskey`s are on your indexer's profile page. Check your indexers wiki/forum etc. if you're having trouble finding something specific, the question has been likely asked before and the staff probably already have their own guide on how to set up.
 
-   For instance, TorrentLeech provides a setup guide [here](http://wiki.torrentleech.org/doku.php/autobrr).
+   For instance, TorrentLeech provides a setup guide [here](http://wiki.torrentleech.org/doku.php/autobrr).  
 
    :::info
    - If NickServ Password is marked with a `*`, a registered IRC account is required. Refer to [registering with NickServ](irc.md#registering-with-nickserv) for more details.
@@ -58,7 +58,8 @@ For adding more indexers to autobrr, please submit an [Indexer Request](https://
    - The `invite command` field under `Settings > IRC > Edit network` will come pre-populated. Input your IRC key here, and ensure the rest of the settings remain unchanged.
    :::
 
-2. **Activating the Network:** Once your indexer is configured, go to `Settings > IRC` and flip the switch associated with the newly created network. Now is a good time to review all settings, including the invite command.
+#### **Activating the Network:** 
+Once your indexer is configured, go to `Settings > IRC` and flip the switch associated with the newly created network. Now is a good time to review all settings, including the invite command.
 
 :::caution Important
 Refer to the [IRC](../configuration/irc.md) section for detailed information about NickServ, IRC keys, and nick grouping.
