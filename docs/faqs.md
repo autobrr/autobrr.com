@@ -104,7 +104,7 @@ Check your logs. Additionally, enable trace logging by setting `logLevel = "TRAC
 
 ## How does autobrr handle multiple matching filters for a release?
 
-When a release is processed, autobrr checks all the filters in order of priority (higher number = higher priority). If a filter matches the release, autobrr executes all the actions defined in that filter and then stops processing further filters for that release.
+When a release is processed, autobrr checks all the filters in order of priority (higher number = higher priority). If a filter matches the release, autobrr executes all the actions defined in that filter and then stops processing further filters for that release. The exception here is \*arr actions. If e.g., Radarr or Sonarr rejects a release, the next filter in line will be processed.
 
 ## My autobrr instance cannot reach Deluge running in Docker
 
