@@ -58,7 +58,8 @@ Navigate to `Settings > Indexers` to add new indexers.
    - The `invite command` field under `Settings > IRC > Edit network` will come pre-populated. Input your IRC key here, and ensure the rest of the settings remain unchanged.
    :::
 
-#### **Activating the Network:** 
+#### Activating the Network
+
 Once your indexer is configured, go to `Settings > IRC` and flip the switch associated with the newly created network. Now is a good time to review all settings, including the invite command.
 
 :::caution Important
