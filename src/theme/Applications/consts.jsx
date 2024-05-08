@@ -152,7 +152,7 @@ export const platforms = [
   },
   {
     title: "MacOS",
-    url: "installation/linux",
+    url: "installation/macos",
     icon: MacOSIcon,
   },
 ];
