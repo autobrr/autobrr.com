@@ -68,6 +68,7 @@ def git_operations():
         branch = repo.create_head(branch_name)
         repo.git.checkout(branch_name)
 
+    print(f"::set-output name=branch::{branch_name}")
     return branch
 
 def main():
