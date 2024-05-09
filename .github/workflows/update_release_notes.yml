@@ -3,6 +3,7 @@ name: Update Release Notes
 on:
   repository_dispatch:
     types: [update-release-notes]
+  workflow_dispatch:
 
 jobs:
   update_release_notes:
