@@ -33,10 +33,14 @@ const Center = ({ icon, text }) => (
   </div>
 );
 
-function HomepageHeader() {
+function HomepageHeader({ onColorMode }) {
   const { siteConfig } = useDocusaurusContext();
   const { colorMode } = useColorMode();
   const [headerImage, setHeaderImage] = useState(null);
+
+  useEffect(() => {
+    onColorMode(colorMode);
+  }, [colorMode, onColorMode]);
 
   useEffect(() => {
     const imageToLoad = colorMode === "dark" ? FrontPicDark : FrontPicLight;
@@ -128,16 +132,19 @@ function HomepageHeader() {
 
 export default function Home() {
   const { siteConfig } = useDocusaurusContext();
+  const [colorMode, setColorMode] = useState("light"); // Default to light
+  const [contentLoaded, setContentLoaded] = useState(false);
 
   useEffect(() => {
     const preloadImage = (src) => {
       const img = new Image();
+      img.onload = () => setContentLoaded(true);
       img.src = src;
     };
 
-    preloadImage(FrontPicDark);
-    preloadImage(FrontPicLight);
-  }, []);
+    const imageToLoad = colorMode === "dark" ? FrontPicDark : FrontPicLight;
+    preloadImage(imageToLoad);
+  }, [colorMode]);
 
   return (
     <Layout
@@ -147,11 +154,15 @@ export default function Home() {
       <main
         className={clsx(styles.container, styles.main, stylepattern.pattern)}
       >
-        <HomepageHeader />
-        <Introduction id="introduction" />
-        <Applications />
-        <About />
-        <Resources />
+        <HomepageHeader onColorMode={setColorMode} />
+        {contentLoaded && (
+          <>
+            <Introduction id="introduction" />
+            <Applications />
+            <About />
+            <Resources />
+          </>
+        )}
       </main>
     </Layout>
   );
