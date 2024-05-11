@@ -115,15 +115,6 @@ function HomepageHeader() {
 export default function Home() {
   const { siteConfig } = useDocusaurusContext();
 
-  // Preloading the images here
-  useEffect(() => {
-    const darkImage = new Image();
-    darkImage.src = FrontPicDark;
-
-    const lightImage = new Image();
-    lightImage.src = FrontPicLight;
-  }, []);
-
   return (
     <Layout
       title={`${siteConfig.title}`}
