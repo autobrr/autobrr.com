@@ -139,7 +139,7 @@ const config = {
       ],
     },
     colorMode: {
-      defaultMode: "dark", 
+      //defaultMode: "dark", 
       respectPrefersColorScheme: true
     },
     prism: {
