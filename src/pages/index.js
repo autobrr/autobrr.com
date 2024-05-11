@@ -32,18 +32,7 @@ const Center = ({ icon, text }) => (
 function HomepageHeader() {
   const { siteConfig } = useDocusaurusContext();
   const { colorMode, setColorMode } = useColorMode();
-
-  useEffect(() => {
-    const savedColorMode = localStorage.getItem("colorMode");
-    if (savedColorMode) {
-      setColorMode(savedColorMode);
-    }
-  }, [setColorMode]);
-
-  useEffect(() => {
-    localStorage.setItem("colorMode", colorMode);
-  }, [colorMode]);
-
+  
   const FrontPic = colorMode === "dark" ? FrontPicDark : FrontPicLight;
 
   return (
