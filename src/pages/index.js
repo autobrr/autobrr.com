@@ -31,7 +31,20 @@ const Center = ({ icon, text }) => (
 
 function HomepageHeader() {
   const { siteConfig } = useDocusaurusContext();
-  const { colorMode } = useColorMode();
+  const { colorMode, setColorMode } = useColorMode();
+
+  useEffect(() => {
+    const savedColorMode = localStorage.getItem("colorMode");
+    if (savedColorMode) {
+      setColorMode(savedColorMode);
+    }
+  }, [setColorMode]);
+
+  useEffect(() => {
+    localStorage.setItem("colorMode", colorMode);
+  }, [colorMode]);
+
+  const FrontPic = colorMode === "dark" ? FrontPicDark : FrontPicLight;
 
   return (
     <header
@@ -91,7 +104,7 @@ function HomepageHeader() {
         </div>
       </div>
       <img
-        src={colorMode === "dark" ? FrontPicDark : FrontPicLight}
+        src={FrontPic}
         alt="autobrr"
         className={clsx(styles.image, "front-page-pic")}
       />
