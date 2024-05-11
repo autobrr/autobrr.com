@@ -20,8 +20,8 @@ import Introduction from "@theme/Introduction";
 import Layout from "@theme/Layout";
 import Resources from "@theme/Resources";
 
-import FrontPicDark from "../../static/img/front-dark.png";
-import FrontPicLight from "../../static/img/front-light.png";
+import FrontPicDark from "../../static/img/front-dark2.png";
+import FrontPicLight from "../../static/img/front-light2.png";
 import logo from "../../static/img/logo.png";
 import styles from "./index.module.scss";
 import stylepattern from "./pattern.module.css";
