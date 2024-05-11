@@ -139,7 +139,7 @@ const config = {
       ],
     },
     colorMode: {
-      //defaultMode: "dark", // disabled as it sets the front-page-pic to dark regardless of OS setting upon load
+      //defaultMode: "dark", 
       respectPrefersColorScheme: true
     },
     prism: {

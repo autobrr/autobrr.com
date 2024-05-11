@@ -6,8 +6,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap");
 
 :root {
-  transition: color 0.3s ease, background-color 0.3s ease;
-
+  
   --ifm-font-family-base: "Inter";
   --ifm-line-height-base: 1.5;
   --ifm-font-size-base: 110%;
@@ -391,5 +390,9 @@ ul {
 }
 
 main[itemscope] > article > header > div:has(div.avatar) {
+  display: none;
+}
+
+.avatar {
   display: none;
 }
