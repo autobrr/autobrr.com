@@ -61,9 +61,9 @@ function HomepageHeader() {
     }
   };
 
-  if (!headerImage) {
-    return null;
-  }
+  //if (!headerImage) {
+  //  return null;
+  //}
 
   return (
     <header className={clsx("hero hero--secondary", styles.heroBanner)}>
