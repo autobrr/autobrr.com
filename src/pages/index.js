@@ -45,9 +45,6 @@ function HomepageHeader() {
     img.src = imageToLoad;
   }, [colorMode]);
 
-  if (!headerImage) {
-    return null;
-  }
   const [scroll, setScroll] = useState(null);
 
   useEffect(() => {
@@ -63,6 +60,10 @@ function HomepageHeader() {
       scroll.animateScroll(targetOffsetTop);
     }
   };
+
+  if (!headerImage) {
+    return null;
+  }
 
   return (
     <header className={clsx("hero hero--secondary", styles.heroBanner)}>
