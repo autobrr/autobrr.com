@@ -4,7 +4,7 @@ import Layout from "@theme/Layout";
 import Link from "@docusaurus/Link";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import { useColorMode } from "@docusaurus/theme-common";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 import styles from "./index.module.css";
 import logo from "../../static/img/logo.png";
@@ -31,9 +31,12 @@ const Center = ({ icon, text }) => (
 
 function HomepageHeader() {
   const { siteConfig } = useDocusaurusContext();
-  const { colorMode, setColorMode } = useColorMode();
-  
-  const FrontPic = colorMode === "dark" ? FrontPicDark : FrontPicLight;
+  const { colorMode } = useColorMode();
+  const [headerImage, setHeaderImage] = useState(FrontPicLight);
+
+  useEffect(() => {
+    setHeaderImage(colorMode === "dark" ? FrontPicDark : FrontPicLight);
+  }, [colorMode]);
 
   return (
     <header
@@ -93,7 +96,7 @@ function HomepageHeader() {
         </div>
       </div>
       <img
-        src={FrontPic}
+        src={headerImage}
         alt="autobrr"
         className={clsx(styles.image, "front-page-pic")}
       />
