@@ -393,3 +393,7 @@ ul {
 main[itemscope] > article > header > div:has(div.avatar) {
   display: none;
 }
+
+.avatar {
+  display: none;
+}
