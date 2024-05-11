@@ -42,6 +42,7 @@ const config = {
           blogTitle: "Release Notes",
           routeBasePath: "/release-notes",
           blogSidebarTitle: "Release Notes",
+          blogSidebarCount: 'ALL',
         },
         docs: {
           sidebarPath: require.resolve("./sidebars.js"),
@@ -147,7 +148,8 @@ const config = {
       ],
     },
     colorMode: {
-      defaultMode: "dark",
+      //defaultMode: "dark", 
+      respectPrefersColorScheme: true
     },
     prism: {
       theme: themes.vsLight,

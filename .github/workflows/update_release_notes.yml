@@ -1,0 +1,45 @@
+name: Update Release Notes
+
+on:
+  repository_dispatch:
+    types: [update-release-notes]
+  workflow_dispatch:
+
+jobs:
+  update_release_notes:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies
+        run: |
+          pip install requests beautifulsoup4 GitPython markdownify
+
+      - name: Run update script
+        id: update_script
+        run: python update_release_notes.py
+
+      - name: Commit files
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add .
+          git commit -m "Update release notes" || echo "No changes to commit"
+
+      - name: Push changes
+        run: git push origin ${{ steps.update_script.outputs.branch }}
+
+      - name: Create Pull Request
+        uses: repo-sync/pull-request@v2
+        with:
+          source_branch: ${{ steps.update_script.outputs.branch }}
+          destination_branch: "main"
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          pr_title: "Update Release Notes"
+          pr_body: "Automatically update release notes"

@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-
 import clsx from "clsx";
 import {
   AiOutlineDownload,
@@ -37,6 +36,18 @@ const Center = ({ icon, text }) => (
 function HomepageHeader() {
   const { siteConfig } = useDocusaurusContext();
   const { colorMode } = useColorMode();
+  const [headerImage, setHeaderImage] = useState(null);
+
+  useEffect(() => {
+    const imageToLoad = colorMode === "dark" ? FrontPicDark : FrontPicLight;
+    const img = new Image();
+    img.onload = () => setHeaderImage(imageToLoad);
+    img.src = imageToLoad;
+  }, [colorMode]);
+
+  if (!headerImage) {
+    return null;
+  }
   const [scroll, setScroll] = useState(null);
 
   useEffect(() => {
@@ -106,7 +117,7 @@ function HomepageHeader() {
         </div>
       </div>
       <img
-        src={colorMode === "dark" ? FrontPicDark : FrontPicLight}
+        src={headerImage}
         alt="autobrr"
         className={clsx(styles.image, "front-page-pic")}
       />
@@ -118,11 +129,13 @@ export default function Home() {
   const { siteConfig } = useDocusaurusContext();
 
   useEffect(() => {
-    const darkImage = new Image();
-    darkImage.src = FrontPicDark;
+    const preloadImage = (src) => {
+      const img = new Image();
+      img.src = src;
+    };
 
-    const lightImage = new Image();
-    lightImage.src = FrontPicLight;
+    preloadImage(FrontPicDark);
+    preloadImage(FrontPicLight);
   }, []);
 
   return (

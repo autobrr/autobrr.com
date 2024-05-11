@@ -108,14 +108,14 @@ clients:
   #    filters:
   #      - 14 # Change me
   #    #excludeAlternateTitles: true # defaults to false
-	
+
   #  - name: readarr
   #    type: readarr
   #    host: http://localhost:8787
   #    apikey: API_KEY
   #    filters:
   #      - 18 # Change me
-		
+
   # - name: lidarr
   #   type: lidarr
   #   host: http://localhost:8686
@@ -201,7 +201,7 @@ If you want to exclude certain tags, you can use the `tagsExclude`.
 
 Formerly known as regbrr and maintained by community members is now integrated into omegabrr.
 
-####  Supported list types {#lists-supported-types}
+#### Supported list types {#lists-supported-types}
 
 #### `trakt` - Trakt.tv lists {#lists-trakt}
 
@@ -212,7 +212,8 @@ This does not apply to lists hosted by autobrr.
 :::
 
 Trakt lists hosted by autobrr:
-```yaml
+
+```text
 https://api.autobrr.com/lists/trakt/popular-tv
 https://api.autobrr.com/lists/trakt/anticipated-tv
 https://api.autobrr.com/lists/trakt/upcoming-movies
@@ -220,21 +221,57 @@ https://api.autobrr.com/lists/trakt/upcoming-bluray
 https://api.autobrr.com/lists/stevenlu # needs to be specified as a trakt list
 ```
 
+```yaml
+lists:
+  - name: Anticipated TV
+    type: trakt
+    url: https://api.autobrr.com/lists/trakt/anticipated-tv
+    filters:
+      - 22 # Change me
+```
+
 #### `mdblists` - MDBLists {#lists-mdblists}
 
 Takes any mdblist url with `/json` appended to the end of the URL.
 
 ```yaml
-https://mdblist.com/lists/linaspurinis/new-movies/json
+lists:
+  - name: Latest TV Shows
+    type: mdblist
+    url: https://mdblist.com/lists/garycrawfordgc/latest-tv-shows/json
+    filters:
+      - 1 # Change me
 ```
 
 #### `metacritic` - Music lists curated by Metacritic {#lists-metacritic}
 
-Only these lists are supported:
+These URLs are supported:
 
 ```yaml
 https://api.autobrr.com/lists/metacritic/upcoming-albums
 https://api.autobrr.com/lists/metacritic/new-albums
+```
+
+```yaml
+lists:
+  - name: New Albums
+    type: metacritic
+    url: https://api.autobrr.com/lists/metacritic/new-albums
+    filters:
+      - 9 # Change me
+```
+
+#### Steam wishlist {#lists-steam-wishlist}
+
+Takes any Steam wishlist URL like `https://store.steampowered.com/wishlist/id/USERNAME/wishlistdata`
+
+```yaml
+lists:
+  - name: New Games
+    type: steam
+    url: https://store.steampowered.com/wishlist/id/USERNAME/wishlistdata
+    filters:
+      - 1 # Change me
 ```
 
 #### `plaintext` - Plaintext lists {#lists-plaintext}
@@ -249,6 +286,7 @@ lists:
     filters:
       - 27 # change me
     album: true # optional
+    #matchRelease: true # optional
 ```
 
 #### Trakt info {#trakt-info}
@@ -380,11 +418,17 @@ lists:
       - 20 # Change me
 
   - name: Personal list
-  type: plaintext
-  url: https://gist.githubusercontent.com/autobrr/somegist/raw
-  filters:
-    - 27 # change me
-  album: true # album or matchRelease can be optionally set to use these fields in your autobrr filter. If not set, it will use the Movies / Shows field.
+    type: plaintext
+    url: https://gist.githubusercontent.com/autobrr/somegist/raw
+    filters:
+      - 27 # change me
+    album: true # album or matchRelease can be optionally set to use these fields in your autobrr filter. If not set, it will use the Movies / Shows field.
+
+  - name: Steam Wishlist
+    type: steam
+    url: https://store.steampowered.com/wishlist/id/USERNAME/wishlistdata
+    filters:
+      - 20 # Change me
 ```
 
 ## Commands
@@ -434,6 +478,28 @@ server:
   host: 0.0.0.0
   port: 7441
   apiToken: MY_NEW_LONG_SECURE_TOKEN
+```
+
+## Webhook endpoints
+
+Hit these to trigger an update outside the cron schedule.
+Can be set up inside the \*arrs to trigger an update when you add new monitored titles etc.
+
+**arrs only:**
+
+```bash
+curl -X POST 'http://127.0.0.1:7441/api/webhook/trigger/arr?apikey=api_key' # arrs only
+```
+
+**Lists only:**
+
+```bash
+curl -X POST 'http://127.0.0.1:7441/api/webhook/trigger/lists?apikey=api_key' # lists only
+```
+
+**Everything:**
+```bash
+curl -X POST 'http://127.0.0.1:7441/api/webhook/trigger?apikey=api_key' # everything
 ```
 
 ## Service {#service}
