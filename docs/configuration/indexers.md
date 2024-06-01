@@ -70,9 +70,11 @@ Refer to the [IRC](../configuration/irc.md) section for detailed information abo
 
 ### External Identifier (optional) {#external-identifier}
 
-To enable features such as seed limits when pushing releases to \*arrs, an `External identifier` is necessary. This identifier must correspond to the indexer name in your \*arr setup. If you are using Prowlarr, it will typically be listed as "TorrentLeech (Prowlarr)".
+To enable features such as seed limits (seed ratio, seed time) when pushing releases to \*arrs, an `External identifier` is required. This identifier must correspond to the indexer name in your \*arr setup. If you are using Prowlarr, it will typically be listed as "TorrentLeech (Prowlarr)".
 
 :::info
+Available in verison `v1.42.0+`
+
 This option will only appear when you **edit** an existing indexer.
 :::
 
