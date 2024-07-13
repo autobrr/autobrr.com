@@ -1,6 +1,6 @@
 import { themes } from "prism-react-renderer";
+import FontPreloadPlugin from "webpack-font-preload-plugin";
 
-const FontPreloadPlugin = require("webpack-font-preload-plugin");
 const config = {
   title: "autobrr",
   tagline: "The modern autodl-irssi replacement.",
@@ -88,6 +88,16 @@ const config = {
     //     content: "autobrr, autodl-irssi, torrents, automation",
     //   },
     // ],
+    webpack: {
+      configure: (webpackConfig, { env, paths }) => {
+        webpackConfig.module.rules.push({
+          test: /\.svg$/,
+          use: ["@svgr/webpack"],
+        });
+
+        return webpackConfig;
+      },
+    },
     image: "img/autobrr.png",
     docs: {
       sidebar: {
@@ -109,17 +119,16 @@ const config = {
           activeBaseRegex:
             "/(introduction|installation|configuration|filters|usage)",
         },
-        {
-          to: "release-notes",
-          label: "Release Notes",
-          position: "left",
-        },
-        //{
         //{
         //  type: "docsVersionDropdown", // disabling until its of use
         //  position: "left",
         //  dropdownActiveClassDisabled: false,
         //},
+        {
+          to: "release-notes",
+          label: "Release Notes",
+          position: "left",
+        },
         {
           href: "https://discord.gg/WQ2eUycxyT",
           position: "right",
@@ -150,6 +159,7 @@ const config = {
   },
 
   plugins: [
+    "docusaurus-plugin-sass",
     function preloadFontPlugin(_context, _options) {
       return {
         name: "preload-font-plugin",
@@ -158,8 +168,7 @@ const config = {
         },
       };
     },
-    // ...
   ],
 };
 
-module.exports = config;
+export default config;
