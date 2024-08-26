@@ -20,7 +20,7 @@ Upgraderr is a title parser that matches existing titles present in your qBittor
 
 On any filter, you may utilize the external tab as a pre-filter. Using this with a return code of 200 permits any unique titles to be added, or if they're a quality upgrade. This also acts as a deduplicator should you wish.
 
-Coupling this with the extensive filtering built-in to autobrr allows you to specify qualities to stop accepting upgrades at, should you wish. This allows you to replace applications such as Sonarr / Radarr.
+Coupling this with the extensive filtering built into autobrr, you can define the quality above which you no longer want to accept upgrades, if you wish. This allows you to replace applications such as Sonarr / Radarr.
 
 On the external Webhook action, utilize the following payload, replacing the host(s), user and password with your configuration. The expected return code is 200.
 
@@ -43,7 +43,8 @@ http://upgraderr:6940/api/upgrade
 
 ### Cross-Seed functionality {#upgraderr-cross-seed-functionality}
 
-At the time of this writing, Upgraderr has excellent cross-seed functionality that runs in milliseconds. Presently there's a partial matcher implemented, where if 80% of the data matches the existing torrent, the new torrent will have the conflicting files (should they exist) renamed, to not corrupt the existing torrent.
+At the time of this writing, Upgraderr has excellent cross-seed functionality that runs in milliseconds.
+Currently, a partial matching system is in place where if 80% of the data matches an existing torrent, any conflicting files in the new torrent (if they exist) will be renamed to avoid corrupting the original torrent.
 
 On the external Webhook action, utilize the following payload, replacing the host(s), user and password with your configuration. The expected return code is 250.
 
@@ -90,11 +91,3 @@ http://upgraderr:6940/api/cross
 This is a toolchest, other functionality can be achieved by using other return codes, and attaching other tools to actions taken by the application.
 
 More Information: [github.com/kylesanderson/upgraderr](https://github.com/kylesanderson/upgraderr)
-
-## Redactedhook
-
-RedactedHook is a webhook companion service for autobrr designed to check the names of uploaders, your ratio, and record labels associated with torrents on Redacted and Orpheus.
-
-### Instructions {#redactedhook-instructions}
-
-Rather than duplicating the usage guide found in the Github documentation, please refer to the instructions available at [https://github.com/s0up4200/redactedhook](https://github.com/s0up4200/redactedhook) for setting up the tool.
