@@ -6,8 +6,6 @@ description: 3rd party tools to manage your torrents.
 keywords: [autoremove,autoremove-torrents,tqm,qbittools,qbit_manage,autodelete,delete,remove,tag,tagging]
 ---
 
-<!-- ## Manage torrents (autoremove, tag issues etc) -->
-
 You have probably reached a point now where you want to start automatically manage torrents in your preferred client based on rules, like min seed time and max ratio.
 
 We'll cover the most popular ones. Some of these tools only support a single client and others support multiple.
