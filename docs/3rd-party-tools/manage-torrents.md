@@ -29,6 +29,8 @@ Supported clients
 
 autoremove-torrents uses `task` and `strategy` with properties to define what you want to do. 
 
+To run your configuration periodically we recommend a cronjob on Linux/Mac or the Task Scheduler on Windows.
+
 Example config:
 
 ```yaml
@@ -63,19 +65,19 @@ my_task:          # Part 1: Task Name
 
 > CLI application to manage torrent client queues and remove torrents that meet a specific criteria 
 
-Repository (original, not active): [https://github.com/l3uddz/tqm](https://github.com/l3uddz/tqm)
-
+Repository (original, not active): [https://github.com/l3uddz/tqm](https://github.com/l3uddz/tqm)  
 Repository (fork, had more updates): [https://github.com/SweetMNM/tqm](https://github.com/SweetMNM/tqm)
+
+The [original](https://github.com/l3uddz/tqm) only supports `categories` in qBittorrent but the [fork](https://github.com/SweetMNM/tqm) supports rules by `tags` as well.
 
 Supported clients
 * qBittorrent
 * Deluge
 
-TQM has powerful rules with conditionals which makes it a bit harder to setup but you have finegrained control.
+TQM has powerful rules with conditionals which makes it a bit harder to setup but you have fine-grained control.  
+It supports `remove`, `tagging` and `update categories`.  
 
-It supports `remove`, `tagging` and `update categories`.
-
-The [original](https://github.com/l3uddz/tqm) only supports `categories` in qBittorrent but the [fork](https://github.com/SweetMNM/tqm) supports rules by `tags` as well.
+To run your configuration periodically we recommend a cronjob on Linux/Mac or the Task Scheduler on Windows.
 
 Example config (fork with tags support):
 
@@ -155,6 +157,13 @@ filters:
           - Seeds <= 3
 ```
 
+::::info
+There are more operators (i.e. `==` `!=` `||` and `&&`) you can use than those provided in the example config.  
+To see a full list of available operators head over to the Language Definition documentation of Expr -  
+the language used to filter within TQM:  
+[Expr Lang v1.9 - Language Definition: Supported Operators](https://expr-lang.org/docs/v1.9/language-definition#supported-operators)
+::::
+
 ## qbittools
 
 > qbittools is a feature rich CLI for the management of torrents in qBittorrent.
@@ -174,6 +183,9 @@ Commands:
 - `mover` (change category: useful for hybrid setups with nvme/hdd)
 - `orphaned` (find files not assosciated with any torrent)
 
+To run the commands periodically (that do not run in daemon mode natively) we recommend a cronjob on Linux/Mac or the Task Scheduler on Windows.
+
+
 
 ## qbit_manage
 
@@ -192,3 +204,5 @@ Supported clients
 - `changing categories`
 - integrates well with arrs to check hardlinks
 - `notifications` (apprise, notifiarr, webhooks)
+
+To run your configuration periodically we recommend a cronjob on Linux/Mac or the Task Scheduler on Windows.
