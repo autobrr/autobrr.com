@@ -83,7 +83,7 @@ With TorrentLeech as an example, only add the red part when setting up your inde
 In case you are still having troubles with setting up the TorrentLeech indexer,
 you can find detailed instructions for the setup process on their wiki:
 
-https://wiki.torrentleech.org/doku.php/autobrr
+[https://wiki.torrentleech.org/doku.php/autobrr](https://wiki.torrentleech.org/doku.php/autobrr)
 
 ## I have set up an indexer, but it does not connect to the #announce channel. What do I do?
 
@@ -101,6 +101,10 @@ You can use the label-plugin in Deluge and set a custom save path in that as a w
 ## Why did a release not match when it clearly should have?
 
 Check your logs. Additionally, enable trace logging by setting `logLevel = "TRACE"` in your `config.toml` (which can usually be found in `~/.config/autobrr/`). Remember to restart autobrr after doing so.
+
+## How does autobrr handle multiple matching filters for a release?
+
+When a release is processed, autobrr checks all the filters in order of priority (higher number = higher priority). If a filter matches the release, autobrr executes all the actions defined in that filter and then stops processing further filters for that release. The exception here is \*arr actions. If e.g., Radarr or Sonarr rejects a release, the next filter in line will be processed.
 
 ## My autobrr instance cannot reach Deluge running in Docker
 

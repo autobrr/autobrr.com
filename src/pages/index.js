@@ -89,7 +89,7 @@ function HomepageHeader({ onColorMode }) {
             />
             <Center
               icon={<AiOutlineDownload size="24" />}
-              text="85+ Indexers"
+              text="90+ Indexers"
             />
             <Center icon={<AiOutlineFilter size="24" />} text="Filters" />
             <Center icon={<CgPlug size="24" />} text="*arr Integration" />

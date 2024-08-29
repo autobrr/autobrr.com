@@ -85,9 +85,15 @@ module.exports = {
       items: ["usage/search", "usage/tips", "usage/account"],
     },
     {
-      type: "doc",
+      type: "category",
       label: "3rd party tools",
-      id: "3rd-party-tools",
+      collapsed: true,
+      items: [
+        "3rd-party-tools/cross-seed",
+        "3rd-party-tools/manage-torrents",
+        "3rd-party-tools/redactedhook",
+        "3rd-party-tools/upgraderr",
+      ],
     },
     {
       type: "doc",
