@@ -123,8 +123,11 @@ If you need some assistance then the best way to get help is [Discord](https://d
 
 ## Bouncing around (optional)
 
-> [!WARNING]
-> This is meant for advanced users or those that need a single irc connection for certain networks or for those using multiple servers with multiple autobrr instances.
+:::warning
+
+This is meant for advanced users or those that need a single irc connection for certain networks or for those using multiple servers with multiple autobrr instances.
+
+:::
 
 Due the current way of the release-parsing pipeline works, you may want to use a dedicated autobrr instance for your downloader. For this purpose, having a IRC bouncer in front will be beneficial, as it enables you to use the same irc-bot account for multiple autobrr instances. This still require you to have gone trough the above steps of setting up a bot account.
 
