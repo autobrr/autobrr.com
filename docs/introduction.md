@@ -120,10 +120,6 @@ Available download clients and actions
 - Exec custom scripts
 - Webhook
 
-## Planned features
-
-- Automatic cross-seeding of existing releases
-
 ## About
 
 The development of autobrr started in Early 2020, entering rapid development in Summer 2021 due to dissatisfaction with needing 3+ tools to do one job. Autobrr has since gained quite a bit of traction and has a growing community supporting the project.
