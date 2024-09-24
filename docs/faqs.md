@@ -30,7 +30,7 @@ If you think you have found a bug then please report it either on [Github Issues
 
 ## I have a feature request
 
-If you have a feature request then report it on [Github Feature Request](https://github.com/autobrr/autobrr/issues/new?assignees=&labels=Feature+request&projects=&template=feature_request.md&title=%5BFEATURE+REQ%5D) or in our Discord and use the `#suggestions` channel.
+If you have a feature request then report it on [Github Feature Request](https://github.com/autobrr/autobrr/discussions/new?category=ideas) or in our Discord and use the `#suggestions` channel.
 
 ## Nothing happens - I'm not seeing any releases
 
