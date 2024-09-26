@@ -45,7 +45,5 @@ Whereas indexers under the freeleech percent category support values in the free
 - LST
 - OnlyEncodes
 - ReelFliX
-- SkipTheCommericals
-- SkipTheTrailers
 - TheDarkCommunity
 - TheOldSchool
