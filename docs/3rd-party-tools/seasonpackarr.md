@@ -2,7 +2,7 @@
 id: seasonpackarr
 sidebar_label: seasonpackarr
 title: seasonpackarr
-description: automatic episode to season pack hardlinking.
+description: automatic episode into season pack hardlinking.
 keywords: [season,pack,seasonpackarr,hardlink,arr]
 ---
 
