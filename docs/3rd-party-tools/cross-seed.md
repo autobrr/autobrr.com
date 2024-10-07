@@ -1,12 +1,10 @@
 ---
 id: cross-seed
 sidebar_label: Cross-seed
-title: 3rd party tools
+title: Cross-seed with autobrr
 description: 3rd party tools that can be used with autobrr.
 keywords: [cross-seed]
 ---
-
-## Cross-seed with autobrr {#cross-seed}
 
 :::info Heads up
 

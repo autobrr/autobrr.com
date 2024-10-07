@@ -6,7 +6,7 @@ description: arr, deduplication andd cross-seed functionality.
 keywords: [cross-seed,duplicates,deduplication,arr]
 ---
 
-## Upgraderr - Arr, deduplication, and cross-seed functionality {#upgraderr}
+## Arr, deduplication, and cross-seed functionality {#upgraderr}
 
 :::info Heads up
 This is meant for any kind of user. There is no configuration, and it's nearly impossible to make a mistake so long as the guide is followed with the modest amount of care.

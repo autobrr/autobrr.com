@@ -6,8 +6,6 @@ description: 3rd party tool for Redacted.
 keywords: [helper,scripts,redactedhook,music]
 ---
 
-## Redactedhook
-
 RedactedHook is a webhook companion service for autobrr, designed to check the names of uploaders, your ratio and record labels associated with torrents on Redacted and Orpheus.
 
 ### Instructions {#redactedhook-instructions}
