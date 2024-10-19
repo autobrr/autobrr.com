@@ -1,25 +1,30 @@
 import React, { useEffect, useState } from "react";
 import clsx from "clsx";
-import Layout from "@theme/Layout";
-import Link from "@docusaurus/Link";
-import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
-import { useColorMode } from "@docusaurus/theme-common";
-
-import styles from "./index.module.css";
-import logo from "../../static/img/logo.png";
-import FrontPicDark from "../../static/img/front-dark.png";
-import FrontPicLight from "../../static/img/front-light.png";
-
-import { FiFeather } from "react-icons/fi";
 import {
+  AiOutlineDownload,
   AiOutlineFilter,
   AiOutlineMobile,
-  AiOutlineDownload,
 } from "react-icons/ai";
-import { MdDynamicFeed, MdOutlineNotificationsActive } from "react-icons/md";
+import { BiNews, BiRss } from "react-icons/bi";
 import { CgPlug } from "react-icons/cg";
-import { BiRss, BiNews } from "react-icons/bi";
+import { FiFeather } from "react-icons/fi";
 import { IoMagnetSharp } from "react-icons/io5";
+import { MdDynamicFeed, MdOutlineNotificationsActive } from "react-icons/md";
+
+import Link from "@docusaurus/Link";
+import { useColorMode } from "@docusaurus/theme-common";
+import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
+import About from "@theme/About";
+import Applications from "@theme/Applications";
+import Introduction from "@theme/Introduction";
+import Layout from "@theme/Layout";
+import Resources from "@theme/Resources";
+
+import FrontPicDark from "../../static/img/front-dark2.png";
+import FrontPicLight from "../../static/img/front-light2.png";
+import logo from "../../static/img/logo.png";
+import styles from "./index.module.scss";
+import stylepattern from "./pattern.module.css";
 
 const Center = ({ icon, text }) => (
   <div className="hero-icon-container">
@@ -28,10 +33,14 @@ const Center = ({ icon, text }) => (
   </div>
 );
 
-function HomepageHeader() {
+function HomepageHeader({ onColorMode }) {
   const { siteConfig } = useDocusaurusContext();
   const { colorMode } = useColorMode();
   const [headerImage, setHeaderImage] = useState(null);
+
+  useEffect(() => {
+    onColorMode(colorMode);
+  }, [colorMode, onColorMode]);
 
   useEffect(() => {
     const imageToLoad = colorMode === "dark" ? FrontPicDark : FrontPicLight;
@@ -40,19 +49,29 @@ function HomepageHeader() {
     img.src = imageToLoad;
   }, [colorMode]);
 
+  const [scroll, setScroll] = useState(null);
+
+  useEffect(() => {
+    import("smooth-scroll").then((SmoothScroll) => {
+      setScroll(new SmoothScroll.default('a[href*="#"]'));
+    });
+  }, []);
+
+  const smoothScrollTo = (sectionId, offset = 0) => {
+    const target = document.getElementById(sectionId);
+    if (target && scroll) {
+      const targetOffsetTop = target.offsetTop + offset;
+      scroll.animateScroll(targetOffsetTop);
+    }
+  };
+
   if (!headerImage) {
     return null;
   }
 
   return (
-    <header
-      className={clsx(
-        "hero hero--secondary",
-        styles.heroBanner,
-        styles.pattern
-      )}
-    >
-      <div className="container">
+    <header className={clsx("hero hero--secondary", styles.heroBanner)}>
+      <div>
         <img
           src={logo}
           alt="Logo"
@@ -70,7 +89,7 @@ function HomepageHeader() {
             />
             <Center
               icon={<AiOutlineDownload size="24" />}
-              text="90 Indexers"
+              text="90+ Indexers"
             />
             <Center icon={<AiOutlineFilter size="24" />} text="Filters" />
             <Center icon={<CgPlug size="24" />} text="*arr Integration" />
@@ -89,10 +108,11 @@ function HomepageHeader() {
               "button button--secondary button--lg",
               styles.button
             )}
-            to="/introduction"
+            onClick={() => smoothScrollTo("introduction", -70)}
           >
-            Introduction
+            Tell me more
           </Link>
+
           <Link
             className={clsx("button button--primary button--lg", styles.button)}
             to="/installation/linux"
@@ -112,23 +132,38 @@ function HomepageHeader() {
 
 export default function Home() {
   const { siteConfig } = useDocusaurusContext();
+  const [colorMode, setColorMode] = useState("light"); // Default to light
+  const [contentLoaded, setContentLoaded] = useState(false);
 
   useEffect(() => {
     const preloadImage = (src) => {
       const img = new Image();
+      img.onload = () => setContentLoaded(true);
       img.src = src;
     };
 
-    preloadImage(FrontPicDark);
-    preloadImage(FrontPicLight);
-  }, []);
+    const imageToLoad = colorMode === "dark" ? FrontPicDark : FrontPicLight;
+    preloadImage(imageToLoad);
+  }, [colorMode]);
 
   return (
     <Layout
       title={`${siteConfig.title}`}
       description="the modern autodl-irssi replacement"
     >
-      <HomepageHeader />
+      <main
+        className={clsx(styles.container, styles.main, stylepattern.pattern)}
+      >
+        <HomepageHeader onColorMode={setColorMode} />
+        {contentLoaded && (
+          <>
+            <Introduction id="introduction" />
+            <Applications />
+            <About />
+            <Resources />
+          </>
+        )}
+      </main>
     </Layout>
   );
 }

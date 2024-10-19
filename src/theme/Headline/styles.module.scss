@@ -1,0 +1,35 @@
+.headline {
+  margin-bottom: 1.5rem;
+}
+
+.category {
+  display: inline-flex;
+  align-items: center;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: var(--ifm-resources-title-color);
+}
+
+.title {
+  font-size: 2rem;
+  line-height: initial;
+  word-spacing: -0.25rem;
+  background: var(--title-gradient);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  @media (max-width: 996px) {
+    word-spacing: 0rem;
+  }
+
+  @media screen and (min-width: 576px) {
+    font-size: 2.8rem;
+  }
+}
+
+.icon {
+  font-size: 2rem;
+  margin-left: 1rem;
+  color: var(--ifm-resources-title-color);
+}

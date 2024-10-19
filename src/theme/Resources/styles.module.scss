@@ -1,0 +1,37 @@
+.resource {
+  display: flex !important;
+  flex-direction: column;
+  color: var(--ifm-question-title-color);
+
+  a {
+    color: var(--ifm-question-title-color);
+    text-decoration: none;
+  }
+}
+
+.card {
+  flex-grow: 1;
+  justify-content: center;
+  background-color: inherit;
+  border: 1px solid var(--ifm-question-border-color);
+  border-radius: var(--ifm-pagination-nav-border-radius);
+  transition: all 0.3s ease-in-out;
+  margin-bottom: 2rem;
+
+  .card__icon {
+    transition: all 0.3s ease-in-out;
+  }
+
+  &:hover {
+    background-color: var(--slate-2);
+    border: 1px solid var(--ifm-question-border-hover-color);
+
+    .card__icon {
+      filter: saturate(2);
+    }
+  }
+}
+
+.descriptionText {
+  color: var(--ifm-font-color-base);
+}
