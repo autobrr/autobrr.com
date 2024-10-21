@@ -50,5 +50,5 @@ jobs:
           source_branch: ${{ steps.update_script.outputs.branch }}
           destination_branch: "main"
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          pr_title: "docs: add release notes for v${{ steps.update_script.outputs.version }}"
+          pr_title: "docs: add release notes for ${{ steps.update_script.outputs.version }}"
           pr_body: "Automatically update release notes for version ${{ steps.update_script.outputs.version }}. Latest autobrr release: ${{ steps.fetch_release.outputs.release_url }}"
