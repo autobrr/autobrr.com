@@ -5,6 +5,8 @@ pip3 install requests beautifulsoup4 GitPython markdownify
 
 import os
 import requests
+import argparse
+import sys
 from bs4 import BeautifulSoup
 from git import Repo, GitCommandError
 from markdownify import markdownify as md
@@ -12,6 +14,11 @@ from datetime import datetime
 import logging
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+
+def get_latest_version():
+    _, url = fetch_latest_release()
+    version = url.split('/')[-1]
+    return version
 
 def fetch_latest_release():
     url = "https://github.com/autobrr/autobrr/releases/latest"
@@ -72,6 +79,15 @@ def git_operations():
     return branch
 
 def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--get-version", action="store_true", help="Get the latest version number")
+    args = parser.parse_args()
+
+    if args.get-version:
+        version = get_latest_version()
+        print(version)
+        return
+
     git_operations()
     html_content, url = fetch_latest_release()
     version, release_date, markdown_content = parse_release_data(html_content, url)
