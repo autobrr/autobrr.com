@@ -83,7 +83,7 @@ def main():
     parser.add_argument("--get-version", action="store_true", help="Get the latest version number")
     args = parser.parse_args()
 
-    if args.get-version:
+    if args.get_version:
         version = get_latest_version()
         print(version)
         return
