@@ -29,6 +29,7 @@ module.exports = {
             "installation/reverse-proxy/nginx",
             "installation/reverse-proxy/swag",
             "installation/reverse-proxy/traefik",
+            "installation/reverse-proxy/tailscale-serve",
           ],
         },
         {
