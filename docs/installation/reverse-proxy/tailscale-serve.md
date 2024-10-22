@@ -34,7 +34,7 @@ Here's an example Docker Compose configuration that sets up autobrr as a Tailsca
 services:
   autobrr:
     container_name: autobrr
-    image: ghcr.io/autobrr/autobrr:develop
+    image: ghcr.io/autobrr/autobrr:latest
     restart: unless-stopped
     user: 1000:1000
     environment:
