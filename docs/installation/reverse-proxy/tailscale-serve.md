@@ -108,7 +108,7 @@ volumes:
   TS_STATE_DIR=/var/lib/tailscale
   ```
 
-4. **Run `docker-compose up -d` to start the services**
+4. **Run `docker compose up -d` to start the services**
 
 Once running, your autobrr instance will be accessible through your Tailnet using the configured subdomain with HTTPS enabled.
 
