@@ -94,6 +94,10 @@ volumes:
   }
 ```
 
+  :::info
+  There is no need to set environment variable for `TS_CERT_DOMAIN`. It pulls that directly from your account.
+  :::
+
 2. **Generate a Tailscale auth key**
    - Go to the [Tailscale Admin Console](https://login.tailscale.com/admin/settings/keys)
    - Click on "Generate auth key"
