@@ -135,6 +135,8 @@ If you want to expose your autobrr instance to be available outside your Tailnet
    }
    ```
 
+  :::info There is no need to set environment variable for `TS_CERT_DOMAIN`. It pulls that directly from your account. :::
+
 2. **Add this to your policy in your [Access Controls](https://login.tailscale.com/admin/acls/file):**
    ```json
    "nodeAttrs": [
