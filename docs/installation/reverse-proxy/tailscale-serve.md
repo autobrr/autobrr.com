@@ -94,6 +94,10 @@ volumes:
   }
 ```
 
+  :::info
+  There is no need to set environment variable for `TS_CERT_DOMAIN`. It pulls that directly from your account.
+  :::
+
 2. **Generate a Tailscale auth key**
    - Go to the [Tailscale Admin Console](https://login.tailscale.com/admin/settings/keys)
    - Click on "Generate auth key"
@@ -134,8 +138,6 @@ If you want to expose your autobrr instance to be available outside your Tailnet
      "${TS_CERT_DOMAIN}:443": true
    }
    ```
-
-  :::info There is no need to set environment variable for `TS_CERT_DOMAIN`. It pulls that directly from your account. :::
 
 2. **Add this to your policy in your [Access Controls](https://login.tailscale.com/admin/acls/file):**
    ```json
