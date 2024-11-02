@@ -63,7 +63,7 @@ apiAuth: true,
 :::info Make sure the port is not exposed to the internet
 
 Even with API auth enabled, cross-seed still recommends that you do not expose its port to untrusted networks (such as the Internet).
-You can use iptables or UFW to solve this.  
+You can use iptables or UFW to solve this.
 The cross-seed daemon uses port 2468 by default.
 If you want to expose cross-seed to another server on the internet substitute `127.0.0.1` with the IP of the corresponding server.
 
@@ -120,12 +120,12 @@ sudo journalctl -u cross-seed # view the logs
 
 The way this works is you create a filter with a higher priority set than any other filter to make sure every cross-seed match is forwarded to the cross-seed daemon instead of being run through other filters.
 
-1. Get your API key with the following command:  
-  
+1. Get your API key with the following command:
+
     ```
     cross-seed api-key
     ```
-    Keep this key at hand since we will need it at step 5 later on.  
+    Keep this key at hand since we will need it at step 5 later on.
     In the rest of this tutorial, we will refer to this as `YOUR_API_KEY`.
 
 
@@ -138,15 +138,15 @@ The way this works is you create a filter with a higher priority set than any ot
    - Host: `http://localhost:2468/api/announce`
    - Headers: `x-api-key=YOUR_API_KEY`
    - HTTP Method: `POST`
-   - Expected http status: `200`  
+   - Expected http status: `200`
    - Data (JSON):
 
    ```json
    {
-     "name": "{{ .TorrentName }}",
+     "name": {{ toRawJson .TorrentName }},
      "guid": "{{ .TorrentUrl }}",
      "link": "{{ .TorrentUrl }}",
-     "tracker": "{{ .IndexerName | js}}"
+     "tracker": {{ toRawJson .IndexerName }}
    }
    ```
 
