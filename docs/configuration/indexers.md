@@ -34,6 +34,8 @@ For adding more indexers to autobrr, please submit an [Indexer Request](https://
 
 ## Supported Indexers
 
+The list below of supported indexers are for indexers who have IRC announces. If your indexer is not in the list you can still use it via **Generic RSS** and **Generic Torznab/Newznab** (via Prowlarr or Jackett). See [Feeds](./feeds.md).
+
 <Indexers/>
 
 ## Setup
