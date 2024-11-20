@@ -112,6 +112,11 @@ const config = {
           label: "Release Notes",
           position: "left",
         },
+        //{
+        //  type: "docsVersionDropdown", // Reserved for future versioned documentation
+        //  position: "left",
+        //  dropdownActiveClassDisabled: false,
+        //},
         {
           href: "https://discord.gg/WQ2eUycxyT",
           position: "right",
