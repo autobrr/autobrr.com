@@ -42,20 +42,18 @@ const config = {
           blogTitle: "Release Notes",
           routeBasePath: "/release-notes",
           blogSidebarTitle: "Release Notes",
-          blogSidebarCount: 'ALL',
+          blogSidebarCount: "ALL",
         },
         docs: {
           sidebarPath: require.resolve("./sidebars.js"),
-          // Please change this to your repo.
           editUrl: "https://github.com/autobrr/autobrr.com/tree/main/",
-          //sidebarCollapsible: false,
           routeBasePath: "/",
           showLastUpdateTime: false,
           includeCurrentVersion: true,
           lastVersion: "current",
           versions: {
             current: {
-              label: "Latest", // latest will always be the content of /docs
+              label: "Latest",
               path: "",
               banner: "none",
               badge: true,
@@ -115,8 +113,7 @@ const config = {
           position: "left",
         },
         //{
-        //{
-        //  type: "docsVersionDropdown", // disabling until its of use
+        //  type: "docsVersionDropdown", // Reserved for future versioned documentation
         //  position: "left",
         //  dropdownActiveClassDisabled: false,
         //},
@@ -139,13 +136,32 @@ const config = {
       ],
     },
     colorMode: {
-      //defaultMode: "dark", 
-      respectPrefersColorScheme: true
+      //defaultMode: "dark",
+      respectPrefersColorScheme: true,
     },
     prism: {
       theme: themes.vsLight,
       darkTheme: themes.oceanicNext,
-      additionalLanguages: ["systemd", "nginx", "toml", "docker", "bash", "json"],
+      additionalLanguages: [
+        "systemd",
+        "nginx",
+        "toml",
+        "docker",
+        "bash",
+        "json",
+      ],
+    },
+    zoom: {
+      selector: ".markdown img",
+      background: {
+        light: "rgba(255, 255, 255, 0.8)",
+        dark: "rgba(50, 50, 50, 0.8)",
+      },
+      config: {
+        margin: 24,
+        background: "#0D1117E6",
+        scrollOffset: 0,
+      },
     },
   },
 
@@ -158,7 +174,7 @@ const config = {
         },
       };
     },
-    // ...
+    "docusaurus-plugin-image-zoom",
   ],
 };
 
