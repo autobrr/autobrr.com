@@ -37,7 +37,7 @@ http://upgraderr:6940/api/upgrade
   "host": "http://qbittorrent:8080",
   "user": "username",
   "password": "password",
-  "name": "{{ .TorrentName | js }}"
+  "name": {{ toRawJson .TorrentName }}
 }
 ```
 
@@ -61,7 +61,7 @@ http://upgraderr:6940/api/upgrade
   "host": "http://qbittorrent:8080",
   "user": "username",
   "password": "password",
-  "name": "{{ .TorrentName | js }}"
+  "name": {{ toRawJson .TorrentName }}
 }
 ```
 
@@ -80,7 +80,7 @@ http://upgraderr:6940/api/cross
   "host": "http://qbittorrent:8080",
   "user": "username",
   "password": "password",
-  "name": "{{ .TorrentName | js }}",
+  "name": {{ toRawJson .TorrentName }},
   "hash": "{{ .TorrentHash }}",
   "torrent": "{{ .TorrentDataRawBytes | js }}"
 }
