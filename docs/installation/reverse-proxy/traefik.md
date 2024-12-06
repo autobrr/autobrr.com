@@ -7,6 +7,7 @@ sidebar_label: Traefik
 pagination_prev: introduction
 pagination_next: configuration/indexers
 ---
+
 Traefik setup to run on subdomain.
 
 - Needs an `.env` file with `DOMAIN` set, like `DOMAIN=something.local`
@@ -15,6 +16,8 @@ Traefik setup to run on subdomain.
 - Expects a `certificateResolver` called `letsencrypt`
 
 Your config may be different so change accordingly.
+
+### Subdomain
 
 ```yaml title="docker-compose.yml"
 version: "3.7"
@@ -49,4 +52,23 @@ services:
       - "traefik.http.routers.autobrr-http.middlewares=redirect-https"
       - "traefik.http.routers.autobrr-http.service=autobrr"
       - "traefik.http.services.autobrr.loadbalancer.server.port=7474"
+```
+
+### Subfolder
+
+```yaml
+labels:
+  - "traefik.enable=true"
+  - "traefik.docker.network=proxy"
+
+  - "traefik.http.middlewares.autobrr-strip.stripprefix.prefixes=/autobrr"
+  - "traefik.http.middlewares.autobrr-strip.stripprefix.forceSlash=true"
+
+  - "traefik.http.routers.autobrr-baseurl.rule=Host(`full.domain.com`) && PathPrefix(`/autobrr`)"
+  - "traefik.http.routers.autobrr-baseurl.middlewares=autobrr-strip"
+  - "traefik.http.routers.autobrr-baseurl.entrypoints=https"
+  - "traefik.http.routers.autobrr-baseurl.tls=true"
+  - "traefik.http.routers.autobrr-baseurl.tls.certresolver=letsencrypt"
+  - "traefik.http.routers.autobrr-baseurl.service=autobrr-baseurl"
+  - "traefik.http.services.autobrr-baseurl.loadbalancer.server.port=7474"
 ```
