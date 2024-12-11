@@ -19,7 +19,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          pip install requests beautifulsoup4 GitPython markdownify
+          pip install requests beautifulsoup4 GitPython markdownify re
 
       - name: Run update script
         id: update_script

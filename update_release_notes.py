@@ -12,6 +12,7 @@ from git import Repo, GitCommandError
 from markdownify import markdownify as md
 from datetime import datetime
 import logging
+import re
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
@@ -37,6 +38,10 @@ def parse_release_data(html_content, url):
     body_html = soup.find('div', class_="markdown-body")
     if body_html:
         markdown_content = md(str(body_html), heading_style="ATX")
+        
+        # remove commit hashes
+        markdown_content = re.sub(r'\[[a-f0-9]{7}\]\(.*?\): ', '', markdown_content)
+        
         return version, release_date, markdown_content
     else:
         raise Exception("Failed to parse release notes from HTML")
