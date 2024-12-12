@@ -8,6 +8,7 @@ keywords: [autobrr, filters, tv, movies, music]
 pagination_label: Filters - Basics
 pagination_next: filters/tv-movies
 ---
+
 import ConvertAutodlFilter from '/snippets/convert-autodl-filter.mdx';
 
 # Filters
@@ -33,17 +34,22 @@ If you want to match a string exactly, then try to avoid the use of the `*` wild
 
 ## General
 
-| Field           | Description                                 | Default value |
-| --------------- | ------------------------------------------- | ------------- |
-| **Filter name** | The name of this filter.                    |               |
-| **Enabled**     | Is this filter active?                      | false         |
-| **Indexers**    | Which indexers should this filter work for? |               |
+| Field             | Description                                               | Default value |
+| ----------------- | --------------------------------------------------------- | ------------- |
+| **Filter name**   | The name of this filter.                                  |               |
+| **Enabled**       | Is this filter active?                                    | false         |
+| **Indexers**      | Which indexers should this filter work for?               |               |
+| **Announce Type** | See [Announce Type](#announce-type) for more information. | ALL           |
 
-:::info
+### Announce Type
 
-Note that all filters by default are **DISABLED** and you will have to enable them manually.
-
-:::
+| Type          | Description                                   | Supported By |
+| ------------- | --------------------------------------------- | ------------ |
+| `NEW`         | Newly uploaded releases                       | All indexers |
+| `CHECKED`     | Staff verified/checked releases               | PTP          |
+| `PROMO`       | Promotional releases (freeleech/neutral/half) | PTP          |
+| `PROMO_GP`    | Golden Popcorn marked releases                | PTP          |
+| `RESURRECTED` | Reseeded/revived releases                     | PTP          |
 
 ### Rules
 
