@@ -37,6 +37,7 @@ import MyAnonamouse from "/snippets/categories/mam.mdx";
 import Nebulance from "/snippets/categories/nebulance.mdx";
 import Norbits from "/snippets/categories/norbits.mdx";
 import Pretome from "/snippets/categories/pretome.mdx";
+import PassThePopcorn from "/snippets/categories/ptp.mdx";
 import RED from "/snippets/categories/red.mdx";
 import RevolutionTT from "/snippets/categories/revolutiontt.mdx";
 import SpeedApp from "/snippets/categories/speedapp.mdx";
@@ -146,6 +147,10 @@ import XSpeeds from "/snippets/categories/xspeeds.mdx";
 ### PreToMe
 
 <Pretome />
+
+### PassThePopcorn
+
+<PassThePopcorn />
 
 ### RED
 
