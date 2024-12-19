@@ -59,6 +59,7 @@ module.exports = {
         },
         "configuration/feeds",
         "configuration/notifications",
+        "configuration/authentication",
       ],
     },
     {
@@ -95,7 +96,7 @@ module.exports = {
         "3rd-party-tools/redactedhook",
         "3rd-party-tools/upgraderr",
         "3rd-party-tools/seasonpackarr",
-        "3rd-party-tools/sizechecker"
+        "3rd-party-tools/sizechecker",
       ],
     },
     {
