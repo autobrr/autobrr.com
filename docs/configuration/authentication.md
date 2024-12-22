@@ -20,6 +20,21 @@ autobrr supports OIDC authentication for integration with external identity prov
 2. Set the redirect URI to: `https://your-autobrr-instance/api/auth/oidc/callback`
 3. Note down the client ID and client secret
 
+:::tip Authentik-specific configuration
+
+When using Authentik, configure the following:
+
+- Use RS256 signing algorithm
+- Under Protocol Settings, select an RSA "Signing Key" (e.g., the Authentik self-signed certificate)
+
+For more details on Authentik setup, see:
+
+- [Authentik RS256 Configuration](https://github.com/goauthentik/authentik/issues/9250)
+- [Authentik Certificate Documentation](https://docs.goauthentik.io/docs/sys-mgmt/certificates#default-certificate)
+- [autobrr OIDC Setup Example](https://github.com/autobrr/autobrr/pull/1853#issuecomment-2543410055)
+
+:::
+
 #### 2. Enable OIDC in autobrr {#enable-oidc-in-autobrr}
 
 Choose one of these configuration methods:
@@ -53,18 +68,7 @@ When OIDC is enabled:
 
 During testing, we used [Authelia](https://www.authelia.com/), [Authentik](https://goauthentik.io/), and [Pocket-ID](https://github.com/stonith404/pocket-id) with success. Each provider has been verified to work with autobrr's OIDC implementation.
 
-### Authentik
-
-For Authentik, make sure to configure RS256 signing algorithm and use the correct certificate.
-In the Provider simply select a RSA "Signing Key" under Protocol Settings. For example the Authentik self-signed certificate
-
-For more information, see:
-
-- [Authentik RS256 Configuration](https://github.com/goauthentik/authentik/issues/9250)
-- [Authentik Certificate Documentation](https://docs.goauthentik.io/docs/sys-mgmt/certificates#default-certificate)
-- [autobrr OIDC Setup Example](https://github.com/autobrr/autobrr/pull/1853#issuecomment-2543410055)
-
-If you encounter other issues, please open a [GitHub issue](https://github.com/autobrr/autobrr/issues/new?template=bug_report.md) or reach out to us on [Discord](https://discord.gg/WQ2eUycxyT).
+If you encounter issues, please open a [GitHub issue](https://github.com/autobrr/autobrr/issues/new?template=bug_report.md) or reach out to us on [Discord](https://discord.gg/WQ2eUycxyT).
 
 ## Security Best Practices
 
