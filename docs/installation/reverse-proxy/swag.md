@@ -7,6 +7,7 @@ sidebar_label: Swag
 pagination_prev: introduction
 pagination_next: configuration/indexers
 ---
+
 A basic `swag` config for running on subdomain.
 
 ```yaml
@@ -50,6 +51,7 @@ server {
 ```
 
 A basic `swag` config for running in a subfolder (don't forget to set the baseurl).
+
 ```yaml
 location ^~ /autobrr/ {
     # enable the next two lines for http auth
@@ -72,6 +74,6 @@ location ^~ /autobrr/ {
     set $upstream_proto http;
     proxy_set_header        X-Forwarded-Host        $http_host;
     proxy_pass $upstream_proto://$upstream_app:$upstream_port;
-    rewrite ^/autobrr/(.*) /$1 break;
+    #rewrite ^/autobrr/(.*) /$1 break; # required for versions < v1.55.0, or when baseUrlModeLegacy = true in v1.55.0+
 }
 ```
