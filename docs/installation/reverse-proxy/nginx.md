@@ -7,6 +7,7 @@ sidebar_label: Nginx
 pagination_prev: introduction
 pagination_next: configuration/indexers
 ---
+
 #### Subfolder {#nginx#subfolder}
 
 ```nginx
@@ -18,7 +19,7 @@ location /autobrr/ {
     #auth_basic "What's the password?";
     #auth_basic_user_file /etc/htpasswd;
 
-    #rewrite ^/autobrr/(.*) /$1 break; # only needed if baseUrlModeLegacy is true in config.toml
+    #rewrite ^/autobrr/(.*) /$1 break; # required for versions < v1.55.0, or when baseUrlModeLegacy = true in v1.55.0+
 }
 ```
 
@@ -34,6 +35,7 @@ Don't forget to set the `baseUrl` option in the `config.toml`:
 #
 baseUrl = "/autobrr/"
 ```
+
 :::
 
 #### Subdomain {#nginx#subdomain}

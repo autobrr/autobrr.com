@@ -40,7 +40,7 @@ port = 7474
 #
 #baseUrl = "/autobrr/"
 
-# Base url mode legacy
+# Base url mode legacy (added in v1.55.0)
 # This is kept for compatibility with older versions doing url rewrite on the proxy.
 # If you use baseUrl you can set this to false and skip any url rewrite in your proxy.
 #
@@ -118,6 +118,7 @@ sessionSecret = "secret-session-key"
 - `logLevel`: Choose how much log output you want to see. The autobrr process will need to be restarted in order for this change to take effect.
 - `sessionSecret`: Used for session cookies. Change to something more random like a `UUID`.
 - (**optional**) `baseUrl`: Supports running on both the root url and in a subpath, as well as subdomain. Uncomment if needed.
+- (**optional**) `baseUrlModeLegacy`: (Added in v1.55.0) When set to false, no URL rewrite is needed in your proxy configuration. Set to true to maintain compatibility with older proxy configurations that use URL rewrites.
 - (**optional**) `logPath`:Considering autobrr is rather new software, it might be beneficial for logging to be enabled. If running with systemd you can use `journalctl` to check logs. The log file is rotated as soon as it reaches 50MB, up to 3 times. In other words, the maximum space which the log files can occupy is 150MB, which takes a long time to fill.
 
 ### Create user via command line (optional) {#create-user-via-cli}
