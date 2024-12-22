@@ -72,6 +72,6 @@ location ^~ /autobrr/ {
     set $upstream_proto http;
     proxy_set_header        X-Forwarded-Host        $http_host;
     proxy_pass $upstream_proto://$upstream_app:$upstream_port;
-    rewrite ^/autobrr/(.*) /$1 break;
+    #rewrite ^/autobrr/(.*) /$1 break; # only needed if baseUrlModeLegacy is true in config.toml
 }
 ```

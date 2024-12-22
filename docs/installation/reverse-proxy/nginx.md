@@ -18,15 +18,9 @@ location /autobrr/ {
     #auth_basic "What's the password?";
     #auth_basic_user_file /etc/htpasswd;
 
-    rewrite ^/autobrr/(.*) /$1 break;
+    #rewrite ^/autobrr/(.*) /$1 break; # only needed if baseUrlModeLegacy is true in config.toml
 }
 ```
-
-:::info
-
-The `rewrite` statement in this example is crucial for correctly setting things up when using a reverse proxy with a base path.
-
-:::
 
 :::info Heads up
 Don't forget to set the `baseUrl` option in the `config.toml`:
