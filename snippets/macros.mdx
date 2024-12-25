@@ -23,9 +23,6 @@
 | `{{.Description}}`               | string   | Release description                        |
 | `{{.DownloadURL}}`               | string   | Download URL                               |
 | `{{.Episode}}`                   | int      | Parsed episode                             |
-| `{{.IsDuplicate}}`               | bool     | Is duplicate release                       |
-| `{{.SkipDuplicateProfileID}}`    | int      | Skip duplicate profile ID                  |
-| `{{.SkipDuplicateProfileName}}`  | string   | Skip duplicate profile name                |
 | `{{.FilterID}}`                  | int      | Filter identifier                          |
 | `{{.FilterName}}`                | string   | Filter name                                |
 | `{{.Freeleech}}`                 | bool     | Freeleech status                           |
@@ -41,16 +38,19 @@
 | `{{.IndexerIdentifierExternal}}` | string   | External indexer identifier                |
 | `{{.IndexerName}}`               | string   | Indexer name                               |
 | `{{.InfoUrl}}`                   | string   | Info URL                                   |
+| `{{.IsDuplicate}}`               | bool     | Is duplicate release                       |
 | `{{.Language}}`                  | []string | Language array                             |
 | `{{.Leechers}}`                  | int      | Number of leechers                         |
 | `{{.LogScore}}`                  | int      | Log score for music releases               |
 | `{{.MagnetURI}}`                 | string   | Magnet link URI                            |
+| `{{.MetaIMDB}}`                  | string   | IMDB ID                                    |
 | `{{.Month}}`                     | int      | Release month                              |
 | `{{.Origin}}`                    | string   | Release origin                             |
 | `{{.Other}}`                     | []string | Other attributes array                     |
 | `{{.PreTime}}`                   | string   | Pre time                                   |
 | `{{.Proper}}`                    | bool     | Is proper release                          |
 | `{{.Protocol}}`                  | string   | Protocol type                              |
+| `{{.RecordLabel}}`               | string   | Record label                               |
 | `{{.Region}}`                    | string   | Region information                         |
 | `{{.Repack}}`                    | bool     | Is repack release                          |
 | `{{.Resolution}}`                | string   | Parsed resolution (1080p)                  |
@@ -58,6 +58,8 @@
 | `{{.Seeders}}`                   | int      | Number of seeders                          |
 | `{{.Size}}`                      | uint     | Size (in bytes)                            |
 | `{{.SizeString}}`                | string   | SizeString (including unit string)         |
+| `{{.SkipDuplicateProfileID}}`    | int      | Skip duplicate profile ID                  |
+| `{{.SkipDuplicateProfileName}}`  | string   | Skip duplicate profile name                |
 | `{{.Source}}`                    | string   | Parsed source (BluRay, WEB-DL)             |
 | `{{.Tags}}`                      | string   | Release tags (comma separated)             |
 | `{{.Title}}`                     | string   | Parsed title (That Movie)                  |
@@ -70,7 +72,6 @@
 | `{{.TorrentUrl}}`                | string   | Full url to download torrent               |
 | `{{.Type}}`                      | string   | Type e.g. episode                          |
 | `{{.Uploader}}`                  | string   | Release uploader                           |
-| `{{.RecordLabel}}`               | string   | Record label                               |
 | `{{.Website}}`                   | string   | Website URL                                |
 | `{{.Year}}`                      | int      | Parsed year                                |
 
