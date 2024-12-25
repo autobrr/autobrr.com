@@ -1,73 +1,77 @@
 <details>
 <summary>Click to view supported variables</summary>
 
-| Variable                         | Description                                |
-| -------------------------------- | ------------------------------------------ |
-| `{{.Artists}}`                   | Artists                                    |
-| `{{.Audio}}`                     | Audio codecs/formats array                 |
-| `{{.AudioChannels}}`             | Audio channels configuration               |
-| `{{.AudioFormat}}`               | Audio format                               |
-| `{{.Bitrate}}`                   | Release bitrate                            |
-| `{{.Bonus}}`                     | Bonus features array                       |
-| `{{.Categories}}`                | Categories                                 |
-| `{{.Category}}`                  | Category                                   |
-| `{{.Codec}}`                     | Video codecs array                         |
-| `{{.Container}}`                 | Container format                           |
-| `{{.CurrentDay}}`                | Current Day                                |
-| `{{.CurrentHour}}`               | Current Hour                               |
-| `{{.CurrentMinute}}`             | Current Minute                             |
-| `{{.CurrentMonth}}`              | Current Month                              |
-| `{{.CurrentSecond}}`             | Current Second                             |
-| `{{.CurrentYear}}`               | Current Year                               |
-| `{{.Day}}`                       | Release day                                |
-| `{{.Description}}`               | Release description                        |
-| `{{.DownloadURL}}`               | Download URL                               |
-| `{{.Episode}}`                   | Parsed episode                             |
-| `{{.FilterID}}`                  | Filter identifier                          |
-| `{{.FilterName}}`                | Filter name                                |
-| `{{.Freeleech}}`                 | Freeleech status (boolean)                 |
-| `{{.FreeleechPercent}}`          | Freeleech percentage                       |
-| `{{.Group}}`                     | Release group                              |
-| `{{.GroupID}}`                   | GroupID                                    |
-| `{{.HasCue}}`                    | Has .cue file (boolean)                    |
-| `{{.HasLog}}`                    | Has log file (boolean)                     |
-| `{{.HDR}}`                       | Parsed HDR (DV, HDR, HDR10)                |
-| `{{.Implementation}}`            | Implementation type                        |
-| `{{.Indexer}}`                   | Indexer identifier                         |
-| `{{.IndexerIdentifier}}`         | Indexer identifier                         |
-| `{{.IndexerIdentifierExternal}}` | External indexer identifier                |
-| `{{.IndexerName}}`               | Indexer name                               |
-| `{{.InfoUrl}}`                   | Info URL                                   |
-| `{{.Language}}`                  | Language array                             |
-| `{{.Leechers}}`                  | Number of leechers                         |
-| `{{.LogScore}}`                  | Log score for music releases               |
-| `{{.MagnetURI}}`                 | Magnet link URI                            |
-| `{{.Month}}`                     | Release month                              |
-| `{{.Origin}}`                    | Release origin                             |
-| `{{.Other}}`                     | Other attributes array                     |
-| `{{.PreTime}}`                   | Pre time                                   |
-| `{{.Proper}}`                    | Is proper release (boolean)                |
-| `{{.Protocol}}`                  | Protocol type                              |
-| `{{.Region}}`                    | Region information                         |
-| `{{.Repack}}`                    | Is repack release (boolean)                |
-| `{{.Resolution}}`                | Parsed resolution (1080p)                  |
-| `{{.Season}}`                    | Parsed season                              |
-| `{{.Seeders}}`                   | Number of seeders                          |
-| `{{.Size}}`                      | Size (in bytes)                            |
-| `{{.SizeString}}`                | SizeString (including unit string)         |
-| `{{.Source}}`                    | Parsed source (BluRay, WEB-DL)             |
-| `{{.Tags}}`                      | Release tags (comma separated)             |
-| `{{.Title}}`                     | Parsed title (That Movie)                  |
-| `{{.TorrentDataRawBytes}}`       | Raw torrent file data                      |
-| `{{.TorrentHash}}`               | Torrent hash                               |
-| `{{.TorrentID}}`                 | TorrentID                                  |
-| `{{.TorrentName}}`               | Release name as announced                  |
-| `{{.TorrentPathName}}`           | Path to downloaded .torrent file in `/tmp` |
-| `{{.TorrentTmpFile}}`            | Temporary torrent file path                |
-| `{{.TorrentUrl}}`                | Full url to download torrent               |
-| `{{.Type}}`                      | Type e.g. episode                          |
-| `{{.Uploader}}`                  | Release uploader                           |
-| `{{.Website}}`                   | Website URL                                |
-| `{{.Year}}`                      | Parsed year                                |
+| Variable                         | Type     | Description                                |
+| -------------------------------- | -------- | ------------------------------------------ |
+| `{{.Artists}}`                   | string   | Artists                                    |
+| `{{.Audio}}`                     | []string | Audio codecs/formats array                 |
+| `{{.AudioChannels}}`             | string   | Audio channels configuration               |
+| `{{.AudioFormat}}`               | string   | Audio format                               |
+| `{{.Bitrate}}`                   | string   | Release bitrate                            |
+| `{{.Bonus}}`                     | []string | Bonus features array                       |
+| `{{.Categories}}`                | []string | Categories                                 |
+| `{{.Category}}`                  | string   | Category                                   |
+| `{{.Codec}}`                     | []string | Video codecs array                         |
+| `{{.Container}}`                 | string   | Container format                           |
+| `{{.CurrentDay}}`                | int      | Current Day                                |
+| `{{.CurrentHour}}`               | int      | Current Hour                               |
+| `{{.CurrentMinute}}`             | int      | Current Minute                             |
+| `{{.CurrentMonth}}`              | int      | Current Month                              |
+| `{{.CurrentSecond}}`             | int      | Current Second                             |
+| `{{.CurrentYear}}`               | int      | Current Year                               |
+| `{{.Day}}`                       | int      | Release day                                |
+| `{{.Description}}`               | string   | Release description                        |
+| `{{.DownloadURL}}`               | string   | Download URL                               |
+| `{{.Episode}}`                   | int      | Parsed episode                             |
+| `{{.IsDuplicate}}`               | bool     | Is duplicate release                       |
+| `{{.SkipDuplicateProfileID}}`    | int64    | Skip duplicate profile ID                  |
+| `{{.SkipDuplicateProfileName}}`  | string   | Skip duplicate profile name                |
+| `{{.FilterID}}`                  | int      | Filter identifier                          |
+| `{{.FilterName}}`                | string   | Filter name                                |
+| `{{.Freeleech}}`                 | bool     | Freeleech status                           |
+| `{{.FreeleechPercent}}`          | int      | Freeleech percentage                       |
+| `{{.Group}}`                     | string   | Release group                              |
+| `{{.GroupID}}`                   | string   | GroupID                                    |
+| `{{.HasCue}}`                    | bool     | Has .cue file                              |
+| `{{.HasLog}}`                    | bool     | Has log file                               |
+| `{{.HDR}}`                       | string   | Parsed HDR (DV, HDR, HDR10)                |
+| `{{.Implementation}}`            | string   | Implementation type                        |
+| `{{.Indexer}}`                   | string   | Indexer identifier                         |
+| `{{.IndexerIdentifier}}`         | string   | Indexer identifier                         |
+| `{{.IndexerIdentifierExternal}}` | string   | External indexer identifier                |
+| `{{.IndexerName}}`               | string   | Indexer name                               |
+| `{{.InfoUrl}}`                   | string   | Info URL                                   |
+| `{{.Language}}`                  | []string | Language array                             |
+| `{{.Leechers}}`                  | int      | Number of leechers                         |
+| `{{.LogScore}}`                  | int      | Log score for music releases               |
+| `{{.MagnetURI}}`                 | string   | Magnet link URI                            |
+| `{{.Month}}`                     | int      | Release month                              |
+| `{{.Origin}}`                    | string   | Release origin                             |
+| `{{.Other}}`                     | []string | Other attributes array                     |
+| `{{.PreTime}}`                   | string   | Pre time                                   |
+| `{{.Proper}}`                    | bool     | Is proper release                          |
+| `{{.Protocol}}`                  | string   | Protocol type                              |
+| `{{.Region}}`                    | string   | Region information                         |
+| `{{.Repack}}`                    | bool     | Is repack release                          |
+| `{{.Resolution}}`                | string   | Parsed resolution (1080p)                  |
+| `{{.Season}}`                    | int      | Parsed season                              |
+| `{{.Seeders}}`                   | int      | Number of seeders                          |
+| `{{.Size}}`                      | uint64   | Size (in bytes)                            |
+| `{{.SizeString}}`                | string   | SizeString (including unit string)         |
+| `{{.Source}}`                    | string   | Parsed source (BluRay, WEB-DL)             |
+| `{{.Tags}}`                      | string   | Release tags (comma separated)             |
+| `{{.Title}}`                     | string   | Parsed title (That Movie)                  |
+| `{{.TorrentDataRawBytes}}`       | []byte   | Raw torrent file data                      |
+| `{{.TorrentHash}}`               | string   | Torrent hash                               |
+| `{{.TorrentID}}`                 | string   | TorrentID                                  |
+| `{{.TorrentName}}`               | string   | Release name as announced                  |
+| `{{.TorrentPathName}}`           | string   | Path to downloaded .torrent file in `/tmp` |
+| `{{.TorrentTmpFile}}`            | string   | Temporary torrent file path                |
+| `{{.TorrentUrl}}`                | string   | Full url to download torrent               |
+| `{{.Type}}`                      | string   | Type e.g. episode                          |
+| `{{.Uploader}}`                  | string   | Release uploader                           |
+| `{{.RecordLabel}}`               | string   | Record label                               |
+| `{{.Website}}`                   | string   | Website URL                                |
+| `{{.Year}}`                      | int      | Parsed year                                |
 
 </details>
