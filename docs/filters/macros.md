@@ -6,7 +6,7 @@ sidebar_label: Macros
 pagination_label: Filters - Macros
 ---
 
-# Macros
+import Macros from '/snippets/macros.mdx';
 
 Macros are a great way to enhance your workflow by adding custom logic/data processing to the input data provided by autobrr. Macros are currently supported by input fields by Filters, in two sections: <strong>Actions</strong> and <strong>External (filters)</strong>.
 
@@ -32,39 +32,7 @@ Available Sprig function, along with the relevant examples can be found [at Pydi
 
 ## Available variables
 
-| Variable               | Description                                |
-| ---------------------- | ------------------------------------------ |
-| `{{.Artists}}`         | Artists                                    |
-| `{{.Categories}}`      | Categories                                 |
-| `{{.Category}}`        | Category                                   |
-| `{{.CurrentDay}}`      | Current Day                                |
-| `{{.CurrentHour}}`     | Current Hour                               |
-| `{{.CurrentMinute}}`   | Current Minute                             |
-| `{{.CurrentMonth}}`    | Current Month                              |
-| `{{.CurrentSecond}}`   | Current Second                             |
-| `{{.CurrentYear}}`     | Current Year                               |
-| `{{.DownloadURL}}`     | Download URL                               |
-| `{{.Episode}}`         | Parsed episode                             |
-| `{{.FilterName}}`      | Filter name                                |
-| `{{.Group}}`           | Release group                              |
-| `{{.GroupID}}`         | GroupID                                    |
-| `{{.HDR}}`             | Parsed HDR (DV, HDR, HDR10)                |
-| `{{.Indexer}}`         | Indexer identifier                         |
-| `{{.IndexerName}}`     | Indexer name                               |
-| `{{.InfoUrl}}`         | Info URL                                   |
-| `{{.Resolution}}`      | Parsed resolution (1080p)                  |
-| `{{.Season}}`          | Parsed season                              |
-| `{{.Size}}`            | Size (in bytes)                            |
-| `{{.SizeString}}`      | SizeString (including unit string)         |
-| `{{.Source}}`          | Parsed source (BluRay, WEB-DL)             |
-| `{{.Title}}`           | Parsed title (That Movie)                  |
-| `{{.TorrentHash}}`     | Torrent hash                               |
-| `{{.TorrentID}}`       | TorrentID                                  |
-| `{{.TorrentName}}`     | Release name as announced                  |
-| `{{.TorrentPathName}}` | Path to downloaded .torrent file in `/tmp` |
-| `{{.TorrentUrl}}`      | Full url to download torrent               |
-| `{{.Type}}`            | Type e.g. episode                          |
-| `{{.Year}}`            | Parsed year                                |
+<Macros />
 
 ## Examples
 
