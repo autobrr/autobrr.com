@@ -68,7 +68,7 @@ Lists will only overwrite the specific fields they manage during updates.
 
 ## Field Usage by List Type
 
-| Media Type                                      | Fields Used                                     |
+| List Type                                       | Fields Used                                     |
 | ----------------------------------------------- | ----------------------------------------------- |
 | Music (e.g. Metacritic or Lidarr)               | `Artists`, `Albums`                             |
 | Movies/TV (e.g. Sonarr, Radarr, Trakt, MDBList) | `Movies/Shows` (or `Match Releases` if enabled) |
