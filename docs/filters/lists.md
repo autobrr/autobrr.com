@@ -72,7 +72,8 @@ Lists will only overwrite the specific fields they manage during updates.
 | ----------------------------------------------- | ----------------------------------------------- |
 | Music (e.g. Metacritic or Lidarr)               | `Artists`, `Albums`                             |
 | Movies/TV (e.g. Sonarr, Radarr, Trakt, MDBList) | `Movies/Shows` (or `Match Releases` if enabled) |
-| Plaintext/Steam                                 | `Match Releases`                                |
+| Plaintext                                       | `Movies/Shows` (or `Match Releases` if enabled) |
+| Steam                                           | `Match Releases`                                |
 
 ## Automatic Updates via Webhook
 
