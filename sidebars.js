@@ -74,6 +74,7 @@ module.exports = {
         "filters/external",
         "filters/actions",
         "filters/macros",
+        "filters/lists",
         "filters/omegabrr",
         "filters/examples",
         "filters/categories",
