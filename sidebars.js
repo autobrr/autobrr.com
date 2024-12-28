@@ -75,6 +75,7 @@ module.exports = {
         "filters/actions",
         "filters/macros",
         "filters/lists",
+        "filters/omegabrr",
         "filters/examples",
         "filters/categories",
         "filters/freeleech",
