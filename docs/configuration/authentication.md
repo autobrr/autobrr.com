@@ -40,11 +40,12 @@ For more details on Authentik setup, see:
 Choose one of these configuration methods:
 
 ```toml title="config.toml"
-oidc_enabled = true
-oidc_issuer = "https://your-identity-provider"
-oidc_client_id = "your-client-id"
-oidc_client_secret = "your-client-secret"
-oidc_redirect_url = "https://your-autobrr-instance/api/auth/oidc/callback"
+oidcEnabled = true
+oidcIssuer = "https://your-identity-provider"
+oidcClientId = "your-client-id"
+oidcClientSecret = "your-client-secret"
+oidcRedirectUrl = "https://your-autobrr-instance/api/auth/oidc/callback"
+oidcDisableBuiltInLogin = false
 ```
 
 Or using environment variables:
@@ -55,6 +56,7 @@ AUTOBRR__OIDC_ISSUER=https://your-identity-provider
 AUTOBRR__OIDC_CLIENT_ID=your-client-id
 AUTOBRR__OIDC_CLIENT_SECRET=your-client-secret
 AUTOBRR__OIDC_REDIRECT_URL=https://your-autobrr-instance/api/auth/oidc/callback
+AUTOBRR__OIDC_DISABLE_BUILT_IN_LOGIN=false
 ```
 
 :::info Authentication Methods

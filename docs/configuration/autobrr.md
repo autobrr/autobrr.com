@@ -92,19 +92,22 @@ sessionSecret = "secret-session-key"
 # OpenID Connect Configuration
 #
 # Enable OIDC authentication
-#oidc_enabled = false
+#oidcEnabled = false
 
 # OIDC Issuer URL (e.g. https://auth.example.com)
-#oidc_issuer = ""
+#oidcIssuer = ""
 
 # OIDC Client ID
-#oidc_client_id = ""
+#oidcClientId = ""
 
 # OIDC Client Secret
-#oidc_client_secret = ""
+#oidcClientSecret = ""
 
 # OIDC Redirect URL (e.g. http://localhost:7474/api/auth/oidc/callback)
-#oidc_redirect_url = ""
+#oidcRedirectUrl = ""
+
+# OIDC Disable Built In Login Form
+#oidcDisableBuiltInLogin = false
 
 # Custom definitions
 #
