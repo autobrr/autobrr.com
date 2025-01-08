@@ -41,7 +41,6 @@ server {
 
         include /config/nginx/proxy.conf;
         include /config/nginx/resolver.conf;
-        include /config/nginx/allowdeny.conf;
         set $upstream_app autobrr;
         set $upstream_port 7474;
         set $upstream_proto http;
