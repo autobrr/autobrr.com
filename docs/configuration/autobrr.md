@@ -106,8 +106,8 @@ sessionSecret = "secret-session-key"
 # OIDC Redirect URL (e.g. http://localhost:7474/api/auth/oidc/callback)
 #oidcRedirectUrl = ""
 
-# Disable Built In Login Form (only works when using external auth)
-#disableBuiltInLogin = false
+# OIDC Disable Built In Login Form
+#oidcDisableBuiltInLogin = false
 
 # Custom definitions
 #
