@@ -93,21 +93,41 @@ sessionSecret = "secret-session-key"
 #
 # Enable OIDC authentication
 #oidcEnabled = false
-
+#
 # OIDC Issuer URL (e.g. https://auth.example.com)
 #oidcIssuer = ""
-
+#
 # OIDC Client ID
 #oidcClientId = ""
-
+#
 # OIDC Client Secret
 #oidcClientSecret = ""
-
+#
 # OIDC Redirect URL (e.g. http://localhost:7474/api/auth/oidc/callback)
 #oidcRedirectUrl = ""
-
-# OIDC Disable Built In Login Form
+#
+# Disable Built In Login Form (only works when using external auth)
 #oidcDisableBuiltInLogin = false
+
+# Metrics
+#
+# Enable metrics endpoint
+#metricsEnabled = true
+
+# Metrics server host
+#
+#metricsHost = "127.0.0.1"
+
+# Metrics server port
+#
+#metricsPort = "9074"
+
+# Metrics basic auth
+#
+# Comma separate list of user:password. Password must be htpasswd bcrypt hashed. Use autobrrctl to generate.
+# Only enabled if correctly set with user:pass.
+#
+#metricsBasicAuthUsers = ""
 
 # Custom definitions
 #
