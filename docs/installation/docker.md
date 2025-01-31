@@ -79,6 +79,16 @@ services:
       - AUTOBRR__POSTGRES_PASS=string
       - AUTOBRR__POSTGRES_SSLMODE=string
       - AUTOBRR__POSTGRES_EXTRA_PARAMS=string
+      - AUTOBRR__OIDC_ENABLED=bool
+      - AUTOBRR__OIDC_ISSUER=string
+      - AUTOBRR__OIDC_CLIENT_ID=string
+      - AUTOBRR__OIDC_CLIENT_SECRET=string
+      - AUTOBRR__OIDC_REDIRECT_URL=string
+      - AUTOBRR__OIDC_DISABLE_BUILT_IN_LOGIN=bool
+      - AUTOBRR__METRICS_ENABLED=bool
+      - AUTOBRR__METRICS_HOST=string
+      - AUTOBRR__METRICS_PORT=int
+      - AUTOBRR__METRICS_BASIC_AUTH_USERS=string
 ```
 
 ### Manually configure autobrr (optional) {#manually-configure-autobrr}
