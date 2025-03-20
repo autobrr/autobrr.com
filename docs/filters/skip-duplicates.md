@@ -27,25 +27,25 @@ Therefore, the `TV` profile will consider these to be duplicates:
 * `Perseverance S02E09 1080p HEVC x265-MuyBueno`
 * `Perseverance S02E09 720p x265-Tipico`
 
-because all fields match.  Note that in this example, Year, Month, and Day are all parsed as 0,
+because all fields defined in the profile match.  Note that in this example, Year, Month, and Day are all parsed as 0,
 so they match.  If the release name contains a year, it will not match:
 * `Perseverance 2022 S02E09 720p x265-NoBueno`
 
 If you want to disregard the Year, you could either
-# Add a new profile, e.g. "Episodic TV" and do not include Year, Month, and Day, or
-# Edit the `TV` profile to remove Year, Month, and Day
+1. Add a new profile, e.g. "Episodic TV" and do not include Year, Month, and Day, or
+2. Edit the `TV` profile to remove Year, Month, and Day
 
 ## Limitations and Recommendations
 
-The major limitation is that a filter action needs to have completed successfully (FILTER_APPROVED)
+The major limitation is that a filter action needs to have completed successfully (marked FILTER_APPROVED)
 *before* the duplicate is announced.  During the time a filter is being processed, it is marked FILTER_PENDING.
-Therefore, you want to ensure your filter actions are fast.
+Therefore, you want to ensure your filter actions complete quickly.
 
 Recommendations:
 * Disable qBittorrent reannounce.  In the `qBittorrent` action, under `Announce`, tick `Disable reannounce`.  This logic keeps reannouncing the torrent until the tracker is OK or until the retries are exhausted (2m55s by default).  This opens a large window for duplicate announcements to arrive.
 * Use a separate reannounce script.  In qBittorrent under `Settings` >> `Downloads` >> `Run external program`, set `Run external program on torrent added` to a script that does the same thing.  We recommend [qbt](https://github.com/ludviglundgren/qbittorrent-cli).  Usage:
   ```
-  qbt torrent reannounce "--hash=%I"
+  qbt torrent reannounce --hash "%I"
   ```
 
 Note: If you run qBittorrent inside a container, then you must install `qbt` inside that container.
