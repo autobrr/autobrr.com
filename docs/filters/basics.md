@@ -78,6 +78,4 @@ For TV and movies it's advised to use filters like `resolution`, `source` and `c
 If "Max downloads" is set, the filter will only match if you have downloaded fewer than "max downloads" items since the beginning of the "max downloads per" period. For instance, if you set "max downlods" to 3 and "max downloads per" to "day" the filter won't match unless you have downloaded fewer than 3 items since the beginning of the current day, in local time.
 :::
 
-#### Skip
-
 ---
