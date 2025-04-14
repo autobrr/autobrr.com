@@ -73,6 +73,7 @@ module.exports = {
         "filters/advanced",
         "filters/external",
         "filters/actions",
+        "filters/skip-duplicates",
         "filters/macros",
         "filters/lists",
         "filters/omegabrr",
