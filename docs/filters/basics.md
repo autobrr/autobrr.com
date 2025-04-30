@@ -53,21 +53,20 @@ If you want to match a string exactly, then try to avoid the use of the `*` wild
 
 ### Rules
 
-Some basic filtering rules.
+:::tip About Size
 
-:::tip about size
+Some indexers don't announce the size of a release, so autobrr needs to download the torrent file to get size.
+This check will only be triggered if a minimum or a maximum size in that particular filter has been set.  
+To get around downloading every torrent file, some APIs for trackers that are problematic are implemented.
 
-Some indexers doesn't announce the size, so it needs to download the torrent file and parse it to get size if set.
-autodl-irssi works like this as well. To get around this some api's will be implemented for trackers that are problematic.
-
-For TV and movies it's advised to use filters like `resolution`, `source` and `codec` since these often have known sizes.
+For TV and movies it's advised to use filters like `resolution`, `source` and `codec` since these often have known approximate sizes.
 
 :::
 
 | Field                 | Description                                                                                                       | Default value        |
 | --------------------- | ----------------------------------------------------------------------------------------------------------------- | -------------------- |
-| **Max. size**         | Maximum torrent size allowed. Supports units such as MB, MiB, GB, etc.                                            |                      |
 | **Min. size**         | Minimum torrent size allowed. Supports units such as MB, MiB, GB, etc.                                            |                      |
+| **Max. size**         | Maximum torrent size allowed. Supports units such as MB, MiB, GB, etc.                                            |                      |
 | **Delay**             | Number of seconds to wait before running actions.                                                                 | 0                    |
 | **Priority**          | Filters are checked in order of priority. Positive and negative numbers allowed. Higher number = higher priority. | 0                    |
 | **Max downloads**     | Number of max downloads as specified by the respective unit.                                                      | 0 (which means +Inf) |
