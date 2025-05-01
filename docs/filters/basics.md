@@ -55,11 +55,13 @@ If you want to match a string exactly, then try to avoid the use of the `*` wild
 
 :::tip About Size
 
-Some indexers don't announce the size of a release, so autobrr needs to download the torrent file to get size.
-This check will only be triggered if a minimum or a maximum size in that particular filter has been set.  
-To get around downloading every torrent file, some APIs for trackers that are problematic are implemented.
+Some indexers don't announce the size of a release, so autobrr will download the torrent file to get a size.  
+This check is only triggered if a minimum or a maximum size in that particular filter has been set.  
+For workflows that require an external size check for an external application  set `Min. size` to 1.  
+To get around downloading every torrent file, some APIs for trackers that are problematic are implemented.  
 
-For TV and movies it's advised to use filters like `resolution`, `source` and `codec` since these often have known approximate sizes.
+For TV and movies it's advised to use filters like `resolution`, `source` and `codec`  
+since these often have known approximate sizes.
 
 :::
 
