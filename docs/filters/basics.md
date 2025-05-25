@@ -53,25 +53,27 @@ If you want to match a string exactly, then try to avoid the use of the `*` wild
 
 ### Rules
 
-Some basic filtering rules.
+:::tip About Size
 
-:::tip about size
+Some indexers don't announce the size of a release, so autobrr will download the torrent file to get a size.  
+This check is only triggered if a minimum or a maximum size in that particular filter has been set.  
+For workflows that require an external size check for an external application  set `Min. size` to 1.  
+To get around downloading every torrent file, some APIs for trackers that are problematic are implemented.  
 
-Some indexers doesn't announce the size, so it needs to download the torrent file and parse it to get size if set.
-autodl-irssi works like this as well. To get around this some api's will be implemented for trackers that are problematic.
-
-For TV and movies it's advised to use filters like `resolution`, `source` and `codec` since these often have known sizes.
+For TV and movies it's advised to use filters like `resolution`, `source` and `codec`  
+since these often have known approximate sizes.
 
 :::
 
 | Field                 | Description                                                                                                       | Default value        |
 | --------------------- | ----------------------------------------------------------------------------------------------------------------- | -------------------- |
-| **Max. size**         | Maximum torrent size allowed. Supports units such as MB, MiB, GB, etc.                                            |                      |
 | **Min. size**         | Minimum torrent size allowed. Supports units such as MB, MiB, GB, etc.                                            |                      |
+| **Max. size**         | Maximum torrent size allowed. Supports units such as MB, MiB, GB, etc.                                            |                      |
 | **Delay**             | Number of seconds to wait before running actions.                                                                 | 0                    |
 | **Priority**          | Filters are checked in order of priority. Positive and negative numbers allowed. Higher number = higher priority. | 0                    |
 | **Max downloads**     | Number of max downloads as specified by the respective unit.                                                      | 0 (which means +Inf) |
 | **Max downloads per** | The unit of time for counting the maximum downloads per filter.                                                   |                      |
+| **Skip duplicates profile** | The profile describing how to prevent duplicate downloads.  See [Skip Duplicates](skip-duplicates.md).      | None                 |
 
 :::info
 If "Max downloads" is set, the filter will only match if you have downloaded fewer than "max downloads" items since the beginning of the "max downloads per" period. For instance, if you set "max downlods" to 3 and "max downloads per" to "day" the filter won't match unless you have downloaded fewer than 3 items since the beginning of the current day, in local time.

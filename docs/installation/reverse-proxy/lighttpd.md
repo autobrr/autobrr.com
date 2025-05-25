@@ -43,6 +43,9 @@ $HTTP["host"] == "autobrr.domain.com" {
 }
 ```
 
+:::info Heads up
+Don't forget to set the `server.stream-response-body = 1` option in the `lighttpd.conf` otherwise the logs will be blank.
+
 #### Resources {#lighttpd#links}
 
 - [lighttpd wiki](https://wiki.lighttpd.net)
