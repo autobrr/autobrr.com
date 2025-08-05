@@ -16,13 +16,17 @@ import re
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
-def get_latest_version():
-    _, url = fetch_latest_release()
+def get_latest_version(tag=None):
+    _, url = fetch_latest_release(tag)
     version = url.split('/')[-1]
     return version
 
-def fetch_latest_release():
-    url = "https://github.com/autobrr/autobrr/releases/latest"
+def fetch_latest_release(tag=None):
+    if tag:
+        url = f"https://github.com/autobrr/autobrr/releases/tag/{tag}"
+    else:
+        url = "https://github.com/autobrr/autobrr/releases/latest"
+    
     response = requests.get(url)
     response.raise_for_status()
     logging.info(f"Successfully fetched data from {url}")
@@ -86,15 +90,16 @@ def git_operations():
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--get-version", action="store_true", help="Get the latest version number")
+    parser.add_argument("--tag", type=str, help="Fetch a specific release tag instead of latest")
     args = parser.parse_args()
 
     if args.get_version:
-        version = get_latest_version()
+        version = get_latest_version(args.tag)
         print(version)
         return
 
     git_operations()
-    html_content, url = fetch_latest_release()
+    html_content, url = fetch_latest_release(args.tag)
     version, release_date, markdown_content = parse_release_data(html_content, url)
     path = create_release_notes_folder(version, release_date, markdown_content)
 
