@@ -36,6 +36,7 @@ import MorethanTV from "/snippets/categories/mtv.mdx";
 import MyAnonamouse from "/snippets/categories/mam.mdx";
 import Nebulance from "/snippets/categories/nebulance.mdx";
 import Norbits from "/snippets/categories/norbits.mdx";
+import Nyaa from "/snippets/categories/nyaa.mdx";
 import Pretome from "/snippets/categories/pretome.mdx";
 import PassThePopcorn from "/snippets/categories/ptp.mdx";
 import RED from "/snippets/categories/red.mdx";
@@ -144,6 +145,10 @@ import XSpeeds from "/snippets/categories/xspeeds.mdx";
 
 <Norbits />
 
+### Nyaa
+
+<Nyaa />
+
 ### PreToMe
 
 <Pretome />
@@ -197,3 +202,4 @@ sqlite3 /path/to/autobrr.db "SELECT DISTINCT indexer, category FROM "release" OR
 ```
 
 You can add them to this page by opening a [pull request](https://github.com/autobrr/autobrr.com/pulls) or by providing them to us on [Discord](https://discord.gg/WQ2eUycxyT).
+
