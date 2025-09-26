@@ -32,4 +32,4 @@ authors: [rogerrabbit]
 ## What to do next?
 
 * Read the [documentation](https://autobrr.com)
-* Join our [Discord server](https://discord.gg/WQ2eUycxyT)
+* Join our [Discord server](https://discord.autobrr.com/)

@@ -22,7 +22,7 @@ keywords:
 
 # FAQ
 
-If the docs did not answer your questions then the best place to ask is in our [Discord community](https://discord.gg/WQ2eUycxyT).
+If the docs did not answer your questions then the best place to ask is in our [Discord community](https://discord.autobrr.com/).
 
 ## I think I found a bug
 

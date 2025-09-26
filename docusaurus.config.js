@@ -118,7 +118,7 @@ const config = {
         //  dropdownActiveClassDisabled: false,
         //},
         {
-          href: "https://discord.gg/WQ2eUycxyT",
+          href: "https://discord.autobrr.com/",
           position: "right",
           className: "header-discord-link",
           "aria-label": "Discord",
