@@ -44,4 +44,4 @@ authors: [rogerrabbit]
 
 
 * Read the [documentation](https://autobrr.com)
-* Join our [Discord server](https://discord.gg/8s5d8pFhba)
+* Join our [Discord server](https://discord.autobrr.com/)
