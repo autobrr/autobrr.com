@@ -119,7 +119,7 @@ There will be a lot of info with Trace logs so you'll have to read carefully. `N
 
 autobrr uses the **Auth Mechanism** `SASL` by default. Some networks does not support it and a change of **Auth Mechanism** to `NickServ` will generally fix it. Some does not require NickServ registration at all and then you can set it to `None`-
 
-If you need some assistance then the best way to get help is [Discord](https://discord.gg/WQ2eUycxyT).
+If you need some assistance then the best way to get help is [Discord](https://discord.gg/8s5d8pFhba).
 
 ## Bouncing around (optional)
 

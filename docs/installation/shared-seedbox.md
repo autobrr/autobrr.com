@@ -41,7 +41,7 @@ import { FaDiscord } from 'react-icons/fa';
 
 # Shared Seedbox
 
-These are instructions and installation scripts for shared seedboxes. We have support for a couple of providers out of the box and if yours are missing then please reach out on [Discord <FaDiscord />](https://discord.gg/WQ2eUycxyT) so we can add support for it.
+These are instructions and installation scripts for shared seedboxes. We have support for a couple of providers out of the box and if yours are missing then please reach out on [Discord <FaDiscord />](https://discord.gg/8s5d8pFhba) so we can add support for it.
 
 The scripts requires some input but does most of the work.
 

@@ -196,4 +196,4 @@ You can export categories from your autobrr.db like this:
 sqlite3 /path/to/autobrr.db "SELECT DISTINCT indexer, category FROM "release" ORDER BY indexer, category;" ".exit" > dump.txt
 ```
 
-You can add them to this page by opening a [pull request](https://github.com/autobrr/autobrr.com/pulls) or by providing them to us on [Discord](https://discord.gg/WQ2eUycxyT).
+You can add them to this page by opening a [pull request](https://github.com/autobrr/autobrr.com/pulls) or by providing them to us on [Discord](https://discord.gg/8s5d8pFhba).
