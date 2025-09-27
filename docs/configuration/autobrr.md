@@ -167,6 +167,6 @@ Make sure to read through all of the articles as all of them have some important
 
 ## Additional help
 
-If you're having any trouble with the documentation, join us at [Discord <FaDiscord />](https://discord.gg/WQ2eUycxyT) and we will do our best to help.
+If you're having any trouble with the documentation, join us at [Discord <FaDiscord />](https://discord.autobrr.com/) and we will do our best to help.
 
 If you have found a bug or are having an issue, please open an issue on [GitHub <AiFillGithub />](https://github.com/autobrr/autobrr/issues/)
