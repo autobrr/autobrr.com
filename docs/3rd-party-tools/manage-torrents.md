@@ -64,9 +64,9 @@ my_task:          # Part 1: Task Name
 > CLI application to manage torrent client queues and remove torrents that meet a specific criteria 
 
 Repository (original, not active): [https://github.com/l3uddz/tqm](https://github.com/l3uddz/tqm)  
-Repository (fork, had more updates): [https://github.com/SweetMNM/tqm](https://github.com/SweetMNM/tqm)
+Repository (fork, active): [https://github.com/autobrr/tqm](https://github.com/autobrr/tqm)
 
-The [original](https://github.com/l3uddz/tqm) only supports `categories` in qBittorrent but the [fork](https://github.com/SweetMNM/tqm) supports rules by `tags` as well.
+The [original](https://github.com/l3uddz/tqm) only supports `categories` in qBittorrent but the [fork](https://github.com/autobrr/tqm) supports rules by `tags` as well.
 
 Supported clients
 * qBittorrent
