@@ -87,14 +87,18 @@ Then place the following content inside the file (e.g. via nano/vim/ed):
 
 ```systemd title="/etc/systemd/system/autobrr@.service"
 [Unit]
-Description=autobrr service for %i
-After=syslog.target network-online.target
+Description=Autobrr Daemon for %i
+Wants=network-online.target
+After=network-online.target
 
 [Service]
 Type=simple
 User=%i
 Group=%i
+SyslogIdentifier=autobrr
 ExecStart=/usr/local/bin/autobrr --config=/home/%i/.config/autobrr/
+Restart=on-failure
+RestartSec=5
 
 [Install]
 WantedBy=multi-user.target
