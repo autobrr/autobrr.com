@@ -33,12 +33,6 @@ It's up to you to make sure your PostgreSQL instance is secured and not exposed 
 
 ## Convert from SQLite to PostgreSQL {#convert}
 
-:::info
-
-The SQLite to PostgreSQL conversion feature is currently not functional and is not planned to be fixed in the foreseeable future. If you want to migrate from SQLite to PostgreSQL, you'll need to start with a fresh PostgreSQL database.
-
-:::
-
 `autobrrctl` has built-in support for converting your SQLite database to PostgreSQL.
 To do so, shut down autobrr and issue the following command:
 
