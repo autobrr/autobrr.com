@@ -11,13 +11,13 @@ pagination_next: filters/external
 
 # Advanced
 
+## Releases
+
 :::info
 
 Full regex support (Golang flavour, check https://regex101.com). These fields hardcode the mode `(?i)` **case-insensitive**
 
 :::
-
-## Releases
 
 | Field                  | Description                                                                           | Examples                                            | Availability |
 | ---------------------- | ------------------------------------------------------------------------------------- | --------------------------------------------------- | ------------ |
