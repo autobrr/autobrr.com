@@ -60,6 +60,7 @@ module.exports = {
         "configuration/feeds",
         "configuration/notifications",
         "configuration/authentication",
+        "configuration/proxy",
       ],
     },
     {
