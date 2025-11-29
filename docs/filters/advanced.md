@@ -11,7 +11,11 @@ pagination_next: filters/external
 
 # Advanced
 
-\* Full regex support (Golang flavour, check https://regex101.com)
+:::info
+
+Full regex support (Golang flavour, check https://regex101.com). These fields hardcode the mode `(?i)` **case-insensitive**
+
+:::
 
 ## Releases
 
