@@ -31,6 +31,7 @@ import HDTorrents from "/snippets/categories/hdtorrents.mdx";
 import Huno from "/snippets/categories/huno.mdx";
 import ImmortalSeed from "/snippets/categories/immortalseed.mdx";
 import IPTorrents from "/snippets/categories/ipt.mdx";
+import Lost from "/snippets/categories/lost.mdx";
 import Milkie from "/snippets/categories/milkie.mdx";
 import MorethanTV from "/snippets/categories/mtv.mdx";
 import MyAnonamouse from "/snippets/categories/mam.mdx";
@@ -124,6 +125,10 @@ import XSpeeds from "/snippets/categories/xspeeds.mdx";
 ### IPTorrents
 
 <IPTorrents />
+
+### Lost
+
+<Lost />
 
 ### Milkie
 
