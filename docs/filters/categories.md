@@ -22,6 +22,7 @@ import BitHDTV from "/snippets/categories/bithdtv.mdx";
 import Broadcasthenet from "/snippets/categories/btn.mdx";
 import BTFiles from "/snippets/categories/btfiles.mdx";
 import CathodeRayTube from "/snippets/categories/cathoderaytube.mdx";
+import DarkPeers from '/snippets/categories/darkpeers.mdx'
 import DigitalCore from "/snippets/categories/digitalcore.mdx";
 import Filelist from "/snippets/categories/fl.mdx";
 import GazelleGames from "/snippets/categories/ggn.mdx";
@@ -44,6 +45,7 @@ import RED from "/snippets/categories/red.mdx";
 import RevolutionTT from "/snippets/categories/revolutiontt.mdx";
 import SpeedApp from "/snippets/categories/speedapp.mdx";
 import Superbits from "/snippets/categories/sbs.mdx";
+import SeedPool from '/snippets/categories/seedpool.mdx'
 import TorrentDay from "/snippets/categories/torrentday.mdx";
 import Torrentleech from "/snippets/categories/tl.mdx";
 import TorrentSeeds from "/snippets/categories/torrentseeds.mdx";
@@ -89,6 +91,10 @@ import XSpeeds from "/snippets/categories/xspeeds.mdx";
 ### CathodeRayTube
 
 <CathodeRayTube />
+
+### DarkPeers
+
+<DarkPeers />
 
 ### DigitalCore
 
@@ -177,6 +183,10 @@ import XSpeeds from "/snippets/categories/xspeeds.mdx";
 ### Superbits
 
 <Superbits />
+
+### SeedPool
+
+<SeedPool />
 
 ### TorrentDay
 
