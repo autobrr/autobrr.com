@@ -131,13 +131,13 @@ This is meant for advanced users or those that need a single irc connection for 
 
 Due the current way of the release-parsing pipeline works, you may want to use a dedicated autobrr instance for your downloader. For this purpose, having a IRC bouncer in front will be beneficial, as it enables you to use the same irc-bot account for multiple autobrr instances. This still require you to have gone trough the above steps of setting up a bot account.
 
+### Setting up ZNC
+
 :::info
 
 There is some more info around the setup in this GitHub issue: https://github.com/autobrr/autobrr.com/issues/125
 
 :::
-
-### Setting up ZNC
 
 This write-up will use the [Linuxserver ZNC](https://github.com/linuxserver/docker-znc) docker image.
 
