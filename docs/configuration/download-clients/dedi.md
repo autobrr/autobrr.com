@@ -234,8 +234,7 @@ You can run autobrr and Transmission on the following setups.
 
 For a local client, meaning autobrr and Transmission **on the same server** then this should work. Check Transmission settings to get the `WEBUI_PORT`. Default is 9091.
 
-- Host: `127.0.0.1`
-- Port: 9091
+- Host: `http://127.0.0.1:9091/transmission`
 - TLS: disabled
 - Username: `<username>`
 - Password: `<password>`
@@ -244,8 +243,7 @@ For a local client, meaning autobrr and Transmission **on the same server** then
 
 For a remote client, meaning autobrr and Transmission are **not on the same server** then things might be a bit different.
 
-- Host: `myserver.brr` or `IP`
-- Port: 9091
+- Host: `http://myserver.brr/transmission` or `http://IP:PORT/transmission`
 - TLS: enabled
 - Skip TLS verification: disabled (try this first)
 - Username: `<username>`
@@ -253,8 +251,7 @@ For a remote client, meaning autobrr and Transmission are **not on the same serv
 
 HTTPS / TLS
 
-- Host: `myserver.brr/transmission` or `IP`
-- Port: 443
+- Host: `https://myserver.brr/transmission`
 - TLS: enabled
 - Skip TLS verification: disabled (try this first)
 - Username: `<username>`
@@ -264,8 +261,7 @@ HTTPS / TLS
 
 With **Docker** / containers make sure autobrr and Transmission share the same network to be able to use the `container_name` as address.
 
-- Host: `transmission`
-- Port: 9091
+- Host: `http://transmission:9091` or `http://transmission:9091/transmission`
 - TLS: disabled
 - Username: `<username>`
 - Password: `<password>`
