@@ -133,6 +133,12 @@ Due the current way of the release-parsing pipeline works, you may want to use a
 
 ### Setting up ZNC
 
+:::info
+
+There is some more info around the setup in this GitHub issue: https://github.com/autobrr/autobrr.com/issues/125
+
+:::
+
 This write-up will use the [Linuxserver ZNC](https://github.com/linuxserver/docker-znc) docker image.
 
 ```yml
