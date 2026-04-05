@@ -2,8 +2,7 @@
 
 <summary>Feralhosting</summary>
 
-- Host: `<hostname>.feralhosting.com/<username>/transmission/rpc`
-- Port: 9091
+- Host: `https://<hostname>.feralhosting.com/<username>/transmission` or `https://<hostname>.feralhosting.com/<username>/transmission/rpc`
 - TLS: Enabled
 - Password: `<password>`
 
@@ -13,8 +12,7 @@
 
 <summary>GigaRapid</summary>
 
-- Host: `<hostname>/rpc` (Each application has a **unique hostname**, which can be found on the apps page)
-- Port: 443
+- Host: `https://<hostname>/rpc` (Each application has a **unique hostname**, which can be found on the apps page)
 - TLS: Enabled
 - Username: `<username>`
 - Password: `<password>`
@@ -27,8 +25,7 @@
 
 Grab your unique Transmission url from the from your `Services` page.
 
-- Host `<username>-tr.<hostname>.seedbox.vip/rpc`
-- Port `443`
+- Host `https://<username>-tr.<hostname>.seedbox.vip/rpc`
 - TLS: Enabled
 - Basic Auth: Enabled
 - Username: `<username>`
@@ -40,13 +37,7 @@ Grab your unique Transmission url from the from your `Services` page.
 
 <summary>Seedhost.eu</summary>
 
-```shell
-# Grab RPC Port
-echo -e "Your Transmission port: \e[31m$(grep '"rpc-port": [0-9]*' ~/.config/transmission-daemon/settings.json | awk -F ': ' '{print $2}' | awk -F ',' '{print $1}')\e[0m"
-```
-
-- Host: `<hostname>.seedhost.eu/<username>/transmission/rpc`
-- Port: `<RPC Port>`
+- Host: `https://<hostname>.seedhost.eu/<username>/transmission` or `https://<hostname>.seedhost.eu/<username>/transmission/rpc`
 - TLS: Enabled
 - Username: `<username>`
 - Password: `<password>`
@@ -57,8 +48,7 @@ echo -e "Your Transmission port: \e[31m$(grep '"rpc-port": [0-9]*' ~/.config/tra
 
 <summary>Ultra.cc</summary>
 
-- Host: `<username>.<hostname>.usbx.me`
-- Port: Transmissions' RPC Port as given in your Control Panel
+- Host: `https://<username>.<hostname>.usbx.me/transmission`
 - TLS: Enabled
 - Username: `<username>`
 - Password: `<password>`
@@ -69,8 +59,7 @@ echo -e "Your Transmission port: \e[31m$(grep '"rpc-port": [0-9]*' ~/.config/tra
 
 <summary>Whatbox.ca</summary>
 
-- Host: `https://transmission.<yourdomain>.box.ca`
-- Port: Transmissions' RPC Port as given in your Info page
+- Host: `https://transmission.<yourdomain>.box.ca` or `https://transmission.<yourdomain>.box.ca:RPC_PORT`
 - TLS: Enabled
 - Basic auth: Disabled
 - Username: `<username>`
