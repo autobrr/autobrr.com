@@ -15,6 +15,8 @@ With external filters you can run `scripts` and `webhooks` to do your own custom
 
 Many of the fields have support for [macros](./macros.md), which allow you to enhance your workflow significantly by providing custom logic/data processing to the input data provided by autobrr.
 
+We have a separate repo for community scripts created by our users. https://github.com/autobrr/community-scripts
+
 ### Script
 
 Run external script that does something. Use `exit codes` correctly, like `exit 0` for no issues. In Linux, non-zero exit codes are considered not-ok/error etc.
