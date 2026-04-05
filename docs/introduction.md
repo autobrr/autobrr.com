@@ -115,6 +115,8 @@ Available download clients and actions
 - rTorrent / ruTorrent
 - Transmission
 - Porla
+- Sabnzbd (Usenet)
+- NZBGet (Usenet)
 - Sonarr, Radarr, Lidarr, Readarr and Whisparr (pushes releases directly to them and gets in the early swarm, instead of getting them via RSS when it's already over)
 - Watch folder
 - Exec custom scripts

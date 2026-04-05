@@ -92,4 +92,16 @@ import SharedReadarr from '/snippets/shared-download-clients/readarr.mdx';
 
 <SharedReadarr />
 
+### SABnzbd
+
+import SharedSABnzbd from '/snippets/shared-download-clients/sabnzbd.mdx';
+
+<SharedSABnzbd />
+
+### NZBGet
+
+import SharedNZBGet from '/snippets/shared-download-clients/nzbget.mdx';
+
+<SharedNZBGet />
+
 import TOCInline from '@theme/TOCInline';
