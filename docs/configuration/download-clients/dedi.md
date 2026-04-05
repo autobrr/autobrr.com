@@ -19,6 +19,7 @@ keywords:
     rutorrent,
     transmission,
     sabnzbd,
+    nzbget,
     radarr,
     sonarr,
     lidarr,
@@ -42,6 +43,7 @@ These are the available download clients.
 - Transmission
 - Porla
 - Sabnzbd (Usenet)
+- NZBGet (Usenet)
 - Radarr
 - Sonarr
 - Lidarr
@@ -268,16 +270,16 @@ With **Docker** / containers make sure autobrr and Transmission share the same n
 - Username: `<username>`
 - Password: `<password>`
 
-## Sabnzbd
+## SABnzbd
 
-You can run autobrr and Sabnzbd on the following setups.
+You can run autobrr and SABnzbd on the following setups.
 
 - Local server
 - Remote server
 
 ### Local {#sabnzbd-local}
 
-For a local client, meaning autobrr and Sabnzbd **on the same server** then this should work. Check Sabnzbd settings to get the `SABNZBD_PORT`.
+For a local client, meaning autobrr and SABnzbd **on the same server** then this should work. Check SABnzbd settings to get the `SABNZBD_PORT`.
 
 - Host: `http://127.0.0.1:SABNZBD_PORT`
 - TLS: disabled
@@ -285,7 +287,7 @@ For a local client, meaning autobrr and Sabnzbd **on the same server** then this
 
 ### Remote {#sabnzbd-remote}
 
-For a remote client, meaning autobrr and qBittorrent are **not on the same server** then things might be a bit different.
+For a remote client, meaning autobrr and SABnzbd are **not on the same server** then things might be a bit different.
 
 - Host: `https://myserver.brr/sabnzbd`
 - TLS: enabled
@@ -294,6 +296,31 @@ For a remote client, meaning autobrr and qBittorrent are **not on the same serve
 Some setups like **Swizzin** requires to also use **Basic Auth** when connecting to it from a remote server.
 
 - Basic Auth: enabled
+- Username: `<username>`
+- Password: `<password>`
+
+## NZBGet
+
+You can run autobrr and NZBGet on the following setups.
+
+- Local server
+- Remote server
+
+### Local {#nzbget-local}
+
+For a local client, meaning autobrr and NZBGet **on the same server** then this should work. Check NZBGet settings to get the `NZBGET_PORT`.
+
+- Host: `http://127.0.0.1:NZBGET_PORT`
+- TLS: disabled
+- Username: `<username>`
+- Password: `<password>`
+
+### Remote {#nzbget-remote}
+
+For a remote client, meaning autobrr and NZBGet are **not on the same server** then things might be a bit different.
+
+- Host: `https://myserver.brr/nzbget`
+- TLS: enabled
 - Username: `<username>`
 - Password: `<password>`
 
