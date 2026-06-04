@@ -1,7 +1,7 @@
 ---
 id: shared-seedbox
 sidebar_label: Shared Seedbox
-title: autobrr installation instructions for shared (non-root) seedbox solutions like giga-rapid, hostingby.design, swizzin.net, ultra.cc, whatbox, seedhost, feralhosting and bytesized-hosting.
+title: autobrr installation instructions for shared (non-root) seedbox solutions like giga-rapid, hostingby.design, swizzin.net, ultra.cc, whatbox, seedhost, feralhosting, bytesized-hosting and rapidseedbox.
 keywords:
   [
     autobrr,
@@ -29,6 +29,8 @@ keywords:
     feralhosting.com,
     bytesized,
     bytesized-hosting.com,
+    rapidseedbox,
+    rapidseedbox.com
   ]
 pagination_prev: introduction
 pagination_next: configuration/indexers
