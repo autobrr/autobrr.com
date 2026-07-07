@@ -24,6 +24,7 @@ import BTFiles from "/snippets/categories/btfiles.mdx";
 import CathodeRayTube from "/snippets/categories/cathoderaytube.mdx";
 import DarkPeers from '/snippets/categories/darkpeers.mdx'
 import DigitalCore from "/snippets/categories/digitalcore.mdx";
+import F1Carreras from '/snippets/categories/f1carreras.mdx'
 import Filelist from "/snippets/categories/fl.mdx";
 import GazelleGames from "/snippets/categories/ggn.mdx";
 import HDBits from "/snippets/categories/hdbits.mdx";
@@ -99,6 +100,10 @@ import XSpeeds from "/snippets/categories/xspeeds.mdx";
 ### DigitalCore
 
 <DigitalCore />
+
+### F1Carreras
+
+<F1Carreras />
 
 ### Filelist
 
