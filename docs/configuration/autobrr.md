@@ -171,6 +171,19 @@ checkForUpdates = true
 - (**optional**) `corsAllowedOrigins`: Comma separated list of origins allowed to call the API from a browser, for setups with third-party frontends. Default `*`.
 - (**optional**) `profilingEnabled` / `profilingHost` / `profilingPort`: Exposes Go pprof endpoints for debugging, disabled by default. Only enable when asked to while troubleshooting.
 
+### Metrics (Prometheus) {#metrics}
+
+Metrics are disabled by default. With `metricsEnabled = true`, autobrr serves Prometheus metrics on a separate listener at `http://<metricsHost>:<metricsPort>/metrics` (default `127.0.0.1:9074`), independent of the web UI port. The exported metrics are prefixed `autobrr_` and cover releases, IRC, feeds, lists and filters.
+
+```yaml title="prometheus.yml"
+scrape_configs:
+  - job_name: autobrr
+    static_configs:
+      - targets: ["127.0.0.1:9074"]
+```
+
+The endpoint can be protected with basic auth via `metricsBasicAuthUsers` (comma separated `user:password` pairs with the password bcrypt-hashed, generated with [`autobrrctl htpasswd`](#autobrrctl)).
+
 ### Create user via command line (optional) {#create-user-via-cli}
 
 This step is not needed unless you wish to create a user _via the command line_. Instead, the process of creating a user can be done via the web UI instead, which is the recommended way to do it.
