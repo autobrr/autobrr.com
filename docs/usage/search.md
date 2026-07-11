@@ -22,6 +22,7 @@ You can search through this list by typing your query and/or with selected keywo
 `season`
 `source`
 `title`
+`type`
 `year`
 
 :::tip
@@ -46,3 +47,9 @@ If you want to list all 1080p releases with the keyword `Movie Title`:
 If you want to list episode 3 of season 5 in `The Show`:
 
 - `The Show season:05 episode:03`
+
+If you want to list all movies:
+
+- `type:movie`
+
+Type matches how the release name was parsed: `movie`, `episode` (single episodes), `series` (season packs), `music`, `game`, `app`, `book` and so on.
