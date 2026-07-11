@@ -78,6 +78,7 @@ module.exports = {
         "filters/macros",
         "filters/lists",
         "filters/omegabrr",
+        "filters/cross-seed-qui",
         "filters/examples",
         "filters/categories",
         "filters/freeleech",

@@ -3,8 +3,12 @@ id: cross-seed
 sidebar_label: Cross-seed
 title: Cross-seed with autobrr
 description: 3rd party tools that can be used with autobrr.
-keywords: [cross-seed]
+keywords: [cross-seed, qui, autobrr]
 ---
+
+:::tip Using qBittorrent?
+If you run qBittorrent, check out [qui](https://getqui.com), our multi-instance qBittorrent WebUI with first party cross-seed support. It integrates directly with autobrr and needs no extra daemon or config; see [Cross-seed with qui](../filters/cross-seed-qui.md).
+:::
 
 :::info Heads up
 
@@ -14,107 +18,11 @@ Don't expect any support for setting this up. If you need help setting up cross-
 
 :::
 
-With this setup you can utilize autobrr with [cross-seed](https://github.com/cross-seed/cross-seed) to automatically cross-seed newly announced torrents from indexer Y that matches existing torrents in your torrent client from indexer X.
+With this setup you can use autobrr with [cross-seed](https://github.com/cross-seed/cross-seed) to automatically cross-seed newly announced torrents from indexer Y that matches existing torrents in your torrent client from indexer X.
 
-### Install cross-seed and its dependencies {#cross-seed-install}
+### Install cross-seed {#cross-seed-install}
 
-You can install cross-seed in several ways. Docker is recommended, but installing via npm or yarn (requires node 16 or greater) is also fine.
-
-In this guide we will install it with npm. This method requires node 16 or greater.
-[https://github.com/nodesource/distributions/blob/master/README.md#using-debian-as-root-3](https://github.com/nodesource/distributions/blob/master/README.md#using-debian-as-root-3)
-
-```bash
-# Elevate to root and install Node.js LTS (v18.x)
-sudo su -
-curl -fsSL https://deb.nodesource.com/setup_lts.x | bash - &&\
-apt-get install -y nodejs
-
-# Install cross-seed
-npm install -g cross-seed
-```
-
-### Generate config and make sure the port isn't exposed to the internet {#cross-seed-config}
-
-```bash
-# Generate a cross-seed config file
-cross-seed gen-config
-
-# Open the file
-nano /home/$USER/.cross-seed/config.js
-
-# Make sure the following parameters are set within the config
-
-# You need to add at least one torznab URL from Prowlarr to the config for it to be valid
-# They will not be used by autobrr
-
-# outputDir needs to exist, but will not be used
-
-torznab: [
-    "http://127.0.0.1:9696/1/api?apikey=APIKEY&tracker=Tracker1",
-    "http://127.0.0.1:9696/2/api?apikey=APIKEY&tracker=Tracker2"
-],
-torrentDir: "/home/$USER/.local/share/qBittorrent/BT_backup",
-outputDir: "/home/$USER/torrentfiles",
-action: "inject",
-qbittorrentUrl: "http://user:pass@localhost:port",
-apiAuth: true,
-```
-
-:::info Make sure the port is not exposed to the internet
-
-Even with API auth enabled, cross-seed still recommends that you do not expose its port to untrusted networks (such as the Internet).
-You can use iptables or UFW to solve this.
-The cross-seed daemon uses port 2468 by default.
-If you want to expose cross-seed to another server on the internet substitute `127.0.0.1` with the IP of the corresponding server.
-
-```text
-sudo apt-get install iptables
-
-iptables -A INPUT -p tcp --dport 2468 -s 127.0.0.1 -j ACCEPT
-iptables -A INPUT -p tcp --dport 2468 -j DROP
-```
-
-:::
-
-### Start the cross-seed daemon {#cross-seed-daemon}
-
-To make autobrr communicate with cross-seed, you need to run cross-seed in [daemon mode](https://www.cross-seed.org/docs/basics/daemon).
-In this guide we will set up a [systemd service](https://www.cross-seed.org/docs/basics/daemon#systemd-linux). You can also set it up with [screen](https://www.cross-seed.org/docs/basics/daemon#screen) or [docker](https://www.cross-seed.org/docs/basics/daemon#docker).
-
-#### Systemd {#cross-seed-systemd}
-
-```shell
-touch /etc/systemd/system/cross-seed.service
-```
-
-You'll want to customize the following variables:
-
-- `{user}`: your user, or another user if you want to create a separate user
-  for `cross-seed`
-- `{group}`: your group, or another group if you want to create a separate
-  group for `cross-seed`
-- `/path/to/node`: run the command `which node` in your terminal, then paste
-  the output here.
-
-```systemd title="/etc/systemd/system/cross-seed.service"
-[Unit]
-Description=cross-seed daemon
-[Service]
-User={user}
-Group={group}
-Restart=always
-Type=simple
-ExecStart=/path/to/node cross-seed daemon
-[Install]
-WantedBy=multi-user.target
-```
-
-```shell
-sudo systemctl daemon-reload # tell systemd to discover the unit file you just created
-sudo systemctl enable cross-seed # enable it to run on restart
-sudo systemctl start cross-seed # start the service
-sudo journalctl -u cross-seed # view the logs
-```
+See [cross-seed's documentation](https://www.cross-seed.org/docs/basics/getting-started) on how to get started.
 
 ### Create the cross-seed filter in autobrr {#cross-seed-filter}
 
