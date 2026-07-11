@@ -33,12 +33,22 @@ See [stop if disk is full](../usage/tips.md#stop-if-disk-is-full) for a good exa
 
 Send a payload to some custom API and do more processing. Use status codes to trigger different behaviours.
 
-Only supports `POST` requests for now.
+| Field                         | Description                                                                  | Examples                                  |
+| ----------------------------- | ---------------------------------------------------------------------------- | ----------------------------------------- |
+| **Endpoint**                  | URL of your API.                                                             | e.g. `http://127.0.0.1:5000/api/filter`   |
+| **HTTP method**               | Request method. Defaults to `POST` when not set.                             | e.g. `POST`                               |
+| **HTTP Request Headers**      | Custom headers as `KEY=value` pairs, separated by `;`.                       | e.g. `X-Api-Key=mykey;Authorization=Bearer token` |
+| **Data**                      | JSON payload. Sent with `Content-Type: application/json`.                    | e.g. `{ "name": "{{ .TorrentName }}" }`   |
+| **Expected HTTP status code** | Status code that counts as a pass.                                           | e.g. `200`                                |
+| **Retry http status code(s)** | Status codes that trigger a retry, comma separated.                          | e.g. `500,502`                            |
+| **Maximum retry attempts**    | How many times to try the request in total.                                  | e.g. `3`                                  |
+| **Retry delay in seconds**    | Wait time between attempts.                                                  | e.g. `5`                                  |
 
-| Field                    | Description           | Examples                                |
-| ------------------------ | --------------------- | --------------------------------------- |
-| **Host**                 | Host.                 | e.g. `http://127.0.0.1:5000/api/filter` |
-| **Data**                 | Data, JSON.           | e.g. `{ "name": "{{ .TorrentName }}" }` |
-| **Expected http status** | Expected http status. | e.g. `200`                              |
+### On Error
+
+Each external filter has an **On Error** setting that controls what happens when the script or webhook itself fails (for example a connection error):
+
+- **Reject**: the release is rejected (default behavior).
+- **Continue to next**: the failed external filter is skipped and filtering continues with the next check.
 
 ---

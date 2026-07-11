@@ -64,15 +64,19 @@ Leave blank to match either and let your arr decide, or do the following to incl
 
 If you **WANT ONLY HDR** formats
 
-| Field     | Values                  |
-| --------- | ----------------------- |
-| Match HDR | [HDR, DV] or Select all |
+| Field     | Values     |
+| --------- | ---------- |
+| Match HDR | Select all |
 
 If you **DON'T WANT ANY HDR** formats
 
-| Field      | Values                  |
-| ---------- | ----------------------- |
-| Except HDR | [HDR, DV] or Select all |
+| Field      | Values     |
+| ---------- | ---------- |
+| Except HDR | Select all |
+
+:::caution
+Selecting only `HDR` and `DV` misses dual-format releases like `DV HDR10`, which only match the combined options (`DV HDR`, `DV HDR10`, `DV HDR10+`). Select all is the safe choice; narrow it down only if you know which formats your indexer announces.
+:::
 
 ### Only season packs
 
@@ -130,15 +134,19 @@ Leave blank to match either and let your arr decide, or do the following to incl
 
 If you **WANT ONLY** HDR formats
 
-| Field     | Values                  |
-| --------- | ----------------------- |
-| Match HDR | [HDR, DV] or Select all |
+| Field     | Values     |
+| --------- | ---------- |
+| Match HDR | Select all |
 
 If you **DON'T WANT ANY HDR** formats
 
-| Field      | Values                  |
-| ---------- | ----------------------- |
-| Except HDR | [HDR, DV] or Select all |
+| Field      | Values     |
+| ---------- | ---------- |
+| Except HDR | Select all |
+
+:::caution
+Selecting only `HDR` and `DV` misses dual-format releases like `DV HDR10`, which only match the combined options (`DV HDR`, `DV HDR10`, `DV HDR10+`). Select all is the safe choice; narrow it down only if you know which formats your indexer announces.
+:::
 
 ## Build buffer
 

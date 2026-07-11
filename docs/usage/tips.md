@@ -73,6 +73,19 @@ echo $retcode
 
 ![External script](/img/free-space.png "External script explanation")
 
+## Downloading log files {#download-logs}
+
+Log files can be listed and downloaded under `Settings > Logs`. Downloaded files are automatically sanitized: passkeys, API keys and IRC credentials are redacted, which makes them safe to share when asking for help on Discord or GitHub.
+
+## Application settings {#application-settings}
+
+A few useful toggles live under `Settings > Application`:
+
+- **Theme**: light, dark, or follow the system theme.
+- **Language**: the web UI is available in several languages (English, German, Czech, Spanish, French, Russian, Norwegian and Simplified Chinese). Your browser language is detected automatically, and the choice is stored per browser.
+- **Check for updates**: toggles the update check; when a new version is available, a notice with a link appears next to the version number.
+- **WebUI debug mode**: extra debug output in the browser, only useful when troubleshooting the UI itself.
+
 ## Troubleshooting filters utilizing the autobrr.log file {#autobrr.log}
 
 The Logs page in the app itself is a good way to monitor new announces, but it cannot show old announces.

@@ -107,3 +107,9 @@ This should work if you have `/config` mapped to a volume which you hopefully ha
 1. Create your definition file and place it in the directory specified in your config file.
 2. Restart autobrr to apply changes.
 3. Configure the new indexer by navigating to `Settings > Indexers` and setting it up as usual.
+
+:::info Definition format
+Current definitions after autobrr `v1.82.0` use `version: 2`, with per-channel `parse` blocks and named regex capture groups. Older custom definitions without a `version` field are treated as the legacy v1 format and still load through a compatibility layer.
+
+The best starting point for a new definition is to copy a current one from the [official definitions directory](https://github.com/autobrr/autobrr/tree/develop/internal/indexer/definitions) and adapt it.
+:::

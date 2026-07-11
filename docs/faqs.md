@@ -96,11 +96,11 @@ import Botnaming from '/snippets/botnaming.mdx';
 ## Setting a custom save path for Deluge in autobrr does not work. Why?
 
 This is a problem with Deluge v1.\* and should not happen in v2.
-You can use the label-plugin in Deluge and set a custom save path in that as a workaround. The label has to exist for autobrr to be able to use it!
+You can use the label-plugin in Deluge and set a custom save path in that as a workaround. autobrr creates the label if it does not exist, but for this workaround you need to create it yourself first so you can set its save path in Deluge.
 
 ## Why did a release not match when it clearly should have?
 
-Check your logs. Additionally, enable trace logging by setting `logLevel = "TRACE"` in your `config.toml` (which can usually be found in `~/.config/autobrr/`). Remember to restart autobrr after doing so.
+Check your logs. Additionally, enable trace logging by setting `logLevel = "TRACE"` in your `config.toml` (which can usually be found in `~/.config/autobrr/`). The change is picked up automatically without a restart. You can also change the log level on the fly under **Settings > Logs** in the web UI.
 
 ## How does autobrr handle multiple matching filters for a release?
 

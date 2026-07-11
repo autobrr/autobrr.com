@@ -22,6 +22,7 @@ You can search through this list by typing your query and/or with selected keywo
 `season`
 `source`
 `title`
+`type`
 `year`
 
 :::tip
@@ -46,3 +47,22 @@ If you want to list all 1080p releases with the keyword `Movie Title`:
 If you want to list episode 3 of season 5 in `The Show`:
 
 - `The Show season:05 episode:03`
+
+If you want to list only movies or only episodes:
+
+- `type:movie` or `type:episode`
+
+## Retrying actions
+
+Clicking the action status badge of a release opens its details, where each action has a **Retry** button that replays it against the download client. This works for any action status, including approved and pending ones, and is handy after fixing a download client or filter misconfiguration.
+
+## Release history cleanup
+
+Release history can be cleaned up under `Settings > Releases`:
+
+- **Scheduled cleanup jobs**: Run automatically on a cron schedule and delete releases older than a set number of hours, optionally scoped to specific indexers and push statuses. Jobs can be enabled, edited and force-run from the same screen.
+- **Delete release history**: A manual tool for one-off cleanups with the same filtering options.
+
+:::caution
+[Skip Duplicates](../filters/skip-duplicates.md) and [Smart Episode](../filters/tv-movies.md#smart-episode) both compare new releases against previously approved ones in the release history. Deleting `PUSH_APPROVED` history removes the data they rely on, so scope cleanups accordingly.
+:::

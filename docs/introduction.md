@@ -104,7 +104,8 @@ As of right now, autobrr features:
 - Built on Go and React making autobrr lightweight and perfect for supporting multiple platforms (Linux, FreeBSD, Windows, macOS) on different architectures (e.g. x86, ARM)
 - Great container support (Docker, k8s/Kubernetes)
 - Database engine supporting both PostgreSQL and SQLite
-- Notifications (Discord, Telegram, Notifiarr)
+- Notifications (Discord, Notifiarr, Telegram, Pushover, Gotify, ntfy, LunaSea, Shoutrrr, webhooks)
+- Multi-language web UI (English, German, Czech, Spanish, French, Russian, Norwegian, Simplified Chinese)
 - One autobrr instance can communicate with multiple clients (both torrent and \*arr) on remote servers
 - Base path / Subfolder (and subdomain) support for convenient reverse-proxy support
 

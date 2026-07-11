@@ -25,10 +25,23 @@ postgresUser = "autobrr"
 postgresPass = "s0meth!ng-l0ng-4nd-s3cure"
 postgresSSLMode = "disable"
 postgresExtraParams = ""
+
+# Optional: connect via unix socket instead of host/port
+#postgresSocket = "/run/postgresql"
+```
+
+Alternatively, the whole connection can be given as a single DSN, which takes precedence over the individual fields:
+
+```toml title="config.toml"
+databaseDSN = "postgresql://autobrr:s0meth!ng-l0ng-4nd-s3cure@localhost:5432/autobrr?sslmode=disable"
 ```
 
 :::warning Warning
 It's up to you to make sure your PostgreSQL instance is secured and not exposed to the internet.
+:::
+
+:::info Advanced
+autobrr runs its database schema migrations automatically on startup. Set `databaseAutoMigrate = false` to skip them.
 :::
 
 ## Convert from SQLite to PostgreSQL {#convert}
@@ -39,6 +52,11 @@ To do so, shut down autobrr and issue the following command:
 ```bash
 autobrrctl db:convert --sqlite-db /path/to/autobrr.db --postgres-url postgres://username:password@127.0.0.1:5432/autobrr
 ```
+
+Two optional flags are available:
+
+- `--dry-run`: test the conversion without writing anything to PostgreSQL.
+- `--exclude-tables`: comma separated list of tables to skip during conversion.
 
 Your SQLite database will not be removed in this process, so it is safe to roll back if you like.
 

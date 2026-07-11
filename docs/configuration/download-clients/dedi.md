@@ -18,11 +18,13 @@ keywords:
     rtorrent,
     rutorrent,
     transmission,
+    porla,
     sabnzbd,
     nzbget,
     radarr,
     sonarr,
     lidarr,
+    readarr,
     whisparr,
   ]
 pagination_label: Configuration - Download clients
@@ -98,6 +100,10 @@ With **Docker** / containers make sure autobrr and qBittorrent share the same ne
 - Username: `<username>`
 - Password: `<password>`
 
+:::info
+qBittorrent can also be authenticated with an optional **API key** instead of username and password, for WebUIs set up with API key authentication. Requires qBittorrent v5.2.x+
+:::
+
 ## qBittorrent rules
 
 You can define some basic rules which can improve your performance for racing etc.
@@ -105,7 +111,11 @@ You can define some basic rules which can improve your performance for racing et
 - **Enabled**: Disabled by default.
 - **Max active downloads**: Default 0 (unlimited). Limit the amount of active downloads, to give the maximum amount of bandwidth and disk for the downloads.
 - **Ignore slow torrents**: Disabled by default.
-- **Download speed threshold**: If max active downloads is hit, but download speed is below this limit, download anyway. Unit in KB/s.
+- **Ignore condition**: When the slow-torrent check runs.
+  - `Max downloads reached`: speed thresholds are only checked once Max active downloads is hit.
+  - `Always`: speed thresholds are checked on every push, regardless of the number of active downloads.
+- **Download speed threshold**: If the total download speed is below this limit when the check runs, download anyway. Unit in KB/s.
+- **Upload speed threshold**: If the total upload speed is below this limit when the check runs, download anyway. Unit in KB/s.
 
 ## Deluge
 
@@ -142,11 +152,9 @@ For a remote client, meaning autobrr and Deluge are **not on the same server** t
 - Username: `<username>`
 - Password: `<password>`
 
-Some setups like **Swizzin** requires to also use **Basic Auth** when connecting to it from a remote server.
-
-- Basic Auth: enabled
-- Username: `<username>`
-- Password: `<password>`
+:::info
+autobrr connects directly to the Deluge daemon (the same connection a thin client uses), not to the Deluge web UI, so there is no Basic Auth option for Deluge. Use the daemon port and daemon credentials from `auth`, not the web UI password.
+:::
 
 ### Docker {#deluge-docker}
 
@@ -172,6 +180,10 @@ You can run autobrr and rTorrent / ruTorrent on the following setups.
 - Local server
 - Remote server
 - Docker / container
+
+:::info
+When Auth is enabled you can pick the **Auth type**: `Basic Auth` or `Digest Auth`. Basic Auth is correct in most cases, but some providers (like RapidSeedbox) use Digest Auth.
+:::
 
 ### Local {#rtorrent-local}
 
@@ -266,6 +278,30 @@ With **Docker** / containers make sure autobrr and Transmission share the same n
 - Username: `<username>`
 - Password: `<password>`
 
+## Transmission rules
+
+You can define some basic rules which can improve your performance for racing etc.
+
+- **Enabled**: Disabled by default.
+- **Max active downloads**: Default 0 (unlimited). Limit the amount of active downloads, to give the maximum amount of bandwidth and disk for the downloads.
+
+## Porla
+
+Connects to the Porla web API.
+
+- Host: `http(s)://host:port`
+- Auth token: `<token>` (required, generate it in Porla)
+- TLS: enable for `https://` hosts, with **Skip TLS verification** available for self-signed certificates
+
+Some setups also require **Basic Auth** with a username and password, like other clients behind an HTTP-auth proxy.
+
+## Porla rules
+
+You can define some basic rules which can improve your performance for racing etc.
+
+- **Enabled**: Disabled by default.
+- **Max active downloads**: Default 0 (unlimited). Limit the amount of active downloads, to give the maximum amount of bandwidth and disk for the downloads.
+
 ## SABnzbd
 
 You can run autobrr and SABnzbd on the following setups.
@@ -307,7 +343,6 @@ You can run autobrr and NZBGet on the following setups.
 For a local client, meaning autobrr and NZBGet **on the same server** then this should work. Check NZBGet settings to get the `NZBGET_PORT`.
 
 - Host: `http://127.0.0.1:NZBGET_PORT`
-- TLS: disabled
 - Username: `<username>`
 - Password: `<password>`
 
@@ -316,9 +351,12 @@ For a local client, meaning autobrr and NZBGet **on the same server** then this 
 For a remote client, meaning autobrr and NZBGet are **not on the same server** then things might be a bit different.
 
 - Host: `https://myserver.brr/nzbget`
-- TLS: enabled
 - Username: `<username>`
 - Password: `<password>`
+
+:::info
+There is no TLS toggle for NZBGet - whether the connection uses https is decided by the scheme of the Host URL (`http://` or `https://`).
+:::
 
 ## Sonarr
 
@@ -329,6 +367,10 @@ You can run autobrr and Sonarr apps on the following setups.
 - Docker / container
 
 <ArrOverride/>
+
+:::info
+All arr clients also have **TLS** and **Skip TLS verification** toggles (enable skip-verify for self-signed certificates), and an optional **Basic Auth** setting for instances behind an HTTP-auth proxy.
+:::
 
 ### Local {#sonarr-local}
 
@@ -401,6 +443,10 @@ With **Docker** / containers make sure autobrr and Radarr share the same network
 ## Lidarr
 
 See Radarr and Sonarr but port `8686`.
+
+## Readarr
+
+See Radarr and Sonarr but port `8787`.
 
 ## Whisparr
 

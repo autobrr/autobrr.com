@@ -64,21 +64,29 @@ services:
       - AUTOBRR__HOST=string
       - AUTOBRR__PORT=string
       - AUTOBRR__BASE_URL=string
+      - AUTOBRR__BASE_URL_MODE_LEGACY=bool
       - AUTOBRR__LOG_LEVEL=string
       - AUTOBRR__LOG_PATH=string
       - AUTOBRR__LOG_MAX_SIZE=string/int without MB
       - AUTOBRR__LOG_MAX_BACKUPS=string/int
-      - AUTOBRR__SESSION_SECRET=string
+      - AUTOBRR__SESSION_SECRET=string # legacy, unused since v1.66.0 (sessions are stored in the database)
       - AUTOBRR__CUSTOM_DEFINITIONS=string
       - AUTOBRR__CHECK_FOR_UPDATES=bool
       - AUTOBRR__DATABASE_TYPE=sqlite/postgres
+      - AUTOBRR__DATABASE_DSN=string # alternative to the individual postgres* variables
+      - AUTOBRR__DATABASE_MAX_BACKUPS=int # positive values only, 0 is ignored
       - AUTOBRR__POSTGRES_HOST=string
       - AUTOBRR__POSTGRES_PORT=string
+      - AUTOBRR__POSTGRES_SOCKET=string # connect via unix socket, replaces host/port
       - AUTOBRR__POSTGRES_DATABASE=string
       - AUTOBRR__POSTGRES_USER=string
       - AUTOBRR__POSTGRES_PASS=string
       - AUTOBRR__POSTGRES_SSLMODE=string
       - AUTOBRR__POSTGRES_EXTRA_PARAMS=string
+      - AUTOBRR__CORS_ALLOWED_ORIGINS=string
+      - AUTOBRR__PROFILING_ENABLED=bool
+      - AUTOBRR__PROFILING_HOST=string
+      - AUTOBRR__PROFILING_PORT=int
       - AUTOBRR__OIDC_ENABLED=bool
       - AUTOBRR__OIDC_ISSUER=string
       - AUTOBRR__OIDC_CLIENT_ID=string
@@ -90,6 +98,14 @@ services:
       - AUTOBRR__METRICS_PORT=int
       - AUTOBRR__METRICS_BASIC_AUTH_USERS=string
 ```
+
+:::tip Docker secrets
+Every variable also accepts a `_FILE` variant whose value is read from the referenced file, e.g. `AUTOBRR__POSTGRES_PASS_FILE=/run/secrets/pg_pass`. This is meant for Docker/Podman secrets. The `_FILE` variant takes precedence over the plain variable, and the file content is trimmed of surrounding whitespace.
+:::
+
+:::info
+`AUTOBRR__POSTGRES_DB` and `AUTOBRR__POSTGRES_PASSWORD` are accepted as aliases for `AUTOBRR__POSTGRES_DATABASE` and `AUTOBRR__POSTGRES_PASS`. They match the official postgres image variable names, which is convenient when sharing an env file with the postgres container. The aliases take precedence when both are set.
+:::
 
 ### Manually configure autobrr (optional) {#manually-configure-autobrr}
 

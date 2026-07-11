@@ -17,7 +17,7 @@ keywords:
 pagination_label: Configuration - Proxies
 ---
 
-autobrr can use proxies for Indexers (downloads of .torrents, api calls), Feeds and IRC.
+autobrr can use proxies for Indexers (downloads of .torrents, api calls, and their Feeds) and IRC.
 
 ## Supported Proxy types
 
@@ -28,8 +28,9 @@ To set up a SOCKS5 Proxy, head to `Settings > Proxies`.
 1. Click **Add new**.
 2. Pick SOCKS5 from the list and give it a name.
 3. Add your proxy URL like `socks5://ip:port`.
-4. Click the `Test` button to make a test query (it fetches our docs).
-5. Save.
+4. If the proxy requires authentication, fill in both the **User** and **Pass** fields.
+5. Click the `Test` button to make a test query (it fetches our docs).
+6. Save.
 
 ### HTTP(S)
 
@@ -38,9 +39,12 @@ To set up a HTTP Proxy, head to `Settings > Proxies`.
 1. Click **Add new**.
 2. Pick HTTP from the list and give it a name.
 3. Add your proxy URL like `http://ip:port` or `https://ip:port`.
-4. Click the `Test` button to make a test query (it fetches our docs).
-5. Save.
+4. If the proxy requires authentication, fill in both the **User** and **Pass** fields.
+5. Click the `Test` button to make a test query (it fetches our docs).
+6. Save.
 
 ## Usage
 
-After you've setup a proxy you need to add it to Indexers, Feeds and IRC networks. Toggle Use Proxy and select the proxy you setup earlier.
+After you've setup a proxy you need to add it to Indexers and IRC networks. Toggle **Use Proxy** and select the proxy you setup earlier (for indexers: `Settings > Indexers > edit indexer`).
+
+Feeds have no proxy setting of their own; a feed automatically uses the proxy configured on its parent indexer.

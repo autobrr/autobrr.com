@@ -13,15 +13,17 @@
 | `{{.Category}}`                  | string   | Category                                   |
 | `{{.Codec}}`                     | []string | Video codecs array                         |
 | `{{.Container}}`                 | string   | Container format                           |
+| `{{.Cookie}}`                    | string   | Raw indexer cookie (cookie-auth indexers). Contains credentials, handle with care |
 | `{{.CurrentDay}}`                | int      | Current Day                                |
 | `{{.CurrentHour}}`               | int      | Current Hour                               |
 | `{{.CurrentMinute}}`             | int      | Current Minute                             |
 | `{{.CurrentMonth}}`              | int      | Current Month                              |
 | `{{.CurrentSecond}}`             | int      | Current Second                             |
+| `{{.CurrentTimeUnixMS}}`         | int      | Current unix time in milliseconds          |
 | `{{.CurrentYear}}`               | int      | Current Year                               |
 | `{{.Day}}`                       | int      | Release day                                |
 | `{{.Description}}`               | string   | Release description                        |
-| `{{.DownloadURL}}`               | string   | Download URL                               |
+| `{{.DownloadUrl}}`               | string   | Download URL                               |
 | `{{.Episode}}`                   | int      | Parsed episode                             |
 | `{{.FilterID}}`                  | int      | Filter identifier                          |
 | `{{.FilterName}}`                | string   | Filter name                                |
@@ -52,6 +54,7 @@
 | `{{.Protocol}}`                  | string   | Protocol type                              |
 | `{{.RecordLabel}}`               | string   | Record label                               |
 | `{{.Region}}`                    | string   | Region information                         |
+| `{{.ReleaseTags}}`               | string   | Raw release tags string from the announce  |
 | `{{.Repack}}`                    | bool     | Is repack release                          |
 | `{{.Resolution}}`                | string   | Parsed resolution (1080p)                  |
 | `{{.Season}}`                    | int      | Parsed season                              |

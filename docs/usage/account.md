@@ -28,7 +28,7 @@ Changing username and password can be done separately or simultaneously.
 ### Changing Password
 
 1. Go to `Settings` and navigate to the `Account` section.
-2. Fill in your new username in the `New Password` field.
+2. Fill in your new password in the `New Password` field.
 3. Confirm your new password.
 4. Enter your current password in the `Current Password` field.
 5. Click save.
