@@ -34,7 +34,14 @@ The **API Endpoint Reference** provides a comprehensive list of available endpoi
 | 12  | API Keys                     | `/keys`                             |
 | 13  | Notifications                | `/notification`                     |
 | 14  | Release History              | `/release`                          |
-| 15  | Config                       | `/config`                           |
+| 15  | Release Cleanup Jobs         | `/release/cleanup-jobs`             |
+| 16  | Config                       | `/config`                           |
+| 17  | Actions                      | `/actions`                          |
+| 18  | Lists                        | `/lists`                            |
+| 19  | Proxies                      | `/proxy`                            |
+| 20  | Updates                      | `/updates`                          |
+| 21  | Logs                         | `/logs`                             |
+| 22  | List Refresh Webhooks        | `/webhook/lists/trigger`            |
 
 ### Authentication
 
@@ -239,6 +246,15 @@ curl -X GET 'http://127.0.0.1:7474/api/irc' -H 'X-API-Token: AUTOBRR_API_KEY' | 
 
 ```bash
 curl -X GET 'http://127.0.0.1:7474/api/irc/network/5/restart' -H 'X-API-Token: AUTOBRR_API_KEY'
+```
+
+### Manually process an announce
+
+Push a raw announce line through a channel's announce processor, as if it had just arrived on IRC. Give the channel name without the `#` prefix. Useful for testing filters against a real announce line.
+
+```bash
+curl -X POST 'http://127.0.0.1:7474/api/irc/network/5/channel/announce-channel/announce/process' -H 'X-API-Token: AUTOBRR_API_KEY' \
+-d '{"msg": "New Torrent Announcement: <Movies> Name:Some.Movie.2026.1080p.BluRay.x264-GROUP ..."}'
 ```
 
 ## Feeds
@@ -534,6 +550,14 @@ curl -X POST 'http://127.0.0.1:7474/api/keys' -H 'X-API-Token: AUTOBRR_API_KEY' 
 
 ## Release history
 
+### Search release history
+
+The release list supports filtering by free-text query, indexer and push status.
+
+```bash
+curl -X GET 'http://127.0.0.1:7474/api/release?q=1080p&indexer=redacted&push_status=PUSH_APPROVED&limit=20' -H 'X-API-Token: AUTOBRR_API_KEY' | jq
+```
+
 ### Clear release history
 
 Remove release history entries that are older than a specified number of hours.
@@ -541,6 +565,14 @@ Remove release history entries that are older than a specified number of hours.
 ```bash
 curl -X DELETE 'http://127.0.0.1:7474/api/release?olderThan=8760' -H 'X-API-Token: AUTOBRR_API_KEY'
 ```
+
+The delete can also be scoped with `indexer` and `releaseStatus` parameters, for example to remove only rejected entries for one indexer:
+
+```bash
+curl -X DELETE 'http://127.0.0.1:7474/api/release?olderThan=720&indexer=redacted&releaseStatus=PUSH_REJECTED' -H 'X-API-Token: AUTOBRR_API_KEY'
+```
+
+Scheduled cleanups can be managed in the UI or via the `/release/cleanup-jobs` endpoints, see [Release history cleanup](./usage/search.md#release-history-cleanup).
 
 ## Config
 
@@ -562,6 +594,8 @@ curl -X PATCH 'http://127.0.0.1:7474/api/config' -H 'X-API-Token: AUTOBRR_API_TO
 
 ```bash
 curl -X PATCH 'http://127.0.0.1:7474/api/config' -H 'X-API-Token: AUTOBRR_API_TOKEN' -d '{
-    "check_for_updates": true,
+    "check_for_updates": true
 }'
 ```
+
+The same `PATCH /api/config` endpoint also accepts `log_path`.
