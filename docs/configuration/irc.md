@@ -96,6 +96,22 @@ Before setup, make sure you have generated the necessary keys. Some networks hav
 - If NickServ Account is marked `*` as required, that's only used as nick, but supports NickServ auth.
 - The invite command field in `Settings > IRC > Edit network` are pre filled, but you need to add your IRC key. The rest should be left as is.
 
+### Connect commands {#connect-commands}
+
+The invite/connect command field supports a bit of syntax worth knowing:
+
+- Multiple commands can be chained with commas; each is sent as a message with a one second delay between them.
+- Any `/msg` in the field is stripped, so both `/msg NickServ IDENTIFY key` and `NickServ IDENTIFY key` work.
+- `/sleep N` (added in v1.76.0) pauses N seconds before the next command, useful for trackers that need a delay between authentication and the invite request. For example: `NickServ IDENTIFY key,/sleep 5,BotName !invite USERNAME IRCKEY`
+
+### Network and channel settings {#network-settings}
+
+A few optional settings on the network form in `Settings > IRC > Edit network`:
+
+- **TLS** and **Skip TLS verification (insecure)**: skip-verify is only for networks with self-signed or expired certificates and should otherwise stay off.
+- **IRCv3 Bot Mode**: flags autobrr as a bot ([IRCv3 bot mode](https://ircv3.net/specs/extensions/bot-mode)) on networks that support it; ignored when the network does not.
+- Each channel entry accepts an optional **channel password** (join key), needed by a few trackers with keyed announce channels.
+
 :::caution Caution
 
 Quite a few indexers use the same network, specifically `irc.p2p-network.net`.
@@ -116,6 +132,12 @@ If you have any issues with IRC not connecting or staying red then do the follow
 3. Go to the `Logs` page and look what it is doing
 
 There will be a lot of info with Trace logs so you'll have to read carefully. `NickServ` and `SASL` errors are related to auth and could mean you have not registered when it's required, or put in the wrong info.
+
+### Live channel view and re-processing announces {#live-channel-view}
+
+Click a network in `Settings > IRC` to expand its channels with their status (monitoring since / last announce). The **View** button opens a live view of the messages in a channel as they arrive.
+
+Next to each announce line there is a **Re-process announce** button that pushes that exact line through the filter pipeline again. This is the easiest way to test your filters against a real announce that was missed or rejected.
 
 autobrr uses the **Auth Mechanism** `SASL` by default. Some networks does not support it and a change of **Auth Mechanism** to `NickServ` will generally fix it. Some does not require NickServ registration at all and then you can set it to `None`-
 
