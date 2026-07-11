@@ -8,6 +8,14 @@ description: Learn about the different authentication methods supported by autob
 
 The built-in authentication is enabled by default and uses a username/password combination. When you first access autobrr, you'll be prompted to create an account.
 
+autobrr supports a single user account. If you need more identities, use an OIDC provider; all logins share the same autobrr instance and data.
+
+## Sessions
+
+Sessions last 30 days and are automatically extended while in use (renewal happens when a session is within 7 days of expiring). The **Remember me** checkbox on the login page, checked by default, controls whether the session cookie persists across browser restarts.
+
+Sessions are stored in the database, so they survive autobrr restarts. Logging out destroys the session server-side.
+
 ## OpenID Connect (OIDC)
 
 autobrr supports OIDC authentication for integration with external identity providers like [Authentik](https://goauthentik.io/), [Authelia](https://www.authelia.com/), [Pocket-ID](https://github.com/stonith404/pocket-id), and more.
@@ -66,18 +74,25 @@ When OIDC is enabled:
 - If no user exists in the database, only OIDC authentication will be available
   :::
 
+:::info PKCE
+autobrr automatically uses the Authorization Code Flow with PKCE (S256) when your identity provider advertises support for it in its discovery document. Providers that require PKCE (like Pocket-ID) work out of the box with no extra configuration.
+:::
+
 ## Troubleshooting
 
 During testing, we used [Authelia](https://www.authelia.com/), [Authentik](https://goauthentik.io/), and [Pocket-ID](https://github.com/stonith404/pocket-id) with success. Each provider has been verified to work with autobrr's OIDC implementation.
+
+autobrr starts even when the identity provider is unreachable: OIDC discovery retries in the background (every 5 seconds for roughly 4 minutes), which covers docker-compose setups where the identity provider comes up after autobrr. Issuer URLs are also tried both with and without a trailing slash, so a slash mismatch between your config and the provider's discovery document is handled automatically.
 
 If you encounter issues, please open a [GitHub issue](https://github.com/autobrr/autobrr/issues/new?template=bug_report.md) or reach out to us on [Discord](https://discord.autobrr.com/).
 
 ## Security Best Practices
 
 1. Always run autobrr behind a reverse proxy with TLS enabled
-2. Use strong passwords for built-in authentication
-3. Enable MFA in your identity provider when using OIDC
-4. Regularly update both autobrr and your identity provider
+2. Make sure the proxy forwards `X-Forwarded-Proto: https`. autobrr cannot serve TLS itself and only marks the session cookie as Secure when this header is present; OIDC callback redirects also rely on it.
+3. Use strong passwords for built-in authentication
+4. Enable MFA in your identity provider when using OIDC
+5. Regularly update both autobrr and your identity provider
 
 For reverse proxy setup instructions, see:
 
