@@ -61,7 +61,7 @@ baseUrlModeLegacy = true
 #
 # Options: "ERROR", "DEBUG", "INFO", "WARN", "TRACE"
 #
-logLevel = "TRACE"
+logLevel = "DEBUG"
 
 # Log Max Size
 #
@@ -84,6 +84,35 @@ logLevel = "TRACE"
 # Default: true
 #
 checkForUpdates = true
+
+# Database DSN
+# Optional. Can be used instead of databaseType and the individual postgres* fields.
+# Accepts postgres:// / postgresql:// URLs or a SQLite file path.
+#
+#databaseDSN = "postgresql://autobrr:postgres@localhost:5432/autobrr?sslmode=disable"
+
+# Database Max Backups
+# autobrr automatically backs up the SQLite database before schema migrations.
+# Set to 0 to disable (config file only, the env var cannot disable it).
+#
+# Default: 5
+#
+#databaseMaxBackups = 5
+
+# CORS allowed origins
+# Comma separated list of origins allowed to call the API from a browser.
+#
+# Default: "*"
+#
+#corsAllowedOrigins = "*"
+
+# Go pprof profiling (for debugging)
+#
+# Default: false, "127.0.0.1", 6060
+#
+#profilingEnabled = false
+#profilingHost = "127.0.0.1"
+#profilingPort = 6060
 
 # OpenID Connect Configuration
 #
@@ -138,6 +167,9 @@ checkForUpdates = true
 - (**optional**) `baseUrl`: Supports running on both the root url and in a subpath, as well as subdomain. Uncomment if needed.
 - (**optional**) `baseUrlModeLegacy`: (Added in v1.55.0) When set to false, no URL rewrite is needed in your proxy configuration. Set to true to maintain compatibility with older proxy configurations that use URL rewrites.
 - (**optional**) `logPath`:Considering autobrr is rather new software, it might be beneficial for logging to be enabled. If running with systemd you can use `journalctl` to check logs. The log file is rotated as soon as it reaches 50MB, up to 3 times. In other words, the maximum space which the log files can occupy is 150MB, which takes a long time to fill.
+- (**optional**) `databaseMaxBackups`: autobrr backs up the SQLite database before every schema migration; the backup files appear next to the database as `autobrr.db_svN_<timestamp>.backup`. This option controls how many are kept (default 5).
+- (**optional**) `corsAllowedOrigins`: Comma separated list of origins allowed to call the API from a browser, for setups with third-party frontends. Default `*`.
+- (**optional**) `profilingEnabled` / `profilingHost` / `profilingPort`: Exposes Go pprof endpoints for debugging, disabled by default. Only enable when asked to while troubleshooting.
 
 ### Create user via command line (optional) {#create-user-via-cli}
 
@@ -150,6 +182,16 @@ Example:
 ```shell
 autobrrctl --config ~/.config/autobrr create-user USERNAME
 ```
+
+### Other autobrrctl commands {#autobrrctl}
+
+`autobrrctl` has a few more commands worth knowing about:
+
+- `autobrrctl --config <dir> export-filters`: Exports every filter to individual JSON files, handy for backups or sharing.
+- `autobrrctl htpasswd`: Prompts for a password and prints the bcrypt hash needed for `metricsBasicAuthUsers`. Not listed in the built-in help text.
+- `autobrrctl version`: Prints the autobrrctl version.
+- `autobrrctl db:convert`: Converts a SQLite database to PostgreSQL, see the [PostgreSQL guide](../installation/supplementary/postgresql.md#convert).
+- `autobrrctl db:seed --db-path <path> --seed-db <file>` and `autobrrctl db:reset`: Database seeding and reset, mainly for development and testing.
 
 ## Other options
 
