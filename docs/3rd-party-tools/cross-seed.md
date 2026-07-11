@@ -6,6 +6,10 @@ description: 3rd party tools that can be used with autobrr.
 keywords: [cross-seed]
 ---
 
+:::tip Using qBittorrent?
+If you run qBittorrent, check out [qui](https://getqui.com), our multi-instance qBittorrent WebUI with first party cross-seed support. It integrates directly with autobrr and needs no extra daemon or config; see [Cross-seed with qui](../filters/cross-seed-qui.md).
+:::
+
 :::info Heads up
 
 This is meant for advanced users. If you're not familiar with cross-seed already, we suggest you read their [documentation](https://cross-seed.org) before you continue.
