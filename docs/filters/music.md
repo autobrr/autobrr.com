@@ -45,8 +45,8 @@ If you want to match a string exactly, then try to avoid the use of the `*` wild
 | ---------------- | ----------------------------------------------------------------------------------------------------------------------- |
 | **Format**       | Will only match releases with any of the selected formats.                                                              |
 | **Quality**      | Will only match releases with any of the selected qualities.                                                            |
-| **Sources**      | Will only match releases with any of the selected sources.                                                              |
-| **Type**         | Will only match releases with any of the selected types.                                                                |
+| **Media**        | Will only match releases with any of the selected media, e.g. `CD`, `Vinyl`, `WEB`.                                     |
+| **Music Type**   | Will only match releases with any of the selected types (`Album`, `Single`, `EP`, etc.). Found under Release Details.   |
 | **Log**          | Whether Log **must** be included.                                                                                       |
 | **Log Score**    | Matches Log percent for indexers that announce it. Check your indexer, the announced Log Score might not be in percent. |
 | **Cue**          | Enforces Cue requirement.                                                                                               |

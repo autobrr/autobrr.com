@@ -2,7 +2,7 @@
 sidebar_position: 6
 sidebar_label: Notifications
 title: Notifications
-description: autobrr supports Discord, Notifiarr, Pushover, Telegram, and Gotify for notifications. This is a guide on how to set them up in autobrr.
+description: autobrr supports Discord, Notifiarr, Telegram, Pushover, Gotify, ntfy, LunaSea, Shoutrrr and generic webhooks for notifications. This is a guide on how to set them up in autobrr.
 keywords:
   [
     autobrr,
@@ -13,6 +13,10 @@ keywords:
     notifiarr,
     pushover,
     gotify,
+    ntfy,
+    lunasea,
+    shoutrrr,
+    webhook,
     push,
     rejected,
     approved,
@@ -29,9 +33,14 @@ autobrr can send notifications on the following events:
 - Push Rejected (rejected by arr or download client rules)
 - Push Approved (approved by arr or download client)
 - Push Error (error when sending to download client)
+- New Release (fires for every release received from an indexer, before filtering)
 - IRC Disconnected (IRC disconnected unexpectedly)
 - IRC Reconnected (IRC reconnected after disconnect)
 - New update (new app update available)
+
+:::caution
+The New Release event triggers for **every** announce, before any filter matching. On busy indexers this can be extremely noisy.
+:::
 
 ## Supported Agents
 

@@ -142,11 +142,9 @@ For a remote client, meaning autobrr and Deluge are **not on the same server** t
 - Username: `<username>`
 - Password: `<password>`
 
-Some setups like **Swizzin** requires to also use **Basic Auth** when connecting to it from a remote server.
-
-- Basic Auth: enabled
-- Username: `<username>`
-- Password: `<password>`
+:::info
+autobrr connects directly to the Deluge daemon (the same connection a thin client uses), not to the Deluge web UI, so there is no Basic Auth option for Deluge. Use the daemon port and daemon credentials from `auth`, not the web UI password.
+:::
 
 ### Docker {#deluge-docker}
 
@@ -307,7 +305,6 @@ You can run autobrr and NZBGet on the following setups.
 For a local client, meaning autobrr and NZBGet **on the same server** then this should work. Check NZBGet settings to get the `NZBGET_PORT`.
 
 - Host: `http://127.0.0.1:NZBGET_PORT`
-- TLS: disabled
 - Username: `<username>`
 - Password: `<password>`
 
@@ -316,9 +313,12 @@ For a local client, meaning autobrr and NZBGet **on the same server** then this 
 For a remote client, meaning autobrr and NZBGet are **not on the same server** then things might be a bit different.
 
 - Host: `https://myserver.brr/nzbget`
-- TLS: enabled
 - Username: `<username>`
 - Password: `<password>`
+
+:::info
+There is no TLS toggle for NZBGet - whether the connection uses https is decided by the scheme of the Host URL (`http://` or `https://`).
+:::
 
 ## Sonarr
 

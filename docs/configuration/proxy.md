@@ -17,7 +17,7 @@ keywords:
 pagination_label: Configuration - Proxies
 ---
 
-autobrr can use proxies for Indexers (downloads of .torrents, api calls), Feeds and IRC.
+autobrr can use proxies for Indexers (downloads of .torrents, api calls, and their Feeds) and IRC.
 
 ## Supported Proxy types
 
@@ -43,4 +43,6 @@ To set up a HTTP Proxy, head to `Settings > Proxies`.
 
 ## Usage
 
-After you've setup a proxy you need to add it to Indexers, Feeds and IRC networks. Toggle Use Proxy and select the proxy you setup earlier.
+After you've setup a proxy you need to add it to Indexers and IRC networks. Toggle **Use Proxy** and select the proxy you setup earlier (for indexers: `Settings > Indexers > edit indexer`).
+
+Feeds have no proxy setting of their own; a feed automatically uses the proxy configured on its parent indexer.

@@ -71,7 +71,7 @@ If a category is set, then qBittorrent will control the save path. Override the 
 - **Limit download and upload speed**: *optional*  
   Takes any integer as a number. Given in `KiB/s`.
 - **Ratio limit**: *optional*  
-  Takes any integer or floating point number with `,` as decimal separator.  
+  Takes an integer or decimal number in increments of `0.25`, with `.` as decimal separator, e.g. `2.0`.  
   The downloaded torrent will be stopped when the ratio limit is reached.
 - **Seed time limit**: *optional*  
   Takes any integer as a number. Given in minutes.
@@ -109,7 +109,7 @@ Send to one or multiple local or remote instances of Deluge.
 #### Available options: {#deluge-available-options}
 
 - **Save path**: *optional*  
-- **Label**: *optional* (must exist in Deluge in order to work)
+- **Label**: *optional* (created automatically if it does not exist; requires the Label plugin to be enabled in Deluge, otherwise the label is skipped)
 - **Add as paused**: *default false*
 - **Skip hash check (v2 only)**: *default false*
 

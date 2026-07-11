@@ -68,7 +68,7 @@ services:
       - AUTOBRR__LOG_PATH=string
       - AUTOBRR__LOG_MAX_SIZE=string/int without MB
       - AUTOBRR__LOG_MAX_BACKUPS=string/int
-      - AUTOBRR__SESSION_SECRET=string
+      - AUTOBRR__SESSION_SECRET=string # legacy, unused since v1.66.0 (sessions are stored in the database)
       - AUTOBRR__CUSTOM_DEFINITIONS=string
       - AUTOBRR__CHECK_FOR_UPDATES=bool
       - AUTOBRR__DATABASE_TYPE=sqlite/postgres

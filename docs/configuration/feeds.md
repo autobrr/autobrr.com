@@ -22,11 +22,11 @@ Go to `Settings > Indexers` and add `Generic Torznab` or `Generic Newznab` from 
 - **Name**: `<name of indexer>`
 - **Torznab/Newznab URL**: `http://localhost:port/ID/api`
 - **API Key**: `<API key>`
-- **Download type**: `Torrent` or `Magnet`
+- **Download type**: `Torrent` or `Magnet` (Torznab only - Newznab feeds have no download type and are always handled as NZB/usenet)
 
 Once saved, head over to `Settings > Feeds` to enable it.
 
-autobrr will get the latest 25 items from the RSS feed. On first run it will check all and cache the entries, on the second run it will check for any new entries and run them through the assigned filters.
+autobrr will get up to 50 items per refresh from the Torznab/Newznab feed (or the maximum the indexer advertises in its capabilities). On first run it will check all and cache the entries, on the second run it will check for any new entries and run them through the assigned filters.
 
 :::tip
 The `ID` part of the URL is the number given to the indexer by Prowlarr.
@@ -43,7 +43,7 @@ Go to `Settings > Indexers` and add `Generic RSS` from the list.
 
 - **Name**: `<name of indexer>`
 - **RSS URL**: `http://myindexer.com/rss`
-- **Download type**: `Torrent` or `Magnet`
+- **Download type**: `Torrent`, `Magnet`, or `NZB` (NZB marks releases as usenet so they are sent to usenet download clients - useful for RSS feeds serving NZBs)
 
 Once saved, head over to `Settings > Feeds` to enable it.
 

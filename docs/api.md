@@ -38,7 +38,7 @@ The **API Endpoint Reference** provides a comprehensive list of available endpoi
 
 ### Authentication
 
-All API requests require an API key for authentication. This key can be generated from your autobrr dashboard by going to `Settings` -> `API keys`. Remember to always keep your API key confidential.
+All API requests except the [health check endpoints](#health-check-endpoints) require an API key for authentication. This key can be generated from your autobrr dashboard by going to `Settings` -> `API keys`. Remember to always keep your API key confidential.
 
 ![API dashboard](/img/api-dashboard.png)
 
@@ -63,14 +63,16 @@ curl -X GET 'http://127.0.0.1:7474/api/download_clients?apikey=${AUTOBRR_API_KEY
 
 ## Health Check Endpoints
 
-autobrr provides two health check endpoints to monitor the state and readiness of the application:
+autobrr provides two health check endpoints to monitor the state and readiness of the application.
+
+These endpoints do **not** require an API key, so they can be used directly in a Docker `HEALTHCHECK` or Kubernetes probe without embedding credentials.
 
 ### Liveness Check
 
 This endpoint checks if the autobrr application is running.
 
 ```bash
-curl -X GET 'http://127.0.0.1:7474/api/healthz/liveness' -H 'X-API-Token: AUTOBRR_API_KEY'
+curl -X GET 'http://127.0.0.1:7474/api/healthz/liveness'
 ```
 
 **Response:**
@@ -82,7 +84,7 @@ curl -X GET 'http://127.0.0.1:7474/api/healthz/liveness' -H 'X-API-Token: AUTOBR
 This endpoint checks if the application and its dependencies (e.g., database) are not only running but also ready to accept requests.
 
 ```bash
-curl -X GET 'http://127.0.0.1:7474/api/healthz/readiness' -H 'X-API-Token: AUTOBRR_API_KEY'
+curl -X GET 'http://127.0.0.1:7474/api/healthz/readiness'
 ```
 
 **Responses:**

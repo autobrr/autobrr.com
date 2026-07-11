@@ -39,7 +39,7 @@ If you want to match a string exactly, then try to avoid the use of the `*` wild
 | **Filter name**   | The name of this filter.                                  |               |
 | **Enabled**       | Is this filter active?                                    | false         |
 | **Indexers**      | Which indexers should this filter work for?               |               |
-| **Announce Type** | See [Announce Type](#announce-type) for more information. | ALL           |
+| **Announce Type** | See [Announce Type](#announce-type) for more information. | NEW           |
 
 ### Announce Type
 
@@ -47,9 +47,13 @@ If you want to match a string exactly, then try to avoid the use of the `*` wild
 | ------------- | --------------------------------------------- | ------------ |
 | `NEW`         | Newly uploaded releases                       | All indexers |
 | `CHECKED`     | Staff verified/checked releases               | PTP          |
-| `PROMO`       | Promotional releases (freeleech/neutral/half) | PTP          |
+| `PROMO`       | Promotional releases (freeleech/neutral/half) | PTP and others |
 | `PROMO_GP`    | Golden Popcorn marked releases                | PTP          |
-| `RESURRECTED` | Reseeded/revived releases                     | PTP          |
+| `RESURRECTED` | Reseeded/revived releases                     | PTP and others |
+
+:::info
+New filters default to `NEW`. If you also want to match staff-checked, promotional or resurrected releases, you must add those announce types to the filter explicitly. `CHECKED` and `PROMO_GP` are PTP-specific, while `PROMO` and `RESURRECTED` are also announced by some other trackers.
+:::
 
 ### Rules
 
