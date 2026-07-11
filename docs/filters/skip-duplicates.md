@@ -35,6 +35,8 @@ If you want to disregard the Year, you could either
 1. Add a new profile, e.g. "Episodic TV" and do not include Year, Month, and Day, or
 2. Edit the `TV` profile to remove Year, Month, and Day
 
+Profiles can also match on `Hybrid`, which treats hybrid releases (like hybrid remuxes) as distinct from their non-hybrid counterparts instead of skipping them as duplicates.
+
 ## Limitations and Recommendations
 
 The major limitation is that a filter action needs to have completed successfully (marked FILTER_APPROVED)

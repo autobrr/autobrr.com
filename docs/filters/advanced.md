@@ -24,6 +24,10 @@ Full regex support (Golang flavour, check https://regex101.com). These fields ha
 | \* **Match releases**  | Comma separated list of release names to match.                                       | e.g. `*Movie*remux*, That Other movie, *that?game*` | Always       |
 | \* **Except releases** | Comma separated list of release names to ignore (takes priority over Match releases). | e.g. `Bad?Movie, *bad*`                             | Always       |
 
+:::caution Substring matching
+Unlike most other filter fields, in non-regex mode each comma separated term here is matched as a case-insensitive **substring** of the release name. Wildcards still work but are not required for partial matches, and exact-only matching is not possible without regex. Be careful with short Except terms: `web` also rejects every `WEB-DL` release.
+:::
+
 ## Release groups
 
 | Field                     | Description                                                                            | Examples                        | Availability |
@@ -55,6 +59,10 @@ Not all announces category, check [this list](./categories.md) for indexer speci
 | -------------------- | --------------------------------------------------------------------------------- | ------------------------------ | ------------------ |
 | **Match uploaders**  | Comma separated list of uploaders to match.                                       | e.g. `uploader1,otheruploader` | Depends on Indexer |
 | **Except uploaders** | Comma separated list of uploaders to ignore (takes priority over Match releases). | e.g. `anonymous,slow_uploader` | Depends on Indexer |
+
+:::info
+On Redacted and Orpheus, announces do not include the uploader. autobrr fetches it from the tracker API instead and re-checks the filter, so uploader filtering still works there. This requires the indexer's API key to be configured in autobrr.
+:::
 
 ## Languages
 
