@@ -43,6 +43,8 @@ const config = {
           routeBasePath: "/release-notes",
           blogSidebarTitle: "Release Notes",
           blogSidebarCount: "ALL",
+          // release notes are meant to be read in full on the list page
+          onUntruncatedBlogPosts: "ignore",
         },
         docs: {
           sidebarPath: require.resolve("./sidebars.js"),
