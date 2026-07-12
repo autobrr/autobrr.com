@@ -178,6 +178,12 @@ const config = {
     },
     "docusaurus-plugin-image-zoom",
     [
+      "docusaurus-plugin-copy-page-button",
+      {
+        placement: "article",
+      },
+    ],
+    [
       "docusaurus-plugin-llms",
       {
         docsDir: "docs",

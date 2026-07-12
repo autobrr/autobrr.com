@@ -362,3 +362,15 @@ main[itemscope] > article > header > div:has(div.avatar) {
   vertical-align: middle;
   margin-left: 0.1em;
 }
+
+/* copy-page button: share the row with the version badge. The plugin
+   injects its wrapper as a zero-height row right before the badge, so
+   the right-aligned button visually lands on the badge line. */
+article:has(.theme-doc-version-badge) > div:has(> [class*="copyPageContainer"]) {
+  height: 0;
+  margin: 0;
+  overflow: visible;
+  justify-content: flex-end;
+}
+
+/* pages without a version badge (e.g. release notes) keep normal flow */
