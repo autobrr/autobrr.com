@@ -123,5 +123,10 @@ module.exports = {
       label: "contributing",
       id: "contributing",
     },
+    {
+      type: "doc",
+      label: "Support Development",
+      id: "support",
+    },
   ],
 };

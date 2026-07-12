@@ -546,6 +546,7 @@ const FOOTER_COLUMNS = [
         label: "Edit these docs",
         href: "https://github.com/autobrr/autobrr.com",
       },
+      { label: "Support the project", to: "/support" },
     ],
   },
 ];
