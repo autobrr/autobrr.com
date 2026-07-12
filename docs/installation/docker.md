@@ -25,7 +25,7 @@ import ReverseProxy from '/snippets/reverse-proxy.mdx';
 
 This guide expects some previous docker knowledge and an already working environment.
 
-## docker compose
+## docker compose {/* #docker-compose */}
 
 `docker compose` for autobrr. Modify if running with unRAID or setting up with Portainer.
 
@@ -55,7 +55,7 @@ services:
       - 7474:7474
 ```
 
-### Environment variables
+### Environment variables {/* #environment-variables */}
 
 We support the following environment variables to override the config file:
 
@@ -101,7 +101,7 @@ services:
       - AUTOBRR__METRICS_BASIC_AUTH_USERS=string
 ```
 
-:::tip Docker secrets
+:::tip[Docker secrets]
 Every variable also accepts a `_FILE` variant whose value is read from the referenced file, e.g. `AUTOBRR__POSTGRES_PASS_FILE=/run/secrets/pg_pass`. This is meant for Docker/Podman secrets. The `_FILE` variant takes precedence over the plain variable, and the file content is trimmed of surrounding whitespace.
 :::
 
@@ -109,17 +109,17 @@ Every variable also accepts a `_FILE` variant whose value is read from the refer
 `AUTOBRR__POSTGRES_DB` and `AUTOBRR__POSTGRES_PASSWORD` are accepted as aliases for `AUTOBRR__POSTGRES_DATABASE` and `AUTOBRR__POSTGRES_PASS`. They match the official postgres image variable names, which is convenient when sharing an env file with the postgres container. The aliases take precedence when both are set.
 :::
 
-### Manually configure autobrr (optional) {#manually-configure-autobrr}
+### Manually configure autobrr (optional) {/* #manually-configure-autobrr */}
 
 You can either let autobrr create the config itself at startup, or create one manually. For more information, please visit [configuring autobrr](../configuration/autobrr.md) which covers creating a user manually, configuring the default port, setting the desired log level, etc.
 
-### Start the container
+### Start the container {/* #start-the-container */}
 
 ```shell
 docker compose up -d
 ```
 
-## Listen address
+## Listen address {/* #listen-address */}
 
 :::info
 
@@ -127,10 +127,10 @@ By default autobrr listens on `127.0.0.1` out of security considerations. Even t
 
 :::
 
-## Reverse proxy (recommended)
+## Reverse proxy (recommended) {/* #reverse-proxy-recommended */}
 
 <ReverseProxy/>
 
-## Finishing up
+## Finishing up {/* #finishing-up */}
 
 Now it's up and running, and you should be able to visit it at `autobrr.domain.ltd` or `domain.ltd:7474` and login. Check out the next pages for further setup.

@@ -6,17 +6,17 @@ description: arr, deduplication andd cross-seed functionality.
 keywords: [cross-seed,duplicates,deduplication,arr]
 ---
 
-## Arr, deduplication, and cross-seed functionality {#upgraderr}
+## Arr, deduplication, and cross-seed functionality {/* #upgraderr */}
 
-:::info Heads up
+:::info[Heads up]
 This is meant for any kind of user. There is no configuration, and it's nearly impossible to make a mistake so long as the guide is followed with the modest amount of care.
 :::
 
-### What is this {#what-is-upgraderr}
+### What is this {/* #what-is-upgraderr */}
 
 Upgraderr is a title parser that matches existing titles present in your qBittorrent client with the title submitted and returns a HTTP return code. The return codes indicate an action to perform next, if applicable.
 
-### Arr functionality {#upgraderr-arr-functionality}
+### Arr functionality {/* #upgraderr-arr-functionality */}
 
 On any filter, you may utilize the external tab as a pre-filter. Using this with a return code of 200 permits any unique titles to be added, or if they're a quality upgrade. This also acts as a deduplicator should you wish.
 
@@ -41,7 +41,7 @@ http://upgraderr:6940/api/upgrade
 }
 ```
 
-### Cross-Seed functionality {#upgraderr-cross-seed-functionality}
+### Cross-Seed functionality {/* #upgraderr-cross-seed-functionality */}
 
 At the time of this writing, Upgraderr has excellent cross-seed functionality that runs in milliseconds.
 Currently, a partial matching system is in place where if 80% of the data matches an existing torrent, any conflicting files in the new torrent (if they exist) will be renamed to avoid corrupting the original torrent.
@@ -86,7 +86,7 @@ http://upgraderr:6940/api/cross
 }
 ```
 
-### Finally {#upgraderr-final-words}
+### Finally {/* #upgraderr-final-words */}
 
 This is a toolchest, other functionality can be achieved by using other return codes, and attaching other tools to actions taken by the application.
 

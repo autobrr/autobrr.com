@@ -8,28 +8,30 @@ const config = {
   baseUrl: "/",
   trailingSlash: false,
   onBrokenLinks: "throw",
-  onBrokenMarkdownLinks: "warn",
   favicon: "img/favicon.ico",
-  organizationName: "autobrr", // Usually your GitHub org/user name.
-  projectName: "autobrr", // Usually your repo name.
+  organizationName: "autobrr",
+  projectName: "autobrr",
+  markdown: {
+    hooks: {
+      onBrokenMarkdownLinks: "warn",
+    }
+  },
+
+  future: {
+    v4: true,
+    faster: true,
+  },
 
   themes: [
-    // ... Your other themes.
     [
       require.resolve("@easyops-cn/docusaurus-search-local"),
       /** @type {import("@easyops-cn/docusaurus-search-local").PluginOptions} */
       ({
-        // ... Your options.
-        // `hashed` is recommended as long-term-cache of index file is possible.
         hashed: true,
         docsRouteBasePath: "/",
         language: "en",
         docsDir: "docs",
         searchBarShortcutHint: false,
-        // For Docs using Chinese, The `language` is recommended to set to:
-        // ```
-        // language: ["en", "zh"],
-        // ```
       }),
     ],
   ],
@@ -60,7 +62,7 @@ const config = {
               banner: "none",
               badge: true,
             },
-            // list older archived versiones here after running `yarn docusaurus docs:version <version_number>`
+            // list older archived versions here after running `yarn docusaurus docs:version <version_number>`
             //"1.3.0": {
             //  label: "1.3.0",
             //  path: "1.3.0",

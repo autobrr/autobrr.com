@@ -11,7 +11,7 @@ pagination_next: filters/external
 
 # Advanced
 
-## Releases
+## Releases {/* #releases */}
 
 :::info
 
@@ -24,18 +24,18 @@ Full regex support (Golang flavour, check https://regex101.com). These fields ha
 | \* **Match releases**  | Comma separated list of release names to match.                                       | e.g. `*Movie*remux*, That Other movie, *that?game*` | Always       |
 | \* **Except releases** | Comma separated list of release names to ignore (takes priority over Match releases). | e.g. `Bad?Movie, *bad*`                             | Always       |
 
-:::caution Substring matching
+:::caution[Substring matching]
 Unlike most other filter fields, in non-regex mode each comma separated term here is matched as a case-insensitive **substring** of the release name. Wildcards still work but are not required for partial matches, and exact-only matching is not possible without regex. Be careful with short Except terms: `web` also rejects every `WEB-DL` release.
 :::
 
-## Release groups
+## Release groups {/* #release-groups */}
 
 | Field                     | Description                                                                            | Examples                        | Availability |
 | ------------------------- | -------------------------------------------------------------------------------------- | ------------------------------- | ------------ |
 | **Match release groups**  | Comma separated list of release groups to match.                                       | e.g. `GROUP1, OTHERGROUP`       | Always       |
 | **Except release groups** | Comma separated list of release groups to ignore (takes priority over Match releases). | e.g. `BADGROUP1, OTHERBADGROUP` | Always       |
 
-## Categories
+## Categories {/* #categories */}
 
 Not all announces category, check [this list](./categories.md) for indexer specifics.
 
@@ -44,7 +44,7 @@ Not all announces category, check [this list](./categories.md) for indexer speci
 | **Match categories**  | Comma separated list of categories to match.                                       | e.g. `tv,tv/1080p`        | [Depends on Indexer](./categories.md) |
 | **Except categories** | Comma separated list of categories to ignore (takes priority over Match releases). | e.g. `tv/anime,tv/sports` | [Depends on Indexer](./categories.md) |
 
-## Tags
+## Tags {/* #tags */}
 
 | Field            | Description                                                                                                 | Examples              | Availability       |
 | ---------------- | ------------------------------------------------------------------------------------------------------------ | --------------------- | ------------------ |
@@ -53,7 +53,7 @@ Not all announces category, check [this list](./categories.md) for indexer speci
 | **Except tags**  | Comma separated list of tags to ignore (takes priority over Match releases).                                 | e.g. `foreign`        | Depends on Indexer |
 | **Except logic** | How multiple Except tags combine: `ANY` rejects if at least one tag is present, `ALL` requires every tag.    | `ANY` (default)       | Always             |
 
-## Uploaders
+## Uploaders {/* #uploaders */}
 
 | Field                | Description                                                                       | Examples                       | Availability       |
 | -------------------- | --------------------------------------------------------------------------------- | ------------------------------ | ------------------ |
@@ -64,7 +64,7 @@ Not all announces category, check [this list](./categories.md) for indexer speci
 On Redacted and Orpheus, announces do not include the uploader. autobrr fetches it from the tracker API instead and re-checks the filter, so uploader filtering still works there. This requires the indexer's API key to be configured in autobrr.
 :::
 
-## Languages
+## Languages {/* #languages */}
 
 Only works when the indexer announces language information.
 
@@ -73,7 +73,7 @@ Only works when the indexer announces language information.
 | **Match language**  | Match releases containing any of the selected languages.                          | e.g. `MULTi`      | Depends on Indexer |
 | **Except language** | Ignore releases containing any of the selected languages (takes priority).        | e.g. `FRENCH`     | Depends on Indexer |
 
-## Origins
+## Origins {/* #origins */}
 
 Only works when the indexer announces the release origin.
 
@@ -82,7 +82,7 @@ Only works when the indexer announces the release origin.
 | **Match origins**  | Match releases with any of the selected origins: `P2P`, `Internal`, `SCENE`, `O-SCENE`. | e.g. `Internal` | Depends on Indexer |
 | **Except origins** | Ignore releases with any of the selected origins (takes priority).                | e.g. `P2P`    | Depends on Indexer |
 
-## Freeleech
+## Freeleech {/* #freeleech */}
 
 Not supported by all indexers. Check [this list](./freeleech.md) for indexer specifics.
 
@@ -91,7 +91,7 @@ Not supported by all indexers. Check [this list](./freeleech.md) for indexer spe
 | **Freeleech**         | Should this filter match only Freeleech releases?      |                    | [Depends on Indexer](./freeleech.md)                         |
 | **Freeleech Percent** | Allowed Freeleech Percentage for this filter to match. | e.g. `50%,75-100%` | [Depends on Indexer, might not use percent.](./freeleech.md) |
 
-## RSS/Torznab/Newznab-specific {#feed-specific}
+## RSS/Torznab/Newznab-specific {/* #feed-specific */}
 
 These options only work for [Feeds](../configuration/feeds.md) such as RSS, Torznab and Newznab. They have no effect on IRC announces.
 
@@ -103,7 +103,7 @@ These options only work for [Feeds](../configuration/feeds.md) such as RSS, Torz
 | **Min / Max seeders**  | Only match when the number of seeders is within the given bounds.                          | e.g. `1` / `100`                  | Torznab feeds only      |
 | **Min / Max leechers** | Only match when the number of leechers is within the given bounds.                         | e.g. `0` / `50`                   | Torznab feeds only      |
 
-## Raw Release Tags
+## Raw Release Tags {/* #raw-release-tags */}
 
 For advanced users. These fields match against the raw, unparsed `releaseTags` string from the announce, like `FLAC / Lossless / Log / Cue` or `x264 / 1080p / MKV`, before autobrr parses it into separate fields.
 

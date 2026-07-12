@@ -42,13 +42,13 @@ The most common setup is sending straight to a download client, with the categor
 
 Whether you're adding, updating, or removing actions in a filter, remember to **save** the filter afterwards to ensure your changes take effect.
 
-### Macros
+### Macros {/* #macros */}
 
 Many of the action fields have support for [macros](../filters/macros.md), which allow you to enhance your workflow significantly by providing custom logic/data processing to the input data provided by autobrr.
 
 The [macro section](../filters/macros.md) has been moved to its own page.
 
-## Supported actions
+## Supported actions {/* #supported-actions */}
 
 - qBittorrent
 - Deluge (v1+ and v2)
@@ -67,11 +67,11 @@ The [macro section](../filters/macros.md) has been moved to its own page.
 - Webhook - Post a payload to some http url
 - Test (logs result if matched. Does not download torrent files)
 
-### qBittorrent
+### qBittorrent {/* #qbittorrent */}
 
 Send to one or multiple local or remote instances of qBittorrent.
 
-#### Available options: {#qbittorrent-available-options}
+#### Available options: {/* #qbittorrent-available-options */}
 
 - **Save path**: *optional*  
 - **Download path**: *optional*  
@@ -83,7 +83,7 @@ Send to one or multiple local or remote instances of qBittorrent.
 If a category is set, then qBittorrent will control the save path. Override the save location by setting a save path if needed.
 :::
 
-#### Rules: {#qbittorrent-rules}
+#### Rules: {/* #qbittorrent-rules */}
 
 - **Limit download and upload speed**: *optional*  
   Takes any integer as a number. Given in `KiB/s`.
@@ -109,11 +109,11 @@ If a category is set, then qBittorrent will control the save path. Override the 
   - Bottom of queue
   - Disabled
 
-:::warning Heads up!
+:::warning[Heads up!]
 When using the Priority feature, Torrent Queueing will be automatically enabled in qBit if it is disabled. Ensure you set your preferred limits for Torrent Queueing.
 :::
 
-#### Announce: {#qbittorrent-announce}
+#### Announce: {/* #qbittorrent-announce */}
 
 Built-in re-announce makes sure the torrent works with initially broken trackers. When you race, the .torrent often reaches the client before the tracker has registered it; autobrr keeps re-announcing until the tracker responds:
 
@@ -134,29 +134,29 @@ It is enabled by default and can be tuned per action:
 Re-announce is skipped when the torrent is added with **Add paused** enabled.
 :::
 
-### Deluge
+### Deluge {/* #deluge */}
 
 Supports both v1+ and v2+ clients.
 
 Send to one or multiple local or remote instances of Deluge.
 
-#### Available options: {#deluge-available-options}
+#### Available options: {/* #deluge-available-options */}
 
 - **Save path**: *optional*  
 - **Label**: *optional* (created automatically if it does not exist; requires the Label plugin to be enabled in Deluge, otherwise the label is skipped)
 - **Add as paused**: *default false*
 - **Skip hash check (v2 only)**: *default false*
 
-#### Rules: {#deluge-rules}
+#### Rules: {/* #deluge-rules */}
 
 - **Limit download and upload speed**: *optional*  
   Takes any integer as a number. Given in `KiB/s`.
 
-### rTorrent
+### rTorrent {/* #rtorrent */}
 
 Send to one or multiple local or remote instances of rTorrent.
 
-#### Available options: {#rtorrent-available-options}
+#### Available options: {/* #rtorrent-available-options */}
 
 - **Save path**: *optional*
 - **Label**: *optional*
@@ -165,18 +165,18 @@ Send to one or multiple local or remote instances of rTorrent.
 - **Do not add torrent name to path**: *default No*  
   When set to Yes, the save path is used as the base directory, so no subfolder named after the torrent is created.
 
-### Transmission
+### Transmission {/* #transmission */}
 
 Send to one or multiple local or remote instances of Transmission.
 
-#### Available options: {#transmission-available-options}
+#### Available options: {/* #transmission-available-options */}
 
 - **Save Path**: *optional*
 - **Torrent Label(s)**: *optional*  
   Takes a comma separated list to apply multiple labels, e.g. `label1,label2`.
 - **Add as Paused**: *default false*
 
-#### Limits: {#transmission-limits}
+#### Limits: {/* #transmission-limits */}
 
 - **Limit download and upload speed**: *optional*  
   Takes any integer as a number. Given in `KiB/s`.
@@ -185,7 +185,7 @@ Send to one or multiple local or remote instances of Transmission.
 - **Seed time limit**: *optional*  
   Given in minutes. Set as Transmission's idle seed limit, meaning minutes of idle seeding rather than total seed time.
 
-#### Announce: {#transmission-announce}
+#### Announce: {/* #transmission-announce */}
 
 Works like the [qBittorrent re-announce](#qbittorrent-announce): enabled by default, with the same **Disable reannounce**, **Reannounce interval** (default `7` seconds), **Max attempts** (default `50`) and **Delete stalled** options.
 
@@ -193,31 +193,31 @@ Works like the [qBittorrent re-announce](#qbittorrent-announce): enabled by defa
 Re-announce only runs when the torrent is added unpaused, and is skipped for magnet links.
 :::
 
-### Porla
+### Porla {/* #porla */}
 
 Send to one or multiple local or remote instances of Porla.
 
-#### Available options: {#porla-available-options}
+#### Available options: {/* #porla-available-options */}
 
 - **Save Path**: *optional*
 - **Preset**: *A case-sensitive preset name as configured in Porla.*
 
-#### Rules: {#porla-rules}
+#### Rules: {/* #porla-rules */}
 
 - **Limit download and upload speed**: *optional*  
   Takes any integer as a number. Given in `KiB/s`.
 
-### SABnzbd / NZBGet
+### SABnzbd / NZBGet {/* #sabnzbd--nzbget */}
 
 Send NZBs to one or multiple local or remote instances of SABnzbd or NZBGet.
 
 These actions only work for usenet (NZB) releases, for example from [Newznab or NZB-type RSS feeds](../configuration/feeds.md). Torrent releases cannot be sent to them.
 
-#### Available options: {#sabnzbd-nzbget-available-options}
+#### Available options: {/* #sabnzbd-nzbget-available-options */}
 
 - **Category**: *optional* (must already exist in the client)
 
-### Radarr, Sonarr, Lidarr, Readarr and Whisparr
+### Radarr, Sonarr, Lidarr, Readarr and Whisparr {/* #radarr-sonarr-lidarr-readarr-and-whisparr */}
 
 Autobrr supports the ability to push directly to the *arr suite of services. Both local and remote instances.
 
@@ -235,17 +235,17 @@ It could be useful to do some basic filtering.
 See [examples here](/filters/examples).
 :::
 
-### Test
+### Test {/* #test */}
 
 A simple action which will not download anything, but is useful for **filter testing**.
 
-### Watch Dir
+### Watch Dir {/* #watch-dir */}
 
 For torrent clients not yet supported, the watch dir is the next best option.
 
 By default, if you only specify the folder path (e.g., `/home/USER/watch/`), it will use the temporary file format, such as `autobrr-000.torrent`.
 
-:::tip Dynamic Naming
+:::tip[Dynamic Naming]
 
 Watch Dir can utilize additional variables to dynamically build the file name. If you want to change the naming convention and, for example, include the indexer name and the torrent name, you can use the following format:
 
@@ -258,7 +258,7 @@ If the indexer is called `MockIndexer` and the release is `Some.Release.2022.108
 The watch folder action does not support magnet links and will error for magnet-only releases. Use a supported torrent client action for those indexers.
 :::
 
-### Custom Commands / Exec
+### Custom Commands / Exec {/* #custom-commands--exec */}
 
 For custom commands, it's best to specify the full path to the binary or program you want to run. This ensures that the command can be executed correctly, regardless of the user's environment. You can also include your own static variables to make the command more dynamic and flexible.
 
@@ -270,7 +270,7 @@ For example, you could use:
 
 :::
 
-### Webhook
+### Webhook {/* #webhook */}
 
 Post a payload to an HTTP endpoint when the filter matches. Useful for integrating with your own scripts and services.
 
@@ -283,7 +283,7 @@ The request is always an HTTP `POST` with `Content-Type: application/json`.
 If you want the result of the request to decide whether the filter matches, use an [external filter webhook](./external.md) instead. The Webhook action fires after the filter has already matched.
 :::
 
-### FTP / SFTP
+### FTP / SFTP {/* #ftp--sftp */}
 
 Although autobrr does not have a native FTP upload action, you can achieve this functionality by using an Exec action and a tool like `scp`.
 

@@ -82,6 +82,6 @@ The relevant query is:
 {{- end -}}
 ```
 
-:::info Heads up
+:::info[Heads up]
 Do note that the minus (-) signs here denote that the template bars are not allowed to emit/allow any whitespace before/after them (as would've been the case without the minus signs).
 :::

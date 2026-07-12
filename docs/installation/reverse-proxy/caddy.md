@@ -7,7 +7,7 @@ sidebar_label: Caddy
 pagination_prev: introduction
 pagination_next: configuration/indexers
 ---
-#### Subdomain (Simple) {#caddy#simple-subdomain}
+#### Subdomain (Simple) {/* #caddy-simple-subdomain */}
 
 ```nginx title="Caddyfile"
 autobrr.example.com {
@@ -15,7 +15,7 @@ autobrr.example.com {
 }
 ```
 
-#### Subfolder {#caddy#subfolder}
+#### Subfolder {/* #caddy-subfolder */}
 
 ```nginx title="Caddyfile"
 example.com/autobrr/* {
@@ -25,7 +25,7 @@ example.com/autobrr/* {
 ```
 
 
-:::info Heads up
+:::info[Heads up]
 In case you are using the subfolder option, don't forget to configure the `baseUrl` option for autobrr:
 
 ```toml title="config.toml"
@@ -40,7 +40,7 @@ baseUrl = "/autobrr/"
 :::
 
 
-#### Subdomain (Advanced) {#caddy#advanced-subdomain}
+#### Subdomain (Advanced) {/* #caddy-advanced-subdomain */}
 
 ```nginx title="Caddyfile"
 # Defaults

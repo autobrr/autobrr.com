@@ -8,7 +8,7 @@ pagination_prev: introduction
 pagination_next: configuration/indexers
 ---
 
-#### Subfolder {#nginx#subfolder}
+#### Subfolder {/* #nginx-subfolder */}
 
 ```nginx
 location /autobrr/ {
@@ -24,7 +24,7 @@ location /autobrr/ {
 }
 ```
 
-:::info Heads up
+:::info[Heads up]
 Don't forget to set the `baseUrl` option in the `config.toml`:
 
 ```toml
@@ -39,7 +39,7 @@ baseUrl = "/autobrr/"
 
 :::
 
-#### Subdomain {#nginx#subdomain}
+#### Subdomain {/* #nginx-subdomain */}
 
 ```nginx
 server {

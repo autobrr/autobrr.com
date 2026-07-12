@@ -8,7 +8,7 @@ pagination_prev: introduction
 pagination_next: configuration/indexers
 ---
 
-#### Subfolder {#lighttpd#subfolder}
+#### Subfolder {/* #lighttpd-subfolder */}
 
 ```lighttpd
 server.modules += ("mod_proxy")
@@ -18,7 +18,7 @@ $HTTP["url"] =^ "/autobrr/" {
 }
 ```
 
-:::info Heads up
+:::info[Heads up]
 Don't forget to set the `baseUrl` option in the `config.toml`:
 
 ```toml
@@ -33,7 +33,7 @@ baseUrl = "/autobrr/"
 
 :::
 
-#### Subdomain {#lighttpd#subdomain}
+#### Subdomain {/* #lighttpd-subdomain */}
 
 ```lighttpd
 server.modules += ("mod_proxy")
@@ -43,10 +43,10 @@ $HTTP["host"] == "autobrr.domain.com" {
 }
 ```
 
-:::info Heads up
+:::info[Heads up]
 Don't forget to set the `server.stream-response-body = 1` option in the `lighttpd.conf` otherwise the logs will be blank.
 
-#### Resources {#lighttpd#links}
+#### Resources {/* #lighttpd-links */}
 
 - [lighttpd wiki](https://wiki.lighttpd.net)
 - [lighttpd TLS](https://wiki.lighttpd.net/Docs_SSL)

@@ -15,17 +15,17 @@ Open an issue or post in #dev-general on [Discord](https://discord.autobrr.com/)
 
 This document is a guide to help you through the process of contributing to autobrr.
 
-## Become a contributor
+## Become a contributor {/* #become-a-contributor */}
 
 - Code: new features, bug fixes, improvements
 - Report bugs
 - Documentation: The docs repo can be found here: [github.com/autobrr/autobrr.com](https://github.com/autobrr/autobrr.com)
 
-## Developer guide
+## Developer guide {/* #developer-guide */}
 
 This guide helps you get started developing autobrr.
 
-## Dependencies
+## Dependencies {/* #dependencies */}
 
 Make sure you have the following dependencies installed before setting up your developer environment:
 
@@ -34,7 +34,7 @@ Make sure you have the following dependencies installed before setting up your d
 - [Node.js](https://nodejs.org) (we usually use the latest Node LTS version - for further information see `@types/node` major version in [package.json](https://github.com/autobrr/autobrr/blob/develop/web/package.json))
 - [pnpm](https://pnpm.io/installation)
 
-## How to contribute
+## How to contribute {/* #how-to-contribute */}
 
 - **Fork and Clone:** [Fork the autobrr repository](https://github.com/autobrr/autobrr/fork) and clone it to start working on your changes.
 - **Branching:** Create a new branch for your changes. Use a descriptive name for easy understanding.
@@ -47,7 +47,7 @@ Make sure you have the following dependencies installed before setting up your d
   - Mark it as Draft if it's still in progress.
 - **Code Review:** Be open to feedback during the code review process.
 
-## Development environment
+## Development environment {/* #development-environment */}
 
 The backend is written in Go and the frontend is written in TypeScript using React.
 
@@ -59,7 +59,7 @@ Clone the project and change dir:
 git clone github.com/YOURNAME/autobrr && cd autobrr
 ```
 
-## Frontend
+## Frontend {/* #frontend */}
 
 First install the web dependencies:
 
@@ -75,7 +75,7 @@ pnpm dev
 
 This should make the frontend available at [http://localhost:3000](http://localhost:3000). It's setup to communicate with the API at [http://localhost:7474](http://localhost:7474).
 
-### Build {#build-frontend}
+### Build {/* #build-frontend */}
 
 In order to build binaries of the full application you need to first build the frontend.
 
@@ -85,7 +85,7 @@ To build the frontend, run:
 pnpm --dir web run build
 ```
 
-## Backend
+## Backend {/* #backend */}
 
 Install Go dependencies:
 
@@ -101,7 +101,7 @@ go run cmd/autobrr/main.go
 
 This uses the default `config.toml` and runs the API on [http://localhost:7474](http://localhost:7474).
 
-### Build {#build-backend}
+### Build {/* #build-backend */}
 
 To build the backend, run:
 
@@ -117,7 +117,7 @@ You can also build the frontend and the backend at once with:
 make build
 ```
 
-### Build cross-platform binaries
+### Build cross-platform binaries {/* #build-cross-platform-binaries */}
 
 You can optionally build it with [GoReleaser](https://goreleaser.com/) which makes it easy to build cross-platform binaries.
 
@@ -133,11 +133,11 @@ Then to build binaries, run:
 goreleaser build --snapshot --clean
 ```
 
-## Tests
+## Tests {/* #tests */}
 
 The test suite consists of only backend tests at this point. All tests run per commit with GitHub Actions.
 
-### Run backend tests
+### Run backend tests {/* #run-backend-tests */}
 
 We have a mix of unit and integration tests.
 
@@ -147,7 +147,7 @@ Run all non-integration tests:
 go test -v ./...
 ```
 
-### Run SQLite and PostgreSQL integration tests
+### Run SQLite and PostgreSQL integration tests {/* #run-sqlite-and-postgresql-integration-tests */}
 
 The integration tests runs against an in memory SQLite database and currently requires Docker for the Postgres tests.
 
@@ -163,7 +163,7 @@ Then run all tests:
 go test ./... -tags=integration
 ```
 
-## Build Docker image
+## Build Docker image {/* #build-docker-image */}
 
 To build a Docker image, run:
 
@@ -173,7 +173,7 @@ make build/docker
 
 The image will be tagged as `autobrr:dev`
 
-## Mock indexer
+## Mock indexer {/* #mock-indexer */}
 
 We have a mock indexer you can run locally that features:
 

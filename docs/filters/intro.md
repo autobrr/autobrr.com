@@ -20,7 +20,7 @@ import FilterWildcard from '/snippets/filter-wildcard.mdx';
 
 Filters are how you tell autobrr what to grab. Each filter is a set of conditions (resolution, size, release group and so on) that every announce is checked against; when a release matches, the filter's actions run and the release is sent to your download client, an *arr, or whatever else you've configured. You can run as many filters as you like side by side, each with its own indexers, rules and actions.
 
-## How a filter is evaluated {#how-a-filter-is-evaluated}
+## How a filter is evaluated {/* #how-a-filter-is-evaluated */}
 
 Every field you set in a filter must match for a release to be approved; fields you leave empty are skipped entirely. A typical TV filter checks a handful of fields against the parsed release name:
 
@@ -34,7 +34,7 @@ The `Except` fields work the other way around: a match there is a reason to reje
 
 <FilterRejectGroup/>
 
-### Check order {#check-order}
+### Check order {/* #check-order */}
 
 Checks run from cheap to expensive, and a failure at any step stops the rest:
 
@@ -48,7 +48,7 @@ The same order as a flowchart; every reject path ends the same way, only a relea
 
 [//]: # (---)
 
-## Wildcard matching {#wildcard-matching}
+## Wildcard matching {/* #wildcard-matching */}
 
 <FilterWildcard/>
 
@@ -63,7 +63,7 @@ match substrings even without wildcards and cannot match exactly in non-regex mo
 
 :::
 
-## Sharing filters
+## Sharing filters {/* #sharing-filters */}
 
 Filters can be exported and imported as JSON, which makes it easy to back them up or share them with others:
 

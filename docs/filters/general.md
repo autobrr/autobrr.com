@@ -43,7 +43,7 @@ those announce types to the filter explicitly. `CHECKED` and `PROMO_GP` are PTP-
 
 ## Rules
 
-:::tip About Size
+:::tip[About Size]
 
 Some indexers don't announce the size of a release, so autobrr will download the torrent file to get a size.  
 This check is only triggered if a minimum or a maximum size in that particular filter has been set.  

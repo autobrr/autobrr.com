@@ -8,13 +8,13 @@ pagination_label: Filters - Cross-seed with qui
 
 import ExternalWebhookQui from '/snippets/diagrams/external-webhook-qui.mdx';
 
-# Cross-seed with qui {#cross-seed-with-qui}
+# Cross-seed with qui {/* #cross-seed-with-qui */}
 
 [qui](https://getqui.com) is our multi-instance qBittorrent WebUI with built-in cross-seed support. It integrates with autobrr through webhook endpoints, enabling real-time cross-seed detection when autobrr sees a new announce.
 
 Unlike the [cross-seed](../3rd-party-tools/cross-seed.md) third party setup, this is a first party integration: no extra daemon, config file or torznab endpoints are needed. If you run qBittorrent and qui, all you need is a filter in autobrr.
 
-## How it works {#how-it-works}
+## How it works {/* #how-it-works */}
 
 1. autobrr sees a new release from a tracker
 2. autobrr sends the torrent name and indexer identifier to qui's `/api/cross-seed/webhook/check` endpoint via an external filter
@@ -28,13 +28,13 @@ Unlike the [cross-seed](../3rd-party-tools/cross-seed.md) third party setup, thi
 
 Cross-seeded torrents are added paused with `skip_checking=true`. qui polls the torrent state and auto-resumes if progress meets the size tolerance threshold. If progress is too low, the torrent remains paused for manual review.
 
-## Setup {#setup}
+## Setup {/* #setup */}
 
-### 1. Create an API key in qui {#qui-api-key}
+### 1. Create an API key in qui {/* #qui-api-key */}
 
 In qui, go to **Settings → API Keys**, click **Create API Key**, name it (e.g. `autobrr webhook`) and copy the generated key. We will refer to it as `YOUR_QUI_API_KEY` below.
 
-### 2. Create the filter {#create-filter}
+### 2. Create the filter {/* #create-filter */}
 
 :::info
 Create a new filter dedicated to qui. Select all the indexers you want to cross-seed from, preferably all of them.
@@ -42,7 +42,7 @@ Create a new filter dedicated to qui. Select all the indexers you want to cross-
 
 Create a filter named e.g. `qui cross-seed` and set a really high `priority` to make sure it runs before your other filters.
 
-### 3. Add the external webhook {#external-webhook}
+### 3. Add the external webhook {/* #external-webhook */}
 
 Go to the **External** tab of the filter and add a new external filter:
 
@@ -82,11 +82,11 @@ Field descriptions:
 - `indexer` (optional): autobrr indexer identifier (e.g. `hdb`); required for qui's HDBits-specific missing-collection fallback
 - `findIndividualEpisodes` (optional): override qui's global episode matching setting
 
-:::tip Docker Compose
+:::tip[Docker Compose]
 If autobrr and qui are both containers, `localhost` inside autobrr is the autobrr container, not qui. Use the qui container hostname instead (often the Compose service name), for example `http://qui:7476/api/cross-seed/webhook/check`.
 :::
 
-### 4. Configure retry handling {#retry-handling}
+### 4. Configure retry handling {/* #retry-handling */}
 
 qui answers `202 Accepted` when a match exists but is still downloading. Use the **Retry** block of the external filter to handle this:
 
@@ -94,7 +94,7 @@ qui answers `202 Accepted` when a match exists but is still downloading. Use the
 - **Maximum retry attempts:** `10`
 - **Retry delay in seconds:** `4`
 
-### 5. Add the apply action {#apply-action}
+### 5. Add the apply action {/* #apply-action */}
 
 :::caution
 The external webhook only answers "is this ready to cross-seed?"; it does not add anything to qBittorrent. You must also add this action, otherwise nothing gets added.
@@ -131,7 +131,7 @@ Field descriptions:
 
 Finally, make sure the filter is enabled and you're all set.
 
-## Troubleshooting {#troubleshooting}
+## Troubleshooting {/* #troubleshooting */}
 
 autobrr shows the filter accepted the release, but nothing shows up in qBittorrent:
 
@@ -143,7 +143,7 @@ autobrr shows the filter accepted the release, but nothing shows up in qBittorre
 
 For anything beyond this, see qui's [cross-seed troubleshooting](https://getqui.com/docs/features/cross-seed/troubleshooting) docs.
 
-## Going further {#going-further}
+## Going further {/* #going-further */}
 
 - **Webhook source filters:** by default qui scans all torrents on your instances when looking for matches. You can include/exclude categories and tags in the qui UI under **Cross-Seed → Auto → Webhook / autobrr**.
 - **Season packs:** qui has a dedicated season pack flow with separate endpoints (`/api/cross-seed/season-pack/check` and `/api/cross-seed/season-pack/apply`) that links already downloaded episodes into an announced season pack. It requires a separate autobrr filter; see qui's [season packs](https://getqui.com/docs/features/cross-seed/season-packs) docs for full setup instructions.

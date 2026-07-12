@@ -32,13 +32,13 @@ import IpApproval from '/snippets/ipapproval.mdx';
 For adding more indexers to autobrr, please submit an [Indexer Request](https://github.com/autobrr/autobrr/issues/new/choose) on GitHub <AiFillGithub />
 :::
 
-## Supported Indexers
+## Supported Indexers {/* #supported-indexers */}
 
 The list below of supported indexers are for indexers who have IRC announces. If your indexer is not in the list you can still use it via **Generic RSS** and **Generic Torznab/Newznab** (via Prowlarr or Jackett). See [Feeds](./feeds.md).
 
 <Indexers/>
 
-## Setup
+## Setup {/* #setup */}
 
 Navigate to `Settings > Indexers` to add new indexers.
 
@@ -60,17 +60,17 @@ Navigate to `Settings > Indexers` to add new indexers.
    - The `invite command` field under `Settings > IRC > Edit network` will come pre-populated. Input your IRC key here, and ensure the rest of the settings remain unchanged.
    :::
 
-#### Activating the Network
+#### Activating the Network {/* #activating-the-network */}
 
 Once your indexer is configured, go to `Settings > IRC` and flip the switch associated with the newly created network. Now is a good time to review all settings, including the invite command.
 
-:::caution Important
+:::caution[Important]
 Refer to the [IRC](../configuration/irc.md) section for detailed information about NickServ, IRC keys, and nick grouping.
 :::
 
 <IpApproval/>
 
-### External Identifier (optional) {#external-identifier}
+### External Identifier (optional) {/* #external-identifier */}
 
 To enable features such as seed limits (seed ratio, seed time) when pushing releases to \*arrs, an `External identifier` is required. This identifier must correspond to the indexer name in your \*arr setup. If you are using Prowlarr, it will typically be listed as "TorrentLeech (Prowlarr)".
 
@@ -80,7 +80,7 @@ Available in verison `v1.42.0+`
 This option will only appear when you **edit** an existing indexer.
 :::
 
-## Custom indexer definitions
+## Custom indexer definitions {/* #custom-indexer-definitions */}
 
 autobrr supports custom indexer definitions.
 
@@ -108,7 +108,7 @@ This should work if you have `/config` mapped to a volume which you hopefully ha
 2. Restart autobrr to apply changes.
 3. Configure the new indexer by navigating to `Settings > Indexers` and setting it up as usual.
 
-:::info Definition format
+:::info[Definition format]
 Current definitions after autobrr `v1.82.0` use `version: 2`, with per-channel `parse` blocks and named regex capture groups. Older custom definitions without a `version` field are treated as the legacy v1 format and still load through a compatibility layer.
 
 The best starting point for a new definition is to copy a current one from the [official definitions directory](https://github.com/autobrr/autobrr/tree/develop/internal/indexer/definitions) and adapt it.

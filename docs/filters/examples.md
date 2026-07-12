@@ -29,7 +29,7 @@ import ReleaseAnatomySports from '/snippets/diagrams/release-anatomy-sports.mdx'
 
 Here are some example filters that can be useful.
 
-## TV - Sonarr
+## TV - Sonarr {/* #tv---sonarr */}
 
 When using autobrr with Sonarr these are some good recommendation filters to start off.
 
@@ -37,11 +37,11 @@ It's advisable to setup your Sonarr properly with the help of [Trash-guides](htt
 
 Don't forget to add a [Sonarr action](../filters/actions.md#radarr-sonarr-lidarr-readarr-and-whisparr)!
 
-:::caution Important
+:::caution[Important]
 Not all indexers announce video **container** like `mkv` or `mp4`. It's best to leave this off.
 :::
 
-### HD WEB (720p, 1080p)
+### HD WEB (720p, 1080p) {/* #hd-web-720p-1080p */}
 
 Set this to match your quality settings in Sonarr
 
@@ -51,7 +51,7 @@ Set this to match your quality settings in Sonarr
 | Sources          | [WEB, WEB-DL, WEBRip]                 |
 | Match Categories | [Depends on Indexer](./categories.md) |
 
-### 4k (2160p)
+### 4k (2160p) {/* #4k-2160p */}
 
 Set this to match your quality settings in Sonarr
 
@@ -61,7 +61,7 @@ Set this to match your quality settings in Sonarr
 | Sources          | [WEB, WEB-DL, WEBRip]                 |
 | Match Categories | [Depends on Indexer](./categories.md) |
 
-### HDR and DV
+### HDR and DV {/* #hdr-and-dv */}
 
 Leave blank to match either and let your arr decide, or do the following to include or exclude HDR formats:
 
@@ -81,7 +81,7 @@ If you **DON'T WANT ANY HDR** formats
 Selecting only `HDR` and `DV` misses dual-format releases like `DV HDR10`, which only match the combined options (`DV HDR`, `DV HDR10`, `DV HDR10+`). Select all is the safe choice; narrow it down only if you know which formats your indexer announces.
 :::
 
-### Only season packs
+### Only season packs {/* #only-season-packs */}
 
 If you only want to match season packs:
 
@@ -90,7 +90,7 @@ If you only want to match season packs:
 | Seasons  | 1-99   |
 | Episodes | 0      |
 
-### Only episodes, skip season packs
+### Only episodes, skip season packs {/* #only-episodes-skip-season-packs */}
 
 If you only want to match episodes and no season packs:
 
@@ -99,7 +99,7 @@ If you only want to match episodes and no season packs:
 | Seasons  | 1-99   |
 | Episodes | 1-99   |
 
-## Movies - Radarr
+## Movies - Radarr {/* #movies---radarr */}
 
 When using autobrr with Radarr these are some good recommendation filters to start off.
 
@@ -107,11 +107,11 @@ It's advisable to setup your Radarr properly with the help of [Trash-guides](htt
 
 Don't forget to add a [Radarr action](./actions.md#radarr-sonarr-lidarr-readarr-and-whisparr)!
 
-:::caution Important
+:::caution[Important]
 Not all indexers announce video **container** like `mkv` or `mp4`. It's best to leave this off.
 :::
 
-### HD (720p, 1080p)
+### HD (720p, 1080p) {/* #hd-720p-1080p */}
 
 Set this to match your quality settings in Radarr
 
@@ -121,7 +121,7 @@ Set this to match your quality settings in Radarr
 | Sources          | [WEB, WEB-DL, WEBRip, BluRay]         |
 | Match Categories | [Depends on Indexer](./categories.md) |
 
-### 4k (2160p)
+### 4k (2160p) {/* #4k-2160p-1 */}
 
 Set this to match your quality settings in Radarr
 
@@ -131,7 +131,7 @@ Set this to match your quality settings in Radarr
 | Sources          | [WEB, WEB-DL, WEBRip, BluRay, UHD.Bluray] |
 | Match Categories | [Depends on Indexer](./categories.md)     |
 
-### HDR and DV
+### HDR and DV {/* #hdr-and-dv-1 */}
 
 Leave blank to match either and let your arr decide, or do the following to include or exclude HDR formats:
 
@@ -151,7 +151,7 @@ If you **DON'T WANT ANY HDR** formats
 Selecting only `HDR` and `DV` misses dual-format releases like `DV HDR10`, which only match the combined options (`DV HDR`, `DV HDR10`, `DV HDR10+`). Select all is the safe choice; narrow it down only if you know which formats your indexer announces.
 :::
 
-## Matching specific titles {#matching-specific-titles}
+## Matching specific titles {/* #matching-specific-titles */}
 
 The **Movies / Shows** field on the [TV & Movies](./tv-movies.md) tab matches against the parsed title of the release, and supports the usual wildcards: `*` for zero or more characters, `?` for exactly one. Matching is case-insensitive and must cover the whole title, so add `*` when you only know part of it.
 
@@ -166,7 +166,7 @@ The **Movies / Shows** field on the [TV & Movies](./tv-movies.md) tab matches ag
 Prefixes match more than you might expect: `Dune*` also matches a title like `Dunes`. When two titles collide, add the year or a separator, e.g. `Dune?Part*`.
 :::
 
-## Sports {#sports}
+## Sports {/* #sports */}
 
 Sports releases parse differently from movies and TV. The league or competition becomes the **title**, while the round, event and session end up in the **sub-title**, and there is no filter field for the sub-title:
 
@@ -188,7 +188,7 @@ This would match `Formula.1.2023.Round.01.BahrainGP.Race.F1.Live.1080p.SS` and t
 | Football | `*Premier*League*1080p*`                    |
 | MotoGP   | `MotoGP*Race*1080p*`                        |
 
-## Build buffer
+## Build buffer {/* #build-buffer */}
 
 If you are in need of buffer this is an example that will work will on general indexers with freeleech/bonus systems.
 
@@ -225,12 +225,12 @@ Here's a small chart of recommended `Max active downloads` depending on server t
 
 And if you have traffic limits, then `max downloads per` is there to help you limit it.
 
-### Other tips
+### Other tips {/* #other-tips */}
 
 It's generally a good idea to check the latest torrents and the browse pages to try and look for patterns of what get snatches.
 
 Some indexers and content types the current year releases do get a lot of snatches. If there's internal groups it's highly likely they do very well also.
 
-## Convert autodl-irssi filters
+## Convert autodl-irssi filters {/* #convert-autodl-irssi-filters */}
 
 <ConvertAutodlFilter />

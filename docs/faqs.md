@@ -24,15 +24,15 @@ keywords:
 
 If the docs did not answer your questions then the best place to ask is in our [Discord community](https://discord.autobrr.com/).
 
-## I think I found a bug
+## I think I found a bug {/* #i-think-i-found-a-bug */}
 
 If you think you have found a bug then please report it either on [Github Issues](https://github.com/autobrr/autobrr/issues/new?assignees=&labels=bug&projects=&template=bug_report.md&title=) or in our Discord and use the `#bugs` channel.
 
-## I have a feature request
+## I have a feature request {/* #i-have-a-feature-request */}
 
 If you have a feature request then report it on [Github Feature Request](https://github.com/autobrr/autobrr/discussions/new?category=ideas) or in our Discord and use the `#suggestions` channel.
 
-## Nothing happens - I'm not seeing any releases
+## Nothing happens - I'm not seeing any releases {/* #nothing-happens---im-not-seeing-any-releases */}
 
 Before you ask for help in Discord or other place, then try to forumlate your question so it's easier to help you.
 
@@ -58,7 +58,7 @@ Go over your setup again and make sure that:
 
 :::
 
-## Common action rejections
+## Common action rejections {/* #common-action-rejections */}
 
 export const Highlight = ({children, color}) => (
 <span
@@ -85,7 +85,7 @@ you can find detailed instructions for the setup process on their wiki:
 
 [https://wiki.torrentleech.org/doku.php/autobrr](https://wiki.torrentleech.org/doku.php/autobrr)
 
-## I have set up an indexer, but it does not connect to the #announce channel. What do I do?
+## I have set up an indexer, but it does not connect to the #announce channel. What do I do? {/* #i-have-set-up-an-indexer-but-it-does-not-connect-to-the-announce-channel-what-do-i-do */}
 
 Make sure you have entered the necessary keys in the invite command and that your IRC user has privileges to access to the #announce channel. See [IRC setup](./configuration/irc.md).
 
@@ -93,20 +93,20 @@ import Botnaming from '/snippets/botnaming.mdx';
 
 <Botnaming/>
 
-## Setting a custom save path for Deluge in autobrr does not work. Why?
+## Setting a custom save path for Deluge in autobrr does not work. Why? {/* #setting-a-custom-save-path-for-deluge-in-autobrr-does-not-work-why */}
 
 This is a problem with Deluge v1.\* and should not happen in v2.
 You can use the label-plugin in Deluge and set a custom save path in that as a workaround. autobrr creates the label if it does not exist, but for this workaround you need to create it yourself first so you can set its save path in Deluge.
 
-## Why did a release not match when it clearly should have?
+## Why did a release not match when it clearly should have? {/* #why-did-a-release-not-match-when-it-clearly-should-have */}
 
 Check your logs. Additionally, enable trace logging by setting `logLevel = "TRACE"` in your `config.toml` (which can usually be found in `~/.config/autobrr/`). The change is picked up automatically without a restart. You can also change the log level on the fly under **Settings > Logs** in the web UI.
 
-## How does autobrr handle multiple matching filters for a release?
+## How does autobrr handle multiple matching filters for a release? {/* #how-does-autobrr-handle-multiple-matching-filters-for-a-release */}
 
 When a release is processed, autobrr checks all the filters in order of priority (higher number = higher priority). If a filter matches the release, autobrr executes all the actions defined in that filter and then stops processing further filters for that release. The exception here is \*arr actions. If e.g., Radarr or Sonarr rejects a release, the next filter in line will be processed.
 
-## My autobrr instance cannot reach Deluge running in Docker
+## My autobrr instance cannot reach Deluge running in Docker {/* #my-autobrr-instance-cannot-reach-deluge-running-in-docker */}
 
 If autobrr isn't reaching Deluge when running Docker you can try this:
 
@@ -118,7 +118,7 @@ If autobrr isn't reaching Deluge when running Docker you can try this:
   You can add your own if you wish. Like `username:password:powerlevel`.
 - Enabling `Allow Remote Connections` in Deluge might be needed depending on your setup.
 
-## I forgot my password {#forgot-password}
+## I forgot my password {/* #forgot-password */}
 
 If you forget your password, you can change it via the command line.
 
@@ -126,13 +126,13 @@ If you forget your password, you can change it via the command line.
 autobrrctl --config /home/username/.config/autobrr change-password <USERNAME>
 ```
 
-## I want to change my username {#change-username}
+## I want to change my username {/* #change-username */}
 
 If you want to change your username, you can do so via the [web UI](./usage/account.md).
 If you don't have access to the web UI, you need to change it directly in the database.
 Use the command line or an sqlite editor.
 
-### CLI
+### CLI {/* #cli */}
 
 You need the `sqlite3` package for this.
 
@@ -142,7 +142,7 @@ You need the `sqlite3` package for this.
 
 `sqlite3 autobrr.db "UPDATE users SET username = 'newuser';"`
 
-### GUI
+### GUI {/* #gui */}
 
 SQLitebrowser is a simple cross-platform SQLite gui/browser. Download from [official site](https://sqlitebrowser.org/dl/).
 
@@ -152,7 +152,7 @@ Open the db file `autobrr.db` and run the following command:
 
 Or use the gui to click edit on the `username` column of the `users` table.
 
-## How can I use my freeleech tokens from RED? {#redacted-freeleech-tokens}
+## How can I use my freeleech tokens from RED? {/* #redacted-freeleech-tokens */}
 
 This is something a lot of users are asking for.
 

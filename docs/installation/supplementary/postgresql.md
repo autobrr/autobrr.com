@@ -36,15 +36,15 @@ Alternatively, the whole connection can be given as a single DSN, which takes pr
 databaseDSN = "postgresql://autobrr:s0meth!ng-l0ng-4nd-s3cure@localhost:5432/autobrr?sslmode=disable"
 ```
 
-:::warning Warning
+:::warning[Warning]
 It's up to you to make sure your PostgreSQL instance is secured and not exposed to the internet.
 :::
 
-:::info Advanced
+:::info[Advanced]
 autobrr runs its database schema migrations automatically on startup. Set `databaseAutoMigrate = false` to skip them.
 :::
 
-## Convert from SQLite to PostgreSQL {#convert}
+## Convert from SQLite to PostgreSQL {/* #convert */}
 
 `autobrrctl` has built-in support for converting your SQLite database to PostgreSQL.
 To do so, shut down autobrr and issue the following command:

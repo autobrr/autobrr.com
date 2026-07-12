@@ -7,11 +7,11 @@ keywords: [autobrr, disk, space, torrents, full, external, script]
 pagination_label: Tips
 ---
 
-## Stop if disk is full
+## Stop if disk is full {/* #stop-if-disk-is-full */}
 
 You can make autobrr stop adding torrents to your download client whenever you're running low on space.
 
-### Create the script
+### Create the script {/* #create-the-script */}
 
 ```bash
 touch ~/freespace.sh && chmod +x ~/freespace.sh
@@ -69,15 +69,15 @@ echo $retcode
 
 :::
 
-### Add it to your existing filter
+### Add it to your existing filter {/* #add-it-to-your-existing-filter */}
 
 ![External script](/img/free-space.png "External script explanation")
 
-## Downloading log files {#download-logs}
+## Downloading log files {/* #download-logs */}
 
 Log files can be listed and downloaded under `Settings > Logs`. Downloaded files are automatically sanitized: passkeys, API keys and IRC credentials are redacted, which makes them safe to share when asking for help on Discord or GitHub.
 
-## Application settings {#application-settings}
+## Application settings {/* #application-settings */}
 
 A few useful toggles live under `Settings > Application`:
 
@@ -86,13 +86,13 @@ A few useful toggles live under `Settings > Application`:
 - **Check for updates**: toggles the update check; when a new version is available, a notice with a link appears next to the version number.
 - **WebUI debug mode**: extra debug output in the browser, only useful when troubleshooting the UI itself.
 
-## Troubleshooting filters utilizing the autobrr.log file {#autobrr.log}
+## Troubleshooting filters utilizing the autobrr.log file {/* #autobrr.log */}
 
 The Logs page in the app itself is a good way to monitor new announces, but it cannot show old announces.
 
 If you want to check why a filter is not grabbing anything without waiting for a new announce, you can do so with `tail`.
 
-### Enable logging if you haven't already {#enable-logging}
+### Enable logging if you haven't already {/* #enable-logging */}
 
 ```toml title="~/.config/autobrr/config.toml"
 # autobrr logs file
@@ -111,7 +111,7 @@ logPath = "log/autobrr.log"
 logLevel = "TRACE"
 ```
 
-### Check previous announces
+### Check previous announces {/* #check-previous-announces */}
 
 ```shell
 # -n 100 will search the last 100 lines, you might have to increase this
@@ -120,7 +120,7 @@ logLevel = "TRACE"
 tail -n 100 ~/.config/autobrr/logs/autobrr.log | grep 'CheckFilter: (NAME OF YOUR FILTER)'
 ```
 
-### Monitor new announces
+### Monitor new announces {/* #monitor-new-announces */}
 
 ```shell
 # put the name of your filter inside the parentheses
@@ -128,7 +128,7 @@ tail -n 100 ~/.config/autobrr/logs/autobrr.log | grep 'CheckFilter: (NAME OF YOU
 tail -f ~/.config/autobrr/logs/autobrr.log | grep 'CheckFilter: (NAME OF YOUR FILTER)'
 ```
 
-#### Expected output
+#### Expected output {/* #expected-output */}
 
 ```js
 {"level":"debug","module":"filter","time":"2023-01-11T17:05:44Z","message":"filter.Service.CheckFilter: (Race - groups) for release: Teppen.Laughing.til.You.Cry.S01.720p.CR.WEB-DL.REPACK.AAC2.0.H.264-SubsPlease <Highlight color="#ff2754">rejections: (episodes not matching. got: 0 want: 1-99, release groups not matching. got: SubsPlease want: ggez,glhf,DiRT,cinefeel,casstudio,cmrg,flux,smurf,ntb,kings,plzproper,gossip,playweb,cakes,bae,ggwp,rapidcows,trollhd,playhd,playtv,truffle)"}

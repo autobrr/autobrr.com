@@ -58,7 +58,7 @@ With inspiration and ideas from tools like trackarr, autodl-irssi and flexget we
 
 autobrr is the modern download automation tool for torrents.
 
-## What is autobrr and how does it fit into the ecosystem? {#what-is-autobrr}
+## What is autobrr and how does it fit into the ecosystem? {/* #what-is-autobrr */}
 
 We can start by talking about torrent trackers (hereby referred to as indexers) and maintaining ratio.
 You are required to maintain a ratio with most indexers. Ratio is built by seeding your torrents.
@@ -76,7 +76,7 @@ autobrr can also send matches (torrent files that meets your filter's criteria) 
 
 <FlowDirect/>
 
-### The typical workflow
+### The typical workflow {/* #the-typical-workflow */}
 
 1. autobrr monitors IRC channels and/or RSS feeds for new torrents that fits your criteria set within your autobrr [filters](filters/intro.md).
 2. A successful match is forwarded to your [download client](./configuration/download-clients/dedicated) of choice via an [action](./filters/actions.md) set inside your filters.
@@ -93,14 +93,14 @@ autobrr can also send matches (torrent files that meets your filter's criteria) 
 
 5. You are now among the very first people seeding this torrent which means you will have more peers connecting to you than if you'd be grabbing that file after the initial swarm. This results in a higher ratio on your indexers.
 
-### RSS support for indexers without an IRC announcer
+### RSS support for indexers without an IRC announcer {/* #rss-support-for-indexers-without-an-irc-announcer */}
 
 A lot of indexers do not announce new torrents in an IRC channel. You can still make use of these indexers with autobrr since it has built in support for feeds as well. We support Torznab, Newznab, as well as regular RSS feeds.
 RSS indexers are treated the same way as regular indexers within autobrr.
 
 This isn't needed if your use case is feeding the \*arrs only. Since they have RSS support already.
 
-## Features
+## Features {/* #features */}
 
 As of right now, autobrr features:
 
@@ -130,13 +130,13 @@ Available download clients and actions
 - Exec custom scripts
 - Webhook
 
-## About
+## About {/* #about */}
 
 The development of autobrr started in Early 2020, entering rapid development in Summer 2021 due to dissatisfaction with needing 3+ tools to do one job. Autobrr has since gained quite a bit of traction and has a growing [community](./community.md) supporting the project.
 
 Autobrr was developed with resource consumption in mind. The software uses API calls to reduce unnecessary downloads of .torrent files from sites like BTN, RED, PTP, and GGn. On other sites, it will download the .torrent only if the information is not present in the announce message.
 
-### License
+### License {/* #license */}
 
 autobrr is licensed under the GNU General Public License v2.0.
 

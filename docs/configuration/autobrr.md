@@ -159,7 +159,7 @@ checkForUpdates = true
 #customDefinitions = "/home/$YOUR_USER/.config/autobrr/definitions"
 ```
 
-#### Config options
+#### Config options {/* #config-options */}
 
 - `host`: If not using a reverse proxy or in a container, change to `0.0.0.0`.
 - `port`: If port already in use, then change to a free one.
@@ -171,7 +171,7 @@ checkForUpdates = true
 - (**optional**) `corsAllowedOrigins`: Comma separated list of origins allowed to call the API from a browser, for setups with third-party frontends. Default `*`.
 - (**optional**) `profilingEnabled` / `profilingHost` / `profilingPort`: Exposes Go pprof endpoints for debugging, disabled by default. Only enable when asked to while troubleshooting.
 
-### Metrics (Prometheus) {#metrics}
+### Metrics (Prometheus) {/* #metrics */}
 
 Metrics are disabled by default. With `metricsEnabled = true`, autobrr serves Prometheus metrics on a separate listener at `http://<metricsHost>:<metricsPort>/metrics` (default `127.0.0.1:9074`), independent of the web UI port. The exported metrics are prefixed `autobrr_` and cover releases, IRC, feeds, lists and filters.
 
@@ -184,7 +184,7 @@ scrape_configs:
 
 The endpoint can be protected with basic auth via `metricsBasicAuthUsers` (comma separated `user:password` pairs with the password bcrypt-hashed, generated with [`autobrrctl htpasswd`](#autobrrctl)).
 
-### Create user via command line (optional) {#create-user-via-cli}
+### Create user via command line (optional) {/* #create-user-via-cli */}
 
 This step is not needed unless you wish to create a user _via the command line_. Instead, the process of creating a user can be done via the web UI instead, which is the recommended way to do it.
 
@@ -196,7 +196,7 @@ Example:
 autobrrctl --config ~/.config/autobrr create-user USERNAME
 ```
 
-### Other autobrrctl commands {#autobrrctl}
+### Other autobrrctl commands {/* #autobrrctl */}
 
 `autobrrctl` has a few more commands worth knowing about:
 
@@ -206,7 +206,7 @@ autobrrctl --config ~/.config/autobrr create-user USERNAME
 - `autobrrctl db:convert`: Converts a SQLite database to PostgreSQL, see the [PostgreSQL guide](../installation/supplementary/postgresql.md#convert).
 - `autobrrctl db:seed --db-path <path> --seed-db <file>` and `autobrrctl db:reset`: Database seeding and reset, mainly for development and testing.
 
-## Other options
+## Other options {/* #other-options */}
 
 Make sure to read through all of the articles as all of them have some important information on how to get autobrr up and running.
 
@@ -215,7 +215,7 @@ Make sure to read through all of the articles as all of them have some important
 - [Download Clients <FaDownload />](./download-clients/dedicated)
 - [Feeds (RSS / Torznab / Newznab) <MdRssFeed />](./feeds.md)
 
-## Additional help
+## Additional help {/* #additional-help */}
 
 If you're having any trouble with the documentation, join us at [Discord <FaDiscord />](https://discord.autobrr.com/) and we will do our best to help.
 

@@ -23,7 +23,7 @@ pagination_label: Filters - Omegabrr
 custom_edit_url: null
 ---
 
-:::warning Disclaimer
+:::warning[Disclaimer]
 
 As of 2024-12-26 the omegabrr functionality has been implemented in autobrr and this service is immediately deprecated and unsupported.
 See [Lists](./lists.md) for information about how to use lists in autobrr.

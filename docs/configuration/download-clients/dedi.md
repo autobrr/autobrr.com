@@ -56,9 +56,9 @@ All clients have a test function to try out the connection details before saving
 
 Don't forget to give the client a name!
 
-## Configure Download Clients
+## Configure Download Clients {/* #configure-download-clients */}
 
-## qBittorrent
+## qBittorrent {/* #qbittorrent */}
 
 You can run autobrr and qBittorrent on the following setups.
 
@@ -66,7 +66,7 @@ You can run autobrr and qBittorrent on the following setups.
 - Remote server
 - Docker / container
 
-### Local {#qbittorrent-local}
+### Local {/* #qbittorrent-local */}
 
 For a local client, meaning autobrr and qBittorrent **on the same server** then this should work. Check qBittorrent settings to get the `WEBUI_PORT`.
 
@@ -75,7 +75,7 @@ For a local client, meaning autobrr and qBittorrent **on the same server** then 
 - Username: `<username>`
 - Password: `<password>`
 
-### Remote {#qbittorrent-remote}
+### Remote {/* #qbittorrent-remote */}
 
 For a remote client, meaning autobrr and qBittorrent are **not on the same server** then things might be a bit different.
 
@@ -91,7 +91,7 @@ Some setups like **Swizzin** requires to also use **Basic Auth** when connecting
 - Username: `<username>`
 - Password: `<password>`
 
-### Docker {#qbittorrent-docker}
+### Docker {/* #qbittorrent-docker */}
 
 With **Docker** / containers make sure autobrr and qBittorrent share the same network to be able to use the `container_name` as address.
 
@@ -104,7 +104,7 @@ With **Docker** / containers make sure autobrr and qBittorrent share the same ne
 qBittorrent can also be authenticated with an optional **API key** instead of username and password, for WebUIs set up with API key authentication. Requires qBittorrent v5.2.x+
 :::
 
-## qBittorrent rules
+## qBittorrent rules {/* #qbittorrent-rules */}
 
 You can define some basic rules which can improve your performance for racing etc.
 
@@ -117,7 +117,7 @@ You can define some basic rules which can improve your performance for racing et
 - **Download speed threshold**: If the total download speed is below this limit when the check runs, download anyway. Unit in KB/s.
 - **Upload speed threshold**: If the total upload speed is below this limit when the check runs, download anyway. Unit in KB/s.
 
-## Deluge
+## Deluge {/* #deluge */}
 
 You can run autobrr and Deluge on the following setups.
 
@@ -132,7 +132,7 @@ Deluge is split into two versions:
 
 Select `TYPE` then set these.
 
-### Local {#deluge-local}
+### Local {/* #deluge-local */}
 
 For a local client, meaning autobrr and Deluge **on the same server** then this should work. Check Deluge settings to get the `DAEMON_PORT`.
 
@@ -142,7 +142,7 @@ For a local client, meaning autobrr and Deluge **on the same server** then this 
 - Username: `<username>`
 - Password: `<password>`
 
-### Remote {#deluge-remote}
+### Remote {/* #deluge-remote */}
 
 For a remote client, meaning autobrr and Deluge are **not on the same server** then things might be a bit different.
 
@@ -156,7 +156,7 @@ For a remote client, meaning autobrr and Deluge are **not on the same server** t
 autobrr connects directly to the Deluge daemon (the same connection a thin client uses), not to the Deluge web UI, so there is no Basic Auth option for Deluge. Use the daemon port and daemon credentials from `auth`, not the web UI password.
 :::
 
-### Docker {#deluge-docker}
+### Docker {/* #deluge-docker */}
 
 With **Docker** / containers make sure autobrr and Deluge share the same network to be able to use the `container_name` as address.
 
@@ -166,14 +166,14 @@ With **Docker** / containers make sure autobrr and Deluge share the same network
 - Username: `<username>`
 - Password: `<password>`
 
-## Deluge rules
+## Deluge rules {/* #deluge-rules */}
 
 You can define some basic rules which can improve your performance for racing etc.
 
 - **Enabled**: Disabled by default.
 - **Max active downloads**: Default 0 (unlimited). Limit the amount of active downloads, to give the maximum amount of bandwidth and disk for the downloads.
 
-## rTorrent / ruTorrent
+## rTorrent / ruTorrent {/* #rtorrent--rutorrent */}
 
 You can run autobrr and rTorrent / ruTorrent on the following setups.
 
@@ -185,7 +185,7 @@ You can run autobrr and rTorrent / ruTorrent on the following setups.
 When Auth is enabled you can pick the **Auth type**: `Basic Auth` or `Digest Auth`. Basic Auth is correct in most cases, but some providers (like RapidSeedbox) use Digest Auth.
 :::
 
-### Local {#rtorrent-local}
+### Local {/* #rtorrent-local */}
 
 For a local client, meaning autobrr and ruTorrent **on the same server** try these.
 
@@ -204,7 +204,7 @@ If you are on a shared seedbox you might need your username in the url like:
 
 - Host: `http://localhost/USERNAME/rutorrent/plugins/httprpc/action.php`
 
-#### Swizzin {#rtorrent-local-swizzin}
+#### Swizzin {/* #rtorrent-local-swizzin */}
 
 - Host: `https://127.0.0.1/rutorrent/plugins/httprpc/action.php`
 - TLS: enabled
@@ -213,7 +213,7 @@ If you are on a shared seedbox you might need your username in the url like:
 - Username: `<username>`
 - Password: `<password>`
 
-### Remote {#rtorrent-remote}
+### Remote {/* #rtorrent-remote */}
 
 For a remote client, meaning autobrr and rTorrent are **not on the same server** then things might be a bit different.
 
@@ -224,7 +224,7 @@ For a remote client, meaning autobrr and rTorrent are **not on the same server**
 - Username: `<username>`
 - Password: `<password>`
 
-### Docker {#rtorrent-docker}
+### Docker {/* #rtorrent-docker */}
 
 With **Docker** / containers make sure autobrr and rTorrent share the same network to be able to use the `container_name` as address.
 
@@ -234,7 +234,7 @@ With **Docker** / containers make sure autobrr and rTorrent share the same netwo
 - Username: `<username>`
 - Password: `<password>`
 
-## Transmission
+## Transmission {/* #transmission */}
 
 You can run autobrr and Transmission on the following setups.
 
@@ -242,7 +242,7 @@ You can run autobrr and Transmission on the following setups.
 - Remote server
 - Docker / container
 
-### Local {#transmission-local}
+### Local {/* #transmission-local */}
 
 For a local client, meaning autobrr and Transmission **on the same server** then this should work. Check Transmission settings to get the `WEBUI_PORT`. Default is 9091.
 
@@ -251,7 +251,7 @@ For a local client, meaning autobrr and Transmission **on the same server** then
 - Username: `<username>`
 - Password: `<password>`
 
-### Remote {#transmission-remote}
+### Remote {/* #transmission-remote */}
 
 For a remote client, meaning autobrr and Transmission are **not on the same server** then things might be a bit different.
 
@@ -269,7 +269,7 @@ HTTPS / TLS
 - Username: `<username>`
 - Password: `<password>`
 
-### Docker {#transmission-docker}
+### Docker {/* #transmission-docker */}
 
 With **Docker** / containers make sure autobrr and Transmission share the same network to be able to use the `container_name` as address.
 
@@ -278,14 +278,14 @@ With **Docker** / containers make sure autobrr and Transmission share the same n
 - Username: `<username>`
 - Password: `<password>`
 
-## Transmission rules
+## Transmission rules {/* #transmission-rules */}
 
 You can define some basic rules which can improve your performance for racing etc.
 
 - **Enabled**: Disabled by default.
 - **Max active downloads**: Default 0 (unlimited). Limit the amount of active downloads, to give the maximum amount of bandwidth and disk for the downloads.
 
-## Porla
+## Porla {/* #porla */}
 
 Connects to the Porla web API.
 
@@ -295,21 +295,21 @@ Connects to the Porla web API.
 
 Some setups also require **Basic Auth** with a username and password, like other clients behind an HTTP-auth proxy.
 
-## Porla rules
+## Porla rules {/* #porla-rules */}
 
 You can define some basic rules which can improve your performance for racing etc.
 
 - **Enabled**: Disabled by default.
 - **Max active downloads**: Default 0 (unlimited). Limit the amount of active downloads, to give the maximum amount of bandwidth and disk for the downloads.
 
-## SABnzbd
+## SABnzbd {/* #sabnzbd */}
 
 You can run autobrr and SABnzbd on the following setups.
 
 - Local server
 - Remote server
 
-### Local {#sabnzbd-local}
+### Local {/* #sabnzbd-local */}
 
 For a local client, meaning autobrr and SABnzbd **on the same server** then this should work. Check SABnzbd settings to get the `SABNZBD_PORT`.
 
@@ -317,7 +317,7 @@ For a local client, meaning autobrr and SABnzbd **on the same server** then this
 - TLS: disabled
 - API key
 
-### Remote {#sabnzbd-remote}
+### Remote {/* #sabnzbd-remote */}
 
 For a remote client, meaning autobrr and SABnzbd are **not on the same server** then things might be a bit different.
 
@@ -331,14 +331,14 @@ Some setups like **Swizzin** requires to also use **Basic Auth** when connecting
 - Username: `<username>`
 - Password: `<password>`
 
-## NZBGet
+## NZBGet {/* #nzbget */}
 
 You can run autobrr and NZBGet on the following setups.
 
 - Local server
 - Remote server
 
-### Local {#nzbget-local}
+### Local {/* #nzbget-local */}
 
 For a local client, meaning autobrr and NZBGet **on the same server** then this should work. Check NZBGet settings to get the `NZBGET_PORT`.
 
@@ -346,7 +346,7 @@ For a local client, meaning autobrr and NZBGet **on the same server** then this 
 - Username: `<username>`
 - Password: `<password>`
 
-### Remote {#nzbget-remote}
+### Remote {/* #nzbget-remote */}
 
 For a remote client, meaning autobrr and NZBGet are **not on the same server** then things might be a bit different.
 
@@ -358,7 +358,7 @@ For a remote client, meaning autobrr and NZBGet are **not on the same server** t
 There is no TLS toggle for NZBGet - whether the connection uses https is decided by the scheme of the Host URL (`http://` or `https://`).
 :::
 
-## Sonarr
+## Sonarr {/* #sonarr */}
 
 You can run autobrr and Sonarr apps on the following setups.
 
@@ -372,7 +372,7 @@ You can run autobrr and Sonarr apps on the following setups.
 All arr clients also have **TLS** and **Skip TLS verification** toggles (enable skip-verify for self-signed certificates), and an optional **Basic Auth** setting for instances behind an HTTP-auth proxy.
 :::
 
-### Local {#sonarr-local}
+### Local {/* #sonarr-local */}
 
 For a local client, meaning autobrr and Sonarr **on the same server** then this should work.
 
@@ -383,7 +383,7 @@ On **Swizzin** or if you are running Sonarr with a baseUrl set that in the url a
 
 - Host: `http://127.0.0.1:8989/sonarr`
 
-### Remote {#sonarr-remote}
+### Remote {/* #sonarr-remote */}
 
 For a remote client, meaning autobrr and Sonarr are **not on the same server** then things might be a bit different.
 
@@ -394,14 +394,14 @@ On **Swizzin** or if you are running Sonarr with a baseUrl set that in the url a
 
 - Host: `https://mydomain.com/sonarr`
 
-### Docker {#sonarr-docker}
+### Docker {/* #sonarr-docker */}
 
 With **Docker** / containers make sure autobrr and Sonarr share the same network to be able to use the `container_name` as address.
 
 - Host: `http://sonarr:8989`
 - API Key: `API KEY`
 
-## Radarr
+## Radarr {/* #radarr */}
 
 You can run autobrr and Radarr apps on the following setups.
 
@@ -411,7 +411,7 @@ You can run autobrr and Radarr apps on the following setups.
 
 <ArrOverride/>
 
-### Local {#radarr-local}
+### Local {/* #radarr-local */}
 
 For a local client, meaning autobrr and Radarr **on the same server** then this should work.
 
@@ -422,7 +422,7 @@ On **Swizzin** or if you are running Radarr with a baseUrl set that in the url a
 
 - Host: `http://127.0.0.1:7878/radarr`
 
-### Remote {#radarr-local}
+### Remote {/* #radarr-local */}
 
 For a remote client, meaning autobrr and Radarr are **not on the same server** then things might be a bit different.
 
@@ -433,21 +433,21 @@ On **Swizzin** or if you are running Radarr with a baseUrl set that in the url a
 
 - Host: `https://mydomain.com/radarr`
 
-### Docker {#radarr-docker}
+### Docker {/* #radarr-docker */}
 
 With **Docker** / containers make sure autobrr and Radarr share the same network to be able to use the `container_name` as address.
 
 - Host: `http://radarr:7878`
 - API Key: `API KEY`
 
-## Lidarr
+## Lidarr {/* #lidarr */}
 
 See Radarr and Sonarr but port `8686`.
 
-## Readarr
+## Readarr {/* #readarr */}
 
 See Radarr and Sonarr but port `8787`.
 
-## Whisparr
+## Whisparr {/* #whisparr */}
 
 See Radarr and Sonarr but port `6969`.

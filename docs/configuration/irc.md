@@ -26,7 +26,7 @@ keywords:
 
 IRC stands for Internet Relay Chat. autobrr has its own IRC client built in which lets it monitor the #announce channels without the need for additional software.
 
-## Prerequisites
+## Prerequisites {/* #prerequisites */}
 
 You need a registered nick on most IRC servers to be able to join channels. We will set up a registered user in a few easy steps.
 
@@ -44,7 +44,7 @@ import Indexers from '/snippets/indexers.mdx';
 
 <Indexers/>
 
-### Registering with NickServ
+### Registering with NickServ {/* #registering-with-nickserv */}
 
 When you first open the IRC client it usually tells you to set up your nickname and choose what server to connect to. You should preferably choose the username you use on the tracker(s) you want autobrr to monitor for this.
 
@@ -58,7 +58,7 @@ The e-mail address doesn't have to match either.
 If you do not plan to use grouped nicks (read the next section), make sure to disconnect from the IRC server in your IRC client before attempting to set it up in autobrr.
 :::
 
-### Grouping nicks
+### Grouping nicks {/* #grouping-nicks */}
 
 It is recommended to set up autobrr with a grouped IRC nick since you might want to talk in the other channels in a separate IRC client while autobrr monitors the #announce channel.
 
@@ -74,7 +74,7 @@ NickServ allows you to group two nicks to the same account in a few easy steps:
 
 You have now successfully grouped your nicks and can safely connect autobrr to the IRC network with `username|autodl` while using `username` in another IRC client if you want.
 
-### Getting banned on IRC
+### Getting banned on IRC {/* #getting-banned-on-irc */}
 
 In some rare occurrences your bot might get banned from the IRC network. This can happen if the network suddenly changes how people are allowed to connect for example.
 
@@ -84,7 +84,7 @@ Usually these things can often be resolved by contacting their support. Most tra
 
 You shouldn't need to worry about it, but it's nice now to know what you need to do if that were to happen.
 
-## Setup
+## Setup {/* #setup */}
 
 The initial setup of IRC networks and channels are done during the setup of [indexers](../configuration/indexers.md).
 
@@ -96,7 +96,7 @@ Before setup, make sure you have generated the necessary keys. Some networks hav
 - If NickServ Account is marked `*` as required, that's only used as nick, but supports NickServ auth.
 - The invite command field in `Settings > IRC > Edit network` are pre filled, but you need to add your IRC key. The rest should be left as is.
 
-### Connect commands {#connect-commands}
+### Connect commands {/* #connect-commands */}
 
 The invite/connect command field supports a bit of syntax worth knowing:
 
@@ -104,7 +104,7 @@ The invite/connect command field supports a bit of syntax worth knowing:
 - Any `/msg` in the field is stripped, so both `/msg NickServ IDENTIFY key` and `NickServ IDENTIFY key` work.
 - `/sleep N` (added in v1.76.0) pauses N seconds before the next command, useful for trackers that need a delay between authentication and the invite request. For example: `NickServ IDENTIFY key,/sleep 5,BotName !invite USERNAME IRCKEY`
 
-### Network and channel settings {#network-settings}
+### Network and channel settings {/* #network-settings */}
 
 A few optional settings on the network form in `Settings > IRC > Edit network`:
 
@@ -112,7 +112,7 @@ A few optional settings on the network form in `Settings > IRC > Edit network`:
 - **IRCv3 Bot Mode**: flags autobrr as a bot ([IRCv3 bot mode](https://ircv3.net/specs/extensions/bot-mode)) on networks that support it; ignored when the network does not.
 - Each channel entry accepts an optional **channel password** (join key), needed by a few trackers with keyed announce channels.
 
-:::caution Caution
+:::caution[Caution]
 
 Quite a few indexers use the same network, specifically `irc.p2p-network.net`.
 
@@ -123,7 +123,7 @@ Adding or removing `indexers/networks/channels` can therefore break things.
 
 :::
 
-## Troubleshoot
+## Troubleshoot {/* #troubleshoot */}
 
 If you have any issues with IRC not connecting or staying red then do the following:
 
@@ -133,7 +133,7 @@ If you have any issues with IRC not connecting or staying red then do the follow
 
 There will be a lot of info with Trace logs so you'll have to read carefully. `NickServ` and `SASL` errors are related to auth and could mean you have not registered when it's required, or put in the wrong info.
 
-### Live channel view and re-processing announces {#live-channel-view}
+### Live channel view and re-processing announces {/* #live-channel-view */}
 
 Click a network in `Settings > IRC` to expand its channels with their status (monitoring since / last announce). The **View** button opens a live view of the messages in a channel as they arrive.
 
@@ -143,7 +143,7 @@ autobrr uses the **Auth Mechanism** `SASL` by default. Some networks does not su
 
 If you need some assistance then the best way to get help is [Discord](https://discord.autobrr.com/).
 
-## Bouncing around (optional)
+## Bouncing around (optional) {/* #bouncing-around-optional */}
 
 :::warning
 
@@ -153,7 +153,7 @@ This is meant for advanced users or those that need a single irc connection for 
 
 Due the current way of the release-parsing pipeline works, you may want to use a dedicated autobrr instance for your downloader. For this purpose, having a IRC bouncer in front will be beneficial, as it enables you to use the same irc-bot account for multiple autobrr instances. This still require you to have gone trough the above steps of setting up a bot account.
 
-### Setting up ZNC
+### Setting up ZNC {/* #setting-up-znc */}
 
 :::info
 
@@ -197,7 +197,7 @@ Next up you want to add the server for this network, under the `Servers of this 
 
 You may need to enable some modules for the network based on the networks setup. You usually need either the [SASL](https://wiki.znc.in/Sasl) or [NickServ](https://wiki.znc.in/Nickserv) module. There is currently no way based on the definition to tell if a network supports SASL, so you might need to resort to NickServ. There is no reason to set up channels here, as autobrr will join the one specified in the definition (or send the private message needed), like it would without the bouncer.
 
-#### Enabling SSL
+#### Enabling SSL {/* #enabling-ssl */}
 
 While this is not required, it might be easier to get going than you think. This section is based on already having Linuxserver´s SWAG generating a certificate for `znc.mydomain.com`, while keeping all traffic between containers inside the same docker network.
 
@@ -225,7 +225,7 @@ SSLDHParamFile = /swag-ssl/letsencrypt/live/<mydomain.com>/fullchain.pem
 SSLKeyFile = /swag-ssl/letsencrypt/live/<mydomain.com>/privkey.pem
 ```
 
-### Prepare the network
+### Prepare the network {/* #prepare-the-network */}
 
 While the SASL module offers a way to configure it in the webui, doing it over irc was easier, as you would need to do so for NickServ if SASL failed.
 
@@ -233,7 +233,7 @@ Connect to the network you set up in ZNC with your favorite client, like mention
 
 Once connected to the ZNC network, you need to set up authentication.
 
-#### SASL
+#### SASL {/* #sasl */}
 
 You can set up SASL by telling it about your bot username and password.
 
@@ -249,7 +249,7 @@ SASL is only negotiated on connection, so you need to tell ZNC to do a reconnect
 
 If you are still not authenticated with the bot username, you need to use NickServ.
 
-#### NickServ
+#### NickServ {/* #nickserv */}
 
 To tell the module about your password, you use almost the same command as with SASL
 
@@ -259,7 +259,7 @@ To tell the module about your password, you use almost the same command as with 
 
 At this point you can disable/unload the module for the authentication method you are not using.
 
-### Using the bouncer in Autobrr
+### Using the bouncer in Autobrr {/* #using-the-bouncer-in-autobrr */}
 
 You tell autobrr to use the bouncer by toggling the `Bouncer (BNC)` switch in the IRC settings, this presents you with a field to enter the address of the bouncer, in `HOST:PORT` format, where host can be ip or a domain. You also need to to fill the password for the network with the same scheme(`admin/AlphaRatio:admin`) as you did when you connected your client to the bouncer.
 Once you save these changes, you should now be able to confirm that the bouncer network is used, by looking at your network list in ZNC, it should now have increased the numbers of clients on the network.

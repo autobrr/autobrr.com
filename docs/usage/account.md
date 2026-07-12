@@ -9,7 +9,7 @@ pagination_label: Account
 
 ## Changing Username and Password
 
-:::info Heads up!
+:::info[Heads up!]
 You will have to log in again after saving any changes here.
 :::
 

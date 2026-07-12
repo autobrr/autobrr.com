@@ -6,11 +6,11 @@ description: 3rd party tools that can be used with autobrr.
 keywords: [cross-seed, qui, autobrr]
 ---
 
-:::tip Using qBittorrent?
+:::tip[Using qBittorrent?]
 If you run qBittorrent, check out [qui](https://getqui.com), our multi-instance qBittorrent WebUI with first party cross-seed support. It integrates directly with autobrr and needs no extra daemon or config; see [Cross-seed with qui](../filters/cross-seed-qui.md).
 :::
 
-:::info Heads up
+:::info[Heads up]
 
 This is meant for advanced users. If you're not familiar with cross-seed already, we suggest you read their [documentation](https://cross-seed.org) before you continue.
 
@@ -20,11 +20,11 @@ Don't expect any support for setting this up. If you need help setting up cross-
 
 With this setup you can use autobrr with [cross-seed](https://github.com/cross-seed/cross-seed) to automatically cross-seed newly announced torrents from indexer Y that matches existing torrents in your torrent client from indexer X.
 
-### Install cross-seed {#cross-seed-install}
+### Install cross-seed {/* #cross-seed-install */}
 
 See [cross-seed's documentation](https://www.cross-seed.org/docs/basics/getting-started) on how to get started.
 
-### Create the cross-seed filter in autobrr {#cross-seed-filter}
+### Create the cross-seed filter in autobrr {/* #cross-seed-filter */}
 
 The way this works is you create a filter with a higher priority set than any other filter to make sure every cross-seed match is forwarded to the cross-seed daemon instead of being run through other filters.
 
@@ -62,6 +62,6 @@ The way this works is you create a filter with a higher priority set than any ot
 6. Go to the `Actions` tab and create a Test action. This is required for the webhook to work.
 7. Finally, make sure the filter is enabled and you're all set.
 
-:::tip Cross-seed notifications
+:::tip[Cross-seed notifications]
 You can set up a Notifiarr or Apprise webhook for cross-seed notifications within the cross-seed config.
 :::
