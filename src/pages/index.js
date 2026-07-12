@@ -514,6 +514,97 @@ function Install() {
   );
 }
 
+const FOOTER_COLUMNS = [
+  {
+    heading: "Docs",
+    links: [
+      { label: "Introduction", to: "/introduction" },
+      { label: "Quick start", to: "/quick-start" },
+      { label: "Installation", to: "/installation/intro" },
+      { label: "Filters", to: "/filters" },
+      { label: "FAQ", to: "/faqs" },
+    ],
+  },
+  {
+    heading: "Project",
+    links: [
+      { label: "GitHub", href: "https://github.com/autobrr/autobrr" },
+      { label: "Release notes", to: "/release-notes" },
+      { label: "API", to: "/api" },
+      { label: "Contributing", to: "/contributing" },
+    ],
+  },
+  {
+    heading: "Community",
+    links: [
+      { label: "Discord", href: "https://discord.autobrr.com" },
+      {
+        label: "Report a bug",
+        href: "https://github.com/autobrr/autobrr/issues",
+      },
+      {
+        label: "Edit these docs",
+        href: "https://github.com/autobrr/autobrr.com",
+      },
+    ],
+  },
+];
+
+function FooterLink({ link }) {
+  if (link.to) {
+    return (
+      <Link className={styles.footerLink} to={link.to}>
+        {link.label}
+      </Link>
+    );
+  }
+  return (
+    <a
+      className={styles.footerLink}
+      href={link.href}
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      {link.label}
+    </a>
+  );
+}
+
+function Footer() {
+  return (
+    <footer className={styles.footer}>
+      <div className="container">
+        <div className={styles.footerGrid}>
+          <div className={styles.footerBrand}>
+            <p className={styles.footerBrandName}>autobrr</p>
+            <p className={styles.footerBlurb}>
+              Open source, self-hosted release automation: from the
+              announce channel to your download client.
+            </p>
+          </div>
+          {FOOTER_COLUMNS.map((column) => (
+            <nav key={column.heading} aria-label={column.heading}>
+              <p className={styles.footerHeading}>{column.heading}</p>
+              <ul className={styles.footerList}>
+                {column.links.map((link) => (
+                  <li key={link.label}>
+                    <FooterLink link={link} />
+                  </li>
+                ))}
+              </ul>
+            </nav>
+          ))}
+        </div>
+        <div className={styles.footerBottom}>
+          <p className={styles.footerMeta}>
+            © {new Date().getFullYear()} autobrr contributors
+          </p>
+        </div>
+      </div>
+    </footer>
+  );
+}
+
 export default function Home() {
   const { siteConfig } = useDocusaurusContext();
 
@@ -530,6 +621,7 @@ export default function Home() {
         <Stack />
         <Install />
       </main>
+      <Footer />
     </Layout>
   );
 }
