@@ -9,6 +9,9 @@ pagination_label: Filters - External
 pagination_next: filters/actions
 ---
 
+import ExternalScript from '/snippets/diagrams/external-script.mdx';
+import ExternalWebhookQui from '/snippets/diagrams/external-webhook-qui.mdx';
+
 # External
 
 With external filters you can run `scripts` and `webhooks` to do your own custom filtering. If **Expected exit status** matches it will continue. If not it stops there.
@@ -21,6 +24,10 @@ We have a separate repo for community scripts created by our users. https://gith
 
 Run external script that does something. Use `exit codes` correctly, like `exit 0` for no issues. In Linux, non-zero exit codes are considered not-ok/error etc.
 
+External filters run after the filter's own checks have passed, so your script only sees releases that already matched:
+
+<ExternalScript/>
+
 See [stop if disk is full](../usage/tips.md#stop-if-disk-is-full) for a good example of what it can do.
 
 | Field                    | Description           | Examples                                                       |
@@ -32,6 +39,10 @@ See [stop if disk is full](../usage/tips.md#stop-if-disk-is-full) for a good exa
 ### Webhook
 
 Send a payload to some custom API and do more processing. Use status codes to trigger different behaviours.
+
+A real-world example is [cross-seeding with qui](./cross-seed-qui.md), where the API's status code decides between cross-seeding now, retrying later, or rejecting:
+
+<ExternalWebhookQui/>
 
 | Field                         | Description                                                                  | Examples                                  |
 | ----------------------------- | ---------------------------------------------------------------------------- | ----------------------------------------- |

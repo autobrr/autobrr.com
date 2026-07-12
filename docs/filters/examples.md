@@ -22,6 +22,8 @@ sidebar_label: Examples
 pagination_label: Filters - Examples
 ---
 
+import ReleaseAnatomySports from '/snippets/diagrams/release-anatomy-sports.mdx';
+
 # Examples
 
 Here are some example filters that can be useful.
@@ -147,6 +149,43 @@ If you **DON'T WANT ANY HDR** formats
 :::caution
 Selecting only `HDR` and `DV` misses dual-format releases like `DV HDR10`, which only match the combined options (`DV HDR`, `DV HDR10`, `DV HDR10+`). Select all is the safe choice; narrow it down only if you know which formats your indexer announces.
 :::
+
+## Matching specific titles {#matching-specific-titles}
+
+The **Movies / Shows** field on the [TV & Movies](./tv-movies.md) tab matches against the parsed title of the release, and supports the usual wildcards: `*` for zero or more characters, `?` for exactly one. Matching is case-insensitive and must cover the whole title, so add `*` when you only know part of it.
+
+| Pattern      | Matches                                        | Doesn't match             |
+| ------------ | ---------------------------------------------- | ------------------------- |
+| `The?Batman` | `The Batman`, `The.Batman`                     | `The Batmans`, `TheBatman` |
+| `Dune*`      | `Dune`, `Dune Part Two`                        | `The Dune Chronicles`     |
+| `*office*`   | `The Office`, `Office Space`                   |                           |
+| `Severance`  | `Severance` (exact title only)                 | `Severance US`            |
+
+:::tip
+Prefixes match more than you might expect: `Dune*` also matches a title like `Dunes`. When two titles collide, add the year or a separator, e.g. `Dune?Part*`.
+:::
+
+## Sports {#sports}
+
+Sports releases parse differently from movies and TV. The league or competition becomes the **title**, while the round, event and session end up in the **sub-title**, and there is no filter field for the sub-title:
+
+<ReleaseAnatomySports/>
+
+This means a `Shows` value of `Formula 1` matches every F1 release: practice, qualifying and race alike. To narrow down to specific sessions, use **Match releases** on the [Advanced](./advanced.md#releases) tab, which matches against the whole release name. It matches substrings even without wildcards, and a comma-separated list works as OR:
+
+| Field          | Values                                                        |
+| -------------- | ------------------------------------------------------------- |
+| Shows          | `Formula 1`                                                    |
+| Resolutions    | [1080p]                                                        |
+| Match releases | `Formula*1*Race*1080p*, Formula*1*Qualifying*1080p*`           |
+
+This would match `Formula.1.2023.Round.01.BahrainGP.Race.F1.Live.1080p.SS` and the qualifying equivalent, but skip practice sessions. The same pattern works for other sports:
+
+| Sport    | Match releases                              |
+| -------- | ------------------------------------------- |
+| UFC      | `UFC*PPV*1080p*, UFC*Prelims*1080p*`        |
+| Football | `*Premier*League*1080p*`                    |
+| MotoGP   | `MotoGP*Race*1080p*`                        |
 
 ## Build buffer
 

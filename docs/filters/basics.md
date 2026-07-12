@@ -10,10 +10,43 @@ pagination_next: filters/tv-movies
 ---
 
 import ConvertAutodlFilter from '/snippets/convert-autodl-filter.mdx';
+import FilterMatch from '/snippets/diagrams/filter-match.mdx';
+import FilterReject from '/snippets/diagrams/filter-reject.mdx';
+import FilterRejectGroup from '/snippets/diagrams/filter-reject-group.mdx';
+import FilterOrder from '/snippets/diagrams/filter-order.mdx';
+import FilterOrderFlow from '/snippets/diagrams/filter-order-flow.mdx';
 
 # Filters
 
 <ConvertAutodlFilter />
+
+## How a filter is evaluated {#how-a-filter-is-evaluated}
+
+Every field you set in a filter must match for a release to be approved; fields you leave empty are skipped entirely. A typical TV filter checks a handful of fields against the parsed release name:
+
+<FilterMatch/>
+
+If any single check fails, the release is rejected. Rejected releases don't show up on the Releases page; only releases that matched a filter do. To see why something was skipped, check the logs with log level `DEBUG`:
+
+<FilterReject/>
+
+The `Except` fields work the other way around: a match there is a reason to reject. Here the release passes every quality check, but its group is on the filter's except list:
+
+<FilterRejectGroup/>
+
+### Check order {#check-order}
+
+Checks run from cheap to expensive, and a failure at any step stops the rest:
+
+<FilterOrder/>
+
+The regular fields are checked first, against what the announce itself contains. The gold steps only run when your filter needs a value the announce didn't include: if you set size limits and the indexer doesn't announce size, autobrr fetches it out of band, via the indexer's API where available, or by downloading the .torrent file as a last resort. The same applies to uploader and record label checks on API-enabled indexers. [External filters](./external.md) always run last, so your scripts and webhooks are only called for releases that already passed everything else.
+
+The same order as a flowchart; every reject path ends the same way, only a release that clears every step reaches the actions:
+
+<FilterOrderFlow/>
+
+---
 
 Most fields can take a comma-separated list like `value1, value2`.
 

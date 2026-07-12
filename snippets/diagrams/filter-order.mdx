@@ -1,0 +1,59 @@
+<svg
+  viewBox="0 0 1000 170"
+  role="img"
+  aria-label="The order filter checks run in: first the filter's own fields, then smart episode, then duplicate profiles, then the out-of-band size check via API or torrent download when the announce lacked a size, then uploader and record label API checks, and external scripts and webhooks last"
+  style={{ width: "100%", height: "auto", maxWidth: "920px", display: "block", margin: "1.5rem auto" }}
+  fontFamily="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace"
+>
+  <defs>
+    <marker id="fo-slate" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="var(--slate-8)" />
+    </marker>
+  </defs>
+
+  <rect x="16" y="40" width="140" height="90" rx="9" fill="var(--slate-1)" stroke="var(--slate-7)" />
+  <text x="86" y="66" textAnchor="middle" fontSize="10" fontWeight="700" fill="var(--blue-10)">01</text>
+  <text x="86" y="88" textAnchor="middle" fontSize="11.5" fontWeight="700" fill="var(--slate-12)">FIELDS</text>
+  <text x="86" y="108" textAnchor="middle" fontSize="9.5" fill="var(--slate-11)">everything set</text>
+  <text x="86" y="121" textAnchor="middle" fontSize="9.5" fill="var(--slate-11)">on the filter</text>
+
+  <path d="M 156 85 L 176 85" fill="none" stroke="var(--slate-8)" strokeWidth="1.5" markerEnd="url(#fo-slate)" />
+
+  <rect x="180" y="40" width="140" height="90" rx="9" fill="var(--slate-1)" stroke="var(--slate-7)" />
+  <text x="250" y="66" textAnchor="middle" fontSize="10" fontWeight="700" fill="var(--blue-10)">02</text>
+  <text x="250" y="88" textAnchor="middle" fontSize="11.5" fontWeight="700" fill="var(--slate-12)">SMART EPISODE</text>
+  <text x="250" y="108" textAnchor="middle" fontSize="9.5" fill="var(--slate-11)">newer than</text>
+  <text x="250" y="121" textAnchor="middle" fontSize="9.5" fill="var(--slate-11)">last seen?</text>
+
+  <path d="M 320 85 L 340 85" fill="none" stroke="var(--slate-8)" strokeWidth="1.5" markerEnd="url(#fo-slate)" />
+
+  <rect x="344" y="40" width="140" height="90" rx="9" fill="var(--slate-1)" stroke="var(--slate-7)" />
+  <text x="414" y="66" textAnchor="middle" fontSize="10" fontWeight="700" fill="var(--blue-10)">03</text>
+  <text x="414" y="88" textAnchor="middle" fontSize="11.5" fontWeight="700" fill="var(--slate-12)">DUPLICATES</text>
+  <text x="414" y="108" textAnchor="middle" fontSize="9.5" fill="var(--slate-11)">release</text>
+  <text x="414" y="121" textAnchor="middle" fontSize="9.5" fill="var(--slate-11)">profiles</text>
+
+  <path d="M 484 85 L 504 85" fill="none" stroke="var(--slate-8)" strokeWidth="1.5" markerEnd="url(#fo-slate)" />
+
+  <rect x="508" y="40" width="140" height="90" rx="9" fill="var(--slate-1)" stroke="var(--gold-8)" />
+  <text x="578" y="66" textAnchor="middle" fontSize="10" fontWeight="700" fill="var(--gold-11)">04</text>
+  <text x="578" y="88" textAnchor="middle" fontSize="11.5" fontWeight="700" fill="var(--slate-12)">SIZE</text>
+  <text x="578" y="108" textAnchor="middle" fontSize="9.5" fill="var(--slate-11)">API or .torrent</text>
+  <text x="578" y="121" textAnchor="middle" fontSize="9.5" fill="var(--slate-11)">if not announced</text>
+
+  <path d="M 648 85 L 668 85" fill="none" stroke="var(--slate-8)" strokeWidth="1.5" markerEnd="url(#fo-slate)" />
+
+  <rect x="672" y="40" width="140" height="90" rx="9" fill="var(--slate-1)" stroke="var(--gold-8)" />
+  <text x="742" y="66" textAnchor="middle" fontSize="10" fontWeight="700" fill="var(--gold-11)">05</text>
+  <text x="742" y="88" textAnchor="middle" fontSize="11.5" fontWeight="700" fill="var(--slate-12)">UPLOADER</text>
+  <text x="742" y="108" textAnchor="middle" fontSize="9.5" fill="var(--slate-11)">uploader / label</text>
+  <text x="742" y="121" textAnchor="middle" fontSize="9.5" fill="var(--slate-11)">via API</text>
+
+  <path d="M 812 85 L 832 85" fill="none" stroke="var(--slate-8)" strokeWidth="1.5" markerEnd="url(#fo-slate)" />
+
+  <rect x="836" y="40" width="140" height="90" rx="9" fill="var(--slate-1)" stroke="var(--slate-7)" />
+  <text x="906" y="66" textAnchor="middle" fontSize="10" fontWeight="700" fill="var(--blue-10)">06</text>
+  <text x="906" y="88" textAnchor="middle" fontSize="11.5" fontWeight="700" fill="var(--slate-12)">EXTERNAL</text>
+  <text x="906" y="108" textAnchor="middle" fontSize="9.5" fill="var(--slate-11)">scripts</text>
+  <text x="906" y="121" textAnchor="middle" fontSize="9.5" fill="var(--slate-11)">webhooks</text>
+</svg>

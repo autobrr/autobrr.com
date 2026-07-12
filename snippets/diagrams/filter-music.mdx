@@ -1,0 +1,53 @@
+<svg
+  viewBox="0 0 1000 210"
+  role="img"
+  aria-label="Diagram of a music filter approving a release: the announced album passes the format, quality, media and release type checks and is pushed to qBittorrent"
+  style={{ width: "100%", height: "auto", maxWidth: "920px", display: "block", margin: "1.5rem auto" }}
+  fontFamily="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace"
+>
+  <defs>
+    <marker id="mu-slate" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="var(--slate-8)" />
+    </marker>
+    <marker id="mu-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="var(--green-9)" />
+    </marker>
+  </defs>
+
+  {/* announced release */}
+  <rect x="64" y="18" width="924" height="52" rx="9" fill="var(--slate-2)" stroke="var(--slate-7)" />
+  <text x="526" y="41" textAnchor="middle" fontSize="13.5" fontWeight="600" fill="var(--slate-12)">Vantablack Choir - Hymns for Empty Rooms [2025] [FLAC / Lossless / Log / CD]</text>
+  <text x="526" y="59" textAnchor="middle" fontSize="10.5" fill="var(--slate-10)">announced in #announce · filter: Music FLAC</text>
+
+  <path d="M 143 70 L 143 104" fill="none" stroke="var(--slate-8)" strokeWidth="1.5" markerEnd="url(#mu-slate)" />
+
+  {/* condition chips */}
+  <rect x="64" y="108" width="158" height="72" rx="9" fill="var(--slate-1)" stroke="var(--green-6)" />
+  <text x="143" y="136" textAnchor="middle" fontSize="9.5" fontWeight="700" letterSpacing="0.08em" fill="var(--slate-10)">FORMAT</text>
+  <text x="143" y="160" textAnchor="middle" fontSize="13" fontWeight="600" fill="var(--green-11)">FLAC ✓</text>
+
+  <path d="M 222 144 L 250 144" fill="none" stroke="var(--slate-8)" strokeWidth="1.5" markerEnd="url(#mu-slate)" />
+
+  <rect x="256" y="108" width="158" height="72" rx="9" fill="var(--slate-1)" stroke="var(--green-6)" />
+  <text x="335" y="136" textAnchor="middle" fontSize="9.5" fontWeight="700" letterSpacing="0.08em" fill="var(--slate-10)">QUALITY</text>
+  <text x="335" y="160" textAnchor="middle" fontSize="13" fontWeight="600" fill="var(--green-11)">Lossless ✓</text>
+
+  <path d="M 414 144 L 442 144" fill="none" stroke="var(--slate-8)" strokeWidth="1.5" markerEnd="url(#mu-slate)" />
+
+  <rect x="448" y="108" width="158" height="72" rx="9" fill="var(--slate-1)" stroke="var(--green-6)" />
+  <text x="527" y="136" textAnchor="middle" fontSize="9.5" fontWeight="700" letterSpacing="0.08em" fill="var(--slate-10)">MEDIA</text>
+  <text x="527" y="160" textAnchor="middle" fontSize="13" fontWeight="600" fill="var(--green-11)">CD ✓</text>
+
+  <path d="M 606 144 L 634 144" fill="none" stroke="var(--slate-8)" strokeWidth="1.5" markerEnd="url(#mu-slate)" />
+
+  <rect x="640" y="108" width="158" height="72" rx="9" fill="var(--slate-1)" stroke="var(--green-6)" />
+  <text x="719" y="136" textAnchor="middle" fontSize="9.5" fontWeight="700" letterSpacing="0.08em" fill="var(--slate-10)">MUSIC TYPE</text>
+  <text x="719" y="160" textAnchor="middle" fontSize="13" fontWeight="600" fill="var(--green-11)">Album ✓</text>
+
+  <path d="M 798 144 L 826 144" fill="none" stroke="var(--green-9)" strokeWidth="1.7" markerEnd="url(#mu-green)" />
+
+  {/* outcome */}
+  <rect x="832" y="108" width="156" height="72" rx="9" fill="var(--green-3)" stroke="var(--green-9)" />
+  <text x="910" y="139" textAnchor="middle" fontSize="14" fontWeight="700" fill="var(--green-11)">Match ✓</text>
+  <text x="910" y="160" textAnchor="middle" fontSize="10.5" fill="var(--green-11)">qBittorrent</text>
+</svg>

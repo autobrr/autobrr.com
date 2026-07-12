@@ -9,10 +9,17 @@ pagination_label: Filters - Music
 pagination_next: filters/advanced
 ---
 import ConvertAutodlFilter from '/snippets/convert-autodl-filter.mdx';
+import FilterMusic from '/snippets/diagrams/filter-music.mdx';
 
 # Music
 
 <ConvertAutodlFilter />
+
+A typical music filter checks the announced format, quality, media and release type; every field you set must match, and fields you leave empty are skipped:
+
+<FilterMusic/>
+
+---
 
 Most fields can take a comma-separated list like `value1, value2`.
 

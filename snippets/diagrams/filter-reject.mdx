@@ -1,0 +1,53 @@
+<svg
+  viewBox="0 0 1000 210"
+  role="img"
+  aria-label="Diagram of a movie filter rejecting a release: the announced release passes the resolution, HDR and year checks but exceeds the max size limit and is rejected"
+  style={{ width: "100%", height: "auto", maxWidth: "920px", display: "block", margin: "1.5rem auto" }}
+  fontFamily="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace"
+>
+  <defs>
+    <marker id="fr-slate" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="var(--slate-8)" />
+    </marker>
+    <marker id="fr-red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="var(--red-9)" />
+    </marker>
+  </defs>
+
+  {/* announced release */}
+  <rect x="64" y="18" width="924" height="52" rx="9" fill="var(--slate-2)" stroke="var(--slate-7)" />
+  <text x="526" y="41" textAnchor="middle" fontSize="13.5" fontWeight="600" fill="var(--slate-12)">Paper.Lanterns.2022.2160p.BluRay.x265.DV-KOI · 109.5 GB</text>
+  <text x="526" y="59" textAnchor="middle" fontSize="10.5" fill="var(--slate-10)">announced in #announce · filter: Movies 4K HDR (max size 90 GB)</text>
+
+  <path d="M 143 70 L 143 104" fill="none" stroke="var(--slate-8)" strokeWidth="1.5" markerEnd="url(#fr-slate)" />
+
+  {/* condition chips */}
+  <rect x="64" y="108" width="158" height="72" rx="9" fill="var(--slate-1)" stroke="var(--green-6)" />
+  <text x="143" y="136" textAnchor="middle" fontSize="9.5" fontWeight="700" letterSpacing="0.08em" fill="var(--slate-10)">RESOLUTION</text>
+  <text x="143" y="160" textAnchor="middle" fontSize="13" fontWeight="600" fill="var(--green-11)">2160p ✓</text>
+
+  <path d="M 222 144 L 250 144" fill="none" stroke="var(--slate-8)" strokeWidth="1.5" markerEnd="url(#fr-slate)" />
+
+  <rect x="256" y="108" width="158" height="72" rx="9" fill="var(--slate-1)" stroke="var(--green-6)" />
+  <text x="335" y="136" textAnchor="middle" fontSize="9.5" fontWeight="700" letterSpacing="0.08em" fill="var(--slate-10)">HDR</text>
+  <text x="335" y="160" textAnchor="middle" fontSize="13" fontWeight="600" fill="var(--green-11)">DV ✓</text>
+
+  <path d="M 414 144 L 442 144" fill="none" stroke="var(--slate-8)" strokeWidth="1.5" markerEnd="url(#fr-slate)" />
+
+  <rect x="448" y="108" width="158" height="72" rx="9" fill="var(--slate-1)" stroke="var(--green-6)" />
+  <text x="527" y="136" textAnchor="middle" fontSize="9.5" fontWeight="700" letterSpacing="0.08em" fill="var(--slate-10)">YEAR</text>
+  <text x="527" y="160" textAnchor="middle" fontSize="13" fontWeight="600" fill="var(--green-11)">2022 ✓</text>
+
+  <path d="M 606 144 L 634 144" fill="none" stroke="var(--slate-8)" strokeWidth="1.5" markerEnd="url(#fr-slate)" />
+
+  <rect x="640" y="108" width="158" height="72" rx="9" fill="var(--slate-1)" stroke="var(--red-6)" />
+  <text x="719" y="136" textAnchor="middle" fontSize="9.5" fontWeight="700" letterSpacing="0.08em" fill="var(--slate-10)">MAX SIZE</text>
+  <text x="719" y="160" textAnchor="middle" fontSize="13" fontWeight="600" fill="var(--red-11)">109.5 GB ✗</text>
+
+  <path d="M 798 144 L 826 144" fill="none" stroke="var(--red-9)" strokeWidth="1.7" markerEnd="url(#fr-red)" />
+
+  {/* outcome */}
+  <rect x="832" y="108" width="156" height="72" rx="9" fill="var(--red-3)" stroke="var(--red-9)" />
+  <text x="910" y="139" textAnchor="middle" fontSize="14" fontWeight="700" fill="var(--red-11)">Rejected ✗</text>
+  <text x="910" y="160" textAnchor="middle" fontSize="10.5" fill="var(--red-11)">size over limit</text>
+</svg>

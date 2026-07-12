@@ -1,0 +1,34 @@
+<svg
+  viewBox="0 0 1000 200"
+  role="img"
+  aria-label="Diagram of a download client action: a matched filter runs its qBittorrent action, which adds the torrent to the client with the configured category and save path"
+  style={{ width: "100%", height: "auto", maxWidth: "920px", display: "block", margin: "1.5rem auto" }}
+  fontFamily="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace"
+>
+  <defs>
+    <marker id="ac-slate" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="var(--slate-8)" />
+    </marker>
+    <marker id="ac-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="var(--green-9)" />
+    </marker>
+  </defs>
+
+  <rect x="40" y="64" width="180" height="72" rx="9" fill="var(--slate-1)" stroke="var(--green-6)" />
+  <text x="130" y="92" textAnchor="middle" fontSize="13" fontWeight="600" fill="var(--slate-12)">Filter</text>
+  <text x="130" y="114" textAnchor="middle" fontSize="10.5" fill="var(--green-11)">Music FLAC ✓</text>
+
+  <path d="M 220 100 L 264 100" fill="none" stroke="var(--slate-8)" strokeWidth="1.5" markerEnd="url(#ac-slate)" />
+
+  <rect x="270" y="60" width="340" height="80" rx="9" fill="var(--slate-1)" stroke="var(--slate-7)" />
+  <text x="440" y="85" textAnchor="middle" fontSize="9.5" fontWeight="700" letterSpacing="0.08em" fill="var(--slate-10)">ACTION · QBITTORRENT</text>
+  <text x="440" y="106" textAnchor="middle" fontSize="12.5" fontWeight="600" fill="var(--slate-12)">qBittorrent music</text>
+  <text x="440" y="125" textAnchor="middle" fontSize="10.5" fill="var(--slate-11)">category: music · /data/torrents/music</text>
+
+  <path d="M 610 100 L 684 100" fill="none" stroke="var(--green-9)" strokeWidth="1.7" markerEnd="url(#ac-green)" />
+  <text x="647" y="88" textAnchor="middle" fontSize="10.5" fill="var(--green-11)">push</text>
+
+  <rect x="690" y="64" width="270" height="72" rx="9" fill="var(--green-3)" stroke="var(--green-9)" />
+  <text x="825" y="92" textAnchor="middle" fontSize="13.5" fontWeight="700" fill="var(--green-11)">qBittorrent ✓</text>
+  <text x="825" y="114" textAnchor="middle" fontSize="10.5" fill="var(--green-11)">torrent added · downloading</text>
+</svg>

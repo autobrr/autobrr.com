@@ -41,6 +41,12 @@ Next you'll set a **Trigger** which we want to start as soon as we **login to th
 
 Our Action will be to **Start a Program** and we'll set our path to the autobrr.exe. Just click **Browse** and navigate to where you put your **autobrr.exe**
 
+:::caution Don't skip "Start in"
+Set **Start in (optional)** to the folder autobrr lives in, e.g. `C:\autobrr`. It is not actually optional for autobrr: without it, Windows starts the task in `C:\Windows\System32`, and autobrr creates and reads its `config.toml` and database **there** instead of in your autobrr folder. This is the most common cause of autobrr "losing" its settings or asking you to register again after a reboot.
+
+Alternatively, put `--config C:\autobrr` in **Add arguments (optional)**, which points autobrr at the right folder no matter where the task starts.
+:::
+
 <img src={useBaseUrl('/img/d.%20action.png')} />
 
 <img src={useBaseUrl('/img/task_action.png')} />
@@ -49,7 +55,7 @@ Our final step is to **Run whether user is logged on or not** After you set this
 
 <img src={useBaseUrl('/img/f.%20properties.png')} />
 
-And we're done, a Windows Service has been created. Now right click on autobrr in the list and click **Run.**
+And we're done, the scheduled task has been created (you'll find it in Task Scheduler, not in the Windows Services list). Now right click on autobrr in the list and click **Run.**
 
 <img src={useBaseUrl('/img/g.%20service%20created.png')} />
 
@@ -67,4 +73,8 @@ Please see the **Reverse proxy** section for reverse proxy configuration example
 
 ## Finishing up
 
-Now that autobrr is up and running, you should be able to visit the your web UI at [http://localhost:7474](http://localhost:7474), `http://YOUR_LOCAL_IP:7474` or `http://domain.ltd:7474` and proceed with your registration/login.
+Now that autobrr is up and running, you should be able to visit your web UI at [http://localhost:7474](http://localhost:7474), `http://YOUR_LOCAL_IP:7474` or `http://domain.tld:7474` and proceed with your registration/login.
+
+:::info
+If the web UI asks you to register again after a restart, or your settings seem to be gone, the task is almost certainly running without **Start in** set; see [the caution above](#create-windows-task).
+:::

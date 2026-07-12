@@ -1,0 +1,41 @@
+<svg
+  viewBox="0 0 1000 250"
+  role="img"
+  aria-label="Diagram of the qBittorrent re-announce action: the torrent is added, and while the tracker is not ready yet autobrr re-announces every few seconds until the torrent is working and racing in the initial swarm"
+  style={{ width: "100%", height: "auto", maxWidth: "920px", display: "block", margin: "1.5rem auto" }}
+  fontFamily="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace"
+>
+  <defs>
+    <marker id="ar-slate" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="var(--slate-8)" />
+    </marker>
+    <marker id="ar-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="var(--green-9)" />
+    </marker>
+    <marker id="ar-gold" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="var(--gold-9)" />
+    </marker>
+  </defs>
+
+  <rect x="40" y="54" width="290" height="80" rx="9" fill="var(--slate-1)" stroke="var(--slate-7)" />
+  <text x="185" y="79" textAnchor="middle" fontSize="9.5" fontWeight="700" letterSpacing="0.08em" fill="var(--slate-10)">ACTION · QBITTORRENT</text>
+  <text x="185" y="100" textAnchor="middle" fontSize="12.5" fontWeight="600" fill="var(--slate-12)">qBittorrent race</text>
+  <text x="185" y="119" textAnchor="middle" fontSize="10.5" fill="var(--slate-11)">re-announce enabled</text>
+
+  <path d="M 330 94 L 384 94" fill="none" stroke="var(--slate-8)" strokeWidth="1.5" markerEnd="url(#ar-slate)" />
+
+  <rect x="390" y="58" width="270" height="72" rx="9" fill="var(--slate-1)" stroke="var(--slate-7)" />
+  <text x="525" y="86" textAnchor="middle" fontSize="13" fontWeight="600" fill="var(--slate-12)">qBittorrent</text>
+  <text x="525" y="108" textAnchor="middle" fontSize="10.5" fill="var(--slate-11)">torrent added · tracker not ready</text>
+
+  {/* re-announce loop */}
+  <path d="M 590 130 C 620 186, 430 186, 460 132" fill="none" stroke="var(--gold-9)" strokeWidth="1.7" markerEnd="url(#ar-gold)" />
+  <text x="525" y="204" textAnchor="middle" fontSize="10.5" fill="var(--gold-11)">not working yet → re-announce every 7s, up to 50×</text>
+
+  <path d="M 660 94 L 714 94" fill="none" stroke="var(--green-9)" strokeWidth="1.7" markerEnd="url(#ar-green)" />
+  <text x="687" y="82" textAnchor="middle" fontSize="10.5" fill="var(--green-11)">tracker OK</text>
+
+  <rect x="720" y="58" width="240" height="72" rx="9" fill="var(--green-3)" stroke="var(--green-9)" />
+  <text x="840" y="86" textAnchor="middle" fontSize="13.5" fontWeight="700" fill="var(--green-11)">Racing ✓</text>
+  <text x="840" y="108" textAnchor="middle" fontSize="10.5" fill="var(--green-11)">in the initial swarm</text>
+</svg>

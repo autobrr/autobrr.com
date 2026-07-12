@@ -51,6 +51,9 @@ keywords:
   ]
 ---
 
+import FlowArr from '/snippets/diagrams/flow-arr.mdx';
+import FlowDirect from '/snippets/diagrams/flow-direct.mdx';
+
 With inspiration and ideas from tools like trackarr, autodl-irssi and flexget we built one tool that can do it all, and then some.
 
 autobrr is the modern download automation tool for torrents.
@@ -67,7 +70,11 @@ Many indexers announce new torrents on their [IRC](./configuration/irc.md) chann
 
 When your autobrr filter is set to send the torrent files to Radarr and Sonarr, they will decide if it's something they want, and then forward it to the torrent client they are set up with.
 
+<FlowArr/>
+
 autobrr can also send matches (torrent files that meets your filter's criteria) directly to torrent clients like qBittorrent, Deluge, r(u)Torrent and Transmission. You don't need to use the \*arr suite to make use of autobrr.
+
+<FlowDirect/>
 
 ### The typical workflow
 

@@ -1,0 +1,52 @@
+<svg
+  viewBox="0 0 1000 290"
+  role="img"
+  aria-label="Flow diagram: IRC announces and feeds go into autobrr, where a filter match triggers an action that pushes the release directly to a download client such as qBittorrent, Deluge, rTorrent or Transmission"
+  style={{ width: "100%", height: "auto", maxWidth: "920px", display: "block", margin: "1.5rem auto" }}
+  fontFamily="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace"
+>
+  <defs>
+    <marker id="dir-slate" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="var(--slate-8)" />
+    </marker>
+    <marker id="dir-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="var(--green-9)" />
+    </marker>
+  </defs>
+
+  {/* sources */}
+  <rect x="16" y="61" width="176" height="68" rx="10" fill="var(--slate-2)" stroke="var(--slate-7)" />
+  <text x="104" y="90" textAnchor="middle" fontSize="14.5" fontWeight="600" fill="var(--slate-12)">IRC announces</text>
+  <text x="104" y="111" textAnchor="middle" fontSize="11" fill="var(--slate-11)">#announce channels</text>
+
+  <rect x="16" y="161" width="176" height="68" rx="10" fill="var(--slate-2)" stroke="var(--slate-7)" />
+  <text x="104" y="190" textAnchor="middle" fontSize="14.5" fontWeight="600" fill="var(--slate-12)">Feeds</text>
+  <text x="104" y="211" textAnchor="middle" fontSize="11" fill="var(--slate-11)">RSS · Torznab · Newznab</text>
+
+  {/* converging arrows into autobrr */}
+  <path d="M 192 95 C 230 95, 222 145, 256 145" fill="none" stroke="var(--slate-8)" strokeWidth="1.5" markerEnd="url(#dir-slate)" />
+  <path d="M 192 195 C 230 195, 222 145, 256 145" fill="none" stroke="var(--slate-8)" strokeWidth="1.5" markerEnd="url(#dir-slate)" />
+
+  {/* autobrr container */}
+  <rect x="258" y="80" width="352" height="130" rx="12" fill="var(--blue-2)" stroke="var(--blue-7)" strokeDasharray="6 4" />
+  <text x="278" y="103" fontSize="11.5" fontWeight="700" letterSpacing="0.08em" fill="var(--blue-11)">AUTOBRR</text>
+
+  <rect x="282" y="116" width="148" height="66" rx="9" fill="var(--slate-1)" stroke="var(--green-6)" />
+  <text x="356" y="144" textAnchor="middle" fontSize="14" fontWeight="600" fill="var(--slate-12)">Filter</text>
+  <text x="356" y="164" textAnchor="middle" fontSize="10.5" fill="var(--green-11)">Freeleech racing ✓</text>
+
+  <path d="M 430 149 L 448 149" fill="none" stroke="var(--slate-8)" strokeWidth="1.5" markerEnd="url(#dir-slate)" />
+
+  <rect x="452" y="116" width="138" height="66" rx="9" fill="var(--slate-1)" stroke="var(--slate-7)" />
+  <text x="521" y="144" textAnchor="middle" fontSize="14" fontWeight="600" fill="var(--slate-12)">Action</text>
+  <text x="521" y="164" textAnchor="middle" fontSize="10.5" fill="var(--slate-11)">qBittorrent race</text>
+
+  {/* push straight to client */}
+  <path d="M 610 145 L 688 145" fill="none" stroke="var(--green-9)" strokeWidth="1.7" markerEnd="url(#dir-green)" />
+  <text x="649" y="133" textAnchor="middle" fontSize="10.5" fill="var(--green-11)">push</text>
+
+  <rect x="692" y="103" width="292" height="84" rx="10" fill="var(--slate-2)" stroke="var(--slate-7)" />
+  <text x="838" y="136" textAnchor="middle" fontSize="14.5" fontWeight="600" fill="var(--slate-12)">Download client</text>
+  <text x="838" y="158" textAnchor="middle" fontSize="10.5" fill="var(--slate-11)">qBittorrent · Deluge · rTorrent</text>
+  <text x="838" y="174" textAnchor="middle" fontSize="10.5" fill="var(--slate-11)">Transmission · watch folder</text>
+</svg>

@@ -7,9 +7,15 @@ keywords:
   [autobrr, setup, indexers, torznab, newznab, torrents, rss, feed, feeds]
 ---
 
+import FeedFlow from '/snippets/diagrams/feed-flow.mdx';
+
 Some indexers does not have an IRC announce channel.
 Luckily, most of them have RSS support.
 You will treat Torznab/Newznab and RSS feeds as regular indexers when setting up your filters.
+
+autobrr polls the feed on an interval, remembers what it has already seen, and runs only the new items through your filters, exactly like an IRC announce:
+
+<FeedFlow/>
 
 ## Torznab / Newznab
 

@@ -1,0 +1,37 @@
+<svg
+  viewBox="0 0 1000 200"
+  role="img"
+  aria-label="Diagram of the Lists feature: autobrr fetches monitored titles from an arr or an external list service and writes them into a connected filter's fields automatically"
+  style={{ width: "100%", height: "auto", maxWidth: "920px", display: "block", margin: "1.5rem auto" }}
+  fontFamily="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace"
+>
+  <defs>
+    <marker id="lf-slate" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="var(--slate-8)" />
+    </marker>
+    <marker id="lf-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="var(--green-9)" />
+    </marker>
+  </defs>
+
+  <rect x="30" y="60" width="230" height="80" rx="9" fill="var(--slate-2)" stroke="var(--slate-7)" />
+  <text x="145" y="90" textAnchor="middle" fontSize="13" fontWeight="600" fill="var(--slate-12)">Source</text>
+  <text x="145" y="110" textAnchor="middle" fontSize="10.5" fill="var(--slate-11)">Radarr · Sonarr · Trakt</text>
+  <text x="145" y="126" textAnchor="middle" fontSize="10.5" fill="var(--slate-11)">MDBList · plaintext · …</text>
+
+  <path d="M 260 100 L 324 100" fill="none" stroke="var(--slate-8)" strokeWidth="1.5" markerEnd="url(#lf-slate)" />
+  <text x="292" y="88" textAnchor="middle" fontSize="10.5" fill="var(--slate-10)">fetch</text>
+
+  <rect x="330" y="56" width="310" height="88" rx="9" fill="var(--blue-2)" stroke="var(--blue-7)" strokeDasharray="6 4" />
+  <text x="485" y="83" textAnchor="middle" fontSize="9.5" fontWeight="700" letterSpacing="0.08em" fill="var(--blue-11)">AUTOBRR · LIST</text>
+  <text x="485" y="106" textAnchor="middle" fontSize="12.5" fontWeight="600" fill="var(--slate-12)">monitored titles</text>
+  <text x="485" y="126" textAnchor="middle" fontSize="10.5" fill="var(--slate-11)">every 6 h · on save · on webhook</text>
+
+  <path d="M 640 100 L 704 100" fill="none" stroke="var(--green-9)" strokeWidth="1.7" markerEnd="url(#lf-green)" />
+  <text x="672" y="88" textAnchor="middle" fontSize="10.5" fill="var(--green-11)">updates</text>
+
+  <rect x="710" y="60" width="260" height="80" rx="9" fill="var(--slate-1)" stroke="var(--green-6)" />
+  <text x="840" y="90" textAnchor="middle" fontSize="13" fontWeight="600" fill="var(--slate-12)">Filter</text>
+  <text x="840" y="110" textAnchor="middle" fontSize="10.5" fill="var(--green-11)">Movies / Shows kept in sync</text>
+  <text x="840" y="126" textAnchor="middle" fontSize="10.5" fill="var(--slate-11)">no manual editing</text>
+</svg>

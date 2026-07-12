@@ -1,0 +1,96 @@
+<svg
+  viewBox="0 0 1000 716"
+  role="img"
+  aria-label="Flowchart of the filter check order: an announced release passes through fields, smart episode, duplicates, size, uploader and external checks in order; failing any check rejects the release, and passing all of them approves it and runs the actions"
+  style={{ width: "100%", height: "auto", maxWidth: "760px", display: "block", margin: "1.5rem auto" }}
+  fontFamily="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace"
+>
+  <defs>
+    <marker id="fof-slate" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="var(--slate-8)" />
+    </marker>
+    <marker id="fof-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="var(--green-9)" />
+    </marker>
+    <marker id="fof-red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="var(--red-9)" />
+    </marker>
+  </defs>
+
+  {/* announced release */}
+  <rect x="170" y="12" width="360" height="48" rx="9" fill="var(--slate-2)" stroke="var(--slate-7)" />
+  <text x="350" y="41" textAnchor="middle" fontSize="12.5" fontWeight="600" fill="var(--slate-12)">New announce</text>
+
+  <path d="M 350 60 L 350 86" fill="none" stroke="var(--slate-8)" strokeWidth="1.5" markerEnd="url(#fof-slate)" />
+
+  {/* 01 fields */}
+  <rect x="170" y="90" width="360" height="56" rx="9" fill="var(--slate-1)" stroke="var(--slate-7)" />
+  <text x="350" y="114" textAnchor="middle" fontSize="11.5" fontWeight="700" fill="var(--slate-12)"><tspan fill="var(--blue-10)">01</tspan> · FIELDS</text>
+  <text x="350" y="132" textAnchor="middle" fontSize="9.5" fill="var(--slate-11)">everything set on the filter</text>
+  <path d="M 530 118 L 694 118" fill="none" stroke="var(--red-9)" strokeWidth="1.5" markerEnd="url(#fof-red)" />
+  <text x="612" y="108" textAnchor="middle" fontSize="10" fill="var(--red-11)">✗</text>
+
+  <path d="M 350 146 L 350 172" fill="none" stroke="var(--green-9)" strokeWidth="1.5" markerEnd="url(#fof-green)" />
+  <text x="366" y="164" fontSize="10" fill="var(--green-11)">✓</text>
+
+  {/* 02 smart episode */}
+  <rect x="170" y="176" width="360" height="56" rx="9" fill="var(--slate-1)" stroke="var(--slate-7)" />
+  <text x="350" y="200" textAnchor="middle" fontSize="11.5" fontWeight="700" fill="var(--slate-12)"><tspan fill="var(--blue-10)">02</tspan> · SMART EPISODE</text>
+  <text x="350" y="218" textAnchor="middle" fontSize="9.5" fill="var(--slate-11)">newer than last seen?</text>
+  <path d="M 530 204 L 694 204" fill="none" stroke="var(--red-9)" strokeWidth="1.5" markerEnd="url(#fof-red)" />
+  <text x="612" y="194" textAnchor="middle" fontSize="10" fill="var(--red-11)">✗</text>
+
+  <path d="M 350 232 L 350 258" fill="none" stroke="var(--green-9)" strokeWidth="1.5" markerEnd="url(#fof-green)" />
+  <text x="366" y="250" fontSize="10" fill="var(--green-11)">✓</text>
+
+  {/* 03 duplicates */}
+  <rect x="170" y="262" width="360" height="56" rx="9" fill="var(--slate-1)" stroke="var(--slate-7)" />
+  <text x="350" y="286" textAnchor="middle" fontSize="11.5" fontWeight="700" fill="var(--slate-12)"><tspan fill="var(--blue-10)">03</tspan> · DUPLICATES</text>
+  <text x="350" y="304" textAnchor="middle" fontSize="9.5" fill="var(--slate-11)">release profiles</text>
+  <path d="M 530 290 L 694 290" fill="none" stroke="var(--red-9)" strokeWidth="1.5" markerEnd="url(#fof-red)" />
+  <text x="612" y="280" textAnchor="middle" fontSize="10" fill="var(--red-11)">✗</text>
+
+  <path d="M 350 318 L 350 344" fill="none" stroke="var(--green-9)" strokeWidth="1.5" markerEnd="url(#fof-green)" />
+  <text x="366" y="336" fontSize="10" fill="var(--green-11)">✓</text>
+
+  {/* 04 size */}
+  <rect x="170" y="348" width="360" height="56" rx="9" fill="var(--slate-1)" stroke="var(--gold-8)" />
+  <text x="350" y="372" textAnchor="middle" fontSize="11.5" fontWeight="700" fill="var(--slate-12)"><tspan fill="var(--gold-11)">04</tspan> · SIZE</text>
+  <text x="350" y="390" textAnchor="middle" fontSize="9.5" fill="var(--slate-11)">API or .torrent · only if not announced</text>
+  <path d="M 530 376 L 694 376" fill="none" stroke="var(--red-9)" strokeWidth="1.5" markerEnd="url(#fof-red)" />
+  <text x="612" y="366" textAnchor="middle" fontSize="10" fill="var(--red-11)">✗</text>
+
+  <path d="M 350 404 L 350 430" fill="none" stroke="var(--green-9)" strokeWidth="1.5" markerEnd="url(#fof-green)" />
+  <text x="366" y="422" fontSize="10" fill="var(--green-11)">✓</text>
+
+  {/* 05 uploader */}
+  <rect x="170" y="434" width="360" height="56" rx="9" fill="var(--slate-1)" stroke="var(--gold-8)" />
+  <text x="350" y="458" textAnchor="middle" fontSize="11.5" fontWeight="700" fill="var(--slate-12)"><tspan fill="var(--gold-11)">05</tspan> · UPLOADER / LABEL</text>
+  <text x="350" y="476" textAnchor="middle" fontSize="9.5" fill="var(--slate-11)">via the indexer API</text>
+  <path d="M 530 462 L 694 462" fill="none" stroke="var(--red-9)" strokeWidth="1.5" markerEnd="url(#fof-red)" />
+  <text x="612" y="452" textAnchor="middle" fontSize="10" fill="var(--red-11)">✗</text>
+
+  <path d="M 350 490 L 350 516" fill="none" stroke="var(--green-9)" strokeWidth="1.5" markerEnd="url(#fof-green)" />
+  <text x="366" y="508" fontSize="10" fill="var(--green-11)">✓</text>
+
+  {/* 06 external */}
+  <rect x="170" y="520" width="360" height="56" rx="9" fill="var(--slate-1)" stroke="var(--slate-7)" />
+  <text x="350" y="544" textAnchor="middle" fontSize="11.5" fontWeight="700" fill="var(--slate-12)"><tspan fill="var(--blue-10)">06</tspan> · EXTERNAL</text>
+  <text x="350" y="562" textAnchor="middle" fontSize="9.5" fill="var(--slate-11)">scripts · webhooks</text>
+  <path d="M 530 548 L 694 548" fill="none" stroke="var(--red-9)" strokeWidth="1.5" markerEnd="url(#fof-red)" />
+  <text x="612" y="538" textAnchor="middle" fontSize="10" fill="var(--red-11)">✗</text>
+
+  <path d="M 350 576 L 350 602" fill="none" stroke="var(--green-9)" strokeWidth="1.7" markerEnd="url(#fof-green)" />
+  <text x="366" y="594" fontSize="10" fill="var(--green-11)">✓</text>
+
+  {/* approved */}
+  <rect x="170" y="606" width="360" height="62" rx="9" fill="var(--green-3)" stroke="var(--green-9)" />
+  <text x="350" y="632" textAnchor="middle" fontSize="13.5" fontWeight="700" fill="var(--green-11)">Approved ✓</text>
+  <text x="350" y="652" textAnchor="middle" fontSize="10.5" fill="var(--green-11)">actions run</text>
+
+  {/* rejected sink */}
+  <rect x="700" y="90" width="270" height="486" rx="9" fill="var(--red-3)" stroke="var(--red-9)" />
+  <text x="835" y="322" textAnchor="middle" fontSize="13.5" fontWeight="700" fill="var(--red-11)">Rejected ✗</text>
+  <text x="835" y="344" textAnchor="middle" fontSize="10.5" fill="var(--red-11)">reason logged</text>
+  <text x="835" y="360" textAnchor="middle" fontSize="10.5" fill="var(--red-11)">at DEBUG log level</text>
+</svg>
