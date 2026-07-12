@@ -1,0 +1,187 @@
+---
+id: seedbox
+sidebar_label: Seedbox
+title: autobrr installation instructions for dedicated seedboxes and shared (non-root) seedbox solutions like giga-rapid, hostingby.design, swizzin.net, ultra.cc, whatbox, seedhost, feralhosting, bytesized-hosting and rapidseedbox.
+keywords:
+  [
+    autobrr,
+    installation,
+    setup,
+    seedbox,
+    shared seedbox,
+    saltbox,
+    quickbox,
+    swizzin,
+    swizzin.net,
+    sbio,
+    seedbox.io,
+    ultra,
+    ultra.cc,
+    whatbox,
+    whatbox.ca,
+    seedhost,
+    seedhost.eu,
+    giga-rapid,
+    giga-rapid.com,
+    hostingby.design,
+    hostingbydesign,
+    hbd,
+    feral,
+    feralhosting,
+    feralhosting.com,
+    bytesized,
+    bytesized-hosting.com,
+    rapidseedbox,
+    rapidseedbox.com
+  ]
+pagination_prev: installation/intro
+pagination_next: configuration/indexers
+---
+
+import { FaDocker, FaLinux } from 'react-icons/fa';
+import { FaWindows } from 'react-icons/fa';
+import { SiPostgresql } from 'react-icons/si';
+import { FaDiscord } from 'react-icons/fa';
+
+# Seedbox installation
+
+## Dedicated Seedbox
+
+These are instructions and installation scripts for dedicated seedboxes with the most common solutions. See [Linux](./linux.md) if you are running a different setup.
+
+### Saltbox
+
+Saltbox documentation: [https://docs.saltbox.dev/apps/autobrr/](https://docs.saltbox.dev/apps/autobrr/)
+
+#### Installation
+
+```shell
+sb install autobrr
+```
+
+### Swizzin CE
+
+Swizzin documentation: [https://swizzin.ltd/applications/autobrr](https://swizzin.ltd/applications/autobrr)
+
+#### Installation
+
+```shell
+box install autobrr
+```
+
+#### Update
+
+```shell
+box upgrade autobrr
+```
+
+### Quickbox
+
+Quickbox documentation: [https://quickbox.io/knowledge-base/autobrr-quick-reference/](https://quickbox.io/knowledge-base/v3/applications-v3/autobrr-applications-v3/autobrr-quick-reference/)
+
+#### Installation
+
+```shell
+qb install autobrr
+```
+
+## Shared Seedbox
+
+These are instructions and installation scripts for shared seedboxes. We have support for a few providers out of the box, but if yours are missing, then please reach out on [Discord <FaDiscord />](https://discord.autobrr.com/) so we can add support for it.
+
+The scripts require some input but do most of the work.
+
+### Bytesized
+
+#### Installation & Update
+
+```shell
+wget https://get.autobrr.com/autobrr/bytesized && bash ./bytesized
+```
+
+### Feralhosting
+
+#### Installation & Update
+
+```shell
+wget https://get.autobrr.com/autobrr/feral && bash ./feral
+```
+
+### GigaRapid
+
+:::info
+
+Giga-Rapid.com provides a OneClick installer through their panel.  
+Please use this installer to install or update autobrr.
+
+:::
+
+### HostingByDesign
+
+_Previously known as seedbox.io_
+
+#### Installation
+
+```shell
+box install autobrr
+```
+
+#### Update
+
+```shell
+box upgrade autobrr
+```
+
+### Rapidseedbox
+
+:::info
+
+rapidseedbox.com provides a OneClick installer through their panel.
+Please use this installer to install or update autobrr.
+
+:::
+
+### Swizzin.net
+
+#### Installation
+
+```shell
+box install autobrr
+```
+
+#### Update
+
+```shell
+box upgrade autobrr
+```
+
+### Ultra.cc
+
+:::info
+
+Ultra.cc provides a OneClick installer through their panel.  
+Please use this installer to install or update autobrr.
+
+:::
+
+### Whatbox.ca
+
+:::info
+
+Whatbox.ca provides a OneClick installer through their panel.
+Please use this installer to install autobrr.
+They maintain a custom autobrr installation and keep it up-to-date.
+
+:::
+
+### Others
+
+#### Installation & Update
+
+The seedbox.io installer might work for other providers, but if not reach out in Discord.
+
+```shell
+wget https://get.autobrr.com/autobrr/sbio && bash ./sbio
+```
+
+Note: Remember to head over to our [Configuration Guide](../configuration/indexers.md) to learn how to set up your indexers, IRC, and download clients after you're done installing.

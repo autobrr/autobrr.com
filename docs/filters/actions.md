@@ -30,7 +30,15 @@ pagination_label: Filters - Actions
 Make sure you've set up a [download client](../configuration/download-clients/dedicated) before continuing further.
 :::
 
+import ActionClient from '/snippets/diagrams/action-client.mdx';
+import ActionReannounce from '/snippets/diagrams/action-reannounce.mdx';
+import ActionArr from '/snippets/diagrams/action-arr.mdx';
+
 A configured action is what autobrr will push a successful match to. Each filter supports multiple actions, just in case you need to send to multiple clients or run custom commands as well. Actions are configured in the Action tab inside your filter.
+
+The most common setup is sending straight to a download client, with the category, save path and limits you set on the action:
+
+<ActionClient/>
 
 Whether you're adding, updating, or removing actions in a filter, remember to **save** the filter afterwards to ensure your changes take effect.
 
@@ -107,7 +115,11 @@ When using the Priority feature, Torrent Queueing will be automatically enabled 
 
 #### Announce: {#qbittorrent-announce}
 
-Built-in re-announce makes sure the torrent works with initially broken trackers. It is enabled by default and can be tuned per action:
+Built-in re-announce makes sure the torrent works with initially broken trackers. When you race, the .torrent often reaches the client before the tracker has registered it; autobrr keeps re-announcing until the tracker responds:
+
+<ActionReannounce/>
+
+It is enabled by default and can be tuned per action:
 
 - **Disable reannounce**: *default false*  
   Turn off the built-in re-announce for this action.
@@ -208,6 +220,10 @@ These actions only work for usenet (NZB) releases, for example from [Newznab or 
 ### Radarr, Sonarr, Lidarr, Readarr and Whisparr
 
 Autobrr supports the ability to push directly to the *arr suite of services. Both local and remote instances.
+
+*arr actions are special: the *arr decides whether it actually wants the release. If it approves, it grabs the release and autobrr stops there. If it rejects (say the show isn't monitored, or the release isn't an upgrade), autobrr moves on and tries the next filter that matches the release, without pushing to the same client again:
+
+<ActionArr/>
 
 Select the type, and then the client. Read more about setup in [download clients setup](../configuration/download-clients/dedicated).
 

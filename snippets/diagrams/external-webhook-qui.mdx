@@ -1,0 +1,58 @@
+<svg
+  viewBox="0 0 1000 280"
+  role="img"
+  aria-label="Diagram of an external webhook filter using qui cross-seed: after the filter matches, autobrr posts to qui's cross-seed check endpoint; 200 continues to the cross-seed action, 202 retries later while a match is still downloading, 404 rejects the release"
+  style={{ width: "100%", height: "auto", maxWidth: "920px", display: "block", margin: "1.5rem auto" }}
+  fontFamily="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace"
+>
+  <defs>
+    <marker id="wq-slate" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="var(--slate-8)" />
+    </marker>
+    <marker id="wq-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="var(--green-9)" />
+    </marker>
+    <marker id="wq-gold" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="var(--gold-9)" />
+    </marker>
+    <marker id="wq-red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="var(--red-9)" />
+    </marker>
+  </defs>
+
+  {/* filter matched */}
+  <rect x="30" y="104" width="180" height="72" rx="9" fill="var(--slate-1)" stroke="var(--green-6)" />
+  <text x="120" y="132" textAnchor="middle" fontSize="13" fontWeight="600" fill="var(--slate-12)">Filter</text>
+  <text x="120" y="154" textAnchor="middle" fontSize="10.5" fill="var(--green-11)">all checks passed ✓</text>
+
+  <path d="M 210 140 L 254 140" fill="none" stroke="var(--slate-8)" strokeWidth="1.5" markerEnd="url(#wq-slate)" />
+
+  {/* external webhook */}
+  <rect x="260" y="100" width="380" height="80" rx="9" fill="var(--slate-1)" stroke="var(--slate-7)" />
+  <text x="450" y="125" textAnchor="middle" fontSize="9.5" fontWeight="700" letterSpacing="0.08em" fill="var(--slate-10)">EXTERNAL · WEBHOOK</text>
+  <text x="450" y="146" textAnchor="middle" fontSize="12" fontWeight="600" fill="var(--slate-12)">POST /api/cross-seed/webhook/check</text>
+  <text x="450" y="165" textAnchor="middle" fontSize="10.5" fill="var(--slate-11)">qui · X-API-Key</text>
+
+  {/* three-way fork */}
+  <path d="M 640 140 C 680 140, 682 62, 714 62" fill="none" stroke="var(--green-9)" strokeWidth="1.7" markerEnd="url(#wq-green)" />
+  <text x="678" y="52" textAnchor="middle" fontSize="10.5" fill="var(--green-11)">200</text>
+
+  <path d="M 640 140 L 714 140" fill="none" stroke="var(--gold-9)" strokeWidth="1.7" markerEnd="url(#wq-gold)" />
+  <text x="678" y="128" textAnchor="middle" fontSize="10.5" fill="var(--gold-11)">202</text>
+
+  <path d="M 640 140 C 680 140, 682 218, 714 218" fill="none" stroke="var(--red-9)" strokeWidth="1.7" markerEnd="url(#wq-red)" />
+  <text x="678" y="240" textAnchor="middle" fontSize="10.5" fill="var(--red-11)">404</text>
+
+  {/* outcomes */}
+  <rect x="720" y="30" width="260" height="64" rx="9" fill="var(--green-3)" stroke="var(--green-9)" />
+  <text x="850" y="57" textAnchor="middle" fontSize="13.5" fontWeight="700" fill="var(--green-11)">Cross-seed ✓</text>
+  <text x="850" y="77" textAnchor="middle" fontSize="10.5" fill="var(--green-11)">action sends to qui apply</text>
+
+  <rect x="720" y="108" width="260" height="64" rx="9" fill="var(--gold-3)" stroke="var(--gold-8)" />
+  <text x="850" y="135" textAnchor="middle" fontSize="13.5" fontWeight="700" fill="var(--gold-11)">Still downloading</text>
+  <text x="850" y="155" textAnchor="middle" fontSize="10.5" fill="var(--gold-11)">autobrr retries later</text>
+
+  <rect x="720" y="186" width="260" height="64" rx="9" fill="var(--red-3)" stroke="var(--red-9)" />
+  <text x="850" y="213" textAnchor="middle" fontSize="13.5" fontWeight="700" fill="var(--red-11)">No match ✗</text>
+  <text x="850" y="233" textAnchor="middle" fontSize="10.5" fill="var(--red-11)">release rejected</text>
+</svg>

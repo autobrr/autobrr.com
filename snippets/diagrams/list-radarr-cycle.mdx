@@ -1,0 +1,54 @@
+<svg
+  viewBox="0 0 1000 430"
+  role="img"
+  aria-label="Diagram of the Radarr list cycle: adding a movie in Radarr fires its Connect webhook, which triggers the autobrr list to refresh and update the connected filter's Movies field; when a matching release is announced, autobrr pushes it to Radarr, which grabs it - and the next change fires the webhook again"
+  style={{ width: "100%", height: "auto", maxWidth: "920px", display: "block", margin: "1.5rem auto" }}
+  fontFamily="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace"
+>
+  <defs>
+    <marker id="lc-slate" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="var(--slate-8)" />
+    </marker>
+    <marker id="lc-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="var(--blue-9)" />
+    </marker>
+    <marker id="lc-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="var(--green-9)" />
+    </marker>
+  </defs>
+
+  {/* top: autobrr list */}
+  <rect x="380" y="24" width="240" height="72" rx="9" fill="var(--blue-2)" stroke="var(--blue-7)" strokeDasharray="6 4" />
+  <text x="500" y="49" textAnchor="middle" fontSize="9.5" fontWeight="700" letterSpacing="0.08em" fill="var(--blue-11)">AUTOBRR · LIST</text>
+  <text x="500" y="71" textAnchor="middle" fontSize="12.5" fontWeight="600" fill="var(--slate-12)">fetch monitored movies</text>
+  <text x="500" y="88" textAnchor="middle" fontSize="10.5" fill="var(--slate-11)">from the Radarr API</text>
+
+  {/* right: filter */}
+  <rect x="730" y="179" width="240" height="72" rx="9" fill="var(--slate-1)" stroke="var(--green-6)" />
+  <text x="850" y="207" textAnchor="middle" fontSize="13" fontWeight="600" fill="var(--slate-12)">Filter</text>
+  <text x="850" y="229" textAnchor="middle" fontSize="10.5" fill="var(--green-11)">Movies field auto-updated</text>
+
+  {/* bottom: announce */}
+  <rect x="380" y="334" width="240" height="72" rx="9" fill="var(--slate-2)" stroke="var(--slate-7)" />
+  <text x="500" y="362" textAnchor="middle" fontSize="13" fontWeight="600" fill="var(--slate-12)">New announce</text>
+  <text x="500" y="384" textAnchor="middle" fontSize="10.5" fill="var(--green-11)">matches the filter ✓</text>
+
+  {/* left: radarr */}
+  <rect x="30" y="179" width="240" height="72" rx="9" fill="var(--slate-2)" stroke="var(--slate-7)" />
+  <text x="150" y="207" textAnchor="middle" fontSize="13" fontWeight="600" fill="var(--slate-12)">Radarr</text>
+  <text x="150" y="229" textAnchor="middle" fontSize="10.5" fill="var(--slate-11)">movie added or removed</text>
+
+  {/* clockwise arrows */}
+  <path d="M 200 175 C 240 110, 300 66, 374 62" fill="none" stroke="var(--blue-9)" strokeWidth="1.7" markerEnd="url(#lc-blue)" />
+  <text x="245" y="92" textAnchor="middle" fontSize="10.5" fill="var(--blue-11)">Connect webhook</text>
+  <text x="245" y="108" textAnchor="middle" fontSize="9.5" fill="var(--slate-10)">/api/webhook/lists/trigger/arr</text>
+
+  <path d="M 626 62 C 700 66, 760 110, 800 175" fill="none" stroke="var(--blue-9)" strokeWidth="1.7" markerEnd="url(#lc-blue)" />
+  <text x="762" y="92" textAnchor="middle" fontSize="10.5" fill="var(--blue-11)">updates Movies field</text>
+
+  <path d="M 800 255 C 760 320, 700 364, 626 368" fill="none" stroke="var(--slate-8)" strokeWidth="1.5" markerEnd="url(#lc-slate)" />
+  <text x="768" y="344" textAnchor="middle" fontSize="10.5" fill="var(--slate-10)">IRC · feeds</text>
+
+  <path d="M 374 368 C 300 364, 240 320, 200 255" fill="none" stroke="var(--green-9)" strokeWidth="1.7" markerEnd="url(#lc-green)" />
+  <text x="240" y="344" textAnchor="middle" fontSize="10.5" fill="var(--green-11)">Send to Radarr · grab ✓</text>
+</svg>

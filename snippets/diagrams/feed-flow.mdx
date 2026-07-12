@@ -1,0 +1,45 @@
+<svg
+  viewBox="0 0 1000 220"
+  role="img"
+  aria-label="Diagram of the feed flow: autobrr polls the indexer's RSS or Torznab feed on an interval, new items are picked out via the feed cache and then go through filters and actions exactly like IRC announces"
+  style={{ width: "100%", height: "auto", maxWidth: "920px", display: "block", margin: "1.5rem auto" }}
+  fontFamily="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace"
+>
+  <defs>
+    <marker id="ff-slate" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="var(--slate-8)" />
+    </marker>
+    <marker id="ff-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="var(--green-9)" />
+    </marker>
+  </defs>
+
+  <rect x="24" y="74" width="190" height="72" rx="9" fill="var(--slate-2)" stroke="var(--slate-7)" />
+  <text x="119" y="102" textAnchor="middle" fontSize="13" fontWeight="600" fill="var(--slate-12)">Indexer feed</text>
+  <text x="119" y="124" textAnchor="middle" fontSize="10.5" fill="var(--slate-11)">RSS · Torznab · Newznab</text>
+
+  <path d="M 214 110 L 268 110" fill="none" stroke="var(--slate-8)" strokeWidth="1.5" markerEnd="url(#ff-slate)" />
+  <text x="241" y="98" textAnchor="middle" fontSize="10.5" fill="var(--slate-10)">poll</text>
+  <text x="241" y="134" textAnchor="middle" fontSize="9.5" fill="var(--slate-10)">15 min</text>
+
+  {/* autobrr container */}
+  <rect x="274" y="42" width="430" height="136" rx="12" fill="var(--blue-2)" stroke="var(--blue-7)" strokeDasharray="6 4" />
+  <text x="294" y="66" fontSize="11.5" fontWeight="700" letterSpacing="0.08em" fill="var(--blue-11)">AUTOBRR</text>
+
+  <rect x="298" y="80" width="180" height="72" rx="9" fill="var(--slate-1)" stroke="var(--slate-7)" />
+  <text x="388" y="105" textAnchor="middle" fontSize="9.5" fontWeight="700" letterSpacing="0.08em" fill="var(--slate-10)">FEED CACHE</text>
+  <text x="388" y="128" textAnchor="middle" fontSize="12" fontWeight="600" fill="var(--slate-12)">new items only</text>
+
+  <path d="M 478 116 L 506 116" fill="none" stroke="var(--slate-8)" strokeWidth="1.5" markerEnd="url(#ff-slate)" />
+
+  <rect x="512" y="80" width="168" height="72" rx="9" fill="var(--slate-1)" stroke="var(--green-6)" />
+  <text x="596" y="105" textAnchor="middle" fontSize="9.5" fontWeight="700" letterSpacing="0.08em" fill="var(--slate-10)">FILTERS</text>
+  <text x="596" y="128" textAnchor="middle" fontSize="12" fontWeight="600" fill="var(--green-11)">same as IRC ✓</text>
+
+  <path d="M 704 110 L 758 110" fill="none" stroke="var(--green-9)" strokeWidth="1.7" markerEnd="url(#ff-green)" />
+  <text x="731" y="98" textAnchor="middle" fontSize="10.5" fill="var(--green-11)">push</text>
+
+  <rect x="764" y="74" width="212" height="72" rx="9" fill="var(--green-3)" stroke="var(--green-9)" />
+  <text x="870" y="102" textAnchor="middle" fontSize="13.5" fontWeight="700" fill="var(--green-11)">Actions ✓</text>
+  <text x="870" y="124" textAnchor="middle" fontSize="10.5" fill="var(--green-11)">client or *arr</text>
+</svg>

@@ -22,12 +22,17 @@ sidebar_label: Lists
 pagination_label: Filters - Lists
 ---
 
+import ListFlow from '/snippets/diagrams/list-flow.mdx';
+import ListRadarrCycle from '/snippets/diagrams/list-radarr-cycle.mdx';
+
 # Lists Overview
 
 Lists allow you to automatically transform monitored media from various sources into autobrr filters:
 
 - Shows, movies, books and music from \*arr applications
 - Titles from external services (Trakt, MDBList, Metacritic, etc.)
+
+<ListFlow/>
 
 ## Supported list types
 
@@ -157,3 +162,7 @@ Titles are sanitized into wildcard patterns by default; enable **Skip clean/sani
 3. Test and Save
 
 This webhook will trigger filter updates whenever media is added or removed from your \*arr instance.
+
+With the webhook in place the whole loop is automatic: add a movie in Radarr and the filter knows about it seconds later, ready for the next announce:
+
+<ListRadarrCycle/>

@@ -1,0 +1,48 @@
+<svg
+  viewBox="0 0 1000 250"
+  role="img"
+  aria-label="Diagram of an external script filter: after the filter matches, autobrr runs a script; exit code 0 continues to the filter's actions, any other exit code rejects the release"
+  style={{ width: "100%", height: "auto", maxWidth: "920px", display: "block", margin: "1.5rem auto" }}
+  fontFamily="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace"
+>
+  <defs>
+    <marker id="ex-slate" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="var(--slate-8)" />
+    </marker>
+    <marker id="ex-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="var(--green-9)" />
+    </marker>
+    <marker id="ex-red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="var(--red-9)" />
+    </marker>
+  </defs>
+
+  {/* filter matched */}
+  <rect x="40" y="89" width="180" height="72" rx="9" fill="var(--slate-1)" stroke="var(--green-6)" />
+  <text x="130" y="117" textAnchor="middle" fontSize="13" fontWeight="600" fill="var(--slate-12)">Filter</text>
+  <text x="130" y="139" textAnchor="middle" fontSize="10.5" fill="var(--green-11)">all checks passed ✓</text>
+
+  <path d="M 220 125 L 264 125" fill="none" stroke="var(--slate-8)" strokeWidth="1.5" markerEnd="url(#ex-slate)" />
+
+  {/* external script */}
+  <rect x="270" y="85" width="350" height="80" rx="9" fill="var(--slate-1)" stroke="var(--slate-7)" />
+  <text x="445" y="110" textAnchor="middle" fontSize="9.5" fontWeight="700" letterSpacing="0.08em" fill="var(--slate-10)">EXTERNAL · SCRIPT</text>
+  <text x="445" y="131" textAnchor="middle" fontSize="12.5" fontWeight="600" fill="var(--slate-12)">/scripts/check-space.sh</text>
+  <text x="445" y="150" textAnchor="middle" fontSize="10.5" fill="var(--slate-11)">args: {"{{ .TorrentName }}"}</text>
+
+  {/* fork */}
+  <path d="M 620 125 C 660 125, 664 78, 704 78" fill="none" stroke="var(--green-9)" strokeWidth="1.7" markerEnd="url(#ex-green)" />
+  <text x="662" y="70" textAnchor="middle" fontSize="10.5" fill="var(--green-11)">exit 0</text>
+
+  <path d="M 620 125 C 660 125, 664 172, 704 172" fill="none" stroke="var(--red-9)" strokeWidth="1.7" markerEnd="url(#ex-red)" />
+  <text x="662" y="196" textAnchor="middle" fontSize="10.5" fill="var(--red-11)">exit 1</text>
+
+  {/* outcomes */}
+  <rect x="710" y="46" width="250" height="64" rx="9" fill="var(--green-3)" stroke="var(--green-9)" />
+  <text x="835" y="73" textAnchor="middle" fontSize="13.5" fontWeight="700" fill="var(--green-11)">Continue ✓</text>
+  <text x="835" y="93" textAnchor="middle" fontSize="10.5" fill="var(--green-11)">runs the filter's actions</text>
+
+  <rect x="710" y="140" width="250" height="64" rx="9" fill="var(--red-3)" stroke="var(--red-9)" />
+  <text x="835" y="167" textAnchor="middle" fontSize="13.5" fontWeight="700" fill="var(--red-11)">Rejected ✗</text>
+  <text x="835" y="187" textAnchor="middle" fontSize="10.5" fill="var(--red-11)">unexpected exit status</text>
+</svg>

@@ -16,7 +16,7 @@ keywords:
     proxy,
     nginx,
   ]
-pagination_prev: introduction
+pagination_prev: installation/intro
 pagination_next: configuration/indexers
 ---
 
@@ -24,18 +24,14 @@ pagination_next: configuration/indexers
 
 import { FaDocker } from 'react-icons/fa';
 import { FaWindows } from 'react-icons/fa';
+import ReverseProxy from '/snippets/reverse-proxy.mdx';
 
-Welcome to the autobrr installation walkthrough!
-Follow these steps and we will have you up and running in no time.
-
-Follow instructions below for recommended setup on a regular Linux server.
-Additionally see our installation instructions for [Docker <FaDocker />](./docker.md) and [Windows <FaWindows />](./windows.md).
-
-import SeedboxSolutionInstallers from '/snippets/seedbox-solution-installers.mdx';
+Follow the instructions below for recommended setup on a typical Linux server.
+Alternatively, see the installation instructions for [Docker <FaDocker />](./docker.md) and [Windows <FaWindows />](./windows.md).
 
 ## Seedbox solutions
 
-<SeedboxSolutionInstallers />
+See the [Seedbox](seedbox.md) page for instructions on how to install autobrr on popular seedbox solutions.
 
 ## Regular installation
 
@@ -58,7 +54,7 @@ sudo tar -C /usr/local/bin -xzf autobrr*.tar.gz
 This will extract both `autobrr` and `autobrrctl` to `/usr/local/bin`.
 
 :::info
-If you do not have root, or are on a shared system, place the binaries somewhere in your home directory like `~/.bin` or use our installers for [shared seedboxes](../installation/shared-seedbox.md).
+If you do not have root, or are on a shared system, place the binaries somewhere in your home directory like `~/.bin` or use our installers for [shared seedboxes](seedbox.md).
 :::
 
 ### Configuration
@@ -126,9 +122,7 @@ Save the changes and restart autobrr with `sudo systemctl restart autobrr@USERNA
 
 ## Reverse proxy (recommended)
 
-It's recommended to run it behind a reverse proxy like Caddy (very simple) or nginx (moderately simple) in order to get TLS, more robust authentication mechanisms and other similar benefits.
-
-Please see the **Reverse proxy** section for reverse proxy configuration examples.
+<ReverseProxy/>
 
 ## Finishing up
 

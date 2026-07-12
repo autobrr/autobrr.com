@@ -1,0 +1,46 @@
+<svg
+  viewBox="0 0 1000 270"
+  role="img"
+  aria-label="Diagram of an arr action: the matched release is pushed to Sonarr; if Sonarr approves it grabs the release and processing stops, if Sonarr rejects it autobrr continues to the next matching filter without retrying the same client"
+  style={{ width: "100%", height: "auto", maxWidth: "920px", display: "block", margin: "1.5rem auto" }}
+  fontFamily="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace"
+>
+  <defs>
+    <marker id="aa-slate" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="var(--slate-8)" />
+    </marker>
+    <marker id="aa-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="var(--green-9)" />
+    </marker>
+    <marker id="aa-gold" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="var(--gold-9)" />
+    </marker>
+  </defs>
+
+  <rect x="30" y="99" width="180" height="72" rx="9" fill="var(--slate-1)" stroke="var(--green-6)" />
+  <text x="120" y="127" textAnchor="middle" fontSize="13" fontWeight="600" fill="var(--slate-12)">Filter</text>
+  <text x="120" y="149" textAnchor="middle" fontSize="10.5" fill="var(--green-11)">TV 1080p WEB ✓</text>
+
+  <path d="M 210 135 L 254 135" fill="none" stroke="var(--slate-8)" strokeWidth="1.5" markerEnd="url(#aa-slate)" />
+
+  <rect x="260" y="95" width="310" height="80" rx="9" fill="var(--slate-1)" stroke="var(--slate-7)" />
+  <text x="415" y="120" textAnchor="middle" fontSize="9.5" fontWeight="700" letterSpacing="0.08em" fill="var(--slate-10)">ACTION · SONARR</text>
+  <text x="415" y="141" textAnchor="middle" fontSize="12.5" fontWeight="600" fill="var(--slate-12)">Send to Sonarr</text>
+  <text x="415" y="160" textAnchor="middle" fontSize="10.5" fill="var(--slate-11)">monitored? an upgrade?</text>
+
+  {/* fork */}
+  <path d="M 570 135 C 615 135, 618 72, 658 72" fill="none" stroke="var(--green-9)" strokeWidth="1.7" markerEnd="url(#aa-green)" />
+  <text x="616" y="62" textAnchor="middle" fontSize="10.5" fill="var(--green-11)">approved</text>
+
+  <path d="M 570 135 C 615 135, 618 198, 658 198" fill="none" stroke="var(--gold-9)" strokeWidth="1.7" markerEnd="url(#aa-gold)" />
+  <text x="616" y="222" textAnchor="middle" fontSize="10.5" fill="var(--gold-11)">rejected</text>
+
+  {/* outcomes */}
+  <rect x="664" y="40" width="300" height="64" rx="9" fill="var(--green-3)" stroke="var(--green-9)" />
+  <text x="814" y="67" textAnchor="middle" fontSize="13.5" fontWeight="700" fill="var(--green-11)">Grabbed ✓</text>
+  <text x="814" y="87" textAnchor="middle" fontSize="10.5" fill="var(--green-11)">Sonarr forwards to its client · done</text>
+
+  <rect x="664" y="166" width="300" height="64" rx="9" fill="var(--gold-3)" stroke="var(--gold-8)" />
+  <text x="814" y="193" textAnchor="middle" fontSize="13.5" fontWeight="700" fill="var(--gold-11)">Next filter is tried</text>
+  <text x="814" y="213" textAnchor="middle" fontSize="10.5" fill="var(--gold-11)">same client won't be retried</text>
+</svg>

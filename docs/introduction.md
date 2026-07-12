@@ -51,6 +51,9 @@ keywords:
   ]
 ---
 
+import FlowArr from '/snippets/diagrams/flow-arr.mdx';
+import FlowDirect from '/snippets/diagrams/flow-direct.mdx';
+
 With inspiration and ideas from tools like trackarr, autodl-irssi and flexget we built one tool that can do it all, and then some.
 
 autobrr is the modern download automation tool for torrents.
@@ -63,15 +66,19 @@ The earlier you're seeding a torrent, the more peers you make yourself available
 
 Software like Radarr and Sonarr utilizes RSS to look for new torrents. RSS feeds are updated regularly, but too slow to let you be a part of what we call the initial swarm of a torrent. This is where autobrr comes into play.
 
-Many indexers announce new torrents on their [IRC](./configuration/irc.md) channels the second it is uploaded to the site. autobrr monitors such channels in real time and grabs the torrent file as soon as it's uploaded based on certain conditions (hereby referred to as [filters](./filters/basics.md)) that you set up within autobrr. It then sends that torrent file to a download client of your choice via an [action](./filters/actions.md) set within the filter. A download client can be anything from qBittorrent and Deluge, to Radarr and Sonarr, or a watch folder.
+Many indexers announce new torrents on their [IRC](./configuration/irc.md) channels the second it is uploaded to the site. autobrr monitors such channels in real time and grabs the torrent file as soon as it's uploaded based on certain conditions (hereby referred to as [filters](filters/intro.md)) that you set up within autobrr. It then sends that torrent file to a download client of your choice via an [action](./filters/actions.md) set within the filter. A download client can be anything from qBittorrent and Deluge, to Radarr and Sonarr, or a watch folder.
 
 When your autobrr filter is set to send the torrent files to Radarr and Sonarr, they will decide if it's something they want, and then forward it to the torrent client they are set up with.
 
+<FlowArr/>
+
 autobrr can also send matches (torrent files that meets your filter's criteria) directly to torrent clients like qBittorrent, Deluge, r(u)Torrent and Transmission. You don't need to use the \*arr suite to make use of autobrr.
+
+<FlowDirect/>
 
 ### The typical workflow
 
-1. autobrr monitors IRC channels and/or RSS feeds for new torrents that fits your criteria set within your autobrr [filters](./filters/basics.md).
+1. autobrr monitors IRC channels and/or RSS feeds for new torrents that fits your criteria set within your autobrr [filters](filters/intro.md).
 2. A successful match is forwarded to your [download client](./configuration/download-clients/dedicated) of choice via an [action](./filters/actions.md) set inside your filters.
 3. If the download client is a torrent client, then the torrent client accepts the torrent file and starts downloading it.
 4. If the download client is Radarr (or any other kind of \*arr), then Radarr will check that torrent file and see if it meets Radarr's criteria.
@@ -125,7 +132,7 @@ Available download clients and actions
 
 ## About
 
-The development of autobrr started in Early 2020, entering rapid development in Summer 2021 due to dissatisfaction with needing 3+ tools to do one job. Autobrr has since gained quite a bit of traction and has a growing community supporting the project.
+The development of autobrr started in Early 2020, entering rapid development in Summer 2021 due to dissatisfaction with needing 3+ tools to do one job. Autobrr has since gained quite a bit of traction and has a growing [community](./community.md) supporting the project.
 
 Autobrr was developed with resource consumption in mind. The software uses API calls to reduce unnecessary downloads of .torrent files from sites like BTN, RED, PTP, and GGn. On other sites, it will download the .torrent only if the information is not present in the announce message.
 

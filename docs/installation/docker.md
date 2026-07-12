@@ -19,6 +19,8 @@ pagination_prev: introduction
 pagination_next: configuration/indexers
 ---
 
+import ReverseProxy from '/snippets/reverse-proxy.mdx';
+
 # Docker
 
 This guide expects some previous docker knowledge and an already working environment.
@@ -127,9 +129,7 @@ By default autobrr listens on `127.0.0.1` out of security considerations. Even t
 
 ## Reverse proxy (recommended)
 
-It's recommended to run it behind a reverse proxy like Caddy (very simple) or nginx (moderately simple) in order to get TLS, more robust authentication mechanisms and other similar benefits.
-
-Please see the **Reverse proxy** section for reverse proxy configuration examples.
+<ReverseProxy/>
 
 ## Finishing up
 

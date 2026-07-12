@@ -6,6 +6,8 @@ sidebar_label: Cross-seed with qui
 pagination_label: Filters - Cross-seed with qui
 ---
 
+import ExternalWebhookQui from '/snippets/diagrams/external-webhook-qui.mdx';
+
 # Cross-seed with qui {#cross-seed-with-qui}
 
 [qui](https://getqui.com) is our multi-instance qBittorrent WebUI with built-in cross-seed support. It integrates with autobrr through webhook endpoints, enabling real-time cross-seed detection when autobrr sees a new announce.
@@ -21,6 +23,8 @@ Unlike the [cross-seed](../3rd-party-tools/cross-seed.md) third party setup, thi
    - `202 Accepted`: a matching torrent exists but is still downloading; autobrr retries later
    - `404 Not Found`: no matching torrent exists
 4. On `200 OK`, an autobrr action sends the torrent file to qui's `/api/cross-seed/apply` endpoint, which adds it to qBittorrent
+
+<ExternalWebhookQui/>
 
 Cross-seeded torrents are added paused with `skip_checking=true`. qui polls the torrent state and auto-resumes if progress meets the size tolerance threshold. If progress is too low, the torrent remains paused for manual review.
 

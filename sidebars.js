@@ -15,14 +15,19 @@ module.exports = {
       label: "Installation & Updates",
       collapsed: false,
       items: [
+        "installation/intro",
+        "installation/seedbox",
         "installation/linux",
         "installation/docker",
-        "installation/shared-seedbox",
         "installation/macos",
         "installation/windows",
         {
           type: "category",
           label: "Reverse proxy",
+          link: {
+            type: "doc",
+            id: "installation/reverse-proxy/index",
+          },
           items: [
             "installation/reverse-proxy/caddy",
             "installation/reverse-proxy/lighttpd",
@@ -68,7 +73,8 @@ module.exports = {
       label: "Filters",
       collapsed: true,
       items: [
-        "filters/basics",
+        "filters/intro",
+        "filters/general",
         "filters/tv-movies",
         "filters/music",
         "filters/advanced",
@@ -114,8 +120,18 @@ module.exports = {
     },
     {
       type: "doc",
+      label: "Community",
+      id: "community",
+    },
+    {
+      type: "doc",
       label: "contributing",
       id: "contributing",
+    },
+    {
+      type: "doc",
+      label: "Support Development",
+      id: "support",
     },
   ],
 };

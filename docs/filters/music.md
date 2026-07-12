@@ -8,19 +8,18 @@ keywords: [autobrr, filters, music]
 pagination_label: Filters - Music
 pagination_next: filters/advanced
 ---
-import ConvertAutodlFilter from '/snippets/convert-autodl-filter.mdx';
+import FilterMusic from '/snippets/diagrams/filter-music.mdx';
+import FilterWildcard from '/snippets/filter-wildcard.mdx';
 
 # Music
 
-<ConvertAutodlFilter />
+A typical music filter checks the announced format, quality, media and release type; every field you set must match, and fields you leave empty are skipped:
 
-Most fields can take a comma-separated list like `value1, value2`.
+<FilterMusic/>
 
-The comma-separated lists support wildcards, where `*` means zero or more characters and `?` means exactly one character. An example would be: `*this*,that?movie`. In this case we would match any title containing `this` (or `tHiS`) or in the second case, any title that matches exactly like `That Movie` or `tHaT MoViE` or even `THAT.MOVIE`.
+---
 
-If no value is specified in a field, then that field will match any/all possible values. That means if nothing but `Filter Name` and `Indexers` is given, then the filter it will match all/any releases for the specified indexers.
-
-Please note that all filters are **case-insensitive**, so write them however you desire. Another thing to note is that it is not possible to escape wildcard fields.
+<FilterWildcard/>
 
 :::info
 

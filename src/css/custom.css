@@ -4,6 +4,7 @@
  * work well for content-centric websites.
  */
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@700;800&family=JetBrains+Mono:wght@400;500;700&display=swap");
 
 :root {
   
@@ -39,6 +40,17 @@
   --blue-10: #0588f0;
   --blue-11: #0569c0;
   --blue-12: #113264;
+
+  --green-2: #f4fbf6;
+  --green-3: #e6f6eb;
+  --green-6: #adddc0;
+  --green-9: #30a46c;
+  --green-11: #218358;
+
+  --red-3: #feebec;
+  --red-6: #f4a9aa;
+  --red-9: #e5484d;
+  --red-11: #ce2c31;
 
   --gold-1: #fdfdfc;
   --gold-2: #faf9f2;
@@ -104,6 +116,17 @@
   --blue-10: #59a9f8;
   --blue-11: #70b8ff;
   --blue-12: #c2e6ff;
+
+  --green-2: #121b17;
+  --green-3: #132d21;
+  --green-6: #1b543a;
+  --green-9: #30a46c;
+  --green-11: #3dd68c;
+
+  --red-3: #3b1219;
+  --red-6: #72232d;
+  --red-9: #e5484d;
+  --red-11: #ff9592;
 
   --gold-1: #121211;
   --gold-2: #1b1a17;
@@ -190,12 +213,6 @@ li[class*="theme-doc-sidebar-item-category-level"]
 .alert {
   --ifm-alert-foreground-color: var(--ifm-font-color-base);
   --ifm-code-background: rgb(191 187 185 / 15%);
-}
-
-.front-page-pic {
-  border: 2px solid var(--slate-6);
-  border-radius: 12px;
-  box-shadow: var(--front-pic-shadow-color) 0px 4px 40px;
 }
 
 .navbar__search-input {
@@ -309,69 +326,6 @@ div.theme-code-block > div:first-child:nth-last-child(n + 2) {
   margin-left: 4px;
 }
 
-header.hero {
-  padding: 2rem 0 4rem 0;
-  background-color: unset;
-}
-
-.hero__title {
-  margin: 0;
-}
-
-.hero-grid-container {
-  max-width: 1000px;
-  width: 100%;
-  margin: 0 auto;
-  padding: 1rem;
-  display: flex;
-  justify-content: center;
-  align-items: "center";
-}
-
-.hero-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-  grid-gap: 1rem;
-  align-items: center;
-  width: 100%;
-  max-width: 900px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.center {
-  text-align: center;
-}
-
-@media (max-width: 380px) {
-  .hero-grid {
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-  }
-}
-
-@media (min-width: 500px) {
-  .hero-grid {
-    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-  }
-}
-
-.hero-icon-container {
-  display: inline-flex;
-  align-items: center;
-}
-
-.hero-icon-container h4 {
-  margin: 0 0 0 0.5rem;
-  font-weight: 700;
-  font-size: 1.1rem;
-  white-space: nowrap;
-}
-
-.button {
-  box-shadow: 0px 1px 0px 0px rgba(9, 30, 66, 0.25);
-}
-
 .footer {
   border-top: 1px solid var(--slate-5);
 }
@@ -396,3 +350,27 @@ main[itemscope] > article > header > div:has(div.avatar) {
 .avatar {
   display: none;
 }
+
+/* inline react-icons (platform icons in headings and links) sit on the
+   text baseline by default; center them against the surrounding text */
+.markdown h1 svg,
+.markdown h2 svg,
+.markdown h3 svg,
+.markdown h4 svg,
+.markdown p a svg,
+.markdown li a svg {
+  vertical-align: middle;
+  margin-left: 0.1em;
+}
+
+/* copy-page button: share the row with the version badge. The plugin
+   injects its wrapper as a zero-height row right before the badge, so
+   the right-aligned button visually lands on the badge line. */
+article:has(.theme-doc-version-badge) > div:has(> [class*="copyPageContainer"]) {
+  height: 0;
+  margin: 0;
+  overflow: visible;
+  justify-content: flex-end;
+}
+
+/* pages without a version badge (e.g. release notes) keep normal flow */

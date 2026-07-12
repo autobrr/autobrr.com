@@ -42,7 +42,7 @@ Please refer to our guides or to the guides of your hosting provider on how to i
 - [macOS](../macos.md)
 - [Windows](../windows.md)
 - [Docker](../docker.md)
-- [Shared Seedbox](../shared-seedbox.md)
+- [Shared Seedbox](../seedbox.md)
 
 ## Restoring your database
 

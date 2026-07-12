@@ -1,46 +1,22 @@
 ---
-id: basics
-slug: /filters
-sidebar_label: Basics
-title: Filter Basics
+id: general
+slug: /filters/general
+sidebar_label: General
+title: General
 description: Explanation of filter options, fields and values.
 keywords: [ autobrr, filters, tv, movies, music ]
-pagination_label: Filters - Basics
+pagination_label: Filters - General
 pagination_next: filters/tv-movies
 ---
 
-import ConvertAutodlFilter from '/snippets/convert-autodl-filter.mdx';
+import FilterMatch from '/snippets/diagrams/filter-match.mdx';
+import FilterReject from '/snippets/diagrams/filter-reject.mdx';
+import FilterRejectGroup from '/snippets/diagrams/filter-reject-group.mdx';
+import FilterOrder from '/snippets/diagrams/filter-order.mdx';
+import FilterOrderFlow from '/snippets/diagrams/filter-order-flow.mdx';
+import FilterWildcard from '/snippets/filter-wildcard.mdx';
 
-# Filters
-
-<ConvertAutodlFilter />
-
-Most fields can take a comma-separated list like `value1, value2`.
-
-The comma-separated lists support wildcards, where `*` means zero or more characters and `?` means exactly one character.
-An example would be: `*this*,that?movie`. In this case we would match any title containing `this` (or `tHiS`) or in the
-second case, any title that matches exactly like `That Movie` or `tHaT MoViE` or even `THAT.MOVIE`.
-
-If no value is specified in a field, then that field will match any/all possible values. That means if nothing but
-`Filter Name` and `Indexers` is given, then the filter it will match all/any releases for the specified indexers.
-
-Please note that all filters are **case-insensitive**, so write them however you desire. Another thing to note is that
-it is not possible to escape wildcard fields.
-
-:::info
-
-If you want to match a string partially, then remember to use the `*` around the before/after/around what you're
-looking for.
-If you want to match a string exactly, then try to avoid the use of the `*` wildcard character.
-
-Exception: the Match/Except releases, description and release tags fields on the [Advanced](advanced.md#releases) tab
-match substrings even without wildcards and cannot match exactly in non-regex mode.
-
-:::
-
----
-
-## General
+# General
 
 | Field             | Description                                               | Default value |
 |-------------------|-----------------------------------------------------------|---------------|
@@ -65,7 +41,7 @@ those announce types to the filter explicitly. `CHECKED` and `PROMO_GP` are PTP-
 `RESURRECTED` are also announced by some other trackers.
 :::
 
-### Rules
+## Rules
 
 :::tip About Size
 
@@ -95,14 +71,5 @@ beginning of the "max downloads per" period. For instance, if you set "max downl
 day" the filter won't match unless you have downloaded fewer than 3 items since the beginning of the current day, in
 local time.
 :::
-
-## Sharing filters
-
-Filters can be exported and imported as JSON, which makes it easy to back them up or share them with others:
-
-- **Export**: Open the dropdown next to a filter in the filter list and pick **Export JSON**, or **Export JSON (Discord)
-  ** to get the same JSON wrapped in a Discord code block. The result is copied to your clipboard.
-- **Import**: Click the arrow next to **Create Filter** and choose **Import Filter**. It accepts autobrr filter JSON as
-  well as autodl-irssi `.tracker` configs, and imported filters are renamed automatically if the name is already taken.
 
 ---

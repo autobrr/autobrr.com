@@ -12,7 +12,6 @@ This list was created with help from users like you. If you have others, please 
 
 As a rule of thumb, simple filtering rules such as `*TV*,*Episode*` or `*Movie*` will sufice for most users needs
 
-import AcidLounge from "/snippets/categories/acidlounge.mdx";
 import Aither from "/snippets/categories/aither.mdx";
 import AlphaRatio from "/snippets/categories/ar.mdx";
 import Animebytes from "/snippets/categories/animebytes.mdx";
@@ -40,7 +39,6 @@ import MyAnonamouse from "/snippets/categories/mam.mdx";
 import Nebulance from "/snippets/categories/nebulance.mdx";
 import Norbits from "/snippets/categories/norbits.mdx";
 import Nyaa from "/snippets/categories/nyaa.mdx";
-import Pretome from "/snippets/categories/pretome.mdx";
 import PassThePopcorn from "/snippets/categories/ptp.mdx";
 import RED from "/snippets/categories/red.mdx";
 import RevolutionTT from "/snippets/categories/revolutiontt.mdx";
@@ -49,13 +47,8 @@ import Superbits from "/snippets/categories/sbs.mdx";
 import SeedPool from '/snippets/categories/seedpool.mdx'
 import TorrentDay from "/snippets/categories/torrentday.mdx";
 import Torrentleech from "/snippets/categories/tl.mdx";
-import TorrentSeeds from "/snippets/categories/torrentseeds.mdx";
 import TorrentSyndikat from "/snippets/categories/torrentsyndikat.mdx";
 import XSpeeds from "/snippets/categories/xspeeds.mdx";
-
-### AcidLounge
-
-<AcidLounge />
 
 ### Aither
 
@@ -165,10 +158,6 @@ import XSpeeds from "/snippets/categories/xspeeds.mdx";
 
 <Nyaa />
 
-### PreToMe
-
-<Pretome />
-
 ### PassThePopcorn
 
 <PassThePopcorn />
@@ -200,10 +189,6 @@ import XSpeeds from "/snippets/categories/xspeeds.mdx";
 ### Torrentleech
 
 <Torrentleech />
-
-### TorrentSeeds
-
-<TorrentSeeds />
 
 ### TorrentSyndikat
 
