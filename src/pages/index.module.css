@@ -477,6 +477,8 @@
 }
 
 .shot {
+  position: relative;
+  z-index: 1;
   width: 100%;
   height: auto;
   border: 1px solid var(--slate-6);
@@ -491,6 +493,42 @@
   inset: 0;
   opacity: 0;
   pointer-events: none;
+}
+
+/* hidden until decoded, so images fade in instead of painting rowwise */
+.shotPending {
+  opacity: 0;
+}
+
+.shotSkeleton {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  border: 1px solid var(--slate-6);
+  border-radius: 12px;
+  background: var(--slate-3);
+}
+
+.shotSkeleton::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  transform: translateX(-100%);
+  background: linear-gradient(90deg, transparent, var(--slate-5), transparent);
+  animation: shot-shimmer 1.6s ease infinite;
+}
+
+@keyframes shot-shimmer {
+  to {
+    transform: translateX(100%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .shotSkeleton::after {
+    animation: none;
+  }
 }
 
 /* theme-toggled screenshot variants; light is the pre-hydration default */

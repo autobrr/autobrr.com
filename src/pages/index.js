@@ -323,6 +323,13 @@ function shotSrcSet(key, theme) {
 
 function Screenshot() {
   const [active, setActive] = useState(SHOTS[0]);
+  const [loaded, setLoaded] = useState(() => new Set());
+
+  const markLoaded = (key) =>
+    setLoaded((prev) => (prev.has(key) ? prev : new Set(prev).add(key)));
+
+  const activeLoaded =
+    loaded.has(`${active.key}-light`) || loaded.has(`${active.key}-dark`);
 
   return (
     <section className={clsx(styles.section, styles.sectionAlt)}>
@@ -364,24 +371,41 @@ function Screenshot() {
            * until the next image decodes.
            */}
           <div className={styles.shotStack}>
+            {!activeLoaded && (
+              <div className={styles.shotSkeleton} aria-hidden="true" />
+            )}
             {SHOTS.map((shot) =>
-              ["light", "dark"].map((theme) => (
-                <img
-                  key={`${shot.key}-${theme}`}
-                  src={`/img/webui/${shot.key}-${theme}-1000.webp`}
-                  srcSet={shotSrcSet(shot.key, theme)}
-                  sizes={SHOT_SIZES}
-                  alt={shot.alt}
-                  className={clsx(
-                    styles.shot,
-                    theme === "dark" ? styles.shotDark : styles.shotLight,
-                    shot.key !== active.key && styles.shotInactive
-                  )}
-                  loading="lazy"
-                  width="2000"
-                  height={shot.height || 1125}
-                />
-              ))
+              ["light", "dark"].map((theme) => {
+                const imgKey = `${shot.key}-${theme}`;
+                return (
+                  <img
+                    key={imgKey}
+                    /*
+                     * onLoad misses images that finish before React
+                     * hydrates, so the ref double-checks `complete`.
+                     */
+                    ref={(el) => {
+                      if (el && el.complete && el.naturalWidth > 0) {
+                        markLoaded(imgKey);
+                      }
+                    }}
+                    onLoad={() => markLoaded(imgKey)}
+                    src={`/img/webui/${imgKey}-1000.webp`}
+                    srcSet={shotSrcSet(shot.key, theme)}
+                    sizes={SHOT_SIZES}
+                    alt={shot.alt}
+                    className={clsx(
+                      styles.shot,
+                      theme === "dark" ? styles.shotDark : styles.shotLight,
+                      shot.key !== active.key && styles.shotInactive,
+                      !loaded.has(imgKey) && styles.shotPending
+                    )}
+                    loading="lazy"
+                    width="2000"
+                    height={shot.height || 1125}
+                  />
+                );
+              })
             )}
           </div>
           <p className={styles.shotCaption}>{active.caption}</p>
