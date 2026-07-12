@@ -3,7 +3,6 @@ import clsx from "clsx";
 import Layout from "@theme/Layout";
 import Link from "@docusaurus/Link";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
-import ThemedImage from "@theme/ThemedImage";
 
 import styles from "./index.module.css";
 
@@ -316,8 +315,38 @@ const SHOTS = [
   },
 ];
 
+const SHOT_SIZES = "(max-width: 1140px) 94vw, 1080px";
+
+function shotSrcSet(key, theme) {
+  return `/img/webui/${key}-${theme}-1000.webp 1000w, /img/webui/${key}-${theme}-2000.webp 2000w`;
+}
+
 function Screenshot() {
   const [active, setActive] = useState(SHOTS[0]);
+
+  /*
+   * Warm the browser cache for every tab's screenshot (current theme
+   * only) once the main thread is idle, so switching tabs is instant.
+   */
+  useEffect(() => {
+    const warm = () => {
+      const theme =
+        document.documentElement.getAttribute("data-theme") === "dark"
+          ? "dark"
+          : "light";
+      SHOTS.forEach((shot) => {
+        const img = new Image();
+        img.sizes = SHOT_SIZES;
+        img.srcset = shotSrcSet(shot.key, theme);
+      });
+    };
+    if ("requestIdleCallback" in window) {
+      const id = window.requestIdleCallback(warm);
+      return () => window.cancelIdleCallback(id);
+    }
+    const id = setTimeout(warm, 2000);
+    return () => clearTimeout(id);
+  }, []);
 
   return (
     <section className={clsx(styles.section, styles.sectionAlt)}>
@@ -353,18 +382,22 @@ function Screenshot() {
           ))}
         </div>
         <div className={styles.shotWrap}>
-          <ThemedImage
-            key={active.key}
-            sources={{
-              light: `/img/webui/${active.key}-light.png`,
-              dark: `/img/webui/${active.key}-dark.png`,
-            }}
-            alt={active.alt}
-            className={styles.shot}
-            loading="lazy"
-            width="2000"
-            height={active.height || 1125}
-          />
+          {["light", "dark"].map((theme) => (
+            <img
+              key={`${active.key}-${theme}`}
+              src={`/img/webui/${active.key}-${theme}-1000.webp`}
+              srcSet={shotSrcSet(active.key, theme)}
+              sizes={SHOT_SIZES}
+              alt={active.alt}
+              className={clsx(
+                styles.shot,
+                theme === "dark" ? styles.shotDark : styles.shotLight
+              )}
+              loading="lazy"
+              width="2000"
+              height={active.height || 1125}
+            />
+          ))}
           <p className={styles.shotCaption}>{active.caption}</p>
         </div>
       </div>

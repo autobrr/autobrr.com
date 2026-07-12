@@ -479,6 +479,19 @@
   box-shadow: 0 24px 64px -24px rgb(0 0 0 / 35%);
 }
 
+/* theme-toggled screenshot variants; light is the pre-hydration default */
+.shotDark {
+  display: none;
+}
+
+:global(html[data-theme="dark"]) .shotLight {
+  display: none;
+}
+
+:global(html[data-theme="dark"]) .shotDark {
+  display: inline-block;
+}
+
 .shotCaption {
   composes: mono;
   font-size: 0.8rem;
