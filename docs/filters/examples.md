@@ -22,6 +22,7 @@ sidebar_label: Examples
 pagination_label: Filters - Examples
 ---
 
+import ConvertAutodlFilter from '/snippets/convert-autodl-filter.mdx';
 import ReleaseAnatomySports from '/snippets/diagrams/release-anatomy-sports.mdx';
 
 # Examples
@@ -229,3 +230,7 @@ And if you have traffic limits, then `max downloads per` is there to help you li
 It's generally a good idea to check the latest torrents and the browse pages to try and look for patterns of what get snatches.
 
 Some indexers and content types the current year releases do get a lot of snatches. If there's internal groups it's highly likely they do very well also.
+
+## Convert autodl-irssi filters
+
+<ConvertAutodlFilter />

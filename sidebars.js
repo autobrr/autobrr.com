@@ -68,7 +68,8 @@ module.exports = {
       label: "Filters",
       collapsed: true,
       items: [
-        "filters/basics",
+        "filters/intro",
+        "filters/general",
         "filters/tv-movies",
         "filters/music",
         "filters/advanced",
