@@ -470,13 +470,27 @@
   text-align: center;
 }
 
+.shotStack {
+  position: relative;
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
 .shot {
   width: 100%;
-  max-width: 1080px;
   height: auto;
   border: 1px solid var(--slate-6);
   border-radius: 12px;
   box-shadow: 0 24px 64px -24px rgb(0 0 0 / 35%);
+  transition: opacity 0.25s ease;
+}
+
+/* inactive tabs stay mounted (and loaded) underneath the active one */
+.shotInactive {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  pointer-events: none;
 }
 
 /* theme-toggled screenshot variants; light is the pre-hydration default */
