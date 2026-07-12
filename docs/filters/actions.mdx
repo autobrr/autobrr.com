@@ -44,9 +44,9 @@ Whether you're adding, updating, or removing actions in a filter, remember to **
 
 ### Macros {/* #macros */}
 
-Many of the action fields have support for [macros](../filters/macros.md), which allow you to enhance your workflow significantly by providing custom logic/data processing to the input data provided by autobrr.
+Many of the action fields have support for [macros](../filters/macros.mdx), which allow you to enhance your workflow significantly by providing custom logic/data processing to the input data provided by autobrr.
 
-The [macro section](../filters/macros.md) has been moved to its own page.
+The [macro section](../filters/macros.mdx) has been moved to its own page.
 
 ## Supported actions {/* #supported-actions */}
 
@@ -211,7 +211,7 @@ Send to one or multiple local or remote instances of Porla.
 
 Send NZBs to one or multiple local or remote instances of SABnzbd or NZBGet.
 
-These actions only work for usenet (NZB) releases, for example from [Newznab or NZB-type RSS feeds](../configuration/feeds.md). Torrent releases cannot be sent to them.
+These actions only work for usenet (NZB) releases, for example from [Newznab or NZB-type RSS feeds](../configuration/feeds.mdx). Torrent releases cannot be sent to them.
 
 #### Available options: {/* #sabnzbd-nzbget-available-options */}
 
@@ -275,12 +275,12 @@ For example, you could use:
 Post a payload to an HTTP endpoint when the filter matches. Useful for integrating with your own scripts and services.
 
 - **Endpoint**: the URL to send the request to, e.g. `http://127.0.0.1:5000/api/upgrade`
-- **Payload (json)**: the JSON body to send, with full [macro](../filters/macros.md) support, e.g. `{ "name": "{{ .TorrentName }}" }`
+- **Payload (json)**: the JSON body to send, with full [macro](../filters/macros.mdx) support, e.g. `{ "name": "{{ .TorrentName }}" }`
 
 The request is always an HTTP `POST` with `Content-Type: application/json`.
 
 :::tip
-If you want the result of the request to decide whether the filter matches, use an [external filter webhook](./external.md) instead. The Webhook action fires after the filter has already matched.
+If you want the result of the request to decide whether the filter matches, use an [external filter webhook](./external.mdx) instead. The Webhook action fires after the filter has already matched.
 :::
 
 ### FTP / SFTP {/* #ftp--sftp */}

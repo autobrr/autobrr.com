@@ -16,7 +16,7 @@ import ExternalWebhookQui from '/snippets/diagrams/external-webhook-qui.mdx';
 
 With external filters you can run `scripts` and `webhooks` to do your own custom filtering. If **Expected exit status** matches it will continue. If not it stops there.
 
-Many of the fields have support for [macros](./macros.md), which allow you to enhance your workflow significantly by providing custom logic/data processing to the input data provided by autobrr.
+Many of the fields have support for [macros](./macros.mdx), which allow you to enhance your workflow significantly by providing custom logic/data processing to the input data provided by autobrr.
 
 We have a separate repo for community scripts created by our users. https://github.com/autobrr/community-scripts
 
@@ -28,7 +28,7 @@ External filters run after the filter's own checks have passed, so your script o
 
 <ExternalScript/>
 
-See [stop if disk is full](../usage/tips.md#stop-if-disk-is-full) for a good example of what it can do.
+See [stop if disk is full](../usage/tips.mdx#stop-if-disk-is-full) for a good example of what it can do.
 
 | Field                    | Description           | Examples                                                       |
 | ------------------------ | --------------------- | -------------------------------------------------------------- |
@@ -40,7 +40,7 @@ See [stop if disk is full](../usage/tips.md#stop-if-disk-is-full) for a good exa
 
 Send a payload to some custom API and do more processing. Use status codes to trigger different behaviours.
 
-A real-world example is [cross-seeding with qui](./cross-seed-qui.md), where the API's status code decides between cross-seeding now, retrying later, or rejecting:
+A real-world example is [cross-seeding with qui](./cross-seed-qui.mdx), where the API's status code decides between cross-seeding now, retrying later, or rejecting:
 
 <ExternalWebhookQui/>
 

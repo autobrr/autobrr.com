@@ -40,7 +40,7 @@ Checks run from cheap to expensive, and a failure at any step stops the rest:
 
 <FilterOrder/>
 
-The regular fields are checked first, against what the announce itself contains. The gold steps only run when your filter needs a value the announce didn't include: if you set size limits and the indexer doesn't announce size, autobrr fetches it out of band, via the indexer's API where available, or by downloading the .torrent file as a last resort. The same applies to uploader and record label checks on API-enabled indexers. [External filters](./external.md) always run last, so your scripts and webhooks are only called for releases that already passed everything else.
+The regular fields are checked first, against what the announce itself contains. The gold steps only run when your filter needs a value the announce didn't include: if you set size limits and the indexer doesn't announce size, autobrr fetches it out of band, via the indexer's API where available, or by downloading the .torrent file as a last resort. The same applies to uploader and record label checks on API-enabled indexers. [External filters](./external.mdx) always run last, so your scripts and webhooks are only called for releases that already passed everything else.
 
 The same order as a flowchart; every reject path ends the same way, only a release that clears every step reaches the actions:
 
@@ -58,7 +58,7 @@ If you want to match a string partially, then remember to use the `*` around the
 looking for.
 If you want to match a string exactly, then try to avoid the use of the `*` wildcard character.
 
-Exception: the Match/Except releases, description and release tags fields on the [Advanced](advanced.md#releases) tab
+Exception: the Match/Except releases, description and release tags fields on the [Advanced](advanced.mdx#releases) tab
 match substrings even without wildcards and cannot match exactly in non-regex mode.
 
 :::
