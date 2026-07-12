@@ -633,6 +633,82 @@
   color: var(--slate-9);
 }
 
+/* ---------- footer ---------- */
+
+.footer {
+  border-top: 1px solid var(--slate-4);
+  background: var(--slate-2);
+  padding: 3.5rem 0 1.75rem;
+}
+
+.footerGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) repeat(3, minmax(0, 1fr));
+  gap: 2.5rem;
+  margin-bottom: 3rem;
+}
+
+.footerBrandName {
+  composes: display;
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--slate-12);
+  margin: 0 0 0.6rem;
+}
+
+.footerBlurb {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--slate-10);
+  margin: 0;
+  max-width: 18rem;
+}
+
+.footerHeading {
+  composes: stackLabel;
+}
+
+.footerList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.footerLink {
+  font-size: 0.9rem;
+  color: var(--slate-11);
+}
+
+.footerLink:hover {
+  color: var(--slate-12);
+  text-decoration: underline;
+}
+
+.footerLink:focus-visible {
+  outline: 2px solid var(--blue-9);
+  outline-offset: 2px;
+}
+
+.footerBottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem;
+  border-top: 1px solid var(--slate-4);
+  padding-top: 1.4rem;
+}
+
+.footerMeta {
+  composes: mono;
+  font-size: 0.75rem;
+  color: var(--slate-9);
+  margin: 0;
+}
+
 /* ---------- responsive ---------- */
 
 @media (max-width: 996px) {
@@ -666,5 +742,14 @@
 
   .wireBody {
     min-height: 18rem;
+  }
+
+  .footerGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2rem;
+  }
+
+  .footerBrand {
+    grid-column: 1 / -1;
   }
 }
