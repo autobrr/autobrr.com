@@ -537,7 +537,7 @@ const FOOTER_COLUMNS = [
   {
     heading: "Community",
     links: [
-      { label: "Discord", href: "https://discord.autobrr.com" },
+      { label: "Discord & IRC", to: "/community" },
       {
         label: "Report a bug",
         href: "https://github.com/autobrr/autobrr/issues",

@@ -62,3 +62,5 @@ The [Windows guide](./windows.md) sets autobrr up as a background service, so it
 ## After installing
 
 Once autobrr is running, head to the [Configuration guide](../configuration/autobrr.md) to set up your [indexers](../configuration/indexers.md), IRC connections and download clients.
+
+Stuck at any point? Ask in the [community](../community.md); there are over 5,500 people on the Discord, and plenty of them have set up exactly what you're trying to build.

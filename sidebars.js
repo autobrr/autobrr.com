@@ -120,6 +120,11 @@ module.exports = {
     },
     {
       type: "doc",
+      label: "Community",
+      id: "community",
+    },
+    {
+      type: "doc",
       label: "contributing",
       id: "contributing",
     },
