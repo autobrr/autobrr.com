@@ -24,31 +24,29 @@ pagination_prev: introduction
 pagination_next: installation/seedbox
 ---
 
-import { FaDocker, FaLinux, FaWindows, FaApple, FaServer } from 'react-icons/fa';
-
 # Installation
 
 autobrr ships as a single binary with the web UI built in, so installing it mostly comes down to getting that binary running on whatever you already have. Pick the guide that matches your setup.
 
 ## Pick your setup
 
-### Seedbox <FaServer /> {#seedbox}
+### Seedbox {#seedbox}
 
 If you rent a seedbox, start with the [Seedbox guide](./seedbox.md). Most shared providers (Ultra.cc, Whatbox, HostingByDesign, Swizzin-based boxes and others) offer a one-click installer or an install script, so you never need root access. The guide also covers dedicated seedboxes.
 
-### Linux server <FaLinux /> {#linux}
+### Linux server {#linux}
 
 For your own VPS, home server or NAS, follow the [Linux guide](./linux.md). You download the binary and run it as a systemd service so it starts on boot and restarts on failure. This is the recommended setup when you control the machine.
 
-### Docker <FaDocker /> {#docker}
+### Docker {#docker}
 
 Already running your stack in containers? The [Docker guide](./docker.md) covers the official `ghcr.io/autobrr/autobrr` image with a compose example, which slots in next to your existing qBittorrent, Sonarr and Radarr containers.
 
-### macOS <FaApple /> {#macos}
+### macOS {#macos}
 
 On a Mac, the [macOS guide](./macos.md) uses Homebrew: `brew install autobrr`, then `brew services start autobrr` to keep it running in the background.
 
-### Windows <FaWindows /> {#windows}
+### Windows {#windows}
 
 The [Windows guide](./windows.md) sets autobrr up as a background service, so it runs 24/7 without a command prompt window open.
 

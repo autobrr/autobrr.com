@@ -350,3 +350,15 @@ main[itemscope] > article > header > div:has(div.avatar) {
 .avatar {
   display: none;
 }
+
+/* inline react-icons (platform icons in headings and links) sit on the
+   text baseline by default; center them against the surrounding text */
+.markdown h1 svg,
+.markdown h2 svg,
+.markdown h3 svg,
+.markdown h4 svg,
+.markdown p a svg,
+.markdown li a svg {
+  vertical-align: middle;
+  margin-left: 0.1em;
+}
