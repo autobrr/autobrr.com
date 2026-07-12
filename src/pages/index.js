@@ -146,7 +146,7 @@ function Hero() {
               matches to your download client before the RSS feed updates.
             </p>
             <div className={styles.heroActions}>
-              <Link className={styles.btnPrimary} to="/installation/linux">
+              <Link className={styles.btnPrimary} to="/installation/intro">
                 Get started
               </Link>
               <Link className={styles.btnGhost} to="/introduction">
