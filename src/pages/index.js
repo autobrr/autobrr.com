@@ -485,7 +485,7 @@ function Install() {
               <Link className={styles.btnPrimary} to="/installation/docker">
                 Docker guide
               </Link>
-              <Link className={styles.btnGhost} to="/installation/linux">
+              <Link className={styles.btnGhost} to="/installation/intro">
                 All platforms
               </Link>
             </div>
