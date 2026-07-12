@@ -8,7 +8,7 @@ pagination_prev: introduction
 pagination_next: configuration/indexers
 ---
 
-import ReactPlayer from 'react-player/youtube'
+import ReactPlayer from 'react-player'
 
 ## What is Tailscale?
 
