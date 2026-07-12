@@ -10,6 +10,7 @@ pagination_next: configuration/indexers
 # Windows
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import ReverseProxy from '/snippets/reverse-proxy.mdx';
 
 In this setup we will create an autobrr user and a Windows service that operates in the background. This way we won't need to have a command prompt window open 24/7.
 
@@ -67,9 +68,7 @@ If you ever need to restart the service, within Task Scheduler you can click on 
 
 ## Reverse proxy (recommended)
 
-It's recommended to run it behind a reverse proxy like Caddy (very simple) or nginx (moderately simple) in order to get TLS, more robust authentication mechanisms and other similar benefits.
-
-Please see the **Reverse proxy** section for reverse proxy configuration examples.
+<ReverseProxy/>
 
 ## Finishing up
 

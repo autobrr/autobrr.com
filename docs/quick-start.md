@@ -1,7 +1,7 @@
 ---
 sidebar_position: 1
 sidebar_label: Quick Start
-pagination_next: installation/linux
+pagination_next: installation/intro
 title: Quick Start
 description: Autobrr quick start
 keywords: [autobrr, quick-start, start, intro, introduction]

@@ -8,6 +8,8 @@ pagination_prev: introduction
 pagination_next: configuration/indexers
 ---
 
+import ReverseProxy from '/snippets/reverse-proxy.mdx';
+
 # macOS
 
 In this setup we will create an autobrr user and a macOS service that operates in the background. This way we won't need to have a command prompt window open 24/7.
@@ -55,15 +57,13 @@ Restart autobrr after.
 
 ## Reverse proxy (recommended)
 
-It's recommended to run it behind a reverse proxy like Caddy (very simple) or nginx (moderately simple) in order to get TLS, more robust authentication mechanisms and other similar benefits.
+<ReverseProxy/>
 
 You can install nginx on macOS with Homebrew:
 
 ```bash
 brew install nginx
 ```
-
-Please see the **Reverse proxy** section for reverse proxy configuration examples.
 
 ## Finishing up
 
