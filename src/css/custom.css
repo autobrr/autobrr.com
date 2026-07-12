@@ -335,7 +335,9 @@ div.theme-code-block > div:first-child:nth-last-child(n + 2) {
   border-color: var(--slate-9);
 }
 
-ul {
+/* scoped to content: with future.v4 CSS cascade layers, an unlayered bare
+   `ul` rule would override the theme's list-style: none on menus/TOC */
+.markdown ul {
   list-style-type: square;
 }
 

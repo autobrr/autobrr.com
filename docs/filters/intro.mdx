@@ -1,0 +1,75 @@
+---
+id: intro
+slug: /filters
+sidebar_label: Intro
+title: Filter Intro
+description: Explanation of filter options, fields and values.
+keywords: [ autobrr, filters, tv, movies, music ]
+pagination_label: Filters - Intro
+pagination_next: filters/general
+---
+
+import FilterMatch from '/snippets/diagrams/filter-match.mdx';
+import FilterReject from '/snippets/diagrams/filter-reject.mdx';
+import FilterRejectGroup from '/snippets/diagrams/filter-reject-group.mdx';
+import FilterOrder from '/snippets/diagrams/filter-order.mdx';
+import FilterOrderFlow from '/snippets/diagrams/filter-order-flow.mdx';
+import FilterWildcard from '/snippets/filter-wildcard.mdx';
+
+# Filters
+
+Filters are how you tell autobrr what to grab. Each filter is a set of conditions (resolution, size, release group and so on) that every announce is checked against; when a release matches, the filter's actions run and the release is sent to your download client, an *arr, or whatever else you've configured. You can run as many filters as you like side by side, each with its own indexers, rules and actions.
+
+## How a filter is evaluated {/* #how-a-filter-is-evaluated */}
+
+Every field you set in a filter must match for a release to be approved; fields you leave empty are skipped entirely. A typical TV filter checks a handful of fields against the parsed release name:
+
+<FilterMatch/>
+
+If any single check fails, the release is rejected. Rejected releases don't show up on the Releases page; only releases that matched a filter do. To see why something was skipped, check the logs with log level `DEBUG`:
+
+<FilterReject/>
+
+The `Except` fields work the other way around: a match there is a reason to reject. Here the release passes every quality check, but its group is on the filter's except list:
+
+<FilterRejectGroup/>
+
+### Check order {/* #check-order */}
+
+Checks run from cheap to expensive, and a failure at any step stops the rest:
+
+<FilterOrder/>
+
+The regular fields are checked first, against what the announce itself contains. The gold steps only run when your filter needs a value the announce didn't include: if you set size limits and the indexer doesn't announce size, autobrr fetches it out of band, via the indexer's API where available, or by downloading the .torrent file as a last resort. The same applies to uploader and record label checks on API-enabled indexers. [External filters](./external.mdx) always run last, so your scripts and webhooks are only called for releases that already passed everything else.
+
+The same order as a flowchart; every reject path ends the same way, only a release that clears every step reaches the actions:
+
+<FilterOrderFlow/>
+
+[//]: # (---)
+
+## Wildcard matching {/* #wildcard-matching */}
+
+<FilterWildcard/>
+
+:::info
+
+If you want to match a string partially, then remember to use the `*` around the before/after/around what you're
+looking for.
+If you want to match a string exactly, then try to avoid the use of the `*` wildcard character.
+
+Exception: the Match/Except releases, description and release tags fields on the [Advanced](advanced.mdx#releases) tab
+match substrings even without wildcards and cannot match exactly in non-regex mode.
+
+:::
+
+## Sharing filters {/* #sharing-filters */}
+
+Filters can be exported and imported as JSON, which makes it easy to back them up or share them with others:
+
+- **Export**: Open the dropdown next to a filter in the filter list and pick **Export JSON**, or **Export JSON (Discord)
+  ** to get the same JSON wrapped in a Discord code block. The result is copied to your clipboard.
+- **Import**: Click the arrow next to **Create Filter** and choose **Import Filter**. It accepts autobrr filter JSON as
+  well as autodl-irssi `.tracker` configs, and imported filters are renamed automatically if the name is already taken.
+
+---
