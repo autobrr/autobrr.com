@@ -132,10 +132,6 @@ function Hero() {
       <div className="container">
         <div className={styles.heroInner}>
           <div className={styles.heroCopy}>
-            <span className={styles.heroKicker}>
-              <span className={styles.heroKickerDot} />
-              open source · self-hosted · single binary
-            </span>
             <h1 className={styles.heroTitle}>
               From announce to download{" "}
               <span className={styles.heroTitleAccent}>in seconds</span>
