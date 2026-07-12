@@ -175,6 +175,16 @@ const config = {
       };
     },
     "docusaurus-plugin-image-zoom",
+    [
+      "docusaurus-plugin-llms",
+      {
+        docsDir: "docs",
+        generateLLMsTxt: true,
+        generateLLMsFullTxt: true,
+        excludeImports: true,
+        removeDuplicateHeadings: true,
+      },
+    ],
   ],
 };
 
