@@ -154,7 +154,7 @@ function Hero() {
                 <strong>100+</strong> indexers
               </span>
               <span>
-                <strong>8</strong> download clients
+                <strong>9</strong> download clients
               </span>
               <span>
                 <strong>5</strong> *arr integrations
@@ -232,7 +232,7 @@ const FEATURES = [
   {
     icon: <TbPlugConnected size={20} />,
     title: "Works with your setup",
-    body: "Push to qBittorrent, Deluge, Transmission, rTorrent, Porla, SABnzbd or NZBGet, or route releases through Sonarr and Radarr.",
+    body: "Push to qBittorrent, Deluge, Transmission, rTorrent, Porla, aria2, SABnzbd or NZBGet, or route releases through Sonarr and Radarr.",
   },
   {
     icon: <MdOutlineNotificationsActive size={20} />,
@@ -421,6 +421,7 @@ const STACK = [
       "rTorrent",
       "ruTorrent",
       "Porla",
+      "aria2",
       "SABnzbd",
       "NZBGet",
     ],
