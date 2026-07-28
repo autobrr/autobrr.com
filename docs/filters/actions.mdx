@@ -12,6 +12,7 @@ keywords:
     rTorrent,
     Transmission,
     Porla,
+    aria2,
     SABnzbd,
     NZBGet,
     Radarr,
@@ -55,6 +56,7 @@ The [macro section](../filters/macros.mdx) has been moved to its own page.
 - rTorrent
 - Transmission
 - Porla
+- aria2
 - SABnzbd (Usenet)
 - NZBGet (Usenet)
 - Radarr
@@ -206,6 +208,24 @@ Send to one or multiple local or remote instances of Porla.
 
 - **Limit download and upload speed**: *optional*  
   Takes any integer as a number. Given in `KiB/s`.
+
+### aria2 {/* #aria2 */}
+
+Send to one or multiple local or remote instances of aria2.
+
+#### Available options: {/* #aria2-available-options */}
+
+- **Save Path**: *optional*
+- **Add Paused**: *default false*
+
+#### Limits: {/* #aria2-limits */}
+
+- **Limit download and upload speed**: *optional*  
+  Takes any integer as a number. Given in `KiB/s`.
+- **Ratio limit**: *optional*  
+  Seeding stops when the ratio is reached.
+- **Seed time limit**: *optional*  
+  Given in minutes.
 
 ### SABnzbd / NZBGet {/* #sabnzbd--nzbget */}
 

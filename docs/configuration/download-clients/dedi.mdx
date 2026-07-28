@@ -19,6 +19,7 @@ keywords:
     rutorrent,
     transmission,
     porla,
+    aria2,
     sabnzbd,
     nzbget,
     radarr,
@@ -44,6 +45,7 @@ These are the available download clients.
 - rTorrent / ruTorrent
 - Transmission
 - Porla
+- aria2
 - Sabnzbd (Usenet)
 - NZBGet (Usenet)
 - Radarr
@@ -296,6 +298,23 @@ Connects to the Porla web API.
 Some setups also require **Basic Auth** with a username and password, like other clients behind an HTTP-auth proxy.
 
 ## Porla rules {/* #porla-rules */}
+
+You can define some basic rules which can improve your performance for racing etc.
+
+- **Enabled**: Disabled by default.
+- **Max active downloads**: Default 0 (unlimited). Limit the amount of active downloads, to give the maximum amount of bandwidth and disk for the downloads.
+
+## aria2 {/* #aria2 */}
+
+Connects to the aria2 JSON-RPC endpoint.
+
+- Host: `http://localhost:6800`, or `http(s)://domain.ltd/aria2` for reverse-proxied setups
+- RPC secret: `<secret>` (optional, the value of aria2's `--rpc-secret` option; leave empty if aria2 runs without one)
+- TLS: enable for `https://` hosts, with **Skip TLS verification** available for self-signed certificates
+
+Some setups also require **Basic Auth** with a username and password, like other clients behind an HTTP-auth proxy.
+
+## aria2 rules {/* #aria2-rules */}
 
 You can define some basic rules which can improve your performance for racing etc.
 

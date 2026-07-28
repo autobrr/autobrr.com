@@ -154,7 +154,7 @@ function Hero() {
                 <strong>100+</strong> indexers
               </span>
               <span>
-                <strong>7</strong> download clients
+                <strong>9</strong> download clients
               </span>
               <span>
                 <strong>5</strong> *arr integrations
@@ -232,12 +232,12 @@ const FEATURES = [
   {
     icon: <TbPlugConnected size={20} />,
     title: "Works with your setup",
-    body: "Push to qBittorrent, Deluge, Transmission, rTorrent, Porla or SABnzbd, or route releases through Sonarr and Radarr.",
+    body: "Push to qBittorrent, Deluge, Transmission, rTorrent, Porla, aria2, SABnzbd or NZBGet, or route releases through Sonarr and Radarr.",
   },
   {
     icon: <MdOutlineNotificationsActive size={20} />,
     title: "Notifications and hooks",
-    body: "Get a ping on Discord, Telegram, Pushover or ntfy for every push, and trigger webhooks or scripts on match.",
+    body: "Get a ping on Discord, Telegram, Pushover, Gotify, Shoutrrr or ntfy for every push, and trigger webhooks or scripts on match.",
   },
   {
     icon: <FiPackage size={20} />,
@@ -421,7 +421,9 @@ const STACK = [
       "rTorrent",
       "ruTorrent",
       "Porla",
+      "aria2",
       "SABnzbd",
+      "NZBGet",
     ],
   },
   {
@@ -434,7 +436,7 @@ const STACK = [
   },
   {
     label: "Notifications",
-    items: ["Discord", "Notifiarr", "Telegram", "Pushover", "Gotify", "ntfy"],
+    items: ["Discord", "Notifiarr", "Telegram", "Pushover", "Gotify", "Shoutrrr", "ntfy"],
   },
 ];
 
