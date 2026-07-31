@@ -80,7 +80,8 @@ def git_operations():
         branch = repo.create_head(branch_name)
         repo.git.checkout(branch_name)
 
-    print(f"::set-output name=branch::{branch_name}")
+    with open(os.environ.get("GITHUB_OUTPUT", "/dev/null"), "a") as f:
+        f.write(f"branch={branch_name}\n")
     return branch
 
 def main():
