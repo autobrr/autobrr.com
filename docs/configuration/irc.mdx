@@ -153,7 +153,27 @@ This is meant for advanced users or those that need a single irc connection for 
 
 Due the current way of the release-parsing pipeline works, you may want to use a dedicated autobrr instance for your downloader. For this purpose, having a IRC bouncer in front will be beneficial, as it enables you to use the same irc-bot account for multiple autobrr instances. This still require you to have gone trough the above steps of setting up a bot account.
 
-### Setting up ZNC {/* #setting-up-znc */}
+### Using Soju {/* #using-soju */}
+
+After adding a indexer you need to change the IRC configuration:
+
+#### Network Settings {/* #soju-network-settings */}
+
+- Keep `Server` and `Port` as the upstream IRC server for the network you want to connect to.
+- Leave `Password` (Network password) empty
+- Turn Bouncer on, and set `Bouncer address` to the `HOST:PORT` of the Soju instance.
+
+#### Identification Settings {/* #soju-identification-settings */}
+
+- Set `Mechanism` to SASL (plain)
+- Set `Account` to `<soju-username>/<network-name>@<client-name>` (https://codeberg.org/emersion/soju/src/branch/master/doc/getting-started.md#other-clients)
+- Use the `Password` for your downstream soju user
+
+Note that autobrr does not yet support IRCv3 websockets, you will need to configure soju to listen over TCP
+
+### Using ZNC {/* #using-znc */}
+
+#### Setting up ZNC {/* #setting-up-znc */}
 
 :::info
 
@@ -197,7 +217,7 @@ Next up you want to add the server for this network, under the `Servers of this 
 
 You may need to enable some modules for the network based on the networks setup. You usually need either the [SASL](https://wiki.znc.in/Sasl) or [NickServ](https://wiki.znc.in/Nickserv) module. There is currently no way based on the definition to tell if a network supports SASL, so you might need to resort to NickServ. There is no reason to set up channels here, as autobrr will join the one specified in the definition (or send the private message needed), like it would without the bouncer.
 
-#### Enabling SSL {/* #enabling-ssl */}
+##### Enabling SSL {/* #enabling-ssl */}
 
 While this is not required, it might be easier to get going than you think. This section is based on already having Linuxserver´s SWAG generating a certificate for `znc.mydomain.com`, while keeping all traffic between containers inside the same docker network.
 
@@ -225,7 +245,7 @@ SSLDHParamFile = /swag-ssl/letsencrypt/live/<mydomain.com>/fullchain.pem
 SSLKeyFile = /swag-ssl/letsencrypt/live/<mydomain.com>/privkey.pem
 ```
 
-### Prepare the network {/* #prepare-the-network */}
+#### Prepare the network {/* #prepare-the-network */}
 
 While the SASL module offers a way to configure it in the webui, doing it over irc was easier, as you would need to do so for NickServ if SASL failed.
 
@@ -233,7 +253,7 @@ Connect to the network you set up in ZNC with your favorite client, like mention
 
 Once connected to the ZNC network, you need to set up authentication.
 
-#### SASL {/* #sasl */}
+##### SASL {/* #sasl */}
 
 You can set up SASL by telling it about your bot username and password.
 
@@ -249,7 +269,7 @@ SASL is only negotiated on connection, so you need to tell ZNC to do a reconnect
 
 If you are still not authenticated with the bot username, you need to use NickServ.
 
-#### NickServ {/* #nickserv */}
+##### NickServ {/* #nickserv */}
 
 To tell the module about your password, you use almost the same command as with SASL
 
@@ -259,7 +279,7 @@ To tell the module about your password, you use almost the same command as with 
 
 At this point you can disable/unload the module for the authentication method you are not using.
 
-### Using the bouncer in Autobrr {/* #using-the-bouncer-in-autobrr */}
+#### Using the bouncer in Autobrr {/* #using-the-bouncer-in-autobrr */}
 
 You tell autobrr to use the bouncer by toggling the `Bouncer (BNC)` switch in the IRC settings, this presents you with a field to enter the address of the bouncer, in `HOST:PORT` format, where host can be ip or a domain. You also need to to fill the password for the network with the same scheme(`admin/AlphaRatio:admin`) as you did when you connected your client to the bouncer.
 Once you save these changes, you should now be able to confirm that the bouncer network is used, by looking at your network list in ZNC, it should now have increased the numbers of clients on the network.
