@@ -63,8 +63,8 @@ If you want autobrr to check the disk space of a remote server, then place the s
 
 ```bash
 #!/bin/bash
-retcode=$(ssh user@domain "bash -s < ~/freespace.sh ; echo \$? " 2>/dev/null)
-echo $retcode
+# autobrr checks the script's exit code, not stdout - use exec so ssh's status is returned
+exec ssh user@domain '~/freespace.sh' 2>/dev/null
 ```
 
 :::
