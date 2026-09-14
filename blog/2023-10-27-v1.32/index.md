@@ -1,6 +1,7 @@
 ---
 slug: 1.32
 title: v1.32.0
+description: "autobrr v1.32.0 release notes: 14 new features and 10 bug fixes, including Transmission set label and improve caching."
 authors: [rogerrabbit]
 ---
 

@@ -1,6 +1,7 @@
 ---
 slug: v1.64.0
 title: v1.64.0
+description: "autobrr v1.64.0 release notes: 6 new features and 3 bug fixes, including improve downloads check and add HappyFappy."
 authors: [rogerrabbit]
 ---
 ## Changelog

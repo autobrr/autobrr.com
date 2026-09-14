@@ -1,6 +1,7 @@
 ---
 slug: v1.50.0
 title: v1.50.0
+description: "autobrr v1.50.0 release notes: 3 new features, including FearNoPeer update IRC server and update BitHUmen IRC server."
 authors: [rogerrabbit]
 ---
 ## Changelog

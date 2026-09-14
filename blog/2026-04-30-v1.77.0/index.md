@@ -1,6 +1,7 @@
 ---
 slug: v1.77.0
 title: v1.77.0
+description: "autobrr v1.77.0 release notes: 5 new features and 4 bug fixes, including support multiple comma separated labels for Transmission and PTFiles update announcers."
 authors: [rogerrabbit]
 ---
 ## Changelog

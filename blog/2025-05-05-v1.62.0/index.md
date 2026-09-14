@@ -1,6 +1,7 @@
 ---
 slug: v1.62.0
 title: v1.62.0
+description: "autobrr v1.62.0 release notes: 8 new features and 4 bug fixes, including connect postgres via socket and read config from env _FILE secrets."
 authors: [rogerrabbit]
 ---
 ## Changelog

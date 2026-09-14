@@ -1,6 +1,7 @@
 ---
 slug: v1.44.0
 title: v1.44.0
+description: "autobrr v1.44.0 release notes: 2 new features and 5 bug fixes, including check pid for container startup and add SLOVAK language option."
 authors: [rogerrabbit]
 ---
 ## Changelog

@@ -1,6 +1,7 @@
 ---
 slug: v1.66.0
 title: v1.66.0
+description: "autobrr v1.66.0 release notes: 7 new features and 6 bug fixes, including implement session storage in database and mask secrets in api responses."
 authors: [rogerrabbit]
 ---
 ## Changelog

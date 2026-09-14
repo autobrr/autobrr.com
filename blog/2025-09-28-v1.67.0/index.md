@@ -1,6 +1,7 @@
 ---
 slug: v1.67.0
 title: v1.67.0
+description: "autobrr v1.67.0 release notes: 5 new features and 3 bug fixes, including qBittorrent set download path."
 authors: [rogerrabbit]
 ---
 ## Changelog

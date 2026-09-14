@@ -1,6 +1,7 @@
 ---
 slug: v1.47.0
 title: v1.47.0
+description: "autobrr v1.47.0 release notes: 9 new features and 10 bug fixes, including add missing filter indexes and handle http status 429 rate-limit retry."
 authors: [rogerrabbit]
 ---
 ## Changelog

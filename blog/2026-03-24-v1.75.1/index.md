@@ -1,6 +1,7 @@
 ---
 slug: v1.75.1
 title: v1.75.1
+description: "autobrr v1.75.1 release notes: 1 bug fix, including Newznab failed to parse comments."
 authors: [rogerrabbit]
 ---
 ## Changelog

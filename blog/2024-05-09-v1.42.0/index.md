@@ -1,6 +1,7 @@
 ---
 slug: v1.42.0
 title: v1.42.0
+description: "autobrr v1.42.0 release notes: 8 new features and 10 bug fixes, including qBittorrent add first-last piece priority and improved error handling during login."
 authors: [rogerrabbit]
 ---
 ## Changelog

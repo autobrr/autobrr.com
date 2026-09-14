@@ -1,6 +1,7 @@
 ---
 slug: 1.33
 title: v1.33.0
+description: "autobrr v1.33.0 release notes: 4 new features and 4 bug fixes, including Transmission support seedtime and ratiolimit and add ABNormal."
 authors: [rogerrabbit]
 ---
 

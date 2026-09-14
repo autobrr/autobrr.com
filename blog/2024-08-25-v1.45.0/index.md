@@ -1,6 +1,7 @@
 ---
 slug: v1.45.0
 title: v1.45.0
+description: "autobrr v1.45.0 release notes: 5 new features and 7 bug fixes, including add validation for max downloads unit and HD-Only add size."
 authors: [rogerrabbit]
 ---
 ## Changelog

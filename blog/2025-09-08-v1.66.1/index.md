@@ -1,6 +1,7 @@
 ---
 slug: v1.66.1
 title: v1.66.1
+description: "autobrr v1.66.1 release notes: 4 bug fixes, including Test sends keys as redacted if saved and Test API sends key as redacted if saved."
 authors: [rogerrabbit]
 ---
 ## Changelog

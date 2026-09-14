@@ -1,6 +1,7 @@
 ---
 slug: v1.46.1
 title: v1.46.1
+description: "autobrr v1.46.1 release notes: 2 bug fixes, including Deluge push error and start feeds in background."
 authors: [rogerrabbit]
 ---
 ## Changelog

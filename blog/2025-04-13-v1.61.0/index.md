@@ -1,6 +1,7 @@
 ---
 slug: v1.61.0
 title: v1.61.0
+description: "autobrr v1.61.0 release notes: 2 new features and 2 bug fixes, including read Plaintext from file on disk and show profile pic if present."
 authors: [rogerrabbit]
 ---
 ## Changelog

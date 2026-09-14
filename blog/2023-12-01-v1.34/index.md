@@ -1,6 +1,7 @@
 ---
 slug: 1.34
 title: v1.34.0
+description: "autobrr v1.34.0 release notes: 18 new features and 10 bug fixes, including postgres set ssl mode and setup integration tests."
 authors: [rogerrabbit]
 ---
 

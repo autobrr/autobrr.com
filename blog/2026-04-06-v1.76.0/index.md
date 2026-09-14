@@ -1,6 +1,7 @@
 ---
 slug: v1.76.0
 title: v1.76.0
+description: "autobrr v1.76.0 release notes: 12 new features and 3 bug fixes, including add PKCE support to OIDC implementation."
 authors: [rogerrabbit]
 ---
 ## Changelog

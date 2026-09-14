@@ -1,6 +1,7 @@
 ---
 slug: v1.54.0
 title: v1.54.0
+description: "autobrr v1.54.0 release notes: 1 new feature and 3 bug fixes, including add PrivateSilverScreen."
 authors: [rogerrabbit]
 ---
 

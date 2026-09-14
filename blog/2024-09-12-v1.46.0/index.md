@@ -1,6 +1,7 @@
 ---
 slug: v1.46.0
 title: v1.46.0
+description: "autobrr v1.46.0 release notes: 8 new features and 9 bug fixes, including improve error handling and add pprof profiling."
 authors: [rogerrabbit]
 ---
 ## Changelog

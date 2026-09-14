@@ -1,6 +1,7 @@
 ---
 slug: v1.71.0
 title: v1.71.0
+description: "autobrr v1.71.0 release notes: 4 bug fixes, including correct config option description and BTN API increase timeout and change Test RPC method."
 authors: [rogerrabbit]
 ---
 ## Changelog

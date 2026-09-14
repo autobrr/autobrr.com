@@ -1,6 +1,7 @@
 ---
 slug: v1.75.0
 title: v1.75.0
+description: "autobrr v1.75.0 release notes: 5 new features and 1 bug fix, including add new host parsing for Transmission and RSS support ezrss extension."
 authors: [rogerrabbit]
 ---
 ## Changelog

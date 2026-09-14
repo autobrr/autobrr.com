@@ -1,6 +1,7 @@
 ---
 slug: v1.56.0
 title: v1.56.0
+description: "autobrr v1.56.0 release notes: 5 new features and 2 bug fixes, including RED and OPS fetch record label from API and set default `Announce Type` to `NEW`."
 authors: [rogerrabbit]
 ---
 

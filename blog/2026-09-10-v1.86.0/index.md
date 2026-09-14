@@ -1,6 +1,7 @@
 ---
 slug: v1.86.0
 title: v1.86.0
+description: "autobrr v1.86.0 release notes: 6 new features and 5 bug fixes, including add progress logs for startup consistency checks."
 authors: [rogerrabbit]
 ---
 ## Changelog

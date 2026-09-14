@@ -1,6 +1,7 @@
 ---
 slug: v1.57.0
 title: v1.57.0
+description: "autobrr v1.57.0 release notes: 3 new features and 4 bug fixes, including MAM filter VIP with release tags and remove TSC."
 authors: [rogerrabbit]
 ---
 

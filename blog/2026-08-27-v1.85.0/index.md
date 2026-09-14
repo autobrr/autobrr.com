@@ -1,6 +1,7 @@
 ---
 slug: v1.85.0
 title: v1.85.0
+description: "autobrr v1.85.0 release notes: 8 new features and 7 bug fixes, including refine stats customization and make feed cache TTL configurable."
 authors: [rogerrabbit]
 ---
 ## Changelog

@@ -13,6 +13,7 @@ from markdownify import markdownify as md
 from datetime import datetime
 import logging
 import re
+from release_notes_meta import build_description, yaml_quote
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
@@ -56,6 +57,7 @@ def create_release_notes_folder(version, release_date, markdown_content):
         file.write("---\n")
         file.write(f"slug: {version}\n")
         file.write(f"title: {version}\n")
+        file.write(f"description: {yaml_quote(build_description(version, markdown_content))}\n")
         file.write("authors: [rogerrabbit]\n")
         file.write("---\n")
         file.write(markdown_content)

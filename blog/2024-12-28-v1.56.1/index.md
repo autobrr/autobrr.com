@@ -1,6 +1,7 @@
 ---
 slug: v1.56.1
 title: v1.56.1
+description: "autobrr v1.56.1 release notes: 2 new features and 5 bug fixes, including implement AnimeWorld announce types and ui enhancements."
 authors: [rogerrabbit]
 ---
 

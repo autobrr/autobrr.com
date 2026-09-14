@@ -1,6 +1,7 @@
 ---
 slug: v1.58.0
 title: v1.58.0
+description: "autobrr v1.58.0 release notes: 4 new features and 2 bug fixes, including add option to disable built-in login when using OIDC and add anilist support."
 authors: [rogerrabbit]
 ---
 

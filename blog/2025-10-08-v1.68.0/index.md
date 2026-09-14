@@ -1,6 +1,7 @@
 ---
 slug: v1.68.0
 title: v1.68.0
+description: "autobrr v1.68.0 release notes: 3 new features and 5 bug fixes, including new migrations strategy and update RevolutionTT domain."
 authors: [rogerrabbit]
 ---
 ## Changelog

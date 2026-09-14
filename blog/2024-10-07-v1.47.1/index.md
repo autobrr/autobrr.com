@@ -1,6 +1,7 @@
 ---
 slug: v1.47.1
 title: v1.47.1
+description: "autobrr v1.47.1 release notes: 2 bug fixes, including do not create flat tarball for web-dist and check name length."
 authors: [rogerrabbit]
 ---
 ## Changelog

@@ -1,6 +1,7 @@
 ---
 slug: v1.78.0
 title: v1.78.0
+description: "autobrr v1.78.0 release notes: 4 new features, including add CZTeam and add Yu-Scene."
 authors: [rogerrabbit]
 ---
 ## Changelog

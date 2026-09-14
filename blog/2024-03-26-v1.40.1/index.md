@@ -1,6 +1,7 @@
 ---
 slug: 1.40.1
 title: v1.40.1
+description: "autobrr v1.40.1 release notes: 1 bug fix, including could not create."
 authors: [rogerrabbit]
 ---
 

@@ -1,6 +1,7 @@
 ---
 slug: v1.63.1
 title: v1.63.1
+description: "autobrr v1.63.1 release notes: 1 bug fix, including duplicate `skip_clean_sanitize` column."
 authors: [rogerrabbit]
 ---
 ## Changelog

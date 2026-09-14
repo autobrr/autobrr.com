@@ -1,6 +1,7 @@
 ---
 slug: v1.48.0
 title: v1.48.0
+description: "autobrr v1.48.0 release notes: 1 new feature and 6 bug fixes, including improve rejection handling."
 authors: [rogerrabbit]
 ---
 ## Changelog

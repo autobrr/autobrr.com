@@ -1,6 +1,7 @@
 ---
 slug: v1.55.0
 title: v1.55.0
+description: "autobrr v1.55.0 release notes: 6 new features and 4 bug fixes, including implement auth proxy support with OpenID Connect and implement TTLCache and TimeCache."
 authors: [rogerrabbit]
 ---
 
