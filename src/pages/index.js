@@ -216,31 +216,37 @@ const FEATURES = [
   {
     icon: <FiTerminal size={20} />,
     title: "Real-time IRC announces",
+    to: "/configuration/irc",
     body: "Grab releases the moment they're announced, minutes before they show up in any RSS feed.",
   },
   {
     icon: <BiRss size={20} />,
     title: "Feeds when there's no IRC",
+    to: "/configuration/feeds",
     body: "Some indexers don't announce over IRC. Point autobrr at their RSS, Torznab or Newznab feed and filter those releases the same way.",
   },
   {
     icon: <FiFilter size={20} />,
     title: "Filters, down to the regex",
+    to: "/filters",
     body: "Match on resolution, source, codec, size, seasons, episodes and release groups. If a preset doesn't cut it, drop into regex.",
   },
   {
     icon: <TbPlugConnected size={20} />,
     title: "Works with your setup",
+    to: "/configuration/download-clients/dedicated",
     body: "Push to qBittorrent, Deluge, Transmission, rTorrent, Porla, aria2, SABnzbd or NZBGet, or route releases through Sonarr and Radarr.",
   },
   {
     icon: <MdOutlineNotificationsActive size={20} />,
     title: "Notifications and hooks",
+    to: "/configuration/notifications",
     body: "Get a ping on Discord, Telegram, Pushover, Gotify, Shoutrrr or ntfy for every push, and trigger webhooks or scripts on match.",
   },
   {
     icon: <FiPackage size={20} />,
     title: "One binary, anywhere",
+    to: "/installation/intro",
     body: "A single Go binary with a built-in web UI. Runs on Linux, macOS, Windows, FreeBSD, Docker and your seedbox.",
   },
 ];
@@ -261,7 +267,11 @@ function Features() {
           {FEATURES.map((feature) => (
             <div className={styles.feature} key={feature.title}>
               <span className={styles.featureIcon}>{feature.icon}</span>
-              <h3 className={styles.featureTitle}>{feature.title}</h3>
+              <h3 className={styles.featureTitle}>
+                <Link className={styles.featureLink} to={feature.to}>
+                  {feature.title}
+                </Link>
+              </h3>
               <p className={styles.featureBody}>{feature.body}</p>
             </div>
           ))}

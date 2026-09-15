@@ -14,7 +14,7 @@ tracker to a Servarr instance, as a way to illustrate how the components of auto
 together and what is required to get up and running. It's not the only use case and
 other use cases may require more RTFM'ing in [the configuration docs](./configuration/autobrr.mdx).
 
-1. [Install autobrr](./installation/linux.mdx).
+1. [Install autobrr](./installation/intro.mdx).
 
    Proceed once the web UI is accessible.
 
@@ -45,7 +45,8 @@ other use cases may require more RTFM'ing in [the configuration docs](./configur
    selected and leave the rest blank. Don't forget to enable the filter.
 
    **NOTE**: Autobrr does nothing with received IRC announcements without at least one
-   filter applied to at least one indexer.
+   filter applied to at least one indexer. The [filter examples](./filters/examples.mdx) show
+   some good starting points for Sonarr and Radarr.
 
 8. Add a [filter action](./filters/actions.mdx).
 
@@ -79,3 +80,5 @@ DEBUG release.store: &{ID:12 FilterStatus:FILTER_APPROVED Rejections:[] Indexer:
 DEBUG sonarr: release push rejected: Foo Series S01E01 1080p WEB h264-BarGrp, indexer foo-indexer to http://localhost:8989 reasons: '[Unknown Series]'
 DEBUG release rejected: Unknown Series
 ```
+
+From here you can set up [notifications](./configuration/notifications.mdx) to get a message on every push, and check the [FAQ](./faqs.mdx) if releases are not showing up.
