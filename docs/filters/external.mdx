@@ -20,7 +20,7 @@ Many of the fields have support for [macros](./macros.mdx), which allow you to e
 
 We have a separate repo for community scripts created by our users. https://github.com/autobrr/community-scripts
 
-### Script
+## Script
 
 Run external script that does something. Use `exit codes` correctly, like `exit 0` for no issues. In Linux, non-zero exit codes are considered not-ok/error etc.
 
@@ -36,7 +36,7 @@ See [stop if disk is full](../usage/tips.mdx#stop-if-disk-is-full) for a good ex
 | **Arguments**            | Arguments.            | e.g. `--name {{ .TorrentName }} --file {{ .TorrentPathName }}` |
 | **Expected exit status** | Expected exit status. | e.g. `0`                                                       |
 
-### Webhook
+## Webhook
 
 Send a payload to some custom API and do more processing. Use status codes to trigger different behaviours.
 
@@ -55,7 +55,7 @@ A real-world example is [cross-seeding with qui](./cross-seed-qui.mdx), where th
 | **Maximum retry attempts**    | How many times to try the request in total.                                  | e.g. `3`                                  |
 | **Retry delay in seconds**    | Wait time between attempts.                                                  | e.g. `5`                                  |
 
-### On Error
+## On Error
 
 Each external filter has an **On Error** setting that controls what happens when the script or webhook itself fails (for example a connection error):
 

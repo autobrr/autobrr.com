@@ -20,11 +20,11 @@ Don't expect any support for setting this up. If you need help setting up cross-
 
 With this setup you can use autobrr with [cross-seed](https://github.com/cross-seed/cross-seed) to automatically cross-seed newly announced torrents from indexer Y that matches existing torrents in your torrent client from indexer X.
 
-### Install cross-seed {/* #cross-seed-install */}
+## Install cross-seed {/* #cross-seed-install */}
 
 See [cross-seed's documentation](https://www.cross-seed.org/docs/basics/getting-started) on how to get started.
 
-### Create the cross-seed filter in autobrr {/* #cross-seed-filter */}
+## Create the cross-seed filter in autobrr {/* #cross-seed-filter */}
 
 The way this works is you create a filter with a higher priority set than any other filter to make sure every cross-seed match is forwarded to the cross-seed daemon instead of being run through other filters.
 
