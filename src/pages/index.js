@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import clsx from "clsx";
 import Layout from "@theme/Layout";
 import Link from "@docusaurus/Link";
+import JsonLd from "@site/src/components/JsonLd";
 
 import styles from "./index.module.css";
 
@@ -617,12 +618,50 @@ function Footer() {
   );
 }
 
+const STRUCTURED_DATA = [
+  {
+    "@type": "SoftwareApplication",
+    "@id": "https://autobrr.com/#software",
+    name: "autobrr",
+    url: "https://autobrr.com/",
+    description:
+      "autobrr monitors IRC announce channels and RSS, Torznab and Newznab feeds, filters releases and pushes them to your download client or Sonarr and Radarr in seconds.",
+    applicationCategory: "UtilitiesApplication",
+    operatingSystem: "Linux, macOS, Windows, FreeBSD, Docker",
+    softwareHelp: {
+      "@type": "CreativeWork",
+      url: "https://autobrr.com/introduction",
+    },
+    downloadUrl: "https://github.com/autobrr/autobrr/releases",
+    license: "https://www.gnu.org/licenses/old-licenses/gpl-2.0.html",
+    isAccessibleForFree: true,
+    offers: {
+      "@type": "Offer",
+      price: "0",
+      priceCurrency: "USD",
+    },
+    image: "https://autobrr.com/img/autobrr.png",
+    sameAs: [
+      "https://github.com/autobrr/autobrr",
+      "https://discord.autobrr.com/",
+    ],
+  },
+  {
+    "@type": "WebSite",
+    "@id": "https://autobrr.com/#website",
+    name: "autobrr",
+    url: "https://autobrr.com/",
+    about: { "@id": "https://autobrr.com/#software" },
+  },
+];
+
 export default function Home() {
   return (
     <Layout
       title="IRC announce and RSS automation for torrents"
       description="autobrr is the modern autodl-irssi replacement: it monitors IRC announce channels and feeds, filters releases and pushes them to your download client in seconds."
     >
+      <JsonLd data={STRUCTURED_DATA} />
       <Hero />
       <main>
         <HowItWorks />
