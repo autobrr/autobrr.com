@@ -1,6 +1,7 @@
 ---
 slug: v1.69.0
 title: v1.69.0
+description: "autobrr v1.69.0 release notes: 8 new features and 8 bug fixes, including make CORS settings configurable and release resources on close."
 authors: [rogerrabbit]
 ---
 ## Changelog

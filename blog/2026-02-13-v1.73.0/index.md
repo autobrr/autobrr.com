@@ -1,6 +1,7 @@
 ---
 slug: v1.73.0
 title: v1.73.0
+description: "autobrr v1.73.0 release notes: 10 new features and 1 bug fix, including OIDC retry failed init on startup and Sonarr and Radarr send indexer flags."
 authors: [rogerrabbit]
 ---
 ## Changelog

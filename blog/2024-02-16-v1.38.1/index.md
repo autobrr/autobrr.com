@@ -1,6 +1,7 @@
 ---
 slug: 1.38.1
 title: v1.38.1
+description: "autobrr v1.38.1 release notes: 2 bug fixes, including force update ANT and NBL irc server addr and unify border colors in indexer form (@martylukyy)."
 authors: [rogerrabbit]
 ---
 

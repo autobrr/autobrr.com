@@ -1,6 +1,7 @@
 ---
 slug: 1.35.0
 title: v1.35.0
+description: "autobrr v1.35.0 release notes: 14 new features and 9 bug fixes, including deluge v2 add skip recheck and qBittorrent add priority handling."
 authors: [rogerrabbit]
 ---
 

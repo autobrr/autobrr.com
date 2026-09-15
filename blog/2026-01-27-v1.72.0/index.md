@@ -1,6 +1,7 @@
 ---
 slug: v1.72.0
 title: v1.72.0
+description: "autobrr v1.72.0 release notes: 8 new features and 3 bug fixes, including add Luminarr and add HTTP proxy support."
 authors: [rogerrabbit]
 ---
 ## Changelog

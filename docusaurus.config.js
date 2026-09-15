@@ -52,7 +52,7 @@ const config = {
           sidebarPath: require.resolve("./sidebars.js"),
           editUrl: "https://github.com/autobrr/autobrr.com/tree/main/",
           routeBasePath: "/",
-          showLastUpdateTime: false,
+          showLastUpdateTime: true,
           includeCurrentVersion: true,
           lastVersion: "current",
           versions: {
@@ -76,7 +76,14 @@ const config = {
         sitemap: {
           changefreq: "weekly",
           priority: 0.5,
-          ignorePatterns: ["/tags/**"],
+          lastmod: "date",
+          ignorePatterns: [
+            "/tags/**",
+            "/search",
+            "/release-notes/authors",
+            "/release-notes/authors/**",
+            "/release-notes/page/**",
+          ],
           filename: "sitemap.xml",
         },
       },

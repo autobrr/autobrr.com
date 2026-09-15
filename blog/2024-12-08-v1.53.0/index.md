@@ -1,6 +1,7 @@
 ---
 slug: v1.53.0
 title: v1.53.0
+description: "autobrr v1.53.0 release notes: 5 new features and 2 bug fixes, including implement `AnnounceType` and update PTP announce to new format."
 authors: [rogerrabbit]
 ---
 

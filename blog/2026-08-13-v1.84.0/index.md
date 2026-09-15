@@ -1,6 +1,7 @@
 ---
 slug: v1.84.0
 title: v1.84.0
+description: "autobrr v1.84.0 release notes: 10 new features and 16 bug fixes, including add Sportarr support and user-configurable widgets with release stats and charts."
 authors: [rogerrabbit]
 ---
 ## Changelog

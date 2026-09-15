@@ -1,6 +1,7 @@
 ---
 slug: 1.31
 title: v1.31.0
+description: "autobrr v1.31.0 release notes: 2 new features and 5 bug fixes, including feat(feeds): improve file size parsing."
 authors: [rogerrabbit]
 ---
 

@@ -1,8 +1,8 @@
 ---
 id: autobrr
 sidebar_label: autobrr
-title: Configuring autobrr
-description: The primary configuration entry point for autobrr is config.toml, which should be located in the config directory you specified to the autobrr process or in the config directory relative from which autobrr is running.
+title: Configure autobrr with config.toml
+description: "Every setting in autobrr's config.toml explained: host, port, base URL, log level, database, session, OIDC and update checks, with defaults and examples."
 keywords: [autobrr, config, setup, configuration, toml]
 pagination_next: configuration/indexers
 pagination_prev: installation/linux
@@ -159,7 +159,7 @@ checkForUpdates = true
 #customDefinitions = "/home/$YOUR_USER/.config/autobrr/definitions"
 ```
 
-#### Config options {/* #config-options */}
+## Config options {/* #config-options */}
 
 - `host`: If not using a reverse proxy or in a container, change to `0.0.0.0`.
 - `port`: If port already in use, then change to a free one.
@@ -184,7 +184,7 @@ scrape_configs:
 
 The endpoint can be protected with basic auth via `metricsBasicAuthUsers` (comma separated `user:password` pairs with the password bcrypt-hashed, generated with [`autobrrctl htpasswd`](#autobrrctl)).
 
-### Create user via command line (optional) {/* #create-user-via-cli */}
+## Create user via command line (optional) {/* #create-user-via-cli */}
 
 This step is not needed unless you wish to create a user _via the command line_. Instead, the process of creating a user can be done via the web UI instead, which is the recommended way to do it.
 
@@ -214,6 +214,9 @@ Make sure to read through all of the articles as all of them have some important
 - [IRC <BsChatDotsFill />](./irc.mdx)
 - [Download Clients <FaDownload />](./download-clients/dedicated)
 - [Feeds (RSS / Torznab / Newznab) <MdRssFeed />](./feeds.mdx)
+- [Authentication](./authentication.mdx)
+- [Notifications](./notifications.mdx)
+- [Proxies](./proxy.mdx)
 
 ## Additional help {/* #additional-help */}
 

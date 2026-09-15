@@ -1,6 +1,7 @@
 ---
 slug: v1.51.0
 title: v1.51.0
+description: "autobrr v1.51.0 release notes: 7 new features and 4 bug fixes, including add workflow to trigger docs update on release and SQLite database backups."
 authors: [rogerrabbit]
 ---
 

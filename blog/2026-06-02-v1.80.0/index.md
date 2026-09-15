@@ -1,6 +1,7 @@
 ---
 slug: v1.80.0
 title: v1.80.0
+description: "autobrr v1.80.0 release notes: 4 new features and 1 bug fix, including qBittorrent add API key support and add F1Carreras."
 authors: [rogerrabbit]
 ---
 ## Changelog

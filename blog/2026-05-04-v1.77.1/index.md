@@ -1,6 +1,7 @@
 ---
 slug: v1.77.1
 title: v1.77.1
+description: "autobrr v1.77.1 release notes: 1 new feature, including support more freeleech mappings in update-indexers."
 authors: [rogerrabbit]
 ---
 ## Changelog

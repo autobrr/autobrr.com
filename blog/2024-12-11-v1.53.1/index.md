@@ -1,6 +1,7 @@
 ---
 slug: v1.53.1
 title: v1.53.1
+description: "autobrr v1.53.1 release notes: 1 new feature and 2 bug fixes, including add indexer docs update script."
 authors: [rogerrabbit]
 ---
 

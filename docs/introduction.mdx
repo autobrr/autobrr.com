@@ -3,7 +3,7 @@ sidebar_position: 1
 sidebar_label: Introduction
 pagination_next: quick-start
 title: Introduction
-description: With inspiration and ideas from tools like trackarr, autodl-irssi and flexget we built one tool that can do it all, and then some. autobrr is the modern download automation tool for torrents.
+description: "autobrr is a modern download automation tool and autodl-irssi replacement: it watches IRC announces and feeds, filters releases and pushes them to your client."
 keywords:
   [
     autobrr,
@@ -58,6 +58,8 @@ With inspiration and ideas from tools like trackarr, autodl-irssi and flexget we
 
 autobrr is the modern download automation tool for torrents.
 
+New here? The [quick start](./quick-start.mdx) walks through a first setup end to end, and the [installation guide](./installation/intro.mdx) covers every platform.
+
 ## What is autobrr and how does it fit into the ecosystem? {/* #what-is-autobrr */}
 
 We can start by talking about torrent trackers (hereby referred to as indexers) and maintaining ratio.
@@ -105,16 +107,16 @@ This isn't needed if your use case is feeding the \*arrs only. Since they have R
 As of right now, autobrr features:
 
 - Support for 100+ indexers with IRC announces
-- RSS and Torznab/Newznab support via Prowlarr to easily get access to hundreds of indexers
+- RSS and Torznab/Newznab [feed support](./configuration/feeds.mdx) via Prowlarr to easily get access to hundreds of indexers
 - Powerful but simple filtering with RegEx support (like in autodl-irssi)
 - Easy to use and mobile friendly web UI (with dark mode!) to manage everything
 - Built on Go and React making autobrr lightweight and perfect for supporting multiple platforms (Linux, FreeBSD, Windows, macOS) on different architectures (e.g. x86, ARM)
 - Great container support (Docker, k8s/Kubernetes)
-- Database engine supporting both PostgreSQL and SQLite
-- Notifications (Discord, Notifiarr, Telegram, Pushover, Gotify, ntfy, LunaSea, Shoutrrr, webhooks)
+- Database engine supporting both [PostgreSQL](./installation/supplementary/postgresql.mdx) and SQLite
+- [Notifications](./configuration/notifications.mdx) (Discord, Notifiarr, Telegram, Pushover, Gotify, ntfy, LunaSea, Shoutrrr, webhooks)
 - Multi-language web UI (English, German, Czech, Spanish, French, Russian, Norwegian, Simplified Chinese)
 - One autobrr instance can communicate with multiple clients (both torrent and \*arr) on remote servers
-- Base path / Subfolder (and subdomain) support for convenient reverse-proxy support
+- Base path / Subfolder (and subdomain) support for convenient [reverse-proxy](./installation/reverse-proxy/index.mdx) support
 
 Available download clients and actions
 

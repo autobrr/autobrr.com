@@ -1,6 +1,7 @@
 ---
 slug: v1.43.0
 title: v1.43.0
+description: "autobrr v1.43.0 release notes: 4 new features and 2 bug fixes, including support daily shows and add BitHUmen."
 authors: [rogerrabbit]
 ---
 ## Changelog

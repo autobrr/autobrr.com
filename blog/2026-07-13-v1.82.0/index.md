@@ -1,6 +1,7 @@
 ---
 slug: v1.82.0
 title: v1.82.0
+description: "autobrr v1.82.0 release notes: 9 new features and 2 bug fixes, including align defaults with README.md and definition v2 format."
 authors: [rogerrabbit]
 ---
 ## Changelog

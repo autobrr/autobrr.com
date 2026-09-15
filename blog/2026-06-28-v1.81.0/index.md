@@ -1,6 +1,7 @@
 ---
 slug: v1.81.0
 title: v1.81.0
+description: "autobrr v1.81.0 release notes: 1 new feature, including rename RoTorrent to SeedCore."
 authors: [rogerrabbit]
 ---
 ## Changelog

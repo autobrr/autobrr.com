@@ -1,6 +1,7 @@
 ---
 slug: v1.49.0
 title: v1.49.0
+description: "autobrr v1.49.0 release notes: 4 new features and 10 bug fixes, including rename skip reannounce to disable reannounce and sanitize description."
 authors: [rogerrabbit]
 ---
 ## Changelog

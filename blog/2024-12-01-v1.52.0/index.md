@@ -1,6 +1,7 @@
 ---
 slug: v1.52.0
 title: v1.52.0
+description: "autobrr v1.52.0 release notes: 3 new features and 1 bug fix, including skip build on misc files and add UploadCX."
 authors: [rogerrabbit]
 ---
 

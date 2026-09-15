@@ -1,6 +1,7 @@
 ---
 slug: v1.70.0
 title: v1.70.0
+description: "autobrr v1.70.0 release notes: 4 new features and 1 bug fix, including SQLite improvements and clarify mode for RegEx fields."
 authors: [rogerrabbit]
 ---
 ## Changelog

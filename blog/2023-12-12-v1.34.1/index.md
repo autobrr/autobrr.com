@@ -1,6 +1,7 @@
 ---
 slug: 1.34.1
 title: v1.34.1
+description: "autobrr v1.34.1 release notes: 3 bug fixes, including PostgresExtraParams struct tag and log level change causes panic."
 authors: [rogerrabbit]
 ---
 

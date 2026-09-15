@@ -1,6 +1,7 @@
 ---
 slug: v1.83.0
 title: v1.83.0
+description: "autobrr v1.83.0 release notes: 9 new features and 8 bug fixes, including add aria2 support and batch external filter lookup."
 authors: [rogerrabbit]
 ---
 ## Changelog

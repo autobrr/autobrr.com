@@ -1,6 +1,7 @@
 ---
 slug: v1.65.0
 title: v1.65.0
+description: "autobrr v1.65.0 release notes: 3 new features and 5 bug fixes, including log max age too old and torznab parse author."
 authors: [rogerrabbit]
 ---
 ## Changelog

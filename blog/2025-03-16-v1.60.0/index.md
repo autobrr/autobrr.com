@@ -1,6 +1,7 @@
 ---
 slug: v1.60.0
 title: v1.60.0
+description: "autobrr v1.60.0 release notes: 4 new features, including show current download count in list and add DarkPeers."
 authors: [rogerrabbit]
 ---
 ## Changelog

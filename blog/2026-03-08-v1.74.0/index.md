@@ -1,6 +1,7 @@
 ---
 slug: v1.74.0
 title: v1.74.0
+description: "autobrr v1.74.0 release notes: 5 new features and 6 bug fixes, including add NZBGet support and Torznab use Enclosure link if available."
 authors: [rogerrabbit]
 ---
 ## Changelog

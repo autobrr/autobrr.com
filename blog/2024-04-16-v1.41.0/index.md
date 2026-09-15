@@ -1,6 +1,7 @@
 ---
 slug: v1.41.0
 title: v1.41.0
+description: "autobrr v1.41.0 release notes: 8 new features and 3 bug fixes, including validate existence of external exec cmd and Nyaa add trusted, remake and batch tags."
 authors: [rogerrabbit]
 ---
 

@@ -1,6 +1,7 @@
 ---
 slug: v1.63.0
 title: v1.63.0
+description: "autobrr v1.63.0 release notes: 6 new features and 3 bug fixes, including add filters export functionality and optimize existing cache items check."
 authors: [rogerrabbit]
 ---
 ## Changelog

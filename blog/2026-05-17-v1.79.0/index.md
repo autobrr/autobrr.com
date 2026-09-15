@@ -1,6 +1,7 @@
 ---
 slug: v1.79.0
 title: v1.79.0
+description: "autobrr v1.79.0 release notes: 4 new features and 1 bug fix, including Nexum support freeleech in announce and add Ultrabits."
 authors: [rogerrabbit]
 ---
 ## Changelog

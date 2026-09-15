@@ -2,8 +2,8 @@
 id: intro
 slug: /filters
 sidebar_label: Intro
-title: Filter Intro
-description: Explanation of filter options, fields and values.
+title: "Filters: how autobrr decides what to grab"
+description: Filters are the conditions every announce is checked against. Learn how filters, actions and indexers fit together before building your first one.
 keywords: [ autobrr, filters, tv, movies, music ]
 pagination_label: Filters - Intro
 pagination_next: filters/general
@@ -19,6 +19,8 @@ import FilterWildcard from '/snippets/filter-wildcard.mdx';
 # Filters
 
 Filters are how you tell autobrr what to grab. Each filter is a set of conditions (resolution, size, release group and so on) that every announce is checked against; when a release matches, the filter's actions run and the release is sent to your download client, an *arr, or whatever else you've configured. You can run as many filters as you like side by side, each with its own indexers, rules and actions.
+
+The filter form is split into tabs, each with its own page: [General](./general.mdx) for indexers, priority and size limits, [TV & Movies](./tv-movies.mdx) and [Music](./music.mdx) for media-specific fields, [Advanced](./advanced.mdx) for regex, [External](./external.mdx) for scripts and webhooks, and [Actions](./actions.mdx) for what happens on a match. If you would rather start from something that works, copy one of the [filter examples](./examples.mdx).
 
 ## How a filter is evaluated {/* #how-a-filter-is-evaluated */}
 

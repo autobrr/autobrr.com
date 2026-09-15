@@ -1,9 +1,9 @@
 ---
 id: dedi
 sidebar_label: Dedicated servers
-title: Download Clients
+title: Set up download clients in autobrr
 slug: /configuration/download-clients/dedicated
-description: A guide on how to set up download clients in autobrr.
+description: Add qBittorrent, Deluge, rTorrent, Transmission, Porla, aria2, SABnzbd, NZBGet, Sonarr, Radarr, Lidarr, Readarr and Whisparr as clients in autobrr.
 keywords:
   [
     autobrr,
@@ -38,7 +38,7 @@ import ArrOverride from '/snippets/override-arr-dl-client.mdx';
 Go to `Settings > Clients` to setup clients.
 Clients can be local or remote, as long as ports are open and auth available.
 
-These are the available download clients.
+These are the available download clients. On a shared seedbox, see the [shared seedbox page](./shared.mdx) for provider-specific host, port and auth details.
 
 - qBittorrent
 - Deluge (v1+ and v2+)
@@ -202,7 +202,7 @@ Here are a couple of common ways for how to access ruTorrent.
 - Username: `<username>`
 - Password: `<password>`
 
-If you are on a shared seedbox you might need your username in the url like:
+If you are on a [shared seedbox](./shared.mdx) you might need your username in the url like:
 
 - Host: `http://localhost/USERNAME/rutorrent/plugins/httprpc/action.php`
 

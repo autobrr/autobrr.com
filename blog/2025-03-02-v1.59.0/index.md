@@ -1,6 +1,7 @@
 ---
 slug: v1.59.0
 title: v1.59.0
+description: "autobrr v1.59.0 release notes: 4 new features and 4 bug fixes, including add CapybaraBR and add HDB parse Exclusive as tag."
 authors: [rogerrabbit]
 ---
 ## Changelog

@@ -1,6 +1,7 @@
 ---
 slug: v1.51.1
 title: v1.51.1
+description: "autobrr v1.51.1 release notes: 1 bug fix, including backup on windows bad filename."
 authors: [rogerrabbit]
 ---
 

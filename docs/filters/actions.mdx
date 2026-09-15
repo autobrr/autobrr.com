@@ -1,6 +1,6 @@
 ---
-title: Actions
-description: A configured action is what your autodl does with a successful push. You can send it any of the supported actions. Each filter supports multiple actions just in case you need to send to multiple clients, or run custom commands as well.
+title: Filter actions
+description: "Filter actions decide what autobrr does with a match: send to qBittorrent, Deluge, rTorrent, Transmission, Porla, Sonarr and Radarr, or run a script or webhook."
 keywords:
   [
     autobrr,
@@ -35,7 +35,7 @@ import ActionClient from '/snippets/diagrams/action-client.mdx';
 import ActionReannounce from '/snippets/diagrams/action-reannounce.mdx';
 import ActionArr from '/snippets/diagrams/action-arr.mdx';
 
-A configured action is what autobrr will push a successful match to. Each filter supports multiple actions, just in case you need to send to multiple clients or run custom commands as well. Actions are configured in the Action tab inside your filter.
+A configured action is what autobrr will push a successful match to. Each filter supports multiple actions, just in case you need to send to multiple clients or run custom commands as well. Actions are configured in the Action tab inside your filter. To get a message when a push is approved, rejected or fails, set up [notifications](../configuration/notifications.mdx).
 
 The most common setup is sending straight to a download client, with the category, save path and limits you set on the action:
 
@@ -43,7 +43,7 @@ The most common setup is sending straight to a download client, with the categor
 
 Whether you're adding, updating, or removing actions in a filter, remember to **save** the filter afterwards to ensure your changes take effect.
 
-### Macros {/* #macros */}
+## Macros {/* #macros */}
 
 Many of the action fields have support for [macros](../filters/macros.mdx), which allow you to enhance your workflow significantly by providing custom logic/data processing to the input data provided by autobrr.
 

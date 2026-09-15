@@ -2,8 +2,8 @@
 sidebar_label: IRC
 sidebar_position: 2
 pagination_label: Configuration - IRC
-title: IRC
-description: A guide on how to set up IRC networks and announce channels in autobrr.
+title: IRC networks and announce channels
+description: "Set up IRC in autobrr: register a nick with NickServ, add a network, join announce channels, use SASL or a ZNC bouncer, and troubleshoot connections."
 keywords:
   [
     autobrr,
@@ -81,6 +81,8 @@ In some rare occurrences your bot might get banned from the IRC network. This ca
 Some networks won't require special authentication, while others do, but they could implement it at any time. If they do, and your bot isn't set up for it, it will just retry to join the channel into infinity on a set interval. The network owners might ban you in this case.
 
 Usually these things can often be resolved by contacting their support. Most trackers have a #support channel as well as a ticket system on their site.
+
+If the network does not accept connections from your server at all, you can route the IRC connection through a SOCKS5 or HTTP [proxy](./proxy.mdx).
 
 You shouldn't need to worry about it, but it's nice now to know what you need to do if that were to happen.
 

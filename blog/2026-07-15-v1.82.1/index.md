@@ -1,6 +1,7 @@
 ---
 slug: v1.82.1
 title: v1.82.1
+description: "autobrr v1.82.1 release notes: 1 bug fix, including GGn IRC parser."
 authors: [rogerrabbit]
 ---
 ## Changelog
