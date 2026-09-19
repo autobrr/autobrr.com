@@ -17,16 +17,16 @@ Unlike the [cross-seed](../3rd-party-tools/cross-seed.mdx) third party setup, th
 ## How it works {/* #how-it-works */}
 
 1. autobrr sees a new release from a tracker
-2. autobrr sends the torrent name and indexer identifier to qui's `/api/cross-seed/webhook/check` endpoint via an external filter
-3. qui searches your qBittorrent instances for matching content and responds with:
+2. autobrr sends the torrent name, the size it already knows from the announce or feed, and the indexer identifier to qui's `/api/cross-seed/webhook/check` endpoint via an external filter
+3. qui searches your qBittorrent instances for matching content, without downloading the torrent file, and responds with:
    - `200 OK`: a matching torrent is complete and ready to cross-seed
    - `202 Accepted`: a matching torrent exists but is still downloading; autobrr retries later
    - `404 Not Found`: no matching torrent exists
-4. On `200 OK`, an autobrr action sends the torrent file to qui's `/api/cross-seed/apply` endpoint, which adds it to qBittorrent
+4. On `200 OK`, an autobrr action sends the torrent file to qui's `/api/cross-seed/apply` endpoint - qui reads the actual size from the torrent metadata, runs the match again against your current torrents, then adds it to qBittorrent
 
 <ExternalWebhookQui/>
 
-Cross-seeded torrents are added paused with `skip_checking=true`. qui polls the torrent state and auto-resumes if progress meets the size tolerance threshold. If progress is too low, the torrent remains paused for manual review.
+Cross-seeds are added paused with `skip_checking=true`. Title, season, episode and split release-group fallbacks always need a full piece check - qui keeps those paused, runs the check, and only resumes them at 100%. Soft differences like codec, source, HDR, edition or one-sided checksum data take the fast path once the file and layout checks pass, and from there qui's [Max auto-start download](https://getqui.com/docs/features/cross-seed/rules#max-auto-start-download) rule decides: under the limit it starts, over it stays paused for review. If the only missing files are ignorable sidecars there is a 200 MiB exception.
 
 ## Setup {/* #setup */}
 
@@ -61,6 +61,7 @@ Data (JSON):
 ```json
 {
   "torrentName": {{ toRawJson .TorrentName }},
+  "size": {{ .Size }},
   "instanceIds": [1],
   "indexer": {{ toRawJson .Indexer }}
 }
@@ -71,6 +72,7 @@ To search all your qBittorrent instances, omit `instanceIds`:
 ```json
 {
   "torrentName": {{ toRawJson .TorrentName }},
+  "size": {{ .Size }},
   "indexer": {{ toRawJson .Indexer }}
 }
 ```
@@ -78,9 +80,12 @@ To search all your qBittorrent instances, omit `instanceIds`:
 Field descriptions:
 
 - `torrentName` (required): the release name as announced
+- `size` (optional): the size in bytes from the announce or feed data autobrr already has; omitted or `0` means no size is available
 - `instanceIds` (optional): qBittorrent instance IDs to scan; omit to search all instances
-- `indexer` (optional): autobrr indexer identifier (e.g. `hdb`); required for qui's HDBits-specific missing-collection fallback
+- `indexer` (optional): autobrr indexer identifier (e.g. `hdb`); on `/check` qui just writes it to the debug log
 - `findIndividualEpisodes` (optional): override qui's global episode matching setting
+
+An exact size counts for more than a rounded one - if it matches the local torrent exactly, qui can approve metadata differences it would otherwise reject. A rounded or mismatched value only passes the normal strict match within the configured size tolerance. If the size is `0`, qui falls back to a narrow name-only check, which is enough to let the action download the torrent but not to add it. qui's [autobrr integration](https://getqui.com/docs/features/cross-seed/autobrr) docs have the details.
 
 :::tip[Docker Compose]
 If autobrr and qui are both containers, `localhost` inside autobrr is the autobrr container, not qui. Use the qui container hostname instead (often the Compose service name), for example `http://qui:7476/api/cross-seed/webhook/check`.
@@ -113,6 +118,7 @@ Payload (JSON):
 ```json
 {
   "torrentData": "{{ .TorrentDataRawBytes | toString | b64enc }}",
+  "torrentName": {{ toRawJson .TorrentName }},
   "instanceIds": [1],
   "indexer": {{ toRawJson .Indexer }}
 }
@@ -121,6 +127,7 @@ Payload (JSON):
 Field descriptions:
 
 - `torrentData` (required): base64-encoded torrent file bytes
+- `torrentName` (optional): the original announced name - include it to get reported-size matching and metadata-change detection. Without it you get qui's legacy strict apply behavior
 - `instanceIds` (optional): target instances; omit to apply to any matching instance
 - `indexer` (optional): autobrr indexer identifier (e.g. `hdb`); when qui's "Use indexer name as category" mode is enabled, qui uses this as the category
 - `tags` (optional): override webhook tags from qui's settings
@@ -145,6 +152,6 @@ For anything beyond this, see qui's [cross-seed troubleshooting](https://getqui.
 
 ## Going further {/* #going-further */}
 
-- **Webhook source filters:** by default qui scans all torrents on your instances when looking for matches. You can include/exclude categories and tags in the qui UI under **Cross-Seed → Auto → Webhook / autobrr**.
+- **Webhook source filters:** by default qui scans all torrents on your instances when looking for matches. You can include/exclude categories and tags in the qui UI under **Cross-Seed → Auto → Webhook / autobrr**. Excludes win over includes, tag matching is case-sensitive, and if you set both category and tag includes a torrent has to pass both.
 - **Season packs:** qui has a dedicated season pack flow with separate endpoints (`/api/cross-seed/season-pack/check` and `/api/cross-seed/season-pack/apply`) that links already downloaded episodes into an announced season pack. It requires a separate autobrr filter; see qui's [season packs](https://getqui.com/docs/features/cross-seed/season-packs) docs for full setup instructions.
 - Full qui documentation: [getqui.com/docs/features/cross-seed/autobrr](https://getqui.com/docs/features/cross-seed/autobrr)
