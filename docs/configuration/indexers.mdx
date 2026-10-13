@@ -70,9 +70,17 @@ Refer to the [IRC](../configuration/irc.mdx) section for detailed information ab
 
 <IpApproval/>
 
-### External Identifier (optional) {/* #external-identifier */}
+### External Identifier
 
-To enable features such as seed limits (seed ratio, seed time) when pushing releases to \*arrs, an `External identifier` is required. This identifier must correspond to the indexer name in your \*arr setup. If you are using Prowlarr, it will typically be listed as "TorrentLeech (Prowlarr)".
+To enable features such as seed limits (seed ratio, seed time) when pushing releases to *arrs, an `External identifier` is required. This identifier must correspond to the indexer name in your *arr setup. If you are using Prowlarr, it will typically be listed as "TorrentLeech (Prowlarr)".
+
+:::warning Sonarr v5
+Sonarr v5 rejects pushed releases whose indexer name doesn't match an existing Sonarr indexer. If the External Identifier is left at its default, every push to Sonarr fails with:
+
+`Indexer with name 'TorrentLeech' could not be found`
+
+Set the External Identifier to the exact indexer name shown in Sonarr (e.g. `TorrentLeech (Prowlarr)`).
+:::
 
 :::info
 Available in verison `v1.42.0+`
