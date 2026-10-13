@@ -24,8 +24,8 @@ jobs:
       - name: Run update script
         id: update_script
         run: |
-          python update_release_notes.py
-          echo "version=$(python update_release_notes.py --get-version)" >> $GITHUB_OUTPUT
+          python scripts/update_release_notes.py
+          echo "version=$(python scripts/update_release_notes.py --get-version)" >> $GITHUB_OUTPUT
 
       - name: Commit files
         run: |
