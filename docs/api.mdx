@@ -22,7 +22,7 @@ The **API Endpoint Reference** provides a comprehensive list of available endpoi
 | --- | ---------------------------- | ----------------------------------- |
 | 1   | Liveness Check               | `/healthz/liveness`                 |
 | 2   | Readiness Check              | `/healthz/readiness`                |
-| 3   | Download Clients             | `/download_clients`                 |
+| 3   | Download Clients             | `/downloaders`                      |
 | 4   | Feeds                        | `/feeds`                            |
 | 5   | Specific Feed Status         | `/feeds/<FEED_ID>/enabled`          |
 | 6   | Filters                      | `/filters/`                         |
@@ -59,13 +59,13 @@ When making requests to the autobrr API, you can provide your API key in two way
 **Using the API key in the header:**
 
 ```bash
-curl -X GET 'http://127.0.0.1:7474/api/download_clients' -H 'X-API-Token: AUTOBRR_API_KEY' | jq
+curl -X GET 'http://127.0.0.1:7474/api/downloaders' -H 'X-API-Token: AUTOBRR_API_KEY' | jq
 ```
 
 **Using the API key as an URL parameter:**
 
 ```bash
-curl -X GET 'http://127.0.0.1:7474/api/download_clients?apikey=${AUTOBRR_API_KEY}' | jq
+curl -X GET 'http://127.0.0.1:7474/api/downloaders?apikey=${AUTOBRR_API_KEY}' | jq
 ```
 
 ## Health Check Endpoints
@@ -287,13 +287,13 @@ curl -X DELETE 'http://127.0.0.1:7474/api/feeds/8/cache' -H 'X-API-Token: AUTOBR
 ### List all download clients
 
 ```bash
-curl -X GET 'http://127.0.0.1:7474/api/download_clients' -H 'X-API-Token: AUTOBRR_API_KEY' | jq
+curl -X GET 'http://127.0.0.1:7474/api/downloaders' -H 'X-API-Token: AUTOBRR_API_KEY' | jq
 ```
 
 ### Add a new download client
 
 ```bash title="qBittorrent"
-curl -X POST 'http://127.0.0.1:7474/api/download_clients' -H 'X-API-Token: AUTOBRR_API_KEY' \
+curl -X POST 'http://127.0.0.1:7474/api/downloaders' -H 'X-API-Token: AUTOBRR_API_KEY' \
 -d '{
   "name": "qbit",
   "type": "QBITTORRENT",
@@ -323,7 +323,7 @@ curl -X POST 'http://127.0.0.1:7474/api/download_clients' -H 'X-API-Token: AUTOB
 ```
 
 ```bash title="Deluge"
-curl -X POST 'http://127.0.0.1:7474/api/download_clients' -H 'X-API-Token: AUTOBRR_API_KEY' \
+curl -X POST 'http://127.0.0.1:7474/api/downloaders' -H 'X-API-Token: AUTOBRR_API_KEY' \
 -d '{
   "name": "Deluge",
   "type": "DELUGE_V2",
@@ -345,7 +345,7 @@ curl -X POST 'http://127.0.0.1:7474/api/download_clients' -H 'X-API-Token: AUTOB
 ```
 
 ```bash title="*arr"
-curl -X POST 'http://127.0.0.1:7474/api/download_clients' -H 'X-API-Token: AUTOBRR_API_KEY' \
+curl -X POST 'http://127.0.0.1:7474/api/downloaders' -H 'X-API-Token: AUTOBRR_API_KEY' \
 -d '{
   "name": "Sonarr",
   "type": "SONARR",
@@ -366,7 +366,7 @@ curl -X POST 'http://127.0.0.1:7474/api/download_clients' -H 'X-API-Token: AUTOB
 ### Update existing download client
 
 ```bash title="qBittorrent"
-curl -X PUT 'http://127.0.0.1:7474/api/download_clients' -H 'X-API-Token: AUTOBRR_API_KEY' \
+curl -X PUT 'http://127.0.0.1:7474/api/downloaders' -H 'X-API-Token: AUTOBRR_API_KEY' \
 -d '{
   "id": 21,
   "name": "Qbit",
@@ -397,7 +397,7 @@ curl -X PUT 'http://127.0.0.1:7474/api/download_clients' -H 'X-API-Token: AUTOBR
 ```
 
 ```bash title="Deluge"
-curl -X PUT 'http://127.0.0.1:7474/api/download_clients' -H 'X-API-Token: AUTOBRR_API_KEY' \
+curl -X PUT 'http://127.0.0.1:7474/api/downloaders' -H 'X-API-Token: AUTOBRR_API_KEY' \
 -d '{
   "id": 13,
   "name": "Deluge",
@@ -423,7 +423,7 @@ curl -X PUT 'http://127.0.0.1:7474/api/download_clients' -H 'X-API-Token: AUTOBR
 ```
 
 ```bash title="*arrs"
-curl -X PUT 'http://127.0.0.1:7474/api/download_clients' -H 'X-API-Token: AUTOBRR_API_KEY' \
+curl -X PUT 'http://127.0.0.1:7474/api/downloaders' -H 'X-API-Token: AUTOBRR_API_KEY' \
 -d '{
   "id": 21,
   "name": "Sonarr",
