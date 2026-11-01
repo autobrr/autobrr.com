@@ -86,6 +86,25 @@ Quickbox documentation: [https://quickbox.io/knowledge-base/autobrr-quick-refere
 qb install autobrr
 ```
 
+### MASH
+
+MASH documentation: [https://github.com/mother-of-all-self-hosting/mash-playbook/blob/main/docs/services/autobrr.md](https://github.com/mother-of-all-self-hosting/mash-playbook/blob/main/docs/services/autobrr.md)
+
+#### Installation
+
+Enable autobrr in your MASH `vars.yml` file:
+
+```yaml
+autobrr_enabled: true
+autobrr_hostname: autobrr.example.com
+```
+
+Then run:
+
+```shell
+just install-service autobrr
+```
+
 ## Shared Seedbox
 
 These are instructions and installation scripts for shared seedboxes. We have support for a few providers out of the box, but if yours are missing, then please reach out on [Discord <FaDiscord />](https://discord.autobrr.com/) so we can add support for it.
