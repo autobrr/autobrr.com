@@ -15,6 +15,9 @@ import logging
 import re
 from release_notes_meta import build_description, yaml_quote
 
+REPO_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+BLOG_DIR = os.path.join(REPO_ROOT, 'blog')
+
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
 def get_latest_version():
@@ -49,7 +52,7 @@ def parse_release_data(html_content, url):
 
 def create_release_notes_folder(version, release_date, markdown_content):
     folder_name = f"{release_date}-{version}"
-    path = os.path.join('./blog', folder_name)
+    path = os.path.join(BLOG_DIR, folder_name)
     os.makedirs(path, exist_ok=True)
 
     md_file_path = os.path.join(path, 'index.md')
@@ -66,7 +69,7 @@ def create_release_notes_folder(version, release_date, markdown_content):
     return path
 
 def git_operations():
-    repo = Repo('.')
+    repo = Repo(REPO_ROOT)
     origin = repo.remotes.origin
     repo.git.checkout('main')
     origin.pull()

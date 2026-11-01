@@ -30,3 +30,6 @@ package-lock.json
 # AI
 .agents
 .claude
+
+# scripts
+__pycache__
