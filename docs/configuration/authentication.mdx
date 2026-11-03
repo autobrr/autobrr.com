@@ -76,22 +76,27 @@ When OIDC is enabled:
 
 #### 3. Restrict login to one user {/* #restrict-oidc-login-to-one-user */}
 
-By default, any user your identity provider authenticates for the autobrr client can log in. To allow only one user, set `oidcAllowedUser` to that user's subject identifier (`sub`) or email address:
+By default, any user your identity provider authenticates for the autobrr client can log in. To allow only one user, set either `oidcAllowedSubject` to that user's subject identifier (`sub`), or `oidcAllowedEmail` to their email address. Set one of the two, not both: autobrr refuses to start when both are set.
 
 ```toml title="config.toml"
-oidcAllowedUser = "you@example.com"
+oidcAllowedSubject = "3f2c1a9e-5b7d-4e61-9a0c-2d8f6b4e1c37"
+# or
+oidcAllowedEmail = "you@example.com"
 ```
 
 ```env
-AUTOBRR__OIDC_ALLOWED_USER=you@example.com
+AUTOBRR__OIDC_ALLOWED_SUBJECT=3f2c1a9e-5b7d-4e61-9a0c-2d8f6b4e1c37
+# or
+AUTOBRR__OIDC_ALLOWED_EMAIL=you@example.com
 ```
 
-- The subject identifier must match exactly, including case. Your identity provider shows it on the user's profile, or you can find it in the autobrr log at debug level after an OIDC login.
-- An email address matches regardless of case, but only when the identity provider marks it as verified (`email_verified`). If your provider does not send that claim, use the subject identifier instead.
-- Other users get a 403 error after signing in at the identity provider and are logged as `OIDC user is not allowed to log in`.
-- autobrr checks every request against this setting, so setting or changing it logs out any existing OIDC session that no longer matches. Sessions created before autobrr supported this setting are logged out once it is set, and the user has to log in again.
+- `oidcAllowedSubject` must match the subject identifier exactly, including case. Your identity provider shows it on the user's profile, or you can find it in the autobrr log at debug level after an OIDC login. Prefer this setting: the subject never changes and the provider guarantees it is unique.
+- `oidcAllowedEmail` matches regardless of case, but only when the identity provider marks the email as verified (`email_verified`). If your provider does not send that claim, use `oidcAllowedSubject` instead.
+- Each setting is only compared against its own claim, so an account whose subject identifier happens to equal the allowed email address does not get in.
+- Other users get a 403 error after signing in at the identity provider and are logged as `OIDC user is not allowed to log in`. With `oidcAllowedEmail`, a 502 error means autobrr could not reach the provider's userinfo endpoint to verify the email; the details are in the autobrr log.
+- autobrr checks every request against these settings, so setting or changing them logs out any existing OIDC session that no longer matches. Sessions created before autobrr supported these settings are logged out once one is set, and the user has to log in again.
 
-When `oidcAllowedUser` is not set, autobrr logs a warning at startup. You can also restrict access in the identity provider itself, for example with application bindings in Authentik or access control policies in Authelia.
+When neither setting is set, autobrr logs a warning at startup. You can also restrict access in the identity provider itself, for example with application bindings in Authentik or access control policies in Authelia.
 
 :::info[PKCE]
 autobrr automatically uses the Authorization Code Flow with PKCE (S256) when your identity provider advertises support for it in its discovery document. Providers that require PKCE (like Pocket-ID) work out of the box with no extra configuration.

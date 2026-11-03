@@ -134,10 +134,12 @@ checkForUpdates = true
 # Disable Built In Login Form (only works when using external auth)
 #oidcDisableBuiltInLogin = false
 #
-# Only allow this OIDC user to log in: the subject identifier (sub) or the email
-# address the provider has verified. When unset, any user your provider
-# authenticates for this client can log in.
-#oidcAllowedUser = ""
+# Only allow one OIDC user to log in, by subject identifier (sub) or by the email
+# address the provider has verified. Set one of the two, not both. When neither
+# is set, any user your provider authenticates for this client can log in.
+#oidcAllowedSubject = ""
+#
+#oidcAllowedEmail = ""
 
 # Metrics
 #
