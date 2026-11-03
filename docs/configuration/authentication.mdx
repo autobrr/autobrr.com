@@ -8,7 +8,7 @@ description: "How authentication works in autobrr: the built-in username and pas
 
 The built-in authentication is enabled by default and uses a username/password combination. When you first access autobrr, you'll be prompted to create an account.
 
-autobrr supports a single user account. If you need more identities, use an OIDC provider; all logins share the same autobrr instance and data.
+autobrr supports a single user account. If you need more identities, use an OIDC provider without [restricting the allowed user](#restrict-oidc-login-to-one-user); all logins share the same autobrr instance and data.
 
 ## Sessions {/* #sessions */}
 
@@ -73,6 +73,25 @@ When OIDC is enabled:
 - If you have an existing user in the database, both OIDC and built-in authentication will be available
 - If no user exists in the database, only OIDC authentication will be available
   :::
+
+#### 3. Restrict login to one user {/* #restrict-oidc-login-to-one-user */}
+
+By default, any user your identity provider authenticates for the autobrr client can log in. To allow only one user, set `oidcAllowedUser` to that user's subject identifier (`sub`) or email address:
+
+```toml title="config.toml"
+oidcAllowedUser = "you@example.com"
+```
+
+```env
+AUTOBRR__OIDC_ALLOWED_USER=you@example.com
+```
+
+- The subject identifier must match exactly, including case. Your identity provider shows it on the user's profile, or you can find it in the autobrr log at debug level after an OIDC login.
+- An email address matches regardless of case, but only when the identity provider marks it as verified (`email_verified`). If your provider does not send that claim, use the subject identifier instead.
+- Other users get a 403 error after signing in at the identity provider and are logged as `OIDC user is not allowed to log in`.
+- autobrr checks every request against this setting, so setting or changing it logs out any existing OIDC session that no longer matches. Sessions created before autobrr supported this setting are logged out once it is set, and the user has to log in again.
+
+When `oidcAllowedUser` is not set, autobrr logs a warning at startup. You can also restrict access in the identity provider itself, for example with application bindings in Authentik or access control policies in Authelia.
 
 :::info[PKCE]
 autobrr automatically uses the Authorization Code Flow with PKCE (S256) when your identity provider advertises support for it in its discovery document. Providers that require PKCE (like Pocket-ID) work out of the box with no extra configuration.
