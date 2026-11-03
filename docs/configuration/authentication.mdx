@@ -1,7 +1,7 @@
 ---
 title: Authentication methods
 sidebar_position: 1
-description: "How authentication works in autobrr: the built-in username and password login and OpenID Connect (OIDC) single sign-on, and how to configure each."
+description: "How authentication works in autobrr: the built-in username and password login, OpenID Connect (OIDC) single sign-on, and disabling authentication behind an authenticating reverse proxy."
 ---
 
 ## Built-in Authentication {/* #built-in-authentication */}
@@ -10,11 +10,33 @@ The built-in authentication is enabled by default and uses a username/password c
 
 autobrr supports a single user account. If you need more identities, use an OIDC provider; all logins share the same autobrr instance and data.
 
+### Failed login limit {/* #failed-login-limit */}
+
+Failed logins are rate limited per client. After 5 failed attempts, a client gets one more attempt every 20 seconds, and further attempts get `429 Too Many Requests` with a `Retry-After` header. A successful login resets the counter, so you are never locked out by your own logins.
+
+Behind a reverse proxy, the limit applies per client address only when autobrr knows which peers are proxies. Set [`trustedProxies`](#trusted-proxies) so the limit cannot be dodged with a spoofed `X-Forwarded-For` header, or used to lock out other users behind the same proxy.
+
 ## Sessions {/* #sessions */}
 
 Sessions last 30 days and are automatically extended while in use (renewal happens when a session is within 7 days of expiring). The **Remember me** checkbox on the login page, checked by default, controls whether the session cookie persists across browser restarts.
 
 Sessions are stored in the database, so they survive autobrr restarts. Logging out destroys the session server-side.
+
+Changing your password signs out every other session. The session you changed it from stays logged in.
+
+## Trusted proxies {/* #trusted-proxies */}
+
+autobrr reads the client IP from `X-Forwarded-For`, `X-Real-IP` and `True-Client-IP` for logs and for the [failed login limit](#failed-login-limit). By default those headers are believed from any peer. List the address of your reverse proxy in `trustedProxies` to only believe `X-Forwarded-For` from it:
+
+```toml title="config.toml"
+trustedProxies = ["127.0.0.1", "::1"]
+```
+
+```env
+AUTOBRR__TRUSTED_PROXIES=127.0.0.1,::1
+```
+
+Entries are IP addresses or CIDRs. With `trustedProxies` set, `X-Forwarded-For` is read right to left, skipping trusted proxies, and the first untrusted address is used as the client IP. Requests from any other peer use the TCP peer address. `trustedProxies` has no effect while [authentication is disabled](#disable-authentication).
 
 ## OpenID Connect (OIDC) {/* #openid-connect-oidc */}
 
@@ -77,6 +99,90 @@ When OIDC is enabled:
 :::info[PKCE]
 autobrr automatically uses the Authorization Code Flow with PKCE (S256) when your identity provider advertises support for it in its discovery document. Providers that require PKCE (like Pocket-ID) work out of the box with no extra configuration.
 :::
+
+## Disable authentication {/* #disable-authentication */}
+
+:::danger[autobrr performs no authentication in this mode]
+Every request from an allowlisted network address gets full administrative access. Only use this when a reverse proxy in front of autobrr authenticates every route, and the autobrr port cannot be reached any other way.
+:::
+
+If your reverse proxy already handles authentication (forward auth with [Authelia](https://www.authelia.com/) or [Authentik](https://goauthentik.io/), SSO at the proxy, etc.), you can disable autobrr's own login so you don't have to sign in twice. With authentication disabled:
+
+- autobrr skips the login page and opens straight to the dashboard
+- the account page and the logout button are hidden
+- API key management is unavailable. An unauthenticated caller could otherwise create a key that keeps working after you re-enable authentication. API keys you already have keep working once authentication is back on
+- requests are accepted only from the network peers in `authAllowedPeerCIDRs`, so scripts and integrations behind the same proxy do not need an API key
+- OIDC cannot be enabled at the same time
+
+### Configuration {/* #disable-authentication-configuration */}
+
+All of these are required:
+
+```toml title="config.toml"
+authDisabled = true
+authDisabledAcknowledgement = "I_ACKNOWLEDGE_THIS_IS_A_BAD_IDEA"
+
+# The TCP peer autobrr sees, i.e. your reverse proxy. NOT the end user's address.
+authAllowedPeerCIDRs = ["127.0.0.1/32", "::1/128"]
+
+# Every URL you open autobrr at, comma separated, scheme://host[:port], no wildcards.
+corsAllowedOrigins = "https://autobrr.example.com"
+```
+
+Optional:
+
+```toml title="config.toml"
+# Extra hostnames clients or your proxy use in the Host header.
+authAllowedHosts = ["autobrr"]
+
+# A header your proxy overwrites on every request with the end user's IP.
+# Only used to log client IPs; leave unset to log the proxy address.
+authClientIPHeader = "X-Real-IP"
+```
+
+Or using environment variables:
+
+```env
+AUTOBRR__AUTH_DISABLED=true
+AUTOBRR__AUTH_DISABLED_ACKNOWLEDGEMENT=I_ACKNOWLEDGE_THIS_IS_A_BAD_IDEA
+AUTOBRR__AUTH_ALLOWED_PEER_CIDRS=127.0.0.1/32,::1/128
+AUTOBRR__CORS_ALLOWED_ORIGINS=https://autobrr.example.com
+AUTOBRR__AUTH_ALLOWED_HOSTS=autobrr
+AUTOBRR__AUTH_CLIENT_IP_HEADER=X-Real-IP
+```
+
+If `authDisabled` is set without the exact acknowledgement value, authentication stays enabled and autobrr logs a warning. If the acknowledgement is correct but any other required option is missing or invalid, autobrr refuses to start.
+
+Example with [Caddy](https://caddyserver.com/) doing forward auth through Authelia for every route:
+
+```caddy title="Caddyfile"
+autobrr.example.com {
+	forward_auth authelia:9091 {
+		uri /api/authz/forward-auth
+	}
+	reverse_proxy localhost:7474
+}
+```
+
+### How requests are checked {/* #disable-authentication-checks */}
+
+- **Peer allowlist.** `authAllowedPeerCIDRs` is matched against the address of the TCP connection, never against `X-Forwarded-For` or similar headers, so a client cannot spoof its way in. In Docker this is the proxy container's address on the shared network, not your browser's IP. The health check endpoints are also allowed from loopback so container health checks keep working.
+- **Host header.** Every request must use an allowed hostname in its `Host` header, which blocks DNS rebinding. IP addresses, `localhost`, the machine hostname and the hosts in `corsAllowedOrigins` are always allowed. Add any other name to `authAllowedHosts`, for example `autobrr` when nginx proxies to `http://autobrr:7474` without `proxy_set_header Host $host;`. Rejected requests are logged with the host they used.
+- **Browser requests.** API requests from a browser must come from an origin in `corsAllowedOrigins`, or from the same origin autobrr is served at (for example the UI opened at `http://192.168.1.10:7474`). Requests from other sites, including other subdomains of your domain, are rejected. This stops a malicious page you visit from driving autobrr through your browser.
+- **JSON writes.** API requests that send a body must use `Content-Type: application/json`, otherwise they get `415 Unsupported Media Type`.
+- **Framing.** Only autobrr itself and the origins in `corsAllowedOrigins` may embed autobrr in a frame.
+
+All other blocked requests get `403 Forbidden` and a warning in the log saying which check failed.
+
+### Things to watch out for {/* #disable-authentication-caveats */}
+
+- Keep `host = "127.0.0.1"` (or another private bind) so the autobrr port is only reachable through the proxy. A `0.0.0.0` bind together with a broad allowlist gives admin access to everything in the range: Docker network gateways, Kubernetes node addresses and shared proxy or CDN ranges can all carry traffic from someone other than your proxy.
+- List the exact proxy address (`/32` or `/128`), not its subnet. autobrr logs a warning at startup for every broader range.
+- If you never created a user, re-enabling authentication opens first-user onboarding to whoever reaches the login page first. Create the user right after re-enabling, or ahead of time with [`autobrrctl create-user`](./autobrr.mdx#create-user-via-cli).
+
+### Re-enable authentication {/* #re-enable-authentication */}
+
+Remove the `authDisabled` settings (or environment variables), restart autobrr and check that you are asked to log in.
 
 ## Troubleshooting {/* #troubleshooting */}
 
