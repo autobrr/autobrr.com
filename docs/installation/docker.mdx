@@ -100,6 +100,9 @@ services:
       - AUTOBRR__AUTH_ALLOWED_PEER_CIDRS=string # comma separated
       - AUTOBRR__AUTH_ALLOWED_HOSTS=string # comma separated
       - AUTOBRR__AUTH_CLIENT_IP_HEADER=string
+      - AUTOBRR__AUTH_TRUSTED_USER_HEADER=string # see the authentication docs
+      - AUTOBRR__AUTH_TRUSTED_USER=string
+      - AUTOBRR__AUTH_LOGOUT_URL=string
       - AUTOBRR__TRUSTED_PROXIES=string # comma separated
       - AUTOBRR__METRICS_ENABLED=bool
       - AUTOBRR__METRICS_HOST=string

@@ -51,6 +51,10 @@ All API requests except the [health check endpoints](#health-check-endpoints) re
 When [authentication is disabled](configuration/authentication.mdx#disable-authentication), API keys cannot be created or listed, and requests from the allowed peers need no key. API requests that send a body must use `Content-Type: application/json`.
 :::
 
+:::info[Forward authentication]
+With [forward authentication](configuration/authentication.mdx#forward-authentication), API keys work as usual and take precedence over the proxy's username header. Scripts and integrations that reach autobrr through a proxy bypass rule need a key. API requests that send a body must use `Content-Type: application/json`.
+:::
+
 ![API dashboard](/img/api-dashboard.png)
 
 #### Sending the API Key
