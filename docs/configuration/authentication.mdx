@@ -110,7 +110,7 @@ If a reverse proxy in front of autobrr authenticates every request ([Authelia](h
 - API keys and API key management keep working. A request with an API key is handled as that key, header or not
 - the login page and the account page are skipped, and log out goes to your proxy's logout URL if you set one
 - the same [request checks](#disable-authentication-checks) as disabled mode apply: peer allowlist, `Host` allowlist, browser request checks, JSON writes and framing
-- it cannot be combined with `authDisabled` or any OIDC setting
+- it cannot be combined with `authDisabled`, `oidcEnabled`, `oidcDisableBuiltInLogin`, `oidcAutoRedirect`, `oidcAllowedSubject` or `oidcAllowedEmail`. The other `oidc*` settings are ignored
 
 :::warning[The proxy must replace the header on every request]
 autobrr trusts the header because only your proxy can reach it. If the proxy passes on a header the client sent, anyone can claim to be `authTrustedUser`. This matters most on paths your identity provider lets through without a login (an Authelia `bypass` rule for `/api`, for example): there the auth server returns no username, and the proxy must remove the client's header rather than forward it. The examples below do this. [Check your proxy](#forward-authentication-check) after setting it up.
@@ -125,7 +125,7 @@ All of these are required:
 # Authelia: Remote-User, Authentik: X-authentik-username.
 authTrustedUserHeader = "Remote-User"
 
-# The only user accepted (case-insensitive), exactly as your proxy sends it.
+# The only user accepted, exactly as your proxy sends it, including case.
 authTrustedUser = "ze0s"
 
 # The TCP peer autobrr sees, i.e. your reverse proxy. Single addresses only.
@@ -156,7 +156,7 @@ AUTOBRR__CORS_ALLOWED_ORIGINS=https://autobrr.example.com
 AUTOBRR__AUTH_LOGOUT_URL=https://auth.example.com/logout
 ```
 
-If any required option is missing or invalid, autobrr refuses to start and logs which one. Every `authAllowedPeerCIDRs` entry must be a single address (`/32` or `/128`): any allowlisted peer can send the header itself, so a range would let every address in it log in.
+If any required option is missing or invalid, autobrr refuses to start and logs which one. `X-API-Token` cannot be the user header, since autobrr reads API keys from it. Every `authAllowedPeerCIDRs` entry must be a single address (`/32` or `/128`): any allowlisted peer can send the header itself, so a range would let every address in it log in.
 
 ### Proxy examples {/* #forward-authentication-examples */}
 
@@ -201,10 +201,14 @@ Use `authResponseHeaders` as above. `authResponseHeadersRegex` is matched case-s
 
 ### Check your proxy {/* #forward-authentication-check */}
 
-Send a request with a forged header to a path your identity provider does not protect, if you have one (for example an `/api` bypass rule), using your own `authTrustedUser` as the value:
+Send a request with a forged header to a path your identity provider does not protect, if you have one (for example an `/api` bypass rule). Use your own `authTrustedUserHeader` as the header and your own `authTrustedUser` as the value. A forged header with any other name proves nothing, because autobrr ignores it:
 
 ```bash
+# Authelia (authTrustedUserHeader = "Remote-User")
 curl -i -H 'Remote-User: ze0s' https://autobrr.example.com/api/auth/validate
+
+# Authentik (authTrustedUserHeader = "X-authentik-username")
+curl -i -H 'X-authentik-username: ze0s' https://autobrr.example.com/api/auth/validate
 ```
 
 - `403 Forbidden`: the proxy removed the header. This is what you want.
@@ -214,7 +218,7 @@ curl -i -H 'Remote-User: ze0s' https://autobrr.example.com/api/auth/validate
 ### Things to watch out for {/* #forward-authentication-caveats */}
 
 - Keep `host = "127.0.0.1"` (or another private bind) so the autobrr port is only reachable through the proxy, as in [disabled mode](#disable-authentication-caveats).
-- `authTrustedUser` must match what the proxy sends exactly, apart from case. Some providers send an email address or display name rather than the username. Rejected requests are logged with the username autobrr received.
+- `authTrustedUser` must match what the proxy sends exactly, including case: identity providers can hold accounts that differ only by case, so autobrr does not treat them as the same user. Some providers send an email address or display name rather than the username. Rejected requests are logged with the username autobrr received.
 - If the UI shows the login page, the header is not reaching autobrr. The log has a `forward auth: rejected request without trusted user header` warning for each such request.
 - Groups headers such as `Remote-Groups` are not read. The one accepted user has full access.
 
