@@ -47,11 +47,11 @@ If the network can't be created, the indexer is still saved and autobrr shows an
 
 ### 2. Log in {/* #log-in */}
 
-Go to `Settings > Matrix`. The new network is enabled but shows **not logged in**.
+Go to `Settings > Matrix`. The new network is enabled but shows **not logged in**, with a **Log in** button.
 
 ![A new Matrix network before login](/img/matrix_network.png)
 
-Open the menu (**...**) on the network and choose **Log in**.
+Click **Log in** on the network. The same login is also in the network's menu (**...**) and in the **Account** section of its edit panel.
 
 ![The Matrix login panel](/img/matrix_login.png)
 
@@ -94,6 +94,8 @@ Click **View** on a room to open its message log. It shows every new message in 
 
 Open the menu (**...**) on a network and choose **Edit**.
 
+The **Account** section at the top shows the Matrix user the network is logged in as, and whether it logged in with the browser or an access token. Its **Log in** and **Log out** buttons apply right away; they don't wait for **Save**, and **Cancel** doesn't undo them.
+
 | Setting    | Description |
 | ---------- | ----------- |
 | Name       | Display name of the network. |
@@ -103,8 +105,9 @@ Open the menu (**...**) on a network and choose **Edit**.
 
 The network menu also has:
 
+- **Log in** opens the [login panel](#log-in).
 - **Restart** reconnects the network.
-- **Log out** removes the network's login from autobrr. It doesn't end the session on the homeserver. To do that, remove the **autobrr** session in your Matrix account settings.
+- **Log out** removes the network's login from autobrr, the same as in the **Account** section. It doesn't end the session on the homeserver. To do that, remove the **autobrr** session in your Matrix account settings.
 - **Delete** removes the network and its rooms.
 
 ## How announces are handled {/* #how-announces-are-handled */}
@@ -120,7 +123,7 @@ Each line in the room log has a re-process button. It sends that message through
 
 ## Troubleshooting {/* #troubleshooting */}
 
-The error is shown under the network or room name in `Settings > Matrix`.
+The error is shown under the network or room name in `Settings > Matrix`. When a network needs a new login, it also shows a **Log in** button.
 
 | Message | What to do |
 | ------- | ---------- |
