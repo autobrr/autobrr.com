@@ -1,8 +1,8 @@
 ---
 sidebar_label: Windows
 title: Install autobrr on Windows
-description: A guide on how to install autobrr on Windows. In this setup we will create an autobrr user and a Windows service that operates in the background.
-keywords: [autobrr, installation, setup, seedbox, windows]
+description: A guide on how to install autobrr on Windows, either as a desktop app with a tray icon or as a background task with Task Scheduler.
+keywords: [autobrr, installation, setup, seedbox, windows, desktop, tray, msi, installer, update]
 pagination_prev: introduction
 pagination_next: configuration/indexers
 ---
@@ -12,7 +12,73 @@ pagination_next: configuration/indexers
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import ReverseProxy from '/snippets/reverse-proxy.mdx';
 
-In this setup we will create an autobrr user and a Windows service that operates in the background. This way we won't need to have a command prompt window open 24/7.
+There are two ways to run autobrr on Windows:
+
+- **[Desktop app](#desktop-app)**: an installer that runs autobrr in the background with an icon in the system tray. It starts when you log in, updates itself, and needs no admin rights. Pick this one unless you need autobrr running while nobody is logged in.
+- **[Background task](#background-task)**: the plain `autobrr.exe` started by Task Scheduler, which can run without anyone logged in.
+
+## Desktop app {/* #desktop-app */}
+
+### Install {/* #desktop-install */}
+
+Download `autobrr-desktop_<version>_windows_x86_64.msi` from the [latest release](https://github.com/autobrr/autobrr/releases/latest) and run it. It installs autobrr for your Windows user in `%LOCALAPPDATA%\Programs\autobrr`, adds **autobrr** to the Start menu and starts it. No admin rights are needed and there is no setup wizard.
+
+The release also has `autobrr-desktop_<version>_windows_x86_64.zip` with the same `autobrr-desktop.exe` if you would rather unpack it into a folder of your choice.
+
+:::caution[Windows SmartScreen]
+The installer and exe are not code-signed yet, so Windows SmartScreen may warn that it protected your PC. Click **More info**, then **Run anyway**.
+:::
+
+Once it runs, open the web UI from the tray icon and create your user.
+
+### Tray menu {/* #desktop-tray-menu */}
+
+Right-click the autobrr icon in the system tray:
+
+- **Open Web UI**: opens autobrr in your browser, once it has started.
+- **Open Config Folder**: opens the folder with `config.toml`, the database and the logs.
+- **Start on login**: starts autobrr when you log in to Windows. It shows up under **Settings > Apps > Startup** and can be turned off there too.
+- **Check for updates**, **Install update**, **Install updates automatically**: see [Updates](#desktop-updates).
+- **Quit**: shuts autobrr down cleanly.
+
+Logging off or shutting down Windows also shuts autobrr down cleanly.
+
+### Files and logs {/* #desktop-files */}
+
+The desktop app keeps its config, database and logs in `%APPDATA%\autobrr`:
+
+- `config.toml`, see [configuring autobrr](../configuration/autobrr.mdx)
+- `autobrr.db`
+- `logs\autobrr.log`, since there is no console window to log to. A `logPath` set in `config.toml` takes precedence.
+
+If autobrr fails to start, for example because port 7474 is already in use, it shows an error dialog with the reason and the path to the log file.
+
+Only one copy of autobrr runs per config folder. Starting it again shows a message that it is already running.
+
+### Move an existing install {/* #desktop-move-existing */}
+
+To switch from the plain `autobrr.exe` to the desktop app and keep your setup:
+
+1. Stop the old autobrr, including its Task Scheduler task, and disable that task so the two don't fight over the port and database.
+2. Copy `config.toml` and `autobrr.db` from your old autobrr folder into `%APPDATA%\autobrr`. **Open Config Folder** in the tray takes you there.
+3. Quit autobrr from the tray and start it again from the Start menu.
+
+### Updates {/* #desktop-updates */}
+
+With `checkForUpdates` on in `config.toml` (the default), autobrr checks for new releases at startup and every two hours, and shows a notification when one is out. **Check for updates** checks right away either way.
+
+- **Install update vX.Y.Z** asks for confirmation, downloads the release, checks it against the release checksums and restarts autobrr on the new version. The previous version is kept as `autobrr-desktop.exe.old` next to the exe.
+- **Install updates automatically** does the same without asking, for releases that have been out for at least 24 hours. It is off by default, and does nothing when `checkForUpdates` is off.
+
+autobrr can only update itself when its folder is writable by your user. The installer's folder always is. If you unpacked the zip into a folder like `C:\Program Files`, install updates by downloading the new release yourself.
+
+### Uninstall {/* #desktop-uninstall */}
+
+Uninstall **autobrr** from **Settings > Apps**. This removes the program and its start on login entry, but keeps `%APPDATA%\autobrr`, so your config and database stay. Delete that folder as well to remove everything.
+
+## Background task {/* #background-task */}
+
+In this setup we will create a Windows task that runs `autobrr.exe` in the background. This way we won't need to have a command prompt window open 24/7.
 
 ## Download package {/* #download-package */}
 
