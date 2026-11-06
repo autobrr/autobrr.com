@@ -54,6 +54,7 @@ module.exports = {
         "configuration/autobrr",
         "configuration/indexers",
         "configuration/irc",
+        "configuration/matrix",
         {
           type: "category",
           label: "Download clients",
