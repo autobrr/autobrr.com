@@ -100,6 +100,40 @@ When OIDC is enabled:
 autobrr automatically uses the Authorization Code Flow with PKCE (S256) when your identity provider advertises support for it in its discovery document. Providers that require PKCE (like Pocket-ID) work out of the box with no extra configuration.
 :::
 
+### Automatic login {/* #oidc-automatic-login */}
+
+By default, the login page shows an **OpenID Connect** button. To skip the login page and send visitors straight to your identity provider, enable automatic login:
+
+```toml title="config.toml"
+oidcAutoRedirect = true
+```
+
+```env
+AUTOBRR__OIDC_AUTO_REDIRECT=true
+```
+
+It requires `oidcEnabled = true` and takes effect after a restart. After you log in at the provider, autobrr opens the page you were trying to reach.
+
+`oidcDisableBuiltInLogin` still controls whether the login page shows the username and password form. With automatic login on, autobrr only shows the login page in the cases below.
+
+#### Open the login page {/* #oidc-automatic-login-page */}
+
+Open `/login?autoRedirect=false` to get the login page without being redirected, for example when your identity provider is down. Add your base URL in front if you set one, such as `/autobrr/login?autoRedirect=false`.
+
+#### Logging out {/* #oidc-automatic-login-logout */}
+
+Logging out of autobrr, or changing your password or username in **Settings > Account**, ends the autobrr session and opens that login page. Your identity provider session stays active, so clicking **OpenID Connect** may log you straight back in without asking for credentials. To sign out completely, also log out at your identity provider.
+
+#### If you are sent back to the login page {/* #oidc-automatic-login-loop */}
+
+If autobrr comes back from your identity provider without a session within 30 seconds of an automatic redirect, it stops redirecting and shows the login page with a warning that automatic sign-in did not complete. Otherwise the browser would bounce between autobrr and the provider.
+
+This usually means the browser did not keep autobrr's session cookie. Check that:
+
+- you open autobrr at the base URL configured in autobrr, since the session cookie only applies to that path
+- your reverse proxy passes cookies through and forwards `X-Forwarded-Proto` correctly (see [Security Best Practices](#security-best-practices))
+- the browser does not block cookies for your autobrr domain
+
 ## Disable authentication {/* #disable-authentication */}
 
 :::danger[autobrr performs no authentication in this mode]
@@ -192,7 +226,11 @@ Remove the `authDisabled` settings (or environment variables), restart autobrr a
 
 During testing, we used [Authelia](https://www.authelia.com/), [Authentik](https://goauthentik.io/), and [Pocket-ID](https://github.com/stonith404/pocket-id) with success. Each provider has been verified to work with autobrr's OIDC implementation.
 
-autobrr starts even when the identity provider is unreachable: OIDC discovery retries in the background (every 5 seconds for roughly 4 minutes), which covers docker-compose setups where the identity provider comes up after autobrr. Issuer URLs are also tried both with and without a trailing slash, so a slash mismatch between your config and the provider's discovery document is handled automatically.
+autobrr starts even when the identity provider is unreachable. OIDC discovery keeps retrying in the background until the provider responds, first after 5 seconds and then backing off to once a minute, so it covers docker-compose setups where the identity provider comes up after autobrr as well as longer outages. Each failed attempt is logged as a warning: `could not discover OIDC provider, logins are unavailable until it responds`.
+
+Until discovery succeeds, the login page shows the **OpenID Connect** button disabled with a note that the provider can't be reached, and enables it on its own once the provider responds. The username and password form keeps working in the meantime. With `oidcDisableBuiltInLogin` set, that form is hidden, so nobody can log in until the provider is back.
+
+Issuer URLs are also tried both with and without a trailing slash, so a slash mismatch between your config and the provider's discovery document is handled automatically.
 
 If you encounter issues, please open a [GitHub issue](https://github.com/autobrr/autobrr/issues/new?template=bug_report.md) or reach out to us on [Discord](https://discord.autobrr.com/).
 
