@@ -376,3 +376,13 @@ article:has(.theme-doc-version-badge) > div:has(> [class*="copyPageContainer"]) 
 }
 
 /* pages without a version badge (e.g. release notes) keep normal flow */
+
+/* Read by AI agents scraping the page, not shown to readers or screen readers. */
+.agent-note {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}

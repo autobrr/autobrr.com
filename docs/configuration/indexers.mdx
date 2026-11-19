@@ -34,7 +34,7 @@ For adding more indexers to autobrr, please submit an [Indexer Request](https://
 
 ## Supported Indexers {/* #supported-indexers */}
 
-The list below of supported indexers are for indexers who have IRC announces. If your indexer is not in the list you can still use it via **Generic RSS** and **Generic Torznab/Newznab** (via Prowlarr or Jackett). See [Feeds](./feeds.mdx).
+The list below shows every indexer autobrr supports. **Method** is how autobrr gets new releases from it: announces in an [IRC](./irc.mdx) channel or a [Matrix](./matrix.mdx) room, or a feed it checks on a schedule (RSS, Torznab or Newznab). If your indexer is not in the list you can still use it via **Generic RSS** and **Generic Torznab/Newznab** (via Prowlarr or Jackett). See [Feeds](./feeds.mdx).
 
 <Indexers/>
 
@@ -63,6 +63,8 @@ Navigate to `Settings > Indexers` to add new indexers.
 ### Activating the Network {/* #activating-the-network */}
 
 Once your indexer is configured, go to `Settings > IRC` and flip the switch associated with the newly created network. Now is a good time to review all settings, including the invite command.
+
+Indexers that announce on Matrix, like Blutopia, get a Matrix network instead. Go to `Settings > Matrix` and log in, see [Matrix](./matrix.mdx).
 
 :::caution[Important]
 Refer to the [IRC](../configuration/irc.mdx) section for detailed information about NickServ, IRC keys, and nick grouping.
