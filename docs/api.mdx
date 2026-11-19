@@ -47,6 +47,10 @@ The **API Endpoint Reference** provides a comprehensive list of available endpoi
 
 All API requests except the [health check endpoints](#health-check-endpoints) require an API key for authentication. This key can be generated from your autobrr dashboard by going to `Settings` -> `API keys`. Remember to always keep your API key confidential.
 
+:::info[Authentication disabled]
+When [authentication is disabled](configuration/authentication.mdx#disable-authentication), API keys cannot be created or listed, and requests from the allowed peers need no key. API requests that send a body must use `Content-Type: application/json`.
+:::
+
 ![API dashboard](/img/api-dashboard.png)
 
 #### Sending the API Key
@@ -244,8 +248,10 @@ curl -X GET 'http://127.0.0.1:7474/api/irc' -H 'X-API-Token: AUTOBRR_API_KEY' | 
 
 ### Restart a network
 
+Older versions also accepted `GET` for this endpoint; it now only accepts `POST`.
+
 ```bash
-curl -X GET 'http://127.0.0.1:7474/api/irc/network/5/restart' -H 'X-API-Token: AUTOBRR_API_KEY'
+curl -X POST 'http://127.0.0.1:7474/api/irc/network/5/restart' -H 'X-API-Token: AUTOBRR_API_KEY'
 ```
 
 ### Manually process an announce
