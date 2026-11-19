@@ -82,7 +82,11 @@ autobrr automatically uses the Authorization Code Flow with PKCE (S256) when you
 
 During testing, we used [Authelia](https://www.authelia.com/), [Authentik](https://goauthentik.io/), and [Pocket-ID](https://github.com/stonith404/pocket-id) with success. Each provider has been verified to work with autobrr's OIDC implementation.
 
-autobrr starts even when the identity provider is unreachable: OIDC discovery retries in the background (every 5 seconds for roughly 4 minutes), which covers docker-compose setups where the identity provider comes up after autobrr. Issuer URLs are also tried both with and without a trailing slash, so a slash mismatch between your config and the provider's discovery document is handled automatically.
+autobrr starts even when the identity provider is unreachable. OIDC discovery keeps retrying in the background until the provider responds, first after 5 seconds and then backing off to once a minute, so it covers docker-compose setups where the identity provider comes up after autobrr as well as longer outages. Each failed attempt is logged as a warning: `could not discover OIDC provider, logins are unavailable until it responds`.
+
+Until discovery succeeds, the login page shows the **OpenID Connect** button disabled with a note that the provider can't be reached, and enables it on its own once the provider responds. The username and password form keeps working in the meantime. With `oidcDisableBuiltInLogin` set, that form is hidden, so nobody can log in until the provider is back.
+
+Issuer URLs are also tried both with and without a trailing slash, so a slash mismatch between your config and the provider's discovery document is handled automatically.
 
 If you encounter issues, please open a [GitHub issue](https://github.com/autobrr/autobrr/issues/new?template=bug_report.md) or reach out to us on [Discord](https://discord.autobrr.com/).
 
