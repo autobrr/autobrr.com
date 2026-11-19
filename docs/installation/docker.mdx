@@ -95,6 +95,9 @@ services:
       - AUTOBRR__OIDC_CLIENT_SECRET=string
       - AUTOBRR__OIDC_REDIRECT_URL=string
       - AUTOBRR__OIDC_DISABLE_BUILT_IN_LOGIN=bool
+      - AUTOBRR__OIDC_ALLOWED_SUBJECT=string
+      - AUTOBRR__OIDC_ALLOWED_EMAIL=string
+      - AUTOBRR__OIDC_AUTO_REDIRECT=bool
       - AUTOBRR__AUTH_DISABLED=bool # see the authentication docs before using
       - AUTOBRR__AUTH_DISABLED_ACKNOWLEDGEMENT=string
       - AUTOBRR__AUTH_ALLOWED_PEER_CIDRS=string # comma separated
