@@ -78,6 +78,40 @@ When OIDC is enabled:
 autobrr automatically uses the Authorization Code Flow with PKCE (S256) when your identity provider advertises support for it in its discovery document. Providers that require PKCE (like Pocket-ID) work out of the box with no extra configuration.
 :::
 
+### Automatic login {/* #oidc-automatic-login */}
+
+By default, the login page shows an **OpenID Connect** button. To skip the login page and send visitors straight to your identity provider, enable automatic login:
+
+```toml title="config.toml"
+oidcAutoRedirect = true
+```
+
+```env
+AUTOBRR__OIDC_AUTO_REDIRECT=true
+```
+
+It requires `oidcEnabled = true` and takes effect after a restart. After you log in at the provider, autobrr opens the page you were trying to reach.
+
+`oidcDisableBuiltInLogin` still controls whether the login page shows the username and password form. With automatic login on, autobrr only shows the login page in the cases below.
+
+#### Open the login page {/* #oidc-automatic-login-page */}
+
+Open `/login?autoRedirect=false` to get the login page without being redirected, for example when your identity provider is down. Add your base URL in front if you set one, such as `/autobrr/login?autoRedirect=false`.
+
+#### Logging out {/* #oidc-automatic-login-logout */}
+
+Logging out of autobrr, or changing your password or username in **Settings > Account**, ends the autobrr session and opens that login page. Your identity provider session stays active, so clicking **OpenID Connect** may log you straight back in without asking for credentials. To sign out completely, also log out at your identity provider.
+
+#### If you are sent back to the login page {/* #oidc-automatic-login-loop */}
+
+If autobrr comes back from your identity provider without a session within 30 seconds of an automatic redirect, it stops redirecting and shows the login page with a warning that automatic sign-in did not complete. Otherwise the browser would bounce between autobrr and the provider.
+
+This usually means the browser did not keep autobrr's session cookie. Check that:
+
+- you open autobrr at the base URL configured in autobrr, since the session cookie only applies to that path
+- your reverse proxy passes cookies through and forwards `X-Forwarded-Proto` correctly (see [Security Best Practices](#security-best-practices))
+- the browser does not block cookies for your autobrr domain
+
 ## Troubleshooting {/* #troubleshooting */}
 
 During testing, we used [Authelia](https://www.authelia.com/), [Authentik](https://goauthentik.io/), and [Pocket-ID](https://github.com/stonith404/pocket-id) with success. Each provider has been verified to work with autobrr's OIDC implementation.
